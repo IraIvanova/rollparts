@@ -26,10 +26,16 @@ class DatabaseSeeder extends Seeder
             'code' => 'TRL',
             'display_code' => '₺',
         ]);
+        Currency::factory()->create([
+            'code' => 'USD',
+            'display_code' => '$',
+        ]);
 
         $this->call([
             LanguagesTableSeeder::class,
-            CategoriesTableSeeder::class
+            CategoriesTableSeeder::class,
+            UnitTypesTableSeeder::class,
+            OptionsTableSeeder::class,
         ]);
     }
 }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('brand_id');
             $table->integer('quantity')->default(0);
             $table->boolean('active')->default(true);
-            $table->string('mnf_code');
+            $table->string('mnf_code')->nullable();
             $table->timestamps();
 
             $table->foreign('brand_id')

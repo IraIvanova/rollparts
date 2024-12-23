@@ -14,7 +14,7 @@ use function Laravel\Prompts\select;
 
 class Product extends Model
 {
-    protected $fillable = ['name', 'slug', 'description', 'brand_id'];
+    protected $fillable = ['name', 'slug', 'description', 'brand_id', 'mnf_code'];
 
     public function brand(): BelongsTo
     {
@@ -69,6 +69,16 @@ class Product extends Model
         return $this->hasMany(ProductFile::class)
             ->where('category', FilesConstants::DOCUMENT)
             ->orderBy('order');
+    }
+
+    public function optionValues(): BelongsToMany
+    {
+        return $this->belongsToMany(OptionValue::class, 'product_option_values');
+    }
+
+    public function stock(): HasMany
+    {
+        return $this->hasMany(ProductStock::class);
     }
 
     public function setImagesAttribute($value)

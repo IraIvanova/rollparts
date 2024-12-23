@@ -3,30 +3,24 @@
 namespace App\Filament\Admin\Resources;
 
 use App\Filament\Admin\Resources\ProductResource\Pages;
-use App\Filament\Admin\Resources\ProductResource\RelationManagers;
-use App\Filament\Admin\Resources\ProductResource\RelationManagers\PricesRelationManager;
 use App\Models\Currency;
 use App\Models\Language;
+use App\Models\OptionValue;
 use App\Models\Product;
-use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Grid;
-use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Repeater;
-use Filament\Forms\Components\Section;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Tabs\Tab;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Forms\Get;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Illuminate\Support\Str;
+use Illuminate\Support\Collection;
 
 class ProductResource extends Resource
 {
@@ -53,15 +47,13 @@ class ProductResource extends Resource
                                             )
                                             ->default('Turkish')
                                             ->required()
-
                                             ->searchable(),
-//                                                    ->extraAttributes(['style' => 'width: 150px;']), // Fixed width
                                         TextInput::make('name')
                                             ->label('Name')
                                             ->required()
                                             ->maxLength(255),
                                         // Force grid alignment
-                                        MarkdownEditor::make('description')
+                                        RichEditor::make('description')
                                             ->label('Description')
                                             ->columnSpanFull()
                                             ->nullable(),
@@ -72,7 +64,10 @@ class ProductResource extends Resource
                                     ->required()
                                     ->maxLength(255)
                                     ->rules(['alpha_dash'])
-                                    ->unique(),
+                                    ->disabledOn('edit')
+                                    ->unique('products','slug', ignoreRecord:true),
+                                TextInput::make('mnf_code')
+                                    ->maxLength(255),
                                 Select::make('brand_id')
                                     ->relationship('brand', 'name')
                                     ->searchable(['name'])
@@ -81,6 +76,10 @@ class ProductResource extends Resource
                                     ->relationship('categories', 'name')
                                     ->multiple()
                                     ->searchable(),
+                                TextInput::make('quantity')
+                                    ->numeric()
+                                    ->label('Quantity (Main Product)')
+                                    ->required(),
                                 Repeater::make('prices')
                                     ->label('Product Prices')
                                     ->relationship('prices')
@@ -93,8 +92,6 @@ class ProductResource extends Resource
                                             ->label('Currency')
                                             ->options(Currency::pluck('code', 'id'))
                                             ->required(),
-//                                                            ->rules(['unique:prices,currency,NULL,id,product_id,' . request()->route('record')]), // Prevent duplicate currencies
-
                                         TextInput::make('discount_amount')
                                             ->label('Discount (%)')
                                             ->numeric()
@@ -151,6 +148,33 @@ class ProductResource extends Resource
                                 FileUpload::make('Product documents')
                                     ->multiple()
                             ]),
+                        Tab::make('Product Options')
+                            ->schema([
+                                Repeater::make('optionValues')
+                                    ->label('Product Options')
+                                    ->relationship('optionValues')
+                                    ->schema([
+                                        Select::make('option_id')
+                                            ->label('Option')
+                                            ->relationship('option', 'name')
+                                            ->live()
+                                            ->required(),
+                                        Select::make('value')
+                                            ->label('Value')
+                                            ->options(fn(Get $get): Collection => OptionValue::query()
+                                                ->where('option_id', $get('option_id'))
+                                                ->pluck('value', 'id'))
+                                            ->disableOptionsWhenSelectedInSiblingRepeaterItems()
+                                            ->required(),
+                                        TextInput::make('quantity')
+                                            ->required(),
+                                        TextInput::make('price'),
+                                    ])
+                                    ->grid(2)
+                                    ->orderColumn('order')
+                                    ->label('Add Option Value'),
+                            ])
+
                     ])
                     ->columnSpanFull()
 //                    ])
@@ -185,7 +209,6 @@ class ProductResource extends Resource
     public static function getRelations(): array
     {
         return [
-            PricesRelationManager::class
         ];
     }
 
