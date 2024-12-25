@@ -20,4 +20,24 @@ class CategoryService
     {
         return Category::where('slug', $slug)->first();
     }
+
+    public function getAllNestedCategoriesOfParentCategory(int $parentId): array
+    {
+        $ids = [$parentId];
+        $this->getNestedCategoriesId($parentId, $ids);
+
+        return $ids;
+    }
+
+    private function getNestedCategoriesId(int $categoryId, &$ids): void
+    {
+        $categories = Category::where('parent_id', $categoryId)
+            ->with('children')
+            ->get();
+
+        foreach ($categories as $category) {
+            $ids[] = $category->id;
+            $this->getNestedCategoriesId($category->id, $ids);
+        }
+    }
 }

@@ -1,5 +1,5 @@
 <div
-    class="brator-product-single-item-area design-two product type-product post-105 status-publish instock product_cat-custom-wheels product_cat-wheels-tires product_tag-rims product_tag-wheels has-post-thumbnail sale taxable shipping-taxable purchasable product-type-variable">
+    class="brator-product-single-item-area design-two product type-product ">
     @if($product['discount_amount'])
     <div class="brator-product-single-item-info info-content-left">
         <div class="brator-product-single-item-info-right">
@@ -23,9 +23,22 @@
         </div>
 
         <div class="brator-product-single-item-price">
-            <p><span class="woocommerce-Price-amount amount"><span
-                            class="woocommerce-Price-currencySymbol">$</span>{{$product['price']}}</span>
-            </p>
+            @if($product['discount_amount'])
+                <p>
+                <span class="woocommerce-Price-amount amount color-red"><span
+                        class="woocommerce-Price-currencySymbol">$</span>{{ $product['discounted_price'] }}</span>
+
+
+                <span class="woocommerce-Price-amount amount px-2 color-grey line-through font-size-20px"><span
+                        class="woocommerce-Price-currencySymbol">$</span>{{ $product['price'] }}</span>
+                </p>
+            @else
+                <span class="woocommerce-Price-amount amount"><span
+                        class="woocommerce-Price-currencySymbol">$</span>{{ $product['price'] }}</span>
+            @endif
+{{--            <p><span class="woocommerce-Price-amount amount"><span--}}
+{{--                            class="woocommerce-Price-currencySymbol">$</span>{{$product['price']}}</span>--}}
+{{--            </p>--}}
         </div>
 
         <div class="brator-product-single-item-btn"><a

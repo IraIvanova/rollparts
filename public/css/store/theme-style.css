@@ -615,7 +615,7 @@ textarea::placeholder {
 }
 
 /*============================================
- * 1. Base Css 
+ * 1. Base Css
  * ===========================================*/
 * {
     box-sizing: border-box;
@@ -5985,9 +5985,6 @@ ul.wp-block-categories li a:hover,
 .brator-sidebar-single-item .product-categories li ul,
 .brator-sidebar-single-item .shop-cat-list li ul {
     padding-left: 20px;
-    height: 0;
-    max-height: 0;
-    overflow: hidden;
     transition: 0.4s;
 }
 

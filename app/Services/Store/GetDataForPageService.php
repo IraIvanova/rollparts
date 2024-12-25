@@ -12,6 +12,8 @@ readonly class GetDataForPageService
         private SearchProductsQueryBuilderService $productQueryBuilderService,
         private PaginationService $paginationService,
         private ProductService $productService,
+        private BrandService $brandService,
+        private OptionsService $optionsService,
     ) {
     }
 
@@ -67,11 +69,14 @@ readonly class GetDataForPageService
         );
 
         $productImages = $this->productService->getImages(array_column($products->items(), 'id'));
+        $nestedCategoriesId = $this->categoryService->getAllNestedCategoriesOfParentCategory($category->id);
 
         return [
             'category' => $category,
             'categories' => $this->categoryService->getMainCategoriesWithChildren(),
-            'products' =>  $products,
+            'brands' => $this->brandService->getAvailableBrandsForCategory($nestedCategoriesId),
+            'products' => $products,
+            'options' => $this->optionsService->getOptionsAvailableForCategories($nestedCategoriesId),
             'images' => $productImages
         ];
     }

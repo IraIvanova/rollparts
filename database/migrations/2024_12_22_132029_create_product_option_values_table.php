@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('product_option_values', function (Blueprint $table) {
             $table->id();
             $table->foreignId('product_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('option_id')->constrained()->cascadeOnDelete();
             $table->foreignId('option_value_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });

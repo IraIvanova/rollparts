@@ -151,24 +151,25 @@ class ProductResource extends Resource
                             ]),
                         Tab::make('Product Options')
                             ->schema([
-                                Repeater::make('optionValues')
+                                Repeater::make('productOptions')
                                     ->label('Product Options')
-                                    ->relationship('optionValues')
+                                    ->relationship()
                                     ->schema([
                                         Select::make('option_id')
                                             ->label('Option')
                                             ->relationship('option', 'name')
                                             ->live()
                                             ->required(),
-                                        Select::make('value')
+                                        Select::make('option_value_id')
                                             ->label('Value')
+                                            ->relationship('optionValues')
                                             ->options(fn(Get $get): Collection => OptionValue::query()
                                                 ->where('option_id', $get('option_id'))
                                                 ->pluck('value', 'id'))
                                             ->disableOptionsWhenSelectedInSiblingRepeaterItems()
                                             ->required(),
-                                        TextInput::make('quantity')
-                                            ->required(),
+                                        TextInput::make('quantity'),
+//                                            ->required(),
                                         TextInput::make('price'),
                                     ])
                                     ->grid(2)

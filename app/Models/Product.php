@@ -76,6 +76,11 @@ class Product extends Model
         return $this->belongsToMany(OptionValue::class, 'product_option_values');
     }
 
+    public function productOptions(): HasMany
+    {
+        return $this->hasMany(ProductOptionValue::class);
+    }
+
     public function stock(): HasMany
     {
         return $this->hasMany(ProductStock::class);

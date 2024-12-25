@@ -63,3 +63,22 @@
     opacity: 1!important;
     border: 1px solid red!important;
 }
+.cat-item {
+    position: relative;
+}
+.cat-item .icon{
+    position: absolute;
+    right: 10px;
+    height: 15px;
+    top: 10px;
+}
+.selected a {
+    color: red!important;
+    text-decoration: underline;
+}
+#main-gallery {
+    max-width: 500px;
+}
+.product {
+    position: relative;
+}

@@ -9,6 +9,6 @@
         </div>
     </div>
     <div id="main-photo" class="col-10">
-        <img id="main-gallery" data-index="0" src="{{ asset('storage' . $images[0]['file_path'])}}"/>
+        <img id="main-gallery" data-index="0" src="{{ asset(isset($images[0]) ? 'storage' . $images[0]['file_path'] : 'images/default.png' )}}"/>
     </div>
 </div>
