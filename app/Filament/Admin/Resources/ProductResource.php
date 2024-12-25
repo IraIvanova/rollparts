@@ -7,6 +7,7 @@ use App\Models\Currency;
 use App\Models\Language;
 use App\Models\OptionValue;
 use App\Models\Product;
+use CodeWithDennis\FilamentSelectTree\SelectTree;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
@@ -65,16 +66,16 @@ class ProductResource extends Resource
                                     ->maxLength(255)
                                     ->rules(['alpha_dash'])
                                     ->disabledOn('edit')
-                                    ->unique('products','slug', ignoreRecord:true),
+                                    ->unique('products', 'slug', ignoreRecord: true),
                                 TextInput::make('mnf_code')
                                     ->maxLength(255),
                                 Select::make('brand_id')
                                     ->relationship('brand', 'name')
                                     ->searchable(['name'])
                                     ->required(),
-                                Select::make('category_id')
-                                    ->relationship('categories', 'name')
-                                    ->multiple()
+                                SelectTree::make('categories')
+                                    ->relationship('categories', 'name', 'parent_id')
+                                    ->enableBranchNode()
                                     ->searchable(),
                                 TextInput::make('quantity')
                                     ->numeric()
@@ -171,7 +172,6 @@ class ProductResource extends Resource
                                         TextInput::make('price'),
                                     ])
                                     ->grid(2)
-                                    ->orderColumn('order')
                                     ->label('Add Option Value'),
                             ])
 
@@ -192,7 +192,7 @@ class ProductResource extends Resource
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('quantity')
-                ->label('In stock (pcs)')
+                    ->label('In stock (pcs)')
             ])
             ->filters([
             ])

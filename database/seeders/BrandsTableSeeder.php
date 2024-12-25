@@ -17,6 +17,13 @@ class BrandsTableSeeder extends Seeder
             ['name' => 'Honda'],
             ['name' => 'Audi'],
             ['name' => 'BMW'],
+            ['name' => 'Mercedes'],
+            ['name' => 'Lanos'],
+            ['name' => 'Geele'],
+            ['name' => 'Hundai'],
+            ['name' => 'Citroen'],
+            ['name' => 'Reno'],
+            ['name' => 'Opel'],
         ];
 
         foreach ($brands as $brand) {

@@ -32,10 +32,12 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
+            BrandsTableSeeder::class,
             LanguagesTableSeeder::class,
             CategoriesTableSeeder::class,
             UnitTypesTableSeeder::class,
             OptionsTableSeeder::class,
+            ProductsTableSeeder::class,
         ]);
     }
 }

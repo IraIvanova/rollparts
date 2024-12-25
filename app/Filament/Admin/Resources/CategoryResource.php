@@ -6,6 +6,7 @@ use App\Constant\FilesConstants;
 use App\Filament\Admin\Resources\CategoryResource\Pages;
 use App\Filament\Admin\Resources\CategoryResource\RelationManagers;
 use App\Models\Category;
+use CodeWithDennis\FilamentSelectTree\SelectTree;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
@@ -13,6 +14,8 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Grouping\Group;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -41,21 +44,35 @@ class CategoryResource extends Resource
                     ->required()
                     ->maxLength(255)
                     ->rules(['alpha_dash'])
-                    ->unique(),
+                    ->disabledOn('edit')
+                    ->unique('categories', 'slug', ignoreRecord: true),
+                 SelectTree::make('parent_id')
+                     ->relationship('parent', 'name', 'parent_id')
+                     ->enableBranchNode()
+                     ->searchable(),
                 FileUpload::make('image')
                     ->imagePreviewHeight('100')
                     ->directory(FilesConstants::CATEGORY_FOLDER)
-                    ->image()
+                    ->image(),
             ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
+            ->groups([
+                Group::make('parent.name')
+            ])
             ->columns([
-                ImageColumn::make('image'),
-                Tables\Columns\TextColumn::make('name')
+                TextColumn::make('name')
+                    ->label('Category Name')
+                    ->sortable()
                     ->searchable(),
+                TextColumn::make('parent.name')
+                    ->label('Parent Category')
+                    ->sortable()
+                    ->searchable(),
+
             ])
             ->filters([
                 //
