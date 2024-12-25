@@ -70,6 +70,7 @@ readonly class GetDataForPageService
 
         return [
             'category' => $category,
+            'categories' => $this->categoryService->getMainCategoriesWithChildren(),
             'products' =>  $products,
             'images' => $productImages
         ];

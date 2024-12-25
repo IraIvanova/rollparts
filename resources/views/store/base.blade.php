@@ -47,7 +47,7 @@
                 <div class="col-lg-3">
                     <div class="brator-logo-area">
                         <div class="brator-logo">
-                            <a href="https://brator-main.smartdemowp.com/">
+                            <a href="/">
                                 <img src="{{asset('images/logo.jpg')}}" height="100px" alt="Logo">
                             </a>
                             <button class="header-sidebar-icon">
@@ -331,7 +331,7 @@
                                 </li>
                                 <li
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat nav-item">
-                                    <a href="">All Categories</a></li>
+                                    <a href="{{route('categories')}}">All Categories</a></li>
                                 <li
                                     class="menu-item menu-item-type-taxonomy menu-item-object-product_cat nav-item">
                                     <a href="">Wheels

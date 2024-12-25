@@ -7,7 +7,7 @@
         </a>
     </div>
     <div class="brator-categories-single-title">
-        <p><a href="">{{$category['name']}}</a></p>
+        <p><a href="{{route('category', $category['slug'])}}">{{$category['name']}}</a></p>
     </div>
     <div class="brator-categories-single-sub">
         <a href="#">Mesh</a>
