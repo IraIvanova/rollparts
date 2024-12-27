@@ -17,17 +17,6 @@ class ProductsTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $defaultTranslations = [
-            'tr' => ['name' => 'Product-', 'description' => '<p>Prod description</p>'],
-            'en' => ['name' => 'Product-', 'description' => '<p>Prod EN description</p>']
-        ];
-
-        $defaultPrices = [
-            'TRL' => ['price' => '100', 'discountedPrice' => '90', 'discountAmount' => '10'],
-            'USD' => ['price' => '100', 'discountedPrice' => '90', 'discountAmount' => '10'],
-
-        ];
-
         for ($i = 1; $i <= 100; $i++) {
             $name = 'Product-' . Str::random(10);
             $product = new Product();
@@ -56,9 +45,7 @@ class ProductsTableSeeder extends Seeder
             ]);
 
             foreach (Category::where('parent_id', null)->get() as $category) {
-                if ($category->getSubCategories) {
-                    $product->categories()->attach([$category->id, $category->getSubCategories->first()->id]);
-                }
+                $product->categories()->attach([$category->id, $category->children->first()->id]);
             }
         }
     }

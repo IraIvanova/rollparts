@@ -22,20 +22,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let applyFilters = () => {
         const checkboxes = document.getElementsByClassName("checkbox");
-        let form = document.querySelector('#filters-form');
 
         for (let checkbox of checkboxes) {
-                checkbox.addEventListener("click", function (e) {
-                    const inputs = document.getElementsByClassName('checkbox');
-                    const checked = Array.from(inputs).filter(i => i.checked === true)
-                    let searchParams = groupInputsByName(checked);
-
-                    let url = new URL(form.action + '/?');
-                    let params = new URLSearchParams(searchParams);
-
-                    location.href = url + params.toString();
-                });
+            checkbox.addEventListener("click", function (e) {
+                location.href = getSelectedCheckboxAndSorting();
+            });
         }
+    }
+
+    let sortProducts = () => {
+        let select = document.getElementById('orderby');
+
+        select.addEventListener('change', (e) => {
+            location.href = getSelectedCheckboxAndSorting();
+        })
+    }
+
+    let getSelectedCheckboxAndSorting = () => {
+        let form = document.querySelector('#filters-form');
+        const inputs = document.getElementsByClassName('checkbox');
+        const checked = Array.from(inputs).filter(i => i.checked === true)
+        let searchParams = groupInputsByName(checked);
+
+        let url = new URL(form.action + '/?');
+        let params = new URLSearchParams(searchParams);
+        params.set('sortby', document.getElementById('orderby').value);
+
+        return url + params.toString();
     }
 
     let groupInputsByName = (inputs) => {
@@ -54,4 +67,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     hideOrExpandSubCategories();
     applyFilters();
+    sortProducts();
 });

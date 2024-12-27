@@ -5,7 +5,7 @@
             <ul>
                 @foreach($optionValues as $value)
                     <li class="d-flex">
-                        <input type="checkbox" class="checkbox" id="option{{$label . '-' . $value}}" name="option_{{$label}}" checked value="{{$value}}" />
+                        <input type="checkbox" @if(isOptionShouldBeChecked($selectedOptions, $label, $value)) checked @endif class="checkbox" id="option{{$label . '-' . $value}}" name="option_{{$label}}" value="{{$value}}" />
                         <label class="filter-label" for="option{{$label . '-' . $value}}">{{$value}}</label>
                     </li>
                 @endforeach

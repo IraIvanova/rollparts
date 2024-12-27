@@ -9,17 +9,11 @@
         <div class="brator-filter-short-by">
             <p>Sort by</p>
             <div class="brator-filter-show-items-count">
-                <form class="woocommerce-ordering" method="get">
-                    <select name="orderby" class="orderby" aria-label="Shop order">
-                        <option value="menu_order" selected="selected">Default sorting</option>
-                        <option value="popularity">Sort by popularity</option>
-                        <option value="rating">Sort by average rating</option>
-                        <option value="date">Sort by latest</option>
-                        <option value="price">Sort by price: low to high</option>
-                        <option value="price-desc">Sort by price: high to low</option>
+                    <select id="orderby" class="orderby" aria-label="Shop order">
+                        @foreach(['default', 'latest', 'price-asc', 'price-desc'] as $order)
+                            <option value="{{$order}}" @if($order === $selectedOptions['sortby'])selected="selected" @endif>{{$order}}</option>
+                        @endforeach
                     </select>
-                    <input type="hidden" name="paged" value="1">
-                </form>
             </div>
         </div>
     </div>

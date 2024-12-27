@@ -59,19 +59,21 @@ readonly class GetDataForPageService
         }
         //TODO process errors in listener and create specific error exception
 
+        $nestedCategoriesId = $this->categoryService->getAllNestedCategoriesOfParentCategory($category->id);
+        $searchParameters = new SearchParametersDTO($searchParams);
+
         $products = $this->paginationService->paginate(
             $this->productQueryBuilderService->getProductsByCategory(
                 new ProductsFilterParametersDTO(
                     language: 'tr',
                     currency: 'TRL',
-                    categoryId: $category->id,
-                    searchParameters: new SearchParametersDTO($searchParams)
+                    categories: $nestedCategoriesId,
+                    searchParameters: $searchParameters
                 )
             )
         );
 
         $productImages = $this->productService->getImages(array_column($products->items(), 'id'));
-        $nestedCategoriesId = $this->categoryService->getAllNestedCategoriesOfParentCategory($category->id);
 
         return [
             'category' => $category,
@@ -79,7 +81,8 @@ readonly class GetDataForPageService
             'brands' => $this->brandService->getAvailableBrandsForCategory($nestedCategoriesId),
             'products' => $products,
             'options' => $this->optionsService->getOptionsAvailableForCategories($nestedCategoriesId),
-            'images' => $productImages
+            'images' => $productImages,
+            'selectedOptions' => $searchParameters->getValuesArray()
         ];
     }
 

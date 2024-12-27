@@ -20,19 +20,20 @@ class SearchProductsQueryBuilderService
     {
         return $this->active()
             ->addProductTranslations($parameters->language, $parameters->searchString)
-            ->addCategory($parameters->categoryId)
+            ->addCategory($parameters->categories)
             ->addPrices($parameters->currency)
             ->filterByBrands($parameters->searchParameters->brands)
             ->filterByOptions($parameters->searchParameters->options, $parameters->searchParameters->optionValues)
+            ->applyOrdering($parameters->searchParameters->sortBy)
             ->getResults();
     }
 
-    private function addCategory(int $category): self
+    private function addCategory(array $categories): self
     {
         $this->query
             ->join('category_product as cp', 'p.id', '=', 'cp.product_id')
             ->join('categories as c', 'c.id', '=', 'cp.category_id')
-            ->where('c.id', $category);
+            ->whereIn('c.id', $categories);
 
         return $this;
     }
@@ -47,7 +48,10 @@ class SearchProductsQueryBuilderService
             $this->query->where('pt.title', 'like', '%' . $searchString . '%');
         }
 
-        $this->selectFields = array_merge($this->selectFields, ['p.id', 'p.slug', 'pt.name', 'pt.description']);
+        $this->selectFields = array_merge(
+            $this->selectFields,
+            ['p.id', 'p.created_at', 'p.slug', 'pt.name', 'pt.description']
+        );
 
         return $this;
     }
@@ -95,10 +99,33 @@ class SearchProductsQueryBuilderService
 //            }
             $sql = '';
             foreach ($options as $key => $option) {
-                $sql .= "exists(select 1 from product_options as pv WHERE `pv`.`option`='".$option."' AND pv.product_id=p.id AND pv.option_value in (".implode(',', $values[$key])."))";
-                if ($key+1 < count($options)) $sql .= ' AND ';
+                $sql .= "exists(select 1 from product_options as pv WHERE `pv`.`option`='" . $option . "' AND pv.product_id=p.id AND pv.option_value in (" . implode(
+                        ',',
+                        $values[$key]
+                    ) . "))";
+                if ($key + 1 < count($options)) {
+                    $sql .= ' AND ';
+                }
             }
             $this->query->whereRaw($sql);
+        }
+
+        return $this;
+    }
+
+    private function applyOrdering(?string $order): self
+    {
+        $this->selectFields = array_merge($this->selectFields, [
+            DB::raw('CASE WHEN pp.discounted_price > 0 THEN pp.discounted_price ELSE pp.price END as finalPrice')
+        ]);
+
+        switch ($order) {
+            case 'latest':
+                $this->query->orderBy('p.created_at', 'desc');
+            case 'price-asc':
+                $this->query->orderBy('finalPrice');
+            case 'price-desc':
+                $this->query->orderBy('finalPrice', 'desc');
         }
 
         return $this;
@@ -107,7 +134,7 @@ class SearchProductsQueryBuilderService
     private function getResults(): Builder
     {
         $this->query->distinct()->select($this->selectFields);
-//dd($this->query->toRawSql());
+
         return $this->query;
     }
 }
