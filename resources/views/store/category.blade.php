@@ -4,7 +4,7 @@
     <section id="main-content" class="container container-xxxl py-5">
         <div>
             @include('store.components.breadcrumbs')
-            @include('store.components.banner')
+{{--            @include('store.components.banner')--}}
             <div class="brator-product-shop-page-area">
                 <div class="container-xxxl container">
                     <div class="row">

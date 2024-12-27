@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('product_id');
             $table->decimal('price', 10, 2);
             $table->foreignId('currency_id');
-            $table->foreignId('option_value_id')->nullable();
+            $table->string('option_value')->nullable();
             $table->decimal('discounted_price', 10, 2)->nullable();
             $table->decimal('discount_amount', 10, 2)->nullable();
             $table->timestamps();
@@ -31,10 +31,10 @@ return new class extends Migration
                 ->on('currencies')
                 ->onDelete('cascade');
 
-            $table->foreign('option_value_id')
-                ->references('id')
-                ->on('option_values')
-                ->onDelete('cascade');
+//            $table->foreign('option_value_id')
+//                ->references('id')
+//                ->on('option_values')
+//                ->onDelete('cascade');
         });
     }
 

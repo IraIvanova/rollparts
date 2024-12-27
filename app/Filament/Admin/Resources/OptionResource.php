@@ -44,18 +44,23 @@ class OptionResource extends Resource
                 Toggle::make('active')
                     ->label('Active')
                     ->default(true),
-
                 Repeater::make('values')
-                    ->relationship('optionValues')
+                    ->label('Option Values')
                     ->schema([
                         TextInput::make('value')
                             ->label('Value')
                             ->required(),
                     ])
-                    ->orderColumn('order')
-                    ->label('Option Values')
-                    ->label('Add Option Value')
-                ->defaultItems(2)
+//                    ->dehydrateStateUsing(function ($state) {
+//                        // Transform the repeater data into a simple array for saving
+//                        return collect($state)->pluck('value')->toArray();
+//                    })
+//                    ->afterStateHydrated(function ($state, $set) {
+//                        // Transform the saved array of values into repeater-compatible format
+//                        $set('values', collect($state)->map(fn($value) => ['value' => $value])->toArray());
+//                    })
+//                    ->minItems(1) // Ensure at least one value is added
+//                    ->saveAsJson() // Save the repe
                 ->columnSpanFull()
             ]);
     }

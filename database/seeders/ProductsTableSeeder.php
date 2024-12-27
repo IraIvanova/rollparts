@@ -56,7 +56,9 @@ class ProductsTableSeeder extends Seeder
             ]);
 
             foreach (Category::where('parent_id', null)->get() as $category) {
-                $product->categories()->attach([$category->id, $category->getSubCategories->first()->id]);
+                if ($category->getSubCategories) {
+                    $product->categories()->attach([$category->id, $category->getSubCategories->first()->id]);
+                }
             }
         }
     }

@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Option extends Model
 {
-    protected $fillable = ['name', 'type', 'unit_type_id', 'active'];
-
+    protected $fillable = ['name', 'values', 'unit_type_id', 'active'];
+    protected $casts = [
+        'values' => 'array',
+    ];
     public function unitType(): BelongsTo
     {
         return $this->belongsTo(UnitType::class);

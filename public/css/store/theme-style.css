@@ -6247,22 +6247,6 @@ ul.woocommerce-widget-layered-nav-list li a,
     align-items: center;
 }
 
-ul.woocommerce-widget-layered-nav-list li a:before,
-.brator-filter-item-content ul li a:before {
-    content: "";
-    display: block;
-    border-width: 1px;
-    border-color: #c4c4c4;
-    border-style: solid;
-    border-radius: 3px;
-    background-color: #fff;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    left: 0;
-    top: 6px;
-}
-
 ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term,
 .brator-filter-item-content li.wc-layered-nav-term {
     display: flex;

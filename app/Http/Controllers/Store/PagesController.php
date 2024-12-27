@@ -20,19 +20,28 @@ class PagesController extends Controller
         return view('store.homepage');
     }
 
+    /**
+     * @throws \ErrorException
+     */
     public function categories(): View
     {
         return view('store.categories', $this->getDataForPageService->getSpecificPageData(PagesConstants::ALL_CATEGORIES_PAGE));
     }
 
+    /**
+     * @throws \ErrorException
+     */
     public function category(Request $request, string $categorySlug): View
     {
         return view(
             'store.category',
-            $this->getDataForPageService->getSpecificPageData(PagesConstants::CATEGORY_PAGE, ['slug' => $categorySlug])
+            $this->getDataForPageService->getSpecificPageData(PagesConstants::CATEGORY_PAGE, ['slug' => $categorySlug, 'searchParams' => $request->query()])
         );
     }
 
+    /**
+     * @throws \ErrorException
+     */
     public function product(Request $request, string $productSlug): View
     {
         return view('store.product', $this->getDataForPageService->getSpecificPageData(PagesConstants::PRODUCT_PAGE, ['slug' => $productSlug]));

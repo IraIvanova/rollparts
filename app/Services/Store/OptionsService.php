@@ -9,17 +9,17 @@ class OptionsService
 {
     public function getOptionsAvailableForCategories(array $categoriesId)
     {
+        ///TODO save it to cache to quicker retrieving
         return DB::table('products')
             ->join('category_product as cp', 'products.id', '=', 'cp.product_id')
-            ->join('product_option_values as pov', 'products.id', '=', 'pov.product_id')
-            ->join('option_values as ov', 'ov.id', '=', 'pov.option_value_id')
-            ->join('options', 'ov.option_id', '=', 'options.id')
+            ->join('product_options as po', 'products.id', '=', 'po.product_id')
+            ->join('options', 'po.option', '=', 'options.name')
             ->whereIn('cp.category_id', $categoriesId)
             ->distinct()
-            ->select('ov.value', 'options.name')
+            ->select('options.name', 'options.values')
             ->get()
-            ->mapToGroups(function (\stdClass $item) {
-                return [$item->name => $item->value];
+            ->mapWithKeys(function (\stdClass $item) {
+                return [$item->name => array_column(json_decode($item->values, true), 'value')];
             })
             ->toArray();
     }

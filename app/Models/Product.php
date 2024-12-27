@@ -78,7 +78,7 @@ class Product extends Model
 
     public function productOptions(): HasMany
     {
-        return $this->hasMany(ProductOptionValue::class);
+        return $this->hasMany(ProductOption::class);
     }
 
     public function stock(): HasMany

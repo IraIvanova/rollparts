@@ -4,6 +4,7 @@ namespace App\Services\Store;
 
 use App\Constant\PagesConstants;
 use App\DTO\ProductsFilterParametersDTO;
+use App\DTO\SearchParametersDTO;
 
 readonly class GetDataForPageService
 {
@@ -25,7 +26,7 @@ readonly class GetDataForPageService
         return match ($page) {
                 PagesConstants::HOME_PAGE => $this->getHomePageData(),
                 PagesConstants::ALL_CATEGORIES_PAGE => $this->getAllCategoriesPageData(),
-                PagesConstants::CATEGORY_PAGE => $this->getCategoryPageData($params['slug']),
+                PagesConstants::CATEGORY_PAGE => $this->getCategoryPageData($params['slug'], $params['searchParams']),
                 PagesConstants::PRODUCT_PAGE => $this->getProductPageData($params['slug']),
                 default => [],
             } + $this->getBaseData();
@@ -51,7 +52,7 @@ readonly class GetDataForPageService
     /**
      * @throws \ErrorException
      */
-    private function getCategoryPageData(string $slug): array
+    private function getCategoryPageData(string $slug, array $searchParams = []): array
     {
         if (!$category = $this->categoryService->getCategoryBySlug($slug)) {
             throw new \ErrorException('Category not found');
@@ -63,7 +64,8 @@ readonly class GetDataForPageService
                 new ProductsFilterParametersDTO(
                     language: 'tr',
                     currency: 'TRL',
-                    categoryId: $category->id
+                    categoryId: $category->id,
+                    searchParameters: new SearchParametersDTO($searchParams)
                 )
             )
         );

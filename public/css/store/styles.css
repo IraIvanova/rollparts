@@ -72,7 +72,7 @@
     height: 15px;
     top: 10px;
 }
-.selected a {
+.selected > a {
     color: red!important;
     text-decoration: underline;
 }
@@ -81,4 +81,48 @@
 }
 .product {
     position: relative;
+}
+.checkbox {
+    display: none;
+}
+.filters .list ul li {
+    padding-left: 10px !important;
+    font-size: 14px;
+    color: #666666;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.filters label {
+    position: relative;
+    cursor: pointer;
+}
+.filters label:before {
+    content: '';
+    display: inline-block;
+    border-width: 1px;
+    border-color: #c4c4c4;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: #fff;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: -10px;
+    top: 6px;
+}
+.filters .checkbox:checked + label:after {
+    background-color: var(--color-high-dark);
+    border-color: var(--color-high-dark);
+    background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 1px;
+    background-position-y: 1px;
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: -10px;
+    top: 6px;
 }

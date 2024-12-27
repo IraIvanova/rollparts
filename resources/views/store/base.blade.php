@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
     {{--    <meta name="turbo-visit-control" content="reload">--}}
 
-    <link rel="stylesheet" media="all" href="{{asset('css/store/styles.css')}}">
+
     <link rel="stylesheet" media="all" href="{{asset('css/store/bootstrap.min.css')}}">
     <link rel="stylesheet" media="all" href="{{asset('css/store/base.css')}}">
     <link rel="stylesheet" media="all" href="{{asset('css/store/woocommerce.css')}}">
@@ -16,6 +16,7 @@
     <link rel="stylesheet" media="all" href="{{asset('css/store/theme-style.css')}}">
     <link rel="stylesheet" media="all" href="{{asset('css/store/woocommerce-layout.css')}}">
     <link rel="stylesheet" media="all" href="{{asset('css/store/custom-frontend.min.css')}}">
+    <link rel="stylesheet" media="all" href="{{asset('css/store/styles.css')}}">
 
     <link type="text/css" rel="stylesheet" href="{{asset('css/slick.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('css/slick-theme.css')}}" />
@@ -970,6 +971,7 @@
         <span>top</span>
     </button>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 @yield('additionalScript')
 </body>
 </html>
