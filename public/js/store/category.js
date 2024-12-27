@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+    let axiosConfig = {
+        headers: {
+            'Content-Type' : 'application/json; charset=UTF-8',
+        }
+    };
+
     let hideOrExpandSubCategories = () => {
         const arrows = document.querySelectorAll(".icon");
 
@@ -38,6 +44,24 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    let addToCart = () => {
+        const buttons = document.getElementsByClassName('add_to_cart_button');
+        const route = document.getElementById('cart-route').value;
+
+        for (let btn of buttons) {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                axios.post(route, {
+                    productId: btn.dataset.productId
+                })
+                    .then((resp) => {
+                        console.log(resp);
+                    })
+            })
+        }
+    }
+
     let getSelectedCheckboxAndSorting = () => {
         let form = document.querySelector('#filters-form');
         const inputs = document.getElementsByClassName('checkbox');
@@ -68,4 +92,5 @@ document.addEventListener("DOMContentLoaded", () => {
     hideOrExpandSubCategories();
     applyFilters();
     sortProducts();
+    addToCart();
 });

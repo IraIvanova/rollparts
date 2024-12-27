@@ -28,7 +28,7 @@
 .brator-banner-area.design-two .brator-banner-content .brator-banner-content-action a,
 .brator-parts-search-box-area.design-one .brator-parts-search-box-form button,
 .product-list-items.type-list .brator-product-single-item-area.design-three .brator-product-single-item-area-right .brator-product-single-item-btn .brator-product-single-item-btn-cart .button,
-.brator-product-single-item-area .brator-product-single-item-mini .brator-product-single-item-btn a.add_to_cart_button,
+.add_to_cart_button,
 .brator-offer-box-two a,
 .brator-offer-box-one a,
 .brator-coming-soon-area .brator-coming-soon-subs-area .brator-sub-form .news-letter-form button.wpcf7-form-control.wpcf7-submit,
@@ -63,7 +63,7 @@
 .brator-banner-area.design-two .brator-banner-content .brator-banner-content-action a:hover,
 .brator-parts-search-box-area.design-one .brator-parts-search-box-form button:hover,
 .product-list-items.type-list .brator-product-single-item-area.design-three .brator-product-single-item-area-right .brator-product-single-item-btn .brator-product-single-item-btn-cart button:hover,
-.brator-product-single-item-area .brator-product-single-item-mini .brator-product-single-item-btn a.add_to_cart_button:hover,
+.add_to_cart_button:hover,
 .brator-offer-box-two a:hover,
 .brator-offer-box-one a:hover,
 .brator-coming-soon-area .brator-coming-soon-subs-area .brator-sub-form .news-letter-form button.wpcf7-form-control.wpcf7-submit:hover,
@@ -5105,7 +5105,7 @@ ul.wp-block-categories li a:hover,
     overflow: hidden;
 }
 
-.brator-product-single-item-area .brator-product-single-item-mini .brator-product-single-item-btn a.add_to_cart_button {
+.add_to_cart_button {
     color: #fff;
     width: 100%;
     padding: 13px 20px;
@@ -10515,7 +10515,7 @@ h2.woocommerce-loop-category__title {
     width: calc(25% - 23px);
 }
 
-.brator-product-single-item-area .brator-product-single-item-mini .brator-product-single-item-btn a.add_to_cart_button.button.product_type_external {
+.add_to_cart_button.button.product_type_external {
     font-size: 11px;
     padding: 13px 5px;
 }
@@ -10940,7 +10940,7 @@ div#payment {
     opacity: 0;
 }
 
-.pro-cart a.add_to_cart_button.ajax_add_to_cart.added:after {
+.add_to_cart_button.ajax_add_to_cart.added:after {
     background-image: url('data:image/svg+xml;utf8,<svg fill="white" width="20" height="20"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve"><path d="M62.3,12.7c-0.7-0.7-1.8-0.7-2.5,0L23.3,48.1c-0.3,0.3-0.7,0.3-1,0L4.2,30.5c-0.7-0.7-1.8-0.7-2.5,0c-0.7,0.7-0.7,1.8,0,2.5l18.1,17.6c0.8,0.8,1.9,1.2,2.9,1.2c1.1,0,2.1-0.4,2.9-1.2l36.5-35.4C62.9,14.5,62.9,13.4,62.3,12.7z"/></svg>');
     background-repeat: no-repeat;
     background-position-x: 11px;
@@ -12682,16 +12682,16 @@ h2.woocommerce-order-details__title {
     margin-top: 15px;
 }
 
-.brator-product-single-item-area.style-four .brator-product-single-item-mini .brator-product-single-item-btn a.add_to_cart_button {
-    background-color: #ffa00d;
-    border-color: #ffa00d;
-    color: #000;
+.add_to_cart_button {
+    background-color: var(--color-high-dark);
+    border-color: var(--color-high-dark);
+    color: #fff;
     font-weight: 700;
     padding-left: 0;
     padding-right: 0;
 }
 
-.brator-product-single-item-area.style-four .brator-product-single-item-mini .brator-product-single-item-btn a.add_to_cart_button:hover {
+.add_to_cart_button:hover {
     background-color: #1f1f1f;
     border-color: #1f1f1f;
     color: #fff;

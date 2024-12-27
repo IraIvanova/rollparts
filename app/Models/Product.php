@@ -64,16 +64,16 @@ class Product extends Model
             ->select(['name', 'description']);
     }
 
+    public function orders(): BelongsToMany
+    {
+        return $this->belongsToMany(Order::class)->withPivot('discount', 'amount');
+    }
+
     public function documents(): HasMany
     {
         return $this->hasMany(ProductFile::class)
             ->where('category', FilesConstants::DOCUMENT)
             ->orderBy('order');
-    }
-
-    public function optionValues(): BelongsToMany
-    {
-        return $this->belongsToMany(OptionValue::class, 'product_option_values');
     }
 
     public function productOptions(): HasMany

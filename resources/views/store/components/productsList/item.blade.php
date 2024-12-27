@@ -41,11 +41,12 @@
 {{--            </p>--}}
         </div>
 
-        <div class="brator-product-single-item-btn"><a
-                href="https://brator-main.smartdemowp.com/product/rfx2-brushed-titanium/" data-quantity="1"
-                class="button product_type_variable add_to_cart_button" data-product_id="105"
-                data-product_sku="201902-0058" aria-label="" rel="nofollow">Select
-                options</a></div>
+        <div class="brator-product-single-item-btn">
+            <button
+                class="button add_to_cart_button" data-productId="{{$product['id']}}">
+                Add to cart
+            </button>
+        </div>
     </div>
 
 </div>

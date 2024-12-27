@@ -2,6 +2,7 @@
 
 @section('bodyContent')
     <section id="main-content" class="container container-xxxl py-5">
+        <input type="hidden" id="cart-route" value="{{route('addToCart')}}" />
         <div>
             @include('store.components.breadcrumbs')
 {{--            @include('store.components.banner')--}}
