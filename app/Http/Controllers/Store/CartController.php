@@ -20,14 +20,14 @@ class CartController extends Controller
      */
     public function addToCart(Request $request): JsonResponse
     {
-        $this->cartService->addToCart($request->get('productId'));
+        $this->cartService->addToCart($request->get('productId'), $request->get('amount') ?? 1);
 
         return response()->json([], JsonResponse::HTTP_CREATED);
     }
 
     public function removeFromCart(Request $request): JsonResponse
     {
-        $this->cartService->removeFromCart($request->get('productId'));
+        $this->cartService->removeFromCart($request->get('productId'), (bool)$request->get('removeOne') ?? true);
 
         return response()->json([], JsonResponse::HTTP_NO_CONTENT);
     }

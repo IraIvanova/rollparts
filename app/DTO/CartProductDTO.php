@@ -2,10 +2,10 @@
 
 namespace App\DTO;
 
-class ProductInCartDTO
+class CartProductDTO
 {
     public function __construct(
-        public int $productId,
+        public int $id,
         public string $slug,
         public string $name,
         public int $amount,

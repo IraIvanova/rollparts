@@ -44,11 +44,8 @@
                                                 @if($prices['discount_amount'])
                                                         <span class="woocommerce-Price-amount amount color-red"><span
                                                                         class="woocommerce-Price-currencySymbol">$</span>{{ $prices['discounted_price'] }}</span>
-
-
                                                       <span class="woocommerce-Price-amount amount px-2 color-grey line-through font-size-20px"><span
                                                                         class="woocommerce-Price-currencySymbol">$</span>{{ $prices['price'] }}</span>
-
                                                 @else
                                                     <span class="woocommerce-Price-amount amount"><span
                                                             class="woocommerce-Price-currencySymbol">$</span>{{ $prices['price'] }}</span>
@@ -72,33 +69,31 @@
                                         </div>
                                     </div>
                                     <div class="brator-product-hero-content-add-to-cart border-bottom">
-                                        <form class="cart woocommerce-custom-single-cart-form"
-                                              action="https://brator-main.smartdemowp.com/product/brand-name-cv10-satin-black-with-chrome/"
-                                              method="post" enctype="multipart/form-data">
+
                                             <div class="brator-product-single-cart-count-add">
                                                 <div class="quantity brator-product-single-cart-count">
 
                                                     <div
                                                         class="item-quantity tt-input-counter js-counter brator-brator-cart-list-items-qty">
-                                                        <span class="minus-btn">–</span>
-                                                        <label class="screen-reader-text" for="quantity_6766d244b5588">Brand
-                                                            Name CV10 Satin Black with Chrome quantity</label>
-                                                        <input type="number" id="quantity_6766d244b5588"
+                                                        <span class="minus-btn amount-btn">–</span>
+                                                        <input type="number" id="quantity"
                                                                class="input-text qty text" name="quantity" value="1"
                                                                aria-label="Product quantity" size="4" min="1" max="1000"
                                                                step="1" placeholder="" inputmode="numeric"
                                                                autocomplete="off">
-                                                        <span class="plus-btn">+</span>
+                                                        <span class="plus-btn amount-btn">+</span>
                                                     </div>
                                                 </div>
                                                 <div class="brator-product-single-cart-add">
-                                                    <button type="submit" name="add-to-cart"
-                                                            class="button single_add_to_cart_button alt" value="108">Add
+                                                    <input type="hidden" value="{{route('addToCart')}}" id="add-route" />
+
+                                                    <button type="button" name="add-to-cart" id="addToCart"
+                                                            class="button single_add_to_cart_button alt" data-product="{{$id}}">Add
                                                         to cart
                                                     </button>
                                                 </div>
                                             </div>
-                                        </form>
+
                                     </div>
 
                                     <div class="brator-product-single-light-info-area">

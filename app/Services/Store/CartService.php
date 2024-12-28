@@ -2,87 +2,56 @@
 
 namespace App\Services\Store;
 
-use App\DTO\ProductInCartDTO;
-use App\DTO\ShoppingCartDTO;
+use App\DTO\CartProductDTO;
 use App\Exceptions\ProductNotFoundException;
 use App\Models\Product;
+use App\Services\ShoppingCart\ShoppingCart;
+use Illuminate\Support\Facades\Session;
 
 class CartService
 {
     /**
      * @throws ProductNotFoundException
      */
-    public function addToCart(int $productId): array
+    public function addToCart(int $productId, int $quantity): ShoppingCart
     {
-        $shoppingCart = $this->getCartFromSession();
+        $product = Product::find($productId);
 
-        if (isset($shoppingCart[$productId])) {
-            $shoppingCart[$productId]['amount'] += 1;
-        } else {
-            //TODO move to ProductService and throw exception there
-            $product = Product::find($productId);
+        if (!$product) throw new ProductNotFoundException();
 
-            if (!$product) {
-                throw new ProductNotFoundException();
-            }
+        $shoppingCart = $this->getCart();
+        $prices = $product->priceByCurrency;
+        $productInCart = new CartProductDTO(
+            id: $productId,
+            slug: $product->slug,
+            name: $product->translationByLanguage['name'],
+            amount: $quantity,
+            price: $prices['price'],
+            discountedPrice: $prices['discounted_price']
+        );
 
-            $prices = $product->priceByCurrency;
-
-            $shoppingCart[$productId] = new ProductInCartDTO (
-                productId: $productId,
-                slug: $product->slug,
-                name: $product->translationByLanguage['name'],
-                amount: 1,
-                price: $prices['price'],
-                discountedPrice: $prices['discounted_price']
-            );
-        }
-
-        session(['shoppingCart' => $shoppingCart]);
+        $shoppingCart->addProduct($productInCart, $quantity);
+        $this->saveCart($shoppingCart);
 
         return $shoppingCart;
     }
 
-    public function removeFromCart(int $productId): ?array
+    public function removeFromCart(int $productId, $removeOne = true): ShoppingCart
     {
-        $shoppingCart = $this->getCartFromSession();
-
-        if (!isset($shoppingCart[$productId])) {
-            return null;
-        }
-
-        if ($shoppingCart[$productId]['amount'] == 1) {
-            unset($shoppingCart[$productId]);
-        } else {
-            $shoppingCart[$productId]['amount'] -= 1;
-        }
-
-        session(['shoppingCart' => $shoppingCart]);
+        $shoppingCart = $this->getCart();
+        $shoppingCart->removeProduct($productId, $removeOne);
+        $this->saveCart($shoppingCart);
 
         return $shoppingCart;
     }
 
-    public function getProductsInCart(): array
+    public function getCart(): ShoppingCart
     {
-        return $this->getCartFromSession();
+        return session('shoppingCart', new ShoppingCart());
     }
 
-    public function getTotalAmount(): float
+    private function saveCart(ShoppingCart $shoppingCart): void
     {
-        $products = $this->getCartFromSession();
-        $total = 0;
-        $withDiscount = 0;
-
-        foreach ($products as $product) {
-            $total += $product['amount'] * $product['price'];
-
-            if ($product['discountedPrice']) {
-            }
-        }
-    }
-
-    private function getCartFromSession(): array
-    {
-        return session('shoppingCart', new ShoppingCartDTO());
+        session(['shoppingCart' => $shoppingCart]);
     }
 }

@@ -109,9 +109,6 @@ readonly class GetDataForPageService
 
     private function getCartPageData(): array
     {
-//        $this->cartService->getProductsInCart();
-        return [
-            'products' => $this->cartService->getProductsInCart(),
-        ];
+        return $this->cartService->getCart()->toArray();
     }
 }

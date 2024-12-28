@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Store;
 
 use App\Constant\PagesConstants;
+use App\Exceptions\ProductNotFoundException;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Services\Store\GetDataForPageService;
@@ -49,6 +50,7 @@ class PagesController extends Controller
 
     /**
      * @throws \ErrorException
+     * @throws ProductNotFoundException
      */
     public function cart(): View
     {

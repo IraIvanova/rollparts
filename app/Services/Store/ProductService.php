@@ -21,6 +21,7 @@ class ProductService
         $productNameAndDescription = $product->translationByLanguage;
 
         return [
+            'id' => $product->id,
             'active' => $product->active,
             'quantity' => $product->quantity,
             'mnfCode' => $product->mnf_code,

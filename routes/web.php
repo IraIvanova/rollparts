@@ -11,3 +11,4 @@ Route::get('/product/{product}', [PagesController::class, 'product'])->name('pro
 
 Route::get('/cart', [PagesController::class, 'cart'])->name('cart');
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('addToCart');
+Route::post('/cart/remove', [CartController::class, 'removeFromCart'])->name('removeFromCart');
