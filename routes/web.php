@@ -9,4 +9,5 @@ Route::get('/categories', [PagesController::class, 'categories'])->name('categor
 Route::get('/categories/{category}', [PagesController::class, 'category'])->name('category');
 Route::get('/product/{product}', [PagesController::class, 'product'])->name('product');
 
+Route::get('/cart', [PagesController::class, 'cart'])->name('cart');
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('addToCart');

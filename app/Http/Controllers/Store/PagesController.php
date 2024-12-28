@@ -46,4 +46,12 @@ class PagesController extends Controller
     {
         return view('store.product', $this->getDataForPageService->getSpecificPageData(PagesConstants::PRODUCT_PAGE, ['slug' => $productSlug]));
     }
+
+    /**
+     * @throws \ErrorException
+     */
+    public function cart(): View
+    {
+        return view('store.cart', $this->getDataForPageService->getSpecificPageData(PagesConstants::CART_PAGE));
+    }
 }

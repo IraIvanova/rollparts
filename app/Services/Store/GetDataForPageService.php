@@ -5,6 +5,9 @@ namespace App\Services\Store;
 use App\Constant\PagesConstants;
 use App\DTO\ProductsFilterParametersDTO;
 use App\DTO\SearchParametersDTO;
+use App\Exceptions\CustomException;
+use App\Exceptions\ProductNotFoundException;
+use Illuminate\Http\Response;
 
 readonly class GetDataForPageService
 {
@@ -15,11 +18,13 @@ readonly class GetDataForPageService
         private ProductService $productService,
         private BrandService $brandService,
         private OptionsService $optionsService,
+        private CartService $cartService,
     ) {
     }
 
     /**
      * @throws \ErrorException
+     * @throws ProductNotFoundException
      */
     public function getSpecificPageData(string $page, array $params = []): array
     {
@@ -28,6 +33,7 @@ readonly class GetDataForPageService
                 PagesConstants::ALL_CATEGORIES_PAGE => $this->getAllCategoriesPageData(),
                 PagesConstants::CATEGORY_PAGE => $this->getCategoryPageData($params['slug'], $params['searchParams']),
                 PagesConstants::PRODUCT_PAGE => $this->getProductPageData($params['slug']),
+                PagesConstants::CART_PAGE => $this->getCartPageData(),
                 default => [],
             } + $this->getBaseData();
     }
@@ -86,11 +92,26 @@ readonly class GetDataForPageService
         ];
     }
 
+    /**
+     * @throws ProductNotFoundException
+     */
     private function getProductPageData(string $slug): array
     {
+
         $product = $this->productService->getProductBySlug($slug);
-        //TODO check if it exists and return error
+
+        if (!$product) {
+            throw new ProductNotFoundException();
+        }
 
         return $this->productService->getProductInfo($product);
+    }
+
+    private function getCartPageData(): array
+    {
+//        $this->cartService->getProductsInCart();
+        return [
+            'products' => $this->cartService->getProductsInCart(),
+        ];
     }
 }

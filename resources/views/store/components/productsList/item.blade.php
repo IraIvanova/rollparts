@@ -43,7 +43,7 @@
 
         <div class="brator-product-single-item-btn">
             <button
-                class="button add_to_cart_button" data-productId="{{$product['id']}}">
+                class="button add_to_cart_button" data-product="{{$product['id']}}">
                 Add to cart
             </button>
         </div>

@@ -8,4 +8,5 @@ class PagesConstants
     public const ALL_CATEGORIES_PAGE = 'categories';
     public const CATEGORY_PAGE = 'category';
     public const PRODUCT_PAGE = 'product';
+    public const CART_PAGE = 'cart';
 }

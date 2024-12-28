@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     let axiosConfig = {
         headers: {
-            'Content-Type' : 'application/json; charset=UTF-8',
+            'Content-Type': 'multipart/form-data'
         }
     };
 
@@ -52,9 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
 
-                axios.post(route, {
-                    productId: btn.dataset.productId
-                })
+                const data = prepareFormData({
+                    productId: btn.dataset.product
+                });
+
+                axios.post(route, data, axiosConfig)
                     .then((resp) => {
                         console.log(resp);
                     })
@@ -87,6 +89,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             return grouped;
         }, {});
+    }
+    let prepareFormData = (data) => {
+        const formData = new FormData();
+
+        for (let key in data) {
+            formData.append(key, data[key])
+        }
+
+        return formData
     }
 
     hideOrExpandSubCategories();

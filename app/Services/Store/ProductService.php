@@ -11,7 +11,7 @@ class ProductService
     {
     }
 
-    public function getProductBySlug(string $slug): Product
+    public function getProductBySlug(string $slug): ?Product
     {
         return Product::where('slug', $slug)->select(['id', 'brand_id', 'active', 'mnf_code', 'quantity'])->first();
     }
