@@ -1,10 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let axiosConfig = {
-        headers: {
-            'Content-Type': 'multipart/form-data'
-        }
-    };
-
     let hideOrExpandSubCategories = () => {
         const arrows = document.querySelectorAll(".icon");
 
@@ -44,28 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
-    let addToCart = () => {
-        const buttons = document.getElementsByClassName('add_to_cart_button');
-        const route = document.getElementById('cart-route').value;
 
-        for (let btn of buttons) {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-
-                const data = prepareFormData({
-                    productId: btn.dataset.product
-                });
-
-                axios.post(route, data, axiosConfig)
-                    .then((resp) => {
-                        // const modal = new bootstrap.Modal(document.getElementById('cartModal'));
-                        let myModal = new bootstrap.Modal(document.getElementById('cartModal'), {});
-                        myModal.show();
-                        // modal.show();
-                    })
-            })
-        }
-    }
 
     let getSelectedCheckboxAndSorting = () => {
         let form = document.querySelector('#filters-form');
@@ -93,18 +66,21 @@ document.addEventListener("DOMContentLoaded", () => {
             return grouped;
         }, {});
     }
-    let prepareFormData = (data) => {
-        const formData = new FormData();
 
-        for (let key in data) {
-            formData.append(key, data[key])
-        }
+    let toggleFiltersOnMobile = () => {
+        const filterHeader = document.getElementById('filterHeader');
+        const filterContent = document.getElementById('filterContent');
+        const toggleIcon = filterHeader.querySelector('.toggle-icon');
 
-        return formData
+        // Toggle the filter content visibility
+        filterHeader.addEventListener('click', () => {
+            filterContent.classList.toggle('active');
+            toggleIcon.classList.toggle('rotate');
+        });
     }
 
     hideOrExpandSubCategories();
     applyFilters();
     sortProducts();
-    addToCart();
+    toggleFiltersOnMobile();
 });

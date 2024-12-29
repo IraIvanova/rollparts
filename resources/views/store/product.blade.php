@@ -14,7 +14,7 @@
                     <div class="row">
                         <div class="brator-product-header-layout w-100">
                             <div class="brator-product-header-layout-img">
-                                @include('store.components.imagesGallery', $images)
+                                @include('store.components.imagesGallery')
                             </div>
                             <div class="brator-product-layout-header-content">
                                 <div class="brator-product-hero-content">
@@ -88,7 +88,7 @@
                                                     <input type="hidden" value="{{route('addToCart')}}" id="add-route" />
 
                                                     <button type="button" name="add-to-cart" id="addToCart"
-                                                            class="button single_add_to_cart_button alt" data-product="{{$id}}">Add
+                                                            class="button add_to_cart_button alt" data-product="{{$id}}">Add
                                                         to cart
                                                     </button>
                                                 </div>

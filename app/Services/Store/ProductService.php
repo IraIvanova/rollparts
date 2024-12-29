@@ -29,16 +29,15 @@ class ProductService
             'description' => $productNameAndDescription->description,
             'brand' => $product->brand,
             'prices' => $product->priceByCurrency->toArray(),
-            'images' => $product->images
+            'images' => $product->getMedia()
         ];
     }
 
-    public function getImages(array $products): array
+    public function getImages(array $products)
     {
         $images = $this->filesManagingService->getProductImages($products);
 
         return $images
-            ->groupBy('product_id')
-            ->toArray();
+            ->groupBy('model_id');
     }
 }

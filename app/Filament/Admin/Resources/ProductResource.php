@@ -4,29 +4,26 @@ namespace App\Filament\Admin\Resources;
 
 use App\Constant\FilesConstants;
 use App\Filament\Admin\Resources\ProductResource\Pages;
+use App\Filament\Admin\Resources\ProductResource\RelationManagers\ImagesRelationManager;
 use App\Models\Currency;
 use App\Models\Language;
 use App\Models\Option;
-use App\Models\OptionValue;
 use App\Models\Product;
 use CodeWithDennis\FilamentSelectTree\SelectTree;
-use Filament\Forms\Components\BaseFileUpload;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
-use Filament\Forms\Get;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Collection;
-use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 class ProductResource extends Resource
 {
@@ -122,7 +119,7 @@ class ProductResource extends Resource
                                             ->numeric()
                                             ->reactive()
                                             ->afterStateUpdated(
-                                                function ($state, callable $get, callable $set) {
+                                                function ($state, callable $get, callable $set, ?Model $record) {
                                                     $price = $get('price');
                                                     if ($price && $state !== null) {
                                                         $discountPercent = (($price - $state) / $price) * 100;
@@ -133,7 +130,6 @@ class ProductResource extends Resource
                                                     }
                                                 }
                                             ),
-
                                     ])
                                     ->defaultItems(1)
                                     ->minItems(1)
@@ -145,18 +141,10 @@ class ProductResource extends Resource
 
                         Tab::make('Product Images & Files')
                             ->schema([
-                                FileUpload::make('images')
+                                SpatieMediaLibraryFileUpload::make('attachments')
                                     ->multiple()
                                     ->reorderable()
-                                    ->directory(FilesConstants::PRODUCTS_FOLDER)
-                                    ->appendFiles()
-                                    ->imagePreviewHeight('250')
-                                    ->image()
-                                    ->saveUploadedFileUsing(function (BaseFileUpload $component, TemporaryUploadedFile $file, Model $record) {
-                                        dd($record, $file);
-                                    }),
-                                FileUpload::make('Product documents')
-                                    ->multiple()
+                                ->image()
                             ]),
                         Tab::make('Product Options')
                             ->schema([

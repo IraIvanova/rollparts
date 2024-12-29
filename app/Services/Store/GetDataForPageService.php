@@ -8,6 +8,7 @@ use App\DTO\SearchParametersDTO;
 use App\Exceptions\CustomException;
 use App\Exceptions\ProductNotFoundException;
 use Illuminate\Http\Response;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 readonly class GetDataForPageService
 {
@@ -90,8 +91,8 @@ readonly class GetDataForPageService
             'brands' => $this->brandService->getAvailableBrandsForCategory($nestedCategoriesId),
             'products' => $products,
             'options' => $this->optionsService->getOptionsAvailableForCategories($nestedCategoriesId),
+            'selectedOptions' => $searchParameters->getValuesArray(),
             'images' => $productImages,
-            'selectedOptions' => $searchParameters->getValuesArray()
         ];
     }
 

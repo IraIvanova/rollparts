@@ -218,3 +218,51 @@
 .widget_shopping_cart_content ul::-webkit-scrollbar-track {
     background: #f1f1f1; /* Scrollbar track color */
 }
+.filter-header {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f3f1f787;
+    margin-bottom: 20px;
+}
+.toggle-icon {
+    font-size: 18px;
+    transition: transform 0.3s;
+}
+.toggle-icon.rotate {
+    transform: rotate(180deg); /* Rotate arrow on open */
+}
+
+@media (max-width: 768px) {
+    #main-content {
+        padding-top: 0!important;
+    }
+    .brator-info-right{
+        display: none!important;
+    }
+    .filter-header{
+        display: flex;
+    }
+    .filter-header span {
+        color: black;
+        font-weight: 600;
+    }
+    .filter-content {
+        display: none; /* Collapsed by default on mobile */
+    }
+    .filter-content.active {
+        display: block; /* Visible when active */
+    }
+    .brator-product-shop-page-area {
+        margin-top: 0;
+    }
+    .gallery-part {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    #main-gallery{
+        width: 100%;
+    }
+}

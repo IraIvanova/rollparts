@@ -1,5 +1,5 @@
 <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body">
                 <h5 class="modal-title" id="cartModalLabel">Product Added to Cart</h5>

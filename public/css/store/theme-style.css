@@ -2042,7 +2042,7 @@ button.scroll-top span {
 
 .brator-header-area.header-one {
     padding-top: 20px;
-    padding-bottom: 15px;
+    padding-bottom: 0;
 }
 
 .brator-header-area.header-one .row {
@@ -9247,6 +9247,7 @@ body {
 
     .brator-header-area.header-one {
         padding: 20px 0;
+        padding-bottom: 0;
     }
 
     .brator-header-area.header-one .brator-info-right {
@@ -9413,7 +9414,6 @@ body {
     .brator-inline-product-filter-area .brator-inline-product-filter-right {
         justify-content: flex-start;
         width: 100%;
-        margin-top: 30px;
     }
 
     .brator-inline-product-filter-area .brator-inline-product-filter-right .brator-filter-short-by {

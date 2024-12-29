@@ -7,6 +7,7 @@ use App\Interfaces\SupportsFileUpload;
 use App\Models\BrandFile;
 use App\Models\ProductFile;
 use Illuminate\Support\Collection;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class FilesManagingService
@@ -20,11 +21,9 @@ class FilesManagingService
 
     public function getProductImages(array $products): Collection
     {
-        return ProductFile::where('category', FilesConstants::IMAGE)
-            ->whereIn('product_id', $products)
-            ->select('file_path', 'product_id')
-            ->orderBy('order')
-            ->get();
+       return Media::query()
+           ->whereIn('id', $products)
+           ->get();
     }
 
     private function saveFile(UploadedFile $file, SupportsFileUpload $entity, int $index = 0)

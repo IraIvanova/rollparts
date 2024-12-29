@@ -16,13 +16,18 @@ class PagesController extends Controller
     {
     }
 
+    /**
+     * @throws ProductNotFoundException
+     * @throws \ErrorException
+     */
     public function homepage(): View
     {
-        return view('store.homepage');
+        return view('store.homepage', $this->getDataForPageService->getSpecificPageData(PagesConstants::HOME_PAGE));
     }
 
     /**
      * @throws \ErrorException
+     * @throws ProductNotFoundException
      */
     public function categories(): View
     {
@@ -31,6 +36,7 @@ class PagesController extends Controller
 
     /**
      * @throws \ErrorException
+     * @throws ProductNotFoundException
      */
     public function category(Request $request, string $categorySlug): View
     {
@@ -42,6 +48,7 @@ class PagesController extends Controller
 
     /**
      * @throws \ErrorException
+     * @throws ProductNotFoundException
      */
     public function product(Request $request, string $productSlug): View
     {

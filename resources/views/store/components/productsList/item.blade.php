@@ -8,9 +8,9 @@
     </div>
     @endif
     <div class="brator-product-single-item-img">
-        <a href="https://brator-main.smartdemowp.com/product/rfx2-brushed-titanium/">
+        <a href="{{route('product', $product['slug'])}}">
             <img loading="lazy" width="225" height="225"
-                 src="{{ asset(isset($images[0]) ? 'storage/' . $images[0]['file_path'] : 'images/default.png')}}"
+                 src="{{getMainImagePath($images)}}"
                  class="attachment-shop_catalog size-shop_catalog wp-post-image"> </a>
     </div>
     <div class="brator-product-single-item-mini">

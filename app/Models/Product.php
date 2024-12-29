@@ -10,11 +10,19 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Facades\App;
 
-use function Laravel\Prompts\select;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Product extends Model
+
+
+class Product extends Model implements HasMedia
 {
-    protected $fillable = ['name', 'slug', 'description', 'brand_id', 'mnf_code'];
+    use InteractsWithMedia;
+
+    protected $fillable = ['name', 'slug', 'description', 'brand_id', 'mnf_code', 'images'];
+    protected $casts = [
+        'images' => 'array',
+    ];
 
     public function brand(): BelongsTo
     {
@@ -24,19 +32,6 @@ class Product extends Model
     public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class, 'category_product');
-    }
-
-    public function images(): HasMany
-    {
-        return $this->hasMany(ProductFile::class)
-            ->where('category', FilesConstants::IMAGE)
-            ->orderBy('order');
-    }
-
-    //TODO move repeated methods
-    public function mainImage()
-    {
-        return $this->hasOne(ProductFile::class)->where('category', 'image')->orderBy('order');
     }
 
     public function prices(): HasMany
@@ -84,15 +79,5 @@ class Product extends Model
     public function stock(): HasMany
     {
         return $this->hasMany(ProductStock::class);
-    }
-
-    public function setImagesAttribute($value)
-    {
-        $attribute_name = "images";
-
-        // you can check here if file is recieved or not using hasFile()
-        $disk = "public";
-        $destination_path = "/uploads";
-        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
     }
 }
