@@ -18,13 +18,15 @@
     <link rel="stylesheet" media="all" href="{{asset('css/store/custom-frontend.min.css')}}">
     <link rel="stylesheet" media="all" href="{{asset('css/store/styles.css')}}">
 
-    <link type="text/css" rel="stylesheet" href="{{asset('css/slick.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('css/slick-theme.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('css/slick.css')}}"/>
+    <link type="text/css" rel="stylesheet" href="{{asset('css/slick-theme.css')}}"/>
 
-{{--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">--}}
-{{----}}
+    {{--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">--}}
+    {{----}}
     {{--    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>--}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
 
 {{--    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>--}}
 
@@ -34,8 +36,8 @@
     class="page-template page-template-elementor_header_footer page page-id-360 theme-brator woocommerce-js woo-variation-swatches wvs-behavior-blur wvs-theme-brator wvs-show-label wvs-tooltip tinvwl-theme-style elementor-default elementor-template-full-width elementor-kit-11 elementor-page elementor-page-360 loading-frame e--ua-blink e--ua-chrome e--ua-webkit"
     data-elementor-device-mode="desktop">
 <div class="page-wrapper">
-  @include('store.components.header')
-        @yield('bodyContent')
+    @include('store.components.header.header')
+    @yield('bodyContent')
 
     <div class="brator-footer-top-area">
         <div class="container-xxxl container-xxl container">
@@ -312,6 +314,7 @@
 </div>
 @include('store.modal.product-added-modal')
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="{{asset('js/store/base.js')}}"></script>
 @yield('additionalScript')
 </body>
 </html>

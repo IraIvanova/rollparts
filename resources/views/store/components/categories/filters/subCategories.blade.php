@@ -1,6 +1,6 @@
 <ul>
     @foreach($category['children'] as $subCategory)
-        <li class="cat-item {{$subCategory['id'] === $selectedCategory['id'] ? 'selected' : ''}} {{empty($subCategory['children'] ? '' : 'cat-parent')}}">
+        <li class="cat-item {{$selectedCategory && $subCategory['id'] === $selectedCategory['id'] ? 'selected' : ''}} {{empty($subCategory['children'] ? '' : 'cat-parent')}}">
             <a href="{{route('category', $subCategory['slug'])}}">{{$subCategory['name']}}</a>
             @if(!empty($subCategory['children']))
                 @include('store.components.categories.filters.subCategories', ['category' => $subCategory])

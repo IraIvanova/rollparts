@@ -25,6 +25,7 @@ class CartService
             id: $productId,
             slug: $product->slug,
             name: $product->translationByLanguage['name'],
+            image: $product->mainImage?->file_path,
             amount: $quantity,
             price: $prices['price'],
             discountedPrice: $prices['discounted_price']

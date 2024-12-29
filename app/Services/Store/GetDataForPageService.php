@@ -41,7 +41,9 @@ readonly class GetDataForPageService
 
     private function getBaseData(): array
     {
-        return [];
+        return [
+            'shoppingCart' => $this->cartService->getCart()->toArray()
+        ];
     }
 
     private function getHomePageData(): array

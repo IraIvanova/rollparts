@@ -10,11 +10,13 @@ class ShoppingCart
     private float $totalPrice = 0.0;
     private float $totalWithDiscount = 0.0;
     private ?string $couponCode = null;
+    private int $totalItems = 0;
 
     public function __construct(array $products = [], ?string $couponCode = null)
     {
         $this->products = $products;
         $this->couponCode = $couponCode;
+        $this->totalItems = count($this->products);
         $this->recalculateTotals();
     }
 
@@ -29,6 +31,7 @@ class ShoppingCart
         }
 
         $this->products[] = $cartProduct;
+        $this->totalItems = count($this->products);
         $this->recalculateTotals();
     }
 
@@ -57,6 +60,7 @@ class ShoppingCart
             $this->products,
             fn(CartProductDTO $product) => $product->id !== $productId
         ));
+        $this->totalItems = count($this->products);
         $this->recalculateTotals();
     }
 
@@ -103,6 +107,7 @@ class ShoppingCart
             'totalPrice' => $this->totalPrice,
             'totalWithDiscount' => $this->totalWithDiscount,
             'couponCode' => $this->couponCode,
+            'totalItems' => count($this->products)
         ];
     }
 

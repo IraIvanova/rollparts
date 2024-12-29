@@ -9,6 +9,7 @@ Route::get('/categories', [PagesController::class, 'categories'])->name('categor
 Route::get('/categories/{category}', [PagesController::class, 'category'])->name('category');
 Route::get('/product/{product}', [PagesController::class, 'product'])->name('product');
 Route::get('/catalog', [PagesController::class, 'catalog'])->name('catalog');
+Route::get('/checkout', [PagesController::class, 'checkout'])->name('checkout');
 
 Route::get('/info/terms', [PagesController::class, 'termsAndConditions'])->name('infoTerms');
 Route::get('/info/contact-us', [PagesController::class, 'contactUs'])->name('infoContactUs');

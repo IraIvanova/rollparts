@@ -9,6 +9,7 @@ class CartProductDTO
         public string $slug,
         public string $name,
         public int $amount,
+        public ?string $image,
         public float $price,
         public ?float $discountedPrice,
     ) {

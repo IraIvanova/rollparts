@@ -66,6 +66,11 @@ class PagesController extends Controller
         return view('store.catalog', $this->getDataForPageService->getSpecificPageData(PagesConstants::CATALOG_PAGE, ['searchParams' => $request->query()]));
     }
 
+    public function checkout(): View
+    {
+        return view('store.checkout');
+    }
+
     public function termsAndConditions(): View
     {
         return view('store.info.terms');

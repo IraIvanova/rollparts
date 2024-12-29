@@ -12,7 +12,7 @@
                 <div class="container-xxxl container">
                     <div class="row">
                         <div class="col-lg-3">
-{{--                            @include('store.components.categories.filtersColumn')--}}
+                            @include('store.components.categories.filtersColumn')
                         </div>
                         <div class="col-lg-9">
                             @include('store.components.productsList.sortingSection')
