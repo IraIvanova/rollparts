@@ -9,7 +9,6 @@ class ProductsFilterParametersDTO
         public ?string $currency,
         public ?array $categories = [],
         public ?SearchParametersDTO $searchParameters = null,
-        public ?string $searchString = '',
         public bool $paginate = false
     ) {
     }

@@ -15,7 +15,7 @@
 {{--                            @include('store.components.categories.filtersColumn')--}}
                         </div>
                         <div class="col-lg-9">
-{{--                            @include('store.components.productsList.sortingSection')--}}
+                            @include('store.components.productsList.sortingSection')
                             <div class="products columns-4">
                                 <div class="product-list-items ">
                                     @foreach ($products as $product)

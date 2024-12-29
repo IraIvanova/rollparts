@@ -23,4 +23,13 @@ class BrandService
             ->map(fn($item) => (array) $item)
             ->toArray();
     }
+
+    public function getAvailableBrandsForSearchResult(): array
+    {
+        return DB::table('brands')
+            ->select('brands.id', 'brands.name')
+            ->get()
+            ->map(fn($item) => (array) $item)
+            ->toArray();
+    }
 }

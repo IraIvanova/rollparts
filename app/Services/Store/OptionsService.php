@@ -23,4 +23,19 @@ class OptionsService
             })
             ->toArray();
     }
+
+    public function getOptionsAvailableForSearchResult() : array
+    {
+        return DB::table('products')
+            ->join('product_options as po', 'products.id', '=', 'po.product_id')
+            ->join('options', 'po.option', '=', 'options.name')
+            ->distinct()
+            ->select('options.name', 'options.values')
+            ->get()
+            ->mapWithKeys(function (\stdClass $item) {
+                return [$item->name => array_column(json_decode($item->values, true), 'value')];
+            })
+            ->toArray();
+    }
+
 }

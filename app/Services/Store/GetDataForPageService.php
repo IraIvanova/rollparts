@@ -113,27 +113,30 @@ readonly class GetDataForPageService
         return $this->cartService->getCart()->toArray();
     }
 
-    private function getCatalogPageData(array $searchParameters = []): array
+    private function getCatalogPageData(array $searchParams = []): array
     {
+        $searchParameters = new SearchParametersDTO($searchParams);
+
         //TODO Search by Part Name, Brand, Model, Sku
         $products = $this->paginationService->paginate(
             $this->productQueryBuilderService->getProductsByCategory(
                 new ProductsFilterParametersDTO(
                     language: 'tr',
                     currency: 'TRL',
-                    searchString: $searchParameters['search']
+                    searchParameters: $searchParameters
                 )
             )
         );
+
         $productImages = $this->productService->getImages(array_column($products->items(), 'id'));
 
         return [
             'categories' => $this->categoryService->getMainCategoriesWithChildren(),
-//            'brands' => $this->brandService->getAvailableBrandsForCategory($nestedCategoriesId),
+            'brands' => $this->brandService->getAvailableBrandsForSearchResult(),
             'products' => $products,
-//            'options' => $this->optionsService->getOptionsAvailableForCategories($nestedCategoriesId),
+            'options' => $this->optionsService->getOptionsAvailableForSearchResult(),
             'images' => $productImages,
-//            'selectedOptions' => $searchParameters->getValuesArray()
+            'selectedOptions' => $searchParameters->getValuesArray()
         ];
     }
 }

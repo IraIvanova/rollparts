@@ -19,7 +19,7 @@ class SearchProductsQueryBuilderService
     public function getProductsByCategory(ProductsFilterParametersDTO $parameters): Builder
     {
         return $this->active()
-            ->addProductTranslations($parameters->language, $parameters->searchString)
+            ->addProductTranslations($parameters->language, $parameters->searchParameters?->search)
             ->addCategory($parameters->categories)
             ->addPrices($parameters->currency)
             ->filterByBrands($parameters->searchParameters?->brands)
@@ -46,6 +46,7 @@ class SearchProductsQueryBuilderService
             ->join('product_translations as pt', 'p.id', '=', 'pt.product_id')
             ->where('pt.language', $languageCode);
         //TODO search with elastic?
+
         if ($searchString) {
             $this->query->where('pt.name', 'like', '%' . $searchString . '%');
         }

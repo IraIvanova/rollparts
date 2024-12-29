@@ -6,6 +6,7 @@ class SearchParametersDTO
 {
     private const OPTION_PREFIX = 'option_';
     public ?string $sortBy;
+    public ?string $search = '';
     public ?array $brands = [];
     public ?array $options = [];
     public ?array $optionValues = [];
@@ -15,12 +16,14 @@ class SearchParametersDTO
     ) {
         $this->brands = isset($this->parameters['brands']) ? explode(',', $this->parameters['brands'] ) : [];
         $this->sortBy = $this->parameters['sortby'] ?? '';
+        $this->search = $this->parameters['search'] ?? '';
         $this->resolveOptions($parameters);
     }
 
     public function getValuesArray(): array
     {
         return [
+            'search' => $this->search,
             'brands' => $this->brands,
             'sortby' => $this->sortBy,
             'optionValues' => $this->optionValues,
