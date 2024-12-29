@@ -22,18 +22,20 @@ class SearchProductsQueryBuilderService
             ->addProductTranslations($parameters->language, $parameters->searchString)
             ->addCategory($parameters->categories)
             ->addPrices($parameters->currency)
-            ->filterByBrands($parameters->searchParameters->brands)
-            ->filterByOptions($parameters->searchParameters->options, $parameters->searchParameters->optionValues)
-            ->applyOrdering($parameters->searchParameters->sortBy)
+            ->filterByBrands($parameters->searchParameters?->brands)
+            ->filterByOptions($parameters->searchParameters?->options, $parameters->searchParameters?->optionValues)
+            ->applyOrdering($parameters->searchParameters?->sortBy)
             ->getResults();
     }
 
-    private function addCategory(array $categories): self
+    private function addCategory(array $categories = []): self
     {
-        $this->query
-            ->join('category_product as cp', 'p.id', '=', 'cp.product_id')
-            ->join('categories as c', 'c.id', '=', 'cp.category_id')
-            ->whereIn('c.id', $categories);
+        if (!empty($categories)) {
+            $this->query
+                ->join('category_product as cp', 'p.id', '=', 'cp.product_id')
+                ->join('categories as c', 'c.id', '=', 'cp.category_id')
+                ->whereIn('c.id', $categories);
+        }
 
         return $this;
     }
@@ -45,7 +47,7 @@ class SearchProductsQueryBuilderService
             ->where('pt.language', $languageCode);
         //TODO search with elastic?
         if ($searchString) {
-            $this->query->where('pt.title', 'like', '%' . $searchString . '%');
+            $this->query->where('pt.name', 'like', '%' . $searchString . '%');
         }
 
         $this->selectFields = array_merge(
@@ -74,7 +76,7 @@ class SearchProductsQueryBuilderService
         return $this;
     }
 
-    private function filterByBrands(?array $brands): self
+    private function filterByBrands(?array $brands = []): self
     {
         if (!empty($brands)) {
             $this->query->join('brands as b', 'b.id', '=', 'p.brand_id')

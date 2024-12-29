@@ -56,4 +56,23 @@ class PagesController extends Controller
     {
         return view('store.cart', $this->getDataForPageService->getSpecificPageData(PagesConstants::CART_PAGE));
     }
+
+    /**
+     * @throws ProductNotFoundException
+     * @throws \ErrorException
+     */
+    public function catalog(Request $request): View
+    {
+        return view('store.catalog', $this->getDataForPageService->getSpecificPageData(PagesConstants::CATALOG_PAGE, ['searchParams' => $request->query()]));
+    }
+
+    public function termsAndConditions(): View
+    {
+        return view('store.info.terms');
+    }
+
+    public function contactUs(): View
+    {
+        return view('store.info.contacts');
+    }
 }

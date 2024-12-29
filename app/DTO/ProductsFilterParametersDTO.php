@@ -7,8 +7,8 @@ class ProductsFilterParametersDTO
     public function __construct(
         public string $language,
         public ?string $currency,
-        public ?array $categories,
-        public ?SearchParametersDTO $searchParameters,
+        public ?array $categories = [],
+        public ?SearchParametersDTO $searchParameters = null,
         public ?string $searchString = '',
         public bool $paginate = false
     ) {

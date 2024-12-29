@@ -34,6 +34,7 @@ readonly class GetDataForPageService
                 PagesConstants::CATEGORY_PAGE => $this->getCategoryPageData($params['slug'], $params['searchParams']),
                 PagesConstants::PRODUCT_PAGE => $this->getProductPageData($params['slug']),
                 PagesConstants::CART_PAGE => $this->getCartPageData(),
+                PagesConstants::CATALOG_PAGE => $this->getCatalogPageData($params['searchParams']),
                 default => [],
             } + $this->getBaseData();
     }
@@ -110,5 +111,29 @@ readonly class GetDataForPageService
     private function getCartPageData(): array
     {
         return $this->cartService->getCart()->toArray();
+    }
+
+    private function getCatalogPageData(array $searchParameters = []): array
+    {
+        //TODO Search by Part Name, Brand, Model, Sku
+        $products = $this->paginationService->paginate(
+            $this->productQueryBuilderService->getProductsByCategory(
+                new ProductsFilterParametersDTO(
+                    language: 'tr',
+                    currency: 'TRL',
+                    searchString: $searchParameters['search']
+                )
+            )
+        );
+        $productImages = $this->productService->getImages(array_column($products->items(), 'id'));
+
+        return [
+            'categories' => $this->categoryService->getMainCategoriesWithChildren(),
+//            'brands' => $this->brandService->getAvailableBrandsForCategory($nestedCategoriesId),
+            'products' => $products,
+//            'options' => $this->optionsService->getOptionsAvailableForCategories($nestedCategoriesId),
+            'images' => $productImages,
+//            'selectedOptions' => $searchParameters->getValuesArray()
+        ];
     }
 }

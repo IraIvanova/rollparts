@@ -10,4 +10,5 @@ class FilesConstants
     public const FILE_EXTENSIONS = ['pdf', 'doc', 'docx', 'xls', 'xlsx'];
     public const DEFAULT_IMAGE = 'images/default.png';
     public const CATEGORY_FOLDER = 'categories';
+    public const PRODUCTS_FOLDER = 'products';
 }

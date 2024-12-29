@@ -6,7 +6,7 @@ class SearchParametersDTO
 {
     private const OPTION_PREFIX = 'option_';
     public ?string $sortBy;
-    public ?array $brands;
+    public ?array $brands = [];
     public ?array $options = [];
     public ?array $optionValues = [];
 

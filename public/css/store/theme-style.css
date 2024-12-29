@@ -2041,7 +2041,7 @@ button.scroll-top span {
 }
 
 .brator-header-area.header-one {
-    padding-top: 35px;
+    padding-top: 20px;
     padding-bottom: 15px;
 }
 
@@ -2061,6 +2061,7 @@ button.scroll-top span {
     display: flex;
     align-items: center;
     font-weight: 600;
+    padding-right: 35px;
 }
 
 .brator-header-area.header-one .brator-user-link {
@@ -2074,7 +2075,7 @@ button.scroll-top span {
     content: "";
     display: block;
     position: absolute;
-    right: -30px;
+    right: 17px;
     top: -8px;
     height: 45px;
     width: 1px;
@@ -2117,7 +2118,7 @@ button.scroll-top span {
 }
 
 .brator-logo-area .brator-logo a img {
-    max-width: 191px;
+    max-width: 130px;
 }
 
 .brator-logo-area .brator-logo button {

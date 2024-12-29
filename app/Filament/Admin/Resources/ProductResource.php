@@ -2,6 +2,7 @@
 
 namespace App\Filament\Admin\Resources;
 
+use App\Constant\FilesConstants;
 use App\Filament\Admin\Resources\ProductResource\Pages;
 use App\Models\Currency;
 use App\Models\Language;
@@ -9,6 +10,7 @@ use App\Models\Option;
 use App\Models\OptionValue;
 use App\Models\Product;
 use CodeWithDennis\FilamentSelectTree\SelectTree;
+use Filament\Forms\Components\BaseFileUpload;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
@@ -22,7 +24,9 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 class ProductResource extends Resource
 {
@@ -141,46 +145,21 @@ class ProductResource extends Resource
 
                         Tab::make('Product Images & Files')
                             ->schema([
-                                FileUpload::make('Product images')
+                                FileUpload::make('images')
                                     ->multiple()
                                     ->reorderable()
+                                    ->directory(FilesConstants::PRODUCTS_FOLDER)
                                     ->appendFiles()
                                     ->imagePreviewHeight('250')
-                                    ->image(),
+                                    ->image()
+                                    ->saveUploadedFileUsing(function (BaseFileUpload $component, TemporaryUploadedFile $file, Model $record) {
+                                        dd($record, $file);
+                                    }),
                                 FileUpload::make('Product documents')
                                     ->multiple()
                             ]),
                         Tab::make('Product Options')
                             ->schema([
-//                                Repeater::make('productOptions')
-//                                    ->label('Product Options')
-//                                    ->relationship()
-//                                    ->schema([
-//                                        Select::make('option')
-//                                            ->label('Option')
-//                                            ->relationship('option', 'name')
-//                                            ->live()
-//                                            ->required(),
-//                                        Select::make('option_value')
-//                                            ->label('Value')
-//                                            ->options(
-//                                                function ($state, callable $get) {
-//                                                    $option = Option::find($get('option'))->first();
-////                                                    dd($get('option'), $get,$option);
-//                                                    if ($option) {
-////                                                        dd( $option->values);
-//                                                        return $option->values;
-//                                                    }
-//
-//                                                    return [];
-//                                                }
-//                                            )
-//                                            ->disableOptionsWhenSelectedInSiblingRepeaterItems()
-//                                            ->required(),
-//                                        TextInput::make('quantity'),
-////                                            ->required(),
-//                                        TextInput::make('price'),
-//                                    ])
                                 Repeater::make('productOptions')
                                     ->relationship('productOptions') // Automatically maps the relationship
                                     ->schema([

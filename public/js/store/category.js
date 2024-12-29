@@ -58,7 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 axios.post(route, data, axiosConfig)
                     .then((resp) => {
-                        console.log(resp);
+                        // const modal = new bootstrap.Modal(document.getElementById('cartModal'));
+                        let myModal = new bootstrap.Modal(document.getElementById('cartModal'), {});
+                        myModal.show();
+                        // modal.show();
                     })
             })
         }

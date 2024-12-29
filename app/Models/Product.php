@@ -89,7 +89,7 @@ class Product extends Model
     public function setImagesAttribute($value)
     {
         $attribute_name = "images";
-        dd($value);
+
         // you can check here if file is recieved or not using hasFile()
         $disk = "public";
         $destination_path = "/uploads";
