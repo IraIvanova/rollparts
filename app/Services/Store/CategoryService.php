@@ -8,7 +8,7 @@ class CategoryService
 {
     public function getAllCategories(): array
     {
-        return Category::get(['name', 'slug', 'image'])->toArray();
+        return Category::get(['name', 'slug', 'image', 'parent_id'])->toArray();
     }
 
     public function getMainCategoriesWithChildren(): array

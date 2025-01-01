@@ -25,6 +25,13 @@ class FilesManagingService
            ->whereIn('id', $products)
            ->get();
     }
+    public function getMainImages(array $products): Collection
+    {
+       return Media::query()
+           ->whereIn('id', $products)
+           ->where('order_column', 1)
+           ->get();
+    }
 
     private function saveFile(UploadedFile $file, SupportsFileUpload $entity, int $index = 0)
     {

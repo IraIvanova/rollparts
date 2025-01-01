@@ -30,9 +30,13 @@ if (!function_exists('displayPrices')) {
 }
 
 if (!function_exists('getMainImagePath')) {
-    function getMainImagePath(Collection|array|null $images): string
+    function getMainImagePath(Collection|array|null $images, ?int $product = null): string
     {
-        if ($images && count($images) > 0) {
+        if ($product && isset($images[$product])) {
+            return $images[$product];
+        }
+
+        if (!$product && $images && count($images) > 0) {
            return $images->first()->getFullUrl();
         }
 

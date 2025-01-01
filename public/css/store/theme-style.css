@@ -11106,13 +11106,7 @@ input#to_pro_price {
     padding-bottom: 0px;
 }
 
-.brator-best-seller-section-header-area {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 35px;
-}
+
 
 .brator-best-seller-section-header-area .brator-section-header.all-item-left {
     width: auto;

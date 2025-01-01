@@ -28,6 +28,15 @@ class SearchProductsQueryBuilderService
             ->getResults();
     }
 
+    public function getBestsellerProducts(ProductsFilterParametersDTO $parameters): Builder
+    {
+        return $this
+            ->addProductTranslations($parameters->language)
+            ->addPrices($parameters->currency)
+            ->setLimit($parameters->limit)
+            ->getResults();
+    }
+
     private function addCategory(array $categories = []): self
     {
         if (!empty($categories)) {
@@ -130,6 +139,13 @@ class SearchProductsQueryBuilderService
             case 'price-desc':
                 $this->query->orderBy('finalPrice', 'desc');
         }
+
+        return $this;
+    }
+
+    public function setLimit(int $limit): self
+    {
+        $this->query->limit($limit);
 
         return $this;
     }

@@ -40,4 +40,12 @@ class ProductService
         return $images
             ->groupBy('model_id');
     }
+
+    public function getMainImages(array $products)
+    {
+        return $this->filesManagingService->getMainImages($products)->mapWithKeys(function($i) {
+           return [$i->model_id => $i->getFullUrl()];
+        })
+            ->toArray();
+    }
 }

@@ -7,10 +7,11 @@
         </div>
     </div>
     @endif
+
     <div class="brator-product-single-item-img">
         <a href="{{route('product', $product['slug'])}}">
             <img loading="lazy" width="225" height="225"
-                 src="{{getMainImagePath($images)}}"
+                 src="{{getMainImagePath($images, $product['id'])}}"
                  class="attachment-shop_catalog size-shop_catalog wp-post-image"> </a>
     </div>
     <div class="brator-product-single-item-mini">
@@ -36,9 +37,6 @@
                 <span class="woocommerce-Price-amount amount"><span
                         class="woocommerce-Price-currencySymbol">$</span>{{ $product['price'] }}</span>
             @endif
-{{--            <p><span class="woocommerce-Price-amount amount"><span--}}
-{{--                            class="woocommerce-Price-currencySymbol">$</span>{{$product['price']}}</span>--}}
-{{--            </p>--}}
         </div>
 
         <div class="brator-product-single-item-btn">

@@ -8,6 +8,7 @@ use App\DTO\SearchParametersDTO;
 use App\Exceptions\CustomException;
 use App\Exceptions\ProductNotFoundException;
 use Illuminate\Http\Response;
+use Illuminate\Support\Collection;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 readonly class GetDataForPageService
@@ -43,20 +44,32 @@ readonly class GetDataForPageService
     private function getBaseData(): array
     {
         return [
+            'categories' => $this->categoryService->getAllCategories(),
             'shoppingCart' => $this->cartService->getCart()->toArray()
         ];
     }
 
     private function getHomePageData(): array
     {
+        $filtersParameters = new ProductsFilterParametersDTO(
+            language: 'tr',
+            currency: 'TRL',
+            limit: 10
+        );
+
+        $bestsellerProducts = $this->productQueryBuilderService->getBestsellerProducts($filtersParameters)->get();
+        $productImages = $this->productService->getMainImages($bestsellerProducts->pluck('id')->toArray());
+
         return [
-            'asd' => 'asd555'
+            'bestsellers' => $this->toArray($bestsellerProducts),
+            'images' => $productImages,
+            'brands' => $this->brandService->getAllAvailableBrands()
         ];
     }
 
     private function getAllCategoriesPageData(): array
     {
-        return ['categories' => $this->categoryService->getAllCategories()];
+        return [];
     }
 
     /**
@@ -83,7 +96,7 @@ readonly class GetDataForPageService
             )
         );
 
-        $productImages = $this->productService->getImages(array_column($products->items(), 'id'));
+        $productImages = $this->productService->getMainImages(array_column($products->items(), 'id'));
 
         return [
             'category' => $category,
@@ -101,7 +114,6 @@ readonly class GetDataForPageService
      */
     private function getProductPageData(string $slug): array
     {
-
         $product = $this->productService->getProductBySlug($slug);
 
         if (!$product) {
@@ -141,5 +153,10 @@ readonly class GetDataForPageService
             'images' => $productImages,
             'selectedOptions' => $searchParameters->getValuesArray()
         ];
+    }
+
+    private function toArray(Collection $products): Collection
+    {
+        return $products->map(fn($i) => (array)$i);
     }
 }

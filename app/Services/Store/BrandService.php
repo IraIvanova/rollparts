@@ -2,6 +2,7 @@
 
 namespace App\Services\Store;
 
+use App\Models\Brand;
 use App\Services\FilesManagingService;
 use Illuminate\Support\Facades\DB;
 
@@ -31,5 +32,10 @@ class BrandService
             ->get()
             ->map(fn($item) => (array) $item)
             ->toArray();
+    }
+
+    public function getAllAvailableBrands(): array
+    {
+        return Brand::all()->toArray();
     }
 }
