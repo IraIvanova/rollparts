@@ -16,7 +16,7 @@
                             <a href="https://brator-main.smartdemowp.com/">
                                 <img src="./logo.svg" alt="Logo">
                             </a>
-                            <button>
+                            <button class="mobile-menu-icon">
                                 <svg class="bi bi-pause" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                      fill="currentColor" viewBox="0 0 16 16">
                                     <path

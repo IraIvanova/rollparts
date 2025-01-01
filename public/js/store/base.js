@@ -73,6 +73,36 @@ document.addEventListener("DOMContentLoaded", () => {
         event.stopPropagation();
     });
 
+    const mobileMenu = document.getElementById('slide-sidebar-menu');
+    const openMenuBtns = document.getElementsByClassName('mobile-menu-icon');
+    const closeMenuBtn = document.getElementById('slide-menu-close');
+    const scrollHeader = document.getElementById('scroll-menu');
+
+    for (let openMenuBtn of openMenuBtns) {
+        // Open menu
+        openMenuBtn.addEventListener('click', function () {
+            mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            scrollHeader.classList.remove('fixed');
+        });
+    }
+
+    // Close menu
+    closeMenuBtn.addEventListener('click', function () {
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+
+
+    });
+
+    // Close menu when clicking outside of it (optional)
+    document.addEventListener('click', function (event) {
+        if (!mobileMenu.contains(event.target) && !Array.from(openMenuBtns).some(btn => btn.contains(event.target))) {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    });
+
     fixHeader();
     addToCart();
 });
