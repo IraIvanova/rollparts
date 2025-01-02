@@ -27,7 +27,7 @@
                                                                                 <div class="brator-makes-list">
                                                                                     @foreach($brands as $brand)
                                                                                     <div class="brator-makes-list-single ">
-                                                                                        <a href="https://brator-main.smartdemowp.com/shop/"><span>{{$brand['name']}}</span>
+                                                                                        <a href="{{route('catalog',['brand' => $brand['slug']])}}"><span>{{$brand['name']}}</span>
                                                                                         </a>
                                                                                     </div>
                                                                                         @endforeach

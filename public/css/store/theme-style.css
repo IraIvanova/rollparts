@@ -4898,6 +4898,7 @@ ul.wp-block-categories li a:hover,
 .brator-product-single-item-area .brator-product-single-item-img a {
     display: grid;
     text-align: center;
+    justify-content: center;
 }
 
 .brator-product-single-item-area .brator-product-single-item-mini {
@@ -10135,15 +10136,13 @@ body {
 
 .brator-service-area .brator-single-service-item .iocn {
     position: absolute;
-    left: 55px;
-    top: 60px;
+    left: 40px;
+    top: 40px;
     transition: all linear 0.4s;
 }
-
-.brator-service-area .brator-single-service-item:hover .iocn {
-    transform: rotatex(360deg);
+.brator-service-area .brator-single-service-item img {
+    height: 70px;
 }
-
 .brator-service-area .brator-single-service-item.last-item::before {
     display: none;
 }

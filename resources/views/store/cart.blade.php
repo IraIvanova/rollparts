@@ -5,7 +5,6 @@
         <div>
             <input type="hidden" value="{{route('removeFromCart')}}" id="remove-route" />
             <input type="hidden" value="{{route('addToCart')}}" id="add-route" />
-            @include('store.components.breadcrumbs')
             <div class="">
                 <div class="woocommerce-notices-wrapper"></div>
                 <div class="brator-cart-header-area">
@@ -84,7 +83,7 @@
 
                                     <div class="wc-proceed-to-checkout">
                                         <div class="cart-total-process">
-                                            <a href="https://brator-main.smartdemowp.com/checkout/" class="wc-forward">
+                                            <a href="{{route('checkout')}}" class="wc-forward">
                                                 Proceed To Checkout </a>
                                         </div>
                                     </div>
@@ -102,7 +101,25 @@
                     </div>
                 </div>
                     @else
-                    <h3 class="mt-2">Your cart is still empty</h3>
+                    <div class="row mt-5">
+                        <div class="col-lg-12 col-md-12 col-sm-12 content-side">
+                            <div class="blog-details-content">
+                                <div class="page-content">
+                                    <div class="woocommerce"><div class="woocommerce-notices-wrapper"></div><div class="wc-empty-cart-message">
+                                            <div class="cart-empty woocommerce-info">
+                                                Your cart is currently empty.	</div>
+                                        </div>	<p class="return-to-shop">
+                                            <a class="button wc-backward" href="/">
+                                                Return to shop		</a>
+                                        </p>
+                                    </div></div>
+                                <div class="row">
+                                    <div class="col-lg-10 col-sm-12">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 @endif
             </div>
 

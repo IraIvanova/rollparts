@@ -19,7 +19,7 @@
                             <div class="products columns-4">
                                 <div class="product-list-items ">
                                     @foreach ($products as $product)
-                                        @include('store.components.productsList.item', ['product' => $product, 'images' => $images[$product['id']] ?? []])
+                                        @include('store.components.productsList.item', ['product' => $product, 'images' => $images])
                                     @endforeach
                                 </div>
                                 <div>

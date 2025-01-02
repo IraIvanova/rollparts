@@ -25,8 +25,8 @@ class CartService
             id: $productId,
             slug: $product->slug,
             name: $product->translationByLanguage['name'],
-            image: $product->mainImage?->file_path,
             amount: $quantity,
+            image: $product->getFirstMediaUrl() ?: asset('images/default.png'),
             price: $prices['price'],
             discountedPrice: $prices['discounted_price']
         );

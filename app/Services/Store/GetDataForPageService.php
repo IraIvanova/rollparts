@@ -37,6 +37,7 @@ readonly class GetDataForPageService
                 PagesConstants::PRODUCT_PAGE => $this->getProductPageData($params['slug']),
                 PagesConstants::CART_PAGE => $this->getCartPageData(),
                 PagesConstants::CATALOG_PAGE => $this->getCatalogPageData($params['searchParams']),
+                PagesConstants::CHECKOUT_PAGE => $this->getCheckoutPageData(),
                 default => [],
             } + $this->getBaseData();
     }
@@ -143,7 +144,7 @@ readonly class GetDataForPageService
             )
         );
 
-        $productImages = $this->productService->getImages(array_column($products->items(), 'id'));
+        $productImages = $this->productService->getMainImages(array_column($products->items(), 'id'));
 
         return [
             'categories' => $this->categoryService->getMainCategoriesWithChildren(),
@@ -153,6 +154,11 @@ readonly class GetDataForPageService
             'images' => $productImages,
             'selectedOptions' => $searchParameters->getValuesArray()
         ];
+    }
+
+    private function getCheckoutPageData(): array
+    {
+        return $this->cartService->getCart()->toArray();
     }
 
     private function toArray(Collection $products): Collection

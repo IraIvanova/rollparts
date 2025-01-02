@@ -10,4 +10,5 @@ class PagesConstants
     public const PRODUCT_PAGE = 'product';
     public const CART_PAGE = 'cart';
     public const CATALOG_PAGE = 'catalog';
+    public const CHECKOUT_PAGE = 'checkout';
 }

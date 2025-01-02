@@ -320,8 +320,9 @@
 .categories-slider.slick-initialized .slick-slide {
     margin: 0 20px!important;
 }
+
 /* Each product item */
-.brator-product-single-item-area {
+.bestseller-products .brator-product-single-item-area {
     display: flex; /* Set flex layout for internal structure */
     flex-direction: column; /* Arrange child elements vertically */
     justify-content: space-between; /* Space items evenly */
@@ -334,13 +335,13 @@
 }
 
 /* Product image container */
-.brator-product-single-item-img {
+.bestseller-products .brator-product-single-item-img {
     flex: 0 0 auto; /* Prevent shrinking or growing */
     text-align: center; /* Center images */
     margin-bottom: 10px;
 }
 
-.brator-product-single-item-img img {
+.bestseller-products .brator-product-single-item-img img {
     min-height: 150px; /* Limit image height */
     max-height: 150px; /* Limit image height */
     width: auto;
@@ -348,7 +349,7 @@
 }
 
 /* Product details container */
-.brator-product-single-item-mini {
+.bestseller-products .brator-product-single-item-mini {
     flex: 1 1 auto; /* Allow content to grow and shrink */
     display: flex;
     flex-direction: column;
@@ -356,7 +357,7 @@
 }
 
 /* Product price container */
-.brator-product-single-item-price {
+.bestseller-products .brator-product-single-item-price {
     margin-top: auto; /* Push to bottom of the container */
 }
 
@@ -367,6 +368,13 @@
 
 .slick-prev, .slick-next {
     color: #000;
+}
+
+.black-btn{
+    background-color: #1f1f1f;
+    border-color: #1f1f1f;
+    color: white;
+    padding: 8px 20px;
 }
 @media (max-width: 768px) {
     #main-content {

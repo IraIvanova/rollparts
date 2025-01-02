@@ -73,9 +73,13 @@ class PagesController extends Controller
         return view('store.catalog', $this->getDataForPageService->getSpecificPageData(PagesConstants::CATALOG_PAGE, ['searchParams' => $request->query()]));
     }
 
+    /**
+     * @throws ProductNotFoundException
+     * @throws \ErrorException
+     */
     public function checkout(): View
     {
-        return view('store.checkout');
+        return view('store.checkout',  $this->getDataForPageService->getSpecificPageData(PagesConstants::CHECKOUT_PAGE));
     }
 
     public function termsAndConditions(): View

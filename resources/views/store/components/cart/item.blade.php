@@ -2,14 +2,13 @@
     <td class="brator-cart-list-items-title">
         <div class="img-cart">
             <a href="">
-                <img decoding="async" width="85" height="85" src=""
+                <img decoding="async" width="85" height="85" src="{{$product['image']}}"
                      class="attachment-brator-cart-img-size size-brator-cart-img-size"
                      alt="" srcset=""></a>
         </div>
         <div class="prodct-info">
             <h5>
                 <a href="{{route('product', $product['slug'])}}">{{$product['name']}}</a></h5>
-            <a href="https://brator-main.smartdemowp.com/product/brand-name-cv10-satin-black-with-chrome/">Edit</a>
         </div>
     </td>
     <td class="product-price" data-title="Price">
