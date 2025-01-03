@@ -21,83 +21,75 @@
             <div class="row">
                 <div class="col-md-8 col">
                     <h2 class="mb-4">Billing details</h2>
-                    <form method="get">
+                    <form method="get" action="" id="orderForm">
                         <h5>Contact details</h5>
                         <div>
                             <div class="row px-3">
                                 <div class="form-row validate-required w-50">
-                                    <label for="firstName" class="">First name<span
-                                            class="required" title="required">*</span></label>
+                                    <label for="firstName" class="">First name*</label>
                                     <input type="text" class="input-text "
                                            name="firstName"
                                            id="firstName" placeholder="" value="">
                                 </div>
                                 <div class="form-row validate-required w-50">
-                                    <label for="lastName" class="">Last name<span
-                                            class="required" title="required">*</span></label>
+                                    <label for="lastName" class="">Last name*</label>
                                     <input type="text" class="input-text "
                                            name="lastName"
                                            id="lastName" placeholder="" value="">
                                 </div>
                             </div>
                             <div class="form-row  validate-required">
-                                <label for="phone" class="">Phone<span
-                                        class="required" title="required">*</span></label>
+                                <label for="phone" class="">Phone*</label>
                                 <input type="text" class="input-text "
                                        name="phone"
                                        id="phone" placeholder="" value="">
                             </div>
                             <div class="form-row  validate-required">
-                                <label for="email" class="">Email<span
-                                        class="required" title="required">*</span></label>
-                                <input type="email" class="input-text "
+                                <label for="email" class="">Email*</label>
+                                <input type="email" class="input-text"
                                        name="email"
-                                       id="email" placeholder="" value="">
+                                       id="email" placeholder="" value="" required>
                             </div>
                         </div>
                         <h5 class="mt-5">Address details</h5>
                         <div>
                             <div class="form-row  validate-required">
-                                <label for="country" class="">Country<span
-                                        class="required" title="required">*</span></label>
+                                <label for="country" class="">Country*</label>
                                 <input type="text" class="input-text "
                                        name="country"
                                        id="country" placeholder="" value="">
                             </div>
-                            <div class="row px-3">
-                                <div class="form-row  validate-required w-50">
-                                    <label for="city" class="">City<span
-                                            class="required" title="required">*</span></label>
+{{--                            <div class="row px-3">--}}
+                                <div class="form-row  validate-required w-100">
+                                    <label for="city" class="">City*</label>
                                     <input type="text" class="input-text "
                                            name="city"
                                            id="city" placeholder="" value="">
                                 </div>
-                                <div class="form-row  validate-required w-50">
+{{--                                <div class="form-row  validate-required w-50">--}}
 
-                                    <label for="district" class="">District<span
-                                            class="required" title="required">*</span></label>
-                                    <input type="text" class="input-text "
-                                           name="district"
-                                           id="district" placeholder="" value="">
-                                </div>
-                            </div>
+{{--                                    <label for="district" class="">District<span--}}
+{{--                                            class="required" title="required">*</span></label>--}}
+{{--                                    <input type="text" class="input-text "--}}
+{{--                                           name="district"--}}
+{{--                                           id="district" placeholder="" value="">--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                             <div class="row px-3">
                                 <div class="form-row  validate-required w-75">
-                                    <label for="address" class="">Address<span
-                                            class="required" title="required">*</span></label>
+                                    <label for="address" class="">Address*</label>
                                     <input type="text" class="input-text "
                                            name="address"
                                            id="address" placeholder="" value="">
                                 </div>
                                 <div class="form-row  validate-required w-25">
-                                    <label for="zip" class="">Postal Code<span
-                                            class="required" title="required">*</span></label>
+                                    <label for="zip" class="">Postal Code*</label>
                                     <input type="text" class="input-text "
                                            name="zip"
                                            id="zip" placeholder="" value="">
                                 </div>
                             </div>
-                            <div class="form-row validate-required">
+                            <div class="form-row">
                                 <label for="additionalNotes" class="">Additional notes</label>
                                 <textarea class="input-text" rows="6"
                                           name="additionalNotes"
@@ -175,14 +167,14 @@
                                         </div>
 
 
-                                        <button type="submit" class="button alt" name="woocommerce_checkout_place_order"
-                                                id="place_order" value="Place order" data-value="Place order">Place
-                                            order
-                                        </button>
+                                        <button type="button" class="button alt w-100" id="placeOrder">Place order</button>
 
                                         <input type="hidden" id="woocommerce-process-checkout-nonce"
                                                name="woocommerce-process-checkout-nonce" value="1314b3a253"><input
                                             type="hidden" name="_wp_http_referer" value="/?wc-ajax=update_order_review">
+                                        <div id="warningDiv" class="woocommerce-info d-none alertDiv mt-3 w-100 text-center">
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
