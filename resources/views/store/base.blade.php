@@ -21,9 +21,10 @@
     <link type="text/css" rel="stylesheet" href="{{asset('css/slick.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('css/slick-theme.css')}}"/>
 
-{{--        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">--}}
+    {{--        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">--}}
     {{----}}
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
@@ -36,7 +37,7 @@
     class="page-template page-template-elementor_header_footer page page-id-360 theme-brator woocommerce-js woo-variation-swatches wvs-behavior-blur wvs-theme-brator wvs-show-label wvs-tooltip tinvwl-theme-style elementor-default elementor-template-full-width elementor-kit-11 elementor-page elementor-page-360 loading-frame e--ua-blink e--ua-chrome e--ua-webkit"
     data-elementor-device-mode="desktop">
 <div class="page-wrapper">
-    <input type="hidden" id="cart-route" value="{{route('addToCart')}}" />
+    <input type="hidden" id="cart-route" value="{{route('addToCart')}}"/>
     @include('store.components.header.header')
     @yield('bodyContent')
 
@@ -66,10 +67,7 @@
                                                 <p>Bald Hill St, Asheville, NC 28803</p>
                                                 <a class="e-mail-to"
                                                    href="https://brator-main.smartdemowp.com/shop-categories/#_">info@brator.com</a>
-                                                <img width="768" height="173" src="./trust.png" class="title-img" alt=""
-                                                     decoding="async"
-                                                     srcset="https://brator-main.smartdemowp.com/wp-content/uploads/2021/12/trust.png 768w, https://brator-main.smartdemowp.com/wp-content/uploads/2021/12/trust-300x68.png 300w, https://brator-main.smartdemowp.com/wp-content/uploads/2021/12/trust-600x135.png 600w"
-                                                     sizes="(max-width: 768px) 100vw, 768px"></div>
+                                             </div>
                                         </div>
                                     </div>
                                 </div>
@@ -91,14 +89,6 @@
                                                     <li class="link_with_normal">
                                                         <a href="https://brator-main.smartdemowp.com/my-account/">
                                                             My Account </a>
-                                                    </li>
-                                                    <li class="link_with_normal">
-                                                        <a href="https://brator-main.smartdemowp.com/order-track/">
-                                                            Track </a>
-                                                    </li>
-                                                    <li class="link_with_normal">
-                                                        <a href="https://brator-main.smartdemowp.com/order-track/">
-                                                            My Order </a>
                                                     </li>
                                                     <li class="link_with_normal">
                                                         <a href="https://brator-main.smartdemowp.com/shop-categories/#">
@@ -130,35 +120,15 @@
                                                 <ul>
                                                     <li class="link_with_normal">
                                                         <a href="https://brator-main.smartdemowp.com/about-us/">
-                                                            About Brator </a>
-                                                    </li>
-                                                    <li class="link_with_normal">
-                                                        <a href="https://brator-main.smartdemowp.com/shop-categories/#">
-                                                            Investors </a>
-                                                    </li>
-                                                    <li class="link_with_normal">
-                                                        <a href="https://brator-main.smartdemowp.com/blog-posts/">
-                                                            Blog </a>
-                                                    </li>
-                                                    <li class="link_with_normal">
-                                                        <a href="https://brator-main.smartdemowp.com/shop-categories/#">
-                                                            Career </a>
+                                                            About Rollpart </a>
                                                     </li>
                                                     <li class="link_with_normal">
                                                         <a href="https://brator-main.smartdemowp.com/contact-us/">
                                                             Contact </a>
                                                     </li>
                                                     <li class="link_with_normal">
-                                                        <a href="https://brator-main.smartdemowp.com/shop-categories/#">
-                                                            Affiliate Program </a>
-                                                    </li>
-                                                    <li class="link_with_normal">
-                                                        <a href="https://brator-main.smartdemowp.com/shop-categories/#">
-                                                            Sell on Brator </a>
-                                                    </li>
-                                                    <li class="link_with_normal">
-                                                        <a href="https://brator-main.smartdemowp.com/shop-categories/#">
-                                                            Parnership </a>
+                                                        <a href="{{route('infoTerms')}}">
+                                                           Terms & Conditions</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -251,19 +221,19 @@
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="brator-copyright-area">
                         <p>
-                            © 2022<a href="https://brator-main.smartdemowp.com/shop-categories/#">Brator Inc.</a>All
+                            © 2025<a href="/">Rollparts</a>All
                             Rights Reserved </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
-                    <div class="brator-payment-area svg-link">
-                        <h6 class="brator-payment-title">Payment Methods</h6>
-                        <a href="https://brator-main.smartdemowp.com/shop-categories/#"><img src="./paypal.png"></a>
-                        <a href="https://brator-main.smartdemowp.com/shop-categories/#"><img src="./master.png"></a>
-                        <a href="https://brator-main.smartdemowp.com/shop-categories/#"><img src="./visa.png"></a>
-                        <a href="https://brator-main.smartdemowp.com/shop-categories/#"><img src="./stripe.png"></a>
-                        <a href="https://brator-main.smartdemowp.com/shop-categories/#"><img src="./klarna.png"></a>
-                    </div>
+{{--                    <div class="brator-payment-area svg-link">--}}
+{{--                        <h6 class="brator-payment-title">Payment Methods</h6>--}}
+{{--                        <a href="https://brator-main.smartdemowp.com/shop-categories/#"><img src="./paypal.png"></a>--}}
+{{--                        <a href="https://brator-main.smartdemowp.com/shop-categories/#"><img src="./master.png"></a>--}}
+{{--                        <a href="https://brator-main.smartdemowp.com/shop-categories/#"><img src="./visa.png"></a>--}}
+{{--                        <a href="https://brator-main.smartdemowp.com/shop-categories/#"><img src="./stripe.png"></a>--}}
+{{--                        <a href="https://brator-main.smartdemowp.com/shop-categories/#"><img src="./klarna.png"></a>--}}
+{{--                    </div>--}}
                 </div>
                 <div class="col-lg-4 col-12">
                     <div class="brator-social-link svg-link">

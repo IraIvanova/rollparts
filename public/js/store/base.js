@@ -34,8 +34,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 axios.post(route, data, axiosConfig)
                     .then((resp) => {
-                        let myModal = new bootstrap.Modal(document.getElementById('cartModal'), {});
-                        myModal.show();
+                        if (resp.status === 201) {
+                            console.log(resp, resp.name)
+                            let cartModalLabel = document.getElementById('cartModalLabel');
+                            cartModalLabel.children[0].innerText = resp.data.name;
+                            let myModal = new bootstrap.Modal(document.getElementById('cartModal'), {});
+                            myModal.show();
+                        } else {
+                            alert('smth went wrong!');
+                        }
                     })
             })
         }

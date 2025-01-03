@@ -21,7 +21,7 @@ class CartService
     /**
      * @throws ProductNotFoundException
      */
-    public function addToCart(int $productId, int $quantity): ShoppingCart
+    public function addToCart(int $productId, int $quantity): CartProductDTO
     {
         $product = Product::find($productId);
 
@@ -42,7 +42,7 @@ class CartService
         $shoppingCart->addProduct($productInCart, $quantity);
         $this->saveCart($shoppingCart);
 
-        return $shoppingCart;
+        return $productInCart;
     }
 
     public function removeFromCart(int $productId, $removeOne = true): ShoppingCart

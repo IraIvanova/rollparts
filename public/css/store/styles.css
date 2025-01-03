@@ -398,6 +398,30 @@
     color: var(--wc-red);
 }
 
+#cartModal .modal-buttons .button {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+    background: var(--color-high-dark);
+    border: 2px solid var(--color-high-dark);
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 4px;
+    height: 52px;
+    text-transform: capitalize;
+    transition: 0.3s;
+}
+#cartModal .modal-buttons button {
+    background: #000!important;
+    border-color: #000!important;
+    font-weight: 500!important;
+}
+
+.modal-content {
+    border-radius: 0;
+    border: none;
+}
+
 @media (max-width: 768px) {
     #main-content {
         padding-top: 0!important;
