@@ -88,10 +88,13 @@ class SearchProductsQueryBuilderService
 
     private function filterByBrands(?array $brands = []): self
     {
+        $this->query->join('brands as b', 'b.id', '=', 'p.brand_id');
+
         if (!empty($brands)) {
-            $this->query->join('brands as b', 'b.id', '=', 'p.brand_id')
-                ->whereIn('b.name', $brands);
+            $this->query->whereIn('b.name', $brands);
         }
+
+        $this->selectFields = array_merge($this->selectFields, ['b.slug as brand_slug', 'b.name as brand_name']);
 
         return $this;
     }

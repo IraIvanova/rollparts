@@ -15,12 +15,9 @@
                  class="attachment-shop_catalog size-shop_catalog wp-post-image"> </a>
     </div>
     <div class="brator-product-single-item-mini">
+            <a href="{{route('catalog', ['brand' => $product['brand_slug']])}}" class="font-size-14px">{{$product['brand_name']}}</a>
         <div class="brator-product-single-item-cat">
             <a href="{{route('product', $product['slug'])}}">{{$product['name']}}</a>
-        </div>
-        <div class="brator-product-single-item-title">
-            <h5><a href=""></a>
-            </h5>
         </div>
 
         <div class="brator-product-single-item-price">
