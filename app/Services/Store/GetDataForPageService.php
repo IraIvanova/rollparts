@@ -40,14 +40,15 @@ readonly class GetDataForPageService
                 PagesConstants::CHECKOUT_PAGE => $this->getCheckoutPageData(),
                 PagesConstants::ORDER_CONFIRMATION_PAGE => $this->getOrderConfirmationPageData(),
                 default => [],
-            } + $this->getBaseData();
+            } + $this->getBaseData($page);
     }
 
-    private function getBaseData(): array
+    private function getBaseData(string $page): array
     {
         return [
             'categories' => $this->categoryService->getAllCategories(),
-            'shoppingCart' => $this->cartService->getCart()->toArray()
+            'shoppingCart' => $this->cartService->getCart()->toArray(),
+            'breadcrumbs' => $this->getBreadcrumbs($page),
         ];
     }
 
@@ -170,5 +171,13 @@ readonly class GetDataForPageService
     private function toArray(Collection $products): Collection
     {
         return $products->map(fn($i) => (array)$i);
+    }
+
+    private function getBreadcrumbs(string $page): array
+    {
+        return match ($page) {
+            PagesConstants::PRODUCT_PAGE => $this->getHomePageData(),
+            default => []
+        };
     }
 }

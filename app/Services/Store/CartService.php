@@ -21,7 +21,7 @@ class CartService
     /**
      * @throws ProductNotFoundException
      */
-    public function addToCart(int $productId, int $quantity): CartProductDTO
+    public function addToCart(int $productId, int $quantity): array
     {
         $product = Product::find($productId);
 
@@ -42,7 +42,7 @@ class CartService
         $shoppingCart->addProduct($productInCart, $quantity);
         $this->saveCart($shoppingCart);
 
-        return $productInCart;
+        return $shoppingCart->toArray();
     }
 
     public function removeFromCart(int $productId, $removeOne = true): ShoppingCart
@@ -52,6 +52,11 @@ class CartService
         $this->saveCart($shoppingCart);
 
         return $shoppingCart;
+    }
+
+    public function isCartEmpty(): bool
+    {
+        return $this->getCart()->getTotalItems() === 0;
     }
 
     public function createOrder(array $contactDetails): Order
@@ -79,5 +84,10 @@ class CartService
     private function clearCart(): void
     {
         session()->forget('shoppingCart');
+    }
+
+    public function getRenderedProductsList(): string
+    {
+        return view('store.components.cart.previewInHeader', ['shoppingCart' => $this->getCart()->toArray()])->render();
     }
 }

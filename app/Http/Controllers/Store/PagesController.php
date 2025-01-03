@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Store;
 use App\Constant\PagesConstants;
 use App\Exceptions\ProductNotFoundException;
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Services\Store\CartService;
 use App\Services\Store\GetDataForPageService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -13,8 +13,10 @@ use Illuminate\View\View;
 
 class PagesController extends Controller
 {
-    public function __construct(private readonly GetDataForPageService $getDataForPageService)
-    {
+    public function __construct(
+        private readonly GetDataForPageService $getDataForPageService,
+        private readonly CartService $cartService
+    ) {
     }
 
     /**
@@ -78,8 +80,12 @@ class PagesController extends Controller
      * @throws ProductNotFoundException
      * @throws \ErrorException
      */
-    public function checkout(): View
+    public function checkout(): View|RedirectResponse
     {
+        if ($this->cartService->isCartEmpty()) {
+            return redirect()->route('cart');
+        }
+
         return view('store.checkout', $this->getDataForPageService->getSpecificPageData(PagesConstants::CHECKOUT_PAGE));
     }
 

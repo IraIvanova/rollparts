@@ -34,8 +34,8 @@
                         class="woocommerce-Price-currencySymbol">$</span>{{ $product['price'] }}</span>
                 </p>
             @else
-                <span class="woocommerce-Price-amount amount"><span
-                        class="woocommerce-Price-currencySymbol">$</span>{{ $product['price'] }}</span>
+                <span class="woocommerce-Price-amount amount font-weight-bold"><span
+                        class="woocommerce-Price-currencySymbol ">$</span>{{ $product['price'] }}</span>
             @endif
         </div>
 

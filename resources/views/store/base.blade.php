@@ -40,7 +40,6 @@
     <input type="hidden" id="cart-route" value="{{route('addToCart')}}"/>
     @include('store.components.header.header')
     @yield('bodyContent')
-
     <div class="brator-footer-top-area">
         <div class="container-xxxl container-xxl container">
             <div data-elementor-type="page" data-elementor-id="1436" class="elementor elementor-1436">
@@ -53,16 +52,14 @@
                             data-id="316c1070" data-element_type="column">
                             <div class="elementor-widget-wrap elementor-element-populated">
                                 <div
-                                    class="elementor-element elementor-element-d303512 elementor-widget elementor-widget-brator_footer_about_two"
-                                    data-id="d303512" data-element_type="widget"
-                                    data-widget_type="brator_footer_about_two.default">
+                                    class="elementor-element elementor-element-d303512 elementor-widget elementor-widget-brator_footer_about_two">
                                     <div class="elementor-widget-container">
                                         <div class="brator-footer-top-element brator-footer-top-address">
                                             <h6 class="footer-top-title">Contact Us</h6>
                                             <div class="brator-footer-top-content">
                                                 <p>Call us 24/7</p>
                                                 <a class="call-top-p"
-                                                   href="https://brator-main.smartdemowp.com/shop-categories/#_">1800
+                                                   href="">1800
                                                     500 1234 925</a>
                                                 <p>Bald Hill St, Asheville, NC 28803</p>
                                                 <a class="e-mail-to"

@@ -19,3 +19,4 @@ Route::get('/cart', [PagesController::class, 'cart'])->name('cart');
 Route::post('/createOrder', [CartController::class, 'createOrder'])->name('createOrder');
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('addToCart');
 Route::post('/cart/remove', [CartController::class, 'removeFromCart'])->name('removeFromCart');
+Route::post('/cart/update', [CartController::class, 'updateCart'])->name('cartUpdateRoute');

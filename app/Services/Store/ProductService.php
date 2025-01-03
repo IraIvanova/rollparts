@@ -2,6 +2,7 @@
 
 namespace App\Services\Store;
 
+use App\Models\Category;
 use App\Models\Product;
 use App\Services\FilesManagingService;
 
@@ -28,8 +29,9 @@ class ProductService
             'name' => $productNameAndDescription->name,
             'description' => $productNameAndDescription->description,
             'brand' => $product->brand,
-            'prices' => $product->priceByCurrency->toArray(),
-            'images' => $product->getMedia()
+            'prices' => $product->priceByCurrency,
+            'images' => $product->getMedia(),
+            'breadcrumbs' => $this->prepareBreadcrumbs($product, $productNameAndDescription['name'])
         ];
     }
 
@@ -47,5 +49,42 @@ class ProductService
            return [$i->model_id => $i->getFullUrl()];
         })
             ->toArray();
+    }
+
+    private function prepareBreadcrumbs(Product $product, string $name): array
+    {
+        $category = $product->categories()->first();
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => '/'],
+        ];
+
+        if ($category) {
+            $categoryChain = $this->getCategoryChain($category);
+
+            foreach ($categoryChain as $cat) {
+                $breadcrumbs[] = [
+                    'name' => $cat->name,
+                    'url' => route('category', $cat->slug),
+                ];
+            }
+        }
+
+        $breadcrumbs[] = [
+            'name' => $name
+        ];
+
+        return $breadcrumbs;
+    }
+
+    private function getCategoryChain(Category $category): array
+    {
+        $categories = [];
+
+        while ($category) {
+            $categories[] = $category;
+            $category = $category->parent;
+        }
+
+        return array_reverse($categories);
     }
 }

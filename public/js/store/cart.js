@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const data = {productId: btn.parentElement.dataset.product};
 
                 if (btn.classList.contains('remove-full')) {
-                    data.removeOne = false;
+                    data.removeOne = 0;
                 }
 
                 axios.post(route, prepareFormData(data), axiosConfig)
@@ -47,4 +47,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     changeProductAmountInCart();
+    showCouponCode();
 });

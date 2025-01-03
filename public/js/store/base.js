@@ -35,11 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 axios.post(route, data, axiosConfig)
                     .then((resp) => {
                         if (resp.status === 201) {
-                            console.log(resp, resp.name)
                             let cartModalLabel = document.getElementById('cartModalLabel');
                             cartModalLabel.children[0].innerText = resp.data.name;
                             let myModal = new bootstrap.Modal(document.getElementById('cartModal'), {});
                             myModal.show();
+
+                            updateCartPreview(resp.data);
                         } else {
                             alert('smth went wrong!');
                         }
@@ -109,6 +110,14 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.style.overflow = '';
         }
     });
+
+    let updateCartPreview = (data) => {
+        const cartCounter = document.getElementsByClassName('header-cart-count')[0];
+        const cartContainer = document.getElementById('cart-preview-content')
+
+        cartCounter.innerText = data.totalItems;
+        cartContainer.innerHTML = data.view;
+    }
 
     fixHeader();
     addToCart();

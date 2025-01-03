@@ -24,7 +24,8 @@ class CartController extends Controller
     public function addToCart(Request $request): JsonResponse
     {
         return response()->json(
-            $this->cartService->addToCart($request->get('productId'), $request->get('amount') ?? 1),
+            $this->cartService->addToCart($request->get('productId'), $request->get('amount') ?? 1) +
+            ['view' => $this->cartService->getRenderedProductsList()],
             ResponseAlias::HTTP_CREATED
         );
     }
@@ -36,10 +37,17 @@ class CartController extends Controller
         return response()->json([], ResponseAlias::HTTP_NO_CONTENT);
     }
 
+    public function updateCart(): JsonResponse
+    {
+        return response()->json($this->cartService->getCart(), ResponseAlias::HTTP_CREATED);
+    }
+
     public function createOrder(Request $request): RedirectResponse
     {
         $order = $this->cartService->createOrder($request->all());
 
         return redirect()->route('orderConfirmation')->with(['orderId' => $order->id]);
     }
+
+
 }

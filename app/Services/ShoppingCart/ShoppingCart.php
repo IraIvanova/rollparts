@@ -69,6 +69,11 @@ class ShoppingCart
         return $this->products;
     }
 
+    public function getTotalItems(): int
+    {
+        return $this->totalItems;
+    }
+
     public function getTotalPrice(): float
     {
         return $this->totalPrice;

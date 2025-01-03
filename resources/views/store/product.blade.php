@@ -20,14 +20,8 @@
                                 <div class="brator-product-hero-content">
                                     <div class="brator-product-hero-content-info">
                                         <div class="brator-product-hero-content-brand">
-                                            <a href="https://brator-main.smartdemowp.com/product-brand/bosch/"
-                                               rel="tag">Bosch</a>, <a
-                                                href="https://brator-main.smartdemowp.com/product-brand/castrol/"
-                                                rel="tag">Castrol</a>, <a
-                                                href="https://brator-main.smartdemowp.com/product-brand/varta/"
-                                                rel="tag">Varta</a>, <a
-                                                href="https://brator-main.smartdemowp.com/product-brand/wruth/"
-                                                rel="tag">Wruth</a></div>
+                                            <a href=""
+                                               rel="tag">{{$brand['name']}}</a></div>
                                         <div class="brator-product-hero-content-title">
                                             <h1>{{ $name }}</h1>
                                         </div>
@@ -41,7 +35,7 @@
                                         @endif
                                         <div class="brator-product-hero-content-price">
                                             <h6>
-                                                @if($prices['discount_amount'])
+                                                @if((float)$prices['discount_amount'])
                                                         <span class="woocommerce-Price-amount amount color-red"><span
                                                                         class="woocommerce-Price-currencySymbol">$</span>{{ $prices['discounted_price'] }}</span>
                                                       <span class="woocommerce-Price-amount amount px-2 color-grey line-through font-size-20px"><span

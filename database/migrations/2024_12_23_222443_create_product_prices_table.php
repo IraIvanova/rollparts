@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('product_prices', function (Blueprint $table) {
             $table->id();
             $table->foreignId('product_id');
-            $table->decimal('price', 10, 2);
+            $table->float('price', 2);
             $table->foreignId('currency_id');
             $table->string('option_value')->nullable();
-            $table->decimal('discounted_price', 10, 2)->nullable();
-            $table->decimal('discount_amount', 10, 2)->nullable();
+            $table->float('discounted_price', 2)->nullable();
+            $table->float('discount_amount', 2)->nullable();
             $table->timestamps();
 
             $table->foreign('product_id')
