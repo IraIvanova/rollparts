@@ -393,6 +393,10 @@
     font-weight: bold;
     margin-bottom: 0;
 }
+.order-confirmation a{
+    font-weight: bold;
+    color: var(--wc-red);
+}
 
 @media (max-width: 768px) {
     #main-content {

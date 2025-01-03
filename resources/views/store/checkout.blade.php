@@ -21,14 +21,15 @@
             <div class="row">
                 <div class="col-md-8 col">
                     <h2 class="mb-4">Billing details</h2>
-                    <form method="get" action="" id="orderForm">
+                    <form method="post" action="{{route('createOrder')}}" id="orderForm">
+                        @csrf
                         <h5>Contact details</h5>
                         <div>
                             <div class="row px-3">
                                 <div class="form-row validate-required w-50">
                                     <label for="firstName" class="">First name*</label>
                                     <input type="text" class="input-text "
-                                           name="firstName"
+                                           name="name"
                                            id="firstName" placeholder="" value="">
                                 </div>
                                 <div class="form-row validate-required w-50">
@@ -79,7 +80,7 @@
                                 <div class="form-row  validate-required w-75">
                                     <label for="address" class="">Address*</label>
                                     <input type="text" class="input-text "
-                                           name="address"
+                                           name="address_line1"
                                            id="address" placeholder="" value="">
                                 </div>
                                 <div class="form-row  validate-required w-25">

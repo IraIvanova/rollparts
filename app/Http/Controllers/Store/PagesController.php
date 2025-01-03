@@ -7,6 +7,7 @@ use App\Exceptions\ProductNotFoundException;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Services\Store\GetDataForPageService;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -79,7 +80,7 @@ class PagesController extends Controller
      */
     public function checkout(): View
     {
-        return view('store.checkout',  $this->getDataForPageService->getSpecificPageData(PagesConstants::CHECKOUT_PAGE));
+        return view('store.checkout', $this->getDataForPageService->getSpecificPageData(PagesConstants::CHECKOUT_PAGE));
     }
 
     public function termsAndConditions(): View
@@ -90,5 +91,18 @@ class PagesController extends Controller
     public function contactUs(): View
     {
         return view('store.info.contacts');
+    }
+
+    /**
+     * @throws ProductNotFoundException
+     * @throws \ErrorException
+     */
+    public function orderConfirmation(Request $request): View|RedirectResponse
+    {
+        if (!$request->session()->has('orderId')) {
+            return redirect()->route('homepage');
+        }
+
+        return view('store.orderConfirmation', $this->getDataForPageService->getSpecificPageData(PagesConstants::ORDER_CONFIRMATION_PAGE));
     }
 }

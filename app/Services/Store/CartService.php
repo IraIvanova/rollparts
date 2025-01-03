@@ -4,12 +4,20 @@ namespace App\Services\Store;
 
 use App\DTO\CartProductDTO;
 use App\Exceptions\ProductNotFoundException;
+use App\Models\Order;
 use App\Models\Product;
+use App\Services\OrderService;
 use App\Services\ShoppingCart\ShoppingCart;
 use Illuminate\Support\Facades\Session;
 
 class CartService
 {
+    public function __construct(
+        private readonly ClientService $clientService,
+        private readonly OrderService $orderService,
+    ) {
+    }
+
     /**
      * @throws ProductNotFoundException
      */
@@ -46,6 +54,18 @@ class CartService
         return $shoppingCart;
     }
 
+    public function createOrder(array $contactDetails): Order
+    {
+        $client = $this->clientService->findOrCreateClient($contactDetails);
+        $this->clientService->saveAddress($client, $contactDetails);
+        $shoppingCart = $this->getCart();
+
+        $order = $this->orderService->createOrder($client, $shoppingCart->getProducts());
+        $this->clearCart();
+
+        return $order;
+    }
+
     public function getCart(): ShoppingCart
     {
         return session('shoppingCart', new ShoppingCart());
@@ -54,5 +74,10 @@ class CartService
     private function saveCart(ShoppingCart $shoppingCart): void
     {
         session(['shoppingCart' => $shoppingCart]);
+    }
+
+    private function clearCart(): void
+    {
+        session()->forget('shoppingCart');
     }
 }

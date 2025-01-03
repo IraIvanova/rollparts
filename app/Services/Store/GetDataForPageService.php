@@ -38,6 +38,7 @@ readonly class GetDataForPageService
                 PagesConstants::CART_PAGE => $this->getCartPageData(),
                 PagesConstants::CATALOG_PAGE => $this->getCatalogPageData($params['searchParams']),
                 PagesConstants::CHECKOUT_PAGE => $this->getCheckoutPageData(),
+                PagesConstants::ORDER_CONFIRMATION_PAGE => $this->getOrderConfirmationPageData(),
                 default => [],
             } + $this->getBaseData();
     }
@@ -159,6 +160,11 @@ readonly class GetDataForPageService
     private function getCheckoutPageData(): array
     {
         return $this->cartService->getCart()->toArray();
+    }
+
+    private function getOrderConfirmationPageData(): array
+    {
+        return [];
     }
 
     private function toArray(Collection $products): Collection

@@ -9,6 +9,13 @@ class Order extends Model
 {
     public function products(): BelongsToMany
     {
-        return $this->belongsToMany(Product::class)->withPivot('discount', 'amount');
+        return $this->belongsToMany(Product::class)->withPivot('price', 'discounted_price', 'amount');
     }
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
+
+
 }
