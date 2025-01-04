@@ -57,7 +57,7 @@ readonly class GetDataForPageService
         $filtersParameters = new ProductsFilterParametersDTO(
             language: 'tr',
             currency: 'TRL',
-            limit: 8
+            limit: 10
         );
 
         $bestsellerProducts = $this->productQueryBuilderService->getBestsellerProducts($filtersParameters)->get();

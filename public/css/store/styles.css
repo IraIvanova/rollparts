@@ -308,15 +308,7 @@
     justify-content: space-between;
     margin-bottom: 35px;
 }
-.bestseller-products .slick-track {
-    display: flex !important; /* Flex container to align items */
-    align-items: stretch; /* Make all items match height */
-    left: 30px!important;
-}
-.bestseller-products .slick-initialized .slick-slide {
-    width: 250px!important;
-    margin: 0 20px!important;
-}
+
 .categories-slider.slick-initialized .slick-slide {
     margin: 0 20px!important;
 }
@@ -330,8 +322,8 @@
     background: #fff; /* Optional: Background color */
     padding: 10px;
     box-sizing: border-box; /* Include padding in height calculation */
-    /*width: 250px!important;*/
-    /*margin: 0 20px!important;*/
+    width: 250px!important;
+    margin: 0 8px!important;
 }
 
 /* Product image container */
