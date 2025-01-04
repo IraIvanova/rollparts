@@ -4,8 +4,8 @@
             <div class="col-lg-12">
                 <div class="brator-breadcrumb">
                     <ul>
-            
-                        @if(isset($breadcrumbs))
+
+                        @if(!empty($breadcrumbs))
                             @foreach($breadcrumbs as $breadcrumb)
                                 <li>
                                     @if(isset($breadcrumb['url']))
@@ -24,6 +24,13 @@
                                         @endif
                                 </li>
                             @endforeach
+                        @else
+                                <li>
+                                    <a href="/"><span>Home</span></a>
+                                </li>
+                            <li>
+                                   <span>Products</span>
+                                </li>
                         @endif
                     </ul>
                 </div>
