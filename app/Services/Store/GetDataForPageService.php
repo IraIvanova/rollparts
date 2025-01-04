@@ -21,6 +21,7 @@ readonly class GetDataForPageService
         private BrandService $brandService,
         private OptionsService $optionsService,
         private CartService $cartService,
+        private BreadcrumbsService $breadcrumbsService,
     ) {
     }
 
@@ -48,7 +49,6 @@ readonly class GetDataForPageService
         return [
             'categories' => $this->categoryService->getAllCategories(),
             'shoppingCart' => $this->cartService->getCart()->toArray(),
-            'breadcrumbs' => $this->getBreadcrumbs($page),
         ];
     }
 
@@ -109,6 +109,7 @@ readonly class GetDataForPageService
             'options' => $this->optionsService->getOptionsAvailableForCategories($nestedCategoriesId),
             'selectedOptions' => $searchParameters->getValuesArray(),
             'images' => $productImages,
+            'breadcrumbs' => $this->breadcrumbsService->prepareBreadcrumbsForCategory($category)
         ];
     }
 
@@ -171,13 +172,5 @@ readonly class GetDataForPageService
     private function toArray(Collection $products): Collection
     {
         return $products->map(fn($i) => (array)$i);
-    }
-
-    private function getBreadcrumbs(string $page): array
-    {
-        return match ($page) {
-            PagesConstants::PRODUCT_PAGE => $this->getHomePageData(),
-            default => []
-        };
     }
 }
