@@ -318,7 +318,7 @@
     display: flex; /* Set flex layout for internal structure */
     flex-direction: column; /* Arrange child elements vertically */
     justify-content: space-between; /* Space items evenly */
-    height: 100%; /* Ensure items stretch to match height */
+    /*height: 100%; !* Ensure items stretch to match height *!*/
     background: #fff; /* Optional: Background color */
     padding: 10px;
     box-sizing: border-box; /* Include padding in height calculation */
