@@ -33,3 +33,7 @@
         </div>
     </section>
 @endsection
+
+@section('additionalScript')
+    <script src="{{ asset('js/store/category.js') }}"></script>
+@endsection
