@@ -33,6 +33,7 @@ class SearchProductsQueryBuilderService
         return $this
             ->addProductTranslations($parameters->language)
             ->addPrices($parameters->currency)
+            ->filterByBrands($parameters->searchParameters?->brands)
             ->setLimit($parameters->limit)
             ->getResults();
     }
