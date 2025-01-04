@@ -28,7 +28,7 @@ class FilesManagingService
     public function getMainImages(array $products): Collection
     {
        return Media::query()
-           ->whereIn('id', $products)
+           ->whereIn('model_id', $products)
            ->where('order_column', 1)
            ->get();
     }
