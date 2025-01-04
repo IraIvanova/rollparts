@@ -330,8 +330,8 @@
     background: #fff; /* Optional: Background color */
     padding: 10px;
     box-sizing: border-box; /* Include padding in height calculation */
-    width: 250px!important;
-    margin: 0 20px!important;
+    /*width: 250px!important;*/
+    /*margin: 0 20px!important;*/
 }
 
 /* Product image container */
