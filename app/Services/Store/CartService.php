@@ -9,6 +9,7 @@ use App\Models\Order;
 use App\Models\Product;
 use App\Services\OrderService;
 use App\Services\ShoppingCart\ShoppingCart;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class CartService
@@ -62,16 +63,18 @@ class CartService
         return $this->getCart()->getTotalItems() === 0;
     }
 
-    public function createOrder(array $contactDetails): Order
+    public function createOrder(array $contactDetails): ?Order
     {
-        $client = $this->clientService->findOrCreateClient($contactDetails);
-        $this->clientService->saveAddress($client, $contactDetails);
-        $shoppingCart = $this->getCart();
+       return DB::transaction(function () use ($contactDetails) {
+            $client = $this->clientService->findOrCreateClient($contactDetails);
+            $this->clientService->saveAddress($client, $contactDetails);
+            $shoppingCart = $this->getCart();
 
-        $order = $this->orderService->createOrder($client, $shoppingCart->getProducts());
-        $this->clearCart();
+            $order = $this->orderService->createOrder($client, $shoppingCart->getProducts());
+            $this->clearCart();
 
-        return $order;
+            return $order;
+        });
     }
 
     public function getCart(): ShoppingCart

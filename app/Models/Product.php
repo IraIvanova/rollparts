@@ -80,4 +80,9 @@ class Product extends Model implements HasMedia
     {
         return $this->hasOne(ProductStock::class);
     }
+
+    public function inventory(): Hasmany
+    {
+        return $this->hasMany(Inventory::class);
+    }
 }

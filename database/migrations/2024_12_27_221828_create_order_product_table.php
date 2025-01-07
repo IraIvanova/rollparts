@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('product_id');
             $table->integer('amount');
             $table->float('price');
-            $table->float('discountedPrice');
+            $table->float('discounted_price');
             $table->timestamps();
 
             $table->foreign('order_id')

@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('product_id');
             $table->integer('quantity_change');
-            $table->string('change_reason')->nullable();
+            $table->integer('new_stock');
+            $table->string('source');
+            $table->text('description')->nullable();
             $table->timestamps();
 
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');

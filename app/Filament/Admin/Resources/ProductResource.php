@@ -3,6 +3,7 @@
 namespace App\Filament\Admin\Resources;
 
 use App\Constant\FilesConstants;
+use App\Filament\Admin\Resources\InventoryResource\RelationManagers\InventoryRelationManager;
 use App\Filament\Admin\Resources\ProductResource\Pages;
 use App\Filament\Admin\Resources\ProductResource\RelationManagers\ImagesRelationManager;
 use App\Models\Currency;
@@ -12,6 +13,7 @@ use App\Models\Product;
 use CodeWithDennis\FilamentSelectTree\SelectTree;
 use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
@@ -189,7 +191,14 @@ class ProductResource extends Resource
                                     ])
                                     ->grid(2)
                                     ->label('Add Option Value'),
-                            ])
+                            ]),
+//                             Tab::make('Inventory')
+//                                 ->schema([
+//                                     Placeholder::make('inventory_table')
+//                                         ->content(view('filament.tables.inventory', [
+//                                             'inventories' => fn ($record) => $record?->inventory, // Pass inventory data
+//                                         ])),
+//                                 ]),
 
                     ])
                     ->columnSpanFull()
@@ -225,6 +234,7 @@ class ProductResource extends Resource
     public static function getRelations(): array
     {
         return [
+            InventoryRelationManager::class
         ];
     }
 

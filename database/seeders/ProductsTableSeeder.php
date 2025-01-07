@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductPrice;
+use App\Models\ProductStock;
 use App\Models\ProductTranslation;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -42,6 +43,11 @@ class ProductsTableSeeder extends Seeder
                 'price' => $price,
                 'discounted_price' => $discountedPrice,
                 'discount_amount' => $discountAmount,
+            ]);
+
+            ProductStock::create([
+                'product_id' => $product->id,
+                'quantity' => rand(1, 100),
             ]);
 
             foreach (Category::where('parent_id', null)->get() as $category) {

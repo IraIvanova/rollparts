@@ -5,15 +5,22 @@ namespace App\Services;
 use App\Constant\StatusesConstants;
 use App\Models\Client;
 use App\Models\Order;
-use App\Services\ShoppingCart\ShoppingCart;
+use App\Services\Store\ProductService;
 
 class OrderService
 {
+    public function __construct(
+        private readonly StockService $stockService,
+    )
+    {
+    }
+
     public function createOrder(Client $client, array $products): Order
     {
         $order = new Order();
         $order->client_id = $client->id;
         $order->status_id = StatusesConstants::CREATED;
+        $order->order_number = null;
         $order->save();
 
         $this->addProductsToOrder($order, $products);
@@ -30,6 +37,8 @@ class OrderService
                     'price' => $product->price,
                     'discounted_price' => $product->discountedPrice,
                 ]);
+
+            $this->stockService->reduceQuantityInStock($product->id, $product->amount, $order->id);
         }
     }
 }

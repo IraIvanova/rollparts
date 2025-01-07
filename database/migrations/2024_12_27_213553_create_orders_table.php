@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->foreignId('client_id')->constrained()->onDelete('cascade'); // Links to users table
-            $table->string('order_number')->unique();
+            $table->string('order_number')->nullable();
             $table->foreignId('status_id');
 
             $table->timestamps();

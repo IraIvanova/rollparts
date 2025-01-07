@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\ProductStock;
 use App\Services\Store\PaginationService;
 use Illuminate\Support\ServiceProvider;
 

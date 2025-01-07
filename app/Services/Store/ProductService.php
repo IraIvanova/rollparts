@@ -2,7 +2,6 @@
 
 namespace App\Services\Store;
 
-use App\Models\Category;
 use App\Models\Product;
 use App\Services\FilesManagingService;
 
@@ -18,6 +17,11 @@ class ProductService
     public function getProductBySlug(string $slug): ?Product
     {
         return Product::where('slug', $slug)->select(['id', 'brand_id', 'active', 'mnf_code', 'quantity'])->first();
+    }
+
+    public function getProductById(int $id): ?Product
+    {
+        return Product::find($id);
     }
 
     public function getProductInfo(Product $product): array
