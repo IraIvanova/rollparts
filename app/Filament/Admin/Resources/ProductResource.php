@@ -10,6 +10,7 @@ use App\Models\Language;
 use App\Models\Option;
 use App\Models\Product;
 use CodeWithDennis\FilamentSelectTree\SelectTree;
+use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
@@ -79,10 +80,6 @@ class ProductResource extends Resource
                                     ->relationship('categories', 'name', 'parent_id')
                                     ->enableBranchNode()
                                     ->searchable(),
-                                TextInput::make('quantity')
-                                    ->numeric()
-                                    ->label('Quantity (Main Product)')
-                                    ->required(),
                                 Repeater::make('prices')
                                     ->label('Product Prices')
                                     ->relationship('prices')
@@ -136,7 +133,15 @@ class ProductResource extends Resource
                                     ->maxItems(10)
                                     ->addActionLabel('Add price')
                                     ->columns(2)
-                                    ->columnSpanFull()
+                                    ->columnSpanFull(),
+                                Fieldset::make('Stock')
+                                    ->relationship('stock')
+                                    ->schema([
+                                        TextInput::make('quantity')
+                                            ->numeric()
+                                            ->label('Quantity')
+                                            ->required(),
+                                    ]),
                             ]),
 
                         Tab::make('Product Images & Files')
@@ -144,7 +149,7 @@ class ProductResource extends Resource
                                 SpatieMediaLibraryFileUpload::make('attachments')
                                     ->multiple()
                                     ->reorderable()
-                                ->image()
+                                    ->image()
                             ]),
                         Tab::make('Product Options')
                             ->schema([
@@ -154,7 +159,10 @@ class ProductResource extends Resource
                                         Select::make('option')
                                             ->label('Option')
                                             ->options(function () {
-                                                return Option::pluck('name', 'name'); // Fetch options from the Option model
+                                                return Option::pluck(
+                                                    'name',
+                                                    'name'
+                                                ); // Fetch options from the Option model
                                             })
                                             ->live()
                                             ->required(),

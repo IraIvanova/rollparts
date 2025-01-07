@@ -3,6 +3,7 @@
 namespace App\Services\Store;
 
 use App\DTO\CartProductDTO;
+use App\Exceptions\AddToCartException;
 use App\Exceptions\ProductNotFoundException;
 use App\Models\Order;
 use App\Models\Product;
@@ -20,6 +21,7 @@ class CartService
 
     /**
      * @throws ProductNotFoundException
+     * @throws AddToCartException
      */
     public function addToCart(int $productId, int $quantity): array
     {
@@ -38,6 +40,7 @@ class CartService
             price: $prices['price'],
             discountedPrice: $prices['discounted_price']
         );
+        if (!$shoppingCart->checkIfQuantityEnough($productInCart, $product->stock->quantity)) throw new AddToCartException();
 
         $shoppingCart->addProduct($productInCart, $quantity);
         $this->saveCart($shoppingCart);
@@ -88,6 +91,6 @@ class CartService
 
     public function getRenderedProductsList(): string
     {
-        return view('store.components.cart.previewInHeader', ['shoppingCart' => $this->getCart()->toArray()])->render();
+        return view('store.components.cart.previewList', ['shoppingCart' => $this->getCart()->toArray()])->render();
     }
 }

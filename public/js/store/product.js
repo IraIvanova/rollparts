@@ -51,8 +51,27 @@ document.addEventListener("DOMContentLoaded", () => {
         const amount = document.getElementById('quantity');
 
         addToCartBtn.addEventListener('click', () => {
-            const data = {productId: addToCartBtn.dataset.product, amount: amount.value};
+            const data = {
+                productId: addToCartBtn.dataset.product,
+                amount: amount.value
+            };
+
             axios.post(addRoute, prepareFormData(data))
+                .then(resp => {
+                    if (resp.status === 201) {
+                        const myModal = new bootstrap.Modal(document.getElementById('cartModal'), {});
+                        document.getElementById('modal-cart-preview-content').innerHTML = resp.data.view;
+                        myModal.show();
+                    }
+                })
+                .catch((error) => {
+                    const infoModal = new bootstrap.Modal(document.getElementById('infoModal'), {});
+                    document.getElementById('info-message').innerHTML = error.response.data.error;
+                    infoModal.show();
+                    setTimeout(() => {
+                        infoModal.hide()
+                    }, 3000)
+                })
         })
     }
 

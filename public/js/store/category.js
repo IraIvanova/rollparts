@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     let getSelectedCheckboxAndSorting = () => {
-        let form = document.querySelector('#filters-form');
+        let form = document.getElementById('filters-form');
         const inputs = document.getElementsByClassName('checkbox');
         const checked = Array.from(inputs).filter(i => i.checked === true)
         let searchParams = groupInputsByName(checked);
@@ -49,6 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
         let url = new URL(form.action + '/?');
         let params = new URLSearchParams(searchParams);
         params.set('sortby', document.getElementById('orderby').value);
+
+        console.log(url, checked)
 
         return url + params.toString();
     }

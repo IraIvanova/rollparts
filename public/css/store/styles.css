@@ -391,15 +391,15 @@
 }
 
 #cartModal .modal-buttons .button {
-    font-size: 16px;
+    font-size: 12px;
+    line-height: 8px;
+    height: 30px;
+    padding: 8px 12px;
     font-weight: 700;
-    line-height: 16px;
     background: var(--color-high-dark);
     border: 2px solid var(--color-high-dark);
     color: #fff;
-    padding: 15px 20px;
     border-radius: 4px;
-    height: 52px;
     text-transform: capitalize;
     transition: 0.3s;
 }
@@ -408,12 +408,41 @@
     border-color: #000!important;
     font-weight: 500!important;
 }
-
+#cartModal .error {
+    background: red;
+}
 .modal-content {
-    border-radius: 0;
-    border: none;
+    border: 1px solid lightgrey;
+    box-shadow: -2px 2px 12px 1px rgb(0 0 0 / 25%);
 }
 
+.brator-cart-item-list.modal-cart
+{
+    opacity: 1;
+    visibility: visible;
+    max-height: unset!important;
+    position: relative;
+    border: none;
+    width: 99%;
+    padding: 7px 7px 7px 12px;
+    top: -50px;
+}
+
+.modal-cart .widget_shopping_cart_content ul {
+    max-height: unset;
+}
+.modal-cart .brator-cart-total-action {
+    margin-top: 12px;
+}
+#infoModal .modal-content{
+    border-left: 8px solid red;
+}
+#cartModal .modal-body {
+    overflow-y: auto;
+}
+#cartModal .brator-cart-total-action{
+    padding-bottom: 20px;
+}
 @media (max-width: 768px) {
     #main-content {
         padding-top: 0!important;

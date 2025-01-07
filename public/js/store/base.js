@@ -33,16 +33,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
 
                 axios.post(route, data, axiosConfig)
-                    .then((resp) => {
+                    .then(resp => {
                         if (resp.status === 201) {
-                            let myModal = new bootstrap.Modal(document.getElementById('cartModal'), {});
+                            const myModal = new bootstrap.Modal(document.getElementById('cartModal'), {});
+                            document.getElementById('modal-cart-preview-content').innerHTML = resp.data.view;
                             myModal.show();
-
                             updateCartPreview(resp.data);
-                        } else {
-                            alert('smth went wrong!');
                         }
                     })
+                    .catch((error) => {
+                        const infoModal = new bootstrap.Modal(document.getElementById('infoModal'), {});
+                        document.getElementById('info-message').innerHTML = error.response.data.error;
+                        infoModal.show();
+                        setTimeout(() => {
+                            infoModal.hide()
+                        }, 3000)
+                    })
+                
             })
         }
     }

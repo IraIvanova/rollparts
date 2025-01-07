@@ -27,7 +27,7 @@ class ProductService
         return [
             'id' => $product->id,
             'active' => $product->active,
-            'quantity' => $product->quantity,
+            'quantity' => $product->stock?->quantity,
             'mnfCode' => $product->mnf_code,
             'name' => $productNameAndDescription->name,
             'description' => $productNameAndDescription->description,

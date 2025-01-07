@@ -82,7 +82,7 @@
                                                     <input type="hidden" value="{{route('addToCart')}}" id="add-route" />
 
                                                     <button type="button" name="add-to-cart" id="addToCart"
-                                                            class="button add_to_cart_button alt" data-product="{{$id}}">Add
+                                                            class="button alt" data-product="{{$id}}">Add
                                                         to cart
                                                     </button>
                                                 </div>

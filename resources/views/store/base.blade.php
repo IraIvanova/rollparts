@@ -281,6 +281,7 @@
     </button>
 </div>
 @include('store.modal.product-added-modal')
+@include('store.modal.info-modal')
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="{{asset('js/store/base.js')}}"></script>
 @yield('additionalScript')

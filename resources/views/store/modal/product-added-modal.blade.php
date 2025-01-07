@@ -1,13 +1,14 @@
 <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body">
-                <h6 class="mb-3" id="cartModalLabel">Product was added to your cart!</h6>
-{{--                <p><strong id="productName"></strong> was added to your cart.</p>--}}
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content rounded">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Product was added to cart!</h5>
+            </div>
+            <div class="modal-body text-center">
+                <div class="brator-cart-item-list modal-cart">
+                    <div id="modal-cart-preview-content" class="widget_shopping_cart_content">
 
-                <div class="modal-buttons">
-                <button type="button" class="button" data-bs-dismiss="modal">Continue Shopping</button>
-                <a href="/cart" class="button">View Cart</a>
+                    </div>
                 </div>
             </div>
         </div>

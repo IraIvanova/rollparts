@@ -44,6 +44,17 @@ class ShoppingCart
         );
     }
 
+    public function checkIfQuantityEnough(CartProductDTO $cartProductDTO, int $maxAmount): bool
+    {
+        foreach ($this->products as $product) {
+            if ($product->id === $cartProductDTO->id) {
+                return $maxAmount >= $cartProductDTO->amount + $product->amount;
+            }
+        }
+
+        return true;
+    }
+
     public function removeProduct(int $productId, bool  $removeOne = true): void
     {
         if ($removeOne) {

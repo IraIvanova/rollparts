@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Store;
 
+use App\Exceptions\AddToCartException;
 use App\Exceptions\ProductNotFoundException;
 use App\Http\Controllers\Controller;
 use App\Services\Store\CartService;
@@ -20,19 +21,25 @@ class CartController extends Controller
 
     /**
      * @throws ProductNotFoundException
+     * @throws AddToCartException
      */
     public function addToCart(Request $request): JsonResponse
     {
-        return response()->json(
-            $this->cartService->addToCart($request->get('productId'), $request->get('amount') ?? 1) +
-            ['view' => $this->cartService->getRenderedProductsList()],
-            ResponseAlias::HTTP_CREATED
-        );
+        try {
+            $data = $this->cartService->addToCart($request->get('productId'), $request->get('amount') ?? 1) +
+                ['view' => $this->cartService->getRenderedProductsList()];
+            $status = ResponseAlias::HTTP_CREATED;
+        } catch (AddToCartException $exception) {
+            $data = ['error' => $exception->getMessage()];
+            $status = ResponseAlias::HTTP_BAD_REQUEST;
+        }
+
+        return response()->json($data, $status);
     }
 
     public function removeFromCart(Request $request): JsonResponse
     {
-        $this->cartService->removeFromCart($request->get('productId'), (bool)$request->get('removeOne') ?? true);
+        $this->cartService->removeFromCart($request->get('productId'), $request->get('removeOne') ?? true);
 
         return response()->json([], ResponseAlias::HTTP_NO_CONTENT);
     }

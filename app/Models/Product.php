@@ -76,8 +76,8 @@ class Product extends Model implements HasMedia
         return $this->hasMany(ProductOption::class);
     }
 
-    public function stock(): HasMany
+    public function stock(): HasOne
     {
-        return $this->hasMany(ProductStock::class);
+        return $this->hasOne(ProductStock::class);
     }
 }
