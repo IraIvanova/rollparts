@@ -3,7 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Order extends Model
 {
@@ -17,5 +19,14 @@ class Order extends Model
         return $this->belongsTo(Client::class);
     }
 
+    public function clientAddresses()
+    {
+        return $this->hasManyThrough(ClientAddress::class, Client::class, 'id', 'client_id', 'client_id', 'id');
+    }
+
+    public function status(): BelongsTo
+    {
+        return $this->belongsTo(Status::class);
+    }
 
 }

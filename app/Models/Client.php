@@ -17,4 +17,9 @@ class Client extends Model
     {
         return $this->hasOne(ClientAddress::class)->where('type', 'shipping');
     }
+
+    public function getFullNameAttribute()
+    {
+        return "{$this->name} {$this->lastName}";
+    }
 }
