@@ -12,4 +12,9 @@ class ClientAddress extends Model
     {
         return $this->belongsTo(Client::class);
     }
+
+    public function getFullAddressAttribute()
+    {
+        return "{$this->address_line1} {$this->zip} {$this->state} {$this->city} {$this->country}";
+    }
 }
