@@ -12,10 +12,13 @@ use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Infolists\Components\Fieldset;
 use Filament\Infolists\Components\RepeatableEntry;
+use Filament\Infolists\Components\Section;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
+use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -32,27 +35,54 @@ class OrderResource extends Resource
     {
         return $infolist
             ->schema([
-                TextEntry::make('id')
-                    ->label('Order ID'),
-                TextEntry::make('client.fullName')
-                    ->label('Customer Name'),
-                TextEntry::make('clientShippingAddress.fullAddress')
-                    ->label('Customer Address'),
-                TextEntry::make('client.phone')
-                    ->label('Phone number'),
-                TextEntry::make('client.email')
-                    ->label('Email'),
-                TextEntry::make('status.name')
-                    ->label('Order Status'),
-                TextEntry::make('created_at')
-                    ->label('Order Date'),
-                RepeatableEntry::make('orderProducts')
+                Section::make()
+                    ->columns([
+                        'sm' => 1,
+                        'md' => 2,
+                    ])
                     ->schema([
-//                    TextEntry::make('author.name'),
-//                    TextEntry::make('title'),
-                    TextEntry::make('slug')
-                        ->columnSpan(2),
-                ])
+                        Fieldset::make('Order info')
+                            ->schema([
+                                TextEntry::make('id')
+                                    ->label('Order ID'),
+                                TextEntry::make('created_at')
+                                    ->label('Order Date'),
+                                TextEntry::make('status.name')
+                                    ->label('Order Status'),
+                            ])
+                            ->columns(1)
+                            ->columnSpan(1),
+                        Fieldset::make('Client info')
+                            ->schema([
+                                TextEntry::make('client.fullName')
+                                    ->label('Customer Name'),
+                                TextEntry::make('clientShippingAddress.fullAddress')
+                                    ->label('Customer Address'),
+                                TextEntry::make('client.phone')
+                                    ->label('Phone number'),
+                                TextEntry::make('client.email')
+                                    ->label('Email'),
+                            ])
+                            ->columns(1)
+                            ->columnSpan(1),
+                    ]),
+                Section::make()
+                    ->schema([
+                        Fieldset::make('Order total & applied discounts')
+                            ->schema([
+                                TextEntry::make('total_price_with_discount')
+                                    ->weight(FontWeight::Bold)
+                                    ->label('Final Price')
+                                    ->money('trl'),
+                                TextEntry::make('total_price')
+                                    ->label('Net price')
+                                    ->money('trl'),
+                                TextEntry::make('manual_discount')
+                                    ->label('Manual discount'),
+//                        TextEntry::make('used_promo')
+//                            ->label('Used promo code'),
+                            ])
+                    ])
             ]);
     }
 
@@ -73,28 +103,12 @@ class OrderResource extends Resource
                     ->label('Client Address')
                     ->relationship('clientAddresses', 'address_line1')
                     ->required(),
-//                    ->searchable(),
-//                    ->getOptionLabelUsing(fn (ClientAddress $address) => $address->address_line1 . ', ' . $address->city . ' ' . $address->zip),
 
                 // Order Status
-               Select::make('status_id')
+                Select::make('status_id')
                     ->label('Status')
                     ->relationship('status', 'name')
                     ->required(),
-
-                // Repeater for Products in the Order
-                Repeater::make('orderProducts')
-                    ->label('Products')
-                    ->schema([
-                        Forms\Components\Select::make('product_id')
-                            ->relationship('product', 'name')
-                            ->required(),
-                        Forms\Components\TextInput::make('amount')->required(),
-                        Forms\Components\TextInput::make('price')->required(),
-                        Forms\Components\TextInput::make('discounted_price')->required(),
-                    ])
-                    ->columns(2)
-                    ->defaultItems(1),
             ]);
     }
 
@@ -117,13 +131,22 @@ class OrderResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+//            ->footer(function ($records) {
+//                $total = $records->sum(function ($record) {
+//                    $price = $record->discounted_price ?? $record->price;
+//                    return $price * $record->amount;
+//                });
+//
+//                return "Order Total: " . number_format($total, 2) . " TRL";
+//            })
+            ;
     }
 
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\ProductsRelationManager::class
         ];
     }
 

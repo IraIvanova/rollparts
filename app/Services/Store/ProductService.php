@@ -4,6 +4,7 @@ namespace App\Services\Store;
 
 use App\Models\Product;
 use App\Services\FilesManagingService;
+use Illuminate\Database\Eloquent\Model;
 
 class ProductService
 {
