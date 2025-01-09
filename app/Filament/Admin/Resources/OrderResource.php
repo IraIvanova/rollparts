@@ -7,6 +7,7 @@ use App\Filament\Admin\Resources\OrderResource\RelationManagers;
 use App\Models\Client;
 use App\Models\ClientAddress;
 use App\Models\Order;
+use Dom\Text;
 use Filament\Forms;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
@@ -90,6 +91,8 @@ class OrderResource extends Resource
     {
         return $form
             ->schema([
+                Forms\Components\Section::make()
+                    ->schema([
                 // Client (with client name, email, and phone)
                 Select::make('client_id')
                     ->label('Client')
@@ -103,12 +106,28 @@ class OrderResource extends Resource
                     ->label('Client Address')
                     ->relationship('clientAddresses', 'address_line1')
                     ->required(),
-
-                // Order Status
                 Select::make('status_id')
                     ->label('Status')
                     ->relationship('status', 'name')
                     ->required(),
+                ]),
+                Forms\Components\Section::make()
+                    ->schema([
+                        Forms\Components\Fieldset::make('Order total & applied discounts')
+                            ->schema([
+                                TextInput::make('total_price_with_discount')
+                                    ->label('Final Price')
+                                    ->disabled(),
+                                TextInput::make('total_price')
+                                    ->label('Net price')
+                                    ->disabled(),
+                                TextInput::make('manual_discount')
+                                    ->numeric()
+                                    ->label('Manual discount'),
+//                        TextEntry::make('used_promo')
+//                            ->label('Used promo code'),
+                            ])
+                    ])
             ]);
     }
 

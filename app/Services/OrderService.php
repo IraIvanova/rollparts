@@ -36,7 +36,7 @@ class OrderService
     private function addProductsToOrder(Order $order, array $products): void
     {
         foreach ($products as $product) {
-            $order->orderProducts()->attach($product->id,
+            $order->orderProductsPivot()->attach($product->id,
                 [
                     'amount' => $product->amount,
                     'price' => $product->price,
