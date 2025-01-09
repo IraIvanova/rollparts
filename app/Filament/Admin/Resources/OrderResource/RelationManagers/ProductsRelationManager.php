@@ -5,6 +5,7 @@ namespace App\Filament\Admin\Resources\OrderResource\RelationManagers;
 use App\DTO\CartProductDTO;
 use App\Models\Order;
 use App\Models\OrderProduct;
+use Filament\Facades\Filament;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Notifications\Notification;
@@ -14,6 +15,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
+use Livewire\Livewire;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class ProductsRelationManager extends RelationManager
@@ -105,6 +107,10 @@ class ProductsRelationManager extends RelationManager
                                     ) ?? 0);
                             })
                     ])
+                    ->after(function ($action) {
+                        // Runs after the form fields are saved to the database.
+                        $action->getLivewire()->dispatch('refreshForm');
+                    })
                 ,
                 Tables\Actions\DeleteAction::make()
                     ->before(function (Model $record) {
