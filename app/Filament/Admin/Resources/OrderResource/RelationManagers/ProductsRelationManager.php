@@ -5,6 +5,7 @@ namespace App\Filament\Admin\Resources\OrderResource\RelationManagers;
 use App\DTO\CartProductDTO;
 use App\Models\Order;
 use App\Models\OrderProduct;
+use App\Models\ProductPrice;
 use Filament\Facades\Filament;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -26,18 +27,19 @@ class ProductsRelationManager extends RelationManager
     {
         return $form
             ->schema([
-                //todo: search input for product
-                Forms\Components\TextInput::make('translationByLanguage.name')
+        //todo: search input for product
+                Forms\Components\Select::make('product_id')
                     ->label('Product')
+                    ->searchable()
+                    ->getSearchResultsUsing(function (string $query) {
+                        $existingProductIds = $this->ownerRecord->orderProducts->pluck('product_id')->toArray();
+
+                        return \App\Models\ProductTranslation::where('name', 'like', "%{$query}%")
+                            ->whereNotIn('product_id', $existingProductIds)
+                            ->limit(20) // Limit results for performance
+                            ->pluck('name', 'product_id'); // Return id => name pairs
+                    })
                     ->required(),
-//                Forms\Components\TextInput::make('quantity')
-//                    ->label('Quantity')
-//                    ->numeric()
-//                    ->required(),
-//                Forms\Components\TextInput::make('price')
-//                    ->label('Price')
-//                    ->numeric()
-//                    ->required(),
             ]);
     }
 
@@ -68,7 +70,19 @@ class ProductsRelationManager extends RelationManager
                 //
             ])
             ->headerActions([
-                Tables\Actions\CreateAction::make(),
+                Tables\Actions\CreateAction::make()
+                    ->using(function (array $data, string $model): Model {
+                        $prices = ProductPrice::where('product_id', $data['product_id'])->where('currency_id', 1)->first();
+                        $data['price'] = $prices->price;
+                        $data['discounted_price'] = $prices->discounted_price;
+                        $data['order_id'] = $this->ownerRecord->id;
+                        $data['amount'] = 1;
+
+                        return $model::create($data);
+                    })
+                    ->after(function ($action) {
+                        $action->getLivewire()->dispatch('refreshForm');
+                    })
             ])
             ->actions([
                 Tables\Actions\EditAction::make()
@@ -118,6 +132,10 @@ class ProductsRelationManager extends RelationManager
                                 $stock->quantity += $record->amount;
                                 $stock->save();
                         }
+                    })
+                    ->after(function ($action) {
+                        // Runs after the form fields are saved to the database.
+                        $action->getLivewire()->dispatch('refreshForm');
                     }),
             ])
             ->bulkActions([
