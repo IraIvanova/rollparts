@@ -2,6 +2,7 @@
 
 namespace App\Services\Store;
 
+use App\DTO\ProductsFilterParametersDTO;
 use App\Models\Product;
 use App\Services\FilesManagingService;
 use Illuminate\Database\Eloquent\Model;
@@ -10,7 +11,8 @@ class ProductService
 {
     public function __construct(
         private readonly FilesManagingService $filesManagingService,
-        private readonly BreadcrumbsService $breadcrumbsService
+        private readonly BreadcrumbsService $breadcrumbsService,
+        private readonly SearchProductsQueryBuilderService $productQueryBuilderService,
     )
     {
     }
@@ -28,6 +30,27 @@ class ProductService
     public function getProductInfo(Product $product): array
     {
         $productNameAndDescription = $product->translationByLanguage;
+        if ($frequentlyIds = $product->frequentlyBoughtTogether()->pluck('related_product_id')->toArray()) {
+            $frequentlyBoughtFilterParameters = new ProductsFilterParametersDTO(
+                language: 'tr',
+                currency: 'TRL',
+                products: $frequentlyIds
+            );
+            $frequentlyBoughtTogetherProducts = $this->productQueryBuilderService->getProductsList(
+                $frequentlyBoughtFilterParameters
+            )->get()->toArray();
+        }
+
+        if ($recentlyViewedIds = session()->get('recentlyViewedProducts')) {
+            $recentlyViewedFilterParameters = new ProductsFilterParametersDTO(
+                language: 'tr',
+                currency: 'TRL',
+                products: $recentlyViewedIds
+            );
+            $recentlyViewedProducts = $this->productQueryBuilderService->getProductsList(
+                $recentlyViewedFilterParameters
+            )->get()->toArray();
+        }
 
         return [
             'id' => $product->id,
@@ -39,6 +62,8 @@ class ProductService
             'brand' => $product->brand,
             'prices' => $product->priceByCurrency,
             'images' => $product->getMedia(),
+            'frequentlyBoughtTogetherProducts' => $frequentlyBoughtTogetherProducts ?? [],
+            'recentlyViewedProducts' => $recentlyViewedProducts ?? [],
             'breadcrumbs' => $this->breadcrumbsService->prepareBreadcrumbsForProduct($product, $productNameAndDescription['name']),
         ];
     }
@@ -57,5 +82,19 @@ class ProductService
            return [$i->model_id => $i->getFullUrl()];
         })
             ->toArray();
+    }
+
+    public function saveProductToRecentlyViewed(int $productId): void
+    {
+        $recentlyViewed = session()->get('recentlyViewedProducts', []);
+
+        if (!in_array($productId, $recentlyViewed)) {
+            if (count($recentlyViewed) >= 10) {
+                array_shift($recentlyViewed); // Remove the first item (oldest)
+            }
+
+            $recentlyViewed[] = $productId;
+            session()->put('recentlyViewedProducts', $recentlyViewed);
+        }
     }
 }

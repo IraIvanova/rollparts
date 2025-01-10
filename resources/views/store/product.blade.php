@@ -224,8 +224,11 @@
                             </div>
                         </div>
                     </div>
+                    @include('store.components.productsSet.frequentlyBoughtTogetherProducts')
+                    @include('store.components.productsSet.recentlyViewedProducts')
                 </div>
             </div>
+
     </section>
 @endsection
 

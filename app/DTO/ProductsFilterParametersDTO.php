@@ -9,6 +9,7 @@ class ProductsFilterParametersDTO
         public ?string $currency,
         public ?array $categories = [],
         public ?SearchParametersDTO $searchParameters = null,
+        public ?array $products = [],
         public bool $paginate = false,
         public ?int $limit = null
     ) {

@@ -28,12 +28,15 @@ class SearchProductsQueryBuilderService
             ->getResults();
     }
 
-    public function getBestsellerProducts(ProductsFilterParametersDTO $parameters): Builder
+    public function getProductsList(ProductsFilterParametersDTO $parameters): Builder
     {
+        $this->resetQuery();
+
         return $this
             ->addProductTranslations($parameters->language)
             ->addPrices($parameters->currency)
             ->filterByBrands($parameters->searchParameters?->brands)
+            ->filterByProductIds($parameters->products)
             ->setLimit($parameters->limit)
             ->getResults();
     }
@@ -104,15 +107,6 @@ class SearchProductsQueryBuilderService
     {
         //ToDO check how many queries would be performed
         if (!empty($options) && !empty($values)) {
-//            foreach ($options as $key => $option) {
-//                $this->query->whereExists(function ($query) use ($option, $values, $key) {
-//                    $query->select(DB::raw(1))
-//                        ->from('product_options as po')
-//                        ->where('po.option', $option)
-//                        ->where('po.product_id', '=', 'p.id')
-//                        ->whereIn('po.option_value', $values[$key]);
-//                });
-//            }
             $sql = '';
             foreach ($options as $key => $option) {
                 $sql .= "exists(select 1 from product_options as pv WHERE `pv`.`option`='" . $option . "' AND pv.product_id=p.id AND pv.option_value in (" . implode(
@@ -124,6 +118,15 @@ class SearchProductsQueryBuilderService
                 }
             }
             $this->query->whereRaw($sql);
+        }
+
+        return $this;
+    }
+
+    private function filterByProductIds(?array $products = []): self
+    {
+        if (!empty($products)) {
+            $this->query->whereIn('p.id', $products);
         }
 
         return $this;
@@ -147,9 +150,11 @@ class SearchProductsQueryBuilderService
         return $this;
     }
 
-    public function setLimit(int $limit): self
+    public function setLimit(?int $limit = null): self
     {
-        $this->query->limit($limit);
+        if ($limit) {
+            $this->query->limit($limit);
+        }
 
         return $this;
     }
@@ -159,5 +164,12 @@ class SearchProductsQueryBuilderService
         $this->query->distinct()->select($this->selectFields);
 
         return $this->query;
+    }
+
+    private function resetQuery(): self
+    {
+        $this->query = DB::table('products as p');
+
+        return $this;
     }
 }

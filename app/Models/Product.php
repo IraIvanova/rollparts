@@ -85,4 +85,9 @@ class Product extends Model implements HasMedia
     {
         return $this->hasMany(Inventory::class);
     }
+
+    public function frequentlyBoughtTogether(): BelongsToMany
+    {
+        return $this->belongsToMany(Product::class, 'frequently_bought_products', 'product_id', 'related_product_id');
+    }
 }

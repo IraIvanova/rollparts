@@ -60,7 +60,7 @@ readonly class GetDataForPageService
             limit: 10
         );
 
-        $bestsellerProducts = $this->productQueryBuilderService->getBestsellerProducts($filtersParameters)->get();
+        $bestsellerProducts = $this->productQueryBuilderService->getProductsList($filtersParameters)->get();
         $productImages = $this->productService->getMainImages($bestsellerProducts->pluck('id')->toArray());
 
         return [
@@ -123,6 +123,8 @@ readonly class GetDataForPageService
         if (!$product) {
             throw new ProductNotFoundException();
         }
+
+        $this->productService->saveProductToRecentlyViewed($product->id);
 
         return $this->productService->getProductInfo($product);
     }

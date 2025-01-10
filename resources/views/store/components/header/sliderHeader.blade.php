@@ -10,7 +10,7 @@
         </div>
         <div class="brator-slide-logo-items">
             <a href="https://brator-main.smartdemowp.com/">
-                <img src="{{asset('images/logo.jpg')}}" alt="Logo">
+                <img src="{{asset('images/logo.png')}}" alt="Logo">
             </a>
             <button class="header-sidebar-icon">
                 <svg class="bi bi-pause" xmlns="http://www.w3.org/2000/svg" width="16" height="16"

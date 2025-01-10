@@ -4,7 +4,9 @@ namespace App\Filament\Admin\Resources;
 
 use App\Constant\FilesConstants;
 use App\Filament\Admin\Resources\InventoryResource\RelationManagers\InventoryRelationManager;
+use App\Filament\Admin\Resources\OrderResource\RelationManagers\ProductsRelationManager;
 use App\Filament\Admin\Resources\ProductResource\Pages;
+use App\Filament\Admin\Resources\ProductResource\RelationManagers\FrequentlyBoughtTogetherRelationManager;
 use App\Filament\Admin\Resources\ProductResource\RelationManagers\ImagesRelationManager;
 use App\Models\Currency;
 use App\Models\Language;
@@ -234,7 +236,8 @@ class ProductResource extends Resource
     public static function getRelations(): array
     {
         return [
-            InventoryRelationManager::class
+            InventoryRelationManager::class,
+            FrequentlyBoughtTogetherRelationManager::class
         ];
     }
 

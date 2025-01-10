@@ -14,7 +14,7 @@
                     <div class="brator-logo-area">
                         <div class="brator-logo">
                             <a href="https://brator-main.smartdemowp.com/">
-                                <img src="./logo.svg" alt="Logo">
+                                <img src="{{asset('images/logo.png')}}" alt="Logo">
                             </a>
                             <button class="mobile-menu-icon">
                                 <svg class="bi bi-pause" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
