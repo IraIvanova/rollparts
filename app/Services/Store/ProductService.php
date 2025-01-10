@@ -45,7 +45,7 @@ class ProductService
             $recentlyViewedFilterParameters = new ProductsFilterParametersDTO(
                 language: 'tr',
                 currency: 'TRL',
-                products: $recentlyViewedIds
+                products:  array_diff($recentlyViewedIds, [$product->id])
             );
             $recentlyViewedProducts = $this->productQueryBuilderService->getProductsList(
                 $recentlyViewedFilterParameters
