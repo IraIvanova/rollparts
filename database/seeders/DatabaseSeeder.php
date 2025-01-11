@@ -38,6 +38,7 @@ class DatabaseSeeder extends Seeder
             UnitTypesTableSeeder::class,
             OptionsTableSeeder::class,
             ProductsTableSeeder::class,
+            ProvinceDistrictSeeder::class,
         ]);
     }
 }
