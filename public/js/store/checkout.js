@@ -58,6 +58,34 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    function loadDistricts() {
+        const districtSelect = document.getElementById("district");
+        const provinceSelect = document.getElementById("province");
+
+        provinceSelect.addEventListener('change', () => {
+            const selectedProvinceId = provinceSelect.value;
+
+            districtSelect.innerHTML = '<option value="">Select a district</option>';
+
+            if (!selectedProvinceId) return;
+
+            axios.post(provinceSelect.dataset.route, {
+                    provinceId: selectedProvinceId
+                })
+                .then(response => {
+                    const districts = response.data;
+                    console.log(response)
+                    districts.forEach(district => {
+                        const option = document.createElement("option");
+                        option.value = district.id; // Use district ID as the value
+                        option.textContent = district.name; // Display district name
+                        districtSelect.appendChild(option);
+                    });
+                })
+        })
+    }
+
+    loadDistricts();
     showCouponCode();
     createOrder();
 });

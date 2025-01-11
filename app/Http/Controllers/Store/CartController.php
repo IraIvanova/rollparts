@@ -6,22 +6,23 @@ use App\Exceptions\AddToCartException;
 use App\Exceptions\ProductNotFoundException;
 use App\Http\Controllers\Controller;
 use App\Services\Store\CartService;
+use App\Services\Store\CitiesService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 
 class CartController extends Controller
 {
 
-    public function __construct(private CartService $cartService)
-    {
+    public function __construct(
+        private readonly CartService $cartService,
+        private readonly CitiesService $citiesService,
+    ) {
     }
 
     /**
      * @throws ProductNotFoundException
-     * @throws AddToCartException
      */
     public function addToCart(Request $request): JsonResponse
     {
@@ -56,5 +57,11 @@ class CartController extends Controller
         return redirect()->route('orderConfirmation')->with(['orderId' => $order->id]);
     }
 
-
+    public function getDistrictsList(Request $request): JsonResponse
+    {
+        return response()->json(
+            $this->citiesService->getDistrictsByProvinceId($request->get('provinceId')),
+            ResponseAlias::HTTP_OK
+        );
+    }
 }

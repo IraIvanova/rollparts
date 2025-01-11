@@ -20,3 +20,5 @@ Route::post('/createOrder', [CartController::class, 'createOrder'])->name('creat
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('addToCart');
 Route::post('/cart/remove', [CartController::class, 'removeFromCart'])->name('removeFromCart');
 Route::post('/cart/update', [CartController::class, 'updateCart'])->name('cartUpdateRoute');
+
+Route::post('/districts', [CartController::class, 'getDistrictsList'])->name('getDistrictsList');

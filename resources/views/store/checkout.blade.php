@@ -58,24 +58,25 @@
                                 <label for="country" class="">Country*</label>
                                 <input type="text" class="input-text "
                                        name="country"
-                                       id="country" placeholder="" value="">
+                                       id="country" placeholder="" disabled value="Turkey">
                             </div>
-{{--                            <div class="row px-3">--}}
-                                <div class="form-row  validate-required w-100">
-                                    <label for="city" class="">City*</label>
-                                    <input type="text" class="input-text "
-                                           name="city"
-                                           id="city" placeholder="" value="">
+                            <div class="row px-3">
+                                <div class="form-row validate-required w-50">
+                                    <label for="province" class="">Province*</label>
+                                    <select class="input-text" name="province" id="province" data-route="{{route('getDistrictsList')}}">
+                                        <option value="">Select a province</option>
+                                        @foreach ($provinces as $province)
+                                            <option value="{{ $province->id }}">{{ $province->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-{{--                                <div class="form-row  validate-required w-50">--}}
-
-{{--                                    <label for="district" class="">District<span--}}
-{{--                                            class="required" title="required">*</span></label>--}}
-{{--                                    <input type="text" class="input-text "--}}
-{{--                                           name="district"--}}
-{{--                                           id="district" placeholder="" value="">--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
+                                <div class="form-row validate-required w-50">
+                                    <label for="district" class="">District<span class="required" title="required">*</span></label>
+                                    <select class="input-text" name="district" id="district">
+                                        <option value="">Select a district</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="row px-3">
                                 <div class="form-row  validate-required w-75">
                                     <label for="address" class="">Address*</label>

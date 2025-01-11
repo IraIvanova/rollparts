@@ -10,7 +10,7 @@ use App\Models\Product;
 use App\Services\OrderService;
 use App\Services\ShoppingCart\ShoppingCart;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
+
 
 class CartService
 {

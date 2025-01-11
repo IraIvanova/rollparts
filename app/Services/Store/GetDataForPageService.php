@@ -22,6 +22,7 @@ readonly class GetDataForPageService
         private OptionsService $optionsService,
         private CartService $cartService,
         private BreadcrumbsService $breadcrumbsService,
+        private CitiesService $citiesService,
     ) {
     }
 
@@ -163,7 +164,12 @@ readonly class GetDataForPageService
 
     private function getCheckoutPageData(): array
     {
-        return $this->cartService->getCart()->toArray();
+        return array_merge(
+            [
+                'provinces' => $this->citiesService->getAllProvinces(),
+            ],
+            $this->cartService->getCart()->toArray()
+        );
     }
 
     private function getOrderConfirmationPageData(): array
