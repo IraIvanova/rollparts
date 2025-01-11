@@ -1,4 +1,5 @@
-@if(!empty($productOptions))
+@if($productOptions->count() > 0)
+{{--    @dd($productOptions)--}}
     <span class="font-weight-bold mb-0 text-color-black">Available options:</span>
     <div class="optionValues border-bottom">
         @foreach($productOptions as $key => $optionValues)
