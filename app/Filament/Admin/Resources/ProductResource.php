@@ -12,6 +12,7 @@ use App\Models\Currency;
 use App\Models\Language;
 use App\Models\Option;
 use App\Models\Product;
+use App\Models\ProductTranslation;
 use CodeWithDennis\FilamentSelectTree\SelectTree;
 use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\FileUpload;
@@ -190,21 +191,26 @@ class ProductResource extends Resource
                                             ->disableOptionsWhenSelectedInSiblingRepeaterItems()
                                             ->required()
                                             ->reactive(),
+                                        Select::make('related_product_id')
+                                            ->label('Product')
+                                            ->searchable()
+                                            ->getSearchResultsUsing(function (string $query) {
+//                                                $existingProductIds = $this->ownerRecord->orderProducts->pluck('product_id')->toArray();
+
+                                                return ProductTranslation::where('name', 'like', "%{$query}%")
+//                                                    ->whereNotIn('product_id', [$this->ownerRecord->id])
+                                                    ->limit(20) // Limit results for performance
+                                                    ->pluck('name', 'product_id'); // Return id => name pairs
+                                            })
+                                            ->getOptionLabelUsing(fn ($value): ?string => ProductTranslation::where('product_id', $value)->first()?->name)
+                                            ->required(),
                                     ])
+//                                    ->afterStateUpdated(fn ($state) => dd($state))
                                     ->grid(2)
                                     ->label('Add Option Value'),
                             ]),
-//                             Tab::make('Inventory')
-//                                 ->schema([
-//                                     Placeholder::make('inventory_table')
-//                                         ->content(view('filament.tables.inventory', [
-//                                             'inventories' => fn ($record) => $record?->inventory, // Pass inventory data
-//                                         ])),
-//                                 ]),
-
                     ])
                     ->columnSpanFull()
-//                    ])
             ]);
     }
 

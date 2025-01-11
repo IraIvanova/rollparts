@@ -41,11 +41,11 @@ class ProductService
             )->get()->toArray();
         }
 
-        if ($recentlyViewedIds = session()->get('recentlyViewedProducts')) {
+        if ($recentlyViewedIds = array_diff(session()->get('recentlyViewedProducts', []), [$product->id])) {
             $recentlyViewedFilterParameters = new ProductsFilterParametersDTO(
                 language: 'tr',
                 currency: 'TRL',
-                products:  array_diff($recentlyViewedIds, [$product->id])
+                products: $recentlyViewedIds
             );
             $recentlyViewedProducts = $this->productQueryBuilderService->getProductsList(
                 $recentlyViewedFilterParameters
@@ -62,6 +62,7 @@ class ProductService
             'brand' => $product->brand,
             'prices' => $product->priceByCurrency,
             'images' => $product->getMedia(),
+            'productOptions' => $product->productOptions->load('relatedProduct')->mapToGroups(fn($i) => [$i->option => [$i->option_value, $i->relatedProduct->slug]]),
             'frequentlyBoughtTogetherProducts' => $frequentlyBoughtTogetherProducts ?? [],
             'recentlyViewedProducts' => $recentlyViewedProducts ?? [],
             'breadcrumbs' => $this->breadcrumbsService->prepareBreadcrumbsForProduct($product, $productNameAndDescription['name']),

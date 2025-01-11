@@ -443,6 +443,17 @@
 #cartModal .brator-cart-total-action{
     padding-bottom: 20px;
 }
+.optionValues a {
+    background: #f3f1f7;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    margin-right: 10px;
+    border: 1px solid #e1dede;
+    border-radius: 5px;
+}
 @media (max-width: 768px) {
     #main-content {
         padding-top: 0!important;

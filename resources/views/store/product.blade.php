@@ -57,7 +57,7 @@
                                                 @endif
                                             </h6>
                                         </div>
-
+                                        @include('store.components.product.relatedOptions')
                                         <div class="">
                                             <p>Manufacturer code: <b>{{ $mnfCode }}</b></p>
                                         </div>
