@@ -62,7 +62,7 @@ class ProductService
             'brand' => $product->brand,
             'prices' => $product->priceByCurrency,
             'images' => $product->getMedia(),
-            'productOptions' => $product->productOptions()->whereNot('related_product', $product->id)->with('relatedProduct')->get()->mapToGroups(fn($i) => [$i->option => [$i->option_value, $i->relatedProduct->slug]]),
+            'productOptions' => $product->productOptions()->whereNot('related_product_id', $product->id)->with('relatedProduct')->get()->mapToGroups(fn($i) => [$i->option => [$i->option_value, $i->relatedProduct->slug]]),
             'frequentlyBoughtTogetherProducts' => $frequentlyBoughtTogetherProducts ?? [],
             'recentlyViewedProducts' => $recentlyViewedProducts ?? [],
             'breadcrumbs' => $this->breadcrumbsService->prepareBreadcrumbsForProduct($product, $productNameAndDescription['name']),
