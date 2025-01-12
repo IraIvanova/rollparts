@@ -1,0 +1,73 @@
+<?php
+
+namespace App\Filament\Admin\Resources;
+
+use App\Filament\Admin\Resources\TranslationResource\Pages;
+use App\Filament\Admin\Resources\TranslationResource\RelationManagers;
+use App\Models\Translation;
+use Filament\Forms;
+use Filament\Forms\Form;
+use Filament\Resources\Resource;
+use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+
+class TranslationResource extends Resource
+{
+    protected static ?string $model = Translation::class;
+
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    public static function form(Form $form): Form
+    {
+        return $form
+            ->schema([
+                Forms\Components\TextInput::make('key')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('en')
+                    ->required(),
+                Forms\Components\TextInput::make('tr')
+                    ->required()
+            ]);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->columns([
+                TextColumn::make('key')->sortable(),
+                TextColumn::make('en')->sortable(),
+                TextColumn::make('tr')->sortable(),
+            ])
+            ->filters([
+                //
+            ])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
+            ]);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListTranslations::route('/'),
+            'create' => Pages\CreateTranslation::route('/create'),
+            'edit' => Pages\EditTranslation::route('/{record}/edit'),
+        ];
+    }
+}
