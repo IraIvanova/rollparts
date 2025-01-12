@@ -224,7 +224,7 @@ class ProductResource extends Resource
                 TextColumn::make('brand.name')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('quantity')
+                TextColumn::make('stock.quantity')
                     ->label('In stock (pcs)')
             ])
             ->filters([

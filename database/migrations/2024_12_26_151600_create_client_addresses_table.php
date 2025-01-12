@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('address_line1');
             $table->string('address_line2')->nullable();
             $table->string('country');
-            $table->string('city');
-            $table->string('state')->nullable();
+            $table->foreignId('province_id');
+            $table->foreignId('district_id');
             $table->string('zip');
             $table->timestamps();
         });

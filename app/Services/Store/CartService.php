@@ -5,11 +5,13 @@ namespace App\Services\Store;
 use App\DTO\CartProductDTO;
 use App\Exceptions\AddToCartException;
 use App\Exceptions\ProductNotFoundException;
+use App\Models\Coupon;
 use App\Models\Order;
 use App\Models\Product;
 use App\Services\OrderService;
 use App\Services\ShoppingCart\ShoppingCart;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\ValidationException;
 
 
 class CartService
@@ -70,11 +72,21 @@ class CartService
             $this->clientService->saveAddress($client, $contactDetails);
             $shoppingCart = $this->getCart();
 
-            $order = $this->orderService->createOrder($client, $shoppingCart->getProducts());
+            $order = $this->orderService->createOrder($client, $shoppingCart);
             $this->clearCart();
 
             return $order;
         });
+    }
+
+    public function applyCoupon(string $couponCode): ?array
+    {
+        return $this->getCart()->applyCoupon($couponCode);
+    }
+
+    public function removeCoupon(): void
+    {
+       $this->getCart()->removeCoupon();
     }
 
     public function getCart(): ShoppingCart

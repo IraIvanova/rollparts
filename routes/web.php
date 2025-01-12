@@ -20,5 +20,7 @@ Route::post('/createOrder', [CartController::class, 'createOrder'])->name('creat
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('addToCart');
 Route::post('/cart/remove', [CartController::class, 'removeFromCart'])->name('removeFromCart');
 Route::post('/cart/update', [CartController::class, 'updateCart'])->name('cartUpdateRoute');
+Route::post('/applyCoupon', [CartController::class, 'applyCoupon'])->name('applyCoupon');
+Route::post('/removeCoupon', [CartController::class, 'removeCoupon'])->name('removeCoupon');
 
 Route::post('/districts', [CartController::class, 'getDistrictsList'])->name('getDistrictsList');

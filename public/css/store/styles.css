@@ -454,6 +454,15 @@
     border: 1px solid #e1dede;
     border-radius: 5px;
 }
+#orderForm select {
+    border-color: #e3e3e3!important;
+}
+#orderForm textarea {
+    color: black;
+}
+.error{
+    color: red!important;
+}
 @media (max-width: 768px) {
     #main-content {
         padding-top: 0!important;

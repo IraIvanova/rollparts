@@ -10,6 +10,7 @@ class ShoppingCart
     private float $totalPrice = 0.0;
     private float $totalWithDiscount = 0.0;
     private ?string $couponCode = null;
+    private ?float $couponDiscount = 0;
     private int $totalItems = 0;
 
     public function __construct(array $products = [], ?string $couponCode = null)
@@ -105,6 +106,11 @@ class ShoppingCart
         return $this->couponCode;
     }
 
+    public function getCouponDiscount(): float
+    {
+        return $this->couponDiscount;
+    }
+
     private function recalculateTotals(): void
     {
         $this->totalPrice = 0.0;
@@ -114,6 +120,55 @@ class ShoppingCart
             $this->totalPrice += $product->price * $product->amount;
             $this->totalWithDiscount += $product->discountedPrice * $product->amount;
         }
+
+        $this->totalWithDiscount -= $this->couponDiscount;
+    }
+
+    public function applyCoupon(string $couponCode): ?array
+    {
+//        if ($this->couponCode === $couponCode) return ['error' => 'Coupon is already applied'];
+//
+//        $coupon = Coupon::where('code', $couponCode)
+//            ->where('is_active', true)
+//            ->first();
+//
+//        if (!$coupon) return ['error' => 'Invalid or inactive coupon.'];
+//
+//        if ($coupon->expires_at && $coupon->expires_at < NOW()) return ['error' => 'This coupon has expired.'];
+//
+//        if ($coupon->minimum_order_amount && $this->totalWithDiscount < $coupon->minimum_order_amount) {
+//          return [
+//                'error' => "The order subtotal must be at least {$coupon->minimum_order_amount} to use this coupon."
+//            ];
+//        }
+//
+//        if ($coupon->usage_limit && $coupon->used >= $coupon->usage_limit) {
+//            return ['error' => 'This coupon has reached its usage limit.'];
+//        }
+//
+//        $discount = 0;
+//        if ($coupon->discount_type === 'fixed') {
+//            $discount = min($coupon->discount_value, $this->totalWithDiscount);
+//        } elseif ($coupon->discount_type === 'percentage') {
+//            $discount = ($coupon->discount_value / 100) * $this->totalWithDiscount;
+//        }
+
+        $couponHandler = (new CouponHandler())->setGivenCoupon($couponCode)->setTotal($this->totalWithDiscount);
+        $couponHandler->applyCoupon($this->couponCode);
+
+        $this->couponCode = $couponCode;
+        $this->couponDiscount = $couponHandler->getDiscount();
+
+        $this->recalculateTotals();
+
+        return ['result' => $couponHandler->getResult()];
+    }
+
+    public function removeCoupon(): void
+    {
+        $this->couponCode = null;
+        $this->couponDiscount = 0;
+        $this->recalculateTotals();
     }
 
     public function toArray(): array
@@ -123,6 +178,7 @@ class ShoppingCart
             'totalPrice' => $this->totalPrice,
             'totalWithDiscount' => $this->totalWithDiscount,
             'couponCode' => $this->couponCode,
+            'couponDiscount' => $this->couponDiscount,
             'totalItems' => count($this->products)
         ];
     }

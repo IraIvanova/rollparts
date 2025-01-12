@@ -64,4 +64,18 @@ class CartController extends Controller
             ResponseAlias::HTTP_OK
         );
     }
+
+    public function applyCoupon(Request $request): RedirectResponse
+    {
+        $result = $this->cartService->applyCoupon($request->get('coupon'));
+
+        return redirect()->back()->with($result + ['enteredCoupon' => $request->get('coupon')]);
+    }
+
+    public function removeCoupon(Request $request): RedirectResponse
+    {
+        $this->cartService->removeCoupon();
+
+        return redirect()->back();
+    }
 }

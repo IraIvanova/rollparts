@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     let showCouponCode = () => {
         const coupon = document.getElementById('show-coupon');
-        const couponFieldDiv = document.getElementById('checkout-form');
+        const couponFieldDiv = document.getElementById('coupon-form');
 
-        coupon.addEventListener('click', () => {
+        coupon && coupon.addEventListener('click', () => {
             couponFieldDiv.classList.remove('d-none');
         });
     }

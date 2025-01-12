@@ -49,8 +49,10 @@ class Order extends Model
             return $orderProduct->discounted_price * $orderProduct->amount;
         });
 
+        $promocodeDiscount = json_decode($this->used_promo, true)['discount'] ?? 0;
+
         $this->total_price = $total;
-        $this->total_price_with_discount = $totalWithDiscount - $this->manual_discount;
+        $this->total_price_with_discount = $totalWithDiscount - $this->manual_discount - $promocodeDiscount;
         $this->save();
     }
 }

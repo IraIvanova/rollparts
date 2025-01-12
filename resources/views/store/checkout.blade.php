@@ -14,9 +14,7 @@
             </div>
 
             <div class="row1 mt-4">
-                <div class="">
                    @include('store.components.checkout.coupon')
-                </div>
             </div>
             <div class="row">
                 <div class="col-md-8 col">
@@ -54,16 +52,16 @@
                         </div>
                         <h5 class="mt-5">Address details</h5>
                         <div>
-                            <div class="form-row  validate-required">
+                            <div class="form-row validate-required">
                                 <label for="country" class="">Country*</label>
-                                <input type="text" class="input-text "
+                                <input type="text" class="input-text"
                                        name="country"
-                                       id="country" placeholder="" disabled value="Turkey">
+                                       id="country" placeholder="" value="Turkey">
                             </div>
                             <div class="row px-3">
                                 <div class="form-row validate-required w-50">
                                     <label for="province" class="">Province*</label>
-                                    <select class="input-text" name="province" id="province" data-route="{{route('getDistrictsList')}}">
+                                    <select class="input-text" name="province_id" id="province" data-route="{{route('getDistrictsList')}}">
                                         <option value="">Select a province</option>
                                         @foreach ($provinces as $province)
                                             <option value="{{ $province->id }}">{{ $province->name }}</option>
@@ -72,7 +70,7 @@
                                 </div>
                                 <div class="form-row validate-required w-50">
                                     <label for="district" class="">District<span class="required" title="required">*</span></label>
-                                    <select class="input-text" name="district" id="district">
+                                    <select class="input-text" name="district_id" id="district">
                                         <option value="">Select a district</option>
                                     </select>
                                 </div>

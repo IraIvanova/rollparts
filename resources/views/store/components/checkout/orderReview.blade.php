@@ -33,9 +33,14 @@
     </div>
     <div class="payment_list_item">
         <div class="count_part cart-subtotal">
-            <h5>Discount <span class="brator-checkout-order-price"><span
-                        class="woocommerce-Price-amount amount"><bdi><span
-                                class="woocommerce-Price-currencySymbol">$</span>{{$totalPrice - $totalWithDiscount}}</bdi></span></span>
+            @if($couponDiscount)
+            <h5>Applied coupon discount<span class="brator-checkout-order-price"><span
+                        class="woocommerce-Price-amount amount"><span
+                            class="woocommerce-Price-currencySymbol">$</span>{{$couponDiscount}}</span></span></h5>
+            @endif
+                <h5>Total Discount <span class="brator-checkout-order-price"><span
+                        class="woocommerce-Price-amount amount"><span
+                                class="woocommerce-Price-currencySymbol">$</span>{{$totalPrice - $totalWithDiscount}}</span></span>
             </h5>
         </div>
     </div>

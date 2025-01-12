@@ -6,6 +6,7 @@ use App\Constant\StatusesConstants;
 use App\DTO\CartProductDTO;
 use App\Models\Client;
 use App\Models\Order;
+use App\Services\ShoppingCart\ShoppingCart;
 use App\Services\Store\ProductService;
 
 class OrderService
@@ -16,19 +17,19 @@ class OrderService
     {
     }
 
-    public function createOrder(Client $client, array $products): Order
+    public function createOrder(Client $client, ShoppingCart $shoppingCart): Order
     {
         $order = new Order();
         $order->client_id = $client->id;
         $order->status_id = StatusesConstants::CREATED;
         $order->order_number = null;
-//        $order->used_promo = {}
-        $order->total_price = array_reduce($products, fn ($carry, CartProductDTO $item) => $carry + $item->price);
-        $order->total_price_with_discount = array_reduce($products, fn ($carry, CartProductDTO $item) => $carry + $item->discountedPrice);
+        $order->used_promo = json_encode([$shoppingCart->getCouponCode() => $shoppingCart->getCouponDiscount()], true);
+        $order->total_price = array_reduce($shoppingCart->getProducts(), fn ($carry, CartProductDTO $item) => $carry + $item->price);
+        $order->total_price_with_discount = array_reduce($shoppingCart->getProducts(), fn ($carry, CartProductDTO $item) => $carry + $item->discountedPrice) - $shoppingCart->getCouponDiscount();
 
         $order->save();
 
-        $this->addProductsToOrder($order, $products);
+        $this->addProductsToOrder($order, $shoppingCart->getProducts());
 
         return $order;
     }

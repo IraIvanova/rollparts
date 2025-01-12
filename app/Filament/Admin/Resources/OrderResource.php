@@ -75,8 +75,8 @@ class OrderResource extends Resource
                                     ->money('trl'),
                                 TextEntry::make('manual_discount')
                                     ->label('Manual discount'),
-//                        TextEntry::make('used_promo')
-//                            ->label('Used promo code'),
+                        TextEntry::make('used_promo')
+                            ->label('Used promo code'),
                             ])
                     ])
             ]);
@@ -119,8 +119,9 @@ class OrderResource extends Resource
                                 TextInput::make('manual_discount')
                                     ->numeric()
                                     ->label('Manual discount'),
-//                        TextEntry::make('used_promo')
-//                            ->label('Used promo code'),
+                        TextInput::make('used_promo')
+                            ->label('Used promo code')
+                            ->disabled(),
                             ])
                     ])
             ]);

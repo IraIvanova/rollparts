@@ -39,6 +39,7 @@ class DatabaseSeeder extends Seeder
             OptionsTableSeeder::class,
             ProductsTableSeeder::class,
             ProvinceDistrictSeeder::class,
+            CouponsTableSeeder::class
         ]);
     }
 }
