@@ -7,8 +7,10 @@ use App\DTO\ProductsFilterParametersDTO;
 use App\DTO\SearchParametersDTO;
 use App\Exceptions\CustomException;
 use App\Exceptions\ProductNotFoundException;
+use App\Models\Client;
 use Illuminate\Http\Response;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 readonly class GetDataForPageService
@@ -41,6 +43,7 @@ readonly class GetDataForPageService
                 PagesConstants::CATALOG_PAGE => $this->getCatalogPageData($params['searchParams']),
                 PagesConstants::CHECKOUT_PAGE => $this->getCheckoutPageData(),
                 PagesConstants::ORDER_CONFIRMATION_PAGE => $this->getOrderConfirmationPageData(),
+                PagesConstants::ACCOUNT_PAGE => $this->getAccountPageData(),
                 default => [],
             } + $this->getBaseData($page);
     }
@@ -50,6 +53,7 @@ readonly class GetDataForPageService
         return [
             'categories' => $this->categoryService->getAllCategories(),
             'shoppingCart' => $this->cartService->getCart()->toArray(),
+            'user' => Auth::user(),
         ];
     }
 
@@ -159,6 +163,16 @@ readonly class GetDataForPageService
             'options' => $this->optionsService->getOptionsAvailableForSearchResult(),
             'images' => $productImages,
             'selectedOptions' => $searchParameters->getValuesArray()
+        ];
+    }
+
+    private function getAccountPageData(): array
+    {
+        $client = Client::find(Auth::id());
+
+        return [
+            'addresses' => $client->addresses,
+            'orders' => $client->orders,
         ];
     }
 

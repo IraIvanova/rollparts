@@ -1,0 +1,87 @@
+@extends('store.base')
+
+@section('bodyContent')
+    <section class="brator-blog-post-area ">
+        <div class="container-xxxl container-xxl container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 content-side">
+                    <div class="blog-details-content">
+                        <div class="page-content">
+                            <div class="woocommerce"><div class="woocommerce-notices-wrapper"></div>
+
+                                <div class="row" id="customer_login">
+
+                                    <div class="col-6">
+                                        <h2>Register</h2>
+                                        <form class="woocommerce-form woocommerce-form-login login" action="{{ route('process-register') }}" method="post">
+                                            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                <label for="username">Email address&nbsp;<span class="required" aria-hidden="true">*</span>
+                                                    <span class="screen-reader-text">Required</span>
+                                                </label>
+                                                <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="username" required>
+                                            </p>
+                                            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                <label for="phone">Phone<span class="required" aria-hidden="true">*</span>
+                                                    <span class="screen-reader-text">Required</span>
+                                                </label>
+                                                <input type="tel" class="woocommerce-Input woocommerce-Input--text input-text" name="phone" id="phone" required>
+                                            </p>
+                                            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                <label for="name">Name<span class="required" aria-hidden="true">*</span>
+                                                    <span class="screen-reader-text">Required</span>
+                                                </label>
+                                                <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="name" id="name" required>
+                                            </p>
+
+                                            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                <label for="lastName">Last Name<span class="required" aria-hidden="true">*</span>
+                                                    <span class="screen-reader-text">Required</span>
+                                                </label>
+                                                <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="lastName" id="lastName" required>
+                                            </p>
+                                            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                <label for="password">Password&nbsp;<span class="required" aria-hidden="true">*</span>
+                                                    <span class="screen-reader-text">Required</span>
+                                                </label>
+                                                <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" required>
+                                            </p>
+                                            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                <label for="confirmPassword">Confirm Password<span class="required" aria-hidden="true">*</span>
+                                                    <span class="screen-reader-text">Required</span>
+                                                </label>
+                                                <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password_confirmation" id="confirmPassword" required>
+                                            </p>
+
+
+                                            <p class="form-row">
+                                                <button type="submit" class="woocommerce-button button woocommerce-form-login__submit">Register</button>
+                                            </p>
+                                            @csrf
+                                        </form>
+
+
+                                    </div>
+
+                                    <div class="col-6">
+
+                                            <p>A link to set a new password will be sent to your email address.</p>
+                                            <p>A link to set a new password will be sent to your email address.</p>
+                                            <p>A link to set a new password will be sent to your email address.</p>
+                                            <p>A link to set a new password will be sent to your email address.</p>
+                                            <p>A link to set a new password will be sent to your email address.</p>
+
+                                    </div>
+
+                                </div>
+
+                            </div></div>
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection

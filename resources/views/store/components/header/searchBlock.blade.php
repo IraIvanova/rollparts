@@ -47,7 +47,7 @@
             <div class="col-lg-3">
                 <div class="brator-info-right">
                     <div class="brator-icon-link-text relation">
-                        <a href="javascript:void(0)">
+                        <a href="{{ route('client.account') }}">
                             <div class="click-item-count">
                                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64"
@@ -64,7 +64,7 @@
                     </g>
 				</svg>
                             </div>
-                            <b>My Account</b>
+                            <b>{{ $user ? $user->name : 'My Account'}}</b>
                         </a>
                         <div class="vehicle-list-wapper">
 

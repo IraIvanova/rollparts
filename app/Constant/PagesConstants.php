@@ -12,4 +12,7 @@ class PagesConstants
     public const CATALOG_PAGE = 'catalog';
     public const CHECKOUT_PAGE = 'checkout';
     public const ORDER_CONFIRMATION_PAGE = 'orderConfirmation';
+    public const LOGIN_PAGE = 'login';
+    public const REGISTER_PAGE = 'register';
+    public const ACCOUNT_PAGE = 'account';
 }

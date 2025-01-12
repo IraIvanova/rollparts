@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AccountController;
+use App\Http\Controllers\Auth\ClientAuthController;
 use App\Http\Controllers\Store\CartController;
 use App\Http\Controllers\Store\PagesController;
 use Illuminate\Support\Facades\Route;
@@ -24,3 +26,16 @@ Route::post('/applyCoupon', [CartController::class, 'applyCoupon'])->name('apply
 Route::post('/removeCoupon', [CartController::class, 'removeCoupon'])->name('removeCoupon');
 
 Route::post('/districts', [CartController::class, 'getDistrictsList'])->name('getDistrictsList');
+
+
+    Route::get('/login', [ClientAuthController::class, 'showLoginForm'])->name('login');
+    Route::get('/register', [ClientAuthController::class, 'showRegisterForm'])->name('register');
+    Route::post('/login', [ClientAuthController::class, 'login'])->name('process-login');
+    Route::post('/register', [ClientAuthController::class, 'register'])->name('process-register');
+    Route::get('/logout', [ClientAuthController::class, 'logout'])->name('logout');
+
+Route::prefix('client')->group(function () {
+    Route::middleware('auth:client')->group(function () {
+        Route::get('/account', [AccountController::class, 'account'])->name('client.account');
+    });
+});
