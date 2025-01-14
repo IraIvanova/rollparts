@@ -16,13 +16,12 @@
             <span class="header-cart-count">{{$shoppingCart['totalItems']}}</span>
         </div>
         <b class="header-cart-total"><span class="woocommerce-Price-amount amount"><bdi><span
-                        class="woocommerce-Price-currencySymbol">$</span>{{min($shoppingCart['totalWithDiscount'], $shoppingCart['totalPrice'])}}</bdi></span></b>
+                        class="woocommerce-Price-currencySymbol">{{ trans('interface.trLira') }} </span>{{min($shoppingCart['totalWithDiscount'], $shoppingCart['totalPrice'])}}</bdi></span></b>
 
     </a>
     <div class="brator-cart-item-list" id="cart-preview">
         <div class="brator-cart-item-list-header">
-            <h2>Cart <span class="header-cart-count2">({{$shoppingCart['totalItems']}} items)</span>
-            </h2>
+            <h2>{!! trans('interface.cart.itemsCount', ['qnt' => $shoppingCart['totalItems']]) !!}</h2>
             <button class="brator-cart-close">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                      fill="currentColor" viewBox="0 0 16 16">

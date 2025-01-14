@@ -12,49 +12,43 @@
                                 <div class="row" id="customer_login">
 
                                     <div class="col-6">
-                                        <h2>Register</h2>
+                                        <h2>{{ trans('interface.auth.register') }}</h2>
                                         <form class="woocommerce-form woocommerce-form-login login" action="{{ route('process-register') }}" method="post">
                                             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                                                <label for="username">Email address&nbsp;<span class="required" aria-hidden="true">*</span>
-                                                    <span class="screen-reader-text">Required</span>
+                                                <label for="username">{{ trans('interface.form.email') }}<span class="required" aria-hidden="true">*</span>
                                                 </label>
                                                 <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="username" required>
                                             </p>
                                             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                                                <label for="phone">Phone<span class="required" aria-hidden="true">*</span>
-                                                    <span class="screen-reader-text">Required</span>
+                                                <label for="phone">{{ trans('interface.form.phone') }}<span class="required" aria-hidden="true">*</span>
                                                 </label>
                                                 <input type="tel" class="woocommerce-Input woocommerce-Input--text input-text" name="phone" id="phone" required>
                                             </p>
                                             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                                                <label for="name">Name<span class="required" aria-hidden="true">*</span>
-                                                    <span class="screen-reader-text">Required</span>
+                                                <label for="name">{{ trans('interface.form.name') }}<span class="required" aria-hidden="true">*</span>
                                                 </label>
                                                 <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="name" id="name" required>
                                             </p>
 
                                             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                                                <label for="lastName">Last Name<span class="required" aria-hidden="true">*</span>
-                                                    <span class="screen-reader-text">Required</span>
+                                                <label for="lastName">{{ trans('interface.form.lastName') }}<span class="required" aria-hidden="true">*</span>
                                                 </label>
                                                 <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="lastName" id="lastName" required>
                                             </p>
                                             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                                                <label for="password">Password&nbsp;<span class="required" aria-hidden="true">*</span>
-                                                    <span class="screen-reader-text">Required</span>
+                                                <label for="password">{{ trans('interface.form.password') }}<span class="required" aria-hidden="true">*</span>
                                                 </label>
                                                 <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" required>
                                             </p>
                                             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                                                <label for="confirmPassword">Confirm Password<span class="required" aria-hidden="true">*</span>
-                                                    <span class="screen-reader-text">Required</span>
+                                                <label for="confirmPassword">{{ trans('interface.form.confirmPassword') }}<span class="required" aria-hidden="true">*</span>
                                                 </label>
                                                 <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password_confirmation" id="confirmPassword" required>
                                             </p>
 
 
                                             <p class="form-row">
-                                                <button type="submit" class="woocommerce-button button woocommerce-form-login__submit">Register</button>
+                                                <button type="submit" class="woocommerce-button button woocommerce-form-login__submit">{{ trans('interface.buttons.register') }}</button>
                                             </p>
                                             @csrf
                                         </form>

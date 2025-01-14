@@ -6,8 +6,6 @@
     <title>Rollparts - Auto Parts</title>
     <meta name="description" content="Auto Parts...">
     <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
-    {{--    <meta name="turbo-visit-control" content="reload">--}}
-
 
     <link rel="stylesheet" media="all" href="{{asset('css/store/bootstrap.min.css')}}">
     <link rel="stylesheet" media="all" href="{{asset('css/store/base.css')}}">
@@ -28,14 +26,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
-
-{{--    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>--}}
-
-{{--    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>--}}
-
 <body
     class="page-template page-template-elementor_header_footer page page-id-360 theme-brator woocommerce-js woo-variation-swatches wvs-behavior-blur wvs-theme-brator wvs-show-label wvs-tooltip tinvwl-theme-style elementor-default elementor-template-full-width elementor-kit-11 elementor-page elementor-page-360 loading-frame e--ua-blink e--ua-chrome e--ua-webkit"
-    data-elementor-device-mode="desktop">
+   >
 <div class="page-wrapper">
     <input type="hidden" id="cart-route" value="{{route('addToCart')}}"/>
     @include('store.components.header.header')
@@ -55,9 +48,9 @@
                                     class="elementor-element elementor-element-d303512 elementor-widget elementor-widget-brator_footer_about_two">
                                     <div class="elementor-widget-container">
                                         <div class="brator-footer-top-element brator-footer-top-address">
-                                            <h6 class="footer-top-title">Contact Us</h6>
+                                            <h6 class="footer-top-title">{{ trans('interface.footer.contactUs') }}</h6>
                                             <div class="brator-footer-top-content">
-                                                <p>Call us 24/7</p>
+                                                <p>{{ trans('interface.footer.workingHours') }}</p>
                                                 <a class="call-top-p"
                                                    href="">1800
                                                     500 1234 925</a>
@@ -80,20 +73,20 @@
                                     data-widget_type="brator_footer_links.default">
                                     <div class="elementor-widget-container">
                                         <div class="brator-footer-top-element">
-                                            <h6 class="footer-top-title">Customer Service</h6>
+                                            <h6 class="footer-top-title">{{ trans('interface.footer.customerService') }}</h6>
                                             <div class="brator-footer-top-content brator-link-list-one">
                                                 <ul>
                                                     <li class="link_with_normal">
                                                         <a href="https://brator-main.smartdemowp.com/my-account/">
-                                                            My Account </a>
+                                                            {{ trans('interface.footer.myAccount') }}</a>
                                                     </li>
                                                     <li class="link_with_normal">
                                                         <a href="https://brator-main.smartdemowp.com/shop-categories/#">
-                                                            Return Policy </a>
+                                                            {{ trans('interface.footer.returnPolicy') }}</a>
                                                     </li>
                                                     <li class="link_with_normal">
                                                         <a href="https://brator-main.smartdemowp.com/shop-categories/#">
-                                                            FAQ </a>
+                                                            {{ trans('interface.footer.faq') }} </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -112,20 +105,20 @@
                                     data-widget_type="brator_footer_links.default">
                                     <div class="elementor-widget-container">
                                         <div class="brator-footer-top-element">
-                                            <h6 class="footer-top-title">Information</h6>
+                                            <h6 class="footer-top-title">{{ trans('interface.footer.information') }}</h6>
                                             <div class="brator-footer-top-content brator-link-list-one">
                                                 <ul>
                                                     <li class="link_with_normal">
                                                         <a href="https://brator-main.smartdemowp.com/about-us/">
-                                                            About Rollpart </a>
+                                                            {{ trans('interface.footer.about') }}</a>
                                                     </li>
                                                     <li class="link_with_normal">
                                                         <a href="https://brator-main.smartdemowp.com/contact-us/">
-                                                            Contact </a>
+                                                            {{ trans('interface.footer.contactUs') }} </a>
                                                     </li>
                                                     <li class="link_with_normal">
                                                         <a href="{{route('infoTerms')}}">
-                                                           Terms & Conditions</a>
+                                                            {{ trans('interface.footer.terms') }}</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -158,43 +151,6 @@
                                                                                                    aria-atomic="true"></p>
                                                                 <ul></ul>
                                                             </div>
-                                                            <form
-                                                                action="https://brator-main.smartdemowp.com/shop-categories/#wpcf7-f292-o1"
-                                                                method="post" class="wpcf7-form init"
-                                                                aria-label="Contact form" novalidate="novalidate"
-                                                                data-status="init">
-                                                                <div style="display: none;">
-                                                                    <input type="hidden" name="_wpcf7" value="292">
-                                                                    <input type="hidden" name="_wpcf7_version"
-                                                                           value="6.0.1">
-                                                                    <input type="hidden" name="_wpcf7_locale"
-                                                                           value="en_US">
-                                                                    <input type="hidden" name="_wpcf7_unit_tag"
-                                                                           value="wpcf7-f292-o1">
-                                                                    <input type="hidden" name="_wpcf7_container_post"
-                                                                           value="0">
-                                                                    <input type="hidden" name="_wpcf7_posted_data_hash"
-                                                                           value="">
-                                                                </div>
-                                                                <div>
-                                                                    <p><span class="wpcf7-form-control-wrap"
-                                                                             data-name="your-email"><input size="40"
-                                                                                                           maxlength="400"
-                                                                                                           class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email"
-                                                                                                           aria-required="true"
-                                                                                                           aria-invalid="false"
-                                                                                                           placeholder="Enter your email"
-                                                                                                           value=""
-                                                                                                           type="email"
-                                                                                                           name="your-email"></span>
-                                                                        <button class="wpcf7-form-control wpcf7-submit"
-                                                                                type="submit">Subscribe
-                                                                        </button>
-                                                                    </p>
-                                                                </div>
-                                                                <div class="wpcf7-response-output"
-                                                                     aria-hidden="true"></div>
-                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -217,9 +173,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="brator-copyright-area">
-                        <p>
-                            © 2025<a href="/">Rollparts</a>All
-                            Rights Reserved </p>
+                        <p> {{ trans('interface.footer.copyright', ['year' => 2025]) }}</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
@@ -234,7 +188,7 @@
                 </div>
                 <div class="col-lg-4 col-12">
                     <div class="brator-social-link svg-link">
-                        <h6 class="brator-social-link">Follow Us</h6>
+                        <h6 class="brator-social-link">{{ trans('interface.footer.followUs') }}</h6>
                         <a href="https://twitter.com/">
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">

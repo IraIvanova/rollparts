@@ -13,7 +13,7 @@
                 <div class="brator-header-menu-with-info">
                     <div class="brator-logo-area">
                         <div class="brator-logo">
-                            <a href="https://brator-main.smartdemowp.com/">
+                            <a href="/">
                                 <img src="{{asset('images/logo.png')}}" alt="Logo">
                             </a>
                             <button class="mobile-menu-icon">

@@ -1,5 +1,5 @@
 <div id="woocommerce_price_filter-2" class="brator-sidebar-single-item woocommerce widget_price_filter">
-    <div class="shop-sidebar-title"><h2>Price</h2></div>
+    <div class="shop-sidebar-title"><h2>{{ trans('interface.filtersAndSort.prices') }}</h2></div>
 {{--    <form method="get" action="https://brator-main.smartdemowp.com/product-category/wheels-tires/">--}}
         <div class="price_slider_wrapper">
             <div class="price_slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"

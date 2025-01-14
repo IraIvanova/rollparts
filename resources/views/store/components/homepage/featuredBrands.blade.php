@@ -9,7 +9,7 @@
                                 <div class="brator-brator-makes-list-tab-list js-tabs" id="tabs-product-content">
                                     <div class="brator-makes-list-tab-header js-tabs__header">
                                         <div class="brator-section-header-title mb-2">
-                                            <h2>Featured Brands</h2>
+                                            <h2>{{ trans('interface.home.featuredBrands') }}</h2>
                                         </div>
                                     </div>
                                     <div>
@@ -35,7 +35,7 @@
                                                                             </div>
                                                                             <div class="col-md-12">
                                                                                 <div class="brator-makes-list-view-more">
-                                                                                    <button> <span><b>view more</b>
+                                                                                    <button> <span><b>{{ trans('interface.home.viewMore') }}</b>
 						<svg class="bi bi-chevron-down" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg></span>
                                                                                     </button>
                                                                                 </div>

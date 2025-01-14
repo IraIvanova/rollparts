@@ -10,7 +10,7 @@ class BreadcrumbsService
     private function getCommonPart(): array
     {
         return [
-            ['name' => 'Home', 'url' => '/'],
+            ['name' => 'home', 'url' => '/'],
         ];
     }
 

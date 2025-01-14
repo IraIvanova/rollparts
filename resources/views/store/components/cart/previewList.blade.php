@@ -1,5 +1,5 @@
 @if($shoppingCart['totalItems'] === 0)
-    <p class="woocommerce-mini-cart__empty-message">No products in the cart.</p>
+    <p class="woocommerce-mini-cart__empty-message">{{ trans('interface.cart.noItems') }}</p>
 @else
     <ul class="woocommerce-mini-cart cart_list product_list_widget ">
         @foreach($shoppingCart['products'] as $product)
@@ -20,7 +20,7 @@
                                 <h6>
                                                 <span class="quantity">{{$product['amount']}} × <span
                                                         class="woocommerce-Price-amount amount"><bdi><span
-                                                                class="woocommerce-Price-currencySymbol">$</span>{{min($product['price'], $product['discountedPrice'])}}</bdi></span></span>
+                                                                class="woocommerce-Price-currencySymbol">{{ trans('interface.trLira') }}</span>{{min($product['price'], $product['discountedPrice'])}}</bdi></span></span>
                                 </h6>
                             </div>
                         </div>
@@ -32,12 +32,11 @@
     </ul>
     <div class="brator-cart-total-money">
         <div class="woocommerce-mini-cart__total total brator-cart-total-header">
-            <strong>Subtotal:</strong> <span class="woocommerce-Price-amount amount"><bdi><span
-                        class="woocommerce-Price-currencySymbol">$</span>{{min($shoppingCart['totalWithDiscount'], $shoppingCart['totalPrice'])}}</bdi></span>
+            <strong>{{ trans('interface.cart.subtotal') }}:</strong> <span class="woocommerce-Price-amount amount"><bdi><span
+                        class="woocommerce-Price-currencySymbol">{{ trans('interface.trLira') }}</span>{{min($shoppingCart['totalWithDiscount'], $shoppingCart['totalPrice'])}}</bdi></span>
         </div>
         <div class="woocommerce-mini-cart__buttons brator-cart-total-action">
-            <a href="{{route('cart')}}" class="button wc-forward">View
-                cart</a><a href="{{route('checkout')}}"
-                           class="button checkout wc-forward">Checkout</a></div>
+            <a href="{{route('cart')}}" class="button wc-forward">{{ trans('interface.buttons.viewCart') }}</a><a href="{{route('checkout')}}"
+                           class="button checkout wc-forward">{{ trans('interface.buttons.checkout') }}</a></div>
     </div>
 @endif

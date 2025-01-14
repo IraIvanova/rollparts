@@ -10,7 +10,7 @@
                                     <div class="col-md-12">
                                         <div class="brator-section-header" style="justify-content:left">
                                             <div class="brator-section-header-title">
-                                                <h2>Shop by Categories</h2>
+                                                <h2>{{ trans('interface.home.shopByCategories') }}</h2>
                                             </div>
                                         </div>
                                     </div>

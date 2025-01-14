@@ -28,8 +28,7 @@
                                         @if($prices['discount_amount'])
                                             <div class="brator-product-hero-content-review">
                                                 <div
-                                                    class="product-batch off-batch">{{$prices['discount_amount']}}
-                                                    % Off
+                                                    class="product-batch off-batch">{{ trans('interface.product.discountAmount', ['amount' => $prices['discount_amount']]) }}
                                                 </div>
                                             </div>
                                         @endif
@@ -37,12 +36,12 @@
                                             <h6>
                                                 @if((float)$prices['discount_amount'])
                                                         <span class="woocommerce-Price-amount amount color-red"><span
-                                                                        class="woocommerce-Price-currencySymbol">$</span>{{ $prices['discounted_price'] }}</span>
+                                                                        class="woocommerce-Price-currencySymbol">{{ trans('interface.trLira') }}</span>{{ $prices['discounted_price'] }}</span>
                                                       <span class="woocommerce-Price-amount amount px-2 color-grey line-through font-size-20px"><span
-                                                                        class="woocommerce-Price-currencySymbol">$</span>{{ $prices['price'] }}</span>
+                                                                        class="woocommerce-Price-currencySymbol">{{ trans('interface.trLira') }}</span>{{ $prices['price'] }}</span>
                                                 @else
                                                     <span class="woocommerce-Price-amount amount"><span
-                                                            class="woocommerce-Price-currencySymbol">$</span>{{ $prices['price'] }}</span>
+                                                            class="woocommerce-Price-currencySymbol">{{ trans('interface.trLira') }}</span>{{ $prices['price'] }}</span>
                                                 @endif
                                             </h6>
                                         </div>
@@ -50,16 +49,16 @@
                                             <h6 class="font-size-14px my-2 pb-2 border-bottom">
                                                 @if($active)
                                                     <span class="status-circle active-status"></span>
-                                                    <span class="stock pl-3">{{ $quantity }} pcs in stock</span>
+                                                    <span class="stock pl-3">{{ trans('interface.product.qntInStock', ['qnt' => $quantity]) }}</span>
                                                 @else
                                                     <span class="status-circle passive-status"></span>
-                                                    <span class="pl-3">Out of stock</span>
+                                                    <span class="pl-3">{{ trans('interface.product.outOfStock') }}</span>
                                                 @endif
                                             </h6>
                                         </div>
                                         @include('store.components.product.relatedOptions')
                                         <div class="">
-                                            <p>Manufacturer code: <b>{{ $mnfCode }}</b></p>
+                                            <p>{{ trans('interface.product.mnfCode') }}: <b>{{ $mnfCode }}</b></p>
                                         </div>
                                     </div>
                                     <div class="brator-product-hero-content-add-to-cart border-bottom">
@@ -82,8 +81,7 @@
                                                     <input type="hidden" value="{{route('addToCart')}}" id="add-route" />
 
                                                     <button type="button" name="add-to-cart" id="addToCart"
-                                                            class="button alt" data-product="{{$id}}">Add
-                                                        to cart
+                                                            class="button alt" data-product="{{$id}}"> {{ trans('interface.buttons.addToCart') }}
                                                     </button>
                                                 </div>
                                             </div>

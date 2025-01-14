@@ -1,5 +1,5 @@
 <div id="woocommerce_product_categories-2" class="brator-sidebar-single-item woocommerce widget_product_categories">
-    <div class="shop-sidebar-title"><h2>Categories</h2>
+    <div class="shop-sidebar-title"><h2>{{ trans('interface.filtersAndSort.categories') }}</h2>
     </div>
 <ul class="product-categories shop-cat-list">
     @foreach($categories as $category)

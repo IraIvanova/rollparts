@@ -3,7 +3,7 @@
     @if($product['discount_amount'])
     <div class="brator-product-single-item-info info-content-left">
         <div class="brator-product-single-item-info-right">
-            <div class="off-batch">{{$product['discount_amount']}}% Off</div>
+            <div class="off-batch">{{ trans('interface.product.discountAmount', ['amount' => $product['discount_amount']]) }}</div>
         </div>
     </div>
     @endif
@@ -24,22 +24,22 @@
             @if($product['discount_amount'])
                 <p>
                 <span class="woocommerce-Price-amount amount color-red"><span
-                        class="woocommerce-Price-currencySymbol">$</span>{{ $product['discounted_price'] }}</span>
+                        class="woocommerce-Price-currencySymbol">{{ trans('interface.trLira') }}</span>{{ $product['discounted_price'] }}</span>
 
 
                 <span class="woocommerce-Price-amount amount px-2 color-grey line-through font-size-20px"><span
-                        class="woocommerce-Price-currencySymbol">$</span>{{ $product['price'] }}</span>
+                        class="woocommerce-Price-currencySymbol">{{ trans('interface.trLira') }}</span>{{ $product['price'] }}</span>
                 </p>
             @else
                 <span class="woocommerce-Price-amount amount font-weight-bold"><span
-                        class="woocommerce-Price-currencySymbol ">$</span>{{ $product['price'] }}</span>
+                        class="woocommerce-Price-currencySymbol ">{{ trans('interface.trLira') }}</span>{{ $product['price'] }}</span>
             @endif
         </div>
 
         <div class="brator-product-single-item-btn">
             <button
                 class="button add_to_cart_button" data-product="{{$product['id']}}">
-                Add to cart
+                {{ trans('interface.buttons.addToCart') }}
             </button>
         </div>
     </div>
