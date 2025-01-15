@@ -1,8 +1,14 @@
 <div class="row">
     <div class="col-md-12">
             <div class="gallery">
-                <div class="slide" style="background-image: url({{asset('images/gallery.png')}})">
-{{--                    <img src="{{asset('images/gallery.jpg')}}" alt="">--}}
+                <div class="slide" >
+{{--                    <div>--}}
+{{--                        <h1>--}}
+{{--                            Rollparts - otomotiv parçaları için güvenilir kaynağınızdır!--}}
+{{--                        </h1>--}}
+{{--                        <h6>Her marka ve model için en iyi fiyatlar için şimdi alışveriş yapın!</h6>--}}
+{{--                    </div>--}}
+                    <img src="{{asset('images/gallery2.png')}}" />
                 </div>
             </div>
     </div>

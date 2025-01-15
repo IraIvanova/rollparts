@@ -285,13 +285,29 @@
 }
 
 .gallery .slide {
-    width: 100%!important; /* Ensure slides are full width */
-    height: 500px; /* Fixed height for each slide */
+    width: 100% !important; /* Ensure slides are full width */
+    max-height: 500px; /* Fixed height for each slide */
     background-size: cover; /* Cover the background */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent image repetition */
 }
 
+/* Media Query for Mobile devices */
+@media (max-width: 480px) {
+    .slide h1 {
+        font-size: 28px; /* Smaller font size for mobile */
+        top: 100px; /* Adjust top position */
+        left: 10px; /* Adjust left position */
+        width: 90%;
+    }
+
+    .slide h6 {
+        font-size: 16px; /* Smaller font size for mobile */
+        top: 220px; /* Adjust top position */
+        left: 10px; /* Adjust left position */
+        width: 90%;
+    }
+}
 /* Optional: Customize slick dots and arrows */
 .gallery .slick-dots li button:before {
     color: white;

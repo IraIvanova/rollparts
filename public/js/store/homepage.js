@@ -1,11 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    $('.gallery').slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        focusOnSelect: true,
-        arrows: true
-    });
-
     $('.categories-slider').slick({
         slidesToShow: 6,
         slidesToScroll: 1,
