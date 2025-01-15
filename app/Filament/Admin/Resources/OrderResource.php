@@ -74,8 +74,10 @@ class OrderResource extends Resource
                                     ->label('Net price')
                                     ->money('trl'),
                                 TextEntry::make('manual_discount')
+                                    ->hidden(fn($record) => empty($record->manual_discount))
                                     ->label('Manual discount'),
                         TextEntry::make('used_promo')
+                            ->hidden(fn($record) => empty(array_key_first(json_decode($record->used_promo, true))))
                             ->label('Used promo code'),
                             ])
                     ])
@@ -89,7 +91,7 @@ class OrderResource extends Resource
                 Forms\Components\Section::make()
                     ->schema([
                 // Client (with client name, email, and phone)
-                Select::make('client_id')
+                Select::make('user_id')
                     ->label('Client')
                     ->relationship('client', 'fullName')
                     ->required()

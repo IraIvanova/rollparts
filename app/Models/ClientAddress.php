@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class ClientAddress extends Model
 {
-    protected $fillable = ['type', 'client_id','address_line1', 'country', 'province_id', 'district_id', 'zip'];
+    protected $fillable = ['type', 'user_id','address_line1', 'country', 'province_id', 'district_id', 'zip'];
 
     public function client()
     {

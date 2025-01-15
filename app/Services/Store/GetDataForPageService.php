@@ -50,10 +50,12 @@ readonly class GetDataForPageService
 
     private function getBaseData(string $page): array
     {
+//        dd(Auth::user());
         return [
             'categories' => $this->categoryService->getAllCategories(),
             'shoppingCart' => $this->cartService->getCart()->toArray(),
             'user' => Auth::user(),
+            'contacts' => $this->getContactDetails()
         ];
     }
 
@@ -168,7 +170,7 @@ readonly class GetDataForPageService
 
     private function getAccountPageData(): array
     {
-        $client = Client::find(Auth::id());
+        $client = Auth::user();
 
         return [
             'addresses' => $client->addresses,
@@ -194,5 +196,15 @@ readonly class GetDataForPageService
     private function toArray(Collection $products): Collection
     {
         return $products->map(fn($i) => (array)$i);
+    }
+
+    private function getContactDetails(): array
+    {
+        return [
+            'email' => 'rollparts@gmail.com',
+            'phone' => '111122223',
+            'address' => 'Turkey, Bursa, Boulevard Test address',
+            'workingHours' => '09:00 - 18:00',
+        ];
     }
 }

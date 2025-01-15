@@ -50,11 +50,10 @@
                                         <div class="brator-footer-top-element brator-footer-top-address">
                                             <h6 class="footer-top-title">{{ trans('interface.footer.contactUs') }}</h6>
                                             <div class="brator-footer-top-content">
-                                                <p>{{ trans('interface.footer.workingHours') }}</p>
+                                                <p>{{ trans('interface.footer.workingHours', ['hours' => $contacts['workingHours']]) }}</p>
                                                 <a class="call-top-p"
-                                                   href="">1800
-                                                    500 1234 925</a>
-                                                <p>Bald Hill St, Asheville, NC 28803</p>
+                                                   href="tel:{{ $contacts['phone'] }}">{{ $contacts['phone'] }}</a>
+                                                <p>{{ $contacts['address'] }}</p>
                                                 <a class="e-mail-to"
                                                    href="https://brator-main.smartdemowp.com/shop-categories/#_">info@brator.com</a>
                                              </div>

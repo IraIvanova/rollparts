@@ -23,31 +23,32 @@
                         @csrf
                         <h5>Contact details</h5>
                         <div>
+{{--                            @dd($user)--}}
                             <div class="row px-3">
                                 <div class="form-row validate-required w-50">
                                     <label for="firstName" class="">First name*</label>
                                     <input type="text" class="input-text "
                                            name="name"
-                                           id="firstName" placeholder="" value="">
+                                           id="firstName" placeholder="" value="{{$user->name}}">
                                 </div>
                                 <div class="form-row validate-required w-50">
                                     <label for="lastName" class="">Last name*</label>
                                     <input type="text" class="input-text "
                                            name="lastName"
-                                           id="lastName" placeholder="" value="">
+                                           id="lastName" placeholder="" value="{{$user->lastName}}">
                                 </div>
                             </div>
                             <div class="form-row  validate-required">
                                 <label for="phone" class="">Phone*</label>
                                 <input type="text" class="input-text "
                                        name="phone"
-                                       id="phone" placeholder="" value="">
+                                       id="phone" placeholder="" value="{{$user->phone}}">
                             </div>
                             <div class="form-row  validate-required">
                                 <label for="email" class="">Email*</label>
                                 <input type="email" class="input-text"
                                        name="email"
-                                       id="email" placeholder="" value="" required>
+                                       id="email" placeholder="" value="{{$user->email}}" required>
                             </div>
                         </div>
                         <h5 class="mt-5">Address details</h5>

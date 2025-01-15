@@ -13,7 +13,7 @@
                     <div class="brator-header-menu-info">
                         <a href="https://brator-main.smartdemowp.com/order-track/">Track Order</a>
                         <span>{{ trans('interface.header.callUs') }}:</span>
-                        <a href="tel:18005001234">1800 500 1234</a></div>
+                        <a href="tel:{{ $contacts['phone'] }}">{{ $contacts['phone'] }}</a></div>
                 </div>
             </div>
         </div>

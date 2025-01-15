@@ -35,7 +35,7 @@ Route::post('/districts', [CartController::class, 'getDistrictsList'])->name('ge
     Route::get('/logout', [ClientAuthController::class, 'logout'])->name('logout');
 
 Route::prefix('client')->group(function () {
-    Route::middleware('auth:client')->group(function () {
+    Route::middleware('auth:web')->group(function () {
         Route::get('/account', [AccountController::class, 'account'])->name('client.account');
     });
 });

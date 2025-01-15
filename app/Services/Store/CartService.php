@@ -69,6 +69,7 @@ class CartService
     {
        return DB::transaction(function () use ($contactDetails) {
             $client = $this->clientService->findOrCreateClient($contactDetails);
+
             $this->clientService->saveAddress($client, $contactDetails);
             $shoppingCart = $this->getCart();
 

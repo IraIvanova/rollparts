@@ -30,7 +30,7 @@ return [
         'contactUsTitle' => 'Bize ulaşın',
         'customerService' => 'Müşteri Hizmetleri',
         'information' => 'Bilgi',
-        'workingHours' => 'Çalışma saatleri: 10:00 - 19:00',
+        'workingHours' => 'Çalışma saatleri: :hours',
         'myAccount' => 'Hesabım',
         'returnPolicy' => 'İade Politikası',
         'faq' => 'SIKÇA SORULAN SORULAR',

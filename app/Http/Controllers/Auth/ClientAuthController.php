@@ -6,6 +6,7 @@ use App\Constant\PagesConstants;
 use App\Exceptions\ProductNotFoundException;
 use App\Http\Controllers\Controller;
 use App\Models\Client;
+use App\Models\User;
 use App\Services\Store\CartService;
 use App\Services\Store\GetDataForPageService;
 use Illuminate\Http\RedirectResponse;
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
+use Spatie\Permission\Models\Role;
 
 class ClientAuthController extends Controller
 {
@@ -33,7 +35,7 @@ class ClientAuthController extends Controller
 
     public function login(Request $request): RedirectResponse
     {
-        if (Auth::guard('client')->attempt($request->only('email', 'password'))) {
+        if (Auth::guard('web')->attempt($request->only('email', 'password'))) {
             return redirect()->route('client.account');
         }
 
@@ -53,12 +55,14 @@ class ClientAuthController extends Controller
     {
 //        dd($request->all());
         $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:255|min:3',
+            'lastName' => 'required|string|max:255|min:3',
             'email' => 'required|string|email|max:255|unique:clients',
             'password' => 'required|string|confirmed|min:6',
+            'phone' => 'required|string|max:255|min:8',
         ]);
 
-        $client = Client::create([
+        $client = User::create([
             'name' => $request->get('name'),
             'lastName' => $request->get('lastName'),
             'email' => $request->get('email'),
@@ -66,7 +70,10 @@ class ClientAuthController extends Controller
             'password' => Hash::make($request->get('password')),
         ]);
 
-        Auth::guard('client')->login($client);
+        $clientRole = Role::firstOrCreate(['name' => 'Client']);
+        $client->assignRole($clientRole);
+
+        Auth::guard('web')->login($client);
 
         return redirect()->route('client.account');
     }

@@ -1,7 +1,8 @@
 @extends('store.base')
 
 @section('bodyContent')
-    <div class="container mt-5">
+    <div class="container-xxxl container mt-5">
+        <div class="woocommerce">
         <h1 class="mb-4">My Account</h1>
 
         <!-- Tabs Navigation -->
@@ -9,11 +10,6 @@
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="account-details-tab" data-bs-toggle="tab" data-bs-target="#account-details" type="button" role="tab" aria-controls="account-details" aria-selected="true">
                     Account Details
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="addresses-tab" data-bs-toggle="tab" data-bs-target="#addresses" type="button" role="tab" aria-controls="addresses" aria-selected="false">
-                    Addresses
                 </button>
             </li>
             <li class="nav-item" role="presentation">
@@ -27,43 +23,52 @@
         <div class="tab-content mt-3" id="accountTabsContent">
             <!-- Account Details Tab -->
             <div class="tab-pane fade show active" id="account-details" role="tabpanel" aria-labelledby="account-details-tab">
-                <h4>Account Details</h4>
-                <form method="POST">
-                    @csrf
-                    <!-- Name -->
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" id="name" name="name" class="form-control" value="{{ auth()->user()->name }}" required>
+                <form class="woocommerce-form woocommerce-form-login login" action="{{ route('process-register') }}" method="post">
+                    <div class="@error('email') error @enderror woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                        <label for="username">{{ trans('interface.form.email') }}<span class="required" aria-hidden="true">*</span>
+                        </label>
+                        <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="username" value="{{$user->email}}" required>
+                        @error('email')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
-                    <!-- Email -->
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" name="email" class="form-control" value="{{ auth()->user()->email }}" required>
+                    <div class="@error('phone') error @enderror woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                        <label for="phone">{{ trans('interface.form.phone') }}<span class="required" aria-hidden="true">*</span>
+                        </label>
+                        <input type="tel" class="woocommerce-Input woocommerce-Input--text input-text" name="phone" id="phone" value="{{$user->phone}}" required >
+                        @error('phone')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
-                    <!-- Password -->
-                    <div class="mb-3">
-                        <label for="password" class="form-label">New Password</label>
-                        <input type="password" id="password" name="password" class="form-control">
+                    <div class="@error('name') error @enderror woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                        <label for="name">{{ trans('interface.form.name') }}<span class="required" aria-hidden="true">*</span>
+                        </label>
+                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="name" id="name" value="{{$user->name}}" required>
+                        @error('name')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
-                    <button type="submit" class="btn btn-primary">Update</button>
-                </form>
-            </div>
 
-            <!-- Addresses Tab -->
-            <div class="tab-pane fade" id="addresses" role="tabpanel" aria-labelledby="addresses-tab">
-                <h4>Addresses</h4>
-                @if($addresses->isEmpty())
-                    <p>You have no saved addresses.</p>
-                @else
-                    <ul class="list-group">
-                        @foreach($addresses as $address)
-                            <li class="list-group-item">
-                                {{ $address->street }}, {{ $address->city }}, {{ $address->state }} - {{ $address->postal_code }}
-                            </li>
-                        @endforeach
-                    </ul>
-                @endif
-{{--                <a href="{{ route('addresses.add') }}" class="btn btn-secondary mt-3">Add New Address</a>--}}
+                    <div class="@error('lastName') error @enderror woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                        <label for="lastName">{{ trans('interface.form.lastName') }}<span class="required" aria-hidden="true">*</span>
+                        </label>
+                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="lastName" id="lastName" value="{{$user->lastName}}" required>
+                        @error('lastName')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <p class="form-row">
+                        <button type="submit" class="woocommerce-button button woocommerce-form-login__submit">{{ trans('interface.buttons.update') }}</button>
+                    </p>
+                    @csrf
+                </form>
+                <h2>Addresses</h2>
+                @foreach($addresses as $address)
+                    {{--TODO add btn to change address--}}
+                    <li class="list-group-item">
+                        {{ $address->getFullAddress }}
+                    </li>
+                @endforeach
             </div>
 
             <!-- Orders Tab -->
@@ -72,32 +77,12 @@
                 @if($orders->isEmpty())
                     <p>You have no orders yet.</p>
                 @else
-                    <table class="table table-bordered">
-                        <thead>
-                        <tr>
-                            <th>Order ID</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                            <th>Total</th>
-                            <th>Actions</th>
-                        </tr>
-                        </thead>
-                        <tbody>
                         @foreach($orders as $order)
-                            <tr>
-                                <td>{{ $order->id }}</td>
-                                <td>{{ $order->created_at->format('d M Y') }}</td>
-                                <td>{{ $order->status }}</td>
-                                <td>${{ number_format($order->total, 2) }}</td>
-                                <td>
-                                    <a href="{{ route('orders.view', $order->id) }}" class="btn btn-sm btn-info">View</a>
-                                </td>
-                            </tr>
+                            @include('store.components.account.order')
                         @endforeach
-                        </tbody>
-                    </table>
                 @endif
             </div>
         </div>
+    </div>
     </div>
 @endsection

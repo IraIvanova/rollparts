@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Order extends Model
 {
+    protected $fillable = ['client_id'];
+
     public function orderProductsPivot(): BelongsToMany
     {
         return $this->belongsToMany(Product::class)->withPivot('price', 'discounted_price', 'amount');
@@ -27,11 +29,11 @@ class Order extends Model
 
     public function clientAddresses()
     {
-        return $this->hasManyThrough(ClientAddress::class, Client::class, 'id', 'client_id', 'client_id', 'id');
+        return $this->hasManyThrough(ClientAddress::class, User::class, 'id', 'user_id', 'client_id', 'id');
     }
     public function clientShippingAddress()
     {
-        return $this->hasOneThrough(ClientAddress::class, Client::class, 'id', 'client_id', 'client_id', 'id')->where('type', 'shipping');
+        return $this->hasOneThrough(ClientAddress::class, User::class, 'id', 'user_id', 'client_id', 'id')->where('type', 'shipping');
     }
 
     public function status(): BelongsTo

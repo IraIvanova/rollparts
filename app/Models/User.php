@@ -8,22 +8,19 @@ use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements FilamentUser
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $fillable = ['name', 'lastName', 'email', 'phone', 'password'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -48,14 +45,33 @@ class User extends Authenticatable implements FilamentUser
         ];
     }
 
-    public function canAccessFilament(): bool
-    {
-        // Customize this logic as needed
-        return $this->hasRole('admin'); // Assuming you have roles set up
-    }
-
     public function canAccessPanel(Panel $panel): bool
     {
-        return true;
+        return $this->hasRole('Admin');
+    }
+
+    public function billingAddress()
+    {
+        return $this->hasOne(ClientAddress::class)->where('type', 'billing');
+    }
+
+    public function shippingAddress()
+    {
+        return $this->hasOne(ClientAddress::class)->where('type', 'shipping');
+    }
+
+    public function addresses()
+    {
+        return $this->hasMany(ClientAddress::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'user_id');
+    }
+
+    public function getFullNameAttribute()
+    {
+        return "{$this->name} {$this->lastName}";
     }
 }

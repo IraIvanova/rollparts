@@ -6,6 +6,7 @@ use App\Constant\StatusesConstants;
 use App\DTO\CartProductDTO;
 use App\Models\Client;
 use App\Models\Order;
+use App\Models\User;
 use App\Services\ShoppingCart\ShoppingCart;
 use App\Services\Store\ProductService;
 
@@ -17,10 +18,10 @@ class OrderService
     {
     }
 
-    public function createOrder(Client $client, ShoppingCart $shoppingCart): Order
+    public function createOrder(User $user, ShoppingCart $shoppingCart): Order
     {
         $order = new Order();
-        $order->client_id = $client->id;
+        $order->user_id = $user->id;
         $order->status_id = StatusesConstants::CREATED;
         $order->order_number = null;
         $order->used_promo = json_encode([$shoppingCart->getCouponCode() => $shoppingCart->getCouponDiscount()], true);
