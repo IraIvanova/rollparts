@@ -38,6 +38,7 @@ class SearchProductsQueryBuilderService
             ->filterByBrands($parameters->searchParameters?->brands)
             ->filterByProductIds($parameters->products)
             ->setLimit($parameters->limit)
+            ->applyOrdering($parameters->searchParameters?->sortBy)
             ->getResults();
     }
 
@@ -141,9 +142,9 @@ class SearchProductsQueryBuilderService
         switch ($order) {
             case 'latest':
                 $this->query->orderBy('p.created_at', 'desc');
-            case 'price-asc':
+            case 'priceAsc':
                 $this->query->orderBy('finalPrice');
-            case 'price-desc':
+            case 'priceDesc':
                 $this->query->orderBy('finalPrice', 'desc');
         }
 

@@ -18,7 +18,10 @@ class PaginationService
             $total,
             $perPage,
             $page,
-            ['path' => request()->url()]
+            [
+                'path' => request()->url(),
+                'query' => request()->query(),
+            ]
         );
     }
 }

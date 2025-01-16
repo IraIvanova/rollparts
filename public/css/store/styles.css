@@ -477,6 +477,32 @@
 .error{
     color: red!important;
 }
+
+nav{
+    justify-content: center;
+    margin-top: 40px;
+}
+.pagination > span
+{
+    height: 40px;
+    line-height: 40px;
+}
+.pagination > a{
+    height: 40px;
+    line-height: 25px;
+}
+nav div:first-child{
+    display: none;
+}
+
+/*.bestseller-products.product-list-items .brator-product-single-item-area {*/
+/*    width: calc(20% - 40px);*/
+/*}*/
+/*@media (max-width: 1200px) {*/
+/*    .bestseller-products.product-list-items .brator-product-single-item-area {*/
+/*        width: calc(25% - 40px);*/
+/*    }*/
+/*}*/
 @media (max-width: 768px) {
     #main-content {
         padding-top: 0!important;

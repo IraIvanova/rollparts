@@ -1,7 +1,7 @@
 @extends('store.base')
 
 @section('bodyContent')
-    <section id="main-content" class="container container-xxxl py-5">
+    <section id="main-content" class="container container-xxxl">
         <div>
             @include('store.components.breadcrumbs')
 {{--            @include('store.components.banner')--}}

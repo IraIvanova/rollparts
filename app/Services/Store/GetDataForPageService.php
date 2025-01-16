@@ -50,7 +50,6 @@ readonly class GetDataForPageService
 
     private function getBaseData(string $page): array
     {
-//        dd(Auth::user());
         return [
             'categories' => $this->categoryService->getAllCategories(),
             'shoppingCart' => $this->cartService->getCart()->toArray(),
@@ -107,14 +106,15 @@ readonly class GetDataForPageService
         $searchParameters = new SearchParametersDTO($searchParams);
 
         $products = $this->paginationService->paginate(
-            $this->productQueryBuilderService->getProductsByCategory(
+            query: $this->productQueryBuilderService->getProductsByCategory(
                 new ProductsFilterParametersDTO(
                     language: 'tr',
                     currency: 'TRL',
                     categories: $nestedCategoriesId,
                     searchParameters: $searchParameters
                 )
-            )
+            ),
+            page: $searchParams['page'] ?? 1
         );
 
         $productImages = $this->productService->getMainImages(array_column($products->items(), 'id'));
@@ -157,13 +157,14 @@ readonly class GetDataForPageService
 
         //TODO Search by Part Name, Brand, Model, Sku
         $products = $this->paginationService->paginate(
-            $this->productQueryBuilderService->getProductsByCategory(
+            query: $this->productQueryBuilderService->getProductsList(
                 new ProductsFilterParametersDTO(
                     language: 'tr',
                     currency: 'TRL',
                     searchParameters: $searchParameters
                 )
-            )
+            ),
+            page: $searchParams['page'] ?? 1
         );
 
         $productImages = $this->productService->getMainImages(array_column($products->items(), 'id'));
