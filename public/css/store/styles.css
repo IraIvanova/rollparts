@@ -293,21 +293,15 @@
 }
 
 /* Media Query for Mobile devices */
-@media (max-width: 480px) {
-    .slide h1 {
-        font-size: 28px; /* Smaller font size for mobile */
-        top: 100px; /* Adjust top position */
-        left: 10px; /* Adjust left position */
-        width: 90%;
+@media (max-width: 1024px) {
+    .brator-header-area.header-one .row {
+        flex-direction: column;
     }
-
-    .slide h6 {
-        font-size: 16px; /* Smaller font size for mobile */
-        top: 220px; /* Adjust top position */
-        left: 10px; /* Adjust left position */
-        width: 90%;
+    .brator-logo-area .brator-logo {
+        margin-bottom: 10px
     }
 }
+
 /* Optional: Customize slick dots and arrows */
 .gallery .slick-dots li button:before {
     color: white;

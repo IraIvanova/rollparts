@@ -34,7 +34,7 @@
                         </form>
                         <div id="productdatasearch"></div>
                     </div>
-                    <div class="search-quly">
+                    <div class="search-quly flex-wrap">
                         <p>{{ trans('interface.header.quickSearch') }}:</p>
                         <a href="{{route('category', ['engine-parts'])}}">Engine parts</a>
                         <a href="{{route('category', ['brakes-components'])}}">Brakes & Components</a>

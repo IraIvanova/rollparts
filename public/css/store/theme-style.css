@@ -2118,7 +2118,8 @@ button.scroll-top span {
 }
 
 .brator-logo-area .brator-logo a img {
-    max-width: 300px;
+    max-width: 250px;
+    width: 100%;
 }
 
 .brator-logo-area .brator-logo button {
@@ -9206,7 +9207,6 @@ body {
 
     .brator-header-area.header-one .brator-info-right {
         justify-content: center;
-        border-top: 1px solid #e5e5e5;
         margin-top: 15px;
         padding-top: 15px;
     }
@@ -12357,7 +12357,7 @@ span.vehicle-check.tool {
     display: none;
 }
 
-@media only screen and (min-width: 300px) and (max-width: 1299px) {
+@media only screen and (min-width: 300px) and (max-width: 900px) {
     .mobile-menu-icon {
         display: block;
     }
@@ -13314,9 +13314,9 @@ a.banner-btn:hover {
         font-size: 12px;
     }
 
-    .brator-logo-area .brator-logo a img {
-        max-width: 150px;
-    }
+    /*.brator-logo-area .brator-logo a img {*/
+    /*    max-width: 150px;*/
+    /*}*/
 
     .brator-header-four .brator-logo-area {
         margin-top: 10px;
