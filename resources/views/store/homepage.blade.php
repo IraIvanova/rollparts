@@ -1,13 +1,15 @@
 @extends('store.base')
 
 @section('bodyContent')
-    <section id="main-content" class="container container-xxxl py-5">
+    <section id="main-content" class="container container-xxxl">
    @include('store.components.homepage.gallery')
    @include('store.components.homepage.services')
+    </section>
+    @include('store.components.homepage.categories')
+    <section  class="container container-xxxl">
    @include('store.components.homepage.bestsellers')
 
     </section>
-    @include('store.components.homepage.categories')
     @include('store.components.homepage.featuredBrands')
     @include('store.components.homepage.aboutUs')
 @endsection

@@ -4,7 +4,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="brator-single-service-item ">
                     <div class="iocn">
-                        <img src="{{asset('images/delivery.png')}}" >
+                        <img src="{{asset('images/service-icon-1.png')}}" >
                     </div>
                     <h4 class="title">{{ trans('interface.home.originalProducts') }}</h4>
                     <p>Only parts from trusted brands</p>
@@ -13,7 +13,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="brator-single-service-item ">
                     <div class="iocn">
-                        <img src="{{asset('images/delivery.png')}}">
+                        <img src="{{asset('images/service-icon-2.png')}}">
                     </div>
                     <h4 class="title">{{ trans('interface.home.fastDelivery') }}</h4>
                     <p>Free Shipping over $499</p>
@@ -22,7 +22,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="brator-single-service-item ">
                     <div class="iocn">
-                        <img src="{{asset('images/delivery.png')}}">
+                        <img src="{{asset('images/service-icon-3.png')}}">
                     </div>
                     <h4 class="title">{{ trans('interface.home.reasonablePrices') }}</h4>
                     <p>Reasonable prices</p>
@@ -31,7 +31,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="brator-single-service-item last-item">
                     <div class="iocn">
-                        <img src="{{asset('images/delivery.png')}}">
+                        <img src="{{asset('images/service-icon-4.png')}}">
                     </div>
                     <h4 class="title">{{ trans('interface.home.dedicatedSupport') }}</h4>
                     <p>We support both Sat &amp; Sun</p>

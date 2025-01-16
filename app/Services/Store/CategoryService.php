@@ -3,12 +3,14 @@
 namespace App\Services\Store;
 
 use App\Models\Category;
+use Illuminate\Support\Collection;
 
 class CategoryService
 {
-    public function getAllCategories(): array
+    public function getAllCategories(): Collection
     {
-        return Category::get(['name', 'slug', 'image', 'parent_id'])->toArray();
+//        dd(Category::with('children')->get());
+        return Category::with('children')->get();
     }
 
     public function getMainCategoriesWithChildren(): array

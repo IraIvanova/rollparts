@@ -332,7 +332,7 @@
     background: #fff; /* Optional: Background color */
     padding: 10px;
     box-sizing: border-box; /* Include padding in height calculation */
-    width: 250px!important;
+    /*width: 250px!important;*/
     margin: 0 8px!important;
 }
 
@@ -503,7 +503,9 @@
     #main-gallery{
         width: 100%;
     }
-
-
-
+}
+@media (min-width: 1600px) {
+    .product-list-items .brator-product-single-item-area {
+        width: calc(20% - 40px);
+    }
 }

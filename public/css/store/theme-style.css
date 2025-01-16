@@ -6191,7 +6191,7 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
 }
 
 .product-list-items .brator-product-single-item-area {
-    width: calc(25% - 23px);
+    width: calc(25% - 40px);
 }
 
 .products.columns-3 .product-list-items:not(.type-list) .brator-product-single-item-area {
@@ -9375,7 +9375,7 @@ body {
     }
 
     .product-list-items .brator-product-single-item-area {
-        width: calc(33.3333333% - 23px);
+        width: calc(33.3333333% - 40px);
     }
 
     .brator-current-vehicle .brator-current-vehicle-content {
@@ -9561,7 +9561,7 @@ body {
     }
 
     .product-list-items .brator-product-single-item-area {
-        width: calc(50% - 23px);
+        width: calc(50% - 40px);
     }
 
     .brator-cart-info .brator-cart-checkout {
@@ -10141,7 +10141,7 @@ body {
     transition: all linear 0.4s;
 }
 .brator-service-area .brator-single-service-item img {
-    height: 70px;
+    height: 40px;
 }
 .brator-service-area .brator-single-service-item.last-item::before {
     display: none;
@@ -13359,7 +13359,6 @@ a.banner-btn:hover {
         margin-top: 25px;
     }
     .brator-search-area {
-        margin-top: 25px;
         margin-bottom: 10px;
     }
     .brator-header-area.header-three.header-one.dark-bg .brator-search-area .search-form .select-search {
