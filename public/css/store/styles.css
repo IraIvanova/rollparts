@@ -504,7 +504,7 @@
         width: 100%;
     }
 }
-@media (min-width: 1600px) {
+@media (max-width: 1600px) {
     .product-list-items .brator-product-single-item-area {
         width: calc(20% - 40px);
     }

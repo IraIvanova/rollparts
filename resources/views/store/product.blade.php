@@ -119,9 +119,6 @@
                                     <ul>
                                         <li><a class="js-tabs__title js-tabs__title-active" href="#" data-index="0">Description</a>
                                         </li>
-                                        <li><a class="js-tabs__title" href="#" data-index="1">Additional information</a>
-                                        </li>
-                                        <li><a class="js-tabs__title" href="#" data-index="2">Reviews (1)</a></li>
                                     </ul>
                                 </div>
                                 <div class="js-tabs__content brator-product-single-tab-item" style="">
@@ -130,95 +127,6 @@
                                         {!! $description !!}
                                     </div>
                                 </div>
-                                <div class="js-tabs__content brator-product-single-tab-item" style="display: none;">
-                                    <table class="woocommerce-product-attributes shop_attributes">
-                                        <tbody>
-                                        <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--weight">
-                                            <th class="woocommerce-product-attributes-item__label">Weight</th>
-                                            <td class="woocommerce-product-attributes-item__value">0.2 kg</td>
-                                        </tr>
-                                        <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--dimensions">
-                                            <th class="woocommerce-product-attributes-item__label">Dimensions</th>
-                                            <td class="woocommerce-product-attributes-item__value">4 × 5 × 0.5 cm</td>
-                                        </tr>
-                                        <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_pa_select-color">
-                                            <th class="woocommerce-product-attributes-item__label">Color</th>
-                                            <td class="woocommerce-product-attributes-item__value"><p>Red</p>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="js-tabs__content brator-product-single-tab-item" style="display: none;">
-                                    <div id="reviews" class="woocommerce-Reviews brator-review-comment-area">
-                                        <div class="brator-review-comment">
-                                            <div class="brator-review-comment-count">
-                                                <div class="brator-review">
-                                                    <div class="star-rating" role="img"
-                                                         aria-label="Rated 5.00 out of 5"><span style="width:100%">Rated <strong
-                                                                class="rating">5.00</strong> out of 5</span></div>
-                                                </div>
-                                                <div class="brator-review-text">
-                                                    <p>1 Review</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id="comments" class="brator-review-comment-list">
-                                            <div class="customer-comment">
-                                                <div class="comment" id="comment-44">
-                                                    <div class="brator-review-comment-single-item">
-                                                        <div class="brator-review-comment-single-img">
-                                                            <img alt=""
-                                                                 src="https://secure.gravatar.com/avatar/763af4bb16fa4731d816aac188239aa2?s=70&amp;d=mm&amp;r=g"
-                                                                 srcset="https://secure.gravatar.com/avatar/763af4bb16fa4731d816aac188239aa2?s=140&amp;d=mm&amp;r=g 2x"
-                                                                 class="avatar avatar-70 photo" height="70" width="70"
-                                                                 decoding="async"></div>
-                                                        <div class="brator-review-comment-single-content">
-                                                            <div class="brator-review">
-                                                                <div class="star-rating" role="img"
-                                                                     aria-label="Rated 5 out of 5"><span
-                                                                        style="width:100%">Rated <strong class="rating">5</strong> out of 5</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="brator-review-comment-single-title">
-                                                                <h6>Quality Product &amp; Very Comfortable!</h6>
-                                                                <p>Location,fantastic. Accommodation, fantastic. Host,
-                                                                    fantastic. If you have a chance to book this
-                                                                    beautiful cottage do not hesitate. You will be glad
-                                                                    you did. Thank you alison for a great stay and we
-                                                                    will definitely be returning.</p>
-                                                            </div>
-                                                            <div class="brator-review-comment-date">
-                                                                <h6><a href="http://wp.brator.xyz" class="url"
-                                                                       rel="ugc external nofollow">admin</a>on Nov 25,
-                                                                    2021 </h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- #comment-## -->
-                                            </div>
-
-                                        </div>
-
-                                        <div id="review_form_wrapper" class="replay-inner">
-                                            <div id="review_form" class="replay-form">
-                                                <div id="respond" class="comment-respond">
-                                                    <h5 class="tt-form__title">Customer Reviews <small><a rel="nofollow"
-                                                                                                          id="cancel-comment-reply-link"
-                                                                                                          href="/product/brand-name-cv10-satin-black-with-chrome/#respond"
-                                                                                                          style="display:none;">Cancel
-                                                                reply</a></small></h5>
-                                                    <p class="must-log-in">You must be <a
-                                                            href="https://brator-main.smartdemowp.com/my-account/">logged
-                                                            in</a> to post a review.</p></div><!-- #respond -->
-                                            </div>
-                                        </div>
-
-                                        <div class="clear"></div>
-                                    </div>
-                                </div>
-
-
                             </div>
                         </div>
                     </div>

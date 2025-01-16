@@ -7,7 +7,7 @@
                         <img src="{{asset('images/service-icon-1.png')}}" >
                     </div>
                     <h4 class="title">{{ trans('interface.home.originalProducts') }}</h4>
-                    <p>Only parts from trusted brands</p>
+                    <p>{{ trans('interface.home.originalProducts2') }}</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
@@ -16,7 +16,7 @@
                         <img src="{{asset('images/service-icon-2.png')}}">
                     </div>
                     <h4 class="title">{{ trans('interface.home.fastDelivery') }}</h4>
-                    <p>Free Shipping over $499</p>
+                    <p>{{ trans('interface.home.fastDelivery2') }}</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
@@ -24,8 +24,8 @@
                     <div class="iocn">
                         <img src="{{asset('images/service-icon-3.png')}}">
                     </div>
-                    <h4 class="title">{{ trans('interface.home.reasonablePrices') }}</h4>
-                    <p>Reasonable prices</p>
+                    <h4 class="title">{{ trans('interface.home.easyReturn') }}</h4>
+                    <p>{{ trans('interface.home.easyReturn2') }}</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
@@ -34,7 +34,7 @@
                         <img src="{{asset('images/service-icon-4.png')}}">
                     </div>
                     <h4 class="title">{{ trans('interface.home.dedicatedSupport') }}</h4>
-                    <p>We support both Sat &amp; Sun</p>
+                    <p>{{ trans('interface.home.dedicatedSupport2') }}</p>
                 </div>
         </div>
     </div>
