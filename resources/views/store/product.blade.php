@@ -88,17 +88,17 @@
 
                                     </div>
 
-                                    <div class="brator-product-single-light-info-area">
-                                        <div class="brator-product-single-light-info">
-                                            <div class="brator-product-single-light-info-s">
-                                                <h5>Tags:</h5>
-                                                <a href="https://brator-main.smartdemowp.com/product-tag/mercedes/">mercedes</a><a
-                                                    href="https://brator-main.smartdemowp.com/product-tag/rims/">rims</a><a
-                                                    href="https://brator-main.smartdemowp.com/product-tag/tires/">tires</a>
-                                            </div>
+{{--                                    <div class="brator-product-single-light-info-area">--}}
+{{--                                        <div class="brator-product-single-light-info">--}}
+{{--                                            <div class="brator-product-single-light-info-s">--}}
+{{--                                                <h5>Tags:</h5>--}}
+{{--                                                <a href="https://brator-main.smartdemowp.com/product-tag/mercedes/">mercedes</a><a--}}
+{{--                                                    href="https://brator-main.smartdemowp.com/product-tag/rims/">rims</a><a--}}
+{{--                                                    href="https://brator-main.smartdemowp.com/product-tag/tires/">tires</a>--}}
+{{--                                            </div>--}}
 
-                                        </div>
-                                    </div>
+{{--                                        </div>--}}
+{{--                                    </div>--}}
                                 </div>
 
                             </div>
