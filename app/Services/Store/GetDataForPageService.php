@@ -61,17 +61,28 @@ readonly class GetDataForPageService
 
     private function getHomePageData(): array
     {
+        $bestsellerProductsId = $this->productService->getBestsellerProductsList();
+        $newestProductsId = $this->productService->getNewestProductsList();
+
         $filtersParameters = new ProductsFilterParametersDTO(
             language: 'tr',
             currency: 'TRL',
-            limit: 10
+            products: $bestsellerProductsId
         );
-
         $bestsellerProducts = $this->productQueryBuilderService->getProductsList($filtersParameters)->get();
-        $productImages = $this->productService->getMainImages($bestsellerProducts->pluck('id')->toArray());
+
+        $filtersParameters = new ProductsFilterParametersDTO(
+            language: 'tr',
+            currency: 'TRL',
+            products: $newestProductsId
+        );
+        $newestProducts = $this->productQueryBuilderService->getProductsList($filtersParameters)->get();
+
+        $productImages = $this->productService->getMainImages($bestsellerProductsId + $newestProductsId);
 
         return [
             'bestsellers' => $this->toArray($bestsellerProducts),
+            'newestProducts' => $this->toArray($newestProducts),
             'images' => $productImages,
             'brands' => $this->brandService->getAllAvailableBrands()
         ];
@@ -132,7 +143,6 @@ readonly class GetDataForPageService
         }
 
         $this->productService->saveProductToRecentlyViewed($product->id);
-//dd($this->productService->getProductInfo($product));
         return $this->productService->getProductInfo($product);
     }
 

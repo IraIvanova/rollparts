@@ -37,8 +37,8 @@
     </div>
     <div class="mt-3">
         <div class="bestseller-products product-list-items">
-            @foreach($bestsellers as $bestseller)
-                @include('store.components.productsList.item', ['product' => $bestseller])
+            @foreach($newestProducts as $newestProduct)
+                @include('store.components.productsList.item', ['product' => $newestProduct])
             @endforeach
         </div>
     </div>

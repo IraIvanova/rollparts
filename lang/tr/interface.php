@@ -41,6 +41,8 @@ return [
         'followUs' => 'Bizi Takip Edin',
     ],
     'home' => [
+        'h1' => 'Rollparts - Yüksek Kaliteli Oto Yedek Parçaları için Güvenilir Adresiniz',
+        'h2' => 'Tüm Marka ve Modeller için Uygun Fiyatlı Oto Yedek Parçaları Satın Alın',
         'originalProducts' => 'Orijinal Ürünler',
         'originalProducts2' => 'Sadece güvenilir markaların parçaları',
         'fastDelivery' => 'Hızlı Teslimat',

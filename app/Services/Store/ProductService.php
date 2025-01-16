@@ -6,15 +6,22 @@ use App\DTO\ProductsFilterParametersDTO;
 use App\Models\Product;
 use App\Services\FilesManagingService;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+
+use function Laravel\Prompts\select;
 
 class ProductService
 {
+    private const PRODUCTS_LIMIT_ON_HOMEPAGE = 12;
+    private const BESTSELLER_KEY = 'bestsellers';
+    private const NEWEST_PRODUCTS_KEY = 'newProducts';
+
     public function __construct(
         private readonly FilesManagingService $filesManagingService,
         private readonly BreadcrumbsService $breadcrumbsService,
         private readonly SearchProductsQueryBuilderService $productQueryBuilderService,
-    )
-    {
+        private readonly StorageService $storageService,
+    ) {
     }
 
     public function getProductBySlug(string $slug): ?Product
@@ -62,10 +69,15 @@ class ProductService
             'brand' => $product->brand,
             'prices' => $product->priceByCurrency,
             'images' => $product->getMedia(),
-            'productOptions' => $product->productOptions()->whereNot('related_product_id', $product->id)->with('relatedProduct')->get()->mapToGroups(fn($i) => [$i->option => [$i->option_value, $i->relatedProduct->slug]]),
+            'productOptions' => $product->productOptions()->whereNot('related_product_id', $product->id)->with(
+                'relatedProduct'
+            )->get()->mapToGroups(fn($i) => [$i->option => [$i->option_value, $i->relatedProduct->slug]]),
             'frequentlyBoughtTogetherProducts' => $frequentlyBoughtTogetherProducts ?? [],
             'recentlyViewedProducts' => $recentlyViewedProducts ?? [],
-            'breadcrumbs' => $this->breadcrumbsService->prepareBreadcrumbsForProduct($product, $productNameAndDescription['name']),
+            'breadcrumbs' => $this->breadcrumbsService->prepareBreadcrumbsForProduct(
+                $product,
+                $productNameAndDescription['name']
+            ),
         ];
     }
 
@@ -79,8 +91,8 @@ class ProductService
 
     public function getMainImages(array $products)
     {
-        return $this->filesManagingService->getMainImages($products)->mapWithKeys(function($i) {
-           return [$i->model_id => $i->getFullUrl()];
+        return $this->filesManagingService->getMainImages($products)->mapWithKeys(function ($i) {
+            return [$i->model_id => $i->getFullUrl()];
         })
             ->toArray();
     }
@@ -97,5 +109,45 @@ class ProductService
             $recentlyViewed[] = $productId;
             session()->put('recentlyViewedProducts', $recentlyViewed);
         }
+    }
+
+    public function getBestsellerProductsList(): array
+    {
+        if (!$this->storageService->checkKeyIsInStorage(self::BESTSELLER_KEY)) {
+            $bestsellers = Product::join('order_product as op', 'products.id', '=', 'op.product_id')
+                ->select('products.id', DB::raw('SUM(op.amount) as totalSold'))
+                ->groupBy('products.id')
+                ->where('active', 1)
+                ->orderByDesc('totalSold')
+                ->take(self::PRODUCTS_LIMIT_ON_HOMEPAGE)
+                ->pluck('products.id')
+                ->toArray();
+
+            if (empty($bestsellers)) {
+                $bestsellers = Product::where('active', 1)
+                    ->take(self::PRODUCTS_LIMIT_ON_HOMEPAGE)
+                    ->pluck('id')
+                    ->toArray();
+            }
+
+            $this->storageService->setValueToStorage(self::BESTSELLER_KEY, $bestsellers);
+        }
+
+        return $this->storageService->getValueFromStorage(self::BESTSELLER_KEY);
+    }
+
+    public function getNewestProductsList(): array
+    {
+        if (!$this->storageService->checkKeyIsInStorage(self::NEWEST_PRODUCTS_KEY)) {
+            $bestsellers = Product::where('active', 1)
+                ->select('id')
+                ->orderByDesc('id')
+                ->take(self::PRODUCTS_LIMIT_ON_HOMEPAGE)
+                ->pluck('id')
+                ->toArray();
+            $this->storageService->setValueToStorage(self::NEWEST_PRODUCTS_KEY, $bestsellers);
+        }
+
+        return $this->storageService->getValueFromStorage(self::NEWEST_PRODUCTS_KEY);
     }
 }

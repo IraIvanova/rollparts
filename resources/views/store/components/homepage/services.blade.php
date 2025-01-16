@@ -37,6 +37,10 @@
                     <p>{{ trans('interface.home.dedicatedSupport2') }}</p>
                 </div>
         </div>
+            <div class="text-center titles">
+                <h1>{{ trans('interface.home.h1') }}</h1>
+                <h2>{{ trans('interface.home.h2') }}</h2>
+            </div>
     </div>
     </div>
 </section>

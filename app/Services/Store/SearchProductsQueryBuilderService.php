@@ -126,7 +126,7 @@ class SearchProductsQueryBuilderService
     private function filterByProductIds(?array $products = []): self
     {
         if (!empty($products)) {
-            $this->query->whereIn('p.id', $products);
+            $this->query->whereIntegerInRaw('p.id', $products);
         }
 
         return $this;
