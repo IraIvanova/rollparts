@@ -2460,7 +2460,6 @@ input:not([type='radio']) {
 
 .brator-slide-menu-items {
     background: #fff;
-    padding-bottom: 50px;
 }
 
 .brator-slide-menu-items ul .down-menu {
@@ -2612,7 +2611,7 @@ input:not([type='radio']) {
 
 .brator-slide-logo-items a img {
     display: grid;
-    max-width: 191px;
+    max-width: 250px;
 }
 
 .brator-slide-logo-items button {
@@ -12348,6 +12347,9 @@ span.vehicle-check.tool {
 @media only screen and (min-width: 300px) and (max-width: 900px) {
     .mobile-menu-icon {
         display: block;
+    }
+    .brator-info-right {
+        display: none!important;
     }
 
     .header-sidebar-icon {

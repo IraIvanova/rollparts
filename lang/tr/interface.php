@@ -2,6 +2,7 @@
 
 return [
     'trLira' => '₺',
+    'shoppingCart' => 'Alışveriş sepeti',
     'header' => [
         'searchPlaceholder' => 'Parça Adı, Marka, Model, Sku ile Arama',
         'myAccount' => 'Hesabım',
