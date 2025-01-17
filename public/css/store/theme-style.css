@@ -2283,14 +2283,6 @@ input:not([type='radio']) {
     position: relative;
 }
 
-.brator-header-menu-area .brator-header-menu ul.list-style-outside-none li.menu-item-has-children {
-    position: relative;
-}
-
-.brator-header-menu-area .brator-header-menu ul.list-style-outside-none li.menu-item-has-children a {
-    position: relative;
-}
-
 .brator-header-menu-area .brator-header-menu ul.list-style-outside-none li.menu-item-has-children a svg {
     fill: #fff;
     font-size: 14px;
@@ -2366,10 +2358,6 @@ input:not([type='radio']) {
     position: static;
 }
 
-.brator-header-menu-area .brator-header-menu ul.list-style-outside-none li {
-    list-style: outside none;
-    position: relative;
-}
 
 .brator-header-menu-area .brator-header-menu ul.list-style-outside-none li .mega-menu-area {
     position: absolute;
@@ -2393,7 +2381,6 @@ input:not([type='radio']) {
     color: black;
     font-weight: 700;
     text-transform: capitalize;
-    position: relative;
 }
 
 .brator-header-menu-area .brator-header-menu ul.list-style-outside-none li a .count-hot-beg {
@@ -3520,7 +3507,7 @@ h3#ship-to-different-address {
     background: #1e1e1f;
 }
 
-@media only screen and (min-width: 300px) and (max-width: 992.98px) {
+@media only screen and (min-width: 300px) and (max-width: 900px) {
 
     .brator-header-menu.sticky-menu {
         display: none !important;
@@ -3887,9 +3874,10 @@ footer.brator-footer-area.design-three .brator-copyright-area p {
     border-top: 0;
 }
 
-@media only screen and (min-width: 300px) and (max-width: 1199.98px) {
-    .padding-left-0-lg {
-        padding-left: 15px;
+@media only screen and (min-width: 300px) and (max-width: 980px) {
+    .brator-header-area.header-one .brator-info-right{
+    margin-bottom: 15px;
+        padding-top: 0!important;
     }
 }
 
@@ -4808,12 +4796,12 @@ ul.wp-block-categories li a:hover,
 }
 
 .brator-categories-grid .brator-categories-single {
-    max-width: calc(20% - 30px);
+    max-width: calc(17% - 30px);
     width: 100%;
 }
 
 .brator-categories-list-area.design-two .brator-categories-single {
-    max-width: calc(14.2857143% - 30px);
+    max-width: calc(17% - 30px);
     width: 100%;
     border: 0;
     background-color: #f5f5fa;
@@ -9078,7 +9066,7 @@ body {
     }
 }
 
-@media only screen and (min-width: 300px) and (max-width: 1299px) {
+@media only screen and (min-width: 300px) and (max-width: 900px) {
     .brator-header-menu-area {
         display: none;
     }

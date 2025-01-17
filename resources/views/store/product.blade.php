@@ -47,7 +47,7 @@
                                         </div>
                                         <div>
                                             <h6 class="font-size-14px my-2 pb-2 border-bottom">
-                                                @if($active)
+                                                @if($active && $quantity)
                                                     <span class="status-circle active-status"></span>
                                                     <span class="stock pl-3">{{ trans('interface.product.qntInStock', ['qnt' => $quantity]) }}</span>
                                                 @else
@@ -73,15 +73,15 @@
                                                                class="input-text qty text" name="quantity" value="1"
                                                                aria-label="Product quantity" size="4" min="1" max="1000"
                                                                step="1" placeholder="" inputmode="numeric"
-                                                               autocomplete="off">
+                                                               autocomplete="off" >
                                                         <span class="plus-btn amount-btn">+</span>
                                                     </div>
                                                 </div>
                                                 <div class="brator-product-single-cart-add">
                                                     <input type="hidden" value="{{route('addToCart')}}" id="add-route" />
 
-                                                    <button type="button" name="add-to-cart" id="addToCart"
-                                                            class="button alt" data-product="{{$id}}"> {{ trans('interface.buttons.addToCart') }}
+                                                    <button type="button" name="add-to-cart" id="addToCart" @if($quantity === 0) disabled @endif
+                                                            class="button alt" data-product="{{$id}}"> {{ trans($quantity === 0 ? 'interface.buttons.productIsOutOfStock' :'interface.buttons.addToCart') }}
                                                     </button>
                                                 </div>
                                             </div>

@@ -1,7 +1,7 @@
 @extends('store.base')
 
 @section('bodyContent')
-    <section id="main-content" class="container container-xxxl py-5">
+    <section id="main-content" class="container container-xxxl py-5  .category-page">
         <h3>Catalog & Search</h3>
         {{--TODO: ADD SEARCH STRING--}}
         <input type="hidden" id="cart-route" value="{{route('addToCart')}}" />

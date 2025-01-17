@@ -51,7 +51,7 @@ readonly class GetDataForPageService
     private function getBaseData(string $page): array
     {
         return [
-            'categories' => $this->categoryService->getAllCategories(),
+            'categories' => $this->categoryService->getMainCategoriesWithChildren(),
             'shoppingCart' => $this->cartService->getCart()->toArray(),
             'user' => Auth::user(),
             'contacts' => $this->getContactDetails()

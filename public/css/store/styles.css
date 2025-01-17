@@ -298,9 +298,6 @@
 
 /* Media Query for Mobile devices */
 @media (max-width: 1024px) {
-    .brator-header-area.header-one .row {
-        flex-direction: column;
-    }
     .brator-logo-area .brator-logo {
         margin-bottom: 10px
     }
@@ -478,7 +475,7 @@
     color: red!important;
 }
 
-nav{
+.pagination {
     justify-content: center;
     margin-top: 40px;
 }
@@ -491,24 +488,59 @@ nav{
     height: 40px;
     line-height: 25px;
 }
-nav div:first-child{
+.pagination div:first-child{
     display: none;
 }
+#addToCart:disabled{
+    background: #dfaea6;
+    border-color: #dfaea6;
+}
+.navbar {
+    position: unset;
+}
+ul {
+    list-style: none;
+}
+.main-nav ul ul {
+    padding: 0;
+}
+.main-nav ul a {
+    padding: 5px!important;
+}
+.main-category {
+   padding-right: 10px;
+}
+.main-category > a {
+    line-height: 15px;
+    color: #df3939!important;
+}
 
-/*.bestseller-products.product-list-items .brator-product-single-item-area {*/
-/*    width: calc(20% - 40px);*/
-/*}*/
-/*@media (max-width: 1200px) {*/
-/*    .bestseller-products.product-list-items .brator-product-single-item-area {*/
-/*        width: calc(25% - 40px);*/
-/*    }*/
-/*}*/
+.bestseller-products.product-list-items .brator-product-single-item-area {
+    width: calc(20% - 40px);
+}
+@media (max-width: 1600px) {
+    .bestseller-products.product-list-items .brator-product-single-item-area {
+        width: calc(25% - 40px);
+    }
+}
+@media (max-width: 1200px) {
+    .bestseller-products.product-list-items .brator-product-single-item-area {
+        width: calc(33.33% - 40px);
+    }
+}
+@media (max-width: 800px) {
+    .bestseller-products.product-list-items .brator-product-single-item-area {
+        width: calc(50% - 40px);
+    }
+}
+@media (max-width: 480px) {
+    .bestseller-products.product-list-items .brator-product-single-item-area {
+        width: 100%;
+    }
+}
 @media (max-width: 768px) {
     #main-content {
         padding-top: 0!important;
-    }
-    .brator-info-right{
-        display: none!important;
     }
     .filter-header{
         display: flex;
@@ -535,7 +567,17 @@ nav div:first-child{
     }
 }
 @media (max-width: 1600px) {
-    .product-list-items .brator-product-single-item-area {
-        width: calc(20% - 40px);
+    .category-page .product-list-items .brator-product-single-item-area {
+        width: calc(33.33% - 40px);
+    }
+}
+@media (max-width: 900px) {
+    .category-page .product-list-items .brator-product-single-item-area {
+        width: calc(50% - 40px);
+    }
+}
+@media (max-width: 450px) {
+    .category-page .product-list-items .brator-product-single-item-area {
+        width: 100%;
     }
 }

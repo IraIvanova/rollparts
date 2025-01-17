@@ -25,6 +25,7 @@ return [
         'addToCart' => 'Sepete ekle',
         'login' => 'Giriş yap',
         'register' => 'Kayıt Olun',
+        'productIsOutOfStock' => 'Ürün stokta yok'
     ],
     'footer' => [
         'contactUsTitle' => 'Bize ulaşın',

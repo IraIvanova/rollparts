@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         for (let btn of qntButtons) {
             btn.addEventListener('click', () => {
+                if (amount.value > 0) return;
                 if (btn.classList.contains('plus-btn')) {
                     amount.value ++;
                 } else {

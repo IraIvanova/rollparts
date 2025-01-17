@@ -20,7 +20,7 @@
                             </span>
                                         @else
                                         <span
-                                            property="name">{{ trans('interface.breadcrumbs.' . $breadcrumb['name']) }}</span>
+                                            property="name">{{ $breadcrumb['name'] }}</span>
                                         @endif
                                 </li>
                             @endforeach

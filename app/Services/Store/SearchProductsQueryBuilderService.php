@@ -18,8 +18,10 @@ class SearchProductsQueryBuilderService
 
     public function getProductsByCategory(ProductsFilterParametersDTO $parameters): Builder
     {
+        $this->resetQuery();
+
         return $this->active()
-            ->addProductTranslations($parameters->language, $parameters->searchParameters?->search)
+            ->addProductTranslations($parameters->language, $parameters->searchParameters?->search ?? '')
             ->addCategory($parameters->categories)
             ->addPrices($parameters->currency)
             ->filterByBrands($parameters->searchParameters?->brands)
@@ -32,8 +34,8 @@ class SearchProductsQueryBuilderService
     {
         $this->resetQuery();
 
-        return $this
-            ->addProductTranslations($parameters->language)
+        return $this->active()
+            ->addProductTranslations($parameters->language, $parameters->searchParameters?->search ?? '')
             ->addPrices($parameters->currency)
             ->filterByBrands($parameters->searchParameters?->brands)
             ->filterByProductIds($parameters->products)
@@ -47,8 +49,7 @@ class SearchProductsQueryBuilderService
         if (!empty($categories)) {
             $this->query
                 ->join('category_product as cp', 'p.id', '=', 'cp.product_id')
-                ->join('categories as c', 'c.id', '=', 'cp.category_id')
-                ->whereIn('c.id', $categories);
+                ->whereIntegerInRaw('cp.category_id', $categories);
         }
 
         return $this;
@@ -162,7 +163,7 @@ class SearchProductsQueryBuilderService
 
     private function getResults(): Builder
     {
-        $this->query->distinct()->select($this->selectFields);
+        $this->query->select($this->selectFields)->distinct();
 
         return $this->query;
     }

@@ -1,8 +1,6 @@
 <div class="brator-header-menu-area" id="main-menu">
     <div class="close-menu-bg"></div>
-    <div class="brator-mega-menu-close">
-        {{--add megamenu--}}
-    </div>
+
     <div class="container-xxxl container-xxl container">
         <div class="row">
             <div class="col-lg-12">

@@ -11,8 +11,8 @@
     </div>
     <div class="brator-categories-single-sub">
 {{--        @dd()--}}
-        @if($category->children)
-        @foreach($category->children as $key => $subCategory)
+        @if($category['children'])
+        @foreach($category['children'] as $key => $subCategory)
             @if($key < 2)
                 <a href="{{route('category', $subCategory['slug'])}}">{{$subCategory['name']}}</a>
                 @endif
