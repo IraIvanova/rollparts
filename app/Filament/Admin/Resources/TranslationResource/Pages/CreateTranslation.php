@@ -18,11 +18,14 @@ class CreateTranslation extends CreateRecord
         $this->translationService = app(TranslationService::class);
     }
 
-    protected function mutateFormDataBeforeSave(array $data): array
+    protected function afterCreate(): void
     {
-        // Save translation files during the create operation
-        $this->translationService->updateTranslationFiles($data['key'], $data['tr'], $data['en']);
+        // Get the key and values from the record
+        $key = $this->record->key;
+        $trValue = $this->record->tr; // Turkish translation
+        $enValue = $this->record->en; // English translation
 
-        return $data; // Save data as is to the database
+        // Call the TranslationService to update the files
+        $this->translationService->updateTranslationFiles($key, $trValue, $enValue);
     }
 }

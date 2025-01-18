@@ -21,6 +21,7 @@ return array (
     'subtotal' => 'Ara Toplam',
     'addedToCartModalTitle' => 'Ürün sepete eklendi!',
     '' => '',
+    'emptiness' => 'ssscc',
   ),
   'search' => 
   array (
@@ -125,4 +126,10 @@ return array (
     '' => '',
   ),
   'simple' => 'simple',
+  'ddfdfd3hhh' => 'newTr',
+  'cart.emptiness' => 'ssscc',
+  'dcvdddv' => 'dcxc',
+  'ssss' => 'ssss',
+  'wwww' => 'wwww',
+  'dfs' => 'ffsgsg',
 );
