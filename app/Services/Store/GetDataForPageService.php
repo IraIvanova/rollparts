@@ -153,19 +153,14 @@ readonly class GetDataForPageService
 
     private function getCatalogPageData(array $searchParams = []): array
     {
-        $searchParameters = new SearchParametersDTO($searchParams);
+        $searchParameters = new ProductsFilterParametersDTO(
+            language: 'tr',
+            currency: 'TRL',
+            searchParameters: new SearchParametersDTO($searchParams)
+        );
 
         //TODO Search by Part Name, Brand, Model, Sku
-        $products = $this->paginationService->paginate(
-            query: $this->productQueryBuilderService->getProductsList(
-                new ProductsFilterParametersDTO(
-                    language: 'tr',
-                    currency: 'TRL',
-                    searchParameters: $searchParameters
-                )
-            ),
-            page: $searchParams['page'] ?? 1
-        );
+        $products = $this->productService->getFilteredProducts($searchParameters);
 
         $productImages = $this->productService->getMainImages(array_column($products->items(), 'id'));
 
@@ -175,7 +170,7 @@ readonly class GetDataForPageService
             'products' => $products,
             'options' => $this->optionsService->getOptionsAvailableForSearchResult(),
             'images' => $productImages,
-            'selectedOptions' => $searchParameters->getValuesArray()
+            'selectedOptions' => $searchParameters->searchParameters->getValuesArray()
         ];
     }
 

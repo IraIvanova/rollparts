@@ -10098,12 +10098,6 @@ body {
     padding-right: 0;
 }
 
-.brator-service-area .row {
-    border-bottom: 1px solid #e5e5e5;
-    margin-left: 1px;
-    margin-right: 1px;
-}
-
 .brator-service-area .brator-single-service-item {
     padding: 55px 0 40px 125px;
     position: relative;
@@ -13398,9 +13392,9 @@ a.compare.icon-btn.added {
 .brator-product-single-item-cat {
     margin-bottom: 5px;
 }
-.page-wrapper {
-    overflow-x: hidden;
-}
+/*.page-wrapper {*/
+/*    overflow-x: hidden;*/
+/*}*/
 .bike-brator .elementor-heading-title a:hover{
     color: #f73312 !important;
 }

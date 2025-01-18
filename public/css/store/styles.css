@@ -40,6 +40,10 @@
     font-size: 22px;
     margin: 30px 0px;
 }
+.titles p {
+    width: 80%;
+    margin: 0 auto 20px;
+}
 .product-description{
     word-wrap: break-word;
     font-size: 14px;
@@ -517,6 +521,35 @@ ul {
 
 .bestseller-products.product-list-items .brator-product-single-item-area {
     width: calc(20% - 40px);
+}
+.page-item.active .page-link {
+    background-color: var(--color-high-dark);
+    border-color: var(--color-high-dark);
+}
+.page-link {
+    color: black;
+    padding: 15px 20px;
+}
+.page-link:hover {
+    color: var(--color-high-dark);
+    background-color: #f4f5f9;
+    /*border-color: #f4f5f9;*/
+}
+#search-results {
+    position: absolute;
+    background: white;
+    width: 100%;
+    top: 60px;
+    z-index: 10;
+    max-height: 400px;
+    box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.img-block {
+    margin-right: 20px;
+}
+#search-results ul{
+    max-height: 320px;
+    overflow-y: auto;
 }
 @media (max-width: 1600px) {
     .bestseller-products.product-list-items .brator-product-single-item-area {

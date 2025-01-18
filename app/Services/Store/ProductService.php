@@ -3,9 +3,12 @@
 namespace App\Services\Store;
 
 use App\DTO\ProductsFilterParametersDTO;
+use App\DTO\SearchParametersDTO;
 use App\Models\Product;
 use App\Services\FilesManagingService;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Facades\DB;
 
 use function Laravel\Prompts\select;
@@ -13,6 +16,7 @@ use function Laravel\Prompts\select;
 class ProductService
 {
     private const PRODUCTS_LIMIT_ON_HOMEPAGE = 12;
+    public const SEARCH_RESULTS_LIMIT = 30;
     private const BESTSELLER_KEY = 'bestsellers';
     private const NEWEST_PRODUCTS_KEY = 'newProducts';
 
@@ -21,6 +25,7 @@ class ProductService
         private readonly BreadcrumbsService $breadcrumbsService,
         private readonly SearchProductsQueryBuilderService $productQueryBuilderService,
         private readonly StorageService $storageService,
+        private readonly PaginationService $paginationService,
     ) {
     }
 
@@ -149,5 +154,13 @@ class ProductService
         }
 
         return $this->storageService->getValueFromStorage(self::NEWEST_PRODUCTS_KEY);
+    }
+
+    public function getFilteredProducts(ProductsFilterParametersDTO $filters): LengthAwarePaginator
+    {
+         return $this->paginationService->paginate(
+            query: $this->productQueryBuilderService->getProductsList($filters),
+            page: $searchParams['page'] ?? 1
+        );
     }
 }

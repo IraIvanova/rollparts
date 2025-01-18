@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\Auth\ClientAuthController;
+use App\Http\Controllers\Store\AsyncController;
 use App\Http\Controllers\Store\CartController;
 use App\Http\Controllers\Store\PagesController;
 use Illuminate\Support\Facades\Route;
@@ -27,12 +28,13 @@ Route::post('/removeCoupon', [CartController::class, 'removeCoupon'])->name('rem
 
 Route::post('/districts', [CartController::class, 'getDistrictsList'])->name('getDistrictsList');
 
+Route::post('/dynamicSearch', [AsyncController::class, 'dynamicSearch'])->name('dynamicSearch');
 
-    Route::get('/login', [ClientAuthController::class, 'showLoginForm'])->name('login');
-    Route::get('/register', [ClientAuthController::class, 'showRegisterForm'])->name('register');
-    Route::post('/login', [ClientAuthController::class, 'login'])->name('process-login');
-    Route::post('/register', [ClientAuthController::class, 'register'])->name('process-register');
-    Route::get('/logout', [ClientAuthController::class, 'logout'])->name('logout');
+Route::get('/login', [ClientAuthController::class, 'showLoginForm'])->name('login');
+Route::get('/register', [ClientAuthController::class, 'showRegisterForm'])->name('register');
+Route::post('/login', [ClientAuthController::class, 'login'])->name('process-login');
+Route::post('/register', [ClientAuthController::class, 'register'])->name('process-register');
+Route::get('/logout', [ClientAuthController::class, 'logout'])->name('logout');
 
 Route::prefix('client')->group(function () {
     Route::middleware('auth:web')->group(function () {

@@ -28,11 +28,9 @@
 
     .navbar .dropdown-menu {
         width:100%;
-        left:0;
-        right:0;
+        left:-4px;
         /*  height of nav-item  */
         top:65px;
-
         display:block;
         visibility: hidden;
         opacity: 0;

@@ -20,6 +20,9 @@ return [
         'addedToCartModalTitle' => 'Ürün sepete eklendi!',
         '' => '',
     ],
+    'search' => [
+        'catalogLink' => 'Tüm sonuçları gör'
+    ],
     'buttons' => [
         'viewCart' => 'Sepeti görüntüle',
         'checkout' => 'Ödeme',
@@ -45,6 +48,7 @@ return [
     'home' => [
         'h1' => 'Rollparts - Yüksek Kaliteli Oto Yedek Parçaları için Güvenilir Adresiniz',
         'h2' => 'Tüm Marka ve Modeller için Uygun Fiyatlı Oto Yedek Parçaları Satın Alın',
+        'serviceText' => 'Her araç için, günlük onarımlardan yüksek performans yükseltmelerine kadar geniş bir yedek parça yelpazesini keşfedin. Rollparts\'ta Audi, Honda, Tesla, BMW ve daha birçok güvenilir markayı stoklayarak her sürüş için kalite ve güvenilirlik sağlıyoruz. İster bir otomobil tutkunu olun ister profesyonel bir tamirci, aracınızı en iyi durumda tutmak için ihtiyaç duyduğunuz her şeyi tek bir yerde bulun.',
         'originalProducts' => 'Orijinal Ürünler',
         'originalProducts2' => 'Sadece güvenilir markaların parçaları',
         'fastDelivery' => 'Hızlı Teslimat',

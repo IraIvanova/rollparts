@@ -40,6 +40,7 @@
             <div class="row justify-content-center titles">
                 <h1>{{ trans('interface.home.h1') }}</h1>
                 <h2>{{ trans('interface.home.h2') }}</h2>
+                <p>{{ trans('interface.home.serviceText') }}</p>
             </div>
     </div>
     </div>
