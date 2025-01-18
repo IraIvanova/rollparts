@@ -2,6 +2,7 @@
 
 namespace App\Filament\Admin\Resources;
 
+use App\Filament\Admin\Resources\TranslationResource\Actions\EditTranslation;
 use App\Filament\Admin\Resources\TranslationResource\Pages;
 use App\Filament\Admin\Resources\TranslationResource\RelationManagers;
 use App\Models\Translation;
@@ -11,8 +12,6 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class TranslationResource extends Resource
 {
@@ -25,8 +24,7 @@ class TranslationResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('key')
-                    ->required()
-                    ->maxLength(255),
+                    ->required(),
                 Forms\Components\TextInput::make('en')
                     ->required(),
                 Forms\Components\TextInput::make('tr')
@@ -46,7 +44,7 @@ class TranslationResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -66,7 +64,6 @@ class TranslationResource extends Resource
     {
         return [
             'index' => Pages\ListTranslations::route('/'),
-            'create' => Pages\CreateTranslation::route('/create'),
             'edit' => Pages\EditTranslation::route('/{record}/edit'),
         ];
     }
