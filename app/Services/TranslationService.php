@@ -8,13 +8,13 @@ class TranslationService
 {
     private const LANGUAGES = ['tr', 'en'];
 
-    public function updateTranslationFiles(string $key, string $trValue, string $enValue): void
+    public function updateTranslationFiles(string $key, string $trValue, ?string $enValue): void
     {
         // Update Turkish translation file (lang/tr/interface.php)
         $this->updateTranslationFile('tr', $key, $trValue);
 
         // Update English translation file (lang/en/interface.php)
-        $this->updateTranslationFile('en', $key, $enValue);
+        if ($enValue) $this->updateTranslationFile('en', $key, $enValue);
     }
 
     /**

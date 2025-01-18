@@ -26,10 +26,13 @@ class TranslationResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('key')
                     ->required(),
-                Forms\Components\TextInput::make('en')
-                    ->required(),
-                Forms\Components\TextInput::make('tr')
+                Forms\Components\Textarea::make('en')
+                    ->columnSpanFull()
+                    ->rows(5),
+                Forms\Components\Textarea::make('tr')
                     ->required()
+                    ->columnSpanFull()
+                    ->rows(5)
             ]);
     }
 

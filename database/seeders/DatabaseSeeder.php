@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Category;
 use App\Models\Currency;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -16,11 +15,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-//        User::factory()->create([
-//            'name' => 'Test User',
-//            'email' => 'test@example.com',
-//            'password' => Hash::make('password'),
-//        ]);
+        User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+            'password' => Hash::make('password'),
+        ]);
 //
         Currency::factory()->create([
             'code' => 'TRL',
@@ -41,8 +40,8 @@ class DatabaseSeeder extends Seeder
             ProvinceDistrictSeeder::class,
             CouponsTableSeeder::class,
             OrderStatusesTableSeeder::class,
-            RolesAndPermissionsSeeder::class
-//        TranslationSeeder::class,
+            RolesAndPermissionsSeeder::class,
+            TranslationSeeder::class,
         ]);
     }
 }

@@ -1,6 +1,4 @@
-<?php
-
-return array (
+<?php return array (
   'trLira' => '₺',
   'shoppingCart' => 'Alışveriş sepeti',
   'header' => 
@@ -125,11 +123,4 @@ return array (
     'phone' => 'Telefon',
     '' => '',
   ),
-  'simple' => 'simple',
-  'ddfdfd3hhh' => 'newTr',
-  'cart.emptiness' => 'ssscc',
-  'dcvdddv' => 'dcxc',
-  'ssss' => 'ssss',
-  'wwww' => 'wwww',
-  'dfs' => 'ffsgsg',
 );

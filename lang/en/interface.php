@@ -1,16 +1,6 @@
-<?php
-
-return array (
-  'simple' => 'simple',
-  'shoppingCart' => 'shoppingCart',
-  'ddfdfd3hhh' => 'fff',
-  'cart.emptiness' => 'ss',
-  'cart' => 
+<?php return array (
+  'header' =>
   array (
-    'emptiness' => 'ss',
+    'myAccount' => 'My account',
   ),
-  'dcvdddv' => 'dd',
-  'ssss' => 'ssss',
-  'wwww' => 'www',
-  'dfs' => 'fsdg',
 );
