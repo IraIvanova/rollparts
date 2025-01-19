@@ -22,7 +22,7 @@
                     <div class="search-form">
 {{--                        <form method="get" action="{{route('catalog')}}" class="w-100">--}}
                             <input class="search-field" id="prosearch" type="search" name="search" data-route="{{ route('dynamicSearch') }}"
-                                   placeholder="{{ trans('interface.header.searchPlaceholder') }}">
+                                   placeholder="{{ trans('interface.header.searchPlaceholder') }}" value="{{$search ?? ''}}">
                             <button type="submit">
                                 <svg fill="#000000" width="52" height="52" version="1.1"
                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -36,11 +36,11 @@
                     </div>
                     <div class="search-quly flex-wrap">
                         <p>{{ trans('interface.header.quickSearch') }}:</p>
-                        <a href="{{route('category', ['engine-parts'])}}">Engine parts</a>
-                        <a href="{{route('category', ['brakes-components'])}}">Brakes & Components</a>
-                        <a href="{{route('category', ['batteries'])}}">Batteries</a>
-                        <a href="{{route('category', ['wheels-tires'])}}">Wheels & Tires</a>
-                        <a href="{{route('category', ['exhaust-systems'])}}">Exhaust Systems</a>
+                        <a href="{{route('category', ['engine-parts'])}}">{{ trans('interface.engine-parts') }}</a>
+                        <a href="{{route('category', ['brakes-components'])}}">{{ trans('interface.brakes-components') }}</a>
+                        <a href="{{route('category', ['batteries'])}}">{{ trans('interface.batteries') }}</a>
+                        <a href="{{route('category', ['wheels-tires'])}}">{{ trans('interface.wheels-tires') }}</a>
+                        <a href="{{route('category', ['exhaust-systems'])}}">{{ trans('interface.exhaust-systems') }}</a>
                     </div>
                 </div>
             </div>

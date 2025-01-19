@@ -8,6 +8,8 @@ class SearchParametersDTO
     public ?string $sortBy;
     public ?string $search = '';
     public ?array $brands = [];
+    public ?int $min = null;
+    public ?int $max = null;
     public ?array $options = [];
     public ?array $optionValues = [];
 
@@ -17,6 +19,8 @@ class SearchParametersDTO
         $this->brands = isset($this->parameters['brands']) ? explode(',', $this->parameters['brands'] ) : [];
         $this->sortBy = $this->parameters['sortby'] ?? '';
         $this->search = $this->parameters['search'] ?? '';
+        $this->min = $this->parameters['min'] ?? null;
+        $this->max = $this->parameters['max'] ?? null;
         $this->resolveOptions($parameters);
     }
 
@@ -28,6 +32,8 @@ class SearchParametersDTO
             'sortby' => $this->sortBy,
             'optionValues' => $this->optionValues,
             'options' => $this->options,
+            'min' => $this->min,
+            'max' => $this->max,
         ];
     }
 

@@ -551,6 +551,95 @@ ul {
     max-height: 320px;
     overflow-y: auto;
 }
+.price-input {
+    width: 100%;
+    display: flex;
+    margin: 0 0 50px;
+}
+.price-input .field {
+    display: flex;
+    width: 100%;
+    height: 45px;
+    align-items: start;
+}
+.field p {
+    margin: 0;
+}
+.field input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    text-align: center;
+    border: 1px solid #c4c4c4;
+    -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.price-input .separator {
+    width: 130px;
+    display: flex;
+    font-size: 19px;
+    align-items: center;
+    justify-content: center;
+}
+.slider {
+    height: 5px;
+    position: relative;
+    background: #ddd;
+    border-radius: 5px;
+}
+.slider .progress {
+    height: 100%;
+    left: 25%;
+    right: 25%;
+    position: absolute;
+    border-radius: 5px;
+    background: var(--color-high-dark);
+}
+.range-input {
+    position: relative;
+}
+.range-input input {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: -5px;
+    background: none;
+    pointer-events: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    background: var(--color-high-dark);
+    pointer-events: auto;
+    -webkit-appearance: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+}
+input[type="range"]::-moz-range-thumb {
+    height: 17px;
+    width: 17px;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-high-dark);
+    pointer-events: auto;
+    -moz-appearance: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+}
+.priceTitle h2{
+    font-size: 20px;
+    color: black;
+    font-weight: 700;
+    line-height: 1.8;
+}
+.price-filter-button {
+    padding: 0 25px!important;
+    height: 42px!important;
+}
 @media (max-width: 1600px) {
     .bestseller-products.product-list-items .brator-product-single-item-area {
         width: calc(25% - 40px);

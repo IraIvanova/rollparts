@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Category;
+use Illuminate\Support\Facades\File;
 
 class CategoriesTableSeeder extends Seeder
 {
@@ -67,11 +68,15 @@ class CategoriesTableSeeder extends Seeder
             ],
         ];
 
+        $translations = [];
+
         foreach ($categories as $category) {
             $parentCategory = Category::create([
                 'name' => $category['name'],
                 'slug' => $category['slug'],
             ]);
+
+            $translations["{$category['slug']}"] = $category['name'];
 
             // Create the subcategories
             foreach ($category['subcategories'] as $subcategory) {
@@ -80,7 +85,28 @@ class CategoriesTableSeeder extends Seeder
                     'slug' => $subcategory['slug'],
                     'parent_id' => $parentCategory->id,
                 ]);
+
+                $translations["{$subcategory['slug']}"] = $subcategory['name'];
             }
         }
+
+        $this->updateTranslationsFile('lang/tr/interface.php', $translations);
+    }
+
+    protected function updateTranslationsFile(string $filePath, array $translations): void
+    {
+        $fullPath = base_path($filePath);
+
+        // Load existing translations
+        $existingTranslations = File::exists($fullPath) ? include $fullPath : [];
+
+        // Merge new translations with existing ones
+        $updatedTranslations = array_merge($existingTranslations, $translations);
+
+        // Export the translations as PHP code
+        $exported = "<?php\n\nreturn " . var_export($updatedTranslations, true) . ";\n";
+
+        // Write back to the file
+        File::put($fullPath, $exported);
     }
 }

@@ -105,17 +105,26 @@ readonly class GetDataForPageService
         $nestedCategoriesId = $this->categoryService->getAllNestedCategoriesOfParentCategory($category->id);
         $searchParameters = new SearchParametersDTO($searchParams);
 
+        $productFiltersQuery = $this->productQueryBuilderService->getProductsByCategory(
+            new ProductsFilterParametersDTO(
+                language: 'tr',
+                currency: 'TRL',
+                categories: $nestedCategoriesId,
+                searchParameters: $searchParameters
+            ));
+
         $products = $this->paginationService->paginate(
-            query: $this->productQueryBuilderService->getProductsByCategory(
-                new ProductsFilterParametersDTO(
-                    language: 'tr',
-                    currency: 'TRL',
-                    categories: $nestedCategoriesId,
-                    searchParameters: $searchParameters
-                )
-            ),
+            query: $productFiltersQuery,
             page: $searchParams['page'] ?? 1
         );
+
+        $priceRange = $this->productQueryBuilderService->getMinMaxPricesForProducts(
+            new ProductsFilterParametersDTO(
+                language: 'tr',
+                currency: 'TRL',
+                categories: $nestedCategoriesId,
+                searchParameters: $searchParameters
+            ))->first();
 
         $productImages = $this->productService->getMainImages(array_column($products->items(), 'id'));
 
@@ -127,7 +136,8 @@ readonly class GetDataForPageService
             'options' => $this->optionsService->getOptionsAvailableForCategories($nestedCategoriesId),
             'selectedOptions' => $searchParameters->getValuesArray(),
             'images' => $productImages,
-            'breadcrumbs' => $this->breadcrumbsService->prepareBreadcrumbsForCategory($category)
+            'breadcrumbs' => $this->breadcrumbsService->prepareBreadcrumbsForCategory($category),
+            'prices' => [(int)$priceRange->minPrice, (int)$priceRange->maxPrice]
         ];
     }
 
@@ -161,7 +171,7 @@ readonly class GetDataForPageService
 
         //TODO Search by Part Name, Brand, Model, Sku
         $products = $this->productService->getFilteredProducts($searchParameters);
-
+        $priceRange = $this->productQueryBuilderService->getMinMaxPricesForProducts($searchParameters)->first();
         $productImages = $this->productService->getMainImages(array_column($products->items(), 'id'));
 
         return [
@@ -170,7 +180,9 @@ readonly class GetDataForPageService
             'products' => $products,
             'options' => $this->optionsService->getOptionsAvailableForSearchResult(),
             'images' => $productImages,
-            'selectedOptions' => $searchParameters->searchParameters->getValuesArray()
+            'selectedOptions' => $searchParameters->searchParameters->getValuesArray(),
+            'search' => $searchParams['search'] ?? '',
+            'prices' => [(int)$priceRange->minPrice, (int)$priceRange->maxPrice]
         ];
     }
 

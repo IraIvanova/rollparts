@@ -11,7 +11,7 @@
                     <div class="col-md-12">
                         <div class="brator-section-header" style="justify-content:left">
                             <div class="brator-section-header-title">
-                                <h2>Sub Categories</h2>
+                                <h2>Categories</h2>
                             </div>
                         </div>
                     </div>

@@ -23,10 +23,20 @@ class SearchProductsQueryBuilderService
         return $this->active()
             ->addProductTranslations($parameters->language, $parameters->searchParameters?->search ?? '')
             ->addCategory($parameters->categories)
-            ->addPrices($parameters->currency)
+            ->addPrices($parameters->currency, $parameters->searchParameters->min, $parameters->searchParameters->max)
             ->filterByBrands($parameters->searchParameters?->brands)
             ->filterByOptions($parameters->searchParameters?->options, $parameters->searchParameters?->optionValues)
             ->applyOrdering($parameters->searchParameters?->sortBy)
+            ->getResults();
+    }
+
+    public function getMinMaxPricesForProducts(ProductsFilterParametersDTO $parameters): Builder
+    {
+        $this->resetQuery();
+
+        return $this->active()
+            ->addCategory($parameters->categories)
+            ->getMinMaxPrices($parameters->currency)
             ->getResults();
     }
 
@@ -36,6 +46,7 @@ class SearchProductsQueryBuilderService
 
         return $this->active()
             ->addProductTranslations($parameters->language, $parameters->searchParameters?->search ?? '')
+            ->addCategory($parameters->categories)
             ->addPrices($parameters->currency)
             ->filterByBrands($parameters->searchParameters?->brands)
             ->filterByProductIds($parameters->products)
@@ -81,12 +92,31 @@ class SearchProductsQueryBuilderService
         return $this;
     }
 
-    private function addPrices(string $currencyCode): self
+    private function addPrices(string $currencyCode, ?int $min = null, ?int $max = null): self
     {
         $this->query->join('product_prices as pp', 'p.id', '=', 'pp.product_id')
             ->join('currencies as cur', 'cur.id', '=', 'pp.currency_id')
             ->where('cur.code', $currencyCode);
+
+        if ($min && $max) {
+            $this->query->whereBetween('pp.discounted_price', [$min, $max]);
+        }
+
         $this->selectFields = array_merge($this->selectFields, ['pp.discounted_price', 'pp.discount_amount', 'pp.price']
+        );
+
+        return $this;
+    }
+
+    private function getMinMaxPrices(string $currencyCode): self
+    {
+        $this->query->join('product_prices as pp', 'p.id', '=', 'pp.product_id')
+            ->join('currencies as cur', 'cur.id', '=', 'pp.currency_id')
+            ->where('cur.code', $currencyCode);
+
+        $this->selectFields = array_merge(
+            $this->selectFields,
+            [DB::raw('MAX(pp.discounted_price) AS maxPrice, MIN(pp.discounted_price) AS minPrice')]
         );
 
         return $this;
@@ -171,6 +201,7 @@ class SearchProductsQueryBuilderService
     private function resetQuery(): self
     {
         $this->query = DB::table('products as p');
+        $this->selectFields = [];
 
         return $this;
     }

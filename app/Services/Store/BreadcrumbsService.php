@@ -10,7 +10,7 @@ class BreadcrumbsService
     private function getCommonPart(): array
     {
         return [
-            ['name' => 'home', 'url' => '/'],
+            ['name' => 'homepage', 'url' => '/'],
         ];
     }
 
@@ -23,7 +23,7 @@ class BreadcrumbsService
 
             foreach ($categoryChain as $cat) {
                 $breadcrumbs[] = [
-                    'name' => $cat->name,
+                    'name' => $cat->slug,
                     'url' => route('category', $cat->slug),
                 ];
             }
@@ -43,7 +43,7 @@ class BreadcrumbsService
 
         foreach ($categoryChain as $cat) {
             $data = [
-                'name' => $cat->name
+                'name' => $cat->slug
             ];
 
             if ($cat->id !== $category->id) $data['url'] = route('category', $cat->slug);

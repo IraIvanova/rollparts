@@ -1,6 +1,7 @@
 <?php return array (
-  'header' =>
+  'header' => 
   array (
     'myAccount' => 'My account',
   ),
+  'engine-parts' => 'Engine Parts',
 );

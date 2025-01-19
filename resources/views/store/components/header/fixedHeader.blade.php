@@ -28,8 +28,6 @@
                     <div class="brator-header-menu sticky-menu">
                         @include('store.components.header.menu')
                     </div>
-                    <div class="brator-header-menu-info"><a href="/">Track
-                            Order</a></div>
                 </div>
             </div>
         </div>

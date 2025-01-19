@@ -163,4 +163,9 @@ class ProductService
             page: $searchParams['page'] ?? 1
         );
     }
+
+    public function updatePriceRangeForFilters(): void
+    {
+
+    }
 }

@@ -4,7 +4,7 @@
 <ul class="product-categories shop-cat-list">
     @foreach($categories as $category)
         <li class="cat-item {{$selectedCategory && $category['id'] === $selectedCategory['id'] ? 'selected' : ''}} {{empty($category['children'] ? '' : 'cat-parent')}}">
-            <a href="{{route('category', $category['slug'])}}">{{$category['name']}}</a>
+            <a href="{{route('category', $category['slug'])}}">{{ trans('interface.' . $category['slug']) }}</a>
         @if(!empty($category['children']))
             @include('store.components.categories.filters.subCategories', ['category' => $category ?? null])
                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">

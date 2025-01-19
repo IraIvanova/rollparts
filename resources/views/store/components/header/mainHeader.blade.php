@@ -9,7 +9,7 @@
                         @include('store.components.header.menu')
                     </div>
                     <div class="brator-header-menu-info">
-                        <a href="https://brator-main.smartdemowp.com/order-track/">Track Order</a>
+{{--                        <a href="https://brator-main.smartdemowp.com/order-track/">Track Order</a>--}}
                         <span>{{ trans('interface.header.callUs') }}:</span>
                         <a href="tel:{{ $contacts['phone'] }}">{{ $contacts['phone'] }}</a></div>
                 </div>

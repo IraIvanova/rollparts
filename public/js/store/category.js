@@ -43,12 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let getSelectedCheckboxAndSorting = () => {
         let form = document.getElementById('filters-form');
         const inputs = document.getElementsByClassName('checkbox');
+        const prices = document.getElementsByClassName('inputs');
         const checked = Array.from(inputs).filter(i => i.checked === true)
         let searchParams = groupInputsByName(checked);
 
         let url = new URL(form.action + '/?');
         let params = new URLSearchParams(searchParams);
         params.set('sortby', document.getElementById('orderby').value);
+        params.set('min', prices[0].value);
+        params.set('max', prices[1].value);
 
         console.log(url, checked)
 
@@ -81,6 +84,81 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    const rangeInputs = document.querySelectorAll(".range-inputs");
+    const priceInputs = document.querySelectorAll(".inputs");
+    const rangeProgress = document.querySelector(".progress");
+    const priceGap = 1; // Minimum gap between min and max prices
+
+    // Initialize progress bar position
+    updateRangeProgress();
+
+    // Add event listeners for price inputs
+    priceInputs.forEach((input) => {
+        input.addEventListener("input", handlePriceInput);
+    });
+
+    // Add event listeners for range inputs
+    rangeInputs.forEach((input) => {
+        input.addEventListener("input", handleRangeInput);
+    });
+
+    // Function to update the progress bar based on input values
+    function updateRangeProgress() {
+        const minPrice = parseInt(priceInputs[0].value, 10);
+        const maxPrice = parseInt(priceInputs[1].value, 10);
+        const maxRange = parseInt(rangeInputs[1].max, 10);
+
+        // Calculate progress based on min and max values, dynamically adjusting positions
+        const leftPercent = (minPrice / maxRange) * 100;
+        const rightPercent = 100 - (maxPrice / maxRange) * 100;
+
+        rangeProgress.style.left = leftPercent + "%";
+        rangeProgress.style.right = rightPercent + "%";
+    }
+
+    // Handle input from price fields
+    function handlePriceInput(e) {
+        const minPrice = parseInt(priceInputs[0].value, 10);
+        const maxPrice = parseInt(priceInputs[1].value, 10);
+        const maxRange = parseInt(rangeInputs[1].max, 10);
+
+        if (maxPrice - minPrice >= priceGap && maxPrice <= maxRange) {
+            if (e.target.classList.contains("input-min")) {
+                rangeInputs[0].value = minPrice;
+            } else {
+                rangeInputs[1].value = maxPrice;
+            }
+            updateRangeProgress();
+        }
+    }
+
+    // Handle input from range sliders
+    function handleRangeInput(e) {
+        const minVal = parseInt(rangeInputs[0].value, 10);
+        const maxVal = parseInt(rangeInputs[1].value, 10);
+
+        if (maxVal - minVal < priceGap) {
+            if (e.target.classList.contains("range-min")) {
+                rangeInputs[0].value = maxVal - priceGap;
+            } else {
+                rangeInputs[1].value = minVal + priceGap;
+            }
+        } else {
+            priceInputs[0].value = minVal;
+            priceInputs[1].value = maxVal;
+            updateRangeProgress();
+        }
+    }
+
+    let sortByPrice = () => {
+        let select = document.getElementById('pf-button');
+
+        select.addEventListener('click', (e) => {
+            location.href = getSelectedCheckboxAndSorting();
+        })
+    }
+
+    sortByPrice();
     hideOrExpandSubCategories();
     applyFilters();
     sortProducts();

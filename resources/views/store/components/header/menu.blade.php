@@ -13,7 +13,7 @@
 
                                 @foreach($categories as $category)
                                     <li class="main-category">
-                                        <a href="{{route('category', $category['slug'])}}">{{$category['name']}}</a>
+                                        <a href="{{route('category', $category['slug'])}}">{{ trans('interface.' . $category['slug']) }}</a>
                                         @include('store.components.header.subMenu', $category)
                                     </li>
                                 @endforeach
@@ -23,7 +23,10 @@
         </li>
         <li
             class="menu-item menu-item-type-taxonomy menu-item-object-product_cat nav-item">
-            <a href="{{route('catalog')}}">{{ trans('interface.header.productsCatalog') }}</a></li>
+            <a href="{{route('category', ['engine-parts'])}}">{{ trans('interface.engine-parts') }}</a></li>
+        <li
+            class="menu-item menu-item-type-taxonomy menu-item-object-product_cat nav-item">
+            <a href="{{route('category', ['exhaust-pipes'])}}">{{ trans('interface.exhaust-pipes') }}</a></li>
 
         <li id="menu-item-2476"
             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2476 nav-item">

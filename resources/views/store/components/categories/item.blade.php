@@ -7,14 +7,14 @@
         </a>
     </div>
     <div class="brator-categories-single-title">
-        <p><a href="{{route('category', $category['slug'])}}">{{$category['name']}}</a></p>
+        <p><a href="{{route('category', $category['slug'])}}">{{ trans('interface.' . $category['slug']) }}</a></p>
     </div>
     <div class="brator-categories-single-sub">
 {{--        @dd()--}}
         @if($category['children'])
         @foreach($category['children'] as $key => $subCategory)
             @if($key < 2)
-                <a href="{{route('category', $subCategory['slug'])}}">{{$subCategory['name']}}</a>
+                <a href="{{route('category', $subCategory['slug'])}}">{{ trans('interface.' . $subCategory['slug']) }}</a>
                 @endif
             @endforeach
         @endif

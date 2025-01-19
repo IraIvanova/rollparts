@@ -14,7 +14,7 @@
                                    href="{{$breadcrumb['url']}}"
                                    class="home">
                                     <span
-                                        property="name">{{ trans('interface.breadcrumbs.' . $breadcrumb['name']) }}</span>
+                                        property="name">{{ trans('interface.' . $breadcrumb['name']) }}</span>
                                 </a>
                                 <meta property="position" content="1">
                             </span>
@@ -26,10 +26,10 @@
                             @endforeach
                         @else
                                 <li>
-                                    <a href="/"><span>{{ trans('interface.breadcrumbs.home') }}</span></a>
+                                    <a href="/"><span>{{ trans('interface.homepage') }}</span></a>
                                 </li>
                             <li>
-                                   <span>{{ trans('interface.breadcrumbs.products') }}</span>
+                                   <span>{{ trans('interface.productsPage') }}</span>
                                 </li>
                         @endif
                     </ul>

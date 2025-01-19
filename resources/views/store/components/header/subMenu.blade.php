@@ -1,7 +1,7 @@
 <ul class="">
     @foreach($category['children'] as $subCategory)
         <li class="cat-item">
-            <a href="{{route('category', $subCategory['slug'])}}">{{$subCategory['name']}}</a>
+            <a href="{{route('category', $subCategory['slug'])}}">{{ trans('interface.' . $subCategory['slug']) }}</a>
             @if(!empty($subCategory['children']))
                 @include('store.components.header.subMenu', ['category' => $subCategory])
                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
