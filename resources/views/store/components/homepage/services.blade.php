@@ -37,7 +37,7 @@
                     <p>{{ trans('interface.home.dedicatedSupport2') }}</p>
                 </div>
         </div>
-            <div class="row justify-content-center titles">
+            <div class="row justify-content-center titles p-4">
                 <h1>{{ trans('interface.home.h1') }}</h1>
                 <h2>{{ trans('interface.home.h2') }}</h2>
                 <p>{{ trans('interface.home.serviceText') }}</p>
