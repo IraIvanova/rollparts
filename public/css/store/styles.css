@@ -660,23 +660,11 @@ input[type="range"]::-moz-range-thumb {
         width: 100%;
     }
 }
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     #main-content {
         padding-top: 0!important;
     }
-    .filter-header{
-        display: flex;
-    }
-    .filter-header span {
-        color: black;
-        font-weight: 600;
-    }
-    .filter-content {
-        display: none; /* Collapsed by default on mobile */
-    }
-    .filter-content.active {
-        display: block; /* Visible when active */
-    }
+
     .brator-product-shop-page-area {
         margin-top: 0;
     }
@@ -701,6 +689,19 @@ input[type="range"]::-moz-range-thumb {
 
     .category-page .product-list-items .brator-product-single-item-area {
         width: calc(50% - 40px);
+    }
+    .filter-header{
+        display: flex;
+    }
+    .filter-header span {
+        color: black;
+        font-weight: 600;
+    }
+    .filter-content {
+        display: none; /* Collapsed by default on mobile */
+    }
+    .filter-content.active {
+        display: block; /* Visible when active */
     }
 }
 @media (max-width: 450px) {
