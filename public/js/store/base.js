@@ -126,6 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let searchProducts = () => {
         const searchField = document.getElementById('prosearch');
         const resultsContainer = document.getElementById('search-results');
+        const button = document.querySelector('.search-form button');
 
         // Clear results container initially
         resultsContainer.innerHTML = '';
@@ -157,11 +158,23 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
+        searchField.addEventListener("keyup", (e) => {
+                if (e.keyCode === 13) {
+                    location.href = `/catalog?search=${searchField.value}`;
+                }
+        });
+
+        button.addEventListener('click', () => {
+            location.href = `/catalog?search=${searchField.value}`;
+        })
+
         // Ensure resultsContainer remains open when interacting with it
         resultsContainer.addEventListener('click', (event) => {
             event.stopPropagation(); // Prevent click from bubbling to document listener
         });
     }
+
+
 
     searchProducts();
     fixHeader();

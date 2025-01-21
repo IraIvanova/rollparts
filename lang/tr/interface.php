@@ -1,7 +1,7 @@
 <?php return array (
   'trLira' => '₺',
   'shoppingCart' => 'Alışveriş sepeti',
-  'header' =>
+  'header' => 
   array (
     'searchPlaceholder' => 'Parça Adı, Marka, Model, Sku ile Arama',
     'myAccount' => 'Hesabım',
@@ -12,18 +12,18 @@
     'quickSearch' => 'HIZLI ARAMA',
     'callUs' => 'Bizi arayın',
   ),
-  'cart' =>
+  'cart' => 
   array (
     'noItems' => 'Sepette ürün yok.',
     'itemsCount' => 'Sepet <span>(:qnt ürün)</span>',
     'subtotal' => 'Ara Toplam',
     'addedToCartModalTitle' => 'Ürün sepete eklendi!',
   ),
-  'search' =>
+  'search' => 
   array (
     'catalogLink' => 'Tüm sonuçları gör',
   ),
-  'buttons' =>
+  'buttons' => 
   array (
     'viewCart' => 'Sepeti görüntüle',
     'checkout' => 'Ödeme',
@@ -32,7 +32,7 @@
     'register' => 'Kayıt Olun',
     'productIsOutOfStock' => 'Ürün stokta yok',
   ),
-  'footer' =>
+  'footer' => 
   array (
     'contactUsTitle' => 'Bize ulaşın',
     'customerService' => 'Müşteri Hizmetleri',
@@ -47,7 +47,7 @@
     'copyright' => '© :year Rollparts Tüm Hakları Saklıdır',
     'followUs' => 'Bizi Takip Edin',
   ),
-  'home' =>
+  'home' => 
   array (
     'h1' => 'Rollparts - Yüksek Kaliteli Oto Yedek Parçaları için Güvenilir Adresiniz',
     'h2' => 'Tüm Marka ve Modeller için Uygun Fiyatlı Oto Yedek Parçaları Satın Alın',
@@ -77,14 +77,14 @@
                                             <p>Hızlı ve Güvenli Teslimat; Siparişlerinizi uzman ekibimiz ile yurtdışından tedarik ediyor ve en kısa sürede kapınıza kadar ulaşmasını sağlıyoruz, böylece projelerinize hız kesmeden devam etmenize yardımcı oluyoruz.
                                             </p>',
   ),
-  'product' =>
+  'product' => 
   array (
     'discountAmount' => '%:amount İndirim',
     'qntInStock' => 'Stokta :qnt adet var',
     'outOfStock' => 'Stokta yok',
     'mnfCode' => 'Üretici kodu',
   ),
-  'filtersAndSort' =>
+  'filtersAndSort' => 
   array (
     'totalResults' => '<span>Toplam :qnt</span> sonuç',
     'sortBy' => 'Göre sırala',
@@ -99,14 +99,14 @@
     'min' => 'Min:',
     'max' => 'Max:',
   ),
-  'auth' =>
+  'auth' => 
   array (
     'login' => 'Giriş',
     'rememberMe' => 'Hatırla beni',
     'lostYourPassword' => 'Şifrenizi mi kaybettiniz?',
     'register' => 'Kayıt Olun',
   ),
-  'form' =>
+  'form' => 
   array (
     'email' => 'Email',
     'password' => 'Şifre',
@@ -144,4 +144,10 @@
   'exhaust-systems' => 'Exhaust Systems',
   'electrical-components' => 'Electrical Components',
   'wheels-tires' => 'Wheels & Tires',
+  'catalog' => 
+  array (
+    'title' => 'Katalog ve Arama
+',
+    'searchResults' => 'Arama sonuçları:',
+  ),
 );

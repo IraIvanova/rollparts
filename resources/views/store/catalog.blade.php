@@ -2,7 +2,12 @@
 
 @section('bodyContent')
     <section id="main-content" class="container container-xxxl py-5  .category-page">
-        <h3>Catalog & Search</h3>
+
+        <div class="d-flex mt-3 align-items-center">
+            <h3>{{ trans('interface.catalog.title') }}</h3>
+            <span class="px-3"> - </span>
+            <span>{{ trans('interface.catalog.searchResults') }} </span> <b>{{$search}}</b>
+        </div>
         {{--TODO: ADD SEARCH STRING--}}
         <input type="hidden" id="cart-route" value="{{route('addToCart')}}" />
         <div>

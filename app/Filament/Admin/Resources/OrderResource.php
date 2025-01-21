@@ -25,6 +25,8 @@ class OrderResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-shopping-cart';
 
+    protected static ?string $navigationGroup = 'Orders & Clients';
+
     protected $listeners = ['refresh' => '$refresh'];
 
     public static function infolist(Infolist $infolist): Infolist

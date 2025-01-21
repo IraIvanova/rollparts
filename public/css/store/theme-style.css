@@ -12353,7 +12353,7 @@ span.vehicle-check.tool {
 
 @media only screen and (min-width: 300px) and (max-width: 992.98px) {
     .brator-header-menu-area.scroll-menu .brator-logo-area {
-        width: 100%;
+        /*width: 100%;*/
         padding: 20px 0;
     }
 

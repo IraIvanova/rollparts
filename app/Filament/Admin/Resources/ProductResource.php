@@ -2,9 +2,7 @@
 
 namespace App\Filament\Admin\Resources;
 
-use App\Constant\FilesConstants;
 use App\Filament\Admin\Resources\InventoryResource\RelationManagers\InventoryRelationManager;
-use App\Filament\Admin\Resources\OrderResource\RelationManagers\ProductsRelationManager;
 use App\Filament\Admin\Resources\ProductResource\Pages;
 use App\Filament\Admin\Resources\ProductResource\RelationManagers\FrequentlyBoughtTogetherRelationManager;
 use App\Filament\Admin\Resources\ProductResource\RelationManagers\ImagesRelationManager;
@@ -15,8 +13,6 @@ use App\Models\Product;
 use App\Models\ProductTranslation;
 use CodeWithDennis\FilamentSelectTree\SelectTree;
 use Filament\Forms\Components\Fieldset;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
@@ -25,17 +21,25 @@ use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Forms\Get;
+use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class ProductResource extends Resource
 {
     protected static ?string $model = Product::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-list-bullet';
+
+    protected static ?string $navigationGroup = 'Content';
+
+    protected static ?int $navigationSort = 1;
+
 
     public static function form(Form $form): Form
     {
@@ -60,8 +64,9 @@ class ProductResource extends Resource
                                         TextInput::make('name')
                                             ->label('Name')
                                             ->required()
-                                            ->maxLength(255),
-                                        // Force grid alignment
+                                            ->live(onBlur: true)
+                                            ->afterStateUpdated(fn (Set $set, ?string $state) => $set('../../slug', $state)
+                                          ),
                                         RichEditor::make('description')
                                             ->label('Description')
                                             ->columnSpanFull()
