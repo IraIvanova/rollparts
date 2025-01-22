@@ -7,8 +7,6 @@ use App\DTO\ProductsFilterParametersDTO;
 use App\DTO\SearchParametersDTO;
 use App\Exceptions\CustomException;
 use App\Exceptions\ProductNotFoundException;
-use App\Models\Client;
-use Illuminate\Http\Response;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;

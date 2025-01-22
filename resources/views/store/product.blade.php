@@ -61,7 +61,7 @@
                                             <p>{{ trans('interface.product.mnfCode') }}: <b>{{ $mnfCode }}</b></p>
                                         </div>
                                     </div>
-                                    <div class="brator-product-hero-content-add-to-cart border-bottom">
+                                    <div class="brator-product-hero-content-add-to-cart">
 
                                             <div class="brator-product-single-cart-count-add">
                                                 <div class="quantity brator-product-single-cart-count">
@@ -85,20 +85,7 @@
                                                     </button>
                                                 </div>
                                             </div>
-
                                     </div>
-
-{{--                                    <div class="brator-product-single-light-info-area">--}}
-{{--                                        <div class="brator-product-single-light-info">--}}
-{{--                                            <div class="brator-product-single-light-info-s">--}}
-{{--                                                <h5>Tags:</h5>--}}
-{{--                                                <a href="https://brator-main.smartdemowp.com/product-tag/mercedes/">mercedes</a><a--}}
-{{--                                                    href="https://brator-main.smartdemowp.com/product-tag/rims/">rims</a><a--}}
-{{--                                                    href="https://brator-main.smartdemowp.com/product-tag/tires/">tires</a>--}}
-{{--                                            </div>--}}
-
-{{--                                        </div>--}}
-{{--                                    </div>--}}
                                 </div>
 
                             </div>

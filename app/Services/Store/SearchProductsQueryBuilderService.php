@@ -137,11 +137,11 @@ class SearchProductsQueryBuilderService
 
     private function filterByOptions(?array $options, ?array $values): self
     {
-        //ToDO check how many queries would be performed
+//        dd($options, $values);
         if (!empty($options) && !empty($values)) {
             $sql = '';
             foreach ($options as $key => $option) {
-                $sql .= "exists(select 1 from product_options as pv WHERE `pv`.`option`='" . $option . "' AND pv.product_id=p.id AND pv.option_value in (" . implode(
+                $sql .= "exists(select 1 from product_options as pv WHERE `pv`.`option`='" . $option . "' AND pv.related_product_id=p.id AND pv.option_value in (" . implode(
                         ',',
                         $values[$key]
                     ) . "))";

@@ -12,7 +12,7 @@ class OptionsService
         ///TODO save it to cache to quicker retrieving
         return DB::table('products')
             ->join('category_product as cp', 'products.id', '=', 'cp.product_id')
-            ->join('product_options as po', 'products.id', '=', 'po.product_id')
+            ->join('product_options as po', 'products.id', '=', 'po.related_product_id')
             ->join('options', 'po.option', '=', 'options.name')
             ->whereIn('cp.category_id', $categoriesId)
             ->distinct()

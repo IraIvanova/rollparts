@@ -6,11 +6,11 @@ use App\Filament\Admin\Resources\InventoryResource\RelationManagers\InventoryRel
 use App\Filament\Admin\Resources\ProductResource\Pages;
 use App\Filament\Admin\Resources\ProductResource\RelationManagers\FrequentlyBoughtTogetherRelationManager;
 use App\Filament\Admin\Resources\ProductResource\RelationManagers\ImagesRelationManager;
+use App\Filament\Admin\Resources\ProductResource\RelationManagers\ProductOptionsRelationManager;
 use App\Models\Currency;
 use App\Models\Language;
-use App\Models\Option;
 use App\Models\Product;
-use App\Models\ProductTranslation;
+use App\Services\Store\ProductService;
 use CodeWithDennis\FilamentSelectTree\SelectTree;
 use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Repeater;
@@ -21,7 +21,6 @@ use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
-use Filament\Forms\Get;
 use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -58,14 +57,14 @@ class ProductResource extends Resource
                                             ->options(
                                                 Language::all()->pluck('name', 'code')
                                             )
-                                            ->default('Turkish')
+                                            ->default('tr')
                                             ->required()
                                             ->searchable(),
                                         TextInput::make('name')
                                             ->label('Name')
                                             ->required()
                                             ->live(onBlur: true)
-                                            ->afterStateUpdated(fn (Set $set, ?string $state) => $set('../../slug', $state)
+                                            ->afterStateUpdated(fn (Set $set, ?string $state) => $set('../../slug', Str::slug($state))
                                           ),
                                         RichEditor::make('description')
                                             ->label('Description')
@@ -97,30 +96,37 @@ class ProductResource extends Resource
                                         TextInput::make('price')
                                             ->label('Price')
                                             ->numeric()
-                                            ->required(),
+                                            ->required()
+                                            ->live(onBlur: true)
+                                            ->afterStateUpdated(
+                                                function ($state, callable $get, callable $set) {
+                                                    $discount = $get('discount_amount');
+                                                    if ($discount !== null) {
+                                                        $discountedPrice = ProductService::calculateDiscountedPrice($state, $discount);
+                                                        $set('discounted_price', $discountedPrice);
+                                                    }
+                                                }
+                                            ),
                                         Select::make('currency_id')
                                             ->label('Currency')
                                             ->options(Currency::pluck('code', 'id'))
+                                            ->default(1)
                                             ->required(),
                                         TextInput::make('discount_amount')
                                             ->label('Discount (%)')
                                             ->numeric()
-                                            ->reactive()
+                                            ->default(0)
+                                            ->live(onBlur: true)
                                             ->suffix('%')
                                             ->afterStateUpdated(
                                                 function ($state, callable $get, callable $set) {
                                                     $price = $get('price');
-                                                    if ($price && $state !== null) {
-                                                        $discountedPrice = $price - ($price * $state / 100);
-                                                        $set(
-                                                            'discounted_price',
-                                                            round($discountedPrice, 2)
-                                                        );
+                                                    if ($price !== null) {
+                                                        $discountedPrice = ProductService::calculateDiscountedPrice($price, $state);
+                                                        $set('discounted_price', $discountedPrice);
                                                     }
                                                 }
                                             ),
-
-                                        // Discounted price field
                                         TextInput::make('discounted_price')
                                             ->label('Price with Discount')
                                             ->numeric()
@@ -129,11 +135,8 @@ class ProductResource extends Resource
                                                 function ($state, callable $get, callable $set, ?Model $record) {
                                                     $price = $get('price');
                                                     if ($price && $state !== null) {
-                                                        $discountPercent = (($price - $state) / $price) * 100;
-                                                        $set(
-                                                            'discount_percent',
-                                                            round($discountPercent, 2)
-                                                        );
+                                                        $discountPercent = ProductService::calculateDiscountPercent($price, $state);
+                                                        $set('discount_amount', $discountPercent);
                                                     }
                                                 }
                                             ),
@@ -153,66 +156,12 @@ class ProductResource extends Resource
                                             ->required(),
                                     ]),
                             ]),
-
                         Tab::make('Product Images & Files')
                             ->schema([
                                 SpatieMediaLibraryFileUpload::make('attachments')
                                     ->multiple()
                                     ->reorderable()
                                     ->image()
-                            ]),
-                        Tab::make('Product Options')
-                            ->schema([
-                                Repeater::make('productOptions')
-                                    ->relationship('productOptions') // Automatically maps the relationship
-                                    ->schema([
-                                        Select::make('option')
-                                            ->label('Option')
-                                            ->options(function () {
-                                                return Option::pluck(
-                                                    'name',
-                                                    'name'
-                                                ); // Fetch options from the Option model
-                                            })
-                                            ->live()
-                                            ->required(),
-
-                                        Select::make('option_value')
-                                            ->label('Option Value')
-                                            ->options(function (callable $get) {
-                                                if (!$optionName = $get('option')) {
-                                                    return [];
-                                                }
-
-                                                $option = Option::where('name', $optionName)->first();
-                                                if (!$option || !is_array($option->values)) {
-                                                    return [];
-                                                }
-
-                                                return collect($option->values)
-                                                    ->pluck('value', 'value') // Map value to both key and label
-                                                    ->toArray();
-                                            })
-                                            ->disableOptionsWhenSelectedInSiblingRepeaterItems()
-                                            ->required()
-                                            ->reactive(),
-                                        Select::make('related_product_id')
-                                            ->label('Product')
-                                            ->searchable()
-                                            ->getSearchResultsUsing(function (string $query) {
-//                                                $existingProductIds = $this->ownerRecord->orderProducts->pluck('product_id')->toArray();
-
-                                                return ProductTranslation::where('name', 'like', "%{$query}%")
-//                                                    ->whereNotIn('product_id', [$this->ownerRecord->id])
-                                                    ->limit(20) // Limit results for performance
-                                                    ->pluck('name', 'product_id'); // Return id => name pairs
-                                            })
-                                            ->getOptionLabelUsing(fn ($value): ?string => ProductTranslation::where('product_id', $value)->first()?->name)
-                                            ->required(),
-                                    ])
-//                                    ->afterStateUpdated(fn ($state) => dd($state))
-                                    ->grid(2)
-                                    ->label('Add Option Value'),
                             ]),
                     ])
                     ->columnSpanFull()
@@ -248,7 +197,8 @@ class ProductResource extends Resource
     {
         return [
             InventoryRelationManager::class,
-            FrequentlyBoughtTogetherRelationManager::class
+            FrequentlyBoughtTogetherRelationManager::class,
+            ProductOptionsRelationManager::class
         ];
     }
 

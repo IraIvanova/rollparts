@@ -52,10 +52,10 @@ class Product extends Model implements HasMedia
         return $this->hasMany(ProductTranslation::class);
     }
 
-    public function translationByLanguage(?string $language = null): HasOne
+    public function translationByLanguage(): HasOne
     {
         return $this->hasOne(ProductTranslation::class)
-            ->where('language', $language ?? App::getLocale())
+            ->where('language', App::getLocale())
             ->select(['name', 'description']);
     }
 
@@ -89,5 +89,10 @@ class Product extends Model implements HasMedia
     public function frequentlyBoughtTogether(): BelongsToMany
     {
         return $this->belongsToMany(Product::class, 'frequently_bought_products', 'product_id', 'related_product_id');
+    }
+
+    public function getTranslationNameAttribute()
+    {
+        return $this->translationByLanguage['name'] ?? '';
     }
 }

@@ -19,6 +19,10 @@ class EditProduct extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
+            Actions\Action::make('Show on website')
+                ->url(fn ($record) => route('product', [$record->slug]))
+                ->icon('heroicon-o-link')
+                ->openUrlInNewTab(),
             Actions\DeleteAction::make(),
         ];
     }
