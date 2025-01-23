@@ -13,7 +13,8 @@
         </div>
     </td>
     <td class="product-price" data-title="Price">
-        @if($product->discounted_price)
+        <span class="sm-title">Price:</span>
+        @if($product->discounted_price !== $product->price)
             <p>
                 <span class="woocommerce-Price-amount amount color-red"><span
                         class="woocommerce-Price-currencySymbol">{{ trans('interface.trLira') }}</span>{{ $product->discounted_price }}</span>
@@ -28,14 +29,16 @@
         @endif
     </td>
     <td class="product-quantity" data-title="Quantity">
+        <span class="sm-title">Amount:</span>
         <div class="quantity brator-product-single-cart-count">
               {{ $product->amount }}
         </div>
     </td>
     <td class="product-subtotal" data-title="Subtotal">
+        <span class="sm-title">Total:</span>
         <p>
-                <span class="woocommerce-Price-amount amount"><span
-                        class="woocommerce-Price-currencySymbol">{{ trans('interface.trLira') }}</span>{{ ($product->discounted_price ?: $product->price) * $product->amount }}</span>
+                <b class="woocommerce-Price-amount amount"><span
+                        class="woocommerce-Price-currencySymbol">{{ trans('interface.trLira') }}</span>{{ ($product->discounted_price ?: $product->price) * $product->amount }}</b>
         </p>
     </td>
 </tr>

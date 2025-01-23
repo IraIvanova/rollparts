@@ -6404,7 +6404,8 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
 }
 
 .brator-cart-header-area h3 {
-    font-size: 72px;
+    font-size: 30px;
+    margin-bottom: 15px;
     color: black;
     font-weight: 700;
 }
@@ -8896,9 +8897,9 @@ body {
         max-width: calc(16.6666667% - 30px);
     }
 
-    .brator-cart-info .brator-cart-list .brator-cart-list-items .brator-cart-list-items-removed {
-        top: -50px;
-    }
+    /*.brator-cart-info .brator-cart-list .brator-cart-list-items .brator-cart-list-items-removed {*/
+    /*    top: -50px;*/
+    /*}*/
 
     .brator-cart-info .brator-cart-list .brator-cart-list-items .brator-cart-list-items-title .img-cart {
         width: 120px;
@@ -9570,8 +9571,7 @@ body {
 
     .brator-cart-info .brator-cart-list .brator-cart-list-items .brator-cart-list-items-removed {
         position: unset;
-        margin-left: auto;
-        justify-content: right;
+        justify-content: space-between;
         padding-top: 0;
         padding-bottom: 0;
     }
@@ -10476,7 +10476,8 @@ table.cart.brator-cart-list td {
     margin: 0;
 }
 
-.woocommerce form .form-row input.input-text {
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row select.input-text {
     border-radius: 0px;
     box-shadow: none;
     height: 50px;
@@ -13353,7 +13354,7 @@ a.banner-btn:hover {
     }
     .brator-product-single-cart-count .brator-brator-cart-list-items-qty {
         margin-left: auto;
-        top: -20px;
+        top: 0;
     }
     table.cart.brator-cart-list td {
         padding: 10px 0;
@@ -13361,7 +13362,7 @@ a.banner-btn:hover {
         background: transparent !important;
     }
     .brator-cart-info .brator-cart-list .brator-cart-list-items {
-        margin-bottom: 40px;
+        /*margin-bottom: 40px;*/
     }
     table.cart.brator-cart-list td > span {
         position: relative;

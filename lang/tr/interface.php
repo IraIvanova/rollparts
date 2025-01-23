@@ -105,6 +105,18 @@
     'rememberMe' => 'Hatırla beni',
     'lostYourPassword' => 'Şifrenizi mi kaybettiniz?',
     'register' => 'Kayıt Olun',
+    'advantage_1' => 'Sipariş Yönetiminde Kolaylık
+',
+    'advantage' => 
+    array (
+      '1_1' => 'Tüm siparişlerinizi tek bir yerden kolayca takip edin ve yönetin, zahmetsiz bir alışveriş deneyimi yaşayın.',
+    ),
+    'advantage_1_1' => 'Tüm siparişlerinizi tek bir yerden kolayca takip edin ve yönetin, zahmetsiz bir alışveriş deneyimi yaşayın.',
+    'advantage_2' => 'Kaydedilmiş İletişim Bilgileri',
+    'advantage2_1' => 'Her seferinde bilgilerinizi yeniden girmeye gerek yok—adresiniz ve iletişim bilgileriniz hızlı ödeme için güvenli bir şekilde saklanır.',
+    'advantage_3' => 'Hızlı Güncellemeler',
+    'advantage_3_1' => 'Sipariş durumunuz, kampanyalar ve yeni tekliflerle ilgili bilgilere doğrudan hesabınızdan ulaşın.',
+    'advantage_2_1' => 'Her seferinde bilgilerinizi yeniden girmeye gerek yok—adresiniz ve iletişim bilgileriniz hızlı ödeme için güvenli bir şekilde saklanır.',
   ),
   'form' => 
   array (

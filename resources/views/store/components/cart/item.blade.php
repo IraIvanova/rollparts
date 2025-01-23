@@ -12,6 +12,7 @@
         </div>
     </td>
     <td class="product-price" data-title="Price">
+        <span class="sm-title">Price:</span>
         @if($product['discountedPrice'])
             <p>
                 <span class="woocommerce-Price-amount amount color-red"><span
@@ -27,6 +28,7 @@
         @endif
     </td>
     <td class="product-quantity" data-title="Quantity">
+        <span class="sm-title">Amount:</span>
         <div class="quantity brator-product-single-cart-count">
 
             <div
@@ -43,12 +45,14 @@
         </div>
     </td>
     <td class="product-subtotal" data-title="Subtotal">
+        <span class="sm-title">Total:</span>
             <p>
                 <span class="woocommerce-Price-amount amount"><span
                         class="woocommerce-Price-currencySymbol">$</span>{{ ($product['discountedPrice'] ?: $product['price']) * $product['amount'] }}</span>
             </p>
     </td>
     <td class="product-remove brator-cart-list-items-removed" data-product="{{$product['id']}}">
+        <span class="sm-title">Remove from cart:</span>
         <button type="button"
            class="remove amount-btn remove-full">
             <svg class="bi bi-x" xmlns="http://www.w3.org/2000/svg"

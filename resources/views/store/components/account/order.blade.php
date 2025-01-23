@@ -1,8 +1,9 @@
 @if($order->orderProducts)
 <div class="brator-cart-area">
-    <div class="row">
-        <div class="col-xl-8 col-lg-12">
-            <div class="brator-cart-info">
+{{--    <div class="row">--}}
+{{--        <div class="col-md-12 col-lg-8">--}}
+            <div class="brator-cart-info ">
+                <h6 class="mt-3">Order #{{$order->id}} - {{$order->created_at}}</h6>
                     <table
                         class="shop_table shop_table_responsive cart woocommerce-cart-form__contents brator-cart-list"
                         cellspacing="0">
@@ -20,29 +21,29 @@
                         @endforeach
                         </tbody>
                     </table>
-                <div>
-                <p class="cart-subtotal">
-                    <th>Subtotal</th>
-                    <td data-title="Subtotal"><span class="woocommerce-Price-amount amount"><bdi><span
+                <div class="d-flex flex-column order-totals mt-2" >
+                    @if($order->total_price_with_discount !== $order->total_price)
+                <p class="cart-subtotal  d-flex justify-content-between">
+                    <span>Subtotal</span>
+                    <span data-title="Subtotal"><span class="woocommerce-Price-amount amount"><bdi><span
                                     class="woocommerce-Price-currencySymbol">$</span>{{$order->total_price}}</bdi></span>
-                    </td>
+                    </span>
                 </p>
-                <p class="">
-                    <th>Discount</th>
-                    <td data-title="Subtotal"><span class="woocommerce-Price-amount amount"><bdi><span
+                <p class=" d-flex justify-content-between">
+                    <span>Discount</span>
+                    <span data-title="Subtotal"><span class="woocommerce-Price-amount amount"><bdi><span
                                     class="woocommerce-Price-currencySymbol">$</span>{{$order->total_price - $order->total_price_with_discount}}</bdi></span>
-                    </td>
+                    </span>
                 </p>
-                <p class="order-total">
-                    <th>Total</th>
-                    <td data-title="Total"><strong><span
-                                class="woocommerce-Price-amount amount"><bdi><span
-                                        class="woocommerce-Price-currencySymbol">$</span>{{$order->total_price_with_discount}}</bdi></span></strong>
-                    </td>
+                    @endif
+                <p class="d-flex justify-content-between">
+                    <span>Total</span>
+                    <span data-title="Total"><strong>${{$order->total_price_with_discount}}</strong>
+                    </span>
                 </p>
                 </div>
             </div>
-        </div>
+{{--        </div>--}}
     </div>
-</div>
+{{--</div>--}}
 @endif

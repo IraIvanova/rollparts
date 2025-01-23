@@ -15,13 +15,11 @@
                     </div>
                 </div>
                 @if(count($products) > 0)
-                <div class="brator-cart-area">
+                <div class="">
                     <div class="row">
                         <div class="col-xl-8 col-lg-12">
                             <div class="brator-cart-info">
-                                <div class="brator-cart-h">
-                                    <h3>Your Cart</h3>
-                                </div>
+
                                 <form class="woocommerce-cart-form" action="" method="post">
                                     <table
                                         class="shop_table shop_table_responsive cart woocommerce-cart-form__contents brator-cart-list"

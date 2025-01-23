@@ -11,7 +11,7 @@
 
                                 <div class="row" id="customer_login">
 
-                                    <div class="col-6">
+                                    <div class="col-lg-6 col-md-12">
 
 
                                         <h2>{{ trans('interface.auth.login') }}</h2>
@@ -49,13 +49,14 @@
 
                                     </div>
 
-                                    <div class="col-6">
+                                    <div class="col-lg-6 col-md-12">
 
                                         <h2>{{ trans('interface.auth.register') }}</h2>
-
-
-                                            <p>A link to set a new password will be sent to your email address.</p>
-
+                                            <ul class="p-0">
+                                                <li><p><b>{{ trans('interface.auth.advantage_1') }}:</b>{{ trans('interface.auth.advantage_1_1') }}</p></li>
+                                                <li><p><b>{{ trans('interface.auth.advantage_2') }}:</b>{{ trans('interface.auth.advantage_2_1') }}</p></li>
+                                                <li><p><b>{{ trans('interface.auth.advantage_3') }}:</b>{{ trans('interface.auth.advantage_3_1') }}</p></li>
+                                            </ul>
                                             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                                             <a class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit" href="{{route('register')}}">{{ trans('interface.buttons.register') }}</a>
                                             </p>

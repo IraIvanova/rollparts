@@ -57,7 +57,7 @@ class ClientAuthController extends Controller
         $request->validate([
             'name' => 'required|string|max:255|min:3',
             'lastName' => 'required|string|max:255|min:3',
-            'email' => 'required|string|email|max:255|unique:clients',
+            'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|confirmed|min:6',
             'phone' => 'required|string|max:255|min:8',
         ]);

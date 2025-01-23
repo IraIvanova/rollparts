@@ -3,7 +3,7 @@
 @section('bodyContent')
     <div class="container-xxxl container mt-5">
         <div class="woocommerce">
-        <h1 class="mb-4">My Account</h1>
+        <h2 class="mb-4">My Account</h2>
 
         <!-- Tabs Navigation -->
         <ul class="nav nav-tabs" id="accountTabs" role="tablist">
@@ -23,11 +23,14 @@
         <div class="tab-content mt-3" id="accountTabsContent">
             <!-- Account Details Tab -->
             <div class="tab-pane fade show active" id="account-details" role="tabpanel" aria-labelledby="account-details-tab">
+            <div class="row">
+               <div class="col-lg-6 col-md-12">
+                   <h5 class="mt-5">Contact details</h5>
                 <form class="woocommerce-form woocommerce-form-login login" action="{{ route('process-register') }}" method="post">
                     <div class="@error('email') error @enderror woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                         <label for="username">{{ trans('interface.form.email') }}<span class="required" aria-hidden="true">*</span>
                         </label>
-                        <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="username" value="{{$user->email}}" required>
+                        <input type="email" disabled class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="username" value="{{$user->email}}" required>
                         @error('email')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -62,18 +65,59 @@
                     </p>
                     @csrf
                 </form>
-                <h2>Addresses</h2>
-                @foreach($addresses as $address)
-                    {{--TODO add btn to change address--}}
-                    <li class="list-group-item">
-                        {{ $address->getFullAddress }}
-                    </li>
-                @endforeach
+               </div>
+                <div class="col-lg-6 col-md-12">
+                <h5 class="mt-5">Address details</h5>
+                <form class="woocommerce-form-login login">
+                    <div class="form-row validate-required">
+                        <label for="country" class="">Country*</label>
+                        <input type="text" class="input-text"
+                               name="country"
+                               disabled
+                               id="country" placeholder="" value="Turkey">
+                    </div>
+                    <div class="row px-3">
+                        <div class="form-row validate-required w-50">
+                            <label for="province" class="">Province*</label>
+                            <select class="input-text" name="province_id" id="province" data-route="{{route('getDistrictsList')}}">
+                                <option value="">Select a province</option>
+                                @foreach ($provinces as $province)
+                                    <option value="{{ $province->id }}">{{ $province->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-row validate-required w-50">
+                            <label for="district" class="">District<span class="required" title="required">*</span></label>
+                            <select class="input-text" name="district_id" id="district">
+                                <option value="">Select a district</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row px-3">
+                        <div class="form-row  validate-required w-75">
+                            <label for="address" class="">Address*</label>
+                            <input type="text" class="input-text "
+                                   name="address_line1"
+                                   id="address" placeholder="" value="">
+                        </div>
+                        <div class="form-row  validate-required w-25">
+                            <label for="zip" class="">Postal Code*</label>
+                            <input type="text" class="input-text "
+                                   name="zip"
+                                   id="zip" placeholder="" value="">
+                        </div>
+                    </div>
+                    <p class="form-row">
+                        <button type="submit" class="woocommerce-button button woocommerce-form-login__submit">{{ trans('interface.buttons.saveAddress') }}</button>
+                    </p>
+                </form>
+                </div>
+            </div>
             </div>
 
             <!-- Orders Tab -->
             <div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
-                <h4>Orders</h4>
+{{--                <h4>Orders</h4>--}}
                 @if($orders->isEmpty())
                     <p>You have no orders yet.</p>
                 @else

@@ -191,6 +191,7 @@ readonly class GetDataForPageService
         return [
             'addresses' => $client->addresses,
             'orders' => $client->orders,
+            'provinces' => $this->citiesService->getAllProvinces(),
         ];
     }
 
