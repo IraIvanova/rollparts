@@ -2,7 +2,7 @@
     @if(!$couponCode)
     <div class="woocommerce-form-coupon-toggle">
 
-        <div class="woocommerce-info">
+        <div class="div-info">
             Have a coupon? <a href="#" id="show-coupon">Click here to enter your code</a>
         </div>
     </div>

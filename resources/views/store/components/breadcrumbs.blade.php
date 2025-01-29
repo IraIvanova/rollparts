@@ -1,8 +1,8 @@
-<section class="brator-breadcrumb-area">
+<section class="rollparts-breadcrumb-area">
     <div class="container-xxxl container-xxl container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="brator-breadcrumb">
+                <div class="rollparts-breadcrumb">
                     <ul>
 
                         @if(!empty($breadcrumbs))

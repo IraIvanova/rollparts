@@ -26,49 +26,49 @@
             <div class="row">
                <div class="col-lg-6 col-md-12">
                    <h5 class="mt-5">Contact details</h5>
-                <form class="woocommerce-form woocommerce-form-login login" action="{{ route('process-register') }}" method="post">
-                    <div class="@error('email') error @enderror woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                <form class="woocommerce-form of-form-login login" action="{{ route('process-register') }}" method="post">
+                    <div class="@error('email') error @enderror   form-row form-row-wide">
                         <label for="username">{{ trans('interface.form.email') }}<span class="required" aria-hidden="true">*</span>
                         </label>
-                        <input type="email" disabled class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="username" value="{{$user->email}}" required>
+                        <input type="email" disabled class="of-Input  input-text" name="email" id="username" value="{{$user->email}}" required>
                         @error('email')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="@error('phone') error @enderror woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                    <div class="@error('phone') error @enderror   form-row form-row-wide">
                         <label for="phone">{{ trans('interface.form.phone') }}<span class="required" aria-hidden="true">*</span>
                         </label>
-                        <input type="tel" class="woocommerce-Input woocommerce-Input--text input-text" name="phone" id="phone" value="{{$user->phone}}" required >
+                        <input type="tel" class="of-Input  input-text" name="phone" id="phone" value="{{$user->phone}}" required >
                         @error('phone')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="@error('name') error @enderror woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                    <div class="@error('name') error @enderror   form-row form-row-wide">
                         <label for="name">{{ trans('interface.form.name') }}<span class="required" aria-hidden="true">*</span>
                         </label>
-                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="name" id="name" value="{{$user->name}}" required>
+                        <input type="text" class="of-Input  input-text" name="name" id="name" value="{{$user->name}}" required>
                         @error('name')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
 
-                    <div class="@error('lastName') error @enderror woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                    <div class="@error('lastName') error @enderror   form-row form-row-wide">
                         <label for="lastName">{{ trans('interface.form.lastName') }}<span class="required" aria-hidden="true">*</span>
                         </label>
-                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="lastName" id="lastName" value="{{$user->lastName}}" required>
+                        <input type="text" class="of-Input  input-text" name="lastName" id="lastName" value="{{$user->lastName}}" required>
                         @error('lastName')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <p class="form-row">
-                        <button type="submit" class="woocommerce-button button woocommerce-form-login__submit">{{ trans('interface.buttons.update') }}</button>
+                        <button type="submit" class=" button of-form-login__submit">{{ trans('interface.buttons.update') }}</button>
                     </p>
                     @csrf
                 </form>
                </div>
                 <div class="col-lg-6 col-md-12">
                 <h5 class="mt-5">Address details</h5>
-                <form class="woocommerce-form-login login">
+                <form class="of-form-login login">
                     <div class="form-row validate-required">
                         <label for="country" class="">Country*</label>
                         <input type="text" class="input-text"
@@ -108,7 +108,7 @@
                         </div>
                     </div>
                     <p class="form-row">
-                        <button type="submit" class="woocommerce-button button woocommerce-form-login__submit">{{ trans('interface.buttons.saveAddress') }}</button>
+                        <button type="submit" class=" button of-form-login__submit">{{ trans('interface.buttons.saveAddress') }}</button>
                     </p>
                 </form>
                 </div>

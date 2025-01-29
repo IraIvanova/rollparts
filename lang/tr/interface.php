@@ -18,6 +18,8 @@
     'itemsCount' => 'Sepet <span>(:qnt ürün)</span>',
     'subtotal' => 'Ara Toplam',
     'addedToCartModalTitle' => 'Ürün sepete eklendi!',
+    'empty' => 'Sepetiniz şu anda boş.',
+    'shoppingCart' => 'Alışveriş sepeti',
   ),
   'search' => 
   array (
@@ -161,5 +163,12 @@
     'title' => 'Katalog ve Arama
 ',
     'searchResults' => 'Arama sonuçları:',
+  ),
+  'interface' => 
+  array (
+    'cart' => 
+    array (
+      'empty' => 'Sepetiniz şu anda boş.',
+    ),
   ),
 );

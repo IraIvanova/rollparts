@@ -1,14 +1,14 @@
-<div class="brator-slide-menu-area" id="slide-sidebar-menu">
-    <div class="brator-slide-menu-bg"></div>
-    <div class="brator-slide-menu-content slide-sidebar-menu-content">
-        <div class="brator-slide-menu-close" id="slide-menu-close">
+<div class="rollparts-slide-menu-area" id="slide-sidebar-menu">
+    <div class="rollparts-slide-menu-bg"></div>
+    <div class="rollparts-slide-menu-content slide-sidebar-menu-content">
+        <div class="rollparts-slide-menu-close" id="slide-menu-close">
             <svg class="bi bi-x" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                  viewBox="0 0 16 16">
                 <path
                     d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
             </svg>
         </div>
-        <div class="brator-slide-logo-items">
+        <div class="rollparts-slide-logo-items">
             <a href="/">
                 <img src="{{asset('images/logo.png')}}" alt="Logo">
             </a>
@@ -42,12 +42,12 @@
                 </svg>
             </button>
         </div>
-        <div class="brator-slide-menu-items">
+        <div class="rollparts-slide-menu-items">
             @include('store.components.header.menu')
         </div>
         <ul>
             <li class="p-2">
-                <div class="brator-icon-link-text relation">
+                <div class="rollparts-icon-link-text relation">
                     <a href="{{ route('client.account') }}" class="d-flex">
                         <div class="click-item-count">
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +71,7 @@
             </li>
             <li class="p-2">
                 <a href="{{ route('cart') }}" class="d-flex">
-                    <div class="brator-cart-icon click-item-count" id="cart-icon">
+                    <div class=" click-item-count" id="cart-icon">
                         <svg fill="#000000" width="52" height="52" version="1.1"
                              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                              x="0px" y="0px" viewBox="0 0 64 64">

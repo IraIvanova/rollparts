@@ -29,26 +29,26 @@
                                     <label for="firstName" class="">First name*</label>
                                     <input type="text" class="input-text "
                                            name="name"
-                                           id="firstName" placeholder="" value="{{$user->name}}">
+                                           id="firstName" placeholder="" value="{{$user->name ?? ''}}">
                                 </div>
                                 <div class="form-row validate-required w-50">
                                     <label for="lastName" class="">Last name*</label>
                                     <input type="text" class="input-text "
                                            name="lastName"
-                                           id="lastName" placeholder="" value="{{$user->lastName}}">
+                                           id="lastName" placeholder="" value="{{$user->lastName ?? ''}}">
                                 </div>
                             </div>
                             <div class="form-row  validate-required">
                                 <label for="phone" class="">Phone*</label>
                                 <input type="text" class="input-text "
                                        name="phone"
-                                       id="phone" placeholder="" value="{{$user->phone}}">
+                                       id="phone" placeholder="" value="{{$user->phone ?? ''}}">
                             </div>
                             <div class="form-row  validate-required">
                                 <label for="email" class="">Email*</label>
                                 <input type="email" class="input-text"
                                        name="email"
-                                       id="email" placeholder="" value="{{$user->email}}" required>
+                                       id="email" placeholder="" value="{{$user->email ?? ''}}" required>
                             </div>
                         </div>
                         <h5 class="mt-5">Address details</h5>
@@ -173,7 +173,7 @@
                                         <input type="hidden" id="woocommerce-process-checkout-nonce"
                                                name="woocommerce-process-checkout-nonce" value="1314b3a253"><input
                                             type="hidden" name="_wp_http_referer" value="/?wc-ajax=update_order_review">
-                                        <div id="warningDiv" class="woocommerce-info d-none alertDiv mt-3 w-100 text-center">
+                                        <div id="warningDiv" class="div-info d-none alertDiv mt-3 w-100 text-center">
 
                                         </div>
                                     </div>

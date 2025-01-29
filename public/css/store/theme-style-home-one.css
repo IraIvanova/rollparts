@@ -51,11 +51,11 @@
 .splide__arrows.style-three .splide__arrow--prev {
     right: 35px;
 }
-.rollparts-categories-list-area.design-three .brator-categories-single {
+.rollparts-categories-list-area.design-three .rollparts-categories-single {
     border: 0;
     background-color: #ffffff;
 }
-.rollparts-categories-list-area.design-three .brator-categories-single:hover .brator-categories-single-title a {
+.rollparts-categories-list-area.design-three .rollparts-categories-single:hover .rollparts-categories-single-title a {
     text-decoration: underline;
 }
 /* Brator Categories List Slide End */

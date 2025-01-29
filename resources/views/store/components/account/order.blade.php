@@ -1,11 +1,11 @@
 @if($order->orderProducts)
-<div class="brator-cart-area">
+<div class="rollparts-cart-area">
 {{--    <div class="row">--}}
 {{--        <div class="col-md-12 col-lg-8">--}}
-            <div class="brator-cart-info ">
+            <div class="rollparts-cart-info ">
                 <h6 class="mt-3">Order #{{$order->id}} - {{$order->created_at}}</h6>
                     <table
-                        class="shop_table shop_table_responsive cart woocommerce-cart-form__contents brator-cart-list"
+                        class="shop_table shop_table_responsive cart cart-form__contents rollparts-cart-list"
                         cellspacing="0">
                         <thead>
                         <tr>

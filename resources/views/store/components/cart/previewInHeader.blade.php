@@ -1,6 +1,6 @@
-<div class="brator-cart-link">
+<div class="rollparts-cart-link">
     <a href="javascript:void(0)">
-        <div class="brator-cart-icon click-item-count" id="cart-icon">
+        <div class="click-item-count" id="cart-icon">
             <svg fill="#000000" width="52" height="52" version="1.1"
                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                  x="0px" y="0px" viewBox="0 0 64 64">
@@ -19,10 +19,10 @@
                         class="rollparts-currencySymbol">{{ trans('interface.trLira') }} </span>{{min($shoppingCart['totalWithDiscount'], $shoppingCart['totalPrice'])}}</bdi></span></b>
 
     </a>
-    <div class="brator-cart-item-list" id="cart-preview">
-        <div class="brator-cart-item-list-header">
+    <div class="rollparts-cart-item-list" id="cart-preview">
+        <div class="rollparts-cart-item-list-header">
             <h2>{!! trans('interface.cart.itemsCount', ['qnt' => $shoppingCart['totalItems']]) !!}</h2>
-            <button class="brator-cart-close">
+            <button class="rollparts-cart-close">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                      fill="currentColor" viewBox="0 0 16 16">
                     <path
@@ -30,7 +30,7 @@
                 </svg>
             </button>
         </div>
-        <div class="widget_shopping_cart_content" id="cart-preview-content">
+        <div class="sc_content" id="cart-preview-content">
             @include('store.components.cart.previewList')
         </div>
     </div>

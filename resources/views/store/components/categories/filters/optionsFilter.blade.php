@@ -1,7 +1,7 @@
 @foreach($options as $label => $optionValues)
-    <div id="brator_wc_layered_nav-3" class="brator-sidebar-single-item woocommerce brator_widget_layered_nav">
+    <div class="rollparts-sidebar-single-item">
         <div class="shop-sidebar-title"><h2>{{$label}}</h2></div>
-        <div class="brator-filter-item-content list">
+        <div class="rollparts-filter-item-content list">
             <ul>
                 @foreach($optionValues as $value)
                     <li class="d-flex">

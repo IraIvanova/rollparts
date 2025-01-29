@@ -1,4 +1,4 @@
-<div id="woocommerce_price_filter-2" class="brator-sidebar-single-item woocommerce widget_price_filter">
+<div class="rollparts-sidebar-single-item woocommerce widget_price_filter">
     <div class="priceTitle"><h2>{{ trans('interface.filtersAndSort.prices') }}</h2></div>
         <div class="price_slider_wrapper">
             <div class="price-input">

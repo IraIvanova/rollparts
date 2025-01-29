@@ -1,19 +1,19 @@
 @if($shoppingCart['totalItems'] === 0)
-    <p class="woocommerce-mini-cart__empty-message">{{ trans('interface.cart.noItems') }}</p>
+    <p>{{ trans('interface.cart.noItems') }}</p>
 @else
-    <ul class="woocommerce-mini-cart cart_list product_list_widget ">
+    <ul class="sp-mini-cart cart_list sp_product_list ">
         @foreach($shoppingCart['products'] as $product)
-            <li class="single-item woocommerce-mini-cart-item mini_cart_item">
-                <div class="brator-cart-item-list-item">
-                    <div class="brator-cart-item-list-item-img">
+            <li class="single-item mini_cart_item">
+                <div class="rollparts-cart-item-list-item">
+                    <div class="rollparts-cart-item-list-item-img">
                         <a href="{{route('product', $product['slug'])}}">
                             <img width="85" height="85"
                                  src="{{ $product['image'] }}"
-                                 class="attachment-brator-cart-img-size size-brator-cart-img-size" alt=""
+                                 class=" " alt=""
                             > </a>
                     </div>
-                    <div class="brator-cart-item-list-item-title">
-                        <div class="brator-cart-item-list-item-title-one">
+                    <div class="rollparts-cart-item-list-item-title">
+                        <div class="rollparts-cart-item-list-item-title-one">
                             <a href="{{ route('product', $product['slug']) }}">
                                 <h2>{{$product['name']}}</h2></a>
                             <div class="price-pdo">
@@ -30,13 +30,13 @@
             </li>
         @endforeach
     </ul>
-    <div class="brator-cart-total-money">
-        <div class="woocommerce-mini-cart__total total brator-cart-total-header">
+    <div class="rollparts-cart-total-money">
+        <div class=" total rollparts-cart-total-header">
             <strong>{{ trans('interface.cart.subtotal') }}:</strong> <span class="rollparts-Price-amount amount"><bdi><span
                         class="rollparts-currencySymbol">{{ trans('interface.trLira') }}</span>{{min($shoppingCart['totalWithDiscount'], $shoppingCart['totalPrice'])}}</bdi></span>
         </div>
-        <div class="woocommerce-mini-cart__buttons brator-cart-total-action">
-            <a href="{{route('cart')}}" class="button wc-forward">{{ trans('interface.buttons.viewCart') }}</a><a href="{{route('checkout')}}"
-                           class="button checkout wc-forward">{{ trans('interface.buttons.checkout') }}</a></div>
+        <div class=" rollparts-cart-total-action">
+            <a href="{{route('cart')}}" class="button primary-rp-button">{{ trans('interface.buttons.viewCart') }}</a><a href="{{route('checkout')}}"
+                           class="button checkout primary-rp-button">{{ trans('interface.buttons.checkout') }}</a></div>
     </div>
 @endif

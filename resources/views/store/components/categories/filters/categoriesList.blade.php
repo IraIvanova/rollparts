@@ -1,4 +1,4 @@
-<div id="woocommerce_product_categories-2" class="brator-sidebar-single-item woocommerce widget_product_categories">
+<div class="rollparts-sidebar-single-item">
     <div class="shop-sidebar-title"><h2>{{ trans('interface.filtersAndSort.categories') }}</h2>
     </div>
 <ul class="product-categories shop-cat-list">

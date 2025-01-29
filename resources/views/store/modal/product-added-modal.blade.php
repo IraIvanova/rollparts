@@ -5,8 +5,8 @@
                 <h5 class="modal-title" id="exampleModalLabel">{{ trans('interface.cart.addedToCartModalTitle') }}</h5>
             </div>
             <div class="modal-body text-center">
-                <div class="brator-cart-item-list modal-cart">
-                    <div id="modal-cart-preview-content" class="widget_shopping_cart_content">
+                <div class="rollparts-cart-item-list modal-cart">
+                    <div id="modal-cart-preview-content" class="sc_content">
 
                     </div>
                 </div>

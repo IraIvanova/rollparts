@@ -218,7 +218,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.brator-cart-item-list {
+.rollparts-cart-item-list {
     position: absolute;
     right: 0;
     top: 55px;
@@ -233,37 +233,37 @@
     transition: 0.3s;
 }
 
-.brator-cart-item-list.visible {
+.rollparts-cart-item-list.visible {
     transform: translate(0px, 0px);
     opacity: 1;
     visibility: visible;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.brator-cart-item-list,
-.widget_shopping_cart_content {
+.rollparts-cart-item-list,
+.sc_content {
     max-height: 80vh;
 }
 
-.widget_shopping_cart_content ul {
+.sc_content ul {
     max-height: 500px;
     overflow-y: auto;
 }
 
-.widget_shopping_cart_content ul::-webkit-scrollbar {
+.sc_content ul::-webkit-scrollbar {
     width: 6px; /* Scrollbar width */
 }
 
-.widget_shopping_cart_content ul::-webkit-scrollbar-thumb {
+.sc_content ul::-webkit-scrollbar-thumb {
     background: #888; /* Scrollbar thumb color */
     border-radius: 3px; /* Rounded corners */
 }
 
-.widget_shopping_cart_content ul::-webkit-scrollbar-thumb:hover {
+.sc_content ul::-webkit-scrollbar-thumb:hover {
     background: #555; /* Thumb color on hover */
 }
 
-.widget_shopping_cart_content ul::-webkit-scrollbar-track {
+.sc_content ul::-webkit-scrollbar-track {
     background: #f1f1f1; /* Scrollbar track color */
 }
 
@@ -317,7 +317,7 @@
     transition: 0.4s;
 }
 
-.brator-slide-menu-area .brator-slide-menu-bg {
+.rollparts-slide-menu-area .rollparts-slide-menu-bg {
     position: fixed;
     right: 100%;
     top: 0;
@@ -328,7 +328,7 @@
     transition: 0.4s;
 }
 
-#slide-sidebar-menu.open .brator-slide-menu-bg {
+#slide-sidebar-menu.open .rollparts-slide-menu-bg {
     right: 0%;
     transition: 0.4s;
 }
@@ -348,7 +348,7 @@
 
 /* Media Query for Mobile devices */
 @media (max-width: 1024px) {
-    .brator-logo-area .brator-logo {
+    .rollparts-logo-area .rollparts-logo {
         margin-bottom: 10px
     }
 }
@@ -375,7 +375,7 @@
 }
 
 /* Each product item */
-.bestseller-products .brator-product-single-item-area {
+.bestseller-products .rollparts-product-single-item-area {
     display: flex; /* Set flex layout for internal structure */
     flex-direction: column; /* Arrange child elements vertically */
     justify-content: space-between; /* Space items evenly */
@@ -388,13 +388,13 @@
 }
 
 /* Product image container */
-.bestseller-products .brator-product-single-item-img {
+.bestseller-products .rollparts-product-single-item-img {
     flex: 0 0 auto; /* Prevent shrinking or growing */
     text-align: center; /* Center images */
     margin-bottom: 10px;
 }
 
-.bestseller-products .brator-product-single-item-img img {
+.bestseller-products .rollparts-product-single-item-img img {
     min-height: 150px; /* Limit image height */
     max-height: 150px; /* Limit image height */
     width: auto;
@@ -402,7 +402,7 @@
 }
 
 /* Product details container */
-.bestseller-products .brator-product-single-item-mini {
+.bestseller-products .rollparts-product-single-item-mini {
     flex: 1 1 auto; /* Allow content to grow and shrink */
     display: flex;
     flex-direction: column;
@@ -410,7 +410,7 @@
 }
 
 /* Product price container */
-.bestseller-products .brator-product-single-item-price {
+.bestseller-products .rollparts-product-single-item-price {
     margin-top: auto; /* Push to bottom of the container */
 }
 
@@ -482,7 +482,7 @@
     box-shadow: -2px 2px 12px 1px rgb(0 0 0 / 25%);
 }
 
-.brator-cart-item-list.modal-cart {
+.rollparts-cart-item-list.modal-cart {
     opacity: 1;
     visibility: visible;
     max-height: unset !important;
@@ -493,11 +493,11 @@
     top: -50px;
 }
 
-.modal-cart .widget_shopping_cart_content ul {
+.modal-cart .sc_content ul {
     max-height: unset;
 }
 
-.modal-cart .brator-cart-total-action {
+.modal-cart .rollparts-cart-total-action {
     margin-top: 12px;
 }
 
@@ -509,7 +509,7 @@
     overflow-y: auto;
 }
 
-#cartModal .brator-cart-total-action {
+#cartModal .rollparts-cart-total-action {
     padding-bottom: 20px;
 }
 
@@ -586,7 +586,7 @@ ul {
     color: #df3939 !important;
 }
 
-.bestseller-products.product-list-items .brator-product-single-item-area {
+.bestseller-products.product-list-items .rollparts-product-single-item-area {
     width: calc(20% - 40px);
 }
 
@@ -748,7 +748,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 /* Cart Area */
-.brator-cart-area {
+.rollparts-cart-area {
     background: #fff;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
@@ -757,11 +757,11 @@ input[type="range"]::-moz-range-thumb {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.brator-cart-info {
+.rollparts-cart-info {
     margin-bottom: 20px;
 }
 
-.brator-cart-info h6 {
+.rollparts-cart-info h6 {
     font-weight: 600;
     color: #444;
 }
@@ -841,25 +841,25 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (max-width: 1600px) {
-    .bestseller-products.product-list-items .brator-product-single-item-area {
+    .bestseller-products.product-list-items .rollparts-product-single-item-area {
         width: calc(25% - 40px);
     }
 }
 
 @media (max-width: 1200px) {
-    .bestseller-products.product-list-items .brator-product-single-item-area {
+    .bestseller-products.product-list-items .rollparts-product-single-item-area {
         width: calc(33.33% - 40px);
     }
 }
 
 @media (max-width: 800px) {
-    .bestseller-products.product-list-items .brator-product-single-item-area {
+    .bestseller-products.product-list-items .rollparts-product-single-item-area {
         width: calc(50% - 40px);
     }
 }
 
 @media (max-width: 480px) {
-    .bestseller-products.product-list-items .brator-product-single-item-area {
+    .bestseller-products.product-list-items .rollparts-product-single-item-area {
         width: 100%;
     }
 }
@@ -869,7 +869,7 @@ input[type="range"]::-moz-range-thumb {
         padding-top: 0 !important;
     }
 
-    .brator-product-shop-page-area {
+    .rollparts-product-shop-page-area {
         margin-top: 0;
     }
 
@@ -892,7 +892,7 @@ input[type="range"]::-moz-range-thumb {
     .cart_item td:first-child{
         min-height: 70px;
     }
-    .brator-cart-list thead{
+    .rollparts-cart-list thead{
         display: none;
         margin-bottom: 0
     }
@@ -905,7 +905,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (max-width: 1600px) {
-    .category-page .product-list-items .brator-product-single-item-area {
+    .category-page .product-list-items .rollparts-product-single-item-area {
         width: calc(33.33% - 40px);
         flex-grow: 1;
     }
@@ -916,7 +916,7 @@ input[type="range"]::-moz-range-thumb {
         justify-content: space-between;
     }
 
-    .category-page .product-list-items .brator-product-single-item-area {
+    .category-page .product-list-items .rollparts-product-single-item-area {
         width: calc(50% - 40px);
     }
 
@@ -937,28 +937,28 @@ input[type="range"]::-moz-range-thumb {
         display: block; /* Visible when active */
     }
 
-    .brator-header-menu-info {
+    .rollparts-header-menu-info {
         display: none;
     }
 
-    .brator-header-menu {
+    .rollparts-header-menu {
         width: 100%;
     }
 
-    .brator-header-menu-area .brator-header-menu ul.list-style-outside-none {
+    .rollparts-header-menu-area .rollparts-header-menu ul.list-style-outside-none {
         justify-content: space-between;
         width: 100%;
     }
 }
 
 @media (max-width: 900px) {
-    .brator-header-menu-area.scroll-menu .brator-logo-area {
+    .rollparts-header-menu-area.scroll-menu .rollparts-logo-area {
         width: 100%;
     }
 }
 
 @media (max-width: 450px) {
-    .category-page .product-list-items .brator-product-single-item-area {
+    .category-page .product-list-items .rollparts-product-single-item-area {
         width: 100%;
     }
 
@@ -966,13 +966,13 @@ input[type="range"]::-moz-range-thumb {
         width: 100%;
     }
 
-    .brator-slide-logo-items a img {
+    .rollparts-slide-logo-items a img {
         max-width: 200px;
     }
 }
 
 @media (max-width: 1200px) {
-    .brator-header-menu-area .brator-header-menu ul.list-style-outside-none li a {
+    .rollparts-header-menu-area .rollparts-header-menu ul.list-style-outside-none li a {
         font-size: 13px;
         /*line-height: 15px;*/
         padding: 15px 0px;

@@ -13,7 +13,7 @@
         <div>
             @include('store.components.breadcrumbs')
             {{--            @include('store.components.banner')--}}
-            <div class="brator-product-shop-page-area">
+            <div class="rollparts-product-shop-page-area">
                 <div class="container-xxxl container">
                     <div class="row">
                         <div class="col-lg-3">

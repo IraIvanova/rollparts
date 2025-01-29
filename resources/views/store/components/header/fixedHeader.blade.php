@@ -1,6 +1,6 @@
-<div class="brator-header-menu-area scroll-menu" id="scroll-menu">
+<div class="rollparts-header-menu-area scroll-menu" id="scroll-menu">
     <div class="close-menu-bg"></div>
-    <div class="brator-mega-menu-close">
+    <div class="rollparts-mega-menu-close">
         <svg class="bi bi-x" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
              viewBox="0 0 16 16">
             <path
@@ -10,9 +10,9 @@
     <div class="container-xxxl container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="brator-header-menu-with-info">
-                    <div class="brator-logo-area">
-                        <div class="brator-logo">
+                <div class="rollparts-header-menu-with-info">
+                    <div class="rollparts-logo-area">
+                        <div class="rollparts-logo">
                             <a href="/">
                                 <img src="{{asset('images/logo.png')}}" alt="Logo">
                             </a>
@@ -25,7 +25,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="brator-header-menu sticky-menu">
+                    <div class="rollparts-header-menu sticky-menu">
                         @include('store.components.header.menu')
                     </div>
                 </div>
