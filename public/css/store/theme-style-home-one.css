@@ -1,12 +1,12 @@
 /* Brator More Text Area Start */
-.brator-more-text-area.design-two {
+.brator-more-text-area.rollparts-design {
     background: #f2f2f7;
     padding: 100px 0;
 }
-.brator-more-text-main-title{
+.rollparts-more-text-main-title{
     margin-bottom: 40px;
 }
-.brator-more-text-main-title h3{
+.rollparts-more-text-main-title h3{
     font-size: 24px;
     color: #000000;
     font-weight: 600;
@@ -22,11 +22,11 @@
 }
 /* Brator More Text Area End */
 /* Brator Categories List Slide Start */
-.brator-categories-list-area.design-three {
+.rollparts-categories-list-area.design-three {
     padding-top: 75px;
     padding-bottom: 0px;
 }
-.brator-categories-list-area.design-three.gray-bg{
+.rollparts-categories-list-area.design-three.gray-bg{
     background-color: #f2f2f7;
 }
 .splide__arrows.style-three .splide__arrow {
@@ -51,11 +51,11 @@
 .splide__arrows.style-three .splide__arrow--prev {
     right: 35px;
 }
-.brator-categories-list-area.design-three .brator-categories-single {
+.rollparts-categories-list-area.design-three .brator-categories-single {
     border: 0;
     background-color: #ffffff;
 }
-.brator-categories-list-area.design-three .brator-categories-single:hover .brator-categories-single-title a {
+.rollparts-categories-list-area.design-three .brator-categories-single:hover .brator-categories-single-title a {
     text-decoration: underline;
 }
 /* Brator Categories List Slide End */
@@ -68,21 +68,21 @@
     background-color: #fff1ef;
     color: var(--color-high-dark);
 }
-.brator-makes-list-area.design-two.brator-makes-list-align-left .brator-makes-list-tab-header ul{
+.rollparts-makes-list-area.rollparts-design.rollparts-makes-list-align-left .rollparts-makes-list-tab-header ul{
     justify-content: flex-start;
 }
-.brator-makes-list-area.design-two.brator-makes-list-align-left .brator-makes-list-tab-header ul li:first-child a{
+.rollparts-makes-list-area.rollparts-design.rollparts-makes-list-align-left .rollparts-makes-list-tab-header ul li:first-child a{
     margin-left: 0px;
 }
-.brator-offer-slider-area.brator-whats-hot-area.design-two .brator-section-header {
+.brator-offer-slider-area.brator-whats-hot-area.rollparts-design .rollparts-section-header {
     justify-content: flex-start;
 }
 /* Brator whats hot area start */
-.brator-offer-slider-area.brator-whats-hot-area.design-two .brator-hot-single-box {
+.brator-offer-slider-area.brator-whats-hot-area.rollparts-design .brator-hot-single-box {
     min-height: 320px;
     background-color: #f2f2f7;
 }
-.brator-hot-single-box .brator-hot-box-content .brator-hot-box-button.hot-shop-btn-design-two a {
+.brator-hot-single-box .brator-hot-box-content .brator-hot-box-button.hot-shop-btn-rollparts-design a {
     background: transparent;
     border: unset;
     color: #000000;
@@ -90,7 +90,7 @@
     height: auto;
     text-transform: uppercase;
 }
-.brator-hot-single-box .brator-hot-box-content .brator-hot-box-button.hot-shop-btn-design-two a:hover {
+.brator-hot-single-box .brator-hot-box-content .brator-hot-box-button.hot-shop-btn-rollparts-design a:hover {
     text-decoration: underline;
     color: var(--color-dark);
 }
@@ -100,4 +100,3 @@
       background-position: 0 0;
     }
 }
-  

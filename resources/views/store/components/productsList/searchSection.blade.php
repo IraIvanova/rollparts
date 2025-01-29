@@ -1,6 +1,6 @@
-<div class="elementor-widget-container">
+<div class="section-widget-container">
 
-    <div class="brator-parts-search-box-area design-two ">
+    <div class="brator-parts-search-box-area rollparts-design ">
         <form method="get" id="advanced-searchform" class="brator-parts-search-box-form" role="search" action="https://brator-main.smartdemowp.com/shop/">
             <input type="hidden" name="search" value="advanced">
             <select class="select-year-parts brator-select-active select2-hidden-accessible" id="makeyear" name="makeyear" tabindex="-1" aria-hidden="true">

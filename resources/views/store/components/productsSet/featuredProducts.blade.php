@@ -6,7 +6,7 @@
                     <h2>Frequently Bought Together</h2>
                     <div class="brator-product-single-frequently-list">
                         <div class="product-list-items check-box-product">
-                            <div class="brator-product-single-item-area design-two">
+                            <div class="brator-product-single-item-area rollparts-design">
                                 <div class="brator-product-single-item-img"><a
                                         href="https://brator-main.smartdemowp.com/product/polit-automatic-proshift-shift-knob/"><img
                                             loading="lazy" width="225" height="225"
@@ -36,8 +36,8 @@
                                         </div>
                                     </div>
                                     <div class="brator-product-single-item-price">
-                                        <p><span class="woocommerce-Price-amount amount"><bdi><span
-                                                        class="woocommerce-Price-currencySymbol">$</span>32.00</bdi></span>
+                                        <p><span class="rollparts-Price-amount amount"><bdi><span
+                                                        class="rollparts-currencySymbol">$</span>32.00</bdi></span>
                                         </p>
                                     </div>
                                     <div class="brator-product-single-item-checkbox">
@@ -72,7 +72,7 @@
                                     </svg>
                                 </div>
                             </div>
-                            <div class="brator-product-single-item-area design-two">
+                            <div class="brator-product-single-item-area rollparts-design">
                                 <div class="brator-product-single-item-img"><a
                                         href="https://brator-main.smartdemowp.com/product/sanex-rfx2-brushed-titanium/"><img
                                             loading="lazy" width="225" height="225"
@@ -103,13 +103,13 @@
                                     </div>
                                     <div class="brator-product-single-item-price">
                                         <p>
-                                            <del><span class="woocommerce-Price-amount amount"><bdi><span
-                                                            class="woocommerce-Price-currencySymbol">$</span>20.00</bdi></span>
+                                            <del><span class="rollparts-Price-amount amount"><bdi><span
+                                                            class="rollparts-currencySymbol">$</span>20.00</bdi></span>
                                             </del>
                                             <span
                                                 class="screen-reader-text">Original price was: $20.00.</span>
-                                            <ins><span class="woocommerce-Price-amount amount"><bdi><span
-                                                            class="woocommerce-Price-currencySymbol">$</span>18.00</bdi></span>
+                                            <ins><span class="rollparts-Price-amount amount"><bdi><span
+                                                            class="rollparts-currencySymbol">$</span>18.00</bdi></span>
                                             </ins>
                                             <span
                                                 class="screen-reader-text">Current price is: $18.00.</span>

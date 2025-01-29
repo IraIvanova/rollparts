@@ -16,29 +16,29 @@
         <span class="sm-title">Price:</span>
         @if($product->discounted_price !== $product->price)
             <p>
-                <span class="woocommerce-Price-amount amount color-red"><span
-                        class="woocommerce-Price-currencySymbol">{{ trans('interface.trLira') }}</span>{{ $product->discounted_price }}</span>
+                <span class="rollparts-Price-amount amount color-red"><span
+                        class="rollparts-currencySymbol">{{ trans('interface.trLira') }}</span>{{ $product->discounted_price }}</span>
 
 
-                <span class="woocommerce-Price-amount amount px-2 color-grey line-through"><span
-                        class="woocommerce-Price-currencySymbol">{{ trans('interface.trLira') }}</span>{{ $product->price }}</span>
+                <span class="rollparts-Price-amount amount px-2 color-grey line-through"><span
+                        class="rollparts-currencySymbol">{{ trans('interface.trLira') }}</span>{{ $product->price }}</span>
             </p>
         @else
-            <span class="woocommerce-Price-amount amount"><span
-                    class="woocommerce-Price-currencySymbol">{{ trans('interface.trLira') }}</span>{{ $product->price }}</span>
+            <span class="rollparts-Price-amount amount"><span
+                    class="rollparts-currencySymbol">{{ trans('interface.trLira') }}</span>{{ $product->price }}</span>
         @endif
     </td>
     <td class="product-quantity" data-title="Quantity">
         <span class="sm-title">Amount:</span>
-        <div class="quantity brator-product-single-cart-count">
+        <div class="quantity rollparts-product-single-cart-count">
               {{ $product->amount }}
         </div>
     </td>
     <td class="product-subtotal" data-title="Subtotal">
         <span class="sm-title">Total:</span>
         <p>
-                <b class="woocommerce-Price-amount amount"><span
-                        class="woocommerce-Price-currencySymbol">{{ trans('interface.trLira') }}</span>{{ ($product->discounted_price ?: $product->price) * $product->amount }}</b>
+                <b class="rollparts-Price-amount amount"><span
+                        class="rollparts-currencySymbol">{{ trans('interface.trLira') }}</span>{{ ($product->discounted_price ?: $product->price) * $product->amount }}</b>
         </p>
     </td>
 </tr>

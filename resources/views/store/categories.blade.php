@@ -5,12 +5,12 @@
     <div>
         @include('store.components.breadcrumbs')
 
-        <div class="brator-categories-list-area design-two ">
+        <div class="rollparts-categories-list-area rollparts-design ">
             <div class="container container-xxxl">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="brator-section-header" style="justify-content:left">
-                            <div class="brator-section-header-title">
+                        <div class="rollparts-section-header" style="justify-content:left">
+                            <div class="rollparts-section-header-title">
                                 <h2>Categories</h2>
                             </div>
                         </div>

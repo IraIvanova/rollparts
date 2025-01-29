@@ -20,43 +20,34 @@
     <link type="text/css" rel="stylesheet" href="{{asset('css/slick-theme.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('css/store/megamenu-style.css')}}"/>
 
-    {{--        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">--}}
-    {{----}}
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
             integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
-<body
-    class="page-template page-template-elementor_header_footer page page-id-360 theme-brator woocommerce-js woo-variation-swatches wvs-behavior-blur wvs-theme-brator wvs-show-label wvs-tooltip tinvwl-theme-style elementor-default elementor-template-full-width elementor-kit-11 elementor-page elementor-page-360 loading-frame e--ua-blink e--ua-chrome e--ua-webkit"
-   >
+<body class="page-template page">
 <div class="page-wrapper">
     <input type="hidden" id="cart-route" value="{{route('addToCart')}}"/>
     @include('store.components.header.header')
     @yield('bodyContent')
-    <div class="brator-footer-top-area">
+    <div class="footer-block">
         <div class="container-xxxl container-xxl container">
-            <div data-elementor-type="page" data-elementor-id="1436" class="elementor elementor-1436">
-                <section
-                    class="elementor-section elementor-top-section elementor-element elementor-element-46aedc39 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
-                    data-id="46aedc39" data-element_type="section">
-                    <div class="elementor-container elementor-column-gap-no">
-                        <div
-                            class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-316c1070 col-xl-4 col-lg-6"
-                            data-id="316c1070" data-element_type="column">
-                            <div class="elementor-widget-wrap elementor-element-populated">
-                                <div
-                                    class="elementor-element elementor-element-d303512 elementor-widget elementor-widget-brator_footer_about_two">
-                                    <div class="elementor-widget-container">
-                                        <div class="brator-footer-top-element brator-footer-top-address">
+            <div>
+                <section class="rollparts-section">
+                    <div class="section-container section-column-gap-no">
+                        <div class="section-column section-col-25 section-element col-xl-4 col-lg-6">
+                            <div class="section-widget-wrap section-element-populated">
+                                <div class="section-element section-widget">
+                                    <div class="section-widget-container">
+                                        <div class="rollparts-footer-top-element rollparts-footer-top-address">
                                             <h6 class="footer-top-title">{{ trans('interface.footer.contactUs') }}</h6>
-                                            <div class="brator-footer-top-content">
+                                            <div class="rollparts-footer-top-content">
                                                 <p>{{ trans('interface.footer.workingHours', ['hours' => $contacts['workingHours']]) }}</p>
                                                 <a class="call-top-p"
                                                    href="tel:{{ $contacts['phone'] }}">{{ $contacts['phone'] }}</a>
                                                 <p>{{ $contacts['address'] }}</p>
                                                 <a class="e-mail-to"
-                                                   href="https://brator-main.smartdemowp.com/shop-categories/#_">info@brator.com</a>
+                                                   href="mailto:{{ $contacts['email'] }}">{{ $contacts['email'] }}</a>
                                              </div>
                                         </div>
                                     </div>
@@ -64,28 +55,25 @@
                             </div>
                         </div>
                         <div
-                            class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-60c8e59 col-xl-2 col-lg-6"
-                            data-id="60c8e59" data-element_type="column">
-                            <div class="elementor-widget-wrap elementor-element-populated">
+                            class="section-column section-col-25  section-element col-xl-2 col-lg-6">
+                            <div class="section-widget-wrap section-element-populated">
                                 <div
-                                    class="elementor-element elementor-element-8b07348 elementor-widget elementor-widget-brator_footer_links"
-                                    data-id="8b07348" data-element_type="widget"
-                                    data-widget_type="brator_footer_links.default">
-                                    <div class="elementor-widget-container">
-                                        <div class="brator-footer-top-element">
+                                    class="section-element section-widget">
+                                    <div class="section-widget-container">
+                                        <div class="rollparts-footer-top-element">
                                             <h6 class="footer-top-title">{{ trans('interface.footer.customerService') }}</h6>
-                                            <div class="brator-footer-top-content brator-link-list-one">
+                                            <div class="rollparts-footer-top-content rollparts-link-list-one">
                                                 <ul>
                                                     <li class="link_with_normal">
-                                                        <a href="https://brator-main.smartdemowp.com/my-account/">
+                                                        <a href="">
                                                             {{ trans('interface.footer.myAccount') }}</a>
                                                     </li>
                                                     <li class="link_with_normal">
-                                                        <a href="https://brator-main.smartdemowp.com/shop-categories/#">
+                                                        <a href="">
                                                             {{ trans('interface.footer.returnPolicy') }}</a>
                                                     </li>
                                                     <li class="link_with_normal">
-                                                        <a href="https://brator-main.smartdemowp.com/shop-categories/#">
+                                                        <a href="">
                                                             {{ trans('interface.footer.faq') }} </a>
                                                     </li>
                                                 </ul>
@@ -96,24 +84,21 @@
                             </div>
                         </div>
                         <div
-                            class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-39ed13e5 col-xxl-3 col-xl-2 col-lg-6"
-                            data-id="39ed13e5" data-element_type="column">
-                            <div class="elementor-widget-wrap elementor-element-populated">
+                            class="section-column section-col-25  section-element col-xxl-3 col-xl-2 col-lg-6">
+                            <div class="section-widget-wrap section-element-populated">
                                 <div
-                                    class="elementor-element elementor-element-4bc56d78 elementor-widget elementor-widget-brator_footer_links"
-                                    data-id="4bc56d78" data-element_type="widget"
-                                    data-widget_type="brator_footer_links.default">
-                                    <div class="elementor-widget-container">
-                                        <div class="brator-footer-top-element">
+                                    class="section-element section-widget">
+                                    <div class="section-widget-container">
+                                        <div class="rollparts-footer-top-element">
                                             <h6 class="footer-top-title">{{ trans('interface.footer.information') }}</h6>
-                                            <div class="brator-footer-top-content brator-link-list-one">
+                                            <div class="rollparts-footer-top-content rollparts-link-list-one">
                                                 <ul>
                                                     <li class="link_with_normal">
-                                                        <a href="https://brator-main.smartdemowp.com/about-us/">
+                                                        <a href="">
                                                             {{ trans('interface.footer.about') }}</a>
                                                     </li>
                                                     <li class="link_with_normal">
-                                                        <a href="https://brator-main.smartdemowp.com/contact-us/">
+                                                        <a href="">
                                                             {{ trans('interface.footer.contactUs') }} </a>
                                                     </li>
                                                     <li class="link_with_normal">
@@ -128,35 +113,16 @@
                             </div>
                         </div>
                         <div
-                            class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-6265ddfc col-xl-3 col-lg-6"
-                            data-id="6265ddfc" data-element_type="column">
-                            <div class="elementor-widget-wrap elementor-element-populated">
+                            class="section-column section-col-25  section-element col-xl-3 col-lg-6">
+                            <div class="section-widget-wrap section-element-populated">
                                 <div
-                                    class="elementor-element elementor-element-f5438ae elementor-widget elementor-widget-brator_footer_newsletter"
-                                    data-id="f5438ae" data-element_type="widget"
-                                    data-widget_type="brator_footer_newsletter.default">
-                                    <div class="elementor-widget-container">
-                                        <div class="brator-footer-top-element">
+                                    class="section-element section-widget">
+                                    <div class="section-widget-container">
+                                        <div class="rollparts-footer-top-element">
                                             <h6 class="footer-top-title">Subscribe To Our Newsletter</h6>
-                                            <div class="brator-footer-top-content">
+                                            <div class="rollparts-footer-top-content">
                                                 <p>Register now to get latest updates on promotions &amp; coupons. Don’t
                                                     worry, we not spam!</p>
-                                                <div class="brator-sub-form">
-                                                    <div class="news-letter-form">
-
-                                                        <div class="wpcf7 js" id="wpcf7-f292-o1" lang="en-US" dir="ltr"
-                                                             data-wpcf7-id="292">
-                                                            <div class="screen-reader-response"><p role="status"
-                                                                                                   aria-live="polite"
-                                                                                                   aria-atomic="true"></p>
-                                                                <ul></ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <p>By subscribing, you accepted the our<a
-                                                        href="https://brator-main.smartdemowp.com/shop-categories/#_">Policy</a>
-                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -168,11 +134,11 @@
             </div>
         </div>
     </div>
-    <footer class="brator-footer-area">
+    <footer class="rollparts-footer-area">
         <div class="container-xxxl container-xxl container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12">
-                    <div class="brator-copyright-area">
+                    <div class="rollparts-copyright-area">
                         <p> {{ trans('interface.footer.copyright', ['year' => 2025]) }}</p>
                     </div>
                 </div>
@@ -187,8 +153,8 @@
 {{--                    </div>--}}
                 </div>
                 <div class="col-lg-4 col-12">
-                    <div class="brator-social-link svg-link">
-                        <h6 class="brator-social-link">{{ trans('interface.footer.followUs') }}</h6>
+                    <div class="rollparts-social-link svg-link">
+                        <h6 class="rollparts-social-link">{{ trans('interface.footer.followUs') }}</h6>
                         <a href="https://twitter.com/">
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">

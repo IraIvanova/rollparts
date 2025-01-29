@@ -1,7 +1,7 @@
-<div class="brator-best-seller-section-header-area py-5">
+<div class="rollparts-best-seller-section-header-area py-5">
     <div class="row">
-    <div class=" col-12 brator-section-header all-item-left">
-        <div class="brator-section-header-title mb-2">
+    <div class=" col-12 rollparts-section-header all-item-left">
+        <div class="rollparts-section-header-title mb-2">
             <h2>{{ trans('interface.home.bestsellers') }}</h2>
         </div>
         <a href="{{ route('catalog') }}">{{ trans('interface.home.seeAllProducts') }}
@@ -21,10 +21,10 @@
     </div>
 </div>
 
-<div class="brator-best-seller-section-header-area py-5">
+<div class="rollparts-best-seller-section-header-area py-5">
     <div class="row">
-        <div class=" col-12 brator-section-header all-item-left">
-            <div class="brator-section-header-title mb-2">
+        <div class=" col-12 rollparts-section-header all-item-left">
+            <div class="rollparts-section-header-title mb-2">
                 <h2>{{ trans('interface.home.newProducts') }}</h2>
             </div>
             <a href="{{ route('catalog') }}">{{ trans('interface.home.seeAllProducts') }}

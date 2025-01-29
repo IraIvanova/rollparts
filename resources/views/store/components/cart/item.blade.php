@@ -15,24 +15,24 @@
         <span class="sm-title">Price:</span>
         @if($product['discountedPrice'])
             <p>
-                <span class="woocommerce-Price-amount amount color-red"><span
-                        class="woocommerce-Price-currencySymbol">$</span>{{ $product['discountedPrice'] }}</span>
+                <span class="rollparts-Price-amount amount color-red"><span
+                        class="rollparts-currencySymbol">$</span>{{ $product['discountedPrice'] }}</span>
 
 
-                <span class="woocommerce-Price-amount amount px-2 color-grey line-through"><span
-                        class="woocommerce-Price-currencySymbol">$</span>{{ $product['price'] }}</span>
+                <span class="rollparts-Price-amount amount px-2 color-grey line-through"><span
+                        class="rollparts-currencySymbol">$</span>{{ $product['price'] }}</span>
             </p>
         @else
-            <span class="woocommerce-Price-amount amount"><span
-                    class="woocommerce-Price-currencySymbol">$</span>{{ $product['price'] }}</span>
+            <span class="rollparts-Price-amount amount"><span
+                    class="rollparts-currencySymbol">$</span>{{ $product['price'] }}</span>
         @endif
     </td>
     <td class="product-quantity" data-title="Quantity">
         <span class="sm-title">Amount:</span>
-        <div class="quantity brator-product-single-cart-count">
+        <div class="quantity rollparts-product-single-cart-count">
 
             <div
-                class="item-quantity tt-input-counter js-counter brator-brator-cart-list-items-qty" data-product="{{$product['id']}}">
+                class="item-quantity tt-input-counter js-counter rollparts-cart-list-items-qty" data-product="{{$product['id']}}">
                 <span class="minus-btn amount-btn">–</span>
                 <input type="number"
                        class="input-text qty text"
@@ -47,8 +47,8 @@
     <td class="product-subtotal" data-title="Subtotal">
         <span class="sm-title">Total:</span>
             <p>
-                <span class="woocommerce-Price-amount amount"><span
-                        class="woocommerce-Price-currencySymbol">$</span>{{ ($product['discountedPrice'] ?: $product['price']) * $product['amount'] }}</span>
+                <span class="rollparts-Price-amount amount"><span
+                        class="rollparts-currencySymbol">$</span>{{ ($product['discountedPrice'] ?: $product['price']) * $product['amount'] }}</span>
             </p>
     </td>
     <td class="product-remove brator-cart-list-items-removed" data-product="{{$product['id']}}">

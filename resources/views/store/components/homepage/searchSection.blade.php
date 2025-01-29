@@ -1,19 +1,19 @@
-<section class="elementor-section elementor-top-section elementor-element elementor-element-35b8338 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="35b8338" data-element_type="section">
-    <div class="elementor-container elementor-column-gap-default">
-        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-78f8c0f" data-id="78f8c0f" data-element_type="column">
-            <div class="elementor-widget-wrap elementor-element-populated">
-                <div class="elementor-element elementor-element-6c2e4a1 elementor-widget elementor-widget-heading" data-id="6c2e4a1" data-element_type="widget" data-widget_type="heading.default">
-                    <div class="elementor-widget-container">
+<section class="rollparts-section  section-element section-element-35b8338 rollparts-section-boxed rollparts-section-height-default rollparts-section-height-default" data-id="35b8338" data-element_type="section">
+    <div class="section-container section-column-gap-default">
+        <div class="section-column section-col-100  section-element section-element-78f8c0f" data-id="78f8c0f" data-element_type="column">
+            <div class="section-widget-wrap section-element-populated">
+                <div class="section-element section-element-6c2e4a1 section-widget section-widget-heading" data-id="6c2e4a1" data-element_type="widget" data-widget_type="heading.default">
+                    <div class="section-widget-container">
                         <h2 class="elementor-heading-title elementor-size-default">Search by Vehicle</h2>		</div>
                 </div>
-                <div class="elementor-element elementor-element-ee8962e elementor-widget elementor-widget-heading" data-id="ee8962e" data-element_type="widget" data-widget_type="heading.default">
-                    <div class="elementor-widget-container">
+                <div class="section-element section-element-ee8962e section-widget section-widget-heading" data-id="ee8962e" data-element_type="widget" data-widget_type="heading.default">
+                    <div class="section-widget-container">
                         <p class="elementor-heading-title elementor-size-default">Filter your results by entering your Vehicle to ensure you find the parts that fit.</p>		</div>
                 </div>
-                <div class="elementor-element elementor-element-ccf0456 elementor-widget elementor-widget-brator_advance_search" data-id="ccf0456" data-element_type="widget" data-widget_type="brator_advance_search.default">
-                    <div class="elementor-widget-container">
+                <div class="section-element section-element-ccf0456 section-widget section-widget-brator_advance_search" data-id="ccf0456" data-element_type="widget" data-widget_type="brator_advance_search.default">
+                    <div class="section-widget-container">
 
-                        <div class="brator-parts-search-box-area design-two ">
+                        <div class="brator-parts-search-box-area rollparts-design ">
                             <form method="get" id="advanced-searchform" class="brator-parts-search-box-form" role="search" action="https://brator-main.smartdemowp.com/shop/">
                                 <input type="hidden" name="search" value="advanced">
                                 <select class="select-year-parts brator-select-active select2-hidden-accessible" id="makeyear" name="makeyear" tabindex="-1" aria-hidden="true">

@@ -1,10 +1,10 @@
 @if(!empty($recentlyViewedProducts))
-    <div class="brator-deal-product-slider recently-view woocommerce">
+    <div class="recently-view woocommerce">
         <div class="container-xxxl container-xxl container">
             <div class="row">
                 <div class="col-12">
-                    <div class="brator-section-header">
-                        <div class="brator-section-header-title">
+                    <div class="rollparts-section-header">
+                        <div class="rollparts-section-header-title">
                             <h2>Recently Viewed</h2>
                         </div>
                     </div>

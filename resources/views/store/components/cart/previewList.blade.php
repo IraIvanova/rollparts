@@ -19,8 +19,8 @@
                             <div class="price-pdo">
                                 <h6>
                                                 <span class="quantity">{{$product['amount']}} × <span
-                                                        class="woocommerce-Price-amount amount"><bdi><span
-                                                                class="woocommerce-Price-currencySymbol">{{ trans('interface.trLira') }}</span>{{min($product['price'], $product['discountedPrice'])}}</bdi></span></span>
+                                                        class="rollparts-Price-amount amount"><bdi><span
+                                                                class="rollparts-currencySymbol">{{ trans('interface.trLira') }}</span>{{min($product['price'], $product['discountedPrice'])}}</bdi></span></span>
                                 </h6>
                             </div>
                         </div>
@@ -32,8 +32,8 @@
     </ul>
     <div class="brator-cart-total-money">
         <div class="woocommerce-mini-cart__total total brator-cart-total-header">
-            <strong>{{ trans('interface.cart.subtotal') }}:</strong> <span class="woocommerce-Price-amount amount"><bdi><span
-                        class="woocommerce-Price-currencySymbol">{{ trans('interface.trLira') }}</span>{{min($shoppingCart['totalWithDiscount'], $shoppingCart['totalPrice'])}}</bdi></span>
+            <strong>{{ trans('interface.cart.subtotal') }}:</strong> <span class="rollparts-Price-amount amount"><bdi><span
+                        class="rollparts-currencySymbol">{{ trans('interface.trLira') }}</span>{{min($shoppingCart['totalWithDiscount'], $shoppingCart['totalPrice'])}}</bdi></span>
         </div>
         <div class="woocommerce-mini-cart__buttons brator-cart-total-action">
             <a href="{{route('cart')}}" class="button wc-forward">{{ trans('interface.buttons.viewCart') }}</a><a href="{{route('checkout')}}"

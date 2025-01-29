@@ -25,14 +25,14 @@
                     @if($order->total_price_with_discount !== $order->total_price)
                 <p class="cart-subtotal  d-flex justify-content-between">
                     <span>Subtotal</span>
-                    <span data-title="Subtotal"><span class="woocommerce-Price-amount amount"><bdi><span
-                                    class="woocommerce-Price-currencySymbol">$</span>{{$order->total_price}}</bdi></span>
+                    <span data-title="Subtotal"><span class="rollparts-Price-amount amount"><bdi><span
+                                    class="rollparts-currencySymbol">$</span>{{$order->total_price}}</bdi></span>
                     </span>
                 </p>
                 <p class=" d-flex justify-content-between">
                     <span>Discount</span>
-                    <span data-title="Subtotal"><span class="woocommerce-Price-amount amount"><bdi><span
-                                    class="woocommerce-Price-currencySymbol">$</span>{{$order->total_price - $order->total_price_with_discount}}</bdi></span>
+                    <span data-title="Subtotal"><span class="rollparts-Price-amount amount"><bdi><span
+                                    class="rollparts-currencySymbol">$</span>{{$order->total_price - $order->total_price_with_discount}}</bdi></span>
                     </span>
                 </p>
                     @endif

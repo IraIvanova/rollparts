@@ -86,8 +86,8 @@
                         </svg>
                         <span class="header-cart-count">{{$shoppingCart['totalItems']}}</span>
                     </div>
-                    <b class="header-cart-total"><span class="woocommerce-Price-amount amount"><span
-                                class="woocommerce-Price-currencySymbol">{{ trans('interface.shoppingCart') }} </span></span></b>
+                    <b class="header-cart-total"><span class="rollparts-Price-amount amount"><span
+                                class="rollparts-currencySymbol">{{ trans('interface.shoppingCart') }} </span></span></b>
 
                 </a>
             </li>

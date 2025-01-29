@@ -15,8 +15,8 @@
             </svg>
             <span class="header-cart-count">{{$shoppingCart['totalItems']}}</span>
         </div>
-        <b class="header-cart-total"><span class="woocommerce-Price-amount amount"><bdi><span
-                        class="woocommerce-Price-currencySymbol">{{ trans('interface.trLira') }} </span>{{min($shoppingCart['totalWithDiscount'], $shoppingCart['totalPrice'])}}</bdi></span></b>
+        <b class="header-cart-total"><span class="rollparts-Price-amount amount"><bdi><span
+                        class="rollparts-currencySymbol">{{ trans('interface.trLira') }} </span>{{min($shoppingCart['totalWithDiscount'], $shoppingCart['totalPrice'])}}</bdi></span></b>
 
     </a>
     <div class="brator-cart-item-list" id="cart-preview">

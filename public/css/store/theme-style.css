@@ -17,15 +17,15 @@
 
 .button-fill-one,
 .woocommerce .brator-product-single-frequently-total button,
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-button-added button,
-.brator-product-hero-content .brator-product-hero-content-add-to-cart .brator-product-single-cart-count-add .brator-product-single-cart-add button,
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-button-added button,
+.rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .rollparts-product-single-cart-count-add .rollparts-product-single-cart-add button,
 .cart-total-area .cart-total-process a,
 .brator-cart-info .brator-cart-checkout .brator-cart-checkout-right .brator-cart-checkout-back button,
 .brator-cart-info .brator-cart-checkout .brator-cart-checkout-left .brator-cart-checkout-fields button,
 .brator-filter-item-content-area .brator-rang-item-input .brator-rang-item-input-single-btn button.ac-trigger,
 .brator-current-vehicle .brator-current-vehicle-content a,
 .brator-parts-search-box-form button,
-.brator-banner-area.design-two .brator-banner-content .brator-banner-content-action a,
+.brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-action a,
 .brator-parts-search-box-area.design-one .brator-parts-search-box-form button,
 .product-list-items.type-list .brator-product-single-item-area.design-three .brator-product-single-item-area-right .brator-product-single-item-btn .brator-product-single-item-btn-cart .button,
 .add_to_cart_button,
@@ -35,7 +35,7 @@
 .brator-newsletter-form.design-one .news-letter-form button,
 .brator-newsletter-box .brator-newsletter-box-content button.wpcf7-submit,
 .brator-contact-form-fields .brator-contact-form-field button,
-.brator-footer-top-element .brator-sub-form button,
+.rollparts-footer-top-element .brator-sub-form button,
 .brator-cart-item-list .brator-cart-total-money .brator-cart-total-action a {
     font-size: 16px;
     font-weight: 700;
@@ -52,15 +52,15 @@
 
 .button-fill-one:hover,
 .brator-product-single-frequently-total button:hover,
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-button-added button:hover,
-.brator-product-hero-content .brator-product-hero-content-add-to-cart .brator-product-single-cart-count-add .brator-product-single-cart-add button:hover,
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-button-added button:hover,
+.rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .rollparts-product-single-cart-count-add .rollparts-product-single-cart-add button:hover,
 .cart-total-area .cart-total-process a:hover,
 .brator-cart-info .brator-cart-checkout .brator-cart-checkout-right .brator-cart-checkout-back button:hover,
 .brator-cart-info .brator-cart-checkout .brator-cart-checkout-left .brator-cart-checkout-fields button:hover,
 .brator-filter-item-content-area .brator-rang-item-input .brator-rang-item-input-single-btn button.ac-trigger:hover,
 .brator-current-vehicle .brator-current-vehicle-content a:hover,
-.brator-parts-search-box-area.design-two .brator-parts-search-box-form button:hover,
-.brator-banner-area.design-two .brator-banner-content .brator-banner-content-action a:hover,
+.brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form button:hover,
+.brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-action a:hover,
 .brator-parts-search-box-area.design-one .brator-parts-search-box-form button:hover,
 .product-list-items.type-list .brator-product-single-item-area.design-three .brator-product-single-item-area-right .brator-product-single-item-btn .brator-product-single-item-btn-cart button:hover,
 .add_to_cart_button:hover,
@@ -70,7 +70,7 @@
 .brator-newsletter-form.design-one .news-letter-form button:hover,
 .brator-newsletter-box .brator-newsletter-box-content button.wpcf7-submit:hover,
 .brator-contact-form-fields .brator-contact-form-field button:hover,
-.brator-footer-top-element .brator-sub-form button:hover,
+.rollparts-footer-top-element .brator-sub-form button:hover,
 .brator-cart-item-list .brator-cart-total-money .brator-cart-total-action a:hover {
     background: #000;
     border: 2px solid #000;
@@ -224,7 +224,7 @@ input[type="email"] {
 }
 
 .input-style-one,
-.brator-footer-top-element .brator-sub-form input,
+.rollparts-footer-top-element .brator-sub-form input,
 .brator-search-area .search-form input {
     border-width: 1px;
     border-color: var(--color-light-two);
@@ -235,19 +235,19 @@ input[type="email"] {
 }
 
 .input-style-one::-moz-placeholder,
-.brator-footer-top-element .brator-sub-form input::-moz-placeholder,
+.rollparts-footer-top-element .brator-sub-form input::-moz-placeholder,
 .brator-search-area .search-form input::-moz-placeholder {
     color: #999999;
 }
 
 .input-style-one:-ms-input-placeholder,
-.brator-footer-top-element .brator-sub-form input:-ms-input-placeholder,
+.rollparts-footer-top-element .brator-sub-form input:-ms-input-placeholder,
 .brator-search-area .search-form input:-ms-input-placeholder {
     color: #999999;
 }
 
 .input-style-one::placeholder,
-.brator-footer-top-element .brator-sub-form input::placeholder,
+.rollparts-footer-top-element .brator-sub-form input::placeholder,
 .brator-search-area .search-form input::placeholder {
     color: #999999;
 }
@@ -381,8 +381,8 @@ textarea::placeholder {
 }
 
 .a-batch-one,
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-review .product-batch.off-batch,
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-review .product-batch.yollow-batch,
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-review .product-batch.off-batch,
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-review .product-batch.yollow-batch,
 .yollow-batch,
 .brator-product-single-item-area .brator-product-single-item-info .stock-out-batch,
 .brator-product-single-item-area .brator-product-single-item-info .off-batch,
@@ -466,14 +466,14 @@ textarea::placeholder {
 }
 
 .input-checkbox-two,
-.product-list-items.check-box-product .brator-product-single-item-area.design-two .brator-product-single-item-checkbox,
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single {
+.product-list-items.check-box-product .brator-product-single-item-area.rollparts-design .brator-product-single-item-checkbox,
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single {
     position: relative;
 }
 
 .input-checkbox-two input,
-.product-list-items.check-box-product .brator-product-single-item-area.design-two .brator-product-single-item-checkbox input,
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single input {
+.product-list-items.check-box-product .brator-product-single-item-area.rollparts-design .brator-product-single-item-checkbox input,
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single input {
     position: absolute;
     left: 0;
     top: 0;
@@ -485,8 +485,8 @@ textarea::placeholder {
 }
 
 .input-checkbox-two input[type=checkbox]:checked+.arow-check-right::after,
-.product-list-items.check-box-product .brator-product-single-item-area.design-two .brator-product-single-item-checkbox input[type=checkbox]:checked+.arow-check-right::after,
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single input[type=checkbox]:checked+.arow-check-right::after {
+.product-list-items.check-box-product .brator-product-single-item-area.rollparts-design .brator-product-single-item-checkbox input[type=checkbox]:checked+.arow-check-right::after,
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single input[type=checkbox]:checked+.arow-check-right::after {
     background-color: var(--color-high-dark);
     border-color: var(--color-high-dark);
     background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
@@ -496,8 +496,8 @@ textarea::placeholder {
 }
 
 .input-checkbox-two .arow-check-right,
-.product-list-items.check-box-product .brator-product-single-item-area.design-two .brator-product-single-item-checkbox .arow-check-right,
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single .arow-check-right {
+.product-list-items.check-box-product .brator-product-single-item-area.rollparts-design .brator-product-single-item-checkbox .arow-check-right,
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single .arow-check-right {
     position: relative;
     font-size: 14px;
     color: #666666;
@@ -505,8 +505,8 @@ textarea::placeholder {
 }
 
 .input-checkbox-two .arow-check-right::before,
-.product-list-items.check-box-product .brator-product-single-item-area.design-two .brator-product-single-item-checkbox .arow-check-right::before,
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single .arow-check-right::before {
+.product-list-items.check-box-product .brator-product-single-item-area.rollparts-design .brator-product-single-item-checkbox .arow-check-right::before,
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single .arow-check-right::before {
     content: "";
     display: block;
     border-width: 1px;
@@ -522,8 +522,8 @@ textarea::placeholder {
 }
 
 .input-checkbox-two .arow-check-right::after,
-.product-list-items.check-box-product .brator-product-single-item-area.design-two .brator-product-single-item-checkbox .arow-check-right::after,
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single .arow-check-right::after {
+.product-list-items.check-box-product .brator-product-single-item-area.rollparts-design .brator-product-single-item-checkbox .arow-check-right::after,
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single .arow-check-right::after {
     content: "";
     display: block;
     border-width: 1px;
@@ -1908,7 +1908,7 @@ blockquote {
     }
 }
 
-.brator-section-header {
+.rollparts-section-header {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -1916,14 +1916,14 @@ blockquote {
     margin-bottom: 35px;
 }
 
-.brator-section-header h2 {
+.rollparts-section-header h2 {
     font-size: 30px;
     color: black;
     font-weight: 600;
     margin-right: 35px;
 }
 
-.brator-section-header a {
+.rollparts-section-header a {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -1932,14 +1932,14 @@ blockquote {
     line-height: 1.571;
 }
 
-.brator-section-header a svg {
+.rollparts-section-header a svg {
     font-size: 16px;
     position: relative;
     top: 2px;
     margin-left: 10px;
 }
 
-.brator-section-header a:hover {
+.rollparts-section-header a:hover {
     color: var(--color-high-dark);
 }
 
@@ -3513,64 +3513,64 @@ h3#ship-to-different-address {
     }
 }
 
-.brator-footer-top-area {
+.footer-block {
     border-top: 1px solid #e5e5e5;
     margin-top: auto;
     padding-top: 100px;
     padding-bottom: 50px;
 }
 
-.brator-footer-top-element h6.footer-top-title {
+.rollparts-footer-top-element h6.footer-top-title {
     font-size: 20px;
     color: black;
     font-weight: 600;
     margin-bottom: 35px;
 }
 
-.brator-footer-top-element .brator-footer-top-content p {
+.rollparts-footer-top-element .rollparts-footer-top-content p {
     font-size: 14px;
     color: #666666;
     line-height: 1.714;
     margin-bottom: 10px;
 }
 
-.brator-footer-top-element .brator-footer-top-content p a {
+.rollparts-footer-top-element .rollparts-footer-top-content p a {
     text-decoration: underline;
     margin-left: 5px;
 }
 
-.brator-footer-top-element .brator-link-list-one ul {
+.rollparts-footer-top-element .rollparts-link-list-one ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.brator-footer-top-element .brator-link-list-one ul li {
+.rollparts-footer-top-element .rollparts-link-list-one ul li {
     display: block;
 }
 
-.brator-footer-top-element .brator-link-list-one a {
+.rollparts-footer-top-element .rollparts-link-list-one a {
     font-size: 14px;
     color: #666666;
     display: inline-block;
 }
 
-.brator-footer-top-element .brator-link-list-one a:hover {
+.rollparts-footer-top-element .rollparts-link-list-one a:hover {
     text-decoration: underline;
     color: var(--color-dark);
 }
 
-.brator-footer-top-element .brator-sub-form {
+.rollparts-footer-top-element .brator-sub-form {
     margin-bottom: 15px;
     margin-top: 25px;
     position: relative;
 }
 
-.brator-footer-top-element .brator-sub-form input {
+.rollparts-footer-top-element .brator-sub-form input {
     width: 100%;
 }
 
-.brator-footer-top-element .brator-sub-form button {
+.rollparts-footer-top-element .brator-sub-form button {
     position: absolute;
     right: 0;
     top: 0;
@@ -3580,38 +3580,38 @@ h3#ship-to-different-address {
     padding: 0px 20px;
 }
 
-.brator-footer-top-address h6.footer-top-title {
+.rollparts-footer-top-address h6.footer-top-title {
     font-size: 20px;
     color: black;
     font-weight: 600;
     margin-bottom: 40px;
 }
 
-.brator-footer-top-address .brator-footer-top-content p {
+.rollparts-footer-top-address .rollparts-footer-top-content p {
     width: 100%;
 }
 
-.brator-footer-top-address .brator-footer-top-content a {
+.rollparts-footer-top-address .rollparts-footer-top-content a {
     font-size: 24px;
     color: var(--color-high-dark);
     width: 100%;
 }
 
-.brator-footer-top-address .brator-footer-top-content .call-top-p {
+.rollparts-footer-top-address .rollparts-footer-top-content .call-top-p {
     margin-bottom: 20px;
     font-weight: 600;
 }
 
-.brator-footer-top-address .brator-footer-top-content .call-top-p+p {
+.rollparts-footer-top-address .rollparts-footer-top-content .call-top-p+p {
     margin-bottom: 0px;
 }
 
-.brator-footer-top-address .brator-footer-top-content img {
+.rollparts-footer-top-address .rollparts-footer-top-content img {
     margin-top: 35px;
     max-width: 330px;
 }
 
-.brator-footer-top-address .brator-footer-top-content .e-mail-to {
+.rollparts-footer-top-address .rollparts-footer-top-content .e-mail-to {
     font-size: 14px;
     color: #666666;
     line-height: 1.714;
@@ -3750,12 +3750,12 @@ h3#ship-to-different-address {
     margin-top: 5px;
 }
 
-.brator-footer-area {
+.rollparts-footer-area {
     padding: 50px 0;
     margin-top: auto;
 }
 
-.brator-copyright-area p {
+.rollparts-copyright-area p {
     font-size: 14px;
     color: #666666;
     line-height: 1.714;
@@ -3763,7 +3763,7 @@ h3#ship-to-different-address {
     margin: 0;
 }
 
-.brator-copyright-area p a {
+.rollparts-copyright-area p a {
     font-weight: 600;
     color: var(--color-dark);
     margin: 0px 4px;
@@ -3793,13 +3793,13 @@ h3#ship-to-different-address {
     margin-right: 0;
 }
 
-.brator-social-link {
+.rollparts-social-link {
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
-.brator-social-link h6 {
+.rollparts-social-link h6 {
     font-size: 14px;
     color: #666666;
     line-height: 1.714;
@@ -3808,37 +3808,37 @@ h3#ship-to-different-address {
     margin-right: 25px;
 }
 
-.brator-social-link a {
+.rollparts-social-link a {
     display: grid;
     margin-right: 14px;
 }
 
-.brator-social-link a svg {
+.rollparts-social-link a svg {
     font-size: 18px;
 }
 
-.brator-social-link a:last-child {
+.rollparts-social-link a:last-child {
     margin-right: 0px;
 }
 
-.brator-social-link a:hover {
+.rollparts-social-link a:hover {
     fill: var(--color-high-dark);
 }
 
-.brator-footer-area.gray-bg.design-two {
+.rollparts-footer-area.gray-bg.rollparts-design {
     background-color: #f6f7fa;
 }
 
-.brator-footer-top-area.gray-bg.design-two {
+.footer-block.gray-bg.rollparts-design {
     background-color: #f6f7fa;
 }
 
-.brator-footer-top-element.brator-footer-top-address img.title-img {
+.rollparts-footer-top-element.rollparts-footer-top-address img.title-img {
     margin-bottom: 20px;
     max-width: 191px;
 }
 
-.brator-footer-top-area.design-two .brator-footer-top-element.brator-footer-top-address .brator-footer-top-content h6 {
+.footer-block.rollparts-design .rollparts-footer-top-element.rollparts-footer-top-address .rollparts-footer-top-content h6 {
     font-size: 14px;
     color: black;
     font-weight: 700;
@@ -3846,12 +3846,12 @@ h3#ship-to-different-address {
     line-height: 24px;
 }
 
-.brator-footer-top-area.design-two .brator-footer-top-element.brator-footer-top-address .brator-footer-top-content .brator-social-link.svg-link {
+.footer-block.rollparts-design .rollparts-footer-top-element.rollparts-footer-top-address .rollparts-footer-top-content .rollparts-social-link.svg-link {
     margin-top: 35px;
     justify-content: flex-start;
 }
 
-.brator-footer-top-area.design-two .brator-footer-top-element.brator-footer-top-address .brator-footer-top-content .brator-social-link.svg-link a {
+.footer-block.rollparts-design .rollparts-footer-top-element.rollparts-footer-top-address .rollparts-footer-top-content .rollparts-social-link.svg-link a {
     width: auto;
     margin-right: 20px;
     color: #000;
@@ -3865,11 +3865,11 @@ h3#ship-to-different-address {
     padding-left: 0;
 }
 
-footer.brator-footer-area.design-three .brator-copyright-area p {
+footer.rollparts-footer-area.design-three .rollparts-copyright-area p {
     text-align: center;
 }
 
-.brator-footer-top-area.gray-bg.design-two.design-three {
+.footer-block.gray-bg.rollparts-design.design-three {
     border-top: 0;
 }
 
@@ -4781,12 +4781,12 @@ ul.wp-block-categories li a:hover,
     content: "";
 }
 
-.brator-categories-list-area.design-two {
+.rollparts-categories-list-area.rollparts-design {
     padding: 65px 0;
 }
 
 .brator-categories-grid,
-.brator-categories-list-area.design-two .brator-categories-list {
+.rollparts-categories-list-area.rollparts-design .brator-categories-list {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -4799,7 +4799,7 @@ ul.wp-block-categories li a:hover,
     width: 100%;
 }
 
-.brator-categories-list-area.design-two .brator-categories-single {
+.rollparts-categories-list-area.rollparts-design .brator-categories-single {
     max-width: calc(17% - 30px);
     width: 100%;
     border: 0;
@@ -4807,12 +4807,12 @@ ul.wp-block-categories li a:hover,
     transition: 0.3s;
 }
 
-.brator-categories-list-area.design-two .brator-categories-single:hover {
+.rollparts-categories-list-area.rollparts-design .brator-categories-single:hover {
     background-color: #fff;
     box-shadow: 0px 0px 20px 0px rgb(115 115 130 / 20%);
 }
 
-.brator-categories-list-area.design-two .brator-categories-single:hover .brator-categories-single-title a {
+.rollparts-categories-list-area.rollparts-design .brator-categories-single:hover .brator-categories-single-title a {
     text-decoration: underline;
 }
 
@@ -4820,11 +4820,11 @@ ul.wp-block-categories li a:hover,
     padding: 75px 0;
 }
 
-.brator-product-single-tab-area {
+.rollparts-product-single-tab-area {
     padding-bottom: 75px;
 }
 
-.brator-product-single-tab-area+.brator-deal-product-slider {
+.rollparts-product-single-tab-area+.brator-deal-product-slider {
     padding-top: 0;
 }
 
@@ -4932,7 +4932,7 @@ ul.wp-block-categories li a:hover,
     line-height: 26px;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-price h6 ins,
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-price h6 ins,
 .brator-product-single-item-area .brator-product-single-item-mini .brator-product-single-item-price p ins,
 .brator-product-single-item-area .brator-product-single-item-mini .brator-product-single-item-price p sub {
     color: var(--color-high-dark);
@@ -4941,7 +4941,7 @@ ul.wp-block-categories li a:hover,
     padding: 0;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-price h6 del,
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-price h6 del,
 .brator-product-single-item-area .brator-product-single-item-mini .brator-product-single-item-price p del,
 .brator-product-single-item-area .brator-product-single-item-mini .brator-product-single-item-price p b.pub {
     text-decoration: line-through;
@@ -4953,12 +4953,12 @@ ul.wp-block-categories li a:hover,
     order: 1;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-price h6 del {
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-price h6 del {
     order: 2;
     font-size: 20px;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-price h6 ins {
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-price h6 ins {
     order: 1;
 }
 
@@ -5049,37 +5049,37 @@ ul.wp-block-categories li a:hover,
     margin-top: 10px;
 }
 
-.brator-product-single-item-area.design-two .brator-product-single-item-mini .brator-product-single-item-cat {
+.brator-product-single-item-area.rollparts-design .brator-product-single-item-mini .brator-product-single-item-cat {
     margin-bottom: 3px;
 }
 
-.brator-product-single-item-area.design-two .brator-product-single-item-mini .brator-product-single-item-cat,
-.brator-product-single-item-area.design-two .brator-product-single-item-mini .brator-product-single-item-cat a {
+.brator-product-single-item-area.rollparts-design .brator-product-single-item-mini .brator-product-single-item-cat,
+.brator-product-single-item-area.rollparts-design .brator-product-single-item-mini .brator-product-single-item-cat a {
     line-height: 24px;
 }
 
-.brator-product-single-item-area.design-two .brator-product-single-item-mini .brator-product-single-item-title {
+.brator-product-single-item-area.rollparts-design .brator-product-single-item-mini .brator-product-single-item-title {
     margin-bottom: 5px;
 }
 
-.brator-product-single-item-area.design-two .brator-product-single-item-mini .brator-product-single-item-price {
+.brator-product-single-item-area.rollparts-design .brator-product-single-item-mini .brator-product-single-item-price {
     margin-top: 15px;
 }
 
-.brator-product-single-item-area.design-two:hover .brator-product-single-item-mini {
+.brator-product-single-item-area.rollparts-design:hover .brator-product-single-item-mini {
     margin-top: -59px;
 }
 
-.brator-product-single-item-area.design-two .brator-product-single-item-mini .brator-product-single-item-title a {
+.brator-product-single-item-area.rollparts-design .brator-product-single-item-mini .brator-product-single-item-title a {
     transition: .3s;
 }
 
-.brator-product-single-item-area.design-two .brator-product-single-item-mini .brator-product-single-item-title a:hover {
+.brator-product-single-item-area.rollparts-design .brator-product-single-item-mini .brator-product-single-item-title a:hover {
     text-decoration: underline;
     color: #000000;
 }
 
-.brator-product-single-item-area.design-two:hover .brator-product-single-item-mini .brator-product-single-item-btn {
+.brator-product-single-item-area.rollparts-design:hover .brator-product-single-item-mini .brator-product-single-item-btn {
     margin-top: 15px;
 }
 
@@ -5119,13 +5119,13 @@ ul.wp-block-categories li a:hover,
     width: 100%;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-single-item-featu,
+.rollparts-product-hero-content .rollparts-product-hero-content-info .brator-product-single-item-featu,
 .product-list-items.type-list .brator-product-single-item-area.design-three .brator-product-single-item-area-mdl .brator-product-single-item-featu {
     margin-top: 15px;
 }
 
 .brator-blog-listing-single-item-excerpt ul li,
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-single-item-featu ul li,
+.rollparts-product-hero-content .rollparts-product-hero-content-info .brator-product-single-item-featu ul li,
 .product-list-items.type-list .brator-product-single-item-area.design-three .brator-product-single-item-area-mdl .brator-product-single-item-featu ul li {
     font-size: 13px;
     margin-bottom: 0;
@@ -5151,7 +5151,7 @@ ul.wp-block-categories li a:hover,
 }
 
 .brator-blog-listing-single-item-excerpt ul li::after,
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-single-item-featu ul li::after,
+.rollparts-product-hero-content .rollparts-product-hero-content-info .brator-product-single-item-featu ul li::after,
 .product-list-items.type-list .brator-product-single-item-area.design-three .brator-product-single-item-area-mdl .brator-product-single-item-featu ul li::after {
     content: "";
     position: absolute;
@@ -5168,20 +5168,20 @@ ul.wp-block-categories li a:hover,
     margin: 0;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-single-item-featu ul li span,
+.rollparts-product-hero-content .rollparts-product-hero-content-info .brator-product-single-item-featu ul li span,
 .product-list-items.type-list .brator-product-single-item-area.design-three .brator-product-single-item-area-mdl .brator-product-single-item-featu ul li span {
     color: #000;
     margin-left: 5px;
     line-height: 24px;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-single-item-featu ul,
+.rollparts-product-hero-content .rollparts-product-hero-content-info .brator-product-single-item-featu ul,
 .product-list-items.type-list .brator-product-single-item-area.design-three .brator-product-single-item-area-mdl .brator-product-single-item-featu ul {
     margin: 0;
     padding: 0;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-single-item-featu ul {
+.rollparts-product-hero-content .rollparts-product-hero-content-info .brator-product-single-item-featu ul {
     margin-bottom: 25px;
 }
 
@@ -5306,29 +5306,29 @@ ul.wp-block-categories li a:hover,
     width: 100%;
 }
 
-.brator-banner-slider.design-two {
+.brator-banner-slider.rollparts-design {
     height: 100%;
     background-color: var(--color-white);
     border-radius: 5px;
     overflow: hidden;
 }
 
-.brator-banner-slider.design-two .splide__track {
+.brator-banner-slider.rollparts-design .splide__track {
     height: 100%;
 }
 
-.brator-banner-slider.design-two .splide__track .splide__list {
+.brator-banner-slider.rollparts-design .splide__track .splide__list {
     height: 100%;
 }
 
-.brator-banner-slider.design-two .splide__pagination {
+.brator-banner-slider.rollparts-design .splide__pagination {
     justify-content: flex-start;
     width: 100%;
     padding-left: 55px;
     bottom: 15px;
 }
 
-.brator-banner-area.design-two {
+.brator-banner-area.rollparts-design {
     height: 100%;
     padding: 55px;
     background-position: right bottom;
@@ -5336,11 +5336,11 @@ ul.wp-block-categories li a:hover,
     background-repeat: no-repeat;
 }
 
-.brator-banner-area.design-two .brator-banner-content .brator-banner-content-sell {
+.brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-sell {
     margin-bottom: 10px;
 }
 
-.brator-banner-area.design-two .brator-banner-content .brator-banner-content-sell span {
+.brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-sell span {
     font-size: 14px;
     color: #003bd2;
     font-weight: bold;
@@ -5350,14 +5350,14 @@ ul.wp-block-categories li a:hover,
     padding: 5px 10px;
 }
 
-.brator-banner-area.design-two .brator-banner-content .brator-banner-content-off {
+.brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-off {
     margin-bottom: 30px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
-.brator-banner-area.design-two .brator-banner-content .brator-banner-content-off p {
+.brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-off p {
     font-size: 150px;
     color: var(--color-high-dark);
     font-weight: 800;
@@ -5367,7 +5367,7 @@ ul.wp-block-categories li a:hover,
     margin-right: 15px;
 }
 
-.brator-banner-area.design-two .brator-banner-content .brator-banner-content-off span {
+.brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-off span {
     font-size: 90px;
     color: var(--color-high-dark);
     font-weight: 800;
@@ -5376,20 +5376,20 @@ ul.wp-block-categories li a:hover,
     margin: 0;
 }
 
-.brator-banner-area.design-two .brator-banner-content .brator-banner-content-off span strong {
+.brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-off span strong {
     font-size: 35px;
     float: left;
     width: 100%;
     color: var(--color-high-dark);
 }
 
-.brator-banner-area.design-two .brator-banner-content .brator-banner-content-title h5 {
+.brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-title h5 {
     font-size: 30px;
     color: black;
     font-weight: 300;
 }
 
-.brator-banner-area.design-two .brator-banner-content .brator-banner-content-title h5 span {
+.brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-title h5 span {
     font-weight: 700;
     background: linear-gradient(to right, #000 20%, var(--color-high-dark) 40%, var(--color-high-dark) 60%, #000 80%);
     background-size: 200% auto;
@@ -5402,29 +5402,29 @@ ul.wp-block-categories li a:hover,
     animation: shine 3s linear infinite;
 }
 
-.brator-banner-area.design-two .brator-banner-content .brator-banner-content-code {
+.brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-code {
     margin-top: 10px;
     margin-bottom: 30px;
 }
 
-.brator-banner-area.design-two .brator-banner-content .brator-banner-content-code h5 {
+.brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-code h5 {
     font-size: 15px;
     color: #666666;
     font-weight: 400;
 }
 
-.brator-banner-area.design-two .brator-banner-content .brator-banner-content-code h5 span {
+.brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-code h5 span {
     color: black;
     font-weight: 500;
 }
 
-.brator-banner-area.design-two .brator-banner-content .brator-banner-content-action a {
+.brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-action a {
     background-color: black;
     border-color: black;
     padding: 15px 35px;
 }
 
-.brator-banner-area.design-two .brator-banner-content .brator-banner-content-action a:hover {
+.brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-action a:hover {
     background: var(--color-high-dark);
     border-color: var(--color-high-dark);
 }
@@ -5569,23 +5569,23 @@ ul.wp-block-categories li a:hover,
     display: none;
 }
 
-.brator-parts-search-box-area.design-two {
+.brator-parts-search-box-area.rollparts-design {
     background: var(--color-white);
     border-radius: 5px;
 }
 
-.brator-parts-search-box-area.design-two .brator-parts-search-box-header h2 {
+.brator-parts-search-box-area.rollparts-design .brator-parts-search-box-header h2 {
     font-size: 30px;
     color: black;
     font-weight: 700;
     margin-bottom: 10px;
 }
 
-.brator-parts-search-box-area.design-two .brator-parts-search-box-header p {
+.brator-parts-search-box-area.rollparts-design .brator-parts-search-box-header p {
     margin-bottom: 30px;
 }
 
-.brator-parts-search-box-area.design-two .brator-parts-search-box-form {
+.brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form {
     padding: 30px;
     border-width: 1px;
     border-color: var(--color-high-dark);
@@ -5598,27 +5598,27 @@ ul.wp-block-categories li a:hover,
     gap: 20px;
 }
 
-.brator-parts-search-box-area.design-two .brator-parts-search-box-form select {
+.brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form select {
     background-position-y: 16px;
     background-position-x: 95%;
     margin-bottom: 0px;
 }
 
-.brator-parts-search-box-area.design-two .brator-parts-search-box-form select:disabled {
+.brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form select:disabled {
     background-color: transparent;
 }
 
-.brator-parts-search-box-area.design-two .brator-parts-search-box-form button {
+.brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form button {
     width: 100%;
     max-width: 160px;
 }
 
-.brator-brand-slider.design-two {
+.brator-brand-slider.rollparts-design {
     padding-top: 70px;
     padding-bottom: 0px;
 }
 
-.brator-brand-slider.design-two .brator-brand-img a {
+.brator-brand-slider.rollparts-design .brator-brand-img a {
     margin-bottom: 50px;
     height: 100px;
     display: flex;
@@ -5645,15 +5645,15 @@ ul.wp-block-categories li a:hover,
     margin-right: -15px;
 }
 
-.brator-makes-list-single.disable.current {
+.rollparts-makes-list-single.disable.current {
     display: block;
 }
 
-.brator-makes-list-single.disable {
+.rollparts-makes-list-single.disable {
     display: none;
 }
 
-.brator-makes-list-single {
+.rollparts-makes-list-single {
     border-width: 1px;
     border-color: lightgray;
     border-style: solid;
@@ -5663,7 +5663,7 @@ ul.wp-block-categories li a:hover,
     width: calc(20% - 15px);
 }
 
-.brator-makes-list-single a {
+.rollparts-makes-list-single a {
     display: block;
     font-size: 16px;
     color: black;
@@ -5671,7 +5671,7 @@ ul.wp-block-categories li a:hover,
     position: relative;
 }
 
-.brator-makes-list-single a:after {
+.rollparts-makes-list-single a:after {
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='blcak' class='bi bi-chevron-left' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>");
     background-repeat: no-repeat;
     background-position-x: 1px;
@@ -5686,11 +5686,11 @@ ul.wp-block-categories li a:hover,
 }
 
 
-.brator-makes-list-single:hover {
+.rollparts-makes-list-single:hover {
     border-color: var(--color-high-dark);
 }
 
-.brator-makes-list-single:hover a {
+.rollparts-makes-list-single:hover a {
     text-decoration: underline;
 }
 
@@ -5919,7 +5919,7 @@ ul.wp-block-categories li a:hover,
     height: auto;
 }
 
-.brator-section-header.all-item-left {
+.rollparts-section-header.all-item-left {
     justify-content: flex-start;
 }
 
@@ -6742,20 +6742,20 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
     left: auto;
 }
 
-.brator-features-area.design-two {
+.brator-features-area.rollparts-design {
     padding: 90px 0;
 }
 
-.brator-features-area.design-two .brator-section-header {
+.brator-features-area.rollparts-design .rollparts-section-header {
     margin-bottom: 70px;
 }
 
-.brator-features-area.design-two a.brator-features-single {
+.brator-features-area.rollparts-design a.brator-features-single {
     padding-right: 75px;
     width: 100%;
 }
 
-.brator-features-area.design-two a.brator-features-single .brator-features-single-img {
+.brator-features-area.rollparts-design a.brator-features-single .brator-features-single-img {
     margin-bottom: 50px;
     position: relative;
     width: 100px;
@@ -6765,7 +6765,7 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
     align-items: center;
 }
 
-.brator-features-area.design-two a.brator-features-single .brator-features-single-img::after {
+.brator-features-area.rollparts-design a.brator-features-single .brator-features-single-img::after {
     content: "";
     display: block;
     width: 100%;
@@ -6777,12 +6777,12 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
     transform: skewY(340deg);
 }
 
-.brator-features-area.design-two a.brator-features-single .brator-features-single-img img {
+.brator-features-area.rollparts-design a.brator-features-single .brator-features-single-img img {
     position: relative;
     z-index: 1;
 }
 
-.brator-features-area.design-two a.brator-features-single h5 {
+.brator-features-area.rollparts-design a.brator-features-single h5 {
     font-size: 20px;
     margin-bottom: 20px;
     color: black;
@@ -6791,11 +6791,11 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
     cursor: pointer;
 }
 
-.brator-features-area.design-two a.brator-features-single h5:hover {
+.brator-features-area.rollparts-design a.brator-features-single h5:hover {
     color: var(--color-high-dark);
 }
 
-.brator-features-area.design-two a.brator-features-single p {
+.brator-features-area.rollparts-design a.brator-features-single p {
     font-size: 15px;
     color: #666666;
     line-height: 1.733;
@@ -6884,11 +6884,11 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
     margin-bottom: 100px;
 }
 
-.brator-client-review-item .brator-client-review-content-area.design-two {
+.brator-client-review-item .brator-client-review-content-area.rollparts-design {
     margin-bottom: 50px;
 }
 
-.brator-client-review-item .brator-client-review-content-area.design-two::after {
+.brator-client-review-item .brator-client-review-content-area.rollparts-design::after {
     content: "";
     position: absolute;
     left: 35px;
@@ -7003,11 +7003,11 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
     opacity: 1;
 }
 
-.brator-brand-item-area.design-two {
+.brator-brand-item-area.rollparts-design {
     padding: 90px 0;
 }
 
-.brator-brand-item-area.design-two .row {
+.brator-brand-item-area.rollparts-design .row {
     justify-content: space-between;
     align-items: center;
 }
@@ -7016,7 +7016,7 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
     display: inline-block;
 }
 
-.brator-brand-item-area.design-two .brator-brand-img a {
+.brator-brand-item-area.rollparts-design .brator-brand-img a {
     margin: 40px 0;
 }
 
@@ -7032,7 +7032,7 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
     padding: 90px 0;
 }
 
-.brator-section-header.all-item-left {
+.rollparts-section-header.all-item-left {
     justify-content: flex-start;
 }
 
@@ -7115,13 +7115,13 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
     fill: #fff;
 }
 
-.brator-product-header-layout-area {
+.rollparts-product-header-layout-area {
     background: #f2f2f7;
     padding: 50px 0px;
     padding-top: 0px;
 }
 
-.brator-product-header-layout-area .brator-product-header-layout {
+.rollparts-product-header-layout-area .rollparts-product-header-layout {
     padding: 50px 50px;
     background: #fff;
     display: flex;
@@ -7132,19 +7132,19 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
     border-radius: 8px;
 }
 
-.brator-product-header-layout-area .brator-product-header-layout .brator-product-header-layout-img {
+.rollparts-product-header-layout-area .rollparts-product-header-layout .rollparts-product-header-layout-img {
     width: 50%;
 }
 
-.brator-product-layout-header-content {
+.rollparts-product-layout-header-content {
     width: 50%;
 }
 
-.brator-product-hero-content {
+.rollparts-product-hero-content {
     position: relative;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-brand a {
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-brand a {
     font-size: 13px;
     color: #0066ff;
     font-weight: 700;
@@ -7152,80 +7152,80 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
     line-height: 24px;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-brand-img {
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-brand-img {
     position: absolute;
     right: 0;
     top: 0;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-brand-img a img {
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-brand-img a img {
     display: block;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-title {
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-title {
     margin-bottom: 5px;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-title h2 {
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-title h2 {
     font-size: 34px;
     font-weight: 700;
     color: black;
     line-height: 46px;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-review {
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-review {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 25px;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-review .product-batch.yollow-batch {
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-review .product-batch.yollow-batch {
     background-color: #ffb500;
     color: #000;
     font-size: 10px;
     margin-right: 10px;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-review .product-batch.off-batch {
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-review .product-batch.off-batch {
     margin-right: 10px;
     min-width: 65px;
     text-align: center;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-review .brator-review-product {
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-review .brator-review-product {
     width: 300px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-price {
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-price {
     margin-bottom: 30px;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-price h6 {
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-price h6 {
     font-size: 26px;
     color: black;
     font-weight: 600;
     display: flex;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-stock {
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-stock {
     overflow: hidden;
     border-bottom: 1px solid #e5e5e5;
     margin-bottom: 25px;
     padding-bottom: 20px;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-stock h6 {
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-stock h6 {
     font-size: 14px;
     color: black;
     position: relative;
     padding-left: 20px;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-stock h6::after {
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-stock h6::after {
     content: "";
     display: block;
     width: 8px;
@@ -7237,7 +7237,7 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
     top: 4px;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-stock h5 {
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-stock h5 {
     padding: 10px 15px;
     font-size: 14px;
     color: black;
@@ -7255,13 +7255,13 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
     text-transform: capitalize;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-stock h5 span span {
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-stock h5 span span {
     font-size: 12px;
     color: #999;
     font-weight: 400;
 }
 
-.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-stock h5 svg {
+.rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-stock h5 svg {
     fill: #fff;
     font-size: 10px;
     margin-right: 10px;
@@ -7274,7 +7274,7 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
     padding: 5px;
 }
 
-.brator-product-hero-content .brator-product-hero-content-add-to-cart .brator-product-single-cart-select p {
+.rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .brator-product-single-cart-select p {
     font-size: 14px;
     color: black;
     font-weight: 600;
@@ -7320,29 +7320,29 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
     font-weight: 600;
 }
 
-.brator-product-hero-content .brator-product-hero-content-add-to-cart .brator-product-single-cart-sub-total {
+.rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .brator-product-single-cart-sub-total {
     margin: 30px 0;
     margin-bottom: 30px;
 }
 
-.brator-product-hero-content .brator-product-hero-content-add-to-cart .brator-product-single-cart-sub-total p {
+.rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .brator-product-single-cart-sub-total p {
     font-size: 26px;
     color: #000;
     font-weight: 400;
 }
 
-.brator-product-hero-content .brator-product-hero-content-add-to-cart .brator-product-single-cart-sub-total p span {
+.rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .brator-product-single-cart-sub-total p span {
     color: #666666;
 }
 
-.brator-product-hero-content .brator-product-hero-content-add-to-cart .brator-product-single-cart-count-add {
+.rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .rollparts-product-single-cart-count-add {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.brator-product-hero-content .brator-product-hero-content-add-to-cart .grouped_form.brator-product-single-cart-count-add {
+.rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .grouped_form.rollparts-product-single-cart-count-add {
     flex-wrap: wrap;
 }
 
@@ -7350,7 +7350,7 @@ table.woocommerce-grouped-product-list.group_table {
     width: 100%;
 }
 
-.brator-product-hero-content .brator-product-hero-content-add-to-cart .grouped_form.brator-product-single-cart-count-add .brator-product-single-cart-add {
+.rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .grouped_form.rollparts-product-single-cart-count-add .rollparts-product-single-cart-add {
     margin-left: 0px;
 }
 
@@ -7359,18 +7359,18 @@ table.woocommerce-grouped-product-list.group_table {
     padding-left: 10px;
 }
 
-.brator-product-header-layout-area.desing-one .brator-product-single-cart-count {
+.rollparts-product-header-layout-area.desing-one .rollparts-product-single-cart-count {
     max-width: 130px;
     width: 100%;
     margin-right: 10px !important;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-button-added .quantity.brator-product-single-cart-count {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-button-added .quantity.rollparts-product-single-cart-count {
     width: 100%;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-button-added .brator-product-single-cart-count .brator-brator-cart-list-items-qty,
-.brator-product-single-cart-count .brator-brator-cart-list-items-qty {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-button-added .rollparts-product-single-cart-count .rollparts-cart-list-items-qty,
+.rollparts-product-single-cart-count .rollparts-cart-list-items-qty {
     max-width: 130px;
     width: 100%;
     border-width: 1px;
@@ -7381,7 +7381,7 @@ table.woocommerce-grouped-product-list.group_table {
     position: relative;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-button-added .brator-product-single-cart-count .brator-brator-cart-list-items-qty {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-button-added .rollparts-product-single-cart-count .rollparts-cart-list-items-qty {
     max-width: 100%;
     display: flex;
     align-items: center;
@@ -7389,11 +7389,11 @@ table.woocommerce-grouped-product-list.group_table {
     margin-bottom: 25px;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-button-added .brator-product-single-cart-count .brator-brator-cart-list-items-qty span {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-button-added .rollparts-product-single-cart-count .rollparts-cart-list-items-qty span {
     cursor: pointer;
 }
 
-.brator-product-single-cart-count .brator-brator-cart-list-items-qty span {
+.rollparts-product-single-cart-count .rollparts-cart-list-items-qty span {
     background-color: #f2f2f7;
     position: absolute;
     left: 0;
@@ -7410,11 +7410,11 @@ table.woocommerce-grouped-product-list.group_table {
     cursor: pointer;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-single-cart-count .brator-brator-cart-list-items-qty span {
+.rollparts-product-header-layout-area.desing-two .rollparts-product-single-cart-count .rollparts-cart-list-items-qty span {
     background-color: transparent;
 }
 
-.brator-product-single-cart-count .brator-brator-cart-list-items-qty input {
+.rollparts-product-single-cart-count .rollparts-cart-list-items-qty input {
     width: 53% !important;
     text-align: center !important;
     padding: 0;
@@ -7422,17 +7422,17 @@ table.woocommerce-grouped-product-list.group_table {
     margin-left: 31px !important;
 }
 
-.brator-product-hero-content .brator-product-hero-content-add-to-cart .brator-product-single-cart-count-add .brator-product-single-cart-count .brator-brator-cart-list-items-qty button.add-count-qty,
-.brator-product-single-cart-count .brator-brator-cart-list-items-qty span.plus-btn {
+.rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .rollparts-product-single-cart-count-add .rollparts-product-single-cart-count .rollparts-cart-list-items-qty button.add-count-qty,
+.rollparts-product-single-cart-count .rollparts-cart-list-items-qty span.plus-btn {
     right: 0;
     left: auto;
 }
 
-.brator-product-hero-content .brator-product-hero-content-add-to-cart .brator-product-single-cart-count-add .brator-product-single-cart-add {
+.rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .rollparts-product-single-cart-count-add .rollparts-product-single-cart-add {
     width: 100%;
 }
 
-.brator-product-hero-content .brator-product-hero-content-add-to-cart .brator-product-single-cart-count-add .brator-product-single-cart-add button {
+.rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .rollparts-product-single-cart-count-add .rollparts-product-single-cart-add button {
     width: 100%;
 }
 
@@ -7537,32 +7537,32 @@ table.woocommerce-grouped-product-list.group_table {
     color: #666666;
 }
 
-.brator-product-header-layout-area.desing-two {
+.rollparts-product-header-layout-area.desing-two {
     background: #fff;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-header-layout .brator-product-header-layout-img {
+.rollparts-product-header-layout-area.desing-two .rollparts-product-header-layout .rollparts-product-header-layout-img {
     width: 40%;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-header-layout .brator-product-layout-header-content {
+.rollparts-product-header-layout-area.desing-two .rollparts-product-header-layout .rollparts-product-layout-header-content {
     width: 60%;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-hero-content {
+.rollparts-product-header-layout-area.desing-two .rollparts-product-hero-content {
     width: 100%;
     padding-right: 55px;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-stock {
+.rollparts-product-header-layout-area.desing-two .rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-stock {
     padding: 0;
     border: 0;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-alert-box {
+.rollparts-product-header-layout-area.desing-two .rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-alert-box {
     padding: 10px 15px;
     font-size: 14px;
     color: black;
@@ -7579,7 +7579,7 @@ table.woocommerce-grouped-product-list.group_table {
     align-items: flex-start;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-alert-box svg {
+.rollparts-product-header-layout-area.desing-two .rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-alert-box svg {
     fill: var(--color-high-dark);
     font-size: 2px;
     margin-right: 10px;
@@ -7589,37 +7589,37 @@ table.woocommerce-grouped-product-list.group_table {
     height: 30px;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-alert-box .brator-product-hero-content-alert-box-content p {
+.rollparts-product-header-layout-area.desing-two .rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-alert-box .rollparts-product-hero-content-alert-box-content p {
     font-size: 14px;
     color: black;
     margin-bottom: 0;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-alert-box .brator-product-hero-content-alert-box-content span {
+.rollparts-product-header-layout-area.desing-two .rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-alert-box .rollparts-product-hero-content-alert-box-content span {
     color: #666666;
     font-size: 14px;
     margin-bottom: 5px;
     display: inline-block;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-alert-box .brator-product-hero-content-alert-box-content a {
+.rollparts-product-header-layout-area.desing-two .rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-alert-box .rollparts-product-hero-content-alert-box-content a {
     font-size: 13px;
     color: #0066ff;
     font-weight: 500;
     margin-right: 15px;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-alert-box .brator-product-hero-content-alert-box-content a:hover {
+.rollparts-product-header-layout-area.desing-two .rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-alert-box .rollparts-product-hero-content-alert-box-content a:hover {
     text-decoration: underline;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-hero-content .brator-product-hero-content-info .brator-product-single-light-info-area {
+.rollparts-product-header-layout-area.desing-two .rollparts-product-hero-content .rollparts-product-hero-content-info .brator-product-single-light-info-area {
     border-top: 1px solid #e5e5e5;
     margin-top: 30px;
     padding-top: 20px;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart {
     max-width: 320px;
     width: 100%;
     border-radius: 8px;
@@ -7627,20 +7627,20 @@ table.woocommerce-grouped-product-list.group_table {
     padding: 35px 25px;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-price {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-price {
     padding-bottom: 20px;
     margin-bottom: 25px;
     border-bottom: 1px solid #e5e5e5;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-price h6 {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-price h6 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     font-size: 26px;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-price h6 ins {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-price h6 ins {
     font-size: 26px;
     color: var(--color-high-dark);
     font-weight: 600;
@@ -7649,90 +7649,90 @@ table.woocommerce-grouped-product-list.group_table {
     padding: 0;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-price h6 del {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-price h6 del {
     font-size: 20px;
     color: #999999;
     font-weight: 400;
     order: 2;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color h6 {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color h6 {
     font-size: 14px;
     color: black;
     font-weight: 600;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color span {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color span {
     font-size: 14px;
     color: black;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single {
     margin-top: 10px;
     margin-right: 10px;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single input {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single input {
     width: 30px;
     height: 30px;
     margin: 0;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single .arow-check-right {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single .arow-check-right {
     width: 30px;
     height: 30px;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single .arow-check-right::after,
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single .arow-check-right::before {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single .arow-check-right::after,
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single .arow-check-right::before {
     width: 30px;
     height: 30px;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single.red .arow-check-right::after {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single.red .arow-check-right::after {
     background-color: var(--color-high-dark);
     border-color: var(--color-high-dark);
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single.blue .arow-check-right::after {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single.blue .arow-check-right::after {
     background-color: #1c40f2;
     border-color: #1c40f2;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single.green .arow-check-right::after {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single.green .arow-check-right::after {
     background-color: #d0ebd3;
     border-color: #d0ebd3;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single.yellow .arow-check-right::after {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-color-checkbox .brator-product-add-to-cart-color-checkbox-single.yellow .arow-check-right::after {
     background-color: #fbab00;
     border-color: #fbab00;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-quanty {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-quanty {
     margin-top: 25px;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-quanty h6 {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-quanty h6 {
     font-size: 14px;
     color: black;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-quanty .brator-brator-cart-list-items-qty {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-quanty .rollparts-cart-list-items-qty {
     width: 100%;
     border-width: 1px;
     border-color: #cccccc;
@@ -7743,7 +7743,7 @@ table.woocommerce-grouped-product-list.group_table {
     border-radius: 4px;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-quanty .brator-brator-cart-list-items-qty button {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-quanty .rollparts-cart-list-items-qty button {
     background-color: transparent;
     position: absolute;
     left: 0;
@@ -7757,7 +7757,7 @@ table.woocommerce-grouped-product-list.group_table {
     color: #9595ab;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-quanty .brator-brator-cart-list-items-qty input {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-quanty .rollparts-cart-list-items-qty input {
     width: 100%;
     text-align: center;
     padding-left: 25px;
@@ -7765,17 +7765,17 @@ table.woocommerce-grouped-product-list.group_table {
     border-radius: 4px;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-quanty .brator-brator-cart-list-items-qty button.add-count-qty {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-quanty .rollparts-cart-list-items-qty button.add-count-qty {
     right: 0;
     left: auto;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-button-added {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-button-added {
     margin-bottom: 10px;
     margin-top: 20px;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-button-added button {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-button-added button {
     height: 48px;
     width: 100%;
     font-size: 14px;
@@ -7783,31 +7783,31 @@ table.woocommerce-grouped-product-list.group_table {
     padding: 0 5px;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-button-added button span {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-button-added button span {
     line-height: 26px;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-single-cart-action button {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-single-cart-action button {
     padding: 0px;
     margin-right: 10px;
     margin: 10px auto;
     margin-bottom: 0;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-single-cart-action button span {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-single-cart-action button span {
     font-size: 14px;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-single-cart-action .brator-product-single-cart-wish button {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-single-cart-action .brator-product-single-cart-wish button {
     margin-right: 20px;
     padding-right: 20px;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-single-cart-action .brator-product-single-cart-compare button {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-single-cart-action .brator-product-single-cart-compare button {
     border: 0;
 }
 
-.brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-quanty h6 {
+.rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-quanty h6 {
     font-size: 12px;
     color: #666666;
     text-transform: uppercase;
@@ -7880,12 +7880,12 @@ table.woocommerce-grouped-product-list.group_table {
     gap: 50px;
 }
 
-.product-list-items.check-box-product .brator-product-single-item-area.design-two {
+.product-list-items.check-box-product .brator-product-single-item-area.rollparts-design {
     position: relative;
     width: calc(33.33333333% - 50px);
 }
 
-.product-list-items.check-box-product .brator-product-single-item-area.design-two::after {
+.product-list-items.check-box-product .brator-product-single-item-area.rollparts-design::after {
     content: "+";
     color: black;
     position: absolute;
@@ -7898,39 +7898,39 @@ table.woocommerce-grouped-product-list.group_table {
     justify-content: center;
 }
 
-.product-list-items.check-box-product .brator-product-single-item-area.design-two:hover .brator-product-single-item-mini {
+.product-list-items.check-box-product .brator-product-single-item-area.rollparts-design:hover .brator-product-single-item-mini {
     margin-top: 0;
 }
 
-.product-list-items.check-box-product .brator-product-single-item-area.design-two:last-child::after {
+.product-list-items.check-box-product .brator-product-single-item-area.rollparts-design:last-child::after {
     display: none;
 }
 
-.product-list-items.check-box-product .brator-product-single-item-area.design-two .brator-product-single-item-checkbox {
+.product-list-items.check-box-product .brator-product-single-item-area.rollparts-design .brator-product-single-item-checkbox {
     margin-top: 20px;
 }
 
-.product-list-items.check-box-product .brator-product-single-item-area.design-two .brator-product-single-item-checkbox .arow-check-right {
+.product-list-items.check-box-product .brator-product-single-item-area.rollparts-design .brator-product-single-item-checkbox .arow-check-right {
     width: 20px;
     height: 20px;
 }
 
-.brator-product-single-tab-area.design-two {
+.rollparts-product-single-tab-area.rollparts-design {
     padding-top: 100px;
     padding-bottom: 100px;
 }
 
-.brator-product-single-tab-list.js-tabs.side-tabbar {
+.rollparts-product-single-tab-list.js-tabs.side-tabbar {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
 }
 
-.brator-product-single-tab-list.js-tabs.side-tabbar .js-tabs__content.brator-product-single-tab-item {
+.rollparts-product-single-tab-list.js-tabs.side-tabbar .js-tabs__content.rollparts-product-single-tab-item {
     width: 100%;
 }
 
-.brator-product-single-tab-list.js-tabs.side-tabbar .brator-product-single-tab-header {
+.rollparts-product-single-tab-list.js-tabs.side-tabbar .rollparts-product-single-tab-header {
     max-width: 350px;
     width: 100%;
     margin-right: 95px;
@@ -7939,7 +7939,7 @@ table.woocommerce-grouped-product-list.group_table {
     padding: 50px;
 }
 
-.brator-product-single-tab-list.js-tabs.side-tabbar .brator-product-single-tab-header ul {
+.rollparts-product-single-tab-list.js-tabs.side-tabbar .rollparts-product-single-tab-header ul {
     padding: 0;
     margin: 0;
     display: flex;
@@ -7947,7 +7947,7 @@ table.woocommerce-grouped-product-list.group_table {
     border: 0;
 }
 
-.brator-product-single-tab-list.js-tabs.side-tabbar .brator-product-single-tab-header ul li {
+.rollparts-product-single-tab-list.js-tabs.side-tabbar .rollparts-product-single-tab-header ul li {
     width: 100%;
     padding: 0;
     margin: 0;
@@ -7956,23 +7956,23 @@ table.woocommerce-grouped-product-list.group_table {
     border-bottom: 1px solid #d9d9d9;
 }
 
-.brator-product-single-tab-list.js-tabs.side-tabbar .brator-product-single-tab-header ul li a {
+.rollparts-product-single-tab-list.js-tabs.side-tabbar .rollparts-product-single-tab-header ul li a {
     font-size: 20px;
     color: #666666;
     padding: 0;
     margin: 0;
 }
 
-.brator-product-single-tab-list.js-tabs.side-tabbar .brator-product-single-tab-header ul li a:after {
+.rollparts-product-single-tab-list.js-tabs.side-tabbar .rollparts-product-single-tab-header ul li a:after {
     display: none;
 }
 
-.brator-product-single-tab-list.js-tabs.side-tabbar .brator-product-single-tab-header ul li .js-tabs__title-active {
+.rollparts-product-single-tab-list.js-tabs.side-tabbar .rollparts-product-single-tab-header ul li .js-tabs__title-active {
     color: #000;
     font-weight: 700;
 }
 
-.brator-product-single-tab-list .brator-product-single-tab-header ul {
+.rollparts-product-single-tab-list .rollparts-product-single-tab-header ul {
     padding: 0;
     margin: 0;
     display: flex;
@@ -7983,11 +7983,11 @@ table.woocommerce-grouped-product-list.group_table {
     margin-top: 50px;
 }
 
-.brator-product-single-tab-list .brator-product-single-tab-header ul li {
+.rollparts-product-single-tab-list .rollparts-product-single-tab-header ul li {
     list-style: outside none;
 }
 
-.brator-product-single-tab-list .brator-product-single-tab-header ul li a {
+.rollparts-product-single-tab-list .rollparts-product-single-tab-header ul li a {
     font-size: 24px;
     margin-right: 55px;
     padding-bottom: 20px;
@@ -7996,7 +7996,7 @@ table.woocommerce-grouped-product-list.group_table {
     position: relative;
 }
 
-.brator-product-single-tab-list .brator-product-single-tab-header ul li a:after {
+.rollparts-product-single-tab-list .rollparts-product-single-tab-header ul li a:after {
     content: "";
     display: block;
     width: 0%;
@@ -8009,30 +8009,30 @@ table.woocommerce-grouped-product-list.group_table {
     opacity: 0;
 }
 
-.brator-product-single-tab-list .brator-product-single-tab-header ul li .js-tabs__title-active {
+.rollparts-product-single-tab-list .rollparts-product-single-tab-header ul li .js-tabs__title-active {
     color: black;
     font-weight: 700;
 }
 
-.brator-product-single-tab-list .brator-product-single-tab-header ul li .js-tabs__title-active:after {
+.rollparts-product-single-tab-list .rollparts-product-single-tab-header ul li .js-tabs__title-active:after {
     width: 100%;
     opacity: 1;
 }
 
-.brator-product-single-tab-list .brator-product-single-tab-item img {
+.rollparts-product-single-tab-list .rollparts-product-single-tab-item img {
     margin: 40px auto;
     margin-bottom: 10px;
     border-radius: 5px;
 }
 
-.brator-product-single-tab-list .brator-product-single-tab-item ul li {
+.rollparts-product-single-tab-list .rollparts-product-single-tab-item ul li {
     font-size: 15px;
     color: #666666;
     padding-left: 10px;
     margin-bottom: 10px;
 }
 
-.brator-product-single-tab-list .brator-product-single-tab-item h6 {
+.rollparts-product-single-tab-list .rollparts-product-single-tab-item h6 {
     font-size: 20px;
     text-transform: capitalize;
     color: black;
@@ -8041,22 +8041,22 @@ table.woocommerce-grouped-product-list.group_table {
     font-weight: 600;
 }
 
-.brator-product-single-tab-list .brator-product-single-tab-item p {
+.rollparts-product-single-tab-list .rollparts-product-single-tab-item p {
     font-size: 15px;
     color: #666666;
 }
 
-.brator-product-img-tab-list.js-tabs#tabs-product-img.design-two {
+.brator-product-img-tab-list.js-tabs#tabs-product-img.rollparts-design {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
 }
 
-.brator-product-img-tab-list.js-tabs#tabs-product-img.design-two .brator-product-img-tab-header.js-tabs__header {
+.brator-product-img-tab-list.js-tabs#tabs-product-img.rollparts-design .brator-product-img-tab-header.js-tabs__header {
     margin-right: 20px;
 }
 
-.woocommerce div.product .brator-product-img-tab-list.js-tabs#tabs-product-img.design-two div.images.woocommerce-product-gallery {
+.woocommerce div.product .brator-product-img-tab-list.js-tabs#tabs-product-img.rollparts-design div.images.woocommerce-product-gallery {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8067,7 +8067,7 @@ table.woocommerce-grouped-product-list.group_table {
     width: 100%;
 }
 
-.brator-product-img-tab-list.js-tabs#tabs-product-img.design-two .flex-control-thumbs {
+.brator-product-img-tab-list.js-tabs#tabs-product-img.rollparts-design .flex-control-thumbs {
     order: 1;
     max-width: 80px;
     margin-right: 20px;
@@ -8077,7 +8077,7 @@ table.woocommerce-grouped-product-list.group_table {
     margin-top: 15px;
 }
 
-.brator-product-img-tab-list.js-tabs#tabs-product-img.design-two .flex-control-thumbs li {
+.brator-product-img-tab-list.js-tabs#tabs-product-img.rollparts-design .flex-control-thumbs li {
     display: block;
     width: 80px;
     height: 80px;
@@ -8086,11 +8086,11 @@ table.woocommerce-grouped-product-list.group_table {
     margin-bottom: 15px;
 }
 
-.brator-product-img-tab-list.js-tabs#tabs-product-img.design-two .flex-control-thumbs li img {
+.brator-product-img-tab-list.js-tabs#tabs-product-img.rollparts-design .flex-control-thumbs li img {
     border: 1px solid #f2f2f7;
 }
 
-.brator-product-img-tab-list.js-tabs#tabs-product-img.design-two .flex-control-thumbs li img.flex-active {
+.brator-product-img-tab-list.js-tabs#tabs-product-img.rollparts-design .flex-control-thumbs li img.flex-active {
     border: 1px solid var(--color-high-dark);
 }
 
@@ -8868,20 +8868,20 @@ body {
         padding: 20px;
     }
 
-    .brator-product-header-layout-area.desing-two .brator-product-single-cart-action {
+    .rollparts-product-header-layout-area.desing-two .brator-product-single-cart-action {
         flex-wrap: wrap;
     }
 
-    .brator-product-header-layout-area.desing-two .brator-product-single-cart-action .brator-product-single-cart-wish {
+    .rollparts-product-header-layout-area.desing-two .brator-product-single-cart-action .brator-product-single-cart-wish {
         width: 100%;
         margin-bottom: 10px;
     }
 
-    .brator-product-header-layout-area.desing-two .brator-product-single-cart-action .brator-product-single-cart-wish button {
+    .rollparts-product-header-layout-area.desing-two .brator-product-single-cart-action .brator-product-single-cart-wish button {
         border: 0;
     }
 
-    .brator-product-header-layout-area.desing-two .brator-product-single-cart-action .brator-product-single-cart-compare {
+    .rollparts-product-header-layout-area.desing-two .brator-product-single-cart-action .brator-product-single-cart-compare {
         width: 100%;
     }
 
@@ -8893,19 +8893,15 @@ body {
         padding-left: 40px;
     }
 
-    .brator-categories-list-area.design-two .brator-categories-single {
+    .rollparts-categories-list-area.rollparts-design .brator-categories-single {
         max-width: calc(16.6666667% - 30px);
     }
-
-    /*.brator-cart-info .brator-cart-list .brator-cart-list-items .brator-cart-list-items-removed {*/
-    /*    top: -50px;*/
-    /*}*/
 
     .brator-cart-info .brator-cart-list .brator-cart-list-items .brator-cart-list-items-title .img-cart {
         width: 120px;
     }
 
-    .brator-features-area.design-two a.brator-features-single {
+    .brator-features-area.rollparts-design a.brator-features-single {
         padding-right: 0;
     }
 
@@ -8969,21 +8965,21 @@ body {
         padding-right: 30px;
     }
 
-    .brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-single-cart-action .brator-product-single-cart-compare button {
+    .rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-single-cart-action .brator-product-single-cart-compare button {
         margin: 0;
     }
 
-    .brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-single-cart-action .brator-product-single-cart-wish button {
+    .rollparts-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-single-cart-action .brator-product-single-cart-wish button {
         margin-right: 0;
         padding-right: 0;
         float: left;
     }
 
-    .brator-product-header-layout-area.desing-two .brator-product-header-layout .brator-product-header-layout-img {
+    .rollparts-product-header-layout-area.desing-two .rollparts-product-header-layout .rollparts-product-header-layout-img {
         width: 100% !important;
     }
 
-    .brator-product-header-layout-area.desing-two .brator-product-header-layout .brator-product-layout-header-content {
+    .rollparts-product-header-layout-area.desing-two .rollparts-product-header-layout .rollparts-product-layout-header-content {
         width: 100%;
         margin-top: 40px;
     }
@@ -9035,7 +9031,7 @@ body {
         max-width: 155px;
     }
 
-    .brator-categories-list-area.design-two .brator-categories-single {
+    .rollparts-categories-list-area.rollparts-design .brator-categories-single {
         max-width: calc(20% - 30px);
     }
 
@@ -9082,14 +9078,14 @@ body {
 
 @media only screen and (min-width: 300px) and (max-width: 1199.98px) {
 
-    /* .product-list-items.check-box-product .brator-product-single-item-area.design-two {
+    /* .product-list-items.check-box-product .brator-product-single-item-area.rollparts-design {
         width: calc(100% - 50px);
     } */
-    .brator-product-header-layout-area.desing-one .brator-product-header-layout .brator-product-header-layout-img {
+    .rollparts-product-header-layout-area.desing-one .rollparts-product-header-layout .rollparts-product-header-layout-img {
         width: 100%;
     }
 
-    .brator-product-header-layout-area.desing-one .brator-product-header-layout .brator-product-layout-header-content {
+    .rollparts-product-header-layout-area.desing-one .rollparts-product-header-layout .rollparts-product-layout-header-content {
         width: 100%;
     }
 
@@ -9129,16 +9125,16 @@ body {
         padding-right: 0;
     }
 
-    .brator-categories-list-area.design-two .brator-categories-single {
+    .rollparts-categories-list-area.rollparts-design .brator-categories-single {
         max-width: calc(25% - 30px);
     }
 
-    .brator-parts-search-box-area.design-two .brator-parts-search-box-form {
+    .brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form {
         flex-wrap: wrap;
         justify-content: flex-start;
     }
 
-    .brator-parts-search-box-area.design-two .brator-parts-search-box-form select {
+    .brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form select {
         width: calc(33.3333333% - 30px);
     }
 
@@ -9158,7 +9154,7 @@ body {
         margin-top: 50px;
     }
 
-    .brator-features-area.design-two a.brator-features-single {
+    .brator-features-area.rollparts-design a.brator-features-single {
         margin-top: 50px;
     }
 
@@ -9176,11 +9172,11 @@ body {
         border: 0;
     }
 
-    .brator-footer-area {
+    .rollparts-footer-area {
         padding-top: 0;
     }
 
-    .brator-footer-top-element {
+    .rollparts-footer-top-element {
         margin-bottom: 40px;
     }
 
@@ -9231,7 +9227,7 @@ body {
 }
 
 @media only screen and (min-width: 300px) and (max-width: 1030.98px) {
-    .brator-product-single-tab-list.js-tabs.side-tabbar .brator-product-single-tab-header {
+    .rollparts-product-single-tab-list.js-tabs.side-tabbar .rollparts-product-single-tab-header {
         max-width: 260px;
         margin-right: 45px;
     }
@@ -9246,15 +9242,15 @@ body {
         margin-top: 60px;
     }
 
-    .brator-product-single-tab-area.design-one-m .brator-product-single-tab-list .brator-product-single-tab-header ul {
+    .rollparts-product-single-tab-area.design-one-m .rollparts-product-single-tab-list .rollparts-product-single-tab-header ul {
         flex-wrap: wrap;
     }
 
-    .brator-product-single-tab-area.design-one-m .brator-product-single-tab-list .brator-product-single-tab-header ul li {
+    .rollparts-product-single-tab-area.design-one-m .rollparts-product-single-tab-list .rollparts-product-single-tab-header ul li {
         width: 50%;
     }
 
-    .brator-product-single-tab-area.design-one-m .brator-product-single-tab-list .brator-product-single-tab-header ul li a {
+    .rollparts-product-single-tab-area.design-one-m .rollparts-product-single-tab-list .rollparts-product-single-tab-header ul li a {
         margin-right: 0;
         margin-top: 10px;
         font-size: 16px;
@@ -9262,12 +9258,12 @@ body {
         padding: 0;
     }
 
-    .brator-product-single-tab-area.design-one-m .brator-product-single-tab-list .brator-product-single-tab-header ul li a.js-tabs__title.js-tabs__title-active {
+    .rollparts-product-single-tab-area.design-one-m .rollparts-product-single-tab-list .rollparts-product-single-tab-header ul li a.js-tabs__title.js-tabs__title-active {
         border: 0;
         font-weight: 600;
     }
 
-    .brator-product-single-tab-area.design-one-m .brator-product-single-tab-list .brator-product-single-tab-header ul li a.js-tabs__title.js-tabs__title-active::after {
+    .rollparts-product-single-tab-area.design-one-m .rollparts-product-single-tab-list .rollparts-product-single-tab-header ul li a.js-tabs__title.js-tabs__title-active::after {
         display: none;
     }
 
@@ -9289,11 +9285,11 @@ body {
         flex-wrap: wrap;
     }
 
-    .brator-product-header-layout-area.desing-two .brator-product-header-layout .brator-product-layout-header-content {
+    .rollparts-product-header-layout-area.desing-two .rollparts-product-header-layout .rollparts-product-layout-header-content {
         flex-wrap: wrap;
     }
 
-    .brator-product-header-layout-area.desing-two .brator-product-header-layout .brator-product-layout-header-content .brator-product-hero-content {
+    .rollparts-product-header-layout-area.desing-two .rollparts-product-header-layout .rollparts-product-layout-header-content .rollparts-product-hero-content {
         width: 100%;
         padding-right: 0;
         margin-bottom: 30px;
@@ -9313,30 +9309,30 @@ body {
         padding: 50px;
     }
 
-    .brator-product-single-tab-list.js-tabs.side-tabbar {
+    .rollparts-product-single-tab-list.js-tabs.side-tabbar {
         flex-wrap: wrap;
     }
 
-    .brator-product-single-tab-list.js-tabs.side-tabbar .brator-product-single-tab-header {
+    .rollparts-product-single-tab-list.js-tabs.side-tabbar .rollparts-product-single-tab-header {
         width: 100%;
         max-width: 100%;
         margin-right: 0;
         margin-bottom: 20px;
     }
 
-    .brator-product-single-tab-list.js-tabs.side-tabbar .brator-product-single-tab-header ul li {
+    .rollparts-product-single-tab-list.js-tabs.side-tabbar .rollparts-product-single-tab-header ul li {
         width: 50%;
     }
 
-    .brator-product-single-tab-list.js-tabs.side-tabbar .js-tabs__content.brator-product-single-tab-item {
+    .rollparts-product-single-tab-list.js-tabs.side-tabbar .js-tabs__content.rollparts-product-single-tab-item {
         width: 100%;
     }
 
-    .brator-makes-list .brator-makes-list-single {
+    .brator-makes-list .rollparts-makes-list-single {
         width: calc(50% - 15px);
     }
 
-    .brator-categories-list-area.design-two .brator-categories-single {
+    .rollparts-categories-list-area.rollparts-design .brator-categories-single {
         max-width: calc(33.3333333% - 30px);
     }
 
@@ -9382,7 +9378,7 @@ body {
         font-size: 17px;
     }
 
-    .brator-banner-slider.design-two {
+    .brator-banner-slider.rollparts-design {
         margin-top: 30px;
     }
 
@@ -9439,7 +9435,7 @@ body {
         display: block;
     }
 
-    .brator-banner-area.design-two {
+    .brator-banner-area.rollparts-design {
         padding-bottom: 100px;
     }
 
@@ -9447,7 +9443,7 @@ body {
         justify-content: flex-end;
     }
 
-    .brator-social-link {
+    .rollparts-social-link {
         justify-content: center;
         margin-top: 20px;
     }
@@ -9494,30 +9490,30 @@ body {
         padding: 20px;
     }
 
-    .brator-product-header-layout-area.desing-one .brator-product-header-layout .brator-product-header-layout-img .brator-product-img-tab-list.js-tabs#tabs-product-img.design-two {
+    .rollparts-product-header-layout-area.desing-one .rollparts-product-header-layout .rollparts-product-header-layout-img .brator-product-img-tab-list.js-tabs#tabs-product-img.rollparts-design {
         flex-wrap: wrap-reverse;
     }
 
-    .brator-product-header-layout-area.desing-one .brator-product-header-layout .brator-product-layout-header-content .brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-brand-img {
+    .rollparts-product-header-layout-area.desing-one .rollparts-product-header-layout .rollparts-product-layout-header-content .rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-brand-img {
         position: relative;
         margin-bottom: 10px;
     }
 
-    .brator-product-header-layout-area.desing-one .brator-product-header-layout .brator-product-layout-header-content .brator-product-hero-content .brator-product-hero-content-add-to-cart .brator-product-single-cart-action {
+    .rollparts-product-header-layout-area.desing-one .rollparts-product-header-layout .rollparts-product-layout-header-content .rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .brator-product-single-cart-action {
         flex-wrap: wrap;
     }
 
-    .brator-product-header-layout-area.desing-one .brator-product-header-layout .brator-product-layout-header-content .brator-product-hero-content .brator-product-hero-content-add-to-cart .brator-product-single-cart-action button {
+    .rollparts-product-header-layout-area.desing-one .rollparts-product-header-layout .rollparts-product-layout-header-content .rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .brator-product-single-cart-action button {
         padding: 2px 17px;
         border: 0;
         width: 100%;
     }
 
-    .brator-product-header-layout-area.desing-one .brator-product-header-layout .brator-product-layout-header-content .brator-product-hero-content .brator-product-hero-content-add-to-cart .brator-product-single-cart-count-add {
+    .rollparts-product-header-layout-area.desing-one .rollparts-product-header-layout .rollparts-product-layout-header-content .rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .rollparts-product-single-cart-count-add {
         flex-wrap: wrap;
     }
 
-    .brator-product-header-layout-area.desing-one .brator-product-header-layout .brator-product-layout-header-content .brator-product-hero-content .brator-product-hero-content-add-to-cart .brator-product-single-cart-count-add .brator-product-single-cart-add {
+    .rollparts-product-header-layout-area.desing-one .rollparts-product-header-layout .rollparts-product-layout-header-content .rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .rollparts-product-single-cart-count-add .rollparts-product-single-cart-add {
         margin-left: 0;
         margin-top: 10px;
     }
@@ -9526,25 +9522,25 @@ body {
         font-size: 50px;
     }
 
-    .brator-product-single-tab-list.js-tabs.side-tabbar .brator-product-single-tab-header ul li {
+    .rollparts-product-single-tab-list.js-tabs.side-tabbar .rollparts-product-single-tab-header ul li {
         width: 100%;
         padding-left: 0;
     }
 
-    .brator-product-single-tab-list.js-tabs.side-tabbar .js-tabs__content.brator-product-single-tab-item {
+    .rollparts-product-single-tab-list.js-tabs.side-tabbar .js-tabs__content.rollparts-product-single-tab-item {
         width: 100%;
     }
 
-    .brator-product-single-tab-list.js-tabs.side-tabbar .js-tabs__content.brator-product-single-tab-item ul li {
+    .rollparts-product-single-tab-list.js-tabs.side-tabbar .js-tabs__content.rollparts-product-single-tab-item ul li {
         width: 100%;
         padding-left: 0;
     }
 
-    .brator-categories-list-area.design-two .brator-categories-single {
+    .rollparts-categories-list-area.rollparts-design .brator-categories-single {
         max-width: calc(50% - 30px);
     }
 
-    .brator-parts-search-box-area.design-two .brator-parts-search-box-form select {
+    .brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form select {
         width: calc(50% - 30px);
     }
 
@@ -9642,17 +9638,17 @@ body {
         margin-bottom: 40px;
     }
 
-    .brator-section-header {
+    .rollparts-section-header {
         flex-wrap: wrap;
     }
 
-    .brator-section-header h2 {
+    .rollparts-section-header h2 {
         width: 100%;
         font-size: 25px;
         padding-right: 60px;
     }
 
-    .brator-section-header a {
+    .rollparts-section-header a {
         width: 100%;
         justify-content: flex-start;
         margin-top: 20px;
@@ -9663,12 +9659,12 @@ body {
         justify-content: center;
     }
 
-    .brator-banner-area.design-two {
+    .brator-banner-area.rollparts-design {
         padding: 35px 25px;
         padding-bottom: 100px;
     }
 
-    .brator-banner-slider.design-two .splide__pagination {
+    .brator-banner-slider.rollparts-design .splide__pagination {
         padding-left: 25px;
     }
 
@@ -9676,7 +9672,7 @@ body {
         justify-content: center;
     }
 
-    .brator-copyright-area p {
+    .rollparts-copyright-area p {
         text-align: center;
         margin-bottom: 22px;
     }
@@ -9721,16 +9717,16 @@ body {
 }
 
 @media only screen and (min-width: 300px) and (max-width: 625.98px) {
-    .brator-parts-search-box-area.design-two .brator-parts-search-box-form {
+    .brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form {
         gap: 10px;
     }
 
-    .brator-parts-search-box-area.design-two .brator-parts-search-box-form select {
+    .brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form select {
         width: calc(100% - 0px);
         margin-bottom: 10px;
     }
 
-    .brator-parts-search-box-area.design-two .brator-parts-search-box-form select:last-child {
+    .brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form select:last-child {
         margin-bottom: 0;
     }
 
@@ -9813,7 +9809,7 @@ body {
         height: 50px;
     }
 
-    .brator-product-header-layout-area .brator-product-header-layout {
+    .rollparts-product-header-layout-area .rollparts-product-header-layout {
         padding: 20px;
     }
 
@@ -9838,11 +9834,11 @@ body {
         margin-block-end: 20px;
     }
 
-    .brator-categories-list-area.design-two {
+    .rollparts-categories-list-area.rollparts-design {
         gap: 0;
     }
 
-    .brator-categories-list-area.design-two .brator-categories-single {
+    .rollparts-categories-list-area.rollparts-design .brator-categories-single {
         max-width: calc(100% - 0px);
     }
 
@@ -9918,7 +9914,7 @@ body {
 }
 
 @media only screen and (min-width: 300px) and (max-width: 455.98px) {
-    .brator-product-single-tab-list.js-tabs.side-tabbar .brator-product-single-tab-header {
+    .rollparts-product-single-tab-list.js-tabs.side-tabbar .rollparts-product-single-tab-header {
         padding: 30px;
     }
 
@@ -9954,25 +9950,25 @@ body {
         margin-right: 0;
     }
 
-    .brator-makes-list .brator-makes-list-single {
+    .brator-makes-list .rollparts-makes-list-single {
         width: calc(100% - 0px);
         margin-bottom: 15px;
     }
 
-    .brator-banner-area.design-two .brator-banner-content .brator-banner-content-off {
+    .brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-off {
         margin-bottom: 0px;
     }
 
-    .brator-banner-area.design-two .brator-banner-content .brator-banner-content-off p {
+    .brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-off p {
         font-size: 80px;
     }
 
-    .brator-banner-area.design-two .brator-banner-content .brator-banner-content-off span {
+    .brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-off span {
         line-height: 40px;
         font-size: 35px;
     }
 
-    .brator-banner-area.design-two .brator-banner-content .brator-banner-content-off span strong {
+    .brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-off span strong {
         font-size: 25px;
     }
 }
@@ -10093,17 +10089,17 @@ body {
     bottom: 32px;
 }
 
-.brator-service-area .col-lg-3 {
+.rollparts-service-area .col-lg-3 {
     padding-left: 0;
     padding-right: 0;
 }
 
-.brator-service-area .brator-single-service-item {
+.rollparts-service-area .rollparts-single-service-item {
     padding: 55px 0 40px 125px;
     position: relative;
 }
 
-.brator-service-area .brator-single-service-item::before {
+.rollparts-service-area .rollparts-single-service-item::before {
     position: absolute;
     content: '';
     right: 0;
@@ -10115,32 +10111,32 @@ body {
 
 }
 
-.brator-service-area .brator-single-service-item .iocn {
+.rollparts-service-area .rollparts-single-service-item .icon {
     position: absolute;
     left: 40px;
     top: 40px;
     transition: all linear 0.4s;
 }
-.brator-service-area .brator-single-service-item img {
+.rollparts-service-area .rollparts-single-service-item img {
     height: 40px;
 }
-.brator-service-area .brator-single-service-item.last-item::before {
+.rollparts-service-area .rollparts-single-service-item.last-item::before {
     display: none;
 }
 
 
-.brator-service-area .brator-single-service-item h4 {
+.rollparts-service-area .rollparts-single-service-item h4 {
     font-size: 18px;
     font-weight: 700;
     color: #000;
 }
 
-.brator-service-area .brator-single-service-item p {
+.rollparts-service-area .rollparts-single-service-item p {
     font-size: 13px;
     color: #999999;
 }
 
-.brator-service-area .brator-single-service-item p {
+.rollparts-service-area .rollparts-single-service-item p {
     font-size: 13px;
     color: #999999;
 }
@@ -10972,56 +10968,56 @@ input#to_pro_price {
     color: #ffffff;
 }
 
-.brator-parts-search-box-area.search-box-with-banner.design-two {
+.brator-parts-search-box-area.search-box-with-banner.rollparts-design {
     background: transparent;
     border-radius: 0px;
 }
 
-.brator-parts-search-box-area.search-box-with-banner.design-two .brator-parts-search-box-header {
+.brator-parts-search-box-area.search-box-with-banner.rollparts-design .brator-parts-search-box-header {
     text-align: center;
 }
 
-.brator-parts-search-box-area.search-box-with-banner.design-two .brator-parts-search-box-header h2 {
+.brator-parts-search-box-area.search-box-with-banner.rollparts-design .brator-parts-search-box-header h2 {
     color: #ffffff;
 }
 
-.brator-parts-search-box-area.search-box-with-banner.design-two .brator-parts-search-box-header p {
+.brator-parts-search-box-area.search-box-with-banner.rollparts-design .brator-parts-search-box-header p {
     color: #ffffff;
 }
 
-.brator-parts-search-box-area.search-box-with-banner.design-two .brator-parts-search-box-form {
+.brator-parts-search-box-area.search-box-with-banner.rollparts-design .brator-parts-search-box-form {
     border-color: transparent;
     background-color: #ffffff;
     border-radius: 8px 8px 0px 0px;
 }
 
-.brator-parts-search-box-area.search-box-with-banner.design-two .brator-parts-search-box-form select:disabled {
+.brator-parts-search-box-area.search-box-with-banner.rollparts-design .brator-parts-search-box-form select:disabled {
     background-color: #f2f2f7;
 }
 
 /* Banner style two end */
-.brator-categories-list-area.design-two.gray-bg {
+.rollparts-categories-list-area.rollparts-design.gray-bg {
     padding: 75px 0;
     background-color: #f2f2f7;
 }
 
-.brator-categories-list-area.categories-with-load-more .brator-section-header {
+.rollparts-categories-list-area.categories-with-load-more .rollparts-section-header {
     justify-content: center;
 }
 
-.brator-categories-list-area.categories-with-load-more .brator-section-header-title h2 {
+.rollparts-categories-list-area.categories-with-load-more .rollparts-section-header-title h2 {
     margin-right: 0px;
 }
 
-.brator-categories-list-area.categories-with-load-more .brator-categories-list {
+.rollparts-categories-list-area.categories-with-load-more .brator-categories-list {
     justify-content: center;
 }
 
-.brator-categories-list-area.design-two .brator-categories-single {
+.rollparts-categories-list-area.rollparts-design .brator-categories-single {
     background-color: #f5f5fa;
 }
 
-.brator-categories-list-area.design-two.gray-bg .brator-categories-single {
+.rollparts-categories-list-area.rollparts-design.gray-bg .brator-categories-single {
     background-color: #ffffff;
 }
 
@@ -11049,7 +11045,7 @@ input#to_pro_price {
     color: var(--color-high-dark);
 }
 
-.brator-makes-list-area.design-two {
+.rollparts-makes-list-area.rollparts-design {
     padding-top: 85px;
 }
 
@@ -11058,7 +11054,7 @@ input#to_pro_price {
     background-color: #fff;
 }
 
-.brator-brand-item-area.design-three .brator-section-header {
+.brator-brand-item-area.design-three .rollparts-section-header {
     justify-content: center;
 }
 
@@ -11067,7 +11063,7 @@ input#to_pro_price {
     align-items: center;
 }
 
-.brator-brand-item-area.design-three .brator-section-header h2 {
+.brator-brand-item-area.design-three .rollparts-section-header h2 {
     margin-right: 0px;
 }
 
@@ -11077,7 +11073,7 @@ input#to_pro_price {
     margin: 40px 0;
 }
 
-.brator-blog-featured-area .brator-section-header {
+.brator-blog-featured-area .rollparts-section-header {
     margin-bottom: 40px;
 }
 
@@ -11089,7 +11085,7 @@ input#to_pro_price {
 
 
 
-.brator-best-seller-section-header-area .brator-section-header.all-item-left {
+.rollparts-best-seller-section-header-area .rollparts-section-header.all-item-left {
     width: auto;
     margin-bottom: 0px;
 }
@@ -11155,7 +11151,7 @@ input#to_pro_price {
     padding-bottom: 100px;
 }
 
-.brator-blog-featured-area.grid-type.design-two {
+.brator-blog-featured-area.grid-type.rollparts-design {
     margin-top: 95px;
     margin-bottom: 110px;
 }
@@ -11166,11 +11162,11 @@ input#to_pro_price {
     padding-bottom: 90px;
 }
 
-.brator-offer-slider-area.brator-whats-hot-area .brator-section-header {
+.brator-offer-slider-area.brator-whats-hot-area .rollparts-section-header {
     justify-content: center;
 }
 
-.brator-offer-slider-area.brator-whats-hot-area .brator-section-header h2 {
+.brator-offer-slider-area.brator-whats-hot-area .rollparts-section-header h2 {
     margin-right: 0px;
 }
 
@@ -11228,13 +11224,13 @@ input#to_pro_price {
     border: 2px solid #000;
 }
 
-.brator-hot-box-design-two .brator-hot-box-content .brator-hot-box-text h2 {
+.brator-hot-box-rollparts-design .brator-hot-box-content .brator-hot-box-text h2 {
     font-size: 30px;
     font-weight: 400;
     color: #000000;
 }
 
-.brator-hot-box-design-two .brator-hot-box-content .brator-hot-box-text h2 span {
+.brator-hot-box-rollparts-design .brator-hot-box-content .brator-hot-box-text h2 span {
     font-weight: 700;
 }
 
@@ -11325,7 +11321,7 @@ input#to_pro_price {
     padding-bottom: 60px;
 }
 
-.brator-makes-list-area.design-two .brator-makes-list-tab-header ul {
+.rollparts-makes-list-area.rollparts-design .rollparts-makes-list-tab-header ul {
     padding: 0;
     margin: 0;
     display: flex;
@@ -11334,11 +11330,11 @@ input#to_pro_price {
     margin-bottom: 35px;
 }
 
-.brator-makes-list-area.design-two .brator-makes-list-tab-header ul li {
+.rollparts-makes-list-area.rollparts-design .rollparts-makes-list-tab-header ul li {
     list-style: outside none;
 }
 
-.brator-makes-list-area.design-two .brator-makes-list-tab-header ul li a {
+.rollparts-makes-list-area.rollparts-design .rollparts-makes-list-tab-header ul li a {
     font-size: 30px;
     font-weight: 400;
     color: #999999;
@@ -11348,7 +11344,7 @@ input#to_pro_price {
     display: inline-block;
 }
 
-.brator-makes-list-area.design-two .brator-makes-list-tab-header ul li a::after {
+.rollparts-makes-list-area.rollparts-design .rollparts-makes-list-tab-header ul li a::after {
     content: "";
     display: block;
     width: 0%;
@@ -11361,12 +11357,12 @@ input#to_pro_price {
     opacity: 0;
 }
 
-.brator-makes-list-area.design-two .brator-makes-list-tab-header ul li a.js-tabs__title.js-tabs__title-active {
+.rollparts-makes-list-area.rollparts-design .rollparts-makes-list-tab-header ul li a.js-tabs__title.js-tabs__title-active {
     color: #000000;
     font-weight: 700;
 }
 
-.brator-makes-list-area.design-two .brator-makes-list-tab-header ul li a.js-tabs__title.js-tabs__title-active::after {
+.rollparts-makes-list-area.rollparts-design .rollparts-makes-list-tab-header ul li a.js-tabs__title.js-tabs__title-active::after {
     width: 100%;
     opacity: 1;
 }
@@ -11388,7 +11384,7 @@ input#to_pro_price {
 }
 
 @media only screen and (min-width: 1800px) {
-    .brator-product-single-cart-count .brator-brator-cart-list-items-qty input {
+    .rollparts-product-single-cart-count .rollparts-cart-list-items-qty input {
         margin-left: 38px !important;
     }
 }
@@ -11402,7 +11398,7 @@ input#to_pro_price {
         padding-right: 50px;
     }
 
-    .brator-makes-list-single {
+    .rollparts-makes-list-single {
         width: calc(33.33% - 15px);
     }
 }
@@ -11429,11 +11425,11 @@ input#to_pro_price {
         margin-block-end: 20px;
     }
 
-    .brator-parts-search-box-area.design-two .brator-parts-search-box-form button {
+    .brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form button {
         max-width: 180px;
     }
 
-    .product-tab-section .brator-section-header a {
+    .product-tab-section .rollparts-section-header a {
         display: none;
     }
 
@@ -11441,14 +11437,14 @@ input#to_pro_price {
         display: none;
     }
 
-    .brator-footer-top-area .elementor-column {
+    .footer-block .section-column {
         width: 50% !important;
     }
 
 }
 
 @media only screen and (max-width: 767px) {
-    .brator-best-seller-section-header-area {
+    .rollparts-best-seller-section-header-area {
         flex-wrap: wrap;
     }
 
@@ -11493,11 +11489,11 @@ input#to_pro_price {
         font-size: 32px;
     }
 
-    .brator-parts-search-box-area.design-two .brator-parts-search-box-form button {
+    .brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form button {
         max-width: 100%;
     }
 
-    .brator-footer-top-area .elementor-column {
+    .footer-block .section-column {
         width: 100% !important;
     }
 
@@ -11505,7 +11501,7 @@ input#to_pro_price {
         margin-bottom: 20px;
     }
 
-    .brator-makes-list-area.design-two .brator-makes-list-tab-header ul li a {
+    .rollparts-makes-list-area.rollparts-design .rollparts-makes-list-tab-header ul li a {
         font-size: 18px;
         margin: 0px 8px;
     }
@@ -11576,7 +11572,7 @@ input#to_pro_price {
     font-weight: 700;
 }
 
-.product_list_widget span.woocommerce-Price-amount.amount {
+.product_list_widget span.rollparts-Price-amount.amount {
     font-size: 14px;
     text-decoration: none;
     color: #000;
@@ -11587,7 +11583,7 @@ input#to_pro_price {
     background: transparent;
 }
 
-.product_list_widget ins span.woocommerce-Price-amount.amount {
+.product_list_widget ins span.rollparts-Price-amount.amount {
     color: var(--color-high-dark);
 }
 
@@ -11595,7 +11591,7 @@ input#to_pro_price {
     font-weight: 400;
 }
 
-.woocommerce div.product .brator-product-hero-content-add-to-cart form.cart {
+.woocommerce div.product .rollparts-product-hero-content-add-to-cart form.cart {
     margin-bottom: 0;
 }
 
@@ -11699,7 +11695,7 @@ select#tinvwl_product_actions {
     height: 50px;
 }
 
-.brator-features-area.design-two a.brator-features-single .brator-features-single-img svg {
+.brator-features-area.rollparts-design a.brator-features-single .brator-features-single-img svg {
     fill: var(--color-high-dark);
     z-index: 1;
     font-size: 32px;
@@ -11824,11 +11820,11 @@ select#tinvwl_product_actions {
         margin-bottom: 0;
     }
 
-    .brator-service-area .brator-single-service-item .iocn {
+    .rollparts-service-area .rollparts-single-service-item .icon {
         left: 30px;
     }
 
-    .brator-service-area .brator-single-service-item {
+    .rollparts-service-area .rollparts-single-service-item {
         padding: 55px 0 40px 95px;
     }
 
@@ -11842,11 +11838,11 @@ select#tinvwl_product_actions {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
-    .brator-service-area .brator-single-service-item .iocn {
+    .rollparts-service-area .rollparts-single-service-item .icon {
         position: static;
     }
 
-    .brator-service-area .brator-single-service-item {
+    .rollparts-service-area .rollparts-single-service-item {
         padding-left: 0;
     }
 
@@ -11887,7 +11883,7 @@ select#tinvwl_product_actions {
         height: 150px;
     }
 
-    .brator-service-area .brator-single-service-item::before {
+    .rollparts-service-area .rollparts-single-service-item::before {
         display: none;
     }
 }
@@ -11906,16 +11902,16 @@ select#tinvwl_product_actions {
         text-align: center;
     }
 
-    .brator-service-area .brator-single-service-item {
+    .rollparts-service-area .rollparts-single-service-item {
         padding: 25px 0 10px 125px;
     }
 
-    .brator-service-area .brator-single-service-item .iocn {
+    .rollparts-service-area .rollparts-single-service-item .icon {
         top: 30px;
         left: 0;
     }
 
-    .brator-service-area .brator-single-service-item {
+    .rollparts-service-area .rollparts-single-service-item {
         padding-left: 60px;
     }
 
@@ -11951,11 +11947,11 @@ select#tinvwl_product_actions {
         bottom: 15px;
     }
 
-    .brator-service-area .brator-single-service-item .iocn {
+    .rollparts-service-area .rollparts-single-service-item .icon {
         position: static;
     }
 
-    .brator-service-area .brator-single-service-item {
+    .rollparts-service-area .rollparts-single-service-item {
         text-align: center;
         padding: 20px 0 10px 0px;
     }
@@ -11969,7 +11965,7 @@ select#tinvwl_product_actions {
         justify-content: flex-start;
     }
 
-    .brator-parts-search-box-area.design-two .brator-parts-search-box-form button {
+    .brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form button {
         width: 100% !important;
     }
 
@@ -12023,15 +12019,15 @@ select#tinvwl_product_actions {
     align-items: center;
 }
 
-.brator-categories-list-area.design-two .brator-categories-single {
+.rollparts-categories-list-area.rollparts-design .brator-categories-single {
     margin-bottom: 30px;
 }
 
-.brator-categories-list-area.design-two .brator-categories-list .brator-categories-single:nth-child(14)~.brator-categories-single {
+.rollparts-categories-list-area.rollparts-design .brator-categories-list .brator-categories-single:nth-child(14)~.brator-categories-single {
     display: none;
 }
 
-.brator-categories-list-area.design-two .brator-categories-list.open .brator-categories-single:nth-child(14)~.brator-categories-single {
+.rollparts-categories-list-area.rollparts-design .brator-categories-list.open .brator-categories-single:nth-child(14)~.brator-categories-single {
     display: block;
 }
 
@@ -12187,19 +12183,19 @@ li#clearvehicle {
     }
 }
 
-.brator-section-header-title.header-title-countdown {
+.rollparts-section-header-title.header-title-countdown {
     flex-basis: 80%;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.brator-section-header-title .brator-product-countdown {
+.rollparts-section-header-title .brator-product-countdown {
     background: var(--color-high-dark);
     border-radius: 3px;
 }
 
-.brator-section-header-title .brator-product-countdown div>span {
+.rollparts-section-header-title .brator-product-countdown div>span {
     color: #fff;
     font-size: 13px;
     text-transform: uppercase;
@@ -12210,13 +12206,13 @@ li#clearvehicle {
     margin-top: 2px;
 }
 
-.brator-section-header-title .brator-product-countdown ul {
+.rollparts-section-header-title .brator-product-countdown ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
-.brator-section-header-title .brator-product-countdown ul li {
+.rollparts-section-header-title .brator-product-countdown ul li {
     display: inline-block;
     color: #fff;
     font-size: 13px;
@@ -12224,13 +12220,13 @@ li#clearvehicle {
     font-weight: 700;
 }
 
-.brator-section-header-title .brator-product-countdown .brator-coming-soon-counter {
+.rollparts-section-header-title .brator-product-countdown .brator-coming-soon-counter {
     display: flex;
     align-items: center;
     padding: 0 10px;
 }
 
-.brator-section-header-title .brator-product-countdown ul li span {
+.rollparts-section-header-title .brator-product-countdown ul li span {
     padding-right: 0;
 }
 
@@ -12328,8 +12324,8 @@ span.vehicle-check.tool {
     display: none;
 }
 
-.woocommerce div.product .brator-product-layout-header-content form.cart .variations td,
-.woocommerce div.product .brator-product-layout-header-content form.cart .variations th {
+.woocommerce div.product .rollparts-product-layout-header-content form.cart .variations td,
+.woocommerce div.product .rollparts-product-layout-header-content form.cart .variations th {
     padding-left: 0;
     padding-right: 0;
     text-align: left;
@@ -12385,7 +12381,7 @@ h2.woocommerce-order-details__title {
     background: transparent;
 }
 
-.brator-parts-search-box-area.design-two .brator-parts-search-box-form .select2-container .select2-selection--single {
+.brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form .select2-container .select2-selection--single {
     display: block;
     width: 100%;
     height: 50px;
@@ -12398,13 +12394,13 @@ h2.woocommerce-order-details__title {
 }
 
 .brator-parts-search-box-area.design-one .brator-parts-search-box-form .select2-container .select2-selection--single .select2-selection__rendered,
-.brator-parts-search-box-area.design-two .brator-parts-search-box-form .select2-container .select2-selection--single .select2-selection__rendered {
+.brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form .select2-container .select2-selection--single .select2-selection__rendered {
     line-height: 50px;
     padding: 0 20px;
 }
 
 .brator-parts-search-box-area.design-one .brator-parts-search-box-form .select2-container .select2-selection--single .select2-selection__arrow,
-.brator-parts-search-box-area.design-two .brator-parts-search-box-form .select2-container .select2-selection--single .select2-selection__arrow {
+.brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form .select2-container .select2-selection--single .select2-selection__arrow {
     top: 50%;
     transform: translateY(-50%);
     right: 12px;
@@ -12545,19 +12541,19 @@ h2.woocommerce-order-details__title {
 }
 
 /* home electro */
-.brator-categories-list-area.design-four .brator-categories-single {
+.rollparts-categories-list-area.design-four .brator-categories-single {
     background-color: #fff;
     padding: 0;
     padding-bottom: 15px;
     margin-top: 50px;
 }
 
-.brator-categories-list-area.design-four .brator-categories-single .brator-categories-single-img {
+.rollparts-categories-list-area.design-four .brator-categories-single .brator-categories-single-img {
     height: auto;
     margin-top: -38px;
 }
 
-.brator-categories-list-area.design-four .brator-categories-single:hover .brator-categories-single-title a {
+.rollparts-categories-list-area.design-four .brator-categories-single:hover .brator-categories-single-title a {
     text-decoration: none;
     color: #ffa00d;
 }
@@ -12641,12 +12637,12 @@ a.icon-btn svg {
     padding: 0;
 }
 
-.brator-deal-product-slider.style-four .brator-section-header {
+.brator-deal-product-slider.style-four .rollparts-section-header {
     width: auto;
     margin-bottom: 0;
 }
 
-.brator-deal-product-slider.style-four .brator-best-seller-section-header-area {
+.brator-deal-product-slider.style-four .rollparts-best-seller-section-header-area {
     justify-content: flex-start;
     margin-bottom: 17px;
 }
@@ -12711,8 +12707,8 @@ a.icon-btn svg {
     margin-left: 78px;
 }
 
-.product-sidebar-item-text span.woocommerce-Price-amount.amount bdi,
-.product-sidebar-item-text span.woocommerce-Price-amount.amount {
+.product-sidebar-item-text span.rollparts-Price-amount.amount bdi,
+.product-sidebar-item-text span.rollparts-Price-amount.amount {
     font-weight: 700;
     font-size: 13px;
     line-height: 26px;
@@ -13192,11 +13188,11 @@ a.banner-btn:hover {
 }
 
 @media only screen and (max-width: 991px) {
-    .brator-service-area.style-two .row {
+    .rollparts-service-area.style-two .row {
         padding: 20px;
     }
 
-    .brator-section-header-title .brator-product-countdown {
+    .rollparts-section-header-title .brator-product-countdown {
         margin-top: 10px;
     }
 }
@@ -13226,7 +13222,7 @@ a.banner-btn:hover {
     color: #f73312;
 }
 
-.brator-section-header-title .brator-product-countdown,
+.rollparts-section-header-title .brator-product-countdown,
 .brator-product-single-item-area .brator-product-single-item-info .off-batch {
     background-color: #f73312;
 }
@@ -13325,18 +13321,18 @@ a.banner-btn:hover {
         gap: 20px;
     }
 
-    .product-list-items.check-box-product .brator-product-single-item-area.design-two {
+    .product-list-items.check-box-product .brator-product-single-item-area.rollparts-design {
         width: calc(33.33333333% - 20px);
     }
 
-    .product-list-items.check-box-product .brator-product-single-item-area.design-two::after {
+    .product-list-items.check-box-product .brator-product-single-item-area.rollparts-design::after {
         display: none;
     }
 
 }
 
 @media only screen and (max-width: 767px) {
-    .product-list-items.check-box-product .brator-product-single-item-area.design-two {
+    .product-list-items.check-box-product .brator-product-single-item-area.rollparts-design {
         width: 100%;
     }
     .product-list-items.type-list .brator-product-single-item-area.design-three .brator-product-single-item-area-right {
@@ -13352,7 +13348,7 @@ a.banner-btn:hover {
     .brator-search-area .search-quly {
         display: none;
     }
-    .brator-product-single-cart-count .brator-brator-cart-list-items-qty {
+    .rollparts-product-single-cart-count .rollparts-cart-list-items-qty {
         margin-left: auto;
         top: 0;
     }

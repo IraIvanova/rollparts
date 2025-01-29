@@ -59,21 +59,21 @@
                                         <tbody>
                                         <tr class="cart-subtotal">
                                             <th>Subtotal</th>
-                                            <td data-title="Subtotal"><span class="woocommerce-Price-amount amount"><bdi><span
-                                                            class="woocommerce-Price-currencySymbol">$</span>{{$totalPrice}}</bdi></span>
+                                            <td data-title="Subtotal"><span class="rollparts-Price-amount amount"><bdi><span
+                                                            class="rollparts-currencySymbol">$</span>{{$totalPrice}}</bdi></span>
                                             </td>
                                         </tr>
                                         <tr class="">
                                             <th>Discount</th>
-                                            <td data-title="Subtotal"><span class="woocommerce-Price-amount amount"><bdi><span
-                                                            class="woocommerce-Price-currencySymbol">$</span>{{$totalPrice - $totalWithDiscount}}</bdi></span>
+                                            <td data-title="Subtotal"><span class="rollparts-Price-amount amount"><bdi><span
+                                                            class="rollparts-currencySymbol">$</span>{{$totalPrice - $totalWithDiscount}}</bdi></span>
                                             </td>
                                         </tr>
                                         <tr class="order-total">
                                             <th>Total</th>
                                             <td data-title="Total"><strong><span
-                                                        class="woocommerce-Price-amount amount"><bdi><span
-                                                                class="woocommerce-Price-currencySymbol">$</span>{{$totalWithDiscount}}</bdi></span></strong>
+                                                        class="rollparts-Price-amount amount"><bdi><span
+                                                                class="rollparts-currencySymbol">$</span>{{$totalWithDiscount}}</bdi></span></strong>
                                             </td>
                                         </tr>
                                         </tbody>

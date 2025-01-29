@@ -1,5 +1,5 @@
 <div
-    class="brator-product-single-item-area design-two product type-product ">
+    class="brator-product-single-item-area rollparts-design product type-product ">
     @if($product->discount_amount)
     <div class="brator-product-single-item-info info-content-left">
         <div class="brator-product-single-item-info-right">
@@ -23,16 +23,16 @@
         <div class="brator-product-single-item-price">
             @if($product->discount_amount)
                 <p>
-                <span class="woocommerce-Price-amount amount color-red"><span
-                        class="woocommerce-Price-currencySymbol">$</span>{{ $product->discounted_price }}</span>
+                <span class="rollparts-Price-amount amount color-red"><span
+                        class="rollparts-currencySymbol">$</span>{{ $product->discounted_price }}</span>
 
 
-                <span class="woocommerce-Price-amount amount px-2 color-grey line-through font-size-20px"><span
-                        class="woocommerce-Price-currencySymbol">$</span>{{ $product->price }}</span>
+                <span class="rollparts-Price-amount amount px-2 color-grey line-through font-size-20px"><span
+                        class="rollparts-currencySymbol">$</span>{{ $product->price }}</span>
                 </p>
             @else
-                <span class="woocommerce-Price-amount amount font-weight-bold"><span
-                        class="woocommerce-Price-currencySymbol ">$</span>{{ $product->price }}</span>
+                <span class="rollparts-Price-amount amount font-weight-bold"><span
+                        class="rollparts-currencySymbol ">$</span>{{ $product->price }}</span>
             @endif
         </div>
 
