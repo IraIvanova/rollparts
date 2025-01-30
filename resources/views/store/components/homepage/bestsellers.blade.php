@@ -1,7 +1,7 @@
-<div class="rollparts-best-seller-section-header-area py-5">
+<div class="rp-best-seller-section-header-area py-5">
     <div class="row">
-    <div class=" col-12 rollparts-section-header all-item-left">
-        <div class="rollparts-section-header-title mb-2">
+    <div class=" col-12 rp-section-header all-item-left">
+        <div class="rp-section-header-title mb-2">
             <h2>{{ trans('interface.home.bestsellers') }}</h2>
         </div>
         <a href="{{ route('catalog') }}">{{ trans('interface.home.seeAllProducts') }}
@@ -21,10 +21,10 @@
     </div>
 </div>
 
-<div class="rollparts-best-seller-section-header-area py-5">
+<div class="rp-best-seller-section-header-area py-5">
     <div class="row">
-        <div class=" col-12 rollparts-section-header all-item-left">
-            <div class="rollparts-section-header-title mb-2">
+        <div class=" col-12 rp-section-header all-item-left">
+            <div class="rp-section-header-title mb-2">
                 <h2>{{ trans('interface.home.newProducts') }}</h2>
             </div>
             <a href="{{ route('catalog') }}">{{ trans('interface.home.seeAllProducts') }}

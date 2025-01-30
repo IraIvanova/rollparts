@@ -1,4 +1,4 @@
-<div class="rollparts-sidebar-single-item widget_price_filter">
+<div class="rp-sidebar-single-item widget_price_filter">
     <div class="priceTitle"><h2>{{ trans('interface.filtersAndSort.prices') }}</h2></div>
         <div class="price_slider_wrapper">
             <div class="price-input">

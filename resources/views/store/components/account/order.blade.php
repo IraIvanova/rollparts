@@ -1,11 +1,11 @@
 @if($order->orderProducts)
-<div class="rollparts-cart-area">
+<div class="rp-cart-area">
 {{--    <div class="row">--}}
 {{--        <div class="col-md-12 col-lg-8">--}}
-            <div class="rollparts-cart-info ">
+            <div class="rp-cart-info ">
                 <h6 class="mt-3">Order #{{$order->id}} - {{$order->created_at}}</h6>
                     <table
-                        class="shop_table shop_table_responsive cart cart-form__contents rollparts-cart-list"
+                        class="shop_table shop_table_responsive cart cart-form__contents rp-cart-list"
                         cellspacing="0">
                         <thead>
                         <tr>
@@ -25,14 +25,14 @@
                     @if($order->total_price_with_discount !== $order->total_price)
                 <p class="cart-subtotal  d-flex justify-content-between">
                     <span>Subtotal</span>
-                    <span data-title="Subtotal"><span class="rollparts-Price-amount amount"><bdi><span
-                                    class="rollparts-currencySymbol">$</span>{{$order->total_price}}</bdi></span>
+                    <span data-title="Subtotal"><span class="rp-Price-amount amount"><bdi><span
+                                    class="rp-currencySymbol">$</span>{{$order->total_price}}</bdi></span>
                     </span>
                 </p>
                 <p class=" d-flex justify-content-between">
                     <span>Discount</span>
-                    <span data-title="Subtotal"><span class="rollparts-Price-amount amount"><bdi><span
-                                    class="rollparts-currencySymbol">$</span>{{$order->total_price - $order->total_price_with_discount}}</bdi></span>
+                    <span data-title="Subtotal"><span class="rp-Price-amount amount"><bdi><span
+                                    class="rp-currencySymbol">$</span>{{$order->total_price - $order->total_price_with_discount}}</bdi></span>
                     </span>
                 </p>
                     @endif

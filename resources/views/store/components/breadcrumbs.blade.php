@@ -1,8 +1,8 @@
-<section class="rollparts-breadcrumb-area">
+<section class="rp-breadcrumb-area">
     <div class="container-xxxl container-xxl container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="rollparts-breadcrumb">
+                <div class="rp-breadcrumb">
                     <ul>
 
                         @if(!empty($breadcrumbs))

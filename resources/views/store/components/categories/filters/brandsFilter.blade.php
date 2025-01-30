@@ -1,6 +1,6 @@
-<div class="rollparts-sidebar-single-item">
+<div class="rp-sidebar-single-item">
     <div class="shop-sidebar-title"><h2>{{ trans('interface.filtersAndSort.brands') }}</h2></div>
-    <div class="rollparts-filter-item-content list">
+    <div class="rp-filter-item-content list">
         <ul>
             @foreach($brands as $brand)
                 <li class="d-flex">

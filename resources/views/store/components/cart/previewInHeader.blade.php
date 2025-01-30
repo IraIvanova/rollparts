@@ -1,4 +1,4 @@
-<div class="rollparts-cart-link">
+<div class="rp-cart-link">
     <a href="javascript:void(0)">
         <div class="click-item-count" id="cart-icon">
             <svg fill="#000000" width="52" height="52" version="1.1"
@@ -15,14 +15,14 @@
             </svg>
             <span class="header-cart-count">{{$shoppingCart['totalItems']}}</span>
         </div>
-        <b class="header-cart-total"><span class="rollparts-Price-amount amount"><bdi><span
-                        class="rollparts-currencySymbol">{{ trans('interface.trLira') }} </span>{{min($shoppingCart['totalWithDiscount'], $shoppingCart['totalPrice'])}}</bdi></span></b>
+        <b class="header-cart-total"><span class="rp-Price-amount amount"><bdi><span
+                        class="rp-currencySymbol">{{ trans('interface.trLira') }} </span>{{min($shoppingCart['totalWithDiscount'], $shoppingCart['totalPrice'])}}</bdi></span></b>
 
     </a>
-    <div class="rollparts-cart-item-list" id="cart-preview">
-        <div class="rollparts-cart-item-list-header">
+    <div class="rp-cart-item-list" id="cart-preview">
+        <div class="rp-cart-item-list-header">
             <h2>{!! trans('interface.cart.itemsCount', ['qnt' => $shoppingCart['totalItems']]) !!}</h2>
-            <button class="rollparts-cart-close">
+            <button class="rp-cart-close">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                      fill="currentColor" viewBox="0 0 16 16">
                     <path

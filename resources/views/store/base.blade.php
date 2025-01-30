@@ -28,15 +28,15 @@
     <div class="footer-block">
         <div class="container-xxxl container-xxl container">
             <div>
-                <section class="rollparts-section">
-                    <div class="section-container section-column-gap-no">
-                        <div class="section-column section-col-25 section-element col-xl-4 col-lg-6">
-                            <div class="section-widget-wrap section-element-populated">
-                                <div class="section-element section-widget">
-                                    <div class="section-widget-container">
-                                        <div class="rollparts-footer-top-element rollparts-footer-top-address">
+                <section class="rp-section">
+                    <div class="section-container ">
+                        <div class="section-column section-col-25  col-xl-4 col-lg-6">
+                            <div class=" ">
+                                <div class=" ">
+                                    <div class="">
+                                        <div class="rp-footer-top-element rp-footer-top-address">
                                             <h6 class="footer-top-title">{{ trans('interface.footer.contactUs') }}</h6>
-                                            <div class="rollparts-footer-top-content">
+                                            <div class="rp-footer-top-content">
                                                 <p>{{ trans('interface.footer.workingHours', ['hours' => $contacts['workingHours']]) }}</p>
                                                 <a class="call-top-p"
                                                    href="tel:{{ $contacts['phone'] }}">{{ $contacts['phone'] }}</a>
@@ -50,14 +50,14 @@
                             </div>
                         </div>
                         <div
-                            class="section-column section-col-25  section-element col-xl-2 col-lg-6">
-                            <div class="section-widget-wrap section-element-populated">
+                            class="section-column section-col-25   col-xl-2 col-lg-6">
+                            <div class=" ">
                                 <div
-                                    class="section-element section-widget">
-                                    <div class="section-widget-container">
-                                        <div class="rollparts-footer-top-element">
+                                    class=" ">
+                                    <div class="">
+                                        <div class="rp-footer-top-element">
                                             <h6 class="footer-top-title">{{ trans('interface.footer.customerService') }}</h6>
-                                            <div class="rollparts-footer-top-content rollparts-link-list-one">
+                                            <div class="rp-footer-top-content rp-link-list-one">
                                                 <ul>
                                                     <li class="link_with_normal">
                                                         <a href="">
@@ -79,14 +79,14 @@
                             </div>
                         </div>
                         <div
-                            class="section-column section-col-25  section-element col-xxl-3 col-xl-2 col-lg-6">
-                            <div class="section-widget-wrap section-element-populated">
+                            class="section-column section-col-25   col-xxl-3 col-xl-2 col-lg-6">
+                            <div class=" ">
                                 <div
-                                    class="section-element section-widget">
-                                    <div class="section-widget-container">
-                                        <div class="rollparts-footer-top-element">
+                                    class=" ">
+                                    <div class="">
+                                        <div class="rp-footer-top-element">
                                             <h6 class="footer-top-title">{{ trans('interface.footer.information') }}</h6>
-                                            <div class="rollparts-footer-top-content rollparts-link-list-one">
+                                            <div class="rp-footer-top-content rp-link-list-one">
                                                 <ul>
                                                     <li class="link_with_normal">
                                                         <a href="">
@@ -108,14 +108,14 @@
                             </div>
                         </div>
                         <div
-                            class="section-column section-col-25  section-element col-xl-3 col-lg-6">
-                            <div class="section-widget-wrap section-element-populated">
+                            class="section-column section-col-25   col-xl-3 col-lg-6">
+                            <div class=" ">
                                 <div
-                                    class="section-element section-widget">
-                                    <div class="section-widget-container">
-                                        <div class="rollparts-footer-top-element">
+                                    class=" ">
+                                    <div class="">
+                                        <div class="rp-footer-top-element">
                                             <h6 class="footer-top-title">Subscribe To Our Newsletter</h6>
-                                            <div class="rollparts-footer-top-content">
+                                            <div class="rp-footer-top-content">
                                                 <p>Register now to get latest updates on promotions &amp; coupons. Don’t
                                                     worry, we not spam!</p>
                                             </div>
@@ -129,11 +129,11 @@
             </div>
         </div>
     </div>
-    <footer class="rollparts-footer-area">
+    <footer class="rp-footer-area">
         <div class="container-xxxl container-xxl container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12">
-                    <div class="rollparts-copyright-area">
+                    <div class="rp-copyright-area">
                         <p> {{ trans('interface.footer.copyright', ['year' => 2025]) }}</p>
                     </div>
                 </div>
@@ -148,8 +148,8 @@
 {{--                    </div>--}}
                 </div>
                 <div class="col-lg-4 col-12">
-                    <div class="rollparts-social-link svg-link">
-                        <h6 class="rollparts-social-link">{{ trans('interface.footer.followUs') }}</h6>
+                    <div class="rp-social-link svg-link">
+                        <h6 class="rp-social-link">{{ trans('interface.footer.followUs') }}</h6>
                         <a href="https://twitter.com/">
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">

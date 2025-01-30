@@ -1,9 +1,9 @@
-<div class="rollparts-header-area header-one">
+<div class="rp-header-area header-one">
     <div class="container-xxxl container">
         <div class="row">
             <div class="col-lg-3">
-                <div class="rollparts-logo-area">
-                    <div class="rollparts-logo">
+                <div class="rp-logo-area">
+                    <div class="rp-logo">
                         <a href="/">
                             <img src="{{asset('images/logo.png')}}" height="100px" alt="Logo">
                         </a>
@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="rollparts-search-area">
+                <div class="rp-search-area">
                     <div class="search-form">
                             <input class="search-field" id="prosearch" type="search" name="search" data-route="{{ route('dynamicSearch') }}"
                                    placeholder="{{ trans('interface.header.searchPlaceholder') }}" value="{{$search ?? ''}}">
@@ -43,8 +43,8 @@
                 </div>
             </div>
             <div class="col-lg-3">
-                <div class="rollparts-info-right">
-                    <div class="rollparts-icon-link-text relation">
+                <div class="rp-info-right">
+                    <div class="rp-icon-link-text relation">
                         <a href="{{ route('client.account') }}">
                             <div class="click-item-count">
                                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg"

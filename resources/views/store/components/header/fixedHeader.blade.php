@@ -1,6 +1,6 @@
-<div class="rollparts-header-menu-area scroll-menu" id="scroll-menu">
+<div class="rp-header-menu-area scroll-menu" id="scroll-menu">
     <div class="close-menu-bg"></div>
-    <div class="rollparts-mega-menu-close">
+    <div class="rp-mega-menu-close">
         <svg class="bi bi-x" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
              viewBox="0 0 16 16">
             <path
@@ -10,9 +10,9 @@
     <div class="container-xxxl container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="rollparts-header-menu-with-info">
-                    <div class="rollparts-logo-area">
-                        <div class="rollparts-logo">
+                <div class="rp-header-menu-with-info">
+                    <div class="rp-logo-area">
+                        <div class="rp-logo">
                             <a href="/">
                                 <img src="{{asset('images/logo.png')}}" alt="Logo">
                             </a>
@@ -25,7 +25,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="rollparts-header-menu sticky-menu">
+                    <div class="rp-header-menu sticky-menu">
                         @include('store.components.header.menu')
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-<div class="rollparts-sidebar-area design-one filters">
+<div class="rp-sidebar-area design-one filters">
     <div class="filter-header" id="filterHeader">
         <span>Filter Options</span>
         <span class="toggle-icon">&#9660;</span>

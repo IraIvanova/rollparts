@@ -1,5 +1,5 @@
-<tr class="cart-form__cart-item rollparts-cart-list-items cart_item">
-    <td class="rollparts-cart-list-items-title">
+<tr class="cart-form__cart-item rp-cart-list-items cart_item">
+    <td class="rp-cart-list-items-title">
         <div class="img-cart">
             <a href="">
                 <img decoding="async" width="85" height="85" src="{{$product['image']}}"
@@ -15,24 +15,24 @@
         <span class="sm-title">Price:</span>
         @if($product['discountedPrice'])
             <p>
-                <span class="rollparts-Price-amount amount color-red"><span
-                        class="rollparts-currencySymbol">$</span>{{ $product['discountedPrice'] }}</span>
+                <span class="rp-Price-amount amount color-red"><span
+                        class="rp-currencySymbol">$</span>{{ $product['discountedPrice'] }}</span>
 
 
-                <span class="rollparts-Price-amount amount px-2 color-grey line-through"><span
-                        class="rollparts-currencySymbol">$</span>{{ $product['price'] }}</span>
+                <span class="rp-Price-amount amount px-2 color-grey line-through"><span
+                        class="rp-currencySymbol">$</span>{{ $product['price'] }}</span>
             </p>
         @else
-            <span class="rollparts-Price-amount amount"><span
-                    class="rollparts-currencySymbol">$</span>{{ $product['price'] }}</span>
+            <span class="rp-Price-amount amount"><span
+                    class="rp-currencySymbol">$</span>{{ $product['price'] }}</span>
         @endif
     </td>
     <td class="product-quantity" data-title="Quantity">
         <span class="sm-title">Amount:</span>
-        <div class="quantity rollparts-product-single-cart-count">
+        <div class="quantity rp-product-single-cart-count">
 
             <div
-                class="item-quantity tt-input-counter js-counter rollparts-cart-list-items-qty" data-product="{{$product['id']}}">
+                class="item-quantity tt-input-counter js-counter rp-cart-list-items-qty" data-product="{{$product['id']}}">
                 <span class="minus-btn amount-btn">–</span>
                 <input type="number"
                        class="input-text qty text"
@@ -47,11 +47,11 @@
     <td class="product-subtotal" data-title="Subtotal">
         <span class="sm-title">Total:</span>
             <p>
-                <span class="rollparts-Price-amount amount"><span
-                        class="rollparts-currencySymbol">$</span>{{ ($product['discountedPrice'] ?: $product['price']) * $product['amount'] }}</span>
+                <span class="rp-Price-amount amount"><span
+                        class="rp-currencySymbol">$</span>{{ ($product['discountedPrice'] ?: $product['price']) * $product['amount'] }}</span>
             </p>
     </td>
-    <td class="product-remove rollparts-cart-list-items-removed" data-product="{{$product['id']}}">
+    <td class="product-remove rp-cart-list-items-removed" data-product="{{$product['id']}}">
         <span class="sm-title">Remove from cart:</span>
         <button type="button"
            class="remove amount-btn remove-full">
