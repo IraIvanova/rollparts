@@ -3694,65 +3694,6 @@ footer.rollparts-footer-area.design-three .rollparts-copyright-area p {
     color: var(--color-high-dark);
 }
 
-.rollparts-filter-item-content-area .brator-rang-item-input {
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
-}
-
-.rollparts-filter-item-content-area .brator-rang-item-input .brator-rang-item-input-single-btn button.ac-trigger {
-    width: 85px;
-    height: 57px;
-}
-
-.rollparts-filter-item-content-area .brator-rang-item-input .brator-rang-item-input-single {
-    position: relative;
-    height: 57px;
-    width: 85px;
-    border-radius: 5px;
-    background: #fff;
-}
-
-.rollparts-filter-item-content-area .brator-rang-item-input .brator-rang-item-input-single:hover .brator-rang-item-input-single-text {
-    top: 0px;
-}
-
-.rollparts-filter-item-content-area .brator-rang-item-input .brator-rang-item-input-single input {
-    background: transparent;
-    font-size: 15px;
-    color: #222;
-    position: relative;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-    padding-bottom: 0;
-}
-
-.rollparts-filter-item-content-area .brator-rang-item-input .brator-rang-item-input-single input[class=focus-visible] {
-    border: 2px solid var(--color-high-dark);
-}
-
-.rollparts-filter-item-content-area .brator-rang-item-input .brator-rang-item-input-single input[class=focus-visible]+.brator-rang-item-input-single-text {
-    top: 0px;
-}
-
-.rollparts-filter-item-content-area .brator-rang-item-input .brator-rang-item-input-single input.current-yaps+.brator-rang-item-input-single-text {
-    top: 0px;
-}
-
-.rollparts-filter-item-content-area .brator-rang-item-input .brator-rang-item-input-single input.current+.brator-rang-item-input-single-text {
-    top: 0px;
-}
-
-.rollparts-filter-item-content-area .brator-rang-item-input .brator-rang-item-input-single .brator-rang-item-input-single-text {
-    transition: 0.3s;
-    position: absolute;
-    top: 13px;
-    left: 13px;
-    font-size: 13px;
-    color: #999999;
-}
-
 .rollparts-filter-item-content-area {
     margin-top: 0px;
     overflow: hidden;
@@ -3782,13 +3723,11 @@ footer.rollparts-footer-area.design-three .rollparts-copyright-area p {
     list-style: none;
 }
 
-ul.woocommerce-widget-layered-nav-list li a,
 .rollparts-filter-item-content ul li a {
     position: relative;
     padding-left: 30px;
 }
 
-ul.woocommerce-widget-layered-nav-list li.chosen a:after,
 .rollparts-filter-item-content ul li.chosen a:after {
     background-color: var(--color-high-dark);
     border-color: var(--color-high-dark);
@@ -3804,7 +3743,6 @@ ul.woocommerce-widget-layered-nav-list li.chosen a:after,
     top: 6px;
 }
 
-ul.woocommerce-widget-layered-nav-list li a,
 .rollparts-filter-item-content ul li a {
     padding-left: 30px !important;
     font-size: 14px;
@@ -3815,24 +3753,9 @@ ul.woocommerce-widget-layered-nav-list li a,
     align-items: center;
 }
 
-ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term,
-.rollparts-filter-item-content li.wc-layered-nav-term {
-    display: flex;
-}
-
-ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
-.rollparts-filter-item-content li.wc-layered-nav-term span {
-    font-size: 14px;
-    color: #666666;
-}
-
 .rollparts-product-shop-page-area {
     margin-top: 50px;
     margin-bottom: 100px;
-}
-
-.rollparts-product-shop-page-area .brator-best-product-slider {
-    padding-bottom: 50px;
 }
 
 .product-list-items {
@@ -4001,73 +3924,6 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
     background-position-y: 11px;
 }
 
-.rollparts-inline-product-filter-area .rollparts-inline-product-filter-right .brator-filter-view-type {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    max-width: 180px;
-}
-
-.rollparts-inline-product-filter-area .rollparts-inline-product-filter-right .brator-filter-view-type a.current {
-    background: var(--color-high-dark);
-}
-
-.rollparts-inline-product-filter-area .rollparts-inline-product-filter-right .brator-filter-view-type a.current svg {
-    fill: #fff;
-}
-
-.rollparts-inline-product-filter-area .rollparts-inline-product-filter-right .brator-filter-view-type a {
-    height: 40px;
-    width: 100%;
-    max-width: 40px;
-    border-radius: 5px;
-    background-color: #f4f5f9;
-    margin-left: 10px;
-    text-align: center;
-    line-height: 45px;
-    display: inline-block;
-}
-
-.rollparts-inline-product-filter-area .rollparts-inline-product-filter-right .brator-filter-view-type a svg {
-    font-size: 17px;
-}
-
-.rollparts-inline-product-filter-area .rollparts-inline-product-filter-right .brator-filter-view-type button.filter-enable {
-    height: 40px;
-    border-radius: 5px;
-    background-color: #f4f5f9;
-    margin-left: 10px;
-    text-align: center;
-    line-height: 40px;
-    display: inline-block;
-    border: 0;
-    width: 100px;
-    display: none;
-}
-
-.rollparts-cart-area .brator-forget-product-slider {
-    margin-top: 50px;
-    padding-right: 70px;
-}
-
-.rollparts-cart-area .brator-app-content-area {
-    margin-top: 85px;
-    margin-right: 70px;
-    padding: 35px 70px;
-    background-position-y: center;
-    padding-top: 65px;
-    padding-bottom: 60px;
-    padding-left: 70px;
-    background-size: 131%;
-}
-
-.rollparts-cart-area .brator-app-content-area .brator-app-content h2 {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 30px;
-}
-
 .rollparts-cart-header-area h3 {
     font-size: 30px;
     margin-bottom: 15px;
@@ -4077,16 +3933,6 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
 
 .rollparts-cart-info {
     padding-right: 70px;
-}
-
-.rollparts-cart-info .brator-cart-h {
-    margin-bottom: 40px;
-}
-
-.rollparts-cart-info .brator-cart-h h3 {
-    font-size: 24px;
-    color: black;
-    font-weight: 600;
 }
 
 .rollparts-cart-info .rollparts-cart-list .rollparts-cart-list-items.title-me h6 {
@@ -4415,371 +4261,6 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
     margin-bottom: 70px;
 }
 
-.brator-features-area.rollparts-design a.brator-features-single {
-    padding-right: 75px;
-    width: 100%;
-}
-
-.brator-features-area.rollparts-design a.brator-features-single .brator-features-single-img {
-    margin-bottom: 50px;
-    position: relative;
-    width: 100px;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.brator-features-area.rollparts-design a.brator-features-single .brator-features-single-img::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: #fff5f3;
-    position: absolute;
-    left: 0;
-    top: 0;
-    transform: skewY(340deg);
-}
-
-.brator-features-area.rollparts-design a.brator-features-single .brator-features-single-img img {
-    position: relative;
-    z-index: 1;
-}
-
-.brator-features-area.rollparts-design a.brator-features-single h5 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: black;
-    font-weight: 600;
-    line-height: 30px;
-    cursor: pointer;
-}
-
-.brator-features-area.rollparts-design a.brator-features-single h5:hover {
-    color: var(--color-high-dark);
-}
-
-.brator-features-area.rollparts-design a.brator-features-single p {
-    font-size: 15px;
-    color: #666666;
-    line-height: 1.733;
-    margin-bottom: 0;
-}
-
-.brator-our-story-area {
-    padding: 90px 0;
-}
-
-.brator-our-story-area .brator-our-story h2 {
-    font-size: 30px;
-    color: black;
-    font-weight: 600;
-    margin-bottom: 35px;
-}
-
-.brator-our-story-area .brator-our-story p {
-    font-size: 16px;
-    line-height: 28px;
-    color: #666666;
-}
-
-.brator-our-story-area .brator-our-story-type {
-    padding-left: 150px;
-}
-
-.brator-our-story-area .brator-our-story-type-single {
-    padding: 40px 0px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    border-bottom: 1px solid #e5e5e5;
-}
-
-.brator-our-story-area .brator-our-story-type-single:first-child {
-    padding-top: 0;
-}
-
-.brator-our-story-area .brator-our-story-type-single:last-child {
-    border-bottom: 0px solid #e5e5e5;
-}
-
-.brator-our-story-area .brator-our-story-type-single .brator-our-story-icon {
-    width: 150px;
-}
-
-.brator-our-story-area .brator-our-story-type-single .brator-our-story-content {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.brator-our-story-area .brator-our-story-type-single .brator-our-story-content .brator-our-story-count {
-    margin-right: 50px;
-}
-
-.brator-our-story-area .brator-our-story-type-single .brator-our-story-content .brator-our-story-count p {
-    font-size: 60px;
-    line-height: 70px;
-    color: black;
-    font-weight: 700;
-    margin-bottom: 0;
-}
-
-.brator-our-story-area .brator-our-story-type-single .brator-our-story-content .brator-our-story-count-text p {
-    font-size: 20px;
-    color: #999999;
-    margin: 0;
-}
-
-.brator-client-review-area {
-    padding-top: 100px;
-}
-
-.brator-client-review-area .splide__pagination {
-    display: none;
-}
-
-.brator-client-review-author-slider .splide__arrows,
-.brator-client-review-author-slider .splide__pagination {
-    display: none;
-}
-
-.brator-client-review-author-slider.thub-also {
-    margin-bottom: 100px;
-}
-
-.brator-client-review-item .brator-client-review-content-area.rollparts-design {
-    margin-bottom: 50px;
-}
-
-.brator-client-review-item .brator-client-review-content-area.rollparts-design::after {
-    content: "";
-    position: absolute;
-    left: 35px;
-    bottom: -50px;
-    transform: scaleX(0.6);
-    display: block;
-    background: #f2f2f7;
-    border: 25px solid #fff;
-    border-left-color: #fff;
-    border-right-color: #fff;
-    border-bottom-color: #fff;
-    border-top-color: #f2f2f7;
-    opacity: 1;
-}
-
-.brator-client-review-item .brator-client-review-content-area {
-    border-radius: 8px;
-    background-color: #f2f2f7;
-    padding: 50px;
-    position: relative;
-    margin-bottom: 0px;
-}
-
-.brator-client-review-item .brator-client-review-content-area .brator-client-review-title {
-    margin-bottom: 15px;
-}
-
-.brator-client-review-item .brator-client-review-content-area .brator-client-review-title h3 {
-    font-size: 20px;
-    color: black;
-    font-weight: 600;
-}
-
-.brator-client-review-item .brator-client-review-content-area .brator-review.brator-client-review-star {
-    margin-bottom: 35px;
-}
-
-.brator-client-review-item .brator-client-review-content-area .brator-review.brator-client-review-star svg {
-    fill: #81c100;
-}
-
-.brator-client-review-item .brator-client-review-content-area .brator-review.brator-client-review-star .d-active {
-    fill: #b2b2b3;
-}
-
-.brator-client-review-item .brator-client-review-content-area .brator-client-review-content p {
-    font-size: 15px;
-    color: #666666;
-    margin-bottom: 0;
-}
-
-.brator-client-review-item .brator-client-review-autho {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    position: relative;
-    z-index: 1;
-    background: #fff;
-}
-
-.brator-client-review-item .brator-client-review-autho .brator-client-review-autho-img {
-    padding-left: 30px;
-    margin-right: 15px;
-}
-
-.brator-client-review-item .brator-client-review-autho .brator-client-review-autho-content span {
-    font-size: 16px;
-    color: black;
-}
-
-.brator-client-review-item .brator-client-review-autho .brator-client-review-autho-content p {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 0;
-    font-size: 14px;
-    line-height: 17px;
-}
-
-.brator-client-review-item .brator-client-review-autho .brator-client-review-autho-content p a {
-    display: block;
-    margin-left: 5px;
-    color: #0099cc;
-}
-
-.brator-client-review-author-slider .brator-client-review-item {
-    padding-top: 48px;
-    opacity: 0.5;
-}
-
-.brator-client-review-author-slider .brator-client-review-item::after {
-    content: "";
-    position: absolute;
-    left: 35px;
-    top: 0px;
-    display: block;
-    background: #f2f2f7;
-    border: 25px solid #fff;
-    border-left-color: #fff;
-    border-right-color: #fff;
-    border-bottom-color: #fff;
-    border-top-color: #f2f2f7;
-    transform: scaleX(0.6);
-    opacity: 0;
-}
-
-.brator-client-review-author-slider .brator-client-review-item.is-active {
-    opacity: 1;
-}
-
-.brator-client-review-author-slider .brator-client-review-item.is-active::after {
-    opacity: 1;
-}
-
-.brator-brand-item-area.rollparts-design {
-    padding: 90px 0;
-}
-
-.brator-brand-item-area.rollparts-design .row {
-    justify-content: space-between;
-    align-items: center;
-}
-
-.brator-brand-item-area .brator-brand-img a {
-    display: inline-block;
-}
-
-.brator-brand-item-area.rollparts-design .brator-brand-img a {
-    margin: 40px 0;
-}
-
-.brator-map-area .brator-map {
-    margin-top: 20px;
-}
-
-.brator-map-area .brator-map a {
-    display: block;
-}
-
-.brator-team-slider-area {
-    padding: 90px 0;
-}
-
-.rollparts-section-header.all-item-left {
-    justify-content: flex-start;
-}
-
-.brator-team-single-item {
-    border-width: 1px;
-    border-color: lightgray;
-    border-style: solid;
-    border-radius: 5px;
-    background-color: #fff;
-    padding: 20px 20px 25px 20px;
-    margin-bottom: 1px;
-}
-
-.brator-team-single-item .brator-team-single-item-img {
-    margin-bottom: 25px;
-}
-
-.brator-team-single-item .brator-team-single-item-img img {
-    width: 100%;
-}
-
-.brator-team-single-item .brator-team-single-item-position {
-    margin-bottom: 5px;
-}
-
-.brator-team-single-item .brator-team-single-item-position h6 {
-    font-size: 12px;
-    color: #666666;
-    text-transform: uppercase;
-    font-weight: 400;
-}
-
-.brator-team-single-item .brator-team-single-item-title {
-    margin-bottom: 15px;
-}
-
-.brator-team-single-item .brator-team-single-item-title h4 {
-    font-size: 20px;
-    color: black;
-    font-weight: 600;
-}
-
-.brator-team-single-item .brator-team-single-item-content {
-    margin-bottom: 20px;
-}
-
-.brator-team-single-item .brator-team-single-item-content p {
-    font-size: 14px;
-    color: #666666;
-}
-
-.brator-team-single-item .brator-team-single-item-social {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
-}
-
-.brator-team-single-item .brator-team-single-item-social a {
-    display: block;
-    width: 35px;
-    height: 35px;
-    border: 1px solid lightgray;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 37px;
-}
-
-.brator-team-single-item .brator-team-single-item-social a svg {
-    fill: #787878;
-    font-size: 15px;
-}
-
-.brator-team-single-item .brator-team-single-item-social a:hover {
-    background: var(--color-high-dark);
-    border-color: var(--color-high-dark);
-}
-
-.brator-team-single-item .brator-team-single-item-social a:hover svg {
-    fill: #fff;
-}
-
 .rollparts-product-header-layout-area {
     background: #f2f2f7;
     padding: 50px 0px;
@@ -4946,27 +4427,6 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
     margin-bottom: 5px;
 }
 
-.woocommerce div.product form.cart .variations select {
-    height: 40px;
-    line-height: 39px;
-    font-size: 14px;
-    padding: 0 10px;
-    background-position-x: 98%;
-    background-position-y: 11px;
-    margin-bottom: 0;
-}
-
-.woocommerce div.product form.cart .variations td.label {
-    padding: 0;
-}
-
-.woocommerce div.product form.cart .reset_variations {
-    display: none;
-    line-height: 1;
-    margin-top: 10px;
-    text-align: left;
-}
-
 .woocommerce div.product p.price ins, .woocommerce div.product span.price ins {
     color: var(--color-high-dark);
 }
@@ -4983,21 +4443,6 @@ ul.woocommerce-widget-layered-nav-list li.wc-layered-nav-term span,
 .woocommerce div.product p.price, .woocommerce div.product span.price {
     color: var(--color-dark);
     font-weight: 600;
-}
-
-.rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .brator-product-single-cart-sub-total {
-    margin: 30px 0;
-    margin-bottom: 30px;
-}
-
-.rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .brator-product-single-cart-sub-total p {
-    font-size: 26px;
-    color: #000;
-    font-weight: 400;
-}
-
-.rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .brator-product-single-cart-sub-total p span {
-    color: #666666;
 }
 
 .rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .rollparts-product-single-cart-count-add {
@@ -5079,208 +4524,6 @@ table.woocommerce-grouped-product-list.group_table {
 
 .rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .rollparts-product-single-cart-count-add .rollparts-product-single-cart-add button {
     width: 100%;
-}
-
-.brator-product-single-cart-action {
-    border-bottom: 1px solid #e5e5e5;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-bottom: 20px;
-    margin-bottom: 25px;
-}
-
-.brator-product-single-cart-action button {
-    background: transparent;
-    padding: 2px 23px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    border: 0;
-}
-
-.brator-product-single-cart-action button svg {
-    margin-right: 10px;
-    font-size: 17px;
-    fill: #666666;
-}
-
-.brator-product-single-cart-action button span {
-    font-size: 14px;
-    color: #666666;
-}
-
-.brator-product-single-cart-action .brator-product-single-cart-wish button {
-    padding-left: 0;
-}
-
-.brator-product-single-light-info-area .brator-product-single-light-info-share {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.brator-product-single-light-info-area .brator-product-single-light-info-share svg {
-    margin-right: 10px;
-    font-size: 19px;
-    fill: #666666;
-}
-
-.brator-product-single-light-info-area .brator-product-single-light-info-share p {
-    font-weight: 600;
-    font-size: 14px;
-    color: black;
-    margin-bottom: 0;
-}
-
-.brator-product-single-light-info-area .brator-product-single-light-info-share p span {
-    color: #000;
-    font-weight: 400;
-}
-
-.brator-product-single-light-info-area .brator-product-single-light-info .brator-product-single-light-info-s.cat a:hover {
-    color: #0066ff;
-}
-
-.brator-product-single-light-info-area .brator-product-single-light-info .brator-product-single-light-info-s {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-}
-
-.brator-product-single-light-info-area .brator-product-single-light-info .brator-product-single-light-info-s h5 {
-    font-size: 14px;
-    color: #000;
-    margin-right: 5px;
-    font-weight: 400;
-}
-
-.brator-product-single-light-info-area .brator-product-single-light-info .brator-product-single-light-info-s a {
-    font-size: 14px;
-    color: #666666;
-    margin-right: 5px;
-    position: relative;
-}
-
-.brator-product-single-light-info-area .brator-product-single-light-info .brator-product-single-light-info-s a::after {
-    content: ",";
-}
-
-.brator-product-single-light-info-area .brator-product-single-light-info .brator-product-single-light-info-s a:last-child::after {
-    content: none;
-}
-
-.brator-product-single-light-info-area .brator-product-single-light-info .brator-product-single-light-info-s a:hover {
-    text-decoration: underline;
-    color: #000;
-}
-
-.brator-product-single-light-info-area .brator-product-single-light-info .brator-product-single-light-info-s span {
-    font-size: 14px;
-    color: #666666;
-}
-
-.brator-product-frequently-area {
-    padding: 80px 0;
-    padding-bottom: 50px;
-}
-
-.brator-product-single-frequently {
-    border-width: 1px;
-    border-color: #cccccc;
-    border-style: solid;
-    border-radius: 8px;
-    background-color: #fff;
-    padding: 50px;
-}
-
-.brator-product-single-frequently h2 {
-    font-size: 30px;
-    color: black;
-    font-weight: 600;
-    margin-bottom: 30px;
-}
-
-.brator-product-single-frequently-list {
-    display: flex;
-    justify-content: space-between;
-    align-content: flex-start;
-}
-
-.brator-product-single-frequently-total {
-    max-width: 160px;
-    width: 100%;
-}
-
-.brator-product-single-frequently-total h6 {
-    font-size: 18px;
-    font-weight: 400;
-    color: #666666;
-}
-
-.brator-product-single-frequently-total span {
-    margin-top: 10px;
-    margin-bottom: 35px;
-    display: flex;
-    font-size: 26px;
-    font-weight: 600;
-    color: black;
-}
-
-.brator-product-single-frequently-total p {
-    font-size: 13px;
-    color: #666;
-    line-height: 23px;
-    font-weight: 500;
-    text-transform: capitalize;
-    margin-bottom: 20px;
-}
-
-.brator-product-single-frequently-total p b {
-    font-size: 16px;
-    line-height: 23px;
-}
-
-.product-list-items.check-box-product {
-    width: 100%;
-    gap: 50px;
-}
-
-.product-list-items.check-box-product .rollparts-product-single-item-area.rollparts-design {
-    position: relative;
-    width: calc(33.33333333% - 50px);
-}
-
-.product-list-items.check-box-product .rollparts-product-single-item-area.rollparts-design::after {
-    content: "+";
-    color: black;
-    position: absolute;
-    right: -40px;
-    top: 97px;
-    width: 30px;
-    height: 100%;
-    font-size: 25px;
-    display: flex;
-    justify-content: center;
-}
-
-.product-list-items.check-box-product .rollparts-product-single-item-area.rollparts-design:hover .rollparts-product-single-item-mini {
-    margin-top: 0;
-}
-
-.product-list-items.check-box-product .rollparts-product-single-item-area.rollparts-design:last-child::after {
-    display: none;
-}
-
-.product-list-items.check-box-product .rollparts-product-single-item-area.rollparts-design .brator-product-single-item-checkbox {
-    margin-top: 20px;
-}
-
-.product-list-items.check-box-product .rollparts-product-single-item-area.rollparts-design .brator-product-single-item-checkbox .arow-check-right {
-    width: 20px;
-    height: 20px;
 }
 
 .rollparts-product-single-tab-area.rollparts-design {
@@ -5424,222 +4667,6 @@ table.woocommerce-grouped-product-list.group_table {
     margin-right: 20px;
 }
 
-.woocommerce div.product .brator-product-img-tab-list.js-tabs#tabs-product-img.rollparts-design div.images.woocommerce-product-gallery {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.flex-viewport {
-    order: 2;
-    width: 100%;
-}
-
-.brator-product-img-tab-list.js-tabs#tabs-product-img.rollparts-design .flex-control-thumbs {
-    order: 1;
-    max-width: 80px;
-    margin-right: 20px;
-}
-
-.woocommerce div.product .brator-product-img-tab-list.js-tabs#tabs-product-img.design-one div.images .flex-control-thumbs {
-    margin-top: 15px;
-}
-
-.brator-product-img-tab-list.js-tabs#tabs-product-img.rollparts-design .flex-control-thumbs li {
-    display: block;
-    width: 80px;
-    height: 80px;
-    background-position: center;
-    background-size: cover;
-    margin-bottom: 15px;
-}
-
-.brator-product-img-tab-list.js-tabs#tabs-product-img.rollparts-design .flex-control-thumbs li img {
-    border: 1px solid #f2f2f7;
-}
-
-.brator-product-img-tab-list.js-tabs#tabs-product-img.rollparts-design .flex-control-thumbs li img.flex-active {
-    border: 1px solid var(--color-high-dark);
-}
-
-.brator-product-img-tab-list.js-tabs#tabs-product-img {
-    padding-right: 100px;
-}
-
-.brator-product-img-tab-list.js-tabs#tabs-product-img .js-tabs__content.brator-product-img-tab-item p {
-    text-align: center;
-    margin-top: 30px;
-    text-transform: capitalize;
-}
-
-.brator-product-img-tab-list.js-tabs#tabs-product-img.design-one .flex-control-thumbs {
-    padding: 0;
-    margin: 0;
-    list-style: outside none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
-.brator-product-img-tab-list.js-tabs#tabs-product-img .flex-control-thumbs li {
-    display: block;
-    width: 80px;
-    height: 80px;
-    background-position: center;
-    background-size: cover;
-
-}
-
-.brator-product-img-tab-list.js-tabs#tabs-product-img .flex-control-thumbs li img {
-    border: 1px solid #f2f2f7;
-}
-
-.brator-product-img-tab-list.js-tabs#tabs-product-img .flex-control-thumbs li img.flex-active {
-    border: 1px solid var(--color-high-dark);
-}
-
-
-img[data-action=zoom] {
-    cursor: zoom-in;
-}
-
-.zoom-img,
-.zoom-img-wrap {
-    position: relative;
-    z-index: 666;
-    transition: all 300ms;
-}
-
-img.zoom-img {
-    cursor: zoom-out;
-}
-
-.zoom-overlay {
-    cursor: zoom-out;
-    z-index: 420;
-    background: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    filter: "alpha(opacity=0)";
-    opacity: 0;
-    transition: opacity 300ms;
-}
-
-.zoom-overlay-open .zoom-overlay {
-    filter: "alpha(opacity=100)";
-    opacity: 1;
-}
-
-.brator-review-comment-area h5 {
-    font-size: 20px;
-    color: black;
-    font-weight: 600;
-    margin: 0;
-    padding: 0;
-}
-
-.brator-review-comment-area .brator-review-comment {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 45px;
-}
-
-.brator-review-comment-area .brator-review-comment .brator-review-pint-count h6 {
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-    color: #669900;
-    font-weight: 600;
-}
-
-.brator-review-comment-area .brator-review-comment .brator-review-comment-count {
-    align-items: center;
-    display: flex;
-    justify-content: flex-start;
-    margin-left: 15px;
-}
-
-.brator-review-comment-area .brator-review-comment .brator-review-comment-count .brator-review-text {
-    margin-left: 5px;
-}
-
-.brator-review-comment-area .brator-review-comment .brator-review-comment-count .brator-review-text p {
-    margin: 0;
-    padding: 0;
-}
-
-.brator-review-comment-single-item {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-bottom: 35px;
-    margin-bottom: 35px;
-    border-bottom: 1px solid #edeef2;
-    position: relative;
-}
-
-.brator-review-comment-single-item .brator-review-comment-single-img {
-    margin-right: 35px;
-    border-radius: 50%;
-    height: 70px;
-    max-width: 70px;
-    width: 100%;
-}
-
-.brator-review-comment-single-item .brator-review-comment-single-img img {
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    margin: 0;
-    padding: 0;
-}
-
-.brator-review-comment-single-item .brator-review-comment-single-content {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-}
-
-.brator-review-comment-single-item .brator-review-comment-single-content .brator-review {
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.brator-review-comment-single-item .brator-review-comment-single-content .brator-review-comment-single-title h6 {
-    margin: 0;
-    padding: 0;
-    font-size: 18px;
-    color: black;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.brator-review-comment-single-item .brator-review-comment-single-content .brator-review-comment-single-title p {
-    margin-bottom: 15px;
-    font-size: 15px;
-    color: #666666;
-    line-height: 26px;
-}
-
-.brator-review-comment-single-item .brator-review-comment-single-content .brator-review-comment-date h6 {
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
-    color: #666666;
-}
-
-.brator-review-comment-single-item .brator-review-comment-single-content .brator-review-comment-date h6 a {
-    color: black;
-    font-weight: 600;
-    margin-right: 5px;
-}
-
 .rollparts-contact-form-area.product-review-form .rollparts-contact-form-header h2 {
     font-size: 20px;
     color: black;
@@ -5658,18 +4685,6 @@ img.zoom-img {
 .rollparts-contact-form-area.product-review-form .product-review-tag p {
     margin-right: 20px;
     margin-bottom: 0;
-}
-
-.brator-blog-header-area.grid-type {
-    padding-top: 45px;
-    padding-bottom: 100px;
-}
-
-.brator-blog-header-area.grid-type .brator-blog-header h2 {
-    font-size: 72px;
-    color: black;
-    font-weight: 600;
-    margin-bottom: 15px;
 }
 
 .rollparts-cont.grid-type-one {
@@ -5692,198 +4707,6 @@ img.zoom-img {
     padding-top: 70px;
 }
 
-.brator-blog-single-post-area {
-    margin-top: 105px;
-    margin-bottom: 112px;
-}
-
-.brator-blog-single-post-header .brator-blog-single-post-title {
-    margin-bottom: 20px;
-}
-
-.brator-blog-single-post-header .brator-blog-single-post-title h2 {
-    font-size: 48px;
-    color: black;
-    font-weight: 700;
-}
-
-.brator-blog-single-post-header .brator-blog-listing-single-item-info-area {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.brator-blog-single-post-header .brator-blog-listing-single-item-info-area .brator-blog-listing-single-item-info {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.brator-blog-single-post-header .brator-blog-listing-single-item-info-area .brator-blog-listing-single-item-info a {
-    font-size: 13px;
-    color: black;
-    line-height: 20px;
-}
-
-.brator-blog-single-post-header .brator-blog-listing-single-item-info-area .brator-blog-listing-single-item-info time {
-    font-size: 13px;
-    color: #666666;
-    line-height: 20px;
-}
-
-.brator-blog-single-post-header .brator-blog-listing-single-item-info-area .brator-blog-listing-single-item-info-2 {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 15px;
-}
-
-.brator-blog-single-post-header .brator-blog-listing-single-item-info-area .brator-blog-listing-single-item-info-2 a {
-    font-size: 13px;
-    color: #999999;
-}
-
-.brator-blog-single-post-header .brator-blog-listing-single-item-info-area .brator-blog-listing-single-item-info-2 a:last-child {
-    margin-right: 0;
-}
-
-.brator-blog-single-post-fe-img {
-    margin-top: 10px;
-    border-top: 1px solid #e5e5e5;
-    padding-top: 50px;
-}
-
-.brator-blog-single-post-fe-img img {
-    display: grid;
-}
-
-.brator-blog-single-post-content {
-    margin-top: 30px;
-}
-
-.brator-blog-single-post-content h3 {
-    font-size: 24px;
-    line-height: 34px;
-    color: black;
-    margin-bottom: 50px;
-    font-weight: 500;
-}
-
-.brator-blog-single-post-content h3 span {
-    color: #ff3300;
-    margin: 0 5px;
-}
-
-.brator-blog-single-post-content p {
-    font-size: 16px;
-    color: #666666;
-    margin-bottom: 20px;
-}
-
-.brator-blog-single-post-content p a {
-    color: #00ccff;
-    margin: 0px 5px;
-    text-decoration: underline;
-}
-
-.brator-blog-single-post-content .brator-blog-single-post-img-2 {
-    margin: 0px auto 30px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 15px;
-}
-
-.brator-blog-single-post-content .brator-blog-single-post-img-2 .brator-blog-single-post-img {
-    width: 100%;
-    text-align: center;
-}
-
-.brator-blog-single-post-content .brator-blog-single-post-img-2 .brator-blog-single-post-img img {
-    display: block;
-    width: 100%;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-
-.brator-blog-single-post-content .brator-blog-single-post-img-2 .brator-blog-single-post-img a {
-    font-size: 13px;
-    color: #999999;
-    font-style: italic;
-    text-align: center;
-}
-
-.brator-blog-single-post-content .brator-blog-single-post-img-2 .brator-blog-single-post-img a span {
-    color: #000;
-    margin-left: 5px;
-}
-
-.brator-blog-single-post-content .brator-blog-single-post-qu {
-    position: relative;
-    border-width: 1px;
-    border-color: #d6d6d6;
-    border-style: solid;
-    border-radius: 5px;
-    background-color: #f5f5fa;
-    padding: 65px;
-    margin-bottom: 70px;
-}
-
-.brator-blog-single-post-content .brator-blog-single-post-qu svg {
-    position: absolute;
-    right: 65px;
-    top: 65px;
-    fill: #999999;
-    font-size: 60px;
-}
-
-.brator-blog-single-post-content .brator-blog-single-post-qu .head-q {
-    margin-bottom: 40px;
-    color: #999999;
-}
-
-.brator-blog-single-post-content .brator-blog-single-post-qu .head-q strong {
-    color: #000;
-}
-
-.brator-blog-single-post-content .brator-blog-single-post-qu p {
-    margin-bottom: 0;
-    font-size: 26px;
-    color: black;
-    font-weight: 300;
-    line-height: 35px;
-}
-
-.brator-blog-single-post-content h3.bold-600 {
-    font-size: 30px;
-    color: black;
-    font-weight: 600;
-}
-
-.brator-blog-single-post-content ul {
-    margin-left: 35px;
-    margin-bottom: 40px;
-}
-
-.brator-blog-single-post-content ul li {
-    font-size: 16px;
-    color: #666666;
-    margin-bottom: 10px;
-}
-
-.blog-single-tag-share-area {
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.blog-single-tag-share-area .blog-single-tag-area {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
 .widget_tag_cloud a,
 .blog-single-tag-share-area .blog-single-tag-area a {
     border-radius: 5px;
@@ -5898,298 +4721,6 @@ img.zoom-img {
     text-transform: capitalize;
 }
 
-.widget_tag_cloud a:hover,
-.blog-single-tag-share-area .blog-single-tag-area a:hover {
-    background: #ff3300;
-    color: #ffffff;
-}
-
-.widget_tag_cloud a {
-    padding: 10px 15px;
-    display: inline-block;
-    text-transform: capitalize;
-    margin-bottom: 10px;
-}
-
-.blog-single-tag-share-area .blog-single-social-area {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.blog-single-tag-share-area .blog-single-social-area p {
-    font-size: 14px;
-    color: #666666;
-    line-height: 1.714;
-    text-align: left;
-    margin: 0;
-    margin-right: 25px;
-}
-
-.blog-single-tag-share-area .blog-single-social-area a {
-    display: grid;
-    margin-right: 15px;
-}
-
-.blog-single-tag-share-area .blog-single-social-area a svg {
-    font-size: 16px;
-}
-
-.blog-single-tag-share-area .blog-single-social-area a:last-child {
-    margin-right: 0px;
-}
-
-.brator-post-single-author-area {
-    border-radius: 8px;
-    background-color: #f2f2f7;
-    padding: 50px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-top: 80px;
-}
-
-.brator-post-single-author-area .brator-post-single-author-img {
-    width: 100%;
-    height: 80px;
-    max-width: 80px;
-    margin-right: 35px;
-}
-
-.brator-post-single-author-area .brator-post-single-author-img img {
-    height: 80px;
-    width: 80px;
-    display: block;
-    border-radius: 50%;
-}
-
-.brator-post-single-author-area .brator-post-single-author-content .brator-post-single-author-name h6 {
-    font-size: 20px;
-    color: black;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.brator-post-single-author-area .brator-post-single-author-content .brator-post-single-author-name h5 {
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #999999;
-    margin-bottom: 20px;
-    font-weight: 400;
-}
-
-.brator-post-single-author-area .brator-post-single-author-content .brator-post-single-author-name p {
-    font-size: 15px;
-    color: #666666;
-    margin-bottom: 30px;
-    line-height: 26px;
-}
-
-.brator-post-single-author-area .brator-post-single-author-content .brator-post-single-author-social {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.brator-post-single-author-area .brator-post-single-author-content .brator-post-single-author-social a {
-    display: grid;
-    margin-right: 15px;
-}
-
-.brator-post-single-author-area .brator-post-single-author-content .brator-post-single-author-social a svg {
-    font-size: 16px;
-}
-
-.brator-post-single-author-area .brator-post-single-author-content .brator-post-single-author-social a:last-child {
-    margin-right: 0px;
-}
-
-.blog-single-pagination-area {
-    padding-top: 60px;
-    border-top: 1px solid #e5e5e5;
-    margin-top: 80px;
-}
-
-.blog-single-pagination-area .nav-links {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.blog-single-pagination-area .nav-links>div {
-    width: 100%;
-}
-
-.blog-single-pagination-area .blog-single-pagination-content {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-.blog-single-pagination-area .blog-single-pagination-content.right-side span b {
-    text-align: right;
-}
-
-.blog-single-pagination-area .blog-single-pagination-content svg {
-    font-size: 65px;
-    fill: #cccccc;
-}
-
-.blog-single-pagination-area .blog-single-pagination-content span b {
-    font-size: 12px;
-    color: #666666;
-    text-transform: uppercase;
-    width: 100%;
-    display: block;
-    font-weight: 400;
-}
-
-.blog-single-pagination-area .blog-single-pagination-content span i {
-    font-size: 24px;
-    color: black;
-    font-weight: 600;
-}
-
-.blog-single-pagination-area .blog-single-pagination-content:hover a svg {
-    fill: #ff3300;
-}
-
-.blog-single-pagination-area .nav-next a {
-    float: right;
-}
-
-.blog-single-pagination-area .right-side a span {
-    text-align: right;
-    margin-right: 30px;
-}
-
-.blog-single-pagination-area .left-side svg {
-    transform: rotate(180deg);
-}
-
-.blog-single-pagination-area .left-side a span {
-    margin-left: 30px;
-}
-
-.brator-post-list-slider {
-    margin-top: 60px;
-    border-top: 1px solid #e5e5e5;
-    padding-top: 80px;
-}
-
-.blog-comment-list-area {
-    border-top: 1px solid #e5e5e5;
-    margin-top: 75px;
-    padding-top: 70px;
-}
-
-.comments-form-area {
-    margin-top: 80px;
-}
-
-.blog-comment-list-area .blog-comment-list-header {
-    margin-bottom: 55px;
-}
-
-.blog-comment-list-area .blog-comment-list-header h4 {
-    font-size: 30px;
-    color: black;
-    font-weight: 700;
-}
-
-.blog-comment-list-area .blog-comment-list-items .blog-comment-single-item {
-    margin-bottom: 35px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-.blog-comment-list-area .blog-comment-list-items .single-comment:last-child .blog-comment-single-item {
-    margin-bottom: 0px;
-}
-
-.blog-comment-list-area .blog-comment-list-items .blog-comment-single-item .blog-comment-single-item-img {
-    width: 100%;
-    height: 70px;
-    max-width: 70px;
-    margin-right: 20px;
-}
-
-.blog-comment-list-area .blog-comment-list-items .blog-comment-single-item .blog-comment-single-item-img img {
-    height: 70px;
-    width: 70px;
-    display: block;
-    border-radius: 50%;
-}
-
-.blog-comment-list-area .blog-comment-list-items .blog-comment-single-item .blog-comment-single-item-content {
-    position: relative;
-    width: 100%;
-}
-
-.blog-comment-list-area .blog-comment-list-items .blog-comment-single-item .blog-comment-single-item-content .blog-comment-single-item-autor h6 {
-    font-size: 18px;
-    color: black;
-    font-weight: 600;
-    margin-bottom: 6px;
-    text-transform: capitalize;
-}
-
-.blog-comment-list-area .blog-comment-list-items .blog-comment-single-item .blog-comment-single-item-content .blog-comment-single-item-autor span {
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-size: 12px;
-    color: #999;
-    text-transform: uppercase;
-}
-
-.blog-comment-list-area .blog-comment-list-items .blog-comment-single-item .blog-comment-single-item-content .blog-comment-single-item-autor p {
-    font-size: 14px;
-    color: #666666;
-    margin-bottom: 10px;
-}
-
-.blog-comment-list-area .blog-comment-list-items .blog-comment-single-item .blog-comment-single-item-content .blog-comment-single-item-autor a.replay-btn {
-    border-radius: 5px;
-    font-size: 11px;
-    color: #666666;
-    border: 1px solid;
-    display: inline-block;
-    padding: 6px 10px;
-    line-height: 15px;
-    text-transform: uppercase;
-    border-color: #f2f2f7;
-    background-color: #f2f2f7;
-}
-
-.blog-comment-list-area .blog-comment-list-items .blog-comment-single-item .blog-comment-single-item-content .blog-comment-single-item-autor a.replay-btn:hover {
-    border-color: #ff3300;
-    background-color: #ff3300;
-    color: #fff;
-}
-
-.blog-comment-list-area .blog-comment-list-items .blog-comment-single-item.sub-commnets {
-    margin-top: 35px;
-    margin-bottom: 0px;
-}
-
-.blog-comment-list-area .blog-comment-list-items .blog-comment-single-item.sub-commnets .blog-comment-single-item-img {
-    height: 45px;
-    max-width: 45px;
-    margin-right: 15px;
-}
-
-.blog-comment-list-area .blog-comment-list-items .blog-comment-single-item.sub-commnets .blog-comment-single-item-img img {
-    height: 45px;
-    width: 45px;
-}
-
-.rollparts-contact-form-area.blog-post-comment-header-area .rollparts-contact-form-header h2 {
-    margin-bottom: 10px;
-    font-size: 30px;
-}
-
 .specification-product-item {
     display: flex;
     justify-content: space-between;
@@ -6198,52 +4729,11 @@ img.zoom-img {
     padding: 14px 0;
 }
 
-.specification-product-item .specification-product-item-left {
-    width: 100%;
-}
-
-.specification-product-item .specification-product-item-left p {
-    font-size: 15px;
-    color: black;
-    font-weight: 600;
-    margin-bottom: 0;
-}
-
-.specification-product-item .specification-product-item-right {
-    width: 100%;
-}
-
-.specification-product-item .specification-product-item-right p {
-    font-size: 15px;
-    color: black;
-    margin-bottom: 0;
-}
-
-.specification-product-item .specification-product-item-right.header-light p {
-    color: #0066ff;
-}
-
 body {
     overflow-x: hidden;
 }
 
-.brator-banner-area.design-four .brator-banner-content {
-    max-width: 50%;
-}
-
 @media only screen and (min-width: 300px) and (max-width: 1599px) {
-    .brator-product-single-frequently {
-        padding: 20px;
-    }
-
-    .brator-blog-featured-area.grid-type .hug-padding-right {
-        padding-right: 40px;
-    }
-
-    .brator-blog-featured-area.grid-type .hug-padding-left {
-        padding-left: 40px;
-    }
-
     .rollparts-categories-list-area.rollparts-design .rollparts-categories-single {
         max-width: calc(16.6666667% - 30px);
     }
@@ -6251,118 +4741,9 @@ body {
     .rollparts-cart-info .rollparts-cart-list .rollparts-cart-list-items .rollparts-cart-list-items-title .img-cart {
         width: 120px;
     }
-
-    .brator-features-area.rollparts-design a.brator-features-single {
-        padding-right: 0;
-    }
-
-    .brator-our-story-area .brator-our-story-type {
-        padding: 0;
-    }
-
-    .brator-banner-area.design-four {
-        position: relative;
-    }
-
-    .brator-banner-area.design-four::before {
-        content: "";
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, .7);
-        z-index: 2;
-    }
-
-    .brator-banner-area.design-four .brator-banner-content {
-        position: relative;
-        z-index: 3;
-    }
-
-    .brator-banner-area.design-four .brator-banner-content {
-        max-width: 100%;
-    }
-
-    .brator-payment-area h6.brator-payment-title {
-        display: none;
-    }
-
-    .rollparts-header-menu-area .rollparts-header-menu ul.list-style-outside-none .mega-menu-area {
-        flex-wrap: wrap;
-    }
-
-    .rollparts-header-menu-area .rollparts-header-menu ul.list-style-outside-none .mega-menu-area .mega-menu-cat-list {
-        width: 100%;
-    }
-
-    .mega-menu-area .mega-menu-offer {
-        max-width: 450px;
-    }
-
-    .rollparts-header-menu-area .rollparts-header-menu ul.list-style-outside-none .mega-menu-area .mega-menu-offer {
-        width: 100%;
-        margin-left: 0;
-    }
 }
 
 @media only screen and (min-width: 300px) and (max-width: 1399px) {
-    .brator-product-frequently-area .brator-product-single-posts {
-        margin-top: 50px;
-    }
-
-    .brator-product-img-tab-list.js-tabs#tabs-product-img {
-        padding-right: 30px;
-    }
-
-    .brator-banner-area.design-one {
-        padding: 100px;
-        position: relative;
-    }
-
-    .brator-banner-area.design-one::before {
-        content: "";
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: #232323e0;
-    }
-
-    .brator-banner-area.design-one .brator-banner-content {
-        position: relative;
-        z-index: 1;
-    }
-
-    .brator-banner-area.design-one .brator-banner-content p {
-        color: #fff;
-    }
-
-    .sidebar-widget .brator-blog-listing-single-item-area.list-type-one .type-post {
-        flex-wrap: wrap;
-    }
-
-    .sidebar-widget .brator-blog-listing-single-item-area.list-type-one .type-post .brator-blog-listing-single-item-thumbnail {
-        max-width: 100%;
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-
-    .brator-banner-area.design-one {
-        padding: 100px;
-    }
-
-    .brator-blog-listing-single-item-info-2 a {
-        margin-right: 20px;
-    }
-
-    .brator-blog-featured-area.grid-type .hug-padding-left .brator-blog-listing-single-item-area.list-type-one .type-post .brator-blog-listing-single-item-thumbnail {
-        max-width: 155px;
-    }
-
     .rollparts-categories-list-area.rollparts-design .rollparts-categories-single {
         max-width: calc(20% - 30px);
     }
@@ -6384,35 +4765,13 @@ body {
     }
 }
 
-@media only screen and (min-width: 300px) and (max-width: 1330px) {
-    .splide__arrows.style-two .splide__arrow--prev {
-        left: -30px;
-    }
-
-    .splide__arrows.style-two .splide__arrow--next {
-        right: -30px;
-    }
-}
-
 @media only screen and (min-width: 300px) and (max-width: 900px) {
     .rollparts-header-menu-area {
-        display: none;
-    }
-
-    .rollparts-header-area.header-three.header-one.rollparts-header-menu-area.cat-header {
-        display: block;
-    }
-
-    .rollparts-header-area.header-three.header-one.rollparts-header-menu-area.cat-header.lg-dextop-none {
         display: none;
     }
 }
 
 @media only screen and (min-width: 300px) and (max-width: 1199.98px) {
-
-    /* .product-list-items.check-box-product .rollparts-product-single-item-area.rollparts-design {
-        width: calc(100% - 50px);
-    } */
     .rollparts-product-header-layout-area.desing-one .rollparts-product-header-layout .rollparts-product-header-layout-img {
         width: 100%;
     }
@@ -6431,77 +4790,16 @@ body {
         border: 0;
     }
 
-    .brator-coming-soon-area .row {
-        flex-direction: column-reverse;
-    }
-
-    .brator-coming-soon-area .brator-coming-soon-img {
-        text-align: center;
-        margin-bottom: 50px;
-    }
-
-    .brator-coming-soon-area .brator-coming-soon-img img {
-        margin: 0 auto;
-    }
-
     .rollparts-contact-list-area {
         margin-right: 40px;
-    }
-
-    .brator-blog-featured-area.grid-type .hug-padding-left {
-        padding-left: 0;
-        margin-top: 100px;
-    }
-
-    .brator-blog-featured-area.grid-type .hug-padding-right {
-        padding-right: 0;
     }
 
     .rollparts-categories-list-area.rollparts-design .rollparts-categories-single {
         max-width: calc(25% - 30px);
     }
 
-    .brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
-
-    .brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form select {
-        width: calc(33.3333333% - 30px);
-    }
-
     .rollparts-cart-info {
         padding-right: 0;
-    }
-
-    .rollparts-cart-area .brator-forget-product-slider {
-        padding-right: 0;
-    }
-
-    .rollparts-cart-area .brator-app-content-area {
-        margin: 0;
-        border-radius: 5px;
-        padding: 30px;
-        margin-bottom: 50px;
-        margin-top: 50px;
-    }
-
-    .brator-features-area.rollparts-design a.brator-features-single {
-        margin-top: 50px;
-    }
-
-    .brator-our-story-area .brator-our-story-type {
-        margin-top: 50px;
-    }
-
-    .brator-features-area.design-one {
-        flex-wrap: wrap;
-    }
-
-    .brator-features-area.design-one a.brator-features-single {
-        margin: 15px 0;
-        width: 50%;
-        border: 0;
     }
 
     .rollparts-footer-area {
@@ -6535,15 +4833,6 @@ body {
         margin-right: 0;
     }
 
-    .rollparts-header-area.header-one .rollparts-info-right .brator-user-link {
-        margin: 0 40px;
-        padding: 0;
-    }
-
-    .rollparts-header-area.header-one .rollparts-info-right .brator-user-link::after {
-        content: none;
-    }
-
     .rollparts-header-area.header-one .rollparts-info-right .rollparts-cart-link {
         margin: 0;
         padding: 0;
@@ -6563,17 +4852,9 @@ body {
         max-width: 260px;
         margin-right: 45px;
     }
-
-    .brator-deal-product-slider .splide__arrow {
-        display: none;
-    }
 }
 
 @media only screen and (min-width: 300px) and (max-width: 991.98px) {
-    .brator-features-area.design-one {
-        margin-top: 60px;
-    }
-
     .rollparts-product-single-tab-area.design-one-m .rollparts-product-single-tab-list .rollparts-product-single-tab-header ul {
         flex-wrap: wrap;
     }
@@ -6599,20 +4880,6 @@ body {
         display: none;
     }
 
-    .brator-product-single-frequently-list {
-        flex-wrap: wrap;
-        gap: 0;
-    }
-
-    .brator-product-single-frequently-list .product-list-items.check-box-product {
-        width: 100%;
-    }
-
-    .brator-product-single-frequently-list .brator-product-single-frequently-total {
-        width: 100%;
-        margin-top: 30px;
-    }
-
     .rollparts-breadcrumb ul {
         flex-wrap: wrap;
     }
@@ -6625,10 +4892,6 @@ body {
         margin-right: 0px;
         margin-bottom: 40px;
         border: 0;
-    }
-
-    .brator-banner-area.design-one {
-        padding: 50px;
     }
 
     .rollparts-product-single-tab-list.js-tabs.side-tabbar {
@@ -6666,11 +4929,6 @@ body {
         width: 100%;
     }
 
-    .rollparts-inline-product-filter-area .rollparts-inline-product-filter-left .brator-filter-show-items {
-        justify-content: flex-end;
-        margin-bottom: 10px;
-    }
-
     .rollparts-inline-product-filter-area .rollparts-inline-product-filter-right {
         justify-content: flex-start;
         width: 100%;
@@ -6684,85 +4942,8 @@ body {
         width: calc(33.3333333% - 40px);
     }
 
-    .brator-current-vehicle .brator-current-vehicle-content {
-        padding-right: 20px;
-    }
-
-    .brator-current-vehicle .brator-current-vehicle-content h4 {
-        font-size: 20px;
-    }
-
-    .brator-banner-area.design-four {
-        padding: 100px;
-    }
-
     .cart-total-area .cart-total-header h2 {
         font-size: 17px;
-    }
-
-    .brator-banner-slider.rollparts-design {
-        margin-top: 30px;
-    }
-
-    .blog-section-layout.grid-type .col-12 {
-        flex-wrap: wrap;
-        gap: 30px;
-    }
-
-    .blog-section-layout.grid-type .col-12 .brator-blog-listing-single-item-area.list-type-two {
-        width: calc(50% - 30px);
-    }
-
-    .blog-section-layout.grid-type .col-12 .brator-blog-listing-single-item-area:nth-child(2)::before,
-    .blog-section-layout.grid-type .col-12 .brator-blog-listing-single-item-area:nth-child(2)::after {
-        display: none;
-    }
-
-    .brator-app-content-area {
-        position: relative;
-        box-shadow: 0px 0px 6px 2px #2323230d;
-    }
-
-    .brator-app-content-area::before {
-        content: "";
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: #232323e0;
-    }
-
-    .brator-app-content-area .brator-app-content {
-        padding-right: 15px;
-    }
-
-    .brator-app-content-area .brator-app-content h2 {
-        font-size: 28px;
-        color: #fff;
-    }
-
-    .brator-app-content-area .brator-app-content p {
-        color: #fff;
-    }
-
-    .brator-app-content-area .brator-app-content,
-    .brator-app-content-area .brator-app-btn {
-        position: relative;
-        z-index: 1;
-    }
-
-    .brator-deal-product-slider .splide__arrow {
-        display: block;
-    }
-
-    .brator-banner-area.rollparts-design {
-        padding-bottom: 100px;
-    }
-
-    .brator-payment-area {
-        justify-content: flex-end;
     }
 
     .rollparts-social-link {
@@ -6772,14 +4953,6 @@ body {
 }
 
 @media only screen and (min-width: 300px) and (max-width: 800.98px) {
-    .brator-blog-listing-single-item-info-2 a {
-        margin-right: 15px;
-    }
-
-    .brator-deal-product-slider .splide__arrows.style-two {
-        display: none;
-    }
-
     .rollparts-cart-item-list {
         position: fixed;
         right: 0;
@@ -6790,10 +4963,6 @@ body {
         padding: 110px;
     }
 
-    .admin-bar .rollparts-cart-item-list {
-        top: 46px;
-    }
-
     .rollparts-header-area.header-three .rollparts-cart-item-list {
         right: 0 !important;
     }
@@ -6801,34 +4970,13 @@ body {
     .rollparts-cart-item-list .rollparts-cart-item-list-header::after {
         display: none;
     }
-
-    .admin-bar .rollparts-sidebar-area.design-one {
-        top: 46px;
-    }
 }
 
 @media only screen and (min-width: 300px) and (max-width: 767.98px) {
-    .brator-product-single-frequently {
-        padding: 20px;
-    }
-
-    .rollparts-product-header-layout-area.desing-one .rollparts-product-header-layout .rollparts-product-header-layout-img .brator-product-img-tab-list.js-tabs#tabs-product-img.rollparts-design {
-        flex-wrap: wrap-reverse;
-    }
 
     .rollparts-product-header-layout-area.desing-one .rollparts-product-header-layout .rollparts-product-layout-header-content .rollparts-product-hero-content .rollparts-product-hero-content-info .rollparts-product-hero-content-brand-img {
         position: relative;
         margin-bottom: 10px;
-    }
-
-    .rollparts-product-header-layout-area.desing-one .rollparts-product-header-layout .rollparts-product-layout-header-content .rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .brator-product-single-cart-action {
-        flex-wrap: wrap;
-    }
-
-    .rollparts-product-header-layout-area.desing-one .rollparts-product-header-layout .rollparts-product-layout-header-content .rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .brator-product-single-cart-action button {
-        padding: 2px 17px;
-        border: 0;
-        width: 100%;
     }
 
     .rollparts-product-header-layout-area.desing-one .rollparts-product-header-layout .rollparts-product-layout-header-content .rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .rollparts-product-single-cart-count-add {
@@ -6838,10 +4986,6 @@ body {
     .rollparts-product-header-layout-area.desing-one .rollparts-product-header-layout .rollparts-product-layout-header-content .rollparts-product-hero-content .rollparts-product-hero-content-add-to-cart .rollparts-product-single-cart-count-add .rollparts-product-single-cart-add {
         margin-left: 0;
         margin-top: 10px;
-    }
-
-    .brator-blog-header-area.grid-type .brator-blog-header h2 {
-        font-size: 50px;
     }
 
     .rollparts-product-single-tab-list.js-tabs.side-tabbar .rollparts-product-single-tab-header ul li {
@@ -6860,10 +5004,6 @@ body {
 
     .rollparts-categories-list-area.rollparts-design .rollparts-categories-single {
         max-width: calc(50% - 30px);
-    }
-
-    .brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form select {
-        width: calc(50% - 30px);
     }
 
     .product-list-items .rollparts-product-single-item-area {
@@ -6917,49 +5057,6 @@ body {
         max-width: 100%;
     }
 
-    .brator-our-story-area .brator-our-story-type-single {
-        flex-wrap: wrap;
-    }
-
-    .brator-our-story-area .brator-our-story-type-single .brator-our-story-icon {
-        margin-bottom: 20px;
-    }
-
-    .brator-our-story-area .brator-our-story-type-single:last-child {
-        padding-bottom: 0;
-    }
-
-    .brator-banner-area.design-four {
-        padding: 50px;
-    }
-
-    .brator-banner-area.design-four .brator-banner-content h2 a {
-        font-size: 50px;
-        line-height: 60px;
-    }
-
-    .brator-banner-area.design-four .brator-banner-content p br {
-        display: none;
-    }
-
-    .brator-app-content-area {
-        padding: 30px;
-    }
-
-    .brator-app-content-area .brator-app-content h2 {
-        font-size: 20px;
-        line-height: 30px;
-    }
-
-    .blog-section-layout.grid-type .col-12 {
-        gap: 0px;
-    }
-
-    .blog-section-layout.grid-type .col-12 .brator-blog-listing-single-item-area.list-type-two {
-        width: 100%;
-        margin-bottom: 40px;
-    }
-
     .rollparts-section-header {
         flex-wrap: wrap;
     }
@@ -6976,82 +5073,13 @@ body {
         margin-top: 20px;
     }
 
-    .brator-features-area.design-one a.brator-features-single {
-        padding: 0px 25px;
-        justify-content: center;
-    }
-
-    .brator-banner-area.rollparts-design {
-        padding: 35px 25px;
-        padding-bottom: 100px;
-    }
-
-    .brator-banner-slider.rollparts-design .splide__pagination {
-        padding-left: 25px;
-    }
-
-    .brator-payment-area {
-        justify-content: center;
-    }
-
     .rollparts-copyright-area p {
         text-align: center;
         margin-bottom: 22px;
     }
 }
 
-@media only screen and (min-width: 300px) and (max-width: 680.98px) {
-    .brator-coming-soon-area .brator-coming-soon-subs-area p br {
-        display: none;
-    }
-
-    .brator-coming-soon-area .brator-coming-soon-content h6 {
-        font-size: 40px;
-    }
-
-    .brator-coming-soon-area .brator-coming-soon-content p {
-        padding-right: 0;
-    }
-
-    .brator-coming-soon-area .brator-coming-soon-counter {
-        margin-bottom: 0px;
-    }
-
-    .brator-coming-soon-area .brator-coming-soon-counter #countdown ul {
-        flex-wrap: wrap;
-    }
-
-    .brator-coming-soon-area .brator-coming-soon-counter #countdown ul li {
-        width: 50%;
-        margin-right: 0px;
-        margin-bottom: 50px;
-    }
-
-    .brator-coming-soon-area .brator-coming-soon-counter #countdown ul li span {
-        font-size: 40px;
-        line-height: 50px;
-        font-weight: 800;
-    }
-
-    .brator-coming-soon-area .brator-coming-soon-counter #countdown ul li span::after {
-        display: none;
-    }
-}
-
 @media only screen and (min-width: 300px) and (max-width: 625.98px) {
-    .brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form {
-        gap: 10px;
-    }
-
-    .brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form select {
-        width: calc(100% - 0px);
-        margin-bottom: 10px;
-    }
-
-    .brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form select:last-child {
-        margin-bottom: 0;
-    }
-
     .rollparts-cart-header-area {
         padding: 30px 0;
     }
@@ -7060,100 +5088,14 @@ body {
         font-size: 40px;
     }
 
-    .brator-our-story-area .brator-our-story-type-single .brator-our-story-content {
-        flex-wrap: wrap;
-    }
-
-    .brator-our-story-area .brator-our-story-type-single .brator-our-story-content .brator-our-story-count-text {
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    .brator-banner-area.design-four {
-        padding: 30px;
-    }
-
     .rollparts-cart-item-list {
         padding: 30px;
     }
 }
 
-@media only screen and (min-width: 300px) and (max-width: 615.98px) {
-    .brator-client-review-item .brator-client-review-content-area {
-        padding: 30px;
-    }
-
-    .brator-client-review-item .brator-client-review-autho .brator-client-review-autho-content p {
-        flex-wrap: wrap;
-    }
-
-    .brator-client-review-item .brator-client-review-autho .brator-client-review-autho-content p a {
-        width: 100%;
-        display: block;
-        margin-left: 0;
-    }
-
-    .brator-offer-box-one,
-    .brator-offer-box-two {
-        padding: 20px;
-        position: relative;
-    }
-
-    .brator-offer-box-one::before,
-    .brator-offer-box-two::before {
-        content: "";
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: #ffffffa6;
-    }
-
-    .brator-offer-box-one *,
-    .brator-offer-box-two * {
-        position: relative;
-    }
-
-    .brator-deal-product-slider .splide__arrow {
-        display: none;
-    }
-}
-
 @media only screen and (min-width: 300px) and (max-width: 576.98px) {
-    .brator-product-single-light-info-area .brator-product-single-light-info .brator-product-single-light-info-s {
-        flex-wrap: wrap;
-    }
-
-    .brator-product-img-tab-header.js-tabs__header ul li a {
-        width: 50px;
-        height: 50px;
-    }
-
     .rollparts-product-header-layout-area .rollparts-product-header-layout {
         padding: 20px;
-    }
-
-    .brator-pagination-box {
-        margin-bottom: 50px;
-    }
-
-    .brator-blog-featured-area.grid-type .hug-padding-left .brator-blog-listing-single-item-area.list-type-one .type-post .brator-blog-listing-single-item-thumbnail {
-        width: 100%;
-        margin-right: 0;
-        max-width: 100%;
-    }
-
-    .brator-blog-listing-single-item-area.list-type-one .type-post {
-        flex-wrap: wrap;
-    }
-
-    .brator-blog-listing-single-item-area.list-type-one .type-post .brator-blog-listing-single-item-thumbnail {
-        width: 100%;
-        max-width: 100%;
-        -webkit-margin-after: 20px;
-        margin-block-end: 20px;
     }
 
     .rollparts-categories-list-area.rollparts-design {
@@ -7164,74 +5106,17 @@ body {
         max-width: calc(100% - 0px);
     }
 
-    .rollparts-inline-product-filter-area .rollparts-inline-product-filter-left .brator-filter-show-items p {
-        display: none;
-    }
-
     .rollparts-inline-product-filter-area .rollparts-inline-product-filter-right {
         flex-wrap: wrap;
     }
 
-    .rollparts-inline-product-filter-area .rollparts-inline-product-filter-right .brator-filter-view-type {
-        margin-top: 15px;
-    }
-
-    .rollparts-inline-product-filter-area .rollparts-inline-product-filter-right .brator-filter-view-type a:first-child {
-        margin-left: 0;
-    }
 
     .rollparts-inline-product-filter-area .rollparts-inline-product-filter-right .rollparts-filter-short-by p {
         display: none;
     }
 
-    .brator-current-vehicle {
-        flex-wrap: wrap;
-    }
-
-    .brator-current-vehicle .brator-current-vehicle-content a {
-        margin-top: 30px;
-    }
-
-    .brator-banner-area.design-four .brator-banner-content h2 a {
-        font-size: 30px;
-    }
-
     .product-list-items .rollparts-product-single-item-area {
         width: calc(100% - 0px);
-    }
-}
-
-@media only screen and (min-width: 300px) and (max-width: 567.98px) {
-    .brator-review-comment-single-item {
-        flex-wrap: wrap;
-    }
-
-    .brator-review-comment-single-item .brator-review-comment-single-content .brator-review {
-        position: relative;
-        margin-bottom: 20px;
-    }
-
-    .brator-review-comment-single-item .brator-review-comment-single-img {
-        margin-bottom: 20px;
-    }
-
-    .brator-blog-header-area.grid-type .brator-blog-header h2 {
-        font-size: 30px;
-    }
-
-    .brator-app-content-area {
-        flex-wrap: wrap;
-    }
-
-    .brator-app-content-area .brator-app-content {
-        margin-bottom: 10px;
-    }
-}
-
-@media only screen and (min-width: 300px) and (max-width: 500.98px) {
-    .brator-features-area.design-one a.brator-features-single {
-        width: 100%;
-        border: 0;
     }
 }
 
@@ -7276,34 +5161,8 @@ body {
         width: calc(100% - 0px);
         margin-bottom: 15px;
     }
-
-    .brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-off {
-        margin-bottom: 0px;
-    }
-
-    .brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-off p {
-        font-size: 80px;
-    }
-
-    .brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-off span {
-        line-height: 40px;
-        font-size: 35px;
-    }
-
-    .brator-banner-area.rollparts-design .brator-banner-content .brator-banner-content-off span strong {
-        font-size: 25px;
-    }
 }
 
-@media only screen and (min-width: 300px) and (max-width: 400.98px) {
-    .brator-blog-listing-single-item-area.list-type-one .type-post .brator-blog-listing-single-item-thumbnail {
-        margin-right: 0;
-    }
-
-    .brator-blog-listing-single-item-area.list-type-one .type-post .brator-blog-listing-single-item-content .brator-blog-listing-single-item-info-2 {
-        display: none;
-    }
-}
 
 @media (min-width: 1600px) {
     .container-xxxl {
@@ -7311,104 +5170,10 @@ body {
     }
 }
 
-@media (min-width: 1400px) {
-    .container-lg-c {
-        max-width: 1169px;
-    }
-}
-
-.brator-megasell-area .brator-megasell-box {
-    background: #fa4b2e;
-    padding: 60px 175px 40px;
-    border-radius: 10px;
-    position: relative;
-    margin-top: 20px;
-    overflow: hidden;
-    z-index: 10;
-}
-
-.brator-megasell-box .brator-megasell-content-box .sub-title {
-    position: relative;
-    font-size: 18px;
-    font-weight: 700;
-    font-family: var(--content-font);
-    display: inline-block;
-    z-index: 10;
-    padding: 2px 35px 2px 15px;
-}
-
 @media only screen and (min-width: 1300px) {
     .rollparts-header-area.header-three.header-one .rollparts-logo-area .rollparts-logo button {
         display: none;
     }
-}
-
-.brator-megasell-box .brator-megasell-thumb {
-    position: absolute;
-    bottom: -10px;
-    right: 130px;
-}
-
-.brator-megasell-box .thumb-shape {
-    position: absolute;
-    right: 95px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: -1;
-}
-
-.brator-megasell-box .brator-megasell-content-box .sub-title::before {
-    position: absolute;
-    content: '';
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background: #fbab00;
-    display: inline-block;
-    z-index: -1;
-    clip-path: polygon(0 0, 100% 0, 86% 99%, 0% 100%);
-}
-
-.brator-megasell-box .brator-megasell-content-box h1 {
-    font-size: 200px;
-    font-weight: 800;
-    color: #fff;
-    line-height: 200px;
-    margin-top: -9px;
-    margin-bottom: 10px;
-}
-
-.brator-megasell-box .brator-megasell-content-box h4 {
-    font-size: 30px;
-    font-weight: 800;
-    color: #fff;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-}
-
-.brator-megasell-box .brator-megasell-content-box h4 span {
-    font-weight: 300;
-    font-style: italic;
-}
-
-.brator-megasell-box .brator-megasell-content-box p {
-    font-size: 14px;
-    line-height: 24px;
-    color: #fff;
-}
-
-.brator-megasell-area .splide__pagination li {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.brator-megasell-area .splide__pagination li button.is-active {
-    background: #fff;
-    opacity: 1;
-}
-
-.brator-megasell-area .splide__pagination {
-    bottom: 32px;
 }
 
 .rollparts-service-area .col-lg-3 {
@@ -7430,7 +5195,6 @@ body {
     width: 1px;
     height: 60px;
     background: #e5e5e5;
-
 }
 
 .rollparts-service-area .rollparts-single-service-item .icon {
@@ -7463,279 +5227,13 @@ body {
     color: #999999;
 }
 
-.braton-sponser-area {
-    padding-bottom: 110px;
-}
-
-.braton-sponser-area .braton-sponser-title {
-    display: flex;
-    align-items: center;
-    column-gap: 35px;
-    margin-bottom: 32px;
-    flex-wrap: wrap;
-}
-
-.braton-sponser-area .braton-sponser-title h3 {
-    font-size: 30px;
-}
-
-.braton-sponser-area .braton-sponser-title a i {
-    font-size: 10px;
-}
-
-
-.braton-sponser-area .sponser-row {
-    border: 1px solid #d3d3d3;
-    border-bottom: 0;
-    border-right: 0;
-    align-items: center;
-    border-radius: 5px;
-    padding-left: 0;
-    padding-right: 0;
-    margin: 0;
-}
-
-.braton-sponser-area .brator-brand-img {
-    text-align: center;
-    border-bottom: 1px solid #d3d3d3;
-    border-right: 1px solid #d3d3d3;
-    height: 230px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.braton-sponser-area .brator-brand-img a {
-    width: 140px;
-}
-
-.braton-sponser-area .brator-brand-img a img {
-    filter: grayscale(1);
-    opacity: 0.5;
-
-}
-
-.braton-sponser-area .brator-brand-img:hover a img {
-    filter: grayscale(0);
-    opacity: 1;
-    transition: all linear 0.3s;
-
-}
-
-.braton-sponser-area .sponser-row .col-xl-2 {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.brator-review-area {
-    padding-bottom: 103px;
-}
-
-.brator-review-area .brator-review-title {
-    border-top: 1px solid #d9d9d9;
-    padding-top: 103px;
-    padding-bottom: 33px;
-}
-
-.brator-review-title .title {
-    font-size: 30px;
-}
-
-.brator-review-content {
-    text-align: center;
-}
-
-.brator-review-content h5 {
-    font-size: 18px;
-    font-weight: 600;
-    padding-bottom: 8px;
-}
-
-.brator-review-content ul {
-    margin: 0;
-    padding: 0 0 3px;
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    gap: 3px;
-}
-
-.brator-review-content ul li i {
-    height: 30px;
-    width: 30px;
-    color: #fff;
-    background: #00b67a;
-    text-align: center;
-    line-height: 30px;
-    font-size: 16px;
-}
-
-.brator-review-content span {
-    font-size: 13px;
-    font-weight: 300;
-}
-
-.brator-review-content span span {
-    text-decoration: underline;
-    font-weight: 400;
-    color: #000;
-}
-
-.brator-review-content h4 {
-    font-size: 18px;
-    padding-top: 5px;
-}
-
-.brator-review-content h4 i {
-    color: #00b67a;
-    font-size: 22px;
-}
-
-.brator-review-box {
-    position: relative;
-}
-
-.brator-review-box ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    gap: 3px;
-}
-
-.brator-review-box ul li i {
-    height: 18px;
-    width: 18px;
-    color: #fff;
-    background: #00b67a;
-    text-align: center;
-    line-height: 16px;
-    font-size: 12px;
-}
-
-.brator-review-box .braton-review-date {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 12px;
-    color: #777;
-}
-
-.brator-review-box h5 {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 24px;
-    padding: 3px 0;
-}
-
-.brator-review-box p {
-    font-size: 14px;
-    line-height: 24px;
-    color: #2c2c2c;
-    margin-bottom: 0;
-}
-
-.brator-review-box>span {
-    font-size: 14px;
-    color: #777;
-}
-
-.brator-review-area .brator-review-slider .splide__arrows.style-three .splide__arrow--prev {
-    left: 0;
-    right: auto;
-}
-
-.brator-review-area .brator-review-slider .splide__arrows.style-three .splide__arrow {
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 50%;
-}
-
-.brator-review-area .brator-review-slider {
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
-.brator-blog-area {
-    border-top: 1px solid #d9d9d9;
-    padding-bottom: 100px;
-    padding-top: 100px;
-}
-
-.brator-blog-area .brator-blog-listing-single-item-area .brator-blog-listing-single-item-thumbnail {
-    border-radius: 8px;
-}
-
-.brator-blog-area .brator-blog-listing-single-item-area .brator-blog-listing-single-item-content .brator-blog-listing-single-item-title {
-    margin-bottom: 13px;
-    margin-top: 19px;
-}
-
-.brator-blog-area .brator-blog-listing-single-item-area .brator-blog-listing-single-item-content .brator-blog-listing-single-item-excerpt p {
-    margin-bottom: 22px;
-}
-
-@media (max-width: 1199px) {
-    .brator-product-img-tab-list.js-tabs#tabs-product-img {
-        padding-right: 0px;
-    }
-}
-
-.brator-map iframe#gmap_canvas {
-    height: 394px;
-    margin-top: 20px;
-}
-
-.woocommerce .woocommerce-ordering {
-    margin: 0;
-}
-
-.woocommerce .star-rating {
-    margin-bottom: 0;
-    color: #ffba00;
-    font-size: 13px;
-}
-
-.woocommerce .star-rating span {
-    font-family: 'star';
-    line-height: 1;
-}
-
-.woocommerce div.product div.images.woocommerce-product-gallery {
-    width: 100%;
-}
-
 ul.sp-mini-cart.cart_list.sp_product_list {
     list-style: none;
     padding-left: 0;
 }
 
-.woocommerce-loop-category__title mark.count {
-    background: transparent;
-    color: #333;
-    font-size: 15px;
-    padding: 0;
-}
-
-h2.woocommerce-loop-category__title {
-    font-size: 18px;
-}
-
 .product-list-items .rollparts-categories-single {
     width: calc(25% - 23px);
-}
-
-.add_to_cart_button.button.product_type_external {
-    font-size: 11px;
-    padding: 13px 5px;
-}
-
-.woocommerce div.product form.cart .variations td.label {
-    padding-right: 1em;
-    text-align: left;
-    text-transform: capitalize;
 }
 
 .woocommerce .cart-collaterals .cart_totals,
@@ -7751,26 +5249,6 @@ h2.woocommerce-loop-category__title {
     border: none;
 }
 
-.woocommerce-cart .cart-collaterals .cart_totals tr td,
-.woocommerce-cart .cart-collaterals .cart_totals tr th {
-    border: none;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.woocommerce-cart .cart-collaterals .cart_totals tr th {
-    text-align: left;
-}
-
-.woocommerce-cart .cart-collaterals .cart_totals tr td {
-    text-align: right;
-    background-color: transparent !important;
-}
-
-.woocommerce-cart table.cart img {
-    width: auto;
-}
-
 table.cart.rollparts-cart-list {
     border: none;
 
@@ -7779,19 +5257,12 @@ table.cart.rollparts-cart-list {
 table.cart.rollparts-cart-list th,
 table.cart.rollparts-cart-list td {
     border: none;
-    padding: 0;
     text-align: left;
     font-size: 13px;
     color: #999999;
     text-transform: uppercase;
     font-weight: 400;
     padding: 20px 0;
-}
-
-.woocommerce-cart table.cart td.actions .coupon .input-text {
-    width: 100%;
-    padding: 12px 17px;
-    margin: 0;
 }
 
 .woocommerce form .form-row input.input-text,
@@ -7892,7 +5363,6 @@ span.rollparts-checkout-order-price {
 }
 .order_box_price .count_part h5 {
     font-size: 16px;
-    text-transform: inherit;
     line-height: normal;
     margin-bottom: 25px;
     color: #34373b;
@@ -7910,28 +5380,6 @@ div#payment {
     margin-top: 20px;
 }
 
-.billing_form_area .select2.select2-container .selection span.select2-selection.select2-selection--single {
-    border-radius: 0px;
-    box-shadow: none;
-    height: 50px;
-    border: 1px solid #e6e6e6;
-    font-size: 16px;
-    line-height: 50px;
-    font-family: "Barlow", sans-serif;
-    color: #34373b;
-    padding: 0px 20px;
-}
-
-.billing_form_area .select2-container--default .select2-selection--single .select2-selection__rendered {
-    line-height: 50px;
-    padding: 0;
-}
-
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-    top: 50%;
-    margin-top: -12px;
-}
-
 .woocommerce form .form-row textarea {
     resize: none;
     border-radius: 0px;
@@ -7943,14 +5391,6 @@ div#payment {
     color: #c6c6c6;
     letter-spacing: 0.3px;
     padding: 15px 20px;
-}
-
-.splide__arrow {
-    transition: opacity .3s ease;
-}
-
-.splide__arrow:disabled {
-    pointer-events: none;
 }
 
 .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button {
@@ -7995,10 +5435,6 @@ div#payment {
 .woocommerce-cart #payment div.form-row,
 .woocommerce-checkout #payment div.form-row {
     padding: 0;
-}
-
-.pd-right-105 {
-    padding-right: 105px;
 }
 
 .menu-cat-list-area ul.menu-cat-list-item ul {
@@ -8058,117 +5494,6 @@ div#payment {
     overflow-y: auto;
 }
 
-.listing-search-item {
-    display: flex;
-    padding: 10px 20px 10px 20px;
-    align-items: center;
-    text-align: left;
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
-}
-
-.listing-search-item>a {
-    display: inline-flex;
-}
-
-#productdatasearch .listing-search-item:first-child {
-    padding-top: 20px;
-}
-
-#productdatasearch .listing-search-item:last-child {
-    padding-bottom: 20px;
-}
-
-.listing-search-item img {
-    margin-right: 12px;
-}
-
-.listing-search-item h5 {
-    font-size: 14px;
-    font-weight: 400;
-}
-
-.listing-search-item h5 a {
-    color: var(--color-dark);
-    line-height: 24px;
-}
-
-.listing-search-item h5 a:hover {
-    color: var(--color-high-dark);
-}
-
-.pro-price ins {
-    color: var(--color-high-dark);
-    background: transparent;
-    padding: 0;
-}
-
-.pro-price {
-    display: flex;
-}
-
-.pro-price del {
-    font-size: 14px;
-    color: #999999;
-    order: 2;
-    margin-left: 5px;
-}
-
-.pro-cart {
-    margin-left: auto;
-}
-
-.pro-cart {
-    border-left: 1px solid rgba(0, 0, 0, .1);
-    padding-left: 20px;
-}
-
-.pro-cart a {
-    background-color: var(--color-high-dark);
-    color: #fff;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    line-height: 40px;
-    display: inline-flex;
-    border-radius: 50%;
-    transition: .3;
-}
-
-.pro-cart a svg {
-    fill: #fff;
-    margin: auto;
-    font-size: 20px;
-}
-
-.pro-cart a:hover {
-    background-color: #000
-}
-
-.pro-cart a.add_to_cart_button.ajax_add_to_cart.added {
-    background-color: #000;
-    position: relative;
-}
-
-.pro-cart a.add_to_cart_button.ajax_add_to_cart.added svg {
-    opacity: 0;
-}
-
-.add_to_cart_button.ajax_add_to_cart.added:after {
-    background-image: url('data:image/svg+xml;utf8,<svg fill="white" width="20" height="20"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve"><path d="M62.3,12.7c-0.7-0.7-1.8-0.7-2.5,0L23.3,48.1c-0.3,0.3-0.7,0.3-1,0L4.2,30.5c-0.7-0.7-1.8-0.7-2.5,0c-0.7,0.7-0.7,1.8,0,2.5l18.1,17.6c0.8,0.8,1.9,1.2,2.9,1.2c1.1,0,2.1-0.4,2.9-1.2l36.5-35.4C62.9,14.5,62.9,13.4,62.3,12.7z"/></svg>');
-    background-repeat: no-repeat;
-    background-position-x: 11px;
-    background-position-y: 10px;
-    position: absolute;
-    content: "";
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    font-size: 20px;
-}
-
-
-
 .cat-list-search {
     padding: 0;
     margin: 0;
@@ -8178,46 +5503,6 @@ div#payment {
     display: inline-block;
 }
 
-p.not-found-pro {
-    margin-top: 15px;
-    text-align: center;
-    padding: 0 5px;
-}
-
-.brator-best-product-slider+.brator-plan-pixel-area {
-    padding-bottom: 42px;
-}
-
-.brator-not-found {
-    padding: 25px 35px;
-    background-color: #fff5f3;
-    font-size: 18px;
-}
-
-.woocommerce .widget_price_filter .ui-slider .ui-slider-range {
-    background-color: var(--color-high-dark);
-}
-
-.woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
-    background-color: var(--color-high-dark);
-}
-
-.rollparts-contact-form-fields {
-    display: grid;
-}
-
-.comment-form-rating.review-box.clearfix {
-    order: 1;
-}
-
-.rollparts-contact-form-field.review-title-field {
-    order: 2;
-}
-
-.rollparts-contact-form-field {
-    order: 3;
-}
-
 p.comment-form-cookies-consent {
     order: 4;
     margin-bottom: 0 !important;
@@ -8225,96 +5510,6 @@ p.comment-form-cookies-consent {
 
 .rollparts-contact-form-field.submit-button {
     order: 5;
-}
-
-.single-product .woocommerce-error,
-.single-product .div-info,
-.single-product .woocommerce-message {
-    margin: 0;
-}
-
-input#to_pro_price {
-    font-size: 26px;
-    padding: 0;
-    font-weight: 600;
-}
-
-.rollparts-header-menu-area.dark-bg .rollparts-header-menu-with-info {
-    position: unset;
-}
-
-.rollparts-header-menu-area.dark-bg .row {
-    position: relative;
-}
-
-.rollparts-header-menu-area.dark-bg .rollparts-header-menu ul.list-style-outside-none .mega-menu-li .mega-menu-area {
-    top: 45px;
-}
-
-.tinv-wishlist .product-action {
-    width: auto;
-}
-
-.rollparts-slide-menu-items ul li a span.count-hot-beg {
-    display: none;
-}
-
-.admin-bar .rollparts-header-menu-area.scroll-menu {
-    top: 32px;
-}
-
-/* Brator Home 02 */
-.brator-main-banner-area.banner-style-two {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-color: #1e1e1f;
-}
-
-.brator-main-banner-content {
-    text-align: center;
-    padding-top: 100px;
-    padding-bottom: 100px;
-}
-
-.brator-main-banner-content p {
-    font-size: 30px;
-    font-weight: 400;
-    color: #ffffff;
-    text-transform: uppercase;
-}
-
-.brator-main-banner-content h2 {
-    font-size: 60px;
-    font-weight: 700;
-    color: #ffffff;
-}
-
-.brator-parts-search-box-area.search-box-with-banner.rollparts-design {
-    background: transparent;
-    border-radius: 0px;
-}
-
-.brator-parts-search-box-area.search-box-with-banner.rollparts-design .brator-parts-search-box-header {
-    text-align: center;
-}
-
-.brator-parts-search-box-area.search-box-with-banner.rollparts-design .brator-parts-search-box-header h2 {
-    color: #ffffff;
-}
-
-.brator-parts-search-box-area.search-box-with-banner.rollparts-design .brator-parts-search-box-header p {
-    color: #ffffff;
-}
-
-.brator-parts-search-box-area.search-box-with-banner.rollparts-design .brator-parts-search-box-form {
-    border-color: transparent;
-    background-color: #ffffff;
-    border-radius: 8px 8px 0px 0px;
-}
-
-.brator-parts-search-box-area.search-box-with-banner.rollparts-design .brator-parts-search-box-form select:disabled {
-    background-color: #f2f2f7;
 }
 
 /* Banner style two end */
@@ -8348,299 +5543,13 @@ input#to_pro_price {
     text-align: center;
 }
 
-.rollparts-categories-list-load-more .brator-categories-more-button {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 16px;
-    background: #ffffff;
-    border: 1px solid #cccccc;
-    color: #000000;
-    padding: 15px 53px;
-    border-radius: 4px;
-    height: 52px;
-    text-transform: capitalize;
-    transition: 0.3s;
-}
-
-.rollparts-categories-list-load-more .brator-categories-more-button:hover {
-    border-color: var(--color-high-dark);
-    color: var(--color-high-dark);
-}
-
 .rollparts-makes-list-area.rollparts-design {
     padding-top: 85px;
 }
 
-.brator-brand-item-area.design-three {
-    padding: 90px 0;
-    background-color: #fff;
-}
-
-.brator-brand-item-area.design-three .rollparts-section-header {
-    justify-content: center;
-}
-
-.brator-brand-item-area.design-three .row {
-    justify-content: space-between;
-    align-items: center;
-}
-
-.brator-brand-item-area.design-three .rollparts-section-header h2 {
-    margin-right: 0px;
-}
-
-.brator-brand-item-area.design-three .brator-brand-img a {
-    display: grid;
-    justify-content: center;
-    margin: 40px 0;
-}
-
-.brator-blog-featured-area .rollparts-section-header {
-    margin-bottom: 40px;
-}
-
-.brator-deal-product-slider.brator-best-seller {
-    background-color: #f2f2f7;
-    padding-top: 85px;
-    padding-bottom: 0px;
-}
-
-
-
 .rollparts-best-seller-section-header-area .rollparts-section-header.all-item-left {
     width: auto;
     margin-bottom: 0px;
-}
-
-.brator-best-seller-sub-filter-area ul.brator-best-seller-sub-filter-content {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-}
-
-.brator-best-seller-sub-filter-area ul.brator-best-seller-sub-filter-content li.brator-best-seller-sub-filter-list {
-    list-style: outside none;
-}
-
-.brator-best-seller-sub-filter-area ul.brator-best-seller-sub-filter-content li.brator-best-seller-sub-filter-list a {
-    font-size: 14px;
-    padding: 0px 12px;
-    color: black;
-    font-weight: 600;
-    border-radius: 3px;
-}
-
-.brator-best-seller-sub-filter-area ul.brator-best-seller-sub-filter-content li.brator-best-seller-sub-filter-list a.active,
-.brator-best-seller-sub-filter-area ul.brator-best-seller-sub-filter-content li.brator-best-seller-sub-filter-list a:hover {
-    background-color: #ffffff;
-    color: var(--color-high-dark);
-}
-
-.rollparts-product-single-item-area .rollparts-product-single-item-info .rollparts-product-single-item-info-right .brator-product-batch {
-    border-radius: 3px;
-    font-size: 12px;
-    line-height: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    display: inline-block;
-    padding: 5px 10px;
-}
-
-.brator-product-batch.stock-number-batch {
-    background-color: #7faf2b;
-    color: #fff;
-}
-
-.brator-product-batch.stock-recommended-batch {
-    background-color: #0033cc;
-    color: #fff;
-}
-
-.rollparts-product-single-item-area .rollparts-product-single-item-mini .rollparts-product-single-item-price p.brator-price-black-text sub {
-    color: #000000;
-}
-
-.brator-deal-product-slider.brator-essential-items {
-    padding-top: 65px;
-    padding-bottom: 0px;
-}
-
-.brator-deal-product-slider.brator-new-arrivals {
-    background-color: #f2f2f7;
-    padding-top: 65px;
-    padding-bottom: 100px;
-}
-
-.brator-blog-featured-area.grid-type.rollparts-design {
-    margin-top: 95px;
-    margin-bottom: 110px;
-}
-
-/* Brator whats hot area start */
-.brator-offer-slider-area.brator-whats-hot-area {
-    padding-top: 90px;
-    padding-bottom: 90px;
-}
-
-.brator-offer-slider-area.brator-whats-hot-area .rollparts-section-header {
-    justify-content: center;
-}
-
-.brator-offer-slider-area.brator-whats-hot-area .rollparts-section-header h2 {
-    margin-right: 0px;
-}
-
-.brator-whats-hot-slider .brator-hot-single-box {
-    padding: 40px;
-    min-height: 450px;
-    height: 100%;
-    border-radius: 4px;
-}
-
-.brator-hot-single-box {
-    background-position: right bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.brator-hot-box-content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.brator-hot-box-design-one .brator-hot-box-content .brator-hot-box-text p {
-    font-size: 18px;
-    font-weight: 400;
-    color: #000000;
-}
-
-.brator-hot-box-design-one .brator-hot-box-content .brator-hot-box-text h2 {
-    font-size: 35px;
-    line-height: 35px;
-    color: #000000;
-    text-transform: uppercase;
-    font-weight: 300;
-}
-
-.brator-hot-single-box .brator-hot-box-content .brator-hot-box-button a {
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 15px;
-    background: var(--color-high-dark);
-    border: 2px solid var(--color-high-dark);
-    color: #fff;
-    padding: 10px 25px;
-    border-radius: 4px;
-    height: 40px;
-    text-transform: capitalize;
-    transition: 0.3s;
-}
-
-.brator-hot-single-box .brator-hot-box-content .brator-hot-box-button a:hover {
-    color: #fff;
-    background: #000;
-    border: 2px solid #000;
-}
-
-.brator-hot-box-rollparts-design .brator-hot-box-content .brator-hot-box-text h2 {
-    font-size: 30px;
-    font-weight: 400;
-    color: #000000;
-}
-
-.brator-hot-box-rollparts-design .brator-hot-box-content .brator-hot-box-text h2 span {
-    font-weight: 700;
-}
-
-.brator-hot-single-box .best-choise-batch {
-    background-color: #fbab00;
-    display: inline-flex;
-    padding: 0px 10px;
-    margin-top: 20px;
-    border-radius: 3px;
-    margin-bottom: 8px;
-}
-
-.brator-hot-single-box .best-choise-batch span {
-    font-size: 12px;
-    color: #fff;
-    font-weight: 600;
-    text-transform: uppercase;
-    line-height: 22px;
-}
-
-.brator-hot-box-design-three .brator-hot-box-content .brator-hot-box-text p {
-    font-size: 18px;
-    font-weight: 600;
-    color: #000000;
-    text-transform: uppercase;
-}
-
-.brator-hot-box-design-three .brator-hot-box-content .brator-hot-box-text h6 {
-    font-size: 60px;
-    color: var(--color-high-dark);
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 11px;
-}
-
-.brator-hot-box-design-three .brator-hot-box-content .brator-hot-box-text h2 {
-    font-size: 14px;
-    color: #000000;
-    font-weight: 400;
-    text-transform: uppercase;
-    line-height: 1.3;
-}
-
-.brator-hot-box-design-four .brator-hot-box-content .brator-hot-box-text h2 {
-    font-size: 32px;
-    font-weight: 800;
-    color: #000000;
-    text-transform: uppercase;
-    font-style: italic;
-    margin-bottom: 12px;
-}
-
-.brator-hot-box-design-four .brator-hot-box-content .brator-hot-box-text p {
-    font-size: 18px;
-    font-weight: 400;
-    color: #666666;
-    line-height: 1.3em;
-}
-
-.best-choise-batch.best-use-code-batch {
-    background-color: #7faf2b;
-    margin-top: 5px;
-}
-
-.best-choise-batch.best-use-code-batch span {
-    font-weight: 300;
-    color: #ffffff;
-}
-
-.best-choise-batch.best-use-code-batch span.use-code-code {
-    font-weight: 700;
-}
-
-.best-use-code-batch .use-code-off {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.best-use-code-batch .use-code-off .use-code-separator {
-    opacity: .5;
-    padding: 0px 8px;
-}
-
-/* Brator whats hot area end */
-.brator-newsletter-area.design-one.design-for-home-two {
-    padding-top: 60px;
-    padding-bottom: 60px;
 }
 
 .rollparts-makes-list-area.rollparts-design .rollparts-makes-list-tab-header ul {
@@ -8697,14 +5606,6 @@ input#to_pro_price {
     padding-right: 100px;
 }
 
-.brator-blog-single-post-area .col-lg-9 {
-    padding-right: 100px;
-}
-
-.nothing-found-search {
-    max-width: 550px;
-}
-
 @media only screen and (min-width: 1800px) {
     .rollparts-product-single-cart-count .rollparts-cart-list-items-qty input {
         margin-left: 38px !important;
@@ -8716,103 +5617,20 @@ input#to_pro_price {
         padding-right: 15px;
     }
 
-    .brator-blog-single-post-area .col-lg-9 {
-        padding-right: 50px;
-    }
-
     .rollparts-makes-list-single {
         width: calc(33.33% - 15px);
     }
 }
 
-@media only screen and (max-width: 1199px) {
-    .brator-blog-post-sidebar {
-        margin-top: 70px;
-    }
-}
-
 @media only screen and (max-width: 991px) {
-    .brator-blog-single-post-area .col-lg-9 {
-        padding-right: 15px;
-    }
-
-    .brator-blog-post .brator-blog-listing-single-item-area.list-type-one .type-post {
-        flex-wrap: wrap;
-    }
-
-    .brator-blog-post .brator-blog-listing-single-item-area.list-type-one .type-post .brator-blog-listing-single-item-thumbnail {
-        max-width: 100%;
-        margin-right: 0;
-        -webkit-margin-after: 20px;
-        margin-block-end: 20px;
-    }
-
-    .brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form button {
-        max-width: 180px;
-    }
-
-    .product-tab-section .rollparts-section-header a {
-        display: none;
-    }
-
-    .product-tab-section .brator-best-seller-sub-filter-area ul.brator-best-seller-sub-filter-content li.brator-best-seller-sub-filter-list:first-child {
-        display: none;
-    }
-
     .footer-block .section-column {
         width: 50% !important;
     }
-
 }
 
 @media only screen and (max-width: 767px) {
     .rollparts-best-seller-section-header-area {
         flex-wrap: wrap;
-    }
-
-    .brator-banner-area.design-four .brator-banner-content h2 {
-        font-size: 42px;
-    }
-
-    .brator-blog-single-post-header .brator-blog-listing-single-item-info-area {
-        flex-wrap: wrap;
-    }
-
-    .blog-comment-list-area .blog-comment-list-items .blog-comment-single-item {
-        flex-wrap: wrap;
-    }
-
-    .blog-comment-list-area .blog-comment-list-items .blog-comment-single-item .blog-comment-single-item-content .blog-comment-single-item-autor span {
-        position: static;
-        margin-bottom: 5px;
-        display: block;
-    }
-
-    .blog-comment-list-area .blog-comment-list-items .blog-comment-single-item .blog-comment-single-item-img {
-        margin-right: 0;
-        margin-bottom: 12px;
-    }
-
-    .brator-blog-listing-single-item-info-2 a svg {
-        margin-right: 5px;
-    }
-
-    .brator-blog-single-post-header .brator-blog-single-post-title h2 {
-        font-size: 36px;
-        line-height: 46px;
-    }
-
-    .brator-best-seller-sub-filter-area ul.brator-best-seller-sub-filter-content {
-        flex-wrap: wrap;
-        margin-top: 30px;
-    }
-
-    .brator-main-banner-content h2 {
-        font-size: 32px;
-    }
-
-    .brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form button {
-        max-width: 100%;
     }
 
     .footer-block .section-column {
@@ -8831,48 +5649,6 @@ input#to_pro_price {
 
 .rollparts-header-menu-bg {
     overflow: hidden;
-}
-
-.woocommerce-grouped-product-list-item__price ins {
-    background: transparent;
-    color: var(--color-high-dark);
-}
-
-.woocommerce table.shop_attributes {
-    border-top: 1px solid #0d1b4c24;
-}
-
-.woocommerce table.shop_attributes td {
-    border-bottom: 1px solid #2540a126;
-}
-
-.woocommerce table.shop_attributes th {
-    border-bottom: 1px solid #0d1b4c26;
-}
-
-.woocommerce-message {
-    border-top-color: var(--color-high-dark);
-}
-
-.woocommerce-message::before {
-    color: var(--color-high-dark);
-}
-
-.widget_product_search .search-field {
-    height: 50px;
-    font-size: 15px;
-}
-
-.widget_product_search button {
-    background: var(--color-high-dark);
-    border: none;
-    width: 100%;
-    height: 50px;
-    font-size: 14px;
-    color: #fff;
-    margin-top: 15px;
-    text-transform: uppercase;
-    letter-spacing: .5px;
 }
 
 .woocommerce ul.sp_product_list li {
@@ -8926,64 +5702,6 @@ input#to_pro_price {
     font-size: 14px;
 }
 
-.error-section {
-    text-align: center;
-}
-
-.error-section .content-box h1 {
-    font-size: 200px;
-    line-height: 200px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.error-section .content-box h2 {
-    position: relative;
-    display: block;
-    font-size: 30px;
-    line-height: 42px;
-    font-weight: 600;
-    margin-bottom: 60px;
-    color: #999;
-}
-
-.error-section .content-box a {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 16px;
-    background: var(--color-high-dark);
-    border: 2px solid var(--color-high-dark);
-    color: #fff;
-    padding: 15px 20px;
-    border-radius: 4px;
-    height: 52px;
-    text-transform: capitalize;
-    transition: 0.3s;
-}
-
-.error-section .content-box {
-    max-width: 650px;
-    margin: 0 auto;
-}
-
-.splide.is-active .splide__list.project-tiles {
-    width: 100%;
-}
-
-.prd-grid-custom-svg-loader {
-    height: 435px;
-    overflow: hidden;
-    text-align: center;
-    margin: 0 auto;
-}
-
-.prd-grid-custom-svg-loader svg {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    margin: 0 auto;
-}
-
 /* clears the 'X' from Internet Explorer */
 input[type=search]::-ms-clear {
     display: none;
@@ -9013,150 +5731,12 @@ input[type="search"]::-webkit-search-results-decoration {
     color: #999999
 }
 
-select#tinvwl_product_actions {
-    height: 50px;
-}
-
-.brator-features-area.rollparts-design a.brator-features-single .brator-features-single-img svg {
-    fill: var(--color-high-dark);
-    z-index: 1;
-    font-size: 32px;
-}
-
-.brator-banner-area {
-    position: relative;
-}
-
-.tt-pagetitle__img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
-}
-
-.brator-banner-content {
-    z-index: 1;
-    position: relative;
-}
-
-.tt-pagetitle__img img {
-    height: 100% !important;
-    object-fit: cover;
-    width: 100%;
-}
-
 .rollparts-header-menu-area.red-variant .rollparts-header-menu-with-info {
     position: unset;
 }
 
-.rollparts-header-menu-area.red-variant .rollparts-header-menu ul.list-style-outside-none li .mega-menu-area {
-    left: 10%;
-    width: 90%;
-    margin-left: -5%;
-}
-
 .rollparts-header-area.header-three .rollparts-cart-item-list {
     right: -60px;
-}
-
-.rollparts-product-single-item-area li.reset_variations.woo_variation_swatches_archive_reset_variations {
-    display: none;
-}
-
-.rollparts-product-single-item-area li.reset_variations.woo_variation_swatches_archive_reset_variations,
-.rollparts-product-single-item-area li.reset_variations.woo_variation_swatches_archive_reset_variations a {
-    font-size: 10px;
-    line-height: 10px;
-}
-
-.woo-variation-swatches .rollparts-product-single-item-area .variable-items-wrapper .variable-item:not(.radio-variable-item):hover,
-.woo-variation-swatches .rollparts-product-single-item-area .variable-items-wrapper .variable-item:not(.radio-variable-item).selected:hover {
-    box-shadow: 0 0 0 1px #000000 !important;
-}
-
-.woo-variation-swatches .rollparts-product-single-item-area .variable-items-wrapper .variable-item:not(.radio-variable-item).selected {
-    box-shadow: 0 0 0 1px #000000 !important;
-}
-
-.woo-variation-swatches .rollparts-product-single-item-area .variable-items-wrapper .variable-item:not(.radio-variable-item) {
-    box-shadow: none;
-    padding: 0;
-}
-
-.woo-variation-swatches .rollparts-product-single-item-area .variable-items-wrapper .variable-item:not(.radio-variable-item) {
-    box-shadow: none !important;
-}
-
-.woo-variation-swatches .rollparts-product-single-item-area .variable-items-wrapper .variable-item:not(.radio-variable-item).color-variable-item .variable-item-span-color {
-    border-radius: 50%;
-}
-
-.woo-variation-swatches .rollparts-product-single-item-area .variable-items-wrapper .variable-item:not(.radio-variable-item).color-variable-item .variable-item-span-color:after {
-    box-shadow: none !important;
-}
-
-.woo-variation-swatches .rollparts-product-single-item-area .wvs-archive-variation-wrapper .variations .woo-variation-items-wrapper {
-    margin: 5px 0 !important;
-}
-
-.rollparts-product-single-item-area.design-three .wvs-archive-variation-wrapper,
-.rollparts-product-single-item-area.design-one li.reset_variations.woo_variation_swatches_archive_reset_variations {
-    margin-bottom: 7px;
-}
-
-.woo-variation-swatches.wvs-show-label.single-product .variations td.woo-variation-items-wrapper {
-    text-align: left;
-}
-
-.rollparts-product-single-item-area.design-three .wvs-archive-variation-wrapper {
-    margin-left: 3px;
-}
-
-.tinvwl_add_to_wishlist_button {
-    color: #666;
-    font-size: 14px;
-}
-
-.brator-product-slider .splide__track {
-    padding: 5px 0;
-}
-
-@media only screen and (min-width: 1400px) and (max-width: 1600px) {
-    .brator-megasell-box .brator-megasell-thumb {
-        right: 60px;
-        width: 500px;
-    }
-}
-
-@media only screen and (min-width: 1200px) and (max-width: 1400px) {
-    .brator-megasell-box .brator-megasell-thumb {
-        right: 40px;
-        width: 500px;
-        bottom: 0;
-    }
-
-    .brator-megasell-box .brator-megasell-content-box h1 {
-        font-size: 130px;
-        margin-bottom: 0;
-    }
-
-    .rollparts-service-area .rollparts-single-service-item .icon {
-        left: 30px;
-    }
-
-    .rollparts-service-area .rollparts-single-service-item {
-        padding: 55px 0 40px 95px;
-    }
-
-    .braton-sponser-area .brator-brand-img {
-        height: 150px;
-    }
-
-    .brator-hot-single-box {
-        background-position: 0 0;
-    }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
@@ -9167,63 +5747,15 @@ select#tinvwl_product_actions {
     .rollparts-service-area .rollparts-single-service-item {
         padding-left: 0;
     }
-
-    .brator-megasell-box .thumb-shape {
-        display: none;
-    }
-
-    .brator-megasell-box .brator-megasell-thumb {
-        right: 20px;
-        width: 400px;
-        bottom: 0;
-    }
-
-    .brator-megasell-area .brator-megasell-box {
-        padding: 40px 100px 30px;
-    }
-}
-
-@media only screen and (max-width: 991px) {
-
-    .brator-megasell-box .thumb-shape,
-    .brator-megasell-box .brator-megasell-thumb {
-        display: none;
-    }
 }
 
 @media only screen and (max-width: 1200px) {
-    .brator-megasell-box .brator-megasell-content-box h1 {
-        font-size: 130px;
-        margin-bottom: 0;
-    }
-
-    .brator-megasell-area .brator-megasell-box {
-        padding: 60px 100px 80px;
-    }
-
-    .braton-sponser-area .brator-brand-img {
-        height: 150px;
-    }
-
     .rollparts-service-area .rollparts-single-service-item::before {
         display: none;
     }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
-    .brator-review-content {
-        padding-bottom: 40px;
-        text-align: left;
-    }
-
-    .brator-review-area .brator-review-title {
-        text-align: center;
-    }
-
-    .brator-review-content {
-        text-align: center;
-    }
-
     .rollparts-service-area .rollparts-single-service-item {
         padding: 25px 0 10px 125px;
     }
@@ -9241,10 +5773,6 @@ select#tinvwl_product_actions {
         display: none;
     }
 
-    .brator-header-top-language ul {
-        display: none;
-    }
-
     .product-list-items.type-list .rollparts-product-single-item-area.design-three .rollparts-product-single-item-area-left {
         margin-right: 15px;
     }
@@ -9256,19 +5784,6 @@ select#tinvwl_product_actions {
 }
 
 @media only screen and (min-width: 310px) and (max-width: 767px) {
-    .brator-megasell-box .brator-megasell-content-box h1 {
-        font-size: 80px;
-        line-height: 110px;
-    }
-
-    .brator-megasell-area .brator-megasell-box {
-        padding: 60px 40px 60px;
-    }
-
-    .brator-megasell-area .splide__pagination {
-        bottom: 15px;
-    }
-
     .rollparts-service-area .rollparts-single-service-item .icon {
         position: static;
     }
@@ -9278,42 +5793,8 @@ select#tinvwl_product_actions {
         padding: 20px 0 10px 0px;
     }
 
-    .brator-review-content {
-        padding-bottom: 40px;
-        text-align: left;
-    }
-
-    .brator-review-content ul {
-        justify-content: flex-start;
-    }
-
-    .brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form button {
-        width: 100% !important;
-    }
-
-    .brator-whats-hot-slider .brator-hot-single-box {
-        padding: 20px !important;
-    }
-
-    .brator-review-area .brator-review-slider {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .brator-review-area .brator-review-slider .splide__arrows {
-        display: none;
-    }
-
     .rollparts-header-area.header-one.braton-header-three .brator-header-contact-info {
         display: none;
-    }
-
-    .brator-header-top-language ul {
-        display: none;
-    }
-
-    .home-three-footer .brator-payment-area {
-        justify-content: center;
     }
 }
 
@@ -9331,16 +5812,6 @@ select#tinvwl_product_actions {
     }
 }
 
-.woocommerce .widget_rating_filter ul li a {
-    padding: 2px 0;
-    font-size: 14px;
-    color: #666666;
-    display: flex;
-    justify-content: space-between;
-    line-height: 26px;
-    align-items: center;
-}
-
 .rollparts-categories-list-area.rollparts-design .rollparts-categories-single {
     margin-bottom: 30px;
 }
@@ -9355,302 +5826,6 @@ select#tinvwl_product_actions {
 
 .relation {
     position: relative;
-}
-
-.vehicle-list-wapper {
-    position: absolute;
-    left: -185px;
-    top: 44px;
-    background: #fff;
-    z-index: 9;
-    width: 400px;
-    padding: 30px;
-    color: #fff !important;
-    opacity: 0;
-    visibility: hidden;
-    box-shadow: 0 4px 13px 3px rgb(0 0 0 / 10%);
-    border-radius: 5px;
-}
-
-.vehicle-list-wapper::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: -9px;
-    border: 1px solid #e5e5e5;
-    width: 16px;
-    height: 16px;
-    background: #fff;
-    transform: rotate(45deg);
-    border-bottom: 0;
-    border-right: 0;
-    margin-left: -8px;
-}
-
-.vehicle-list-wapper.open {
-    opacity: 1;
-    visibility: visible;
-}
-
-.vehicle-list li,
-.vehicle-list a {
-    text-transform: capitalize;
-}
-
-.vehicle-list li {
-    line-height: 26px;
-    margin-bottom: 12px;
-    font-size: 16px;
-    position: relative;
-    list-style: none;
-    padding-left: 14px;
-}
-
-.vehicle-list li:not(#clearvehicle):after {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64"><g><path d="M14.6,38h6.6c1,0,1.8-0.8,1.8-1.8s-0.8-1.8-1.8-1.8h-6.6c-1,0-1.8,0.8-1.8,1.8S13.6,38,14.6,38z"></path><path d="M41.9,38h6.6c1,0,1.8-0.8,1.8-1.8s-0.8-1.8-1.8-1.8h-6.6c-1,0-1.8,0.8-1.8,1.8S41,38,41.9,38z"></path><path d="M61,21.6h-3.4l-5-12.7C52,7.2,50.3,6,48.5,6H15.1c-1.8,0-3.4,1.1-4.1,2.8L6,21.6H3c-1,0-1.8,0.8-1.8,1.8S2,25.1,3,25.1h1.4v17.8c0,2.6,2.1,4.7,4.6,4.7v5.6c0,2.6,2.1,4.8,4.8,4.8h4.4c2.6,0,4.8-2.1,4.8-4.8v-5.6h17.3v5.6c0,2.6,2.1,4.8,4.8,4.8h4.4c2.6,0,4.8-2.1,4.8-4.8v-5.6h0.4c2.6,0,4.8-2.1,4.8-4.8V25.1H61c1,0,1.8-0.8,1.8-1.8S62,21.6,61,21.6z M14.3,10.1c0.1-0.4,0.5-0.6,0.8-0.6h33.4c0.4,0,0.7,0.2,0.8,0.6l5.6,14.1H8.7L14.3,10.1z M19.4,53.3c0,0.7-0.6,1.3-1.3,1.3h-4.4c-0.7,0-1.3-0.6-1.3-1.3v-5.6h6.9V53.3z M50.6,53.3c0,0.7-0.6,1.3-1.3,1.3h-4.4c-0.7,0-1.3-0.6-1.3-1.3v-5.6h6.9V53.3z M55.8,42.9c0,0.7-0.6,1.3-1.3,1.3h-0.4H40.2H22.9H9.1c-0.7,0-1.3-0.6-1.3-1.3V27.6h47.9V42.9z"></path></g></svg>');
-    background-repeat: no-repeat;
-    background-position-x: 1px;
-    background-position-y: 1px;
-    content: "";
-    width: 22px;
-    height: 22px;
-    position: absolute;
-    left: -20px;
-    top: 50%;
-    fill: var(--color-high-dark);
-    margin-top: -12px;
-}
-
-.vehicle-list span {
-    display: block;
-    font-size: 12px;
-    line-height: 12px;
-    color: #999;
-}
-
-.vehicle-list-wapper .brator-parts-search-box-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-}
-
-.vehicle-list-wapper .brator-parts-search-box-form select {
-    max-width: calc(50% - 5px);
-    width: 100%;
-    border: 0;
-    background-color: #f5f5fa;
-    transition: 0.3s;
-    height: 40px;
-    background-position-y: 12px;
-}
-
-ul.vehicle-list {
-    border-top: 1px solid rgba(0, 0, 0, .1);
-    padding-top: 15px;
-    margin-top: 20px;
-    margin-bottom: 0;
-}
-
-ul.vehicle-list.empty {
-    border-top: 0;
-    margin-top: 0;
-    padding-top: 0;
-}
-
-.vehicle-list-wapper button {
-    padding: 10px 10px;
-    height: 40px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-li#clearvehicle {
-    cursor: pointer;
-    font-size: 14px;
-    margin-top: 10px;
-    color: var(--color-high-dark);
-    font-weight: 600;
-    margin-bottom: 0;
-}
-
-.brator-whats-hot-slider .brator-hot-single-box {
-    position: relative;
-}
-
-.brator-whats-hot-slider .brator-hot-single-box:after {
-    position: absolute;
-    content: "";
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, .4);
-    z-index: 1;
-}
-
-.brator-hot-box-content {
-    z-index: 2;
-    position: relative;
-}
-
-@media only screen and (min-width: 300px) and (max-width: 1199.98px) {
-    .vehicle-list-wapper {
-        left: -94px;
-        top: 44px;
-        width: 350px;
-    }
-
-    .vehicle-list-wapper::after {
-        left: 30%;
-    }
-}
-
-.rollparts-section-header-title.header-title-countdown {
-    flex-basis: 80%;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.rollparts-section-header-title .brator-product-countdown {
-    background: var(--color-high-dark);
-    border-radius: 3px;
-}
-
-.rollparts-section-header-title .brator-product-countdown div>span {
-    color: #fff;
-    font-size: 13px;
-    text-transform: uppercase;
-    font-weight: 700;
-    line-height: 26px;
-    margin-right: 10px;
-    display: inline-block;
-    margin-top: 2px;
-}
-
-.rollparts-section-header-title .brator-product-countdown ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-.rollparts-section-header-title .brator-product-countdown ul li {
-    display: inline-block;
-    color: #fff;
-    font-size: 13px;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-.rollparts-section-header-title .brator-product-countdown .brator-coming-soon-counter {
-    display: flex;
-    align-items: center;
-    padding: 0 10px;
-}
-
-.rollparts-section-header-title .brator-product-countdown ul li span {
-    padding-right: 0;
-}
-
-.vehicle-check svg {
-    fill: #fff;
-    font-size: 10px;
-    margin-right: 10px;
-    position: relative;
-    top: -1px;
-    background: #3abe00;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    padding: 5px;
-}
-
-span.vehicle-check.tool {
-    position: absolute;
-    left: 15px;
-    top: 15px;
-}
-
-/*== start of code for tooltips ==*/
-.tool {
-    cursor: help;
-    position: relative;
-}
-
-
-/*== common styles for both parts of tool tip ==*/
-.tool::before,
-.tool::after {
-    left: 50%;
-    opacity: 0;
-    position: absolute;
-    z-index: -100;
-}
-
-.tool:hover::before,
-.tool:focus::before,
-.tool:hover::after,
-.tool:focus::after {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-    z-index: 100;
-}
-
-/*== pointer tip ==*/
-.tool::before {
-    border-style: solid;
-    border-width: 1em 0.75em 0 0.75em;
-    border-color: #3E474F transparent transparent transparent;
-    bottom: 100%;
-    content: "";
-    margin-left: -0.9em;
-    transition: all .65s cubic-bezier(.84, -0.18, .31, 1.26), opacity .65s .2s;
-    transform: scale(.6) translateY(-90%);
-}
-
-.tool:hover::before,
-.tool:focus::before {
-    transition: all .65s cubic-bezier(.84, -0.18, .31, 1.26) .2s;
-}
-
-/*== speech bubble ==*/
-.tool::after {
-    background: #3E474F;
-    border-radius: 0.25em;
-    bottom: 48px;
-    color: #EDEFF0;
-    content: attr(data-tip);
-    margin-left: -40px;
-    padding: 0.6em 1em;
-    transition: all .65s cubic-bezier(.84, -0.18, .31, 1.26) .2s;
-    transform: scale(.6) translateY(50%);
-    width: 13.5em;
-    line-height: 26px;
-}
-
-.tool:hover::after,
-.tool:focus::after {
-    transition: all .65s cubic-bezier(.84, -0.18, .31, 1.26);
-}
-
-@media (max-width: 760px) {
-    .tool::after {
-        font-size: .75em;
-        margin-left: -5em;
-        width: 10em;
-    }
-}
-
-.splide__slide .tool::before,
-.splide__slide .tool::after {
-    display: none;
-}
-
-.woocommerce div.product .rollparts-product-layout-header-content form.cart .variations td,
-.woocommerce div.product .rollparts-product-layout-header-content form.cart .variations th {
-    padding-left: 0;
-    padding-right: 0;
-    text-align: left;
 }
 
 .mobile-menu-icon {
@@ -9675,11 +5850,6 @@ span.vehicle-check.tool {
         /*width: 100%;*/
         padding: 20px 0;
     }
-
-    .admin-bar .rollparts-header-menu-area.scroll-menu.open {
-        top: 0;
-    }
-
 }
 
 @media (min-width: 993px) {
@@ -9688,139 +5858,9 @@ span.vehicle-check.tool {
     }
 }
 
-h2.woocommerce-column__title,
-h2.woocommerce-order-details__title {
-    margin-bottom: 20px;
-}
-
-.brator-product-single-frequently-total span del {
-    color: #999999;
-    font-size: 20px;
-}
-
-.brator-product-single-frequently-total span ins {
-    color: var(--color-high-dark);
-    background: transparent;
-}
-
-.brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form .select2-container .select2-selection--single {
-    display: block;
-    width: 100%;
-    height: 50px;
-    border-radius: 3px;
-}
-
-.brator-parts-search-box-area .brator-parts-search-box-form .select2-container.select2-container--disabled .select2-selection--single {
-    background-color: #f2f2f7;
-    border-color: #d4d4d4;
-}
-
-.brator-parts-search-box-area.design-one .brator-parts-search-box-form .select2-container .select2-selection--single .select2-selection__rendered,
-.brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form .select2-container .select2-selection--single .select2-selection__rendered {
-    line-height: 50px;
-    padding: 0 20px;
-}
-
-.brator-parts-search-box-area.design-one .brator-parts-search-box-form .select2-container .select2-selection--single .select2-selection__arrow,
-.brator-parts-search-box-area.rollparts-design .brator-parts-search-box-form .select2-container .select2-selection--single .select2-selection__arrow {
-    top: 50%;
-    transform: translateY(-50%);
-    right: 12px;
-    margin-top: 0;
-}
-
-.brator-parts-search-box-area .brator-parts-search-box-form .select2-container {
-    width: 100% !important;
-}
-
-.select2-container .select2-selection--single {
-    height: 52px;
-}
-
-.brator-parts-search-box-area.design-one .brator-parts-search-box-form .select2-container {
-    margin-bottom: 15px;
-}
-
-.rollparts-product-single-item-area .prd-grid-custom-svg-loader {
-    height: 100%;
-    overflow: hidden;
-    text-align: center;
-    margin: 0 auto;
-    position: absolute;
-    top: 0;
-    z-index: 1;
-    background-color: #fff;
-    width: 100%;
-    right: 0;
-    left: 0;
-}
-
-.rollparts-product-single-item-area.design-three .prd-grid-custom-svg-loader {
-    display: none;
-}
-
-.select2-results__option[aria-selected], .select2-results__option[data-selected] {
-    cursor: pointer;
-    font-size: 15px;
-}
-
-.select2-container--default .select2-results__option--selectable {
-    font-size: 15px;
-}
-
-.select2-container--default .select2-search--dropdown .select2-search__field {
-    border: 1px solid rgba(0, 0, 0, .1);
-    border-radius: 2px;
-}
-
-.select2-dropdown {
-    border-color: #d4d4d4;
-}
-
-.select2-container--default .select2-results__option--highlighted[aria-selected],
-.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
-    background: var(--color-high-dark);
-}
-
-.select2-container--default .select2-selection--single {
-    border: 1px solid #d4d4d4;
-}
-
-.vehicle-list-wapper .brator-parts-search-box-form .select2-container {
-    z-index: 10000;
-    margin-bottom: 5px;
-}
-
-.vehicle-list-wapper .select2-container--default .select2-selection--single {
-    background: #f5f5fa;
-    padding: 7px 0;
-    height: 40px;
-    border: 1px solid #f3f3f3;
-}
-
-.vehicle-list-wapper .brator-parts-search-box-form .select2-container.select2-container--disabled .select2-selection--single {
-    background-color: #f2f2f7;
-    border: 0;
-}
-
-.vehicle-list-wapper .select2-container--default .select2-selection--single {
-    background: #fff;
-}
-
-.vehicle-list-wapper .select2-container--default .select2-selection--single .select2-selection__rendered {
-    line-height: 25px;
-    padding-left: 10px;
-}
-
 #productdatasearch .loading {
     margin-top: 10px;
     margin-left: 15px;
-}
-
-@media only screen and (min-width: 310px) and (max-width: 767px) {
-    .product-list-items.type-list .rollparts-product-single-item-area.design-three {
-        display: block;
-    }
 }
 
 .header-bottom {
@@ -9841,55 +5881,6 @@ h2.woocommerce-order-details__title {
     .rollparts-header-menu-area.dark-bg .rollparts-header-menu-with-info {
         margin-left: 55px;
     }
-}
-
-@media only screen and (max-width: 1399px) {
-    .rollparts-header-menu-area.dark-bg .cat-menu-info-s {
-        display: none;
-    }
-}
-
-.listing-search-item .pro-content>span {
-    color: #999;
-    font-size: 13px;
-    display: block;
-    line-height: 20px;
-}
-
-.listing-search-item .pro-content>span strong {
-    color: #999;
-    font-weight: 500;
-    line-height: 13px;
-}
-
-/* home electro */
-.rollparts-categories-list-area.design-four .rollparts-categories-single {
-    background-color: #fff;
-    padding: 0;
-    padding-bottom: 15px;
-    margin-top: 50px;
-}
-
-.rollparts-categories-list-area.design-four .rollparts-categories-single .rollparts-categories-single-img {
-    height: auto;
-    margin-top: -38px;
-}
-
-.rollparts-categories-list-area.design-four .rollparts-categories-single:hover .rollparts-categories-single-title a {
-    text-decoration: none;
-    color: #ffa00d;
-}
-
-.rollparts-product-single-item-area.style-four:hover .rollparts-product-single-item-mini {
-    margin-top: -0px;
-}
-
-.rollparts-product-single-item-area.style-four .rollparts-product-single-item-mini .rollparts-product-single-item-btn {
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-    gap: 5px;
-    margin-top: 15px;
 }
 
 .add_to_cart_button {
@@ -9923,718 +5914,21 @@ a.icon-btn svg {
     fill: #000;
 }
 
-.brator-home-sidebar-title {
-    background-color: #f2f3f8;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 5px 5px 0 0;
-    border-bottom: 1px solid #ccc;
-}
-
-.brator-home-sidebar-area {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.brator-home-sidebar-content-category ul {
-    list-style: none;
-}
-
-.brator-home-sidebar-content-category ul li svg {
-    fill: #666666;
-    width: 18px;
-    height: 18px;
-    margin-right: 10px;
-}
-
-.brator-home-sidebar-content-category ul li a {
-    font-size: 14px;
-    color: #666;
-    line-height: 30px;
-    font-weight: 400;
-}
-
-.brator-deal-product-slider.style-four {
-    padding: 0;
-}
-
-.brator-deal-product-slider.style-four .rollparts-section-header {
-    width: auto;
-    margin-bottom: 0;
-}
-
-.brator-deal-product-slider.style-four .rollparts-best-seller-section-header-area {
-    justify-content: flex-start;
-    margin-bottom: 17px;
-}
-
-.brator-deal-product-slider.style-four .splide__arrows.style-two .splide__arrow--prev,
-.brator-deal-product-slider.style-four .splide__arrows.style-two .splide__arrow--next {
-    right: 0;
-    top: -35px;
-    width: 35px;
-    height: 35px;
-    background-color: #f2f3f8;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-}
-
-.brator-deal-product-slider.style-four .splide__arrows.style-two .splide__arrow--prev {
-    right: 46px;
-    left: auto;
-}
-
-.brator-deal-product-slider.style-four .splide__arrows.style-two .splide__arrow svg {
-    font-size: 14px;
-}
-
-.red-bg {
-    background-color: #f90101;
-    color: #fff;
-    border-radius: 5px;
-    padding: 0 6px;
-}
-
-.product-sidebar-item {
-    overflow: hidden;
-    width: 100%;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-    padding: 5px 5px 10px 5px;
-    border-radius: 5px;
-    transition: .3s;
-}
-
-.product-sidebar-item:hover {
-    border-color: #ccc;
-}
-
-.product-sidebar-item-text h6 a {
-    font-size: 13px;
-    line-height: 17px;
-    font-weight: 400;
-}
-
-.brator-product-sidebar-content {
-    padding: 20px;
-}
-
-.product-sidebar-item-img {
-    width: 72px;
-    position: absolute;
-}
-
-.product-sidebar-item-text {
-    margin-left: 78px;
-}
-
-.product-sidebar-item-text span.rollparts-Price-amount.amount bdi,
-.product-sidebar-item-text span.rollparts-Price-amount.amount {
-    font-weight: 700;
-    font-size: 13px;
-    line-height: 26px;
-}
-
-.product-sidebar-item-text .price ins {
-    background: transparent;
-    color: #f73312;
-    order: 1;
-    padding-left: 0;
-}
-
-.product-sidebar-item-text .price del {
-    order: 2;
-    color: #666666;
-    font-weight: 400;
-}
-
-.product-sidebar-item-text .price {
-    display: flex;
-}
-
-.product-sidebar-item-text .star-rating {
-    float: unset;
-    margin-top: 10px;
-}
-
-.brator-sidebar-review-slider {
-    background-color: #f2f3f8;
-    padding: 20px 20px 64px 20px;
-}
-
-.brator-review-sidebar-item {
-    background-color: #ffffff;
-    border-radius: 5px;
-    padding: 25px;
-}
-
-.brator-review-sidebar-item .braton-review-date {
-    color: #999999;
-    font-size: 13px;
-    line-height: 13px;
-    margin-left: 10px;
-}
-
-.brator-review-sidebar-item ul {
-    padding: 0 !important;
-    list-style: none;
-    display: flex;
-    margin: 0;
-}
-
-.brator-review-sidebar-item ul li {
-    line-height: 12px;
-}
-
-.brator-review-sidebar-item ul li svg {
-    fill: #ffba00;
-    font-size: 12px;
-}
-
-.brator-review-sidebar-item>p {
-    margin-top: 16px;
-    font-size: 15px;
-    color: #000000;
-}
-
-.brator-review-sidebar-text span {
-    font-size: 16px;
-    line-height: 26px;
-    font-weight: 700;
-    color: #000000;
-}
-
-.brator-review-sidebar-text p {
-    margin-bottom: 0;
-    font-size: 12px;
-    color: #666666;
-    line-height: 22px;
-}
-
-.brator-review-sidebar-text {
-    justify-content: center;
-    gap: 15px;
-    align-items: center;
-    border-top: 1px solid #ccc;
-    padding-top: 17px;
-}
-
-.brator-sidebar-review-slider .splide__pagination li {
-    background: transparent;
-}
-
-.brator-sidebar-review-slider .splide__pagination {
-    bottom: 20px;
-}
-
-.brator-sidebar-review-slider .splide__pagination li button.is-active {
-    background-color: #fbab00;
-}
-
-.list-product-item {
-    display: flex;
-    border: 1px solid #cccccc;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    padding: 10px;
-    position: relative;
-    align-items: center;
-}
-
-.list-product-item-text .star-rating {
-    float: unset;
-    margin-top: 10px;
-}
-
-.list-product-item-text .price {
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 22px;
-    margin-bottom: 5px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.list-product-item-text h6 a {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 22px;
-}
-
-.list-product-item-text .price ins {
-    background: transparent;
-    color: #f73312;
-    order: 1;
-    padding-left: 0;
-}
-
-.list-product-item-text .price del {
-    order: 2;
-    color: #666666;
-    font-weight: 400;
-}
-
-.list-product-item-img {
-    flex-basis: 110px;
-    flex-grow: 0;
-    flex-shrink: 0;
-    margin-right: 10px;
-}
-
-.list-product-item-text .rating-count {
-    margin-left: 10px;
-    font-size: 12px;
-    color: #999999;
-    line-height: 34px;
-}
-
-.list-product-wish {
-    position: absolute;
-    top: 0;
-    right: 10px;
-}
-
-.list-product-item-img .off-batch {
-    border-radius: 3px;
-    background-color: var(--color-high-dark);
-    font-size: 12px;
-    line-height: 12px;
-    color: #fff;
-    font-weight: bold;
-    text-transform: uppercase;
-    display: inline-block;
-    padding: 5px 6px;
-    position: absolute;
-}
-
-.brator-sidebar-slider {
-    padding: 20px 20px 70px 20px;
-    background-color: #f2f3f8;
-}
-
-.brator-sidebar-slider ul.splide__pagination li {
-    background-color: transparent;
-}
-
-.brator-sidebar-slider ul.splide__pagination li button.is-active {
-    background-color: #fbab00;
-}
-
-.sidebar-post-item img {
-    border-radius: 5px 5px 0 0 !important;
-}
-
-.sidebar-post-content {
-    background-color: #fff;
-    padding: 20px 20px 15px 20px;
-    border-radius: 0 0 5px 5px;
-}
-
-.sidebar-post-content p {
-    margin-bottom: 0;
-}
-
-.brator-sidebar-slider ul.splide__pagination {
-    bottom: 25px;
-}
-
-.sidebar-post-content h6 {
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 700;
-    margin-bottom: 6px;
-}
-
-.sidebar-post-content h6 a {
-    line-height: 22px;
-}
-
-.sidebar-meta-post {
-    font-size: 12px;
-    line-height: 26px;
-    color: #666666;
-    margin-bottom: 5px;
-}
-
-.sidebar-meta-post span a {
-    color: #000;
-}
-
-.home-ele .brator-product-slider {
-    background-color: #fff;
-    padding: 30px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.home-ele .list-product-item {
-    margin-bottom: 0;
-}
-
-.home-ele .list-product-item .list-product-item-img {
-    flex-basis: 90px;
-}
-
 .relative {
     position: relative;
-}
-
-.brator-header-four .rollparts-header-area.header-one .rollparts-icon-link-text a.header-user-btn {
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-    background-color: #ffa00d;
-    padding: 7px 25px;
-    border-radius: 5px;
-}
-
-.brator-header-four .rollparts-header-top-bar-area.design-one.dark-bg .rollparts-header-top-bar-info-left p {
-    font-size: 14px;
-    line-height: 22px;
-}
-
-.brator-header-four .rollparts-header-menu-area .rollparts-header-menu ul.list-style-outside-none li a {
-    padding: 10px 15px;
-}
-
-.brator-header-four .rollparts-header-area.header-three.header-one {
-    padding: 20px 0;
-}
-
-.brator-header-four .rollparts-header-menu-area .rollparts-header-menu ul.list-style-outside-none li.menu-item-has-children>a svg {
-    fill: #000;
-    font-size: 14px;
-    top: 3px;
-    margin-left: 7px;
-}
-
-.brator-header-four .rollparts-header-area.header-three.header-one.dark-bg {
-    background-color: #fff;
-    padding-top: 0;
-}
-
-.brator-header-four .header-bottom {
-    border-top: 1px solid #d9d9d9;
-    padding-top: 20px;
-}
-
-.brator-header-four .menu-cat-list-area {
-    background-color: transparent;
-}
-
-.brator-header-four .menu-cat-list-area span.text {
-    color: #000;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-.brator-header-four .menu-cat-list-area .dropdown-icon-cat svg {
-    fill: #000;
-}
-
-.brator-header-four .menu-cat-list-area span.icon svg {
-    fill: #000;
-}
-
-.brator-header-four .menu-cat-list-area .dropdown-icon-cat {
-    margin-left: 17px;
-}
-
-.brator-header-four .menu-cat-list-area span.icon {
-    margin-right: 16px;
-}
-
-.brator-header-four .cat-menu-info-s .cat-menu-info-s-item span {
-    color: #000;
-}
-
-.brator-header-four .cat-menu-info-s .cat-menu-info-s-item svg {
-    fill: #000;
-}
-
-.brator-header-four .rollparts-header-area.header-three.header-one.dark-bg .rollparts-search-area .search-form input {
-    width: 730px;
-    border: none;
-    background: transparent;
-    padding-left: 50px;
-}
-
-.search-field-wrap {
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-}
-
-span.search-field-icon {
-    position: absolute;
-    left: 11px;
-    top: 0;
-    bottom: 0;
-    line-height: 56px;
-}
-
-.search-field-icon svg {
-    font-size: 22px;
-}
-
-.brator-header-four .rollparts-search-area .search-form button {
-    font-weight: 700;
-    font-size: 14px;
-    width: 120px;
-    letter-spacing: .5px;
-    border-radius: 5px !important;
-}
-
-.brator-header-four .rollparts-header-area.header-three.header-one.dark-bg .rollparts-search-area .search-form .select-search {
-    position: absolute;
-    display: flex;
-    right: 0;
-    background-color: #f2f3f8;
-    top: 0;
-    border-right: 0;
-    border-radius: 0 5px 5px 0;
-}
-
-.brator-header-four .rollparts-search-area .search-form {
-    position: relative;
-    display: flex;
-    padding-right: 126px;
-}
-
-.brator-header-four .rollparts-header-area.header-three.header-one.dark-bg .rollparts-search-area .search-form .select-search select {
-    line-height: 29px;
-    padding-top: 0;
-    padding-bottom: 0;
-    height: 100%;
-}
-
-.brator-megasell-slide-content {
-    padding: 55px 0 100px 100px;
-    max-width: 450px;
-    text-align: center;
-}
-
-.brator-megasell-slide {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.brator-megasell-slide-active .splide__arrows.style-one {
-    position: absolute;
-    bottom: -12px;
-    left: 100px;
-}
-
-.brator-megasell-slide-active .splide__arrows.style-one .splide__arrow {
-    border: 1px solid #ccc;
-    width: 2.5em;
-    height: 2.5em;
-}
-
-.brator-megasell-slide-active .splide__arrows.style-one .splide__arrow:hover {
-    background-color: #ffa00b;
-    border-color: #ffa00b;
-}
-
-.brator-megasell-slide-active .splide__arrows.style-one .splide__arrow:hover svg {
-    fill: #000000;
-}
-
-.brator-megasell-slide-active .splide__arrows.style-one .splide__arrow--prev {
-    right: 45px;
-}
-
-.brator-megasell-slide-content span.sub-title {
-    font-size: 13px;
-    background-color: #0094d2;
-    padding: 2px 10px;
-    border-radius: 3px;
-    color: #fff;
-    font-weight: 700;
-    margin-bottom: 20px;
-    display: inline-block;
-    line-height: 24px;
-}
-
-.brator-megasell-slide-content h1.title {
-    margin-bottom: 20px;
-}
-
-.brator-megasell-slide-content p {
-    font-size: 14px;
-    line-height: 24px;
-    margin-bottom: 30px;
-}
-
-a.banner-btn {
-    background-color: #ffa00d;
-    padding: 15px 35px;
-    border-radius: 5px;
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 22px;
-}
-
-a.banner-btn:hover {
-    background-color: #1f1f1f;
-    color: #fff;
-}
-
-.slider-caption-wrap {
-    position: absolute;
-    right: 40px;
-    top: 40px;
-}
-
-.slider-caption-item {
-    border: 1px solid #ccc;
-    padding: 24px 15px;
-    border-radius: 10px;
-    background-color: #fff;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.slider-caption-item h6 {
-    font-size: 14px;
-    margin-top: 15px;
-    font-weight: 700;
-    line-height: 24px;
-}
-
-.slider-caption-wrap .slider-caption-item:last-child {
-    margin-bottom: 0;
-}
-
-@media only screen and (max-width: 991px) {
-    .rollparts-service-area.style-two .row {
-        padding: 20px;
-    }
-
-    .rollparts-section-header-title .brator-product-countdown {
-        margin-top: 10px;
-    }
-}
-
-@media only screen and (max-width: 767px) {
-    .slider-caption-wrap {
-        position: static;
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-        align-items: center;
-        margin-bottom: 70px;
-        padding: 0 15px;
-    }
-
-    .slider-caption-item {
-        margin-bottom: 0;
-    }
-
-    .brator-megasell-slide-content {
-        padding: 40px 20px;
-    }
-
 }
 
 .rollparts-product-single-item-area .rollparts-product-single-item-mini .rollparts-product-single-item-price p ins {
     color: #f73312;
 }
 
-.rollparts-section-header-title .brator-product-countdown,
 .rollparts-product-single-item-area .rollparts-product-single-item-info .off-batch {
     background-color: #f73312;
-}
-
-.rollparts-product-single-item-area.design-one.design-one-with-three.style-four:hover {
-    border-color: #000;
-}
-
-.electro-product-section .splide__arrows.style-two .splide__arrow {
-    background-color: #f2f3f8;
-    width: 40px;
-    height: 40px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    left: -50px;
-    opacity: 1;
-}
-
-.electro-product-section .splide__arrows.style-two .splide__arrow svg {
-    width: 20px;
-    height: 20px;
-    fill: #000;
-}
-
-.electro-product-section .splide__arrows.style-two .splide__arrow--next {
-    right: -50px;
-    left: auto;
-}
-
-.electro-product-section .splide__arrows.style-two .splide__arrow:hover {
-    background-color: #ffa00b;
-    border-color: #ffa00b;
-}
-
-.brator-hot-box-design-4 .brator-hot-box-content h2 {
-    color: #fff;
-    font-size: 30px;
-    line-height: 30px;
-}
-
-.brator-hot-box-design-4 .brator-hot-box-content .brator-hot-box-text p {
-    font-size: 14px;
-    font-weight: 400;
-    color: #ffffff;
-    line-height: 18px;
-    text-transform: uppercase;
-}
-
-.brator-hot-box-design-4.text-color-black .brator-hot-box-content h2,
-.brator-hot-box-design-4.text-color-black .brator-hot-box-content .brator-hot-box-text p {
-    color: #000;
-}
-
-.brator-header-four .rollparts-header-menu-area {
-    position: unset;
-}
-
-.brator-header-four .cat-menu-info-s .cat-menu-info-s-item {
-    margin-left: 0;
 }
 
 @media only screen and (max-width: 1200px) {
     .rollparts-header-area.header-one .row {
         justify-content: space-around;
-    }
-}
-
-@media only screen and (max-width: 1350px) {
-    .brator-header-four .menu-cat-list-area span.text {
-        font-size: 12px;
-    }
-
-    /*.rollparts-logo-area .rollparts-logo a img {*/
-    /*    max-width: 150px;*/
-    /*}*/
-
-    .brator-header-four .rollparts-logo-area {
-        margin-top: 10px;
-    }
-}
-
-@media only screen and (max-width: 1350px) {
-    .mega-menu-area .mega-menu-offer {
-        display: none;
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    .brator-blog-featured-area.grid-type .hug-padding-right::after {
-        display: none;
     }
 }
 
@@ -10657,10 +5951,7 @@ a.banner-btn:hover {
     .product-list-items.check-box-product .rollparts-product-single-item-area.rollparts-design {
         width: 100%;
     }
-    .product-list-items.type-list .rollparts-product-single-item-area.design-three .rollparts-product-single-item-area-right {
-        max-width: 100%;
-        margin-top: 25px;
-    }
+
     .rollparts-search-area {
         margin-bottom: 10px;
     }
@@ -10688,21 +5979,6 @@ a.banner-btn:hover {
     }
 }
 
-a.compare.icon-btn.added {
-    font-size: 10px;
-    line-height: 45px;
-    padding: 0 5px;
-}
-
-.brator-hot-box-text h5 {
-    color: #999999;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    font-size: 12px;
-    line-height: 24px;
-    letter-spacing: .25px;
-}
-
 .rollparts-product-single-item-area .rollparts-product-single-item-mini .rollparts-product-single-item-cat a,
 .rollparts-product-single-item-cat {
     line-height: 22px;
@@ -10711,12 +5987,7 @@ a.compare.icon-btn.added {
 .rollparts-product-single-item-cat {
     margin-bottom: 5px;
 }
-/*.page-wrapper {*/
-/*    overflow-x: hidden;*/
-/*}*/
-.bike-brator .elementor-heading-title a:hover{
-    color: #f73312 !important;
-}
+
 .coupon label {
     display: none;
 }
@@ -10724,4 +5995,3 @@ input:not([type='radio']) {
     -webkit-appearance: auto;
     width: auto;
 }
-
