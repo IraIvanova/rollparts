@@ -1,5 +1,5 @@
 @if(!empty($recentlyViewedProducts))
-    <div class="recently-view woocommerce">
+    <div class="recently-view">
         <div class="container-xxxl container-xxl container">
             <div class="row">
                 <div class="col-12">

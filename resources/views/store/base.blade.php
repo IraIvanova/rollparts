@@ -8,12 +8,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
 
     <link rel="stylesheet" media="all" href="{{asset('css/store/bootstrap.min.css')}}">
-    <link rel="stylesheet" media="all" href="{{asset('css/store/base.css')}}">
-    <link rel="stylesheet" media="all" href="{{asset('css/store/woocommerce.css')}}">
-    <link rel="stylesheet" media="all" href="{{asset('css/store/theme-color.css')}}">
     <link rel="stylesheet" media="all" href="{{asset('css/store/theme-style.css')}}">
-    <link rel="stylesheet" media="all" href="{{asset('css/store/woocommerce-layout.css')}}">
-    <link rel="stylesheet" media="all" href="{{asset('css/store/custom-frontend.min.css')}}">
     <link rel="stylesheet" media="all" href="{{asset('css/store/styles.css')}}">
 
     <link type="text/css" rel="stylesheet" href="{{asset('css/slick.css')}}"/>

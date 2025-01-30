@@ -2,7 +2,7 @@
 
 @section('bodyContent')
     <section id="main-content" class="container container-xxxl py-5">
-        <div class="wrapper woocommerce">
+        <div class="wrapper">
             <div class="row">
                 <div class="col-12 col">
                     <div class="">
@@ -107,7 +107,7 @@
                         </div>
                         <div class="payment_list_item">
                             <div class="payment_list_item">
-                                <div id="payment" class="payment_list_item woocommerce-checkout-payment">
+                                <div id="payment" class="payment_list_item">
                                     <div class="payment_options shipping wc_payment_methods payment_methods methods">
 
                                         <div class="form-group wc_payment_method payment_method_bacs">
@@ -146,35 +146,28 @@
                                         </div>
                                     </div>
                                     <div class="form-row place-order">
-                                        <noscript>
+
                                             Since your browser does not support JavaScript, or it is disabled, please
                                             ensure you click the <em>Update Totals</em> button before placing your
                                             order. You may be charged more than the amount stated above if you fail to
                                             do so. <br/>
                                             <button type="submit" class="button alt"
-                                                    name="woocommerce_checkout_update_totals"
                                                     value="Update totals">Update totals
                                             </button>
-                                        </noscript>
 
-                                        <div class="woocommerce-terms-and-conditions-wrapper">
-                                            <div class="woocommerce-privacy-policy-text"><p>Your personal data will be
+
+                                        <div class="">
+                                            <div class=""><p>Your personal data will be
                                                     used to process your order, support your experience throughout this
                                                     website, and for other purposes described in our <a href=""
-                                                                                                        class="woocommerce-privacy-policy-link"
+                                                                                                        class=""
                                                                                                         target="_blank">privacy
                                                         policy</a>.</p>
                                             </div>
                                         </div>
 
-
                                         <button type="button" class="button alt w-100" id="placeOrder">Place order</button>
-
-                                        <input type="hidden" id="woocommerce-process-checkout-nonce"
-                                               name="woocommerce-process-checkout-nonce" value="1314b3a253"><input
-                                            type="hidden" name="_wp_http_referer" value="/?wc-ajax=update_order_review">
                                         <div id="warningDiv" class="div-info d-none alertDiv mt-3 w-100 text-center">
-
                                         </div>
                                     </div>
                                 </div>
@@ -182,11 +175,8 @@
 
                         </div>
                     </div>
-
-
                 </div>
             </div>
-
         </div>
     </section>
 @endsection

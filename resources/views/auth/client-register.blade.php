@@ -7,13 +7,10 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 content-side">
                     <div class="blog-details-content">
                         <div class="page-content">
-                            <div class="woocommerce"><div class="woocommerce-notices-wrapper"></div>
-
-                                <div class="row" id="customer_login">
-
+                            <div class="row" id="customer_login">
                                     <div class="col-lg-6 col-md-12">
                                         <h2>{{ trans('interface.auth.register') }}</h2>
-                                        <form class="woocommerce-form of-form-login login" action="{{ route('process-register') }}" method="post">
+                                        <form class="rp-form of-form-login login" action="{{ route('process-register') }}" method="post">
                                             <div class="@error('email') error @enderror   form-row form-row-wide">
                                                 <label for="username">{{ trans('interface.form.email') }}<span class="required" aria-hidden="true">*</span>
                                                 </label>
