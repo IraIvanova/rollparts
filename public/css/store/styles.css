@@ -4888,9 +4888,9 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (max-width: 991px) {
-    .product-list-items {
-        justify-content: space-between;
-    }
+    /*.product-list-items {*/
+    /*    justify-content: space-between;*/
+    /*}*/
 
     .category-page .product-list-items .rp-product-single-item-area {
         width: calc(50% - 40px);
@@ -4906,7 +4906,7 @@ input[type="range"]::-moz-range-thumb {
     }
 
     .filter-content {
-        display: none; /* Collapsed by default on mobile */
+        display: none;
     }
 
     .filter-content.active {

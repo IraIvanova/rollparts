@@ -1,5 +1,8 @@
 @extends('store.base')
 
+@section('metaTitle'){{ trans('interface.meta.title.home') }}@endsection
+@section('metaDescription'){{ trans('interface.meta.description.home') }}@endsection
+
 @section('bodyContent')
     <section id="main-content" class="container container-xxxl">
    @include('store.components.homepage.gallery')

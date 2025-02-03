@@ -3,8 +3,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Rollparts - Auto Parts</title>
-    <meta name="description" content="Auto Parts...">
+    <title>@yield('metaTitle')</title>
+    <meta name="description" content="@yield('metaDescription')">
     <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
 
     <link rel="stylesheet" media="all" href="{{asset('css/store/bootstrap.min.css')}}">
@@ -26,9 +26,9 @@
                 <section class="rp-section">
                     <div class="section-container ">
                         <div class="section-column section-col-25  col-xl-4 col-lg-6">
-                            <div class=" ">
-                                <div class=" ">
-                                    <div class="">
+                            <div>
+                                <div>
+                                    <div>
                                         <div class="rp-footer-top-element rp-footer-top-address">
                                             <h6 class="footer-top-title">{{ trans('interface.footer.contactUs') }}</h6>
                                             <div class="rp-footer-top-content">
@@ -46,10 +46,9 @@
                         </div>
                         <div
                             class="section-column section-col-25   col-xl-2 col-lg-6">
-                            <div class=" ">
-                                <div
-                                    class=" ">
-                                    <div class="">
+                            <div>
+                                <div>
+                                    <div>
                                         <div class="rp-footer-top-element">
                                             <h6 class="footer-top-title">{{ trans('interface.footer.customerService') }}</h6>
                                             <div class="rp-footer-top-content rp-link-list-one">
@@ -75,10 +74,9 @@
                         </div>
                         <div
                             class="section-column section-col-25   col-xxl-3 col-xl-2 col-lg-6">
-                            <div class=" ">
-                                <div
-                                    class=" ">
-                                    <div class="">
+                            <div>
+                                <div>
+                                    <div>
                                         <div class="rp-footer-top-element">
                                             <h6 class="footer-top-title">{{ trans('interface.footer.information') }}</h6>
                                             <div class="rp-footer-top-content rp-link-list-one">
@@ -104,10 +102,9 @@
                         </div>
                         <div
                             class="section-column section-col-25   col-xl-3 col-lg-6">
-                            <div class=" ">
-                                <div
-                                    class=" ">
-                                    <div class="">
+                            <div>
+                                <div>
+                                    <div>
                                         <div class="rp-footer-top-element">
                                             <h6 class="footer-top-title">Subscribe To Our Newsletter</h6>
                                             <div class="rp-footer-top-content">

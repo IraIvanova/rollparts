@@ -1,5 +1,8 @@
 @extends('store.base')
 
+@section('metaTitle'){{ trans('interface.meta.title.product') }}@endsection
+@section('metaDescription'){{ trans('interface.meta.description.product') }}@endsection
+
 @section('bodyContent')
     <section id="main-content" >
         <div class="grey-bg">
