@@ -9,15 +9,12 @@
 
     <link rel="stylesheet" media="all" href="{{asset('css/store/bootstrap.min.css')}}">
     <link rel="stylesheet" media="all" href="{{asset('css/store/styles.css')}}">
-
     <link type="text/css" rel="stylesheet" href="{{asset('css/store/slick.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('css/store/slick-theme.css')}}"/>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
+    <script src="{{ asset('js/store/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ asset('js/store/bootstrap.min.js') }}"></script>
+
 <body class="page-template page">
 <div class="page-wrapper">
     <input type="hidden" id="cart-route" value="{{route('addToCart')}}"/>
@@ -195,7 +192,7 @@
 </div>
 @include('store.modal.product-added-modal')
 @include('store.modal.info-modal')
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="{{asset('js/store/axios.min.js')}}"></script>
 <script src="{{asset('js/store/base.js')}}"></script>
 <script src="{{asset('js/store/main.js')}}"></script>
 @yield('additionalScript')
