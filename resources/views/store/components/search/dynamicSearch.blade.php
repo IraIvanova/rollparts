@@ -5,16 +5,16 @@
     <ul class="sp-mini-cart cart_list sp_product_list ">
         @foreach($products as $product)
             <li class="single-item  mini_cart_item">
-                <div class="rollparts-cart-item-list-item d-flex align-items-center">
-                    <div class="rollparts-cart-item-list-item-img img-block">
+                <div class="rp-cart-item-list-item d-flex align-items-center">
+                    <div class="rp-cart-item-list-item-img img-block">
                         <a href="{{route('product', $product['slug'])}}">
                             <img width="85" height="85"
                                  src="{{ $productImages[$product['id']] ?? asset('images/default.png')}}"
                                  class=" " alt=""
                             > </a>
                     </div>
-                    <div class="rollparts-cart-item-list-item-title">
-                        <div class="rollparts-cart-item-list-item-title-one">
+                    <div class="rp-cart-item-list-item-title">
+                        <div class="rp-cart-item-list-item-title-one">
                             <a href="{{ route('product', $product['slug']) }}">
                                 <p>{{$product['name']}}</p></a>
                         </div>

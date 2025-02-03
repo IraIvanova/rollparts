@@ -3,8 +3,8 @@
         <div class="container-xxxl container-xxl container">
             <div class="row">
                 <div class="col-12">
-                    <div class="rollparts-section-header">
-                        <div class="rollparts-section-header-title">
+                    <div class="rp-section-header">
+                        <div class="rp-section-header-title">
                             <h2>Recently Viewed</h2>
                         </div>
                     </div>

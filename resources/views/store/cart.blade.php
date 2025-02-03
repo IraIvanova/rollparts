@@ -6,7 +6,7 @@
             <input type="hidden" value="{{route('removeFromCart')}}" id="remove-route"/>
             <input type="hidden" value="{{route('addToCart')}}" id="add-route"/>
             <div class="">
-                <div class="rollparts-cart-header-area">
+                <div class="rp-cart-header-area">
                     <div class="row">
                         <div class="col-lg-12">
                             <h3>{{ trans('interface.cart.shoppingCart') }}</h3>
@@ -17,11 +17,11 @@
                     <div class="">
                         <div class="row">
                             <div class="col-xl-8 col-lg-12">
-                                <div class="rollparts-cart-info">
+                                <div class="rp-cart-info">
 
                                     <form class="cart-form" action="" method="post">
                                         <table
-                                            class="shop_table cart rollparts-cart-list"
+                                            class="shop_table cart rp-cart-list"
                                             cellspacing="0">
                                             <thead>
                                             <tr>
@@ -58,21 +58,21 @@
                                             <tbody>
                                             <tr class="cart-subtotal">
                                                 <th>Subtotal</th>
-                                                <td data-title="Subtotal"><span class="rollparts-Price-amount amount"><bdi><span
-                                                                class="rollparts-currencySymbol">$</span>{{$totalPrice}}</bdi></span>
+                                                <td data-title="Subtotal"><span class="rp-Price-amount amount"><bdi><span
+                                                                class="rp-currencySymbol">$</span>{{$totalPrice}}</bdi></span>
                                                 </td>
                                             </tr>
                                             <tr class="">
                                                 <th>Discount</th>
-                                                <td data-title="Subtotal"><span class="rollparts-Price-amount amount"><bdi><span
-                                                                class="rollparts-currencySymbol">$</span>{{$totalPrice - $totalWithDiscount}}</bdi></span>
+                                                <td data-title="Subtotal"><span class="rp-Price-amount amount"><bdi><span
+                                                                class="rp-currencySymbol">$</span>{{$totalPrice - $totalWithDiscount}}</bdi></span>
                                                 </td>
                                             </tr>
                                             <tr class="order-total">
                                                 <th>Total</th>
                                                 <td data-title="Total"><strong><span
-                                                            class="rollparts-Price-amount amount"><bdi><span
-                                                                    class="rollparts-currencySymbol">$</span>{{$totalWithDiscount}}</bdi></span></strong>
+                                                            class="rp-Price-amount amount"><bdi><span
+                                                                    class="rp-currencySymbol">$</span>{{$totalWithDiscount}}</bdi></span></strong>
                                                 </td>
                                             </tr>
                                             </tbody>

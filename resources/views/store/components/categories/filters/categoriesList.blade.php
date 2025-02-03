@@ -1,4 +1,4 @@
-<div class="rollparts-sidebar-single-item">
+<div class="rp-sidebar-single-item">
     <div class="shop-sidebar-title"><h2>{{ trans('interface.filtersAndSort.categories') }}</h2>
     </div>
 <ul class="product-categories shop-cat-list">

@@ -1,4 +1,4 @@
-<div class="rollparts-sidebar-single-item widget_price_filter">
+<div class="rp-sidebar-single-item widget_price_filter">
     <div class="priceTitle"><h2>{{ trans('interface.filtersAndSort.prices') }}</h2></div>
         <div class="price_slider_wrapper">
             <div class="price-input">
@@ -19,6 +19,6 @@
                 <input type="range" class="range-inputs range-min" min="23" max="966" value="{{ $selectedOptions['min'] ?? $prices[0] }}" step="1">
                 <input type="range" class="range-inputs range-max" min="23" max="966" value="{{ $selectedOptions['max'] ?? $prices[1] }}" step="1">
             </div>
-            <button type="button" id="pf-button" class="button price-filter-button mt-3">Filter</button>
+            <button type="button" id="pf-button" class="button price-filter-button button-fill-one mt-3">Filter</button>
         </div>
 </div>

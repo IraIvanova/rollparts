@@ -5,7 +5,7 @@
         <div>
             @include('store.components.breadcrumbs')
 {{--            @include('store.components.banner')--}}
-            <div class="rollparts-product-shop-page-area category-page">
+            <div class="rp-product-shop-page-area category-page">
                 <div class="container-xxxl container">
                     <div class="row">
                         <div class="col-lg-3">
