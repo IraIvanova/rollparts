@@ -19,6 +19,6 @@
                 <input type="range" class="range-inputs range-min" min="23" max="966" value="{{ $selectedOptions['min'] ?? $prices[0] }}" step="1">
                 <input type="range" class="range-inputs range-max" min="23" max="966" value="{{ $selectedOptions['max'] ?? $prices[1] }}" step="1">
             </div>
-            <button type="button" id="pf-button" class="button price-filter-button mt-3">Filter</button>
+            <button type="button" id="pf-button" class="button price-filter-button button-fill-one mt-3">Filter</button>
         </div>
 </div>

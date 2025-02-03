@@ -16,7 +16,14 @@
 }
 
 .button-fill-one,
-.rp-product-hero-content .rp-product-hero-content-add-to-cart .rp-product-single-cart-count-add .rp-product-single-cart-add button,.cart-total-area .cart-total-process a,.rp-cart-info .rp-cart-checkout .rp-cart-checkout-right .rp-cart-checkout-back button,.rp-cart-info .rp-cart-checkout .rp-cart-checkout-left .rp-cart-checkout-fields button,.rp-filter-item-content-area .brator-rang-item-input .brator-rang-item-input-single-btn button.ac-trigger,.product-list-items.type-list .rp-product-single-item-area.design-three .rp-product-single-item-area-right .rp-product-single-item-btn .rp-product-single-item-btn-cart .button,.add_to_cart_button,.rp-contact-form-fields .rp-contact-form-field button,.rp-footer-top-element .brator-sub-form button,.rp-cart-item-list .rp-cart-total-money .rp-cart-total-action a {
+.rp-product-hero-content .rp-product-hero-content-add-to-cart .rp-product-single-cart-count-add .rp-product-single-cart-add button,
+.cart-total-area .cart-total-process a,
+.rp-cart-info .rp-cart-checkout .rp-cart-checkout-right .rp-cart-checkout-back button,
+.rp-cart-info .rp-cart-checkout .rp-cart-checkout-left .rp-cart-checkout-fields button,
+.product-list-items.type-list .rp-product-single-item-area.design-three .rp-product-single-item-area-right .rp-product-single-item-btn .rp-product-single-item-btn-cart .button,
+.add_to_cart_button,
+.rp-contact-form-fields .rp-contact-form-field button,
+.rp-cart-item-list .rp-cart-total-money .rp-cart-total-action a {
     font-size:16px;
     font-weight:700;
     line-height:16px;
@@ -42,10 +49,52 @@
 }
 
 input[type="search"],input[type="text"],input[type="number"],input[type="email"] {
-    background:var(--color-white);
     padding:13px;
-    border:0;
     width:100%
+}
+.rp-form-card {
+    border: 1px solid #cfc8d8;
+    padding: 20px;
+    margin: 2em 0;
+    text-align: left;
+    border-radius: 5px;
+}
+
+#coupon_code {
+    width: 350px;
+    margin-right: 15px;
+}
+
+#orderForm .row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#orderForm .form-row label {
+    color: #666;
+    font-size: 14px;
+}
+
+#orderForm textarea {
+    height: 150px;
+}
+
+.div-info {
+    padding: 1em 2em 1em 3.5em;
+    margin: 0 0 2em;
+    position: relative;
+    background-color: #f6f5f8;
+    color: #515151;
+    border-top: 3px solid #7f54b3;
+    list-style: none outside;
+    width: auto;
+    word-wrap: break-word;
+}
+
+.rp-cart-list-items-qty input
+{
+    border: 0;
 }
 
 .input-style-one,.rp-search-area .search-form input {
@@ -3433,7 +3482,7 @@ p.comment-form-cookies-consent {
 
 @media only screen and (min-width: 1800px) {
     .rp-product-single-cart-count .rp-cart-list-items-qty input {
-        margin-left:38px!important
+        margin-left:31px!important
     }
 }
 
@@ -3852,6 +3901,22 @@ input:not([type='radio']) {
     word-wrap:normal!important
 }
 
+.rp-form-row-Input {
+    border-radius: 0px;
+    box-shadow: none;
+    height: 50px;
+    border: 1px solid #e6e6e6;
+    font-size: 16px;
+    font-family: "Barlow", sans-serif;
+    color: #34373b;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.form-row-wide {
+    flex-direction: column;
+}
+
 .rp-form-row-Input-wrapper .description {
     background:#1e85be;
     color:#fff;
@@ -3884,22 +3949,19 @@ input:not([type='radio']) {
     display:block
 }
 
-.rp-form-login .rp-form-login__submit {
+.rp-form-card .rp-form-card__submit {
     float:left;
     margin-right:1em
 }
 
-.rp-form-login .rp-form-login__rememberme {
+.rp-form-card .rp-form-card__rememberme {
     display:inline-block
 }
 
-form.rp-form-coupon,form.rp-form-login {
-    display:block!important
-}
+/*form.rp-form-coupon,form.rp-form-card {*/
+/*    display:block!important*/
+/*}*/
 
-.rp-form-coupon-toggle,.rp-form-login-toggle {
-    display:none!important
-}
 .color-red {
     color: red;
 }
@@ -4013,6 +4075,10 @@ form.rp-form-coupon,form.rp-form-login {
 
 .product {
     position: relative;
+}
+
+.product .rp-product-single-cart-add{
+    width: 100%;
 }
 
 .checkbox {
@@ -4333,12 +4399,16 @@ form.rp-form-coupon,form.rp-form-login {
     padding: 8px 20px;
 }
 
-.invalid .input-text {
-    border-color: var(--wc-red) !important;
+.invalid .input-text,
+.invalid select,
+#orderForm .invalid .input-text,
+#orderForm .invalid select {
+    border-color: var(--color-high-dark) !important;
 }
 
-.invalid label {
-    color: var(--wc-red);
+.invalid label,
+.invalid p {
+    color: var(--color-high-dark)!important;
 }
 
 .alertDiv {
@@ -4346,14 +4416,14 @@ form.rp-form-coupon,form.rp-form-login {
 }
 
 .alertDiv p {
-    color: var(--wc-red);
+    color: var(--color-high-dark);
     font-weight: bold;
     margin-bottom: 0;
 }
 
 .order-confirmation a {
     font-weight: bold;
-    color: var(--wc-red);
+    color: var(--color-high-dark);
 }
 
 #cartModal .modal-buttons .button {
@@ -4462,6 +4532,9 @@ form.rp-form-coupon,form.rp-form-login {
 #addToCart:disabled {
     background: #dfaea6;
     border-color: #dfaea6;
+}
+#addToCart {
+    width: 100%;
 }
 
 .navbar {
