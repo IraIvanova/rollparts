@@ -8,12 +8,10 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
 
     <link rel="stylesheet" media="all" href="{{asset('css/store/bootstrap.min.css')}}">
-    <link rel="stylesheet" media="all" href="{{asset('css/store/theme-style.css')}}">
     <link rel="stylesheet" media="all" href="{{asset('css/store/styles.css')}}">
 
     <link type="text/css" rel="stylesheet" href="{{asset('css/slick.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('css/slick-theme.css')}}"/>
-    <link type="text/css" rel="stylesheet" href="{{asset('css/store/megamenu-style.css')}}"/>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
             integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
