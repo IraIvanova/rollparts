@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('token')->unique();
             $table->foreignId('order_id')->constrained()->onDelete('cascade');
-            $table->text('callback');
+            $table->text('callback')->nullable();
             $table->string('status');
             $table->timestamps();
         });
