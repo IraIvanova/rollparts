@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\ClientAuthController;
 use App\Http\Controllers\Store\AsyncController;
 use App\Http\Controllers\Store\CartController;
 use App\Http\Controllers\Store\PagesController;
+use App\Http\Controllers\Store\PaymentController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PagesController::class, 'homepage'])->name('homepage');
@@ -19,6 +20,7 @@ Route::get('/info/terms', [PagesController::class, 'termsAndConditions'])->name(
 Route::get('/info/contact-us', [PagesController::class, 'contactUs'])->name('infoContactUs');
 
 Route::get('/cart', [PagesController::class, 'cart'])->name('cart');
+Route::post('/payment/callback/{order}', [PaymentController::class, 'processPaymentCallback'])->name('processPaymentCallback');
 Route::post('/createOrder', [CartController::class, 'createOrder'])->name('createOrder');
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('addToCart');
 Route::post('/cart/remove', [CartController::class, 'removeFromCart'])->name('removeFromCart');

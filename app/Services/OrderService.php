@@ -30,6 +30,7 @@ class OrderService
 
         $order->save();
 
+        $client = $order->client;
         $this->addProductsToOrder($order, $shoppingCart->getProducts());
 
         return $order;

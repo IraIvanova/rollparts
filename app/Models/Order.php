@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 
 class Order extends Model
 {
-    protected $fillable = ['client_id'];
+    protected $fillable = ['user_id'];
 
     public function orderProductsPivot(): BelongsToMany
     {
@@ -22,16 +24,16 @@ class Order extends Model
         return $this->hasMany(OrderProduct::class, 'order_id', 'id');
     }
 
-    public function client()
+    public function client(): BelongsTo
     {
-        return $this->belongsTo(Client::class);
+        return $this->belongsTo(User::class,  'user_id');
     }
 
-    public function clientAddresses()
+    public function clientAddresses(): HasManyThrough
     {
         return $this->hasManyThrough(ClientAddress::class, User::class, 'id', 'user_id', 'client_id', 'id');
     }
-    public function clientShippingAddress()
+    public function clientShippingAddress(): HasOneThrough
     {
         return $this->hasOneThrough(ClientAddress::class, User::class, 'id', 'user_id', 'client_id', 'id')->where('type', 'shipping');
     }

@@ -171,4 +171,18 @@
       'empty' => 'Sepetiniz şu anda boş.',
     ),
   ),
+  'orderConfirmation' => 
+  array (
+    'description' => 'Siparişinizi işliyoruz. Yakında bir onay e-postası alacaksınız. Veya siparişinizi <a href=":account_link">Hesabınızdan</a> kontrol edebilirsiniz.',
+    'number' => 'Sipariş numaranız',
+    'backButton' => 'Ana Sayfaya Git',
+  ),
+  'turkey' => 'Türkiye',
+  'meta' => 
+  array (
+    'description' => 
+    array (
+      'product' => 'Türkiye\'deki :brand firmasından en düşük fiyatlarla yüksek kaliteli otomobil parçaları satın alın! Hızlı sevkiyat ve güvenli alışveriş ile :product bulun. En iyi fırsatlar için şimdi sipariş verin!',
+    ),
+  ),
 );

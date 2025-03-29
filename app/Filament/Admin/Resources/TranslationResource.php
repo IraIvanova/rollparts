@@ -43,18 +43,18 @@ class TranslationResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('key')->sortable(),
-                TextColumn::make('en')->sortable(),
-                TextColumn::make('tr')->sortable(),
-            ])
+                TextColumn::make('en')->sortable()->searchable()->limit(50),
+                TextColumn::make('tr')->sortable()->searchable()->limit(50),
+            ])->searchable()
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make()
-                    ->after(function ($record) {
-                        app(TranslationService::class)->removeTranslationKey($record->key);
-                    }),
+//                Tables\Actions\DeleteAction::make()
+//                    ->after(function ($record) {
+//                        app(TranslationService::class)->removeTranslationKey($record->key);
+//                    }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

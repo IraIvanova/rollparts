@@ -52,6 +52,12 @@
                                        name="email"
                                        id="email" placeholder="" value="{{$user->email ?? ''}}" required>
                             </div>
+                            <div class="form-row form-row-wide validate-required">
+                                <label for="identity" class="">{{trans('identityId')}}*</label>
+                                <input type="text" class="input-text rp-form-row-Input"
+                                       name="identity"
+                                       id="identity" placeholder="" value="{{$user->identity ?? ''}}" required>
+                            </div>
                         </div>
                         <h5 class="mt-5">Address details</h5>
                         <div>
@@ -110,43 +116,6 @@
                         <div class="payment_list_item">
                             <div class="payment_list_item">
                                 <div id="payment" class="payment_list_item">
-                                    <div class="payment_options shipping wc_payment_methods payment_methods methods">
-
-                                        <div class="form-group wc_payment_method payment_method_bacs">
-                                            <input id="payment_method_bacs" type="radio" class="input-radio radio_group"
-                                                   name="payment_method" value="bacs" checked="checked"
-                                                   data-order_button_text="">
-                                            <label for="payment_method_bacs">
-                                                Direct bank transfer </label>
-                                            <div class="payment_box payment_method_bacs">
-                                                <p>Make your payment directly into our bank account. Please use your
-                                                    Order ID as the payment reference. Your order will not be shipped
-                                                    until the funds have cleared in our account.</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group wc_payment_method payment_method_cheque">
-                                            <input id="payment_method_cheque" type="radio"
-                                                   class="input-radio radio_group" name="payment_method" value="cheque"
-                                                   data-order_button_text="">
-                                            <label for="payment_method_cheque">
-                                                Check payments </label>
-                                            <div class="payment_box payment_method_cheque" style="display: none;">
-                                                <p>Please send a check to Store Name, Store Street, Store Town, Store
-                                                    State / County, Store Postcode.</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group wc_payment_method payment_method_cod">
-                                            <input id="payment_method_cod" type="radio" class="input-radio radio_group"
-                                                   name="payment_method" value="cod" data-order_button_text="">
-                                            <label for="payment_method_cod">
-                                                Cash on delivery </label>
-                                            <div class="payment_box payment_method_cod" style="display: none;">
-                                                <p>Pay with cash upon delivery.</p>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="form-row place-order">
                                         <div class="">
                                             <div class=""><p>Your personal data will be

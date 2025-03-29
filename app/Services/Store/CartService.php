@@ -73,10 +73,7 @@ class CartService
             $this->clientService->saveAddress($client, $contactDetails);
             $shoppingCart = $this->getCart();
 
-            $order = $this->orderService->createOrder($client, $shoppingCart);
-            $this->clearCart();
-
-            return $order;
+            return $this->orderService->createOrder($client, $shoppingCart);
         });
     }
 
@@ -100,7 +97,7 @@ class CartService
         session(['shoppingCart' => $shoppingCart]);
     }
 
-    private function clearCart(): void
+    public function clearCart(): void
     {
         session()->forget('shoppingCart');
     }

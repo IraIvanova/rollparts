@@ -20,7 +20,7 @@ class User extends Authenticatable implements FilamentUser
      *
      * @var array<int, string>
      */
-    protected $fillable = ['name', 'lastName', 'email', 'phone', 'password'];
+    protected $fillable = ['name', 'lastName', 'email', 'phone', 'password', 'identity'];
 
     /**
      * The attributes that should be hidden for serialization.
