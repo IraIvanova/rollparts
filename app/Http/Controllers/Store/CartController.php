@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Store;
 
+use App\Constant\StatusesConstants;
 use App\DTO\Payment\BuyerAddressesDTO;
 use App\DTO\Payment\BuyerDTO;
 use App\DTO\Payment\IyzicoPaymentDTO;
@@ -10,9 +11,12 @@ use App\Exceptions\ProductNotFoundException;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\Payment;
-use App\Services\Payment\PaymentService;
+use App\Services\OrderService;
+use App\Services\Payment\InnerPaymentService;
+use App\Services\Payment\IyzicoPaymentService;
 use App\Services\Store\CartService;
 use App\Services\Store\CitiesService;
+use App\Services\Store\ClientService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -24,7 +28,9 @@ class CartController extends Controller
     public function __construct(
         private readonly CartService $cartService,
         private readonly CitiesService $citiesService,
-        private readonly PaymentService $paymentService,
+        private readonly OrderService $orderService,
+        private readonly IyzicoPaymentService $paymentService,
+        private readonly InnerPaymentService $innerPaymentService,
     ) {
     }
 
@@ -59,17 +65,30 @@ class CartController extends Controller
 
     public function createOrder(Request $request): ResponseAlias
     {
-        $order = $this->cartService->createOrder($request->all());
+        $cart = $this->cartService->getCart();
 
-        $response = $this->paymentService->initializePayWithIyzico($this->preparePaymentDTO($order));
-        $this->cartService->clearCart();
+        if ($cart->isEmpty()) {
+            return redirect()->back()->withErrors([]);
+        }
+
+        if (!$order = $this->orderService->getOrderByReference($cart->getOrderReference())) {
+            $order = $this->cartService->createOrder($request->all());
+        }
+
+        $response = $this->paymentService->initializeCheckoutForm(
+            $this->innerPaymentService->preparePaymentDTO($order, $cart)
+        );
 
         if ($response->getStatus() == 'success') {
-            return redirect($response->getPayWithIyzicoPageUrl());
+            $this->innerPaymentService->createPaymentInfo($order, $response->getToken());
+            $this->orderService->changeOrderStatus($order, StatusesConstants::WAITING_PAYMENT);
+
+            $this->cartService->clearCart();
+
+            return redirect($response->getPaymentPageUrl());
         } else {
-            return response()->json(['error' => $response->getErrorMessage()]);
+            return redirect()->route('checkout')->with(['error' => $response->getErrorMessage()]);
         }
-//        return redirect()->route('orderConfirmation')->with(['orderId' => $order->id]);
     }
 
     public function getDistrictsList(Request $request): JsonResponse
@@ -92,37 +111,5 @@ class CartController extends Controller
         $this->cartService->removeCoupon();
 
         return redirect()->back();
-    }
-
-    private function preparePaymentDTO(Order $order): IyzicoPaymentDTO
-    {
-        $client = $order->client;
-        $buyer = new BuyerDTO(
-            $client->id,
-            $client->name,
-            $client->lastName,
-            $client->phone,
-            $client->billingAddress?->fullAddress ?? $client->shippingAddress->fullAddress,
-            $client->ip ?? '172.1.1.1',
-            $client->email,
-            'Türkiye',
-            $client->shippingAddress->province->name,
-            $client->identity
-        );
-
-        $addresses = new BuyerAddressesDTO(
-            $client->shippingAddress,
-            $client->billingAddress ?? $client->shippingAddress
-        );
-
-        return new IyzicoPaymentDTO(
-            "conversation_$order->id",
-            $order->total_price_with_discount,
-            $order->id,
-            route('processPaymentCallback', $order->id),
-            $buyer,
-            $addresses,
-            $this->cartService->getCart()
-        );
     }
 }

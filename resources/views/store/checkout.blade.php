@@ -128,7 +128,8 @@
                                         </div>
 
                                         <button type="button" class="button button-fill-one w-100" id="placeOrder">Place order</button>
-                                        <div id="warningDiv" class="div-info d-none alertDiv mt-3 w-100 text-center">
+                                        <div id="warningDiv" class="div-info @if(!session('error'))d-none @endif alertDiv mt-3 w-100 text-center">
+                                            @if(session('error')) {{session('error')}} @endif
                                         </div>
                                     </div>
                                 </div>

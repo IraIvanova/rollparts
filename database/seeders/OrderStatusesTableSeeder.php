@@ -17,6 +17,9 @@ class OrderStatusesTableSeeder extends Seeder
         DB::table('statuses')->insert([
             ['name' => 'Created'],
             ['name' => 'Pending'],
+            ['name' => 'Waiting payment'],
+            ['name' => 'Paid'],
+            ['name' => 'Payment Failure'],
             ['name' => 'Processing'],
             ['name' => 'Shipped'],
             ['name' => 'Delivered'],

@@ -20,7 +20,9 @@ Route::get('/info/terms', [PagesController::class, 'termsAndConditions'])->name(
 Route::get('/info/contact-us', [PagesController::class, 'contactUs'])->name('infoContactUs');
 
 Route::get('/cart', [PagesController::class, 'cart'])->name('cart');
-Route::post('/payment/callback/{order}', [PaymentController::class, 'processPaymentCallback'])->name('processPaymentCallback');
+Route::get('/payment/callback/{order}', [PaymentController::class, 'processPaymentCallback']);
+Route::post('/payment/callback/', [PaymentController::class, 'processPaymentCallback'])->name('processPaymentCallback');
+Route::get('/payment/check', [PaymentController::class, 'checkPaymentPage'])->name('checkPayment');
 Route::post('/createOrder', [CartController::class, 'createOrder'])->name('createOrder');
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('addToCart');
 Route::post('/cart/remove', [CartController::class, 'removeFromCart'])->name('removeFromCart');

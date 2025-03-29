@@ -21,7 +21,7 @@ use Iyzipay\Model\PaymentGroup;
 use Iyzipay\Model\BasketItemType;
 use App\DTO\CartProductDTO;
 
-class PaymentService
+class IyzicoPaymentService
 {
     private $options;
 
@@ -106,12 +106,57 @@ class PaymentService
     public function initializeCheckoutForm(IyzicoPaymentDTO $orderData): CheckoutFormInitialize
     {
         $request = new CreateCheckoutFormInitializeRequest();
-        $request->setLocale(Locale::TR);
+        $request->setLocale(Locale::EN);
         $request->setPrice($orderData->price);
         $request->setPaidPrice($orderData->price);
         $request->setCurrency(Currency::TL);
         $request->setCallbackUrl($orderData->callbackUrl);
         $request->setPaymentGroup(PaymentGroup::PRODUCT);
+
+        //Client shipping address
+        $shippingAddress = new Address();
+        $shippingAddress->setCountry('Türkiye');
+        $shippingAddress->setCity($orderData->buyerAddresses->shippingAddress->province->name);
+        $shippingAddress->setAddress($orderData->buyerAddresses->shippingAddress->address_line1);
+        $shippingAddress->setContactName($orderData->buyer->name);
+        $shippingAddress->setZipCode($orderData->buyerAddresses->shippingAddress->zip);
+        $request->setShippingAddress($shippingAddress);
+
+        $billingAddress = new Address();
+        $billingAddress->setCountry('Türkiye');
+        $billingAddress->setCity($orderData->buyerAddresses->billingAddress->province->name);
+        $billingAddress->setAddress($orderData->buyerAddresses->billingAddress->address_line1);
+        $billingAddress->setContactName($orderData->buyer->name);
+        $billingAddress->setZipCode($orderData->buyerAddresses->billingAddress->zip);
+        $request->setBillingAddress($billingAddress);
+
+        // Buyer information
+        $buyer = new Buyer();
+        $buyer->setId($orderData->buyer->id);
+        $buyer->setName($orderData->buyer->name);
+        $buyer->setSurname($orderData->buyer->lastName);
+        $buyer->setEmail($orderData->buyer->email);
+        $buyer->setGsmNumber($orderData->buyer->phone);
+        $buyer->setIdentityNumber($orderData->buyer->identityNumber);
+        $buyer->setRegistrationAddress($orderData->buyer->registrationAddress);
+        $buyer->setIp($orderData->buyer->ip);
+        $buyer->setCity($orderData->buyer->city);
+        $buyer->setCountry($orderData->buyer->country);
+        $request->setBuyer($buyer);
+
+        // Basket items
+        $basketItems = [];
+        foreach ($orderData->shoppingCart->getProducts() as $item) {
+            /**@var CartProductDTO $item */
+            $basketItem = new BasketItem();
+            $basketItem->setId($item->id);
+            $basketItem->setName($item->name);
+            $basketItem->setCategory1('Auto part');
+            $basketItem->setItemType(BasketItemType::PHYSICAL);
+            $basketItem->setPrice($item->discountedPrice * $item->amount);
+            $basketItems[] = $basketItem;
+        }
+        $request->setBasketItems($basketItems);
 
         return CheckoutFormInitialize::create($request, $this->options);
     }
