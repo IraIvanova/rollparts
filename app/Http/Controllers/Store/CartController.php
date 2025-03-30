@@ -79,6 +79,7 @@ class CartController extends Controller
         if (!$order = $this->orderService->getOrderByReference($cart->getOrderReference())) {
             $order = $this->cartService->createOrder($client);
         } else {
+            //TODO save client_info in order or separate table
             $this->orderService->updateOrderClient($client, $order);
         }
 
