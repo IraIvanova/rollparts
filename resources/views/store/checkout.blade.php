@@ -10,7 +10,7 @@
                 <div class="col-12 col">
                     <div class="">
                         <span>
-                            Returning customer? <a href="{{ route('login') }}" class="font-weight-bold">Click here to login</a>
+                            {!! trans('interface.checkout.isReturningCustomer', ['loginUrl' => route('login')]) !!}
                         </span>
                     </div>
                 </div>
@@ -21,27 +21,29 @@
             </div>
             <div class="row">
                 <div class="col-md-8 col">
-                    <h2 class="mb-4">Billing details</h2>
+                    <h2 class="mb-4">{{ trans('interface.checkout.billingDetails') }}</h2>
                     <form method="post" action="{{route('createOrder')}}" id="orderForm">
                         @csrf
-                        <h5>Contact details</h5>
+                        <h5>
+                            {{ trans('interface.checkout.contactDetails') }}
+                        </h5>
                         <div>
                             <div class="row px-3">
                                 <div class="form-row form-row-wide validate-required w-50">
-                                    <label for="firstName" class="">First name*</label>
+                                    <label for="firstName" class="">{{ trans('interface.checkout.firstName') }}*</label>
                                     <input type="text" class="input-text rp-form-row-Input"
                                            name="name"
                                            id="firstName" placeholder="" value="{{$user->name ?? ''}}">
                                 </div>
                                 <div class="form-row form-row-wide validate-required w-50">
-                                    <label for="lastName" class="">Last name*</label>
+                                    <label for="lastName" class="">{{ trans('interface.checkout.lastName') }}*</label>
                                     <input type="text" class="input-text rp-form-row-Input"
                                            name="lastName"
                                            id="lastName" placeholder="" value="{{$user->lastName ?? ''}}">
                                 </div>
                             </div>
                             <div class="form-row form-row-wide validate-required">
-                                <label for="phone" class="">Phone*</label>
+                                <label for="phone" class="">{{ trans('interface.checkout.phone') }}*</label>
                                 <input type="text" class="input-text rp-form-row-Input"
                                        name="phone"
                                        id="phone" placeholder="" value="{{$user->phone ?? ''}}">
@@ -53,81 +55,125 @@
                                        id="email" placeholder="" value="{{$user->email ?? ''}}" required>
                             </div>
                             <div class="form-row form-row-wide validate-required">
-                                <label for="identity" class="">{{trans('identityId')}}*</label>
+                                <label for="identity" class="">{{trans('interface.checkout.identityId')}}*</label>
                                 <input type="text" class="input-text rp-form-row-Input"
                                        name="identity"
                                        id="identity" placeholder="" value="{{$user->identity ?? ''}}" required>
                             </div>
                         </div>
-                        <h5 class="mt-5">Address details</h5>
+                        <h5 class="mt-5">{{trans('interface.checkout.shippingDetails')}}</h5>
                         <div>
                             <div class="form-row form-row-wide validate-required">
-                                <label for="country" class="">Country*</label>
+                                <label for="country" class="">{{trans('interface.checkout.country')}}*</label>
                                 <input type="text" class="input-text rp-form-row-Input"
                                        name="country"
                                        id="country" placeholder="" value="Turkey">
                             </div>
                             <div class="row px-3">
                                 <div class="form-row form-row-wide validate-required w-50">
-                                    <label for="province" class="">Province*</label>
-                                    <select class="input-text rp-form-row-Input" name="province_id" id="province" data-route="{{route('getDistrictsList')}}">
-                                        <option value="">Select a province</option>
+                                    <label for="province" class="">{{trans('interface.checkout.province')}}*</label>
+                                    <select class="input-text rp-form-row-Input province" name="province_id" id="province" data-route="{{route('getDistrictsList')}}">
+                                        <option value="">{{trans('interface.checkout.selectProvince')}}</option>
                                         @foreach ($provinces as $province)
                                             <option value="{{ $province->id }}">{{ $province->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-row form-row-wide validate-required w-50">
-                                    <label for="district" class="">District<span class="required" title="required">*</span></label>
+                                    <label for="district" class="">{{trans('interface.checkout.district')}}<span class="required" title="required">*</span></label>
                                     <select class="input-text rp-form-row-Input" name="district_id" id="district">
-                                        <option value="">Select a district</option>
+                                        <option value="">{{trans('interface.checkout.selectDistrict')}}</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="row px-3">
                                 <div class="form-row form-row-wide validate-required w-75">
-                                    <label for="address" class="">Address*</label>
+                                    <label for="address" class="">{{trans('interface.checkout.addressLine')}}*</label>
                                     <input type="text" class="input-text rp-form-row-Input"
                                            name="address_line1"
                                            id="address" placeholder="" value="">
                                 </div>
                                 <div class="form-row form-row-wide validate-required w-25">
-                                    <label for="zip" class="">Postal Code*</label>
+                                    <label for="zip" class="">{{trans('interface.checkout.zipCode')}}*</label>
                                     <input type="text" class="input-text rp-form-row-Input"
                                            name="zip"
                                            id="zip" placeholder="" value="">
                                 </div>
                             </div>
-                            <div class="form-row form-row-wide">
-                                <label for="additionalNotes" class="">Additional notes</label>
-                                <textarea class="input-text rp-form-row-Input" rows="6"
-                                          name="additionalNotes"
-                                          id="additionalNotes" placeholder=""></textarea>
+                            <div class="form-row form-row-wide sameAddress d-flex">
+                                <input type="checkbox" class="checkbox" id="sameAddress" name="billingSameAsShippingAddress" checked>
+                                <label for="sameAddress"><b>{{trans('interface.checkout.sameAddress')}}</b></label>
                             </div>
+                        </div>
+                        <div  id="billingAddressFields" class="d-none">
+                            <h5 class="mt-5">{{trans('interface.checkout.billingDetails')}}</h5>
+                            <div class="form-row form-row-wide validate-required">
+                                <label for="billingCountry" class="">{{trans('interface.checkout.country')}}*</label>
+                                <input type="text" class="input-text rp-form-row-Input"
+                                       name="billing_country"
+                                       id="billingCountry" placeholder="" value="Turkey">
+                            </div>
+                            <div class="row px-3">
+                                <div class="form-row form-row-wide validate-required w-50">
+                                    <label for="billingProvince" class="">{{trans('interface.checkout.province')}}*</label>
+                                    <select class="input-text rp-form-row-Input province" name="billing_province_id" id="billingProvince" data-route="{{route('getDistrictsList')}}">
+                                        <option value="">{{trans('interface.checkout.selectProvince')}}</option>
+                                        @foreach ($provinces as $province)
+                                            <option value="{{ $province->id }}">{{ $province->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-row form-row-wide validate-required w-50">
+                                    <label for="billingDistrict" class="">{{trans('interface.checkout.district')}}<span class="required" title="required">*</span></label>
+                                    <select class="input-text rp-form-row-Input" name="billing_district_id" id="billingDistrict">
+                                        <option value="">{{trans('interface.checkout.selectDistrict')}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row px-3">
+                                <div class="form-row form-row-wide validate-required w-75">
+                                    <label for="billingAddress" class="">{{trans('interface.checkout.addressLine')}}*</label>
+                                    <input type="text" class="input-text rp-form-row-Input"
+                                           name="billing_address_line1"
+                                           id="billingAddress" placeholder="" value="">
+                                </div>
+                                <div class="form-row form-row-wide validate-required w-25">
+                                    <label for="billingZip" class="">{{trans('interface.checkout.zipCode')}}*</label>
+                                    <input type="text" class="input-text rp-form-row-Input"
+                                           name="billing_zip"
+                                           id="billingZip" placeholder="" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row form-row-wide mt-2">
+                            <label for="additionalNotes" class="">{{trans('interface.checkout.additionalNotes')}}</label>
+                            <textarea class="input-text rp-form-row-Input" rows="6"
+                                      name="additionalNotes"
+                                      id="additionalNotes" placeholder=""></textarea>
                         </div>
                     </form>
                 </div>
                 <div class="col-lg-4">
                     <div class="order_box_price">
                         <div class="payment_list">
-                            <h2 id="order_review_heading" class="order_title">Your order</h2>
+                            <h2 id="order_review_heading" class="order_title">{{trans('interface.checkout.yourOrder')}}</h2>
                             @include('store.components.checkout.orderReview')
+
                         </div>
+
                         <div class="payment_list_item">
                             <div class="payment_list_item">
                                 <div id="payment" class="payment_list_item">
-                                    <div class="form-row place-order">
-                                        <div class="">
-                                            <div class=""><p>Your personal data will be
-                                                    used to process your order, support your experience throughout this
-                                                    website, and for other purposes described in our <a href=""
-                                                                                                        class=""
-                                                                                                        target="_blank">privacy
-                                                        policy</a>.</p>
+                                    <div class="form-row place-order"><div class="">
+                                            <div class="">
+                                                {!! trans('interface.checkout.privacyConfirmation', ['privacyUrl' => route('infoPrivacy')]) !!}
                                             </div>
-                                        </div>
 
-                                        <button type="button" class="button button-fill-one w-100" id="placeOrder">Place order</button>
+                                        <button type="button" class="button button-fill-one w-100" id="placeOrder">{{trans('interface.checkout.makeOrder')}}</button>
+                                            <div class="d-flex mt-4 payments-img">
+                                                <img class="mr-1" src="{{asset('images/payments/iyzico.png')}}">
+                                                <img src="{{asset('images/payments/visa.png')}}">
+                                            </div>
                                         <div id="warningDiv" class="div-info @if(!session('error'))d-none @endif alertDiv mt-3 w-100 text-center">
                                             @if(session('error')) {{session('error')}} @endif
                                         </div>

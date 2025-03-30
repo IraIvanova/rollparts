@@ -170,12 +170,21 @@
     array (
       'empty' => 'Sepetiniz şu anda boş.',
     ),
+    'orderConfirmation' => 
+    array (
+      'thanks' => 'Sipariş için teşekkürler!',
+    ),
+    'checkout' => 
+    array (
+      'isReturningCustomer' => 'Geri dönen müşteri misiniz? <a href=":loginUrl" class="font-weight-bold">Giriş yapmak için buraya tıklayın</a>',
+    ),
   ),
   'orderConfirmation' => 
   array (
     'description' => 'Siparişinizi işliyoruz. Yakında bir onay e-postası alacaksınız. Veya siparişinizi <a href=":account_link">Hesabınızdan</a> kontrol edebilirsiniz.',
     'number' => 'Sipariş numaranız',
     'backButton' => 'Ana Sayfaya Git',
+    'thanks' => 'Sipariş için teşekkürler!',
   ),
   'turkey' => 'Türkiye',
   'meta' => 
@@ -184,5 +193,39 @@
     array (
       'product' => 'Türkiye\'deki :brand firmasından en düşük fiyatlarla yüksek kaliteli otomobil parçaları satın alın! Hızlı sevkiyat ve güvenli alışveriş ile :product bulun. En iyi fırsatlar için şimdi sipariş verin!',
     ),
+  ),
+  'checkout' => 
+  array (
+    'isReturningCustomer' => 'Geri dönen müşteri misiniz? <a href=":loginUrl" class="font-weight-bold">Giriş yapmak için buraya tıklayın</a>',
+    'billingDetails' => 'Fatura detayları',
+    'contactDetails' => 'İletişim bilgileri',
+    'firstName' => 'İlk isim',
+    'lastName' => 'Soyadı',
+    'phone' => 'Telefon numarası',
+    'shippingDetails' => 'Nakliye adresi bilgileri',
+    'province' => 'İl',
+    'district' => 'Bölge',
+    'selectDistrict' => 'Bir bölge seçin',
+    'addressLine' => 'Adres hattı',
+    'zipCode' => 'Posta kodu',
+    'sameAddress' => 'Fatura adresi gönderi adresi ile aynı',
+    'country' => 'Ülke',
+    'selectProvince' => 'Bir il seçin',
+    'additionalNotes' => 'Ek notlar',
+    'yourOrder' => 'Siparişiniz',
+    'privacyConfirmation' => '<p>Kişisel verileriniz siparişinizi işlemek, bu web sitesindeki deneyiminizi desteklemek ve <a href=":privacyUrl" class=""  target="_blank">gizlilik politikamızda</a> açıklanan diğer amaçlar için kullanılacaktır privacy policy.</p>',
+    'identityId' => 'Kimlik numarası',
+    'haveCoupon' => 'Kuponunuz var mı? <a href="#" id="show-coupon">Kodunuzu girmek için buraya tıklayın</a>',
+    'haveCouponLine2' => 'Kupon kodunuz varsa, lütfen aşağıdan uygulayın.',
+    'coupon' => 'Kupon',
+    'deleteCoupon' => 'Kuponu sil',
+    'applyCoupon' => 'Kupon uygula',
+    'total' => 
+    array (
+      'appliedCoupon' => 'Uygulanan kupon indirimi',
+      'totalDiscount' => 'Toplam indirim',
+      'total' => 'Toplam',
+    ),
+    'makeOrder' => 'Sipariş verin',
   ),
 );

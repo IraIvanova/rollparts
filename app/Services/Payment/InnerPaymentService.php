@@ -31,7 +31,7 @@ class InnerPaymentService
             $client->phone,
             $client->billingAddress?->fullAddress ?? $client->shippingAddress->fullAddress,
             $client->ip ?? '172.1.1.1',
-            $client->email,
+            trim($client->email),
             'Türkiye',
             $client->shippingAddress->province->name,
             $client->identity

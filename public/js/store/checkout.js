@@ -32,9 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             requiredFields.forEach(field => {
+                if (field.offsetParent === null) return;
+
                 if (field.type === 'email') {
                     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    console.log(emailRegex.test(field.value.trim()))
                     if (!emailRegex.test(field.value.trim())) {
                         isValid = false;
                         field.parentElement.classList.add('invalid');
@@ -59,33 +60,60 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function loadDistricts() {
-        const districtSelect = document.getElementById("district");
-        const provinceSelect = document.getElementById("province");
+        // const districtSelect = document.getElementById("district");
+        // const provinceSelect = document.getElementById("province");
+        // const districtSelects = document.getElementsByClassName("district");
+        const provinceSelects = document.getElementsByClassName("province");
 
-        provinceSelect.addEventListener('change', () => {
-            const selectedProvinceId = provinceSelect.value;
+        for (let provinceSelect of provinceSelects) {
+            provinceSelect.addEventListener('change', () => {
+                const selectedProvinceId = provinceSelect.value;
+                let districtSelect = provinceSelect.parentElement.nextElementSibling.children[1];
+                console.log(districtSelect)
+                districtSelect.innerHTML = '<option value="">Select a district</option>';
 
-            districtSelect.innerHTML = '<option value="">Select a district</option>';
+                if (!selectedProvinceId) return;
 
-            if (!selectedProvinceId) return;
-
-            axios.post(provinceSelect.dataset.route, {
+                axios.post(provinceSelect.dataset.route, {
                     provinceId: selectedProvinceId
                 })
-                .then(response => {
-                    const districts = response.data;
-                    console.log(response)
-                    districts.forEach(district => {
-                        const option = document.createElement("option");
-                        option.value = district.id; // Use district ID as the value
-                        option.textContent = district.name; // Display district name
-                        districtSelect.appendChild(option);
-                    });
-                })
-        })
+                    .then(response => {
+                        const districts = response.data;
+                        districts.forEach(district => {
+                            const option = document.createElement("option");
+                            option.value = district.id; // Use district ID as the value
+                            option.textContent = district.name; // Display district name
+                            districtSelect.appendChild(option);
+                        });
+                    })
+            })
+        }
+    }
+
+    let toggleBillingAddressBlock = () => {
+        const sameAddressCheckbox = document.getElementById("sameAddress");
+        const billingAddressFields = document.getElementById("billingAddressFields");
+
+        sameAddressCheckbox.addEventListener("change", () => {
+            if (sameAddressCheckbox.checked) {
+                billingAddressFields.classList.add("d-none");
+            } else {
+                billingAddressFields.classList.remove("d-none");
+            }
+
+        });
+    }
+
+    let decideIfValidationRequired = () => {
+        let billingInputsForValidation = document.getElementsByClassName('validate-if-visible');
+
+        for (let input of billingInputsForValidation) {
+            input.classList.toggle('validate-required');
+        }
     }
 
     loadDistricts();
     showCouponCode();
     createOrder();
+    toggleBillingAddressBlock();
 });

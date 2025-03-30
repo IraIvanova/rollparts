@@ -130,14 +130,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
-{{--                    <div class="brator-payment-area svg-link">--}}
-{{--                        <h6 class="brator-payment-title">Payment Methods</h6>--}}
-{{--                        <a href="https://brator-main.smartdemowp.com/shop-categories/#"><img src="./paypal.png"></a>--}}
-{{--                        <a href="https://brator-main.smartdemowp.com/shop-categories/#"><img src="./master.png"></a>--}}
-{{--                        <a href="https://brator-main.smartdemowp.com/shop-categories/#"><img src="./visa.png"></a>--}}
-{{--                        <a href="https://brator-main.smartdemowp.com/shop-categories/#"><img src="./stripe.png"></a>--}}
-{{--                        <a href="https://brator-main.smartdemowp.com/shop-categories/#"><img src="./klarna.png"></a>--}}
-{{--                    </div>--}}
+
                 </div>
                 <div class="col-lg-4 col-12">
                     <div class="rp-social-link svg-link">

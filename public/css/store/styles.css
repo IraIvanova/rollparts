@@ -4085,7 +4085,8 @@ input:not([type='radio']) {
     display: none;
 }
 
-.filters .list ul li {
+.filters .list ul li,
+.sameAddress {
     padding-left: 10px !important;
     font-size: 14px;
     color: #666666;
@@ -4094,13 +4095,18 @@ input:not([type='radio']) {
     justify-content: space-between;
     align-items: center;
 }
+.sameAddress {
+    align-items: start!important;
+}
 
-.filters label {
+.filters label,
+.sameAddress label {
     position: relative;
     cursor: pointer;
 }
 
-.filters label:before {
+.filters label:before,
+.sameAddress label:before {
     content: '';
     display: inline-block;
     border-width: 1px;
@@ -4115,7 +4121,8 @@ input:not([type='radio']) {
     top: 6px;
 }
 
-.filters .checkbox:checked + label:after {
+.filters .checkbox:checked + label:after,
+.sameAddress .checkbox:checked + label:after {
     background-color: var(--color-high-dark);
     border-color: var(--color-high-dark);
     background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
@@ -4128,6 +4135,9 @@ input:not([type='radio']) {
     position: absolute;
     left: -10px;
     top: 6px;
+}
+.payments-img {
+    height: 40px;
 }
 
 .cart_totals, .cart {

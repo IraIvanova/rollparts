@@ -11,9 +11,11 @@ use App\Exceptions\ProductNotFoundException;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\Payment;
+use App\Models\User;
 use App\Services\OrderService;
 use App\Services\Payment\InnerPaymentService;
 use App\Services\Payment\IyzicoPaymentService;
+use App\Services\ShoppingCart\ShoppingCart;
 use App\Services\Store\CartService;
 use App\Services\Store\CitiesService;
 use App\Services\Store\ClientService;
@@ -31,6 +33,7 @@ class CartController extends Controller
         private readonly OrderService $orderService,
         private readonly IyzicoPaymentService $paymentService,
         private readonly InnerPaymentService $innerPaymentService,
+        private readonly ClientService $clientService,
     ) {
     }
 
@@ -71,8 +74,12 @@ class CartController extends Controller
             return redirect()->back()->withErrors([]);
         }
 
+        $client = $this->clientService->getClientForOrder($request->all());
+
         if (!$order = $this->orderService->getOrderByReference($cart->getOrderReference())) {
-            $order = $this->cartService->createOrder($request->all());
+            $order = $this->cartService->createOrder($client);
+        } else {
+            $this->orderService->updateOrderClient($client, $order);
         }
 
         $response = $this->paymentService->initializeCheckoutForm(
@@ -111,5 +118,17 @@ class CartController extends Controller
         $this->cartService->removeCoupon();
 
         return redirect()->back();
+    }
+
+    public function getCurrentOrder(User $client, ShoppingCart $cart): Order
+    {
+        if (!$order = $this->orderService->getOrderByReference($cart->getOrderReference())) {
+            $order = $this->cartService->createOrder($client);
+        }
+
+        $order->client_id = $client->id;
+        $order->save();
+
+        return $order;
     }
 }

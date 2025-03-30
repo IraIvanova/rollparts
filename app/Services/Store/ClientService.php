@@ -2,13 +2,15 @@
 
 namespace App\Services\Store;
 
-use App\Models\Client;
+use App\Constant\GeneralConstants;
 use App\Models\ClientAddress;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
 
 class ClientService
 {
+    private const BILLING_KEY_PREFIX = 'billing_';
+
     public function findClientByEmail(string $email) {
         return User::where('email', $email)->first();
     }
@@ -29,17 +31,39 @@ class ClientService
         return $client;
     }
 
-    public function getShippingAddress(User $client): ?ClientAddress
+    public function saveClientAddresses(User $client, array $addressData): void
     {
-        return $client->shippingAddress;
-    }
-
-    public function saveAddress(User $client, array $addressData): void
-    {
-        if ($address = $this->getShippingAddress($client)) {
+        if ($address = $client->shippingAddress) {
             $address->update($addressData);
         } else {
-            ClientAddress::create(['user_id' => $client->id, 'type' => 'shipping'] + $addressData);
+            $this->saveAddress($client->id, $addressData);
         }
+
+        if ($addressData['billingSameAsShippingAddress'] !== 'on') {
+            $billingAddressData = collect($addressData)->filter(function ($value, $key) {
+                return str_starts_with($key, self::BILLING_KEY_PREFIX);
+            })->mapWithKeys(function ($value, $key) {
+                return [substr($key, strlen(self::BILLING_KEY_PREFIX)) => $value];
+            })->toArray();
+
+            if ($billingAddress = $client->billingAddress) {
+                $billingAddress->update($billingAddressData);
+            } else {
+                $this->saveAddress($client->id, $billingAddressData, GeneralConstants::BILLING_ADDRESS_TYPE);
+            }
+        }
+    }
+
+    public function getClientForOrder(array $contactDetails): User
+    {
+        $client = $this->findOrCreateClient($contactDetails);
+        $this->saveClientAddresses($client, $contactDetails);
+
+        return $client;
+    }
+
+    private function saveAddress(int $clientId, array $data, string $type = GeneralConstants::SHIPPING_ADDRESS_TYPE): void
+    {
+        ClientAddress::create(['user_id' => $clientId, 'type' => $type] + $data);
     }
 }

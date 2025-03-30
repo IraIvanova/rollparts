@@ -8,6 +8,7 @@ use App\Exceptions\ProductNotFoundException;
 use App\Models\Coupon;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\User;
 use App\Services\OrderService;
 use App\Services\ShoppingCart\ShoppingCart;
 use Illuminate\Support\Facades\DB;
@@ -65,12 +66,9 @@ class CartService
         return $this->getCart()->getTotalItems() === 0;
     }
 
-    public function createOrder(array $contactDetails): ?Order
+    public function createOrder(User $client): ?Order
     {
-       return DB::transaction(function () use ($contactDetails) {
-            $client = $this->clientService->findOrCreateClient($contactDetails);
-
-            $this->clientService->saveAddress($client, $contactDetails);
+       return DB::transaction(function () use ($client) {
             $shoppingCart = $this->getCart();
 
             return $this->orderService->createOrder($client, $shoppingCart);

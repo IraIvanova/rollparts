@@ -46,6 +46,12 @@ class OrderService
         $order->save();
     }
 
+    public function updateOrderClient (User $client, Order $order): void
+    {
+        $order->client_id = $client->id;
+        $order->save();
+    }
+
     private function addProductsToOrder(Order $order, array $products): void
     {
         foreach ($products as $product) {

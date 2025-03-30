@@ -11,4 +11,7 @@ class GeneralConstants
         'client.process-login',
         'client.process-register',
     ];
+
+    public const SHIPPING_ADDRESS_TYPE = 'shipping';
+    public const BILLING_ADDRESS_TYPE = 'billing';
 }

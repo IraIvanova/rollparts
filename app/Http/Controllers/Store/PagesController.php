@@ -94,6 +94,11 @@ class PagesController extends Controller
         return view('store.info.terms');
     }
 
+    public function privacy(): View
+    {
+        return view('store.info.terms');
+    }
+
     public function contactUs(): View
     {
         return view('store.info.contacts');

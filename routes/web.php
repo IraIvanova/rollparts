@@ -17,11 +17,11 @@ Route::get('/checkout', [PagesController::class, 'checkout'])->name('checkout');
 Route::get('/order-confirmation', [PagesController::class, 'orderConfirmation'])->name('orderConfirmation');
 
 Route::get('/info/terms', [PagesController::class, 'termsAndConditions'])->name('infoTerms');
+Route::get('/info/privacy', [PagesController::class, 'privacy'])->name('infoPrivacy');
 Route::get('/info/contact-us', [PagesController::class, 'contactUs'])->name('infoContactUs');
 
 Route::get('/cart', [PagesController::class, 'cart'])->name('cart');
-Route::get('/payment/callback/{order}', [PaymentController::class, 'processPaymentCallback']);
-Route::post('/payment/callback/', [PaymentController::class, 'processPaymentCallback'])->name('processPaymentCallback');
+Route::post('/payment/callback', [PaymentController::class, 'processPaymentCallback'])->name('processPaymentCallback');
 Route::get('/payment/check', [PaymentController::class, 'checkPaymentPage'])->name('checkPayment');
 Route::post('/createOrder', [CartController::class, 'createOrder'])->name('createOrder');
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('addToCart');
