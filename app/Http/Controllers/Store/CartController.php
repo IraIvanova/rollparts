@@ -3,19 +3,12 @@
 namespace App\Http\Controllers\Store;
 
 use App\Constant\StatusesConstants;
-use App\DTO\Payment\BuyerAddressesDTO;
-use App\DTO\Payment\BuyerDTO;
-use App\DTO\Payment\IyzicoPaymentDTO;
 use App\Exceptions\AddToCartException;
 use App\Exceptions\ProductNotFoundException;
 use App\Http\Controllers\Controller;
-use App\Models\Order;
-use App\Models\Payment;
-use App\Models\User;
 use App\Services\OrderService;
 use App\Services\Payment\InnerPaymentService;
 use App\Services\Payment\IyzicoPaymentService;
-use App\Services\ShoppingCart\ShoppingCart;
 use App\Services\Store\CartService;
 use App\Services\Store\CitiesService;
 use App\Services\Store\ClientService;
@@ -26,7 +19,6 @@ use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 
 class CartController extends Controller
 {
-
     public function __construct(
         private readonly CartService $cartService,
         private readonly CitiesService $citiesService,
@@ -68,6 +60,7 @@ class CartController extends Controller
 
     public function createOrder(Request $request): ResponseAlias
     {
+        //TODO add validation + phone regex, autofill form if data saved in session after back with errors
         $cart = $this->cartService->getCart();
 
         if ($cart->isEmpty()) {
@@ -119,17 +112,5 @@ class CartController extends Controller
         $this->cartService->removeCoupon();
 
         return redirect()->back();
-    }
-
-    public function getCurrentOrder(User $client, ShoppingCart $cart): Order
-    {
-        if (!$order = $this->orderService->getOrderByReference($cart->getOrderReference())) {
-            $order = $this->cartService->createOrder($client);
-        }
-
-        $order->client_id = $client->id;
-        $order->save();
-
-        return $order;
     }
 }
