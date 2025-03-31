@@ -72,7 +72,6 @@ class CartController extends Controller
         if (!$order = $this->orderService->getOrderByReference($cart->getOrderReference())) {
             $order = $this->cartService->createOrder($client);
         } else {
-            //TODO save client_info in order or separate table
             $this->orderService->updateOrderClient($client, $order);
         }
 
@@ -83,6 +82,7 @@ class CartController extends Controller
         if ($response->getStatus() == 'success') {
             $this->innerPaymentService->createPaymentInfo($order, $response->getToken());
             $this->orderService->changeOrderStatus($order, StatusesConstants::WAITING_PAYMENT);
+            $this->clientService->saveClientToOrderInfoHistory($order, $client);
 
             $this->cartService->clearCart();
 

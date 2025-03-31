@@ -1,4 +1,6 @@
-<?php return array (
+<?php
+
+return array (
   'trLira' => '₺',
   'shoppingCart' => 'Alışveriş sepeti',
   'header' => 
@@ -133,7 +135,7 @@
   'homepage' => 'Ana Sayfa',
   'categoriesPage' => 'Kategoriler',
   'productsPage' => 'Ürünler',
-  'engine-parts' => 'Motor Parçaları',
+  'engine-parts' => 'Engine Parts',
   'pistons-rings' => 'Pistons & Rings',
   'cylinder-heads' => 'Cylinder Heads',
   'oil-filters' => 'Oil Filters',

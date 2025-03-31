@@ -45,7 +45,7 @@
                             <div class="form-row form-row-wide validate-required">
                                 <label for="phone" class="">{{ trans('interface.checkout.phone') }}*</label>
                                 <input type="text" class="input-text rp-form-row-Input"
-                                       name="phone"
+                                       name="phone" pattern="^(\+?905|05|5)[0-9]{9}$" required
                                        id="phone" placeholder="" value="{{$user->phone ?? ''}}">
                             </div>
                             <div class="form-row form-row-wide validate-required">

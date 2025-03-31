@@ -48,7 +48,7 @@ class OrderService
 
     public function updateOrderClient (User $client, Order $order): void
     {
-        $order->client_id = $client->id;
+        $order->user_id = $client->id;
         $order->save();
     }
 

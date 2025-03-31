@@ -4,6 +4,8 @@ namespace App\Services\Store;
 
 use App\Constant\GeneralConstants;
 use App\Models\ClientAddress;
+use App\Models\Order;
+use App\Models\OrderInfo;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
 
@@ -65,5 +67,19 @@ class ClientService
     private function saveAddress(int $clientId, array $data, string $type = GeneralConstants::SHIPPING_ADDRESS_TYPE): void
     {
         ClientAddress::create(['user_id' => $clientId, 'type' => $type] + $data);
+    }
+
+    public function saveClientToOrderInfoHistory(Order $order, User $user): void
+    {
+        if ($order->orderInfo) return;
+
+        $orderInfo = new OrderInfo();
+        $orderInfo->order_id = $order->id;
+        $orderInfo->full_name = $user->getFullNameAttribute();
+        $orderInfo->phone = $user->phone;
+        $orderInfo->email = $user->email;
+        $orderInfo->shipping_address = $user->shippingAddress->getFullAddressAttribute();
+        $orderInfo->billing_address = $user->billingAddress?->getFullAddressAttribute();
+        $orderInfo->save();
     }
 }

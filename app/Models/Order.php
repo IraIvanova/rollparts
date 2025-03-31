@@ -43,6 +43,16 @@ class Order extends Model
         return $this->belongsTo(Status::class);
     }
 
+    public function orderInfo(): HasOne
+    {
+        return $this->hasOne(OrderInfo::class);
+    }
+
+    public function payment(): HasOne
+    {
+        return $this->hasOne(Payment::class);
+    }
+
     public function updateTotal(): void
     {
         $orderedProducts = $this->orderProducts;

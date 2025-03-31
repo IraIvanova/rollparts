@@ -6,6 +6,8 @@ use App\Filament\Admin\Resources\OrderResource\Pages;
 use App\Filament\Admin\Resources\OrderResource\RelationManagers;
 use App\Models\Order;
 use Filament\Forms;
+use Filament\Forms\Components\Actions;
+use Filament\Forms\Components\Actions\Action;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -92,23 +94,50 @@ class OrderResource extends Resource
             ->schema([
                 Forms\Components\Section::make()
                     ->schema([
-                // Client (with client name, email, and phone)
-                Select::make('user_id')
-                    ->label('Client')
-                    ->relationship('client', 'fullName')
-                    ->required()
-                    ->searchable(),
-//                    ->getOptionLabelUsing(fn (Client $client) => $client->name . ' (' . $client->email . ')'),
+                        Forms\Components\Grid::make(2)
+                            ->schema([
+                        Forms\Components\Fieldset::make('Order stage')
+                            ->schema([
+                                Select::make('status_id')
+                                    ->label('Status')
+                                    ->relationship('status', 'name')
+                                    ->required(),
+                            ])
+                            ->columnSpan(1),
+                        Forms\Components\Fieldset::make('Payment')
+                            ->relationship('payment')
+                            ->schema([
+                                Forms\Components\Placeholder::make('status')
+                                    ->label('Payment status')
+                                    ->inlineLabel()
+                                ->content(fn($get) => $get('status'))
+                                    ->extraAttributes(fn ($get) => [
+                                        'class' => $get('status') === 'success' ? 'text-green-600 font-bold' : 'text-red-600 font-bold',
+                                    ])
+                                ->columnSpanFull(),
+                            ])
+                            ->columnSpan(1),
+                        ])
+                        ,
+                        Forms\Components\Fieldset::make('Client info')
+                            ->relationship('orderInfo')
+                            ->schema([
+                                TextInput::make('full_name'),
+                                TextInput::make('email'),
+                                TextInput::make('phone'),
+                                TextInput::make('shipping_address'),
+                                TextInput::make('billing_address'),
+                                Actions::make([
+                                    Action::make('view_client')
+                                        ->label('View Client Card')
+                                        ->icon('heroicon-o-user')
+                                        ->url(fn ($get) => route('filament.admin.resources.users.edit', $get('../user_id')))
+                                        ->openUrlInNewTab(),
+                                ])->alignRight()
+                                ->verticallyAlignCenter(),
+                            ]),
 
-                // Show Client Address - Billing or Shipping
-                Select::make('client_address_id')
-                    ->label('Client Address')
-                    ->relationship('clientAddresses', 'address_line1')
-                    ->required(),
-                Select::make('status_id')
-                    ->label('Status')
-                    ->relationship('status', 'name')
-                    ->required(),
+
                 ]),
                 Forms\Components\Section::make()
                     ->schema([
@@ -134,9 +163,12 @@ class OrderResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->defaultSort('created_at', 'desc')
             ->columns([
                 TextColumn::make('id'),
                 TextColumn::make('status.name'),
+                TextColumn::make('orderInfo.full_name')->label('Full Name'),
+                TextColumn::make('orderInfo.email')->label('Email'),
                 TextColumn::make('created_at'),
             ])
             ->filters([
@@ -150,16 +182,7 @@ class OrderResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ])
-//            ->footer(function ($records) {
-//                $total = $records->sum(function ($record) {
-//                    $price = $record->discounted_price ?? $record->price;
-//                    return $price * $record->amount;
-//                });
-//
-//                return "Order Total: " . number_format($total, 2) . " TRL";
-//            })
-            ;
+            ]);
     }
 
     public static function getRelations(): array
