@@ -33,32 +33,32 @@
                                     <label for="firstName" class="">{{ trans('interface.checkout.firstName') }}*</label>
                                     <input type="text" class="input-text rp-form-row-Input"
                                            name="name"
-                                           id="firstName" placeholder="" value="{{$user->name ?? ''}}">
+                                           id="firstName" placeholder="" value="{{$user->name ?? session('client.name') ?? ''}}">
                                 </div>
                                 <div class="form-row form-row-wide validate-required w-50">
                                     <label for="lastName" class="">{{ trans('interface.checkout.lastName') }}*</label>
                                     <input type="text" class="input-text rp-form-row-Input"
                                            name="lastName"
-                                           id="lastName" placeholder="" value="{{$user->lastName ?? ''}}">
+                                           id="lastName" placeholder="" value="{{$user->lastName ?? session('client.lastName') ?? ''}}">
                                 </div>
                             </div>
                             <div class="form-row form-row-wide validate-required">
                                 <label for="phone" class="">{{ trans('interface.checkout.phone') }}*</label>
                                 <input type="text" class="input-text rp-form-row-Input"
                                        name="phone" pattern="^(\+?905|05|5)[0-9]{9}$" required
-                                       id="phone" placeholder="" value="{{$user->phone ?? ''}}">
+                                       id="phone" placeholder="" value="{{$user->phone ?? session('client.phone') ?? ''}}">
                             </div>
                             <div class="form-row form-row-wide validate-required">
                                 <label for="email" class="">Email*</label>
                                 <input type="email" class="input-text rp-form-row-Input"
                                        name="email"
-                                       id="email" placeholder="" value="{{$user->email ?? ''}}" required>
+                                       id="email" placeholder="" value="{{$user->email ?? session('client.email') ?? ''}}" required>
                             </div>
                             <div class="form-row form-row-wide validate-required">
                                 <label for="identity" class="">{{trans('interface.checkout.identityId')}}*</label>
                                 <input type="text" class="input-text rp-form-row-Input"
                                        name="identity"
-                                       id="identity" placeholder="" value="{{$user->identity ?? ''}}" required>
+                                       id="identity" placeholder="" value="{{$user->identity ?? session('client.identity') ?? ''}}" required>
                             </div>
                         </div>
                         <h5 class="mt-5">{{trans('interface.checkout.shippingDetails')}}</h5>
@@ -67,7 +67,7 @@
                                 <label for="country" class="">{{trans('interface.checkout.country')}}*</label>
                                 <input type="text" class="input-text rp-form-row-Input"
                                        name="country"
-                                       id="country" placeholder="" value="Turkey">
+                                       id="country" placeholder="" value="{{trans('interface.turkey')}}">
                             </div>
                             <div class="row px-3">
                                 <div class="form-row form-row-wide validate-required w-50">
@@ -91,13 +91,13 @@
                                     <label for="address" class="">{{trans('interface.checkout.addressLine')}}*</label>
                                     <input type="text" class="input-text rp-form-row-Input"
                                            name="address_line1"
-                                           id="address" placeholder="" value="">
+                                           id="address" value="{{ $user->shippingAddress?->address ?? session('client.shippingAddress.address_line1') ?? '' }}">
                                 </div>
                                 <div class="form-row form-row-wide validate-required w-25">
                                     <label for="zip" class="">{{trans('interface.checkout.zipCode')}}*</label>
                                     <input type="text" class="input-text rp-form-row-Input"
                                            name="zip"
-                                           id="zip" placeholder="" value="">
+                                           id="zip" value="{{ $user->shippingAddress?->address ?? session('client.shippingAddress.zip') ?? ''}}">
                                 </div>
                             </div>
                             <div class="form-row form-row-wide sameAddress d-flex">
@@ -135,13 +135,13 @@
                                     <label for="billingAddress" class="">{{trans('interface.checkout.addressLine')}}*</label>
                                     <input type="text" class="input-text rp-form-row-Input"
                                            name="billing_address_line1"
-                                           id="billingAddress" placeholder="" value="">
+                                           id="billingAddress" value="{{ $user->billingAddress?->address ?? session('client.billingAddress.address_line1') ?? ''}}">
                                 </div>
                                 <div class="form-row form-row-wide validate-required w-25">
                                     <label for="billingZip" class="">{{trans('interface.checkout.zipCode')}}*</label>
                                     <input type="text" class="input-text rp-form-row-Input"
                                            name="billing_zip"
-                                           id="billingZip" placeholder="" value="">
+                                           id="billingZip" value="{{ $user->billingAddress?->address ?? session('client.billingAddress.zip') ?? ''}}">
                                 </div>
                             </div>
                         </div>

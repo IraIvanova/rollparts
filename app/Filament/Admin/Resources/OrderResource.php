@@ -2,6 +2,7 @@
 
 namespace App\Filament\Admin\Resources;
 
+use App\Constant\StatusesConstants;
 use App\Filament\Admin\Resources\OrderResource\Pages;
 use App\Filament\Admin\Resources\OrderResource\RelationManagers;
 use App\Models\Order;
@@ -20,6 +21,7 @@ use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 
 class OrderResource extends Resource
 {
@@ -110,7 +112,13 @@ class OrderResource extends Resource
                                 Forms\Components\Placeholder::make('status')
                                     ->label('Payment status')
                                     ->inlineLabel()
-                                ->content(fn($get) => $get('status'))
+                                    ->content(function ($get) {
+                                        $status = $get('status');
+
+                                        if ($status) return $status;
+
+                                        return 'No payment information available';
+                                    })
                                     ->extraAttributes(fn ($get) => [
                                         'class' => $get('status') === 'success' ? 'text-green-600 font-bold' : 'text-red-600 font-bold',
                                     ])
@@ -164,6 +172,7 @@ class OrderResource extends Resource
     {
         return $table
             ->defaultSort('created_at', 'desc')
+            ->modifyQueryUsing(fn (Builder $query) => $query->where('status_id', '!=', StatusesConstants::PENDING))
             ->columns([
                 TextColumn::make('id'),
                 TextColumn::make('status.name'),
@@ -172,7 +181,10 @@ class OrderResource extends Resource
                 TextColumn::make('created_at'),
             ])
             ->filters([
-                //
+                // Add a filter to exclude orders with status-id = 3
+//                Filter::make('excludeStatus')
+//                    ->query(fn ($query) => $query->where('status_id', '!=', StatusesConstants::PENDING))
+//                    ,
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

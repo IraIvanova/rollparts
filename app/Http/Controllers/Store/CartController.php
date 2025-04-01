@@ -60,7 +60,7 @@ class CartController extends Controller
 
     public function createOrder(Request $request): ResponseAlias
     {
-        //TODO add validation + phone regex, autofill form if data saved in session after back with errors
+        //TODO add validation + phone regex
         $cart = $this->cartService->getCart();
 
         if ($cart->isEmpty()) {
@@ -69,6 +69,7 @@ class CartController extends Controller
 
         $client = $this->clientService->getClientForOrder($request->all());
 
+        //TODO: save not confirmed orders to temporary table?
         if (!$order = $this->orderService->getOrderByReference($cart->getOrderReference())) {
             $order = $this->cartService->createOrder($client);
         } else {
@@ -88,7 +89,7 @@ class CartController extends Controller
 
             return redirect($response->getPaymentPageUrl());
         } else {
-            return redirect()->route('checkout')->with(['error' => $response->getErrorMessage()]);
+            return redirect()->route('checkout')->with(['error' => $response->getErrorMessage(), 'client' => $client->load(['shippingAddress', 'billingAddress'])]);
         }
     }
 
