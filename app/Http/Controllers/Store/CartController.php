@@ -60,6 +60,7 @@ class CartController extends Controller
 
     public function createOrder(Request $request): ResponseAlias
     {
+        //TODO: check when two orders are created subsequently with different users
         //TODO add validation + phone regex
         $cart = $this->cartService->getCart();
 

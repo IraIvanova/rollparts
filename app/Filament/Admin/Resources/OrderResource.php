@@ -46,24 +46,48 @@ class OrderResource extends Resource
                         Fieldset::make('Order info')
                             ->schema([
                                 TextEntry::make('id')
-                                    ->label('Order ID'),
+                                    ->label('Order ID')
+                                    ->inlineLabel(),
                                 TextEntry::make('created_at')
-                                    ->label('Order Date'),
+                                    ->label('Order Date')
+                                    ->inlineLabel(),
                                 TextEntry::make('status.name')
-                                    ->label('Order Status'),
+                                    ->label('Order Status')
+                                    ->inlineLabel(),
                             ])
                             ->columns(1)
                             ->columnSpan(1),
+                        Fieldset::make('Payment')
+                            ->schema([
+                                TextEntry::make('payment.status')
+                                    ->label('Payment status')
+                                    ->inlineLabel()
+                                    ->default('No payment information available')
+                                    ->columnSpanFull(),
+                            ])
+                            ->columnSpan(1),
+                    ]),
+                Section::make()
+                    ->schema([
                         Fieldset::make('Client info')
                             ->schema([
                                 TextEntry::make('client.fullName')
-                                    ->label('Customer Name'),
-                                TextEntry::make('clientShippingAddress.fullAddress')
-                                    ->label('Customer Address'),
+                                    ->label('Customer Name')
+                                    ->inlineLabel(),
                                 TextEntry::make('client.phone')
-                                    ->label('Phone number'),
+                                    ->label('Phone number')
+                                    ->inlineLabel(),
                                 TextEntry::make('client.email')
-                                    ->label('Email'),
+                                    ->label('Email')
+                                    ->inlineLabel(),
+                                TextEntry::make('client.shippingAddress.fullAddress')
+                                    ->label('Shipping Address')
+                                    ->inlineLabel(),
+                                TextEntry::make('client.billingAddress.fullAddress')
+                                    ->label('Billing Address')
+                                    ->default('Same as shipping address')
+//                                    ->visible(fn($get) => $get('client.billingAddress'))
+                                    ->inlineLabel(),
                             ])
                             ->columns(1)
                             ->columnSpan(1),
@@ -82,9 +106,11 @@ class OrderResource extends Resource
                                 TextEntry::make('manual_discount')
                                     ->hidden(fn($record) => empty($record->manual_discount))
                                     ->label('Manual discount'),
-                        TextEntry::make('used_promo')
-                            ->hidden(fn($record) => empty(array_key_first(json_decode($record->used_promo, true))))
-                            ->label('Used promo code'),
+                                TextEntry::make('used_promo')
+                                    ->hidden(
+                                        fn($record) => empty(array_key_first(json_decode($record->used_promo, true)))
+                                    )
+                                    ->label('Used promo code'),
                             ])
                     ])
             ]);
@@ -98,34 +124,38 @@ class OrderResource extends Resource
                     ->schema([
                         Forms\Components\Grid::make(2)
                             ->schema([
-                        Forms\Components\Fieldset::make('Order stage')
-                            ->schema([
-                                Select::make('status_id')
-                                    ->label('Status')
-                                    ->relationship('status', 'name')
-                                    ->required(),
-                            ])
-                            ->columnSpan(1),
-                        Forms\Components\Fieldset::make('Payment')
-                            ->relationship('payment')
-                            ->schema([
-                                Forms\Components\Placeholder::make('status')
-                                    ->label('Payment status')
-                                    ->inlineLabel()
-                                    ->content(function ($get) {
-                                        $status = $get('status');
-
-                                        if ($status) return $status;
-
-                                        return 'No payment information available';
-                                    })
-                                    ->extraAttributes(fn ($get) => [
-                                        'class' => $get('status') === 'success' ? 'text-green-600 font-bold' : 'text-red-600 font-bold',
+                                Forms\Components\Fieldset::make('Order stage')
+                                    ->schema([
+                                        Select::make('status_id')
+                                            ->label('Status')
+                                            ->relationship('status', 'name')
+                                            ->required(),
                                     ])
-                                ->columnSpanFull(),
+                                    ->columnSpan(1),
+                                Forms\Components\Fieldset::make('Payment')
+                                    ->relationship('payment')
+                                    ->schema([
+                                        Forms\Components\Placeholder::make('status')
+                                            ->label('Payment status')
+                                            ->inlineLabel()
+                                            ->content(function ($get) {
+                                                $status = $get('status');
+
+                                                if ($status) {
+                                                    return $status;
+                                                }
+
+                                                return 'No payment information available';
+                                            })
+                                            ->extraAttributes(fn($get) => [
+                                                'class' => $get(
+                                                    'status'
+                                                ) === 'success' ? 'text-green-600 font-bold' : 'text-red-600 font-bold',
+                                            ])
+                                            ->columnSpanFull(),
+                                    ])
+                                    ->columnSpan(1),
                             ])
-                            ->columnSpan(1),
-                        ])
                         ,
                         Forms\Components\Fieldset::make('Client info')
                             ->relationship('orderInfo')
@@ -139,14 +169,16 @@ class OrderResource extends Resource
                                     Action::make('view_client')
                                         ->label('View Client Card')
                                         ->icon('heroicon-o-user')
-                                        ->url(fn ($get) => route('filament.admin.resources.users.edit', $get('../user_id')))
+                                        ->url(
+                                            fn($get) => route('filament.admin.resources.users.edit', $get('../user_id'))
+                                        )
                                         ->openUrlInNewTab(),
                                 ])->alignRight()
-                                ->verticallyAlignCenter(),
+                                    ->verticallyAlignCenter(),
                             ]),
 
 
-                ]),
+                    ]),
                 Forms\Components\Section::make()
                     ->schema([
                         Forms\Components\Fieldset::make('Order total & applied discounts')
@@ -160,9 +192,9 @@ class OrderResource extends Resource
                                 TextInput::make('manual_discount')
                                     ->numeric()
                                     ->label('Manual discount'),
-                        TextInput::make('used_promo')
-                            ->label('Used promo code')
-                            ->disabled(),
+                                TextInput::make('used_promo')
+                                    ->label('Used promo code')
+                                    ->disabled(),
                             ])
                     ])
             ]);
@@ -172,7 +204,7 @@ class OrderResource extends Resource
     {
         return $table
             ->defaultSort('created_at', 'desc')
-            ->modifyQueryUsing(fn (Builder $query) => $query->where('status_id', '!=', StatusesConstants::PENDING))
+            ->modifyQueryUsing(fn(Builder $query) => $query->where('status_id', '!=', StatusesConstants::PENDING))
             ->columns([
                 TextColumn::make('id'),
                 TextColumn::make('status.name'),

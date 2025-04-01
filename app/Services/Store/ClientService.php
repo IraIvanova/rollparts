@@ -35,13 +35,14 @@ class ClientService
 
     public function saveClientAddresses(User $client, array $addressData): void
     {
+
         if ($address = $client->shippingAddress) {
             $address->update($addressData);
         } else {
             $this->saveAddress($client->id, $addressData);
         }
 
-        if ($addressData['billingSameAsShippingAddress'] !== 'on') {
+        if (empty($addressData['billingSameAsShippingAddress'])) {
             $billingAddressData = collect($addressData)->filter(function ($value, $key) {
                 return str_starts_with($key, self::BILLING_KEY_PREFIX);
             })->mapWithKeys(function ($value, $key) {
