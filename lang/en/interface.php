@@ -77,4 +77,13 @@
     ),
     'makeOrder' => 'Place order',
   ),
+  'cookies' => 
+  array (
+    'consent' => 
+    array (
+      'title' => 'We Value Your Privacy',
+      'message' => 'We use cookies to enhance your browsing experience, personalize content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies. For more information, please read our <a href=":privacy_url">Privacy Policy</a>.',
+      'button' => 'Accept All',
+    ),
+  ),
 );

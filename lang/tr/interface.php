@@ -1,6 +1,4 @@
-<?php
-
-return array (
+<?php return array (
   'trLira' => '₺',
   'shoppingCart' => 'Alışveriş sepeti',
   'header' => 
@@ -229,5 +227,14 @@ return array (
       'total' => 'Toplam',
     ),
     'makeOrder' => 'Sipariş verin',
+  ),
+  'cookies' => 
+  array (
+    'consent' => 
+    array (
+      'title' => 'Gizliliğinize Değer Veriyoruz',
+      'message' => 'Tarama deneyiminizi geliştirmek, içeriği kişiselleştirmek ve trafiğimizi analiz etmek için çerezleri kullanıyoruz. “Tümünü Kabul Et” seçeneğine tıklayarak çerez kullanımımıza izin vermiş olursunuz. Daha fazla bilgi için lütfen  <a href=":privacy_url">Gizlilik Politikamızı</a> okuyun.',
+      'button' => 'Tümünü Kabul Et',
+    ),
   ),
 );

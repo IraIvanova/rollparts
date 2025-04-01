@@ -36,6 +36,9 @@
     text-transform:capitalize;
     transition:.3s
 }
+.cookie-consent {
+    box-shadow: 2px -1px 8px #00000040;
+}
 
 .button-fill-one:hover,.rp-product-hero-content .rp-product-hero-content-add-to-cart .rp-product-single-cart-count-add .rp-product-single-cart-add button:hover,.cart-total-area .cart-total-process a:hover,.rp-cart-info .rp-cart-checkout .rp-cart-checkout-right .rp-cart-checkout-back button:hover,.rp-cart-info .rp-cart-checkout .rp-cart-checkout-left .rp-cart-checkout-fields button:hover,.rp-filter-item-content-area .brator-rang-item-input .brator-rang-item-input-single-btn button.ac-trigger:hover,.product-list-items.type-list .rp-product-single-item-area.design-three .rp-product-single-item-area-right .rp-product-single-item-btn .rp-product-single-item-btn-cart button:hover,.add_to_cart_button:hover,.rp-contact-form-fields .rp-contact-form-field button:hover,.rp-footer-top-element .brator-sub-form button:hover,.rp-cart-item-list .rp-cart-total-money .rp-cart-total-action a:hover {
     background:#000;

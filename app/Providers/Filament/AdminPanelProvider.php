@@ -57,10 +57,10 @@ class AdminPanelProvider extends PanelProvider
             ]);
     }
 
-    public function boot(): void
-    {
-        FilamentAsset::register([
-            Css::make('custom-stylesheet', __DIR__ . '/../../resources/css/filament-custom.css'),
-        ]);
-    }
+//    public function boot(): void
+//    {
+//        FilamentAsset::register([
+//            Css::make('custom-stylesheet', __DIR__ . '/../../resources/css/filament-custom.css'),
+//        ]);
+//    }
 }

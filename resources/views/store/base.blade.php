@@ -186,5 +186,6 @@
 <script src="{{asset('js/store/base.js')}}"></script>
 <script src="{{asset('js/store/main.js')}}"></script>
 @yield('additionalScript')
+{{--@include('cookie-consent::index')--}}
 </body>
 </html>
