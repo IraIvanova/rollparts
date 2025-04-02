@@ -4417,6 +4417,7 @@ input:not([type='radio']) {
 #orderForm .invalid .input-text,
 #orderForm .invalid select {
     border-color: var(--color-high-dark) !important;
+    color: var(--color-high-dark)!important;
 }
 
 .invalid label,

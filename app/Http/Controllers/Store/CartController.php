@@ -14,6 +14,7 @@ use App\Services\Store\CitiesService;
 use App\Services\Store\ClientService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 
@@ -61,7 +62,13 @@ class CartController extends Controller
     public function createOrder(Request $request): ResponseAlias
     {
         //TODO: check when two orders are created subsequently with different users
-        //TODO add validation + phone regex
+        //TODO: check payment status by last attempt
+        $validator = $this->getValidator($request);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
         $cart = $this->cartService->getCart();
 
         if ($cart->isEmpty()) {
@@ -90,7 +97,7 @@ class CartController extends Controller
 
             return redirect($response->getPaymentPageUrl());
         } else {
-            return redirect()->route('checkout')->with(['error' => $response->getErrorMessage(), 'client' => $client->load(['shippingAddress', 'billingAddress'])]);
+            return redirect()->route('checkout')->withErrors([$response->getErrorMessage()])->withInput();
         }
     }
 
@@ -114,5 +121,16 @@ class CartController extends Controller
         $this->cartService->removeCoupon();
 
         return redirect()->back();
+    }
+
+    private function getValidator(Request $request): \Illuminate\Validation\Validator
+    {
+        return Validator::make($request->all(), [
+            'email' => ['required', 'email', 'max:255'],
+            'phone' => ['required', 'regex:/^\+90\d{10}$/'],
+            'name' => ['required', 'string', 'min:2', 'max:50'],
+            'lastName' => ['required', 'string', 'min:2', 'max:50'],
+            'identity' => ['required', 'string', 'min:2', 'max:50'],
+        ], __('validation'));
     }
 }
