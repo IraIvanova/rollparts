@@ -16,15 +16,15 @@
         @if($product['discountedPrice'])
             <p>
                 <span class="rp-Price-amount amount color-red"><span
-                        class="rp-currencySymbol">$</span>{{ $product['discountedPrice'] }}</span>
+                        class="rp-currencySymbol">{{ trans('interface.trLira') }}</span>{{ $product['discountedPrice'] }}</span>
 
 
                 <span class="rp-Price-amount amount px-2 color-grey line-through"><span
-                        class="rp-currencySymbol">$</span>{{ $product['price'] }}</span>
+                        class="rp-currencySymbol">{{ trans('interface.trLira') }}</span>{{ $product['price'] }}</span>
             </p>
         @else
             <span class="rp-Price-amount amount"><span
-                    class="rp-currencySymbol">$</span>{{ $product['price'] }}</span>
+                    class="rp-currencySymbol">{{ trans('interface.trLira') }}</span>{{ $product['price'] }}</span>
         @endif
     </td>
     <td class="product-quantity" data-title="Quantity">
@@ -48,7 +48,7 @@
         <span class="sm-title">Total:</span>
             <p>
                 <span class="rp-Price-amount amount"><span
-                        class="rp-currencySymbol">$</span>{{ ($product['discountedPrice'] ?: $product['price']) * $product['amount'] }}</span>
+                        class="rp-currencySymbol">{{ trans('interface.trLira') }}</span>{{ ($product['discountedPrice'] ?: $product['price']) * $product['amount'] }}</span>
             </p>
     </td>
     <td class="product-remove rp-cart-list-items-removed" data-product="{{$product['id']}}">

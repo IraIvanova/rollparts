@@ -27,6 +27,14 @@
   array (
     'empty' => 'Your cart is currently empty.',
     'shoppingCart' => 'Shopping cart',
+    'returnHome' => 'Return to Shop',
+    'paymentMethods' => 'Accept Payment Methods',
+    'proceedToCheckout' => 'Proceed To Checkout',
+    'cartTotals' => 'Cart totals',
+    'summary' => 'Order Summary',
+    'item' => 'Item',
+    'price' => 'Price',
+    'qnt' => 'Quantity',
   ),
   'orderConfirmation' => 
   array (
@@ -74,6 +82,8 @@
       'appliedCoupon' => 'Applied coupon discount',
       'totalDiscount' => 'Total discount',
       'total' => 'Total',
+      'discount' => 'Discount',
+      'subtotal' => 'Subtotal',
     ),
     'makeOrder' => 'Place order',
   ),
@@ -85,5 +95,9 @@
       'message' => 'We use cookies to enhance your browsing experience, personalize content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies. For more information, please read our <a href=":privacy_url">Privacy Policy</a>.',
       'button' => 'Accept All',
     ),
+  ),
+  'buttons' => 
+  array (
+    'update' => 'Update',
   ),
 );

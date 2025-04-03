@@ -7,19 +7,17 @@ use App\Models\ClientAddress;
 use App\Models\Order;
 use App\Models\OrderInfo;
 use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Spatie\Permission\Models\Role;
 
 class ClientService
 {
-    private const BILLING_KEY_PREFIX = 'billing_';
+    private const string BILLING_KEY_PREFIX = 'billing_';
 
-    public function findClientByEmail(string $email) {
-        return User::where('email', $email)->first();
-    }
-
-    public function createClient(array $data)
+    public function findClientByEmail(string $email): ?User
     {
-       return User::create($data);
+        return User::where('email', $email)->first();
     }
 
     public function findOrCreateClient(array $contactDetails): User
@@ -35,8 +33,8 @@ class ClientService
 
     public function saveClientAddresses(User $client, array $addressData): void
     {
-
         if ($address = $client->shippingAddress) {
+            //TODO: make district and province optional for updating info in my account? but not in cart! make separate validation rules
             $address->update($addressData);
         } else {
             $this->saveAddress($client->id, $addressData);
@@ -57,17 +55,13 @@ class ClientService
         }
     }
 
-    public function getClientForOrder(array $contactDetails): User
+    public function updateAndGetClient(array $contactDetails): User
     {
         $client = $this->findOrCreateClient($contactDetails);
+        $this->updateClientContactInfo($client, $contactDetails);
         $this->saveClientAddresses($client, $contactDetails);
 
         return $client;
-    }
-
-    private function saveAddress(int $clientId, array $data, string $type = GeneralConstants::SHIPPING_ADDRESS_TYPE): void
-    {
-        ClientAddress::create(['user_id' => $clientId, 'type' => $type] + $data);
     }
 
     public function saveClientToOrderInfoHistory(Order $order, User $user): void
@@ -82,5 +76,20 @@ class ClientService
         $orderInfo->shipping_address = $user->shippingAddress->getFullAddressAttribute();
         $orderInfo->billing_address = $user->billingAddress?->getFullAddressAttribute();
         $orderInfo->save();
+    }
+
+    private function saveAddress(int $clientId, array $data, string $type = GeneralConstants::SHIPPING_ADDRESS_TYPE): void
+    {
+        ClientAddress::create(['user_id' => $clientId, 'type' => $type] + $data);
+    }
+
+    private function updateClientContactInfo(User $client, array $contactDetails): void
+    {
+        $client->update($contactDetails);
+    }
+
+    private function createClient(array $data)
+    {
+        return User::create($data);
     }
 }

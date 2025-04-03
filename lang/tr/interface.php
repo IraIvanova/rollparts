@@ -20,6 +20,14 @@
     'addedToCartModalTitle' => 'Ürün sepete eklendi!',
     'empty' => 'Sepetiniz şu anda boş.',
     'shoppingCart' => 'Alışveriş sepeti',
+    'returnHome' => 'Mağazaya Geri Dön',
+    'paymentMethods' => 'Ödeme Yöntemlerini Kabul Et',
+    'proceedToCheckout' => 'Ödeme İşlemine Geçin',
+    'cartTotals' => 'Sepet toplamları',
+    'summary' => 'Sipariş Özeti',
+    'item' => 'Ürün',
+    'price' => 'Fiyat',
+    'qnt' => 'Adet',
   ),
   'search' => 
   array (
@@ -33,6 +41,7 @@
     'login' => 'Giriş yap',
     'register' => 'Kayıt Olun',
     'productIsOutOfStock' => 'Ürün stokta yok',
+    'update' => 'Güncelleme',
   ),
   'footer' => 
   array (
@@ -225,6 +234,8 @@
       'appliedCoupon' => 'Uygulanan kupon indirimi',
       'totalDiscount' => 'Toplam indirim',
       'total' => 'Toplam',
+      'discount' => 'İndirim',
+      'subtotal' => 'Ara Toplam',
     ),
     'makeOrder' => 'Sipariş verin',
   ),

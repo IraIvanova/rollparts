@@ -12,9 +12,9 @@ use App\Services\Payment\IyzicoPaymentService;
 use App\Services\Store\CartService;
 use App\Services\Store\CitiesService;
 use App\Services\Store\ClientService;
+use App\Services\Store\ValidationService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 
@@ -27,6 +27,7 @@ class CartController extends Controller
         private readonly IyzicoPaymentService $paymentService,
         private readonly InnerPaymentService $innerPaymentService,
         private readonly ClientService $clientService,
+        private readonly ValidationService $validationService,
     ) {
     }
 
@@ -63,7 +64,7 @@ class CartController extends Controller
     {
         //TODO: check when two orders are created subsequently with different users
         //TODO: check payment status by last attempt
-        $validator = $this->getValidator($request);
+        $validator = $this->validationService->getValidatorForCheckout($request);
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
@@ -75,7 +76,7 @@ class CartController extends Controller
             return redirect()->back()->withErrors([]);
         }
 
-        $client = $this->clientService->getClientForOrder($request->all());
+        $client = $this->clientService->updateAndGetClient($request->all());
 
         //TODO: save not confirmed orders to temporary table?
         if (!$order = $this->orderService->getOrderByReference($cart->getOrderReference())) {
@@ -121,16 +122,5 @@ class CartController extends Controller
         $this->cartService->removeCoupon();
 
         return redirect()->back();
-    }
-
-    private function getValidator(Request $request): \Illuminate\Validation\Validator
-    {
-        return Validator::make($request->all(), [
-            'email' => ['required', 'email', 'max:255'],
-            'phone' => ['required', 'regex:/^\+90\d{10}$/'],
-            'name' => ['required', 'string', 'min:2', 'max:50'],
-            'lastName' => ['required', 'string', 'min:2', 'max:50'],
-            'identity' => ['required', 'string', 'min:2', 'max:50'],
-        ], __('validation'));
     }
 }

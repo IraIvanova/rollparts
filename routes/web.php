@@ -43,5 +43,6 @@ Route::get('/logout', [ClientAuthController::class, 'logout'])->name('logout');
 Route::prefix('client')->group(function () {
     Route::middleware('auth:web')->group(function () {
         Route::get('/account', [AccountController::class, 'account'])->name('client.account');
+        Route::post('/client/update', [AccountController::class, 'updateClientInfo'])->name('client.update');
     });
 });

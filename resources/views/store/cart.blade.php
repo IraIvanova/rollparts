@@ -24,16 +24,15 @@
 
                                     <form class="cart-form" action="" method="post">
                                         <table
-                                            class="shop_table cart rp-cart-list"
-                                            cellspacing="0">
+                                            class="shop_table cart rp-cart-list">
                                             <thead>
                                             <tr>
-                                                <th class="product-name">Product</th>
-                                                <th class="product-price">Price</th>
-                                                <th class="product-quantity">Quantity</th>
-                                                <th class="product-subtotal">Subtotal</th>
+                                                <th class="product-name">{{ trans('interface.cart.item') }}</th>
+                                                <th class="product-price">{{ trans('interface.cart.price') }}</th>
+                                                <th class="product-quantity">{{ trans('interface.cart.qnt') }}</th>
+                                                <th class="product-subtotal">{{ trans('interface.cart.subtotal') }}</th>
                                                 <th class="product-remove"><span
-                                                        class="screen-reader-text">Remove item</span></th>
+                                                        class="screen-reader-text">{{ trans('interface.cart.removeItem') }}</span></th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -50,32 +49,31 @@
                                     <div class="cart_totals ">
 
                                         <div class="cart-total-header">
-                                            <h2>Order Summary</span>
+                                            <h2><span>{{ trans('interface.cart.summary') }}</span>
                                             </h2>
                                         </div>
 
-                                        <h2>Cart totals</h2>
-
+                                        <h2>{{ trans('interface.cart.cartTotals') }}</h2>
                                         <table class="shop_table">
 
                                             <tbody>
                                             <tr class="cart-subtotal">
-                                                <th>Subtotal</th>
+                                                <th>{{ trans('interface.checkout.total.subtotal') }}</th>
                                                 <td data-title="Subtotal"><span class="rp-Price-amount amount"><bdi><span
-                                                                class="rp-currencySymbol">$</span>{{$totalPrice}}</bdi></span>
+                                                                class="rp-currencySymbol">{{ trans('interface.trLira') }}</span>{{$totalPrice}}</bdi></span>
                                                 </td>
                                             </tr>
                                             <tr class="">
-                                                <th>Discount</th>
+                                                <th>{{ trans('interface.checkout.total.discount') }}</th>
                                                 <td data-title="Subtotal"><span class="rp-Price-amount amount"><bdi><span
-                                                                class="rp-currencySymbol">$</span>{{$totalPrice - $totalWithDiscount}}</bdi></span>
+                                                                class="rp-currencySymbol">{{ trans('interface.trLira') }}</span>{{$totalPrice - $totalWithDiscount}}</bdi></span>
                                                 </td>
                                             </tr>
                                             <tr class="order-total">
-                                                <th>Total</th>
+                                                <th>{{ trans('interface.checkout.total.total') }}</th>
                                                 <td data-title="Total"><strong><span
                                                             class="rp-Price-amount amount"><bdi><span
-                                                                    class="rp-currencySymbol">$</span>{{$totalWithDiscount}}</bdi></span></strong>
+                                                                    class="rp-currencySymbol">{{ trans('interface.trLira') }}</span>{{$totalWithDiscount}}</bdi></span></strong>
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -84,15 +82,16 @@
                                         <div class="proceed-to-checkout">
                                             <div class="cart-total-process">
                                                 <a href="{{route('checkout')}}" class="primary-rp-button">
-                                                    Proceed To Checkout </a>
+                                                    {{ trans('interface.cart.proceedToCheckout') }} </a>
                                             </div>
                                         </div>
 
                                         <div class="cart-total-accpect-payment">
-                                            <p>Accept Payment Methods</p>
-                                            <img decoding="async"
-                                                 src=""
-                                                 alt="Payment Gateway">
+                                            <p>{{ trans('interface.cart.paymentMethods') }}</p>
+                                            <div class="d-flex mt-4 payments-img">
+                                                <img class="mr-1" src="{{asset('images/payments/iyzico.png')}}">
+                                                <img src="{{asset('images/payments/visa.png')}}">
+                                            </div>
                                         </div>
 
                                     </div>
@@ -112,8 +111,7 @@
                                             </div>
                                         </div>
                                         <p class="return-to-shop">
-                                            <a class="button button-fill-one" href="/">
-                                                Return to shop </a>
+                                            <a class="button button-fill-one" href="/">{{ trans('interface.cart.returnHome') }}</a>
                                         </p>
                                     </div>
                                 </div>
