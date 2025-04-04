@@ -13,7 +13,7 @@
                 <option value="">{{trans('interface.checkout.selectProvince')}}</option>
                 @foreach ($provinces as $province)
                     <option value="{{ $province->id }}"
-                            @if($user->shippingAddress?->province_id === $province->id) selected @endif>{{ $province->name }}</option>
+                            @if($user?->shippingAddress?->province_id === $province->id) selected @endif>{{ $province->name }}</option>
                 @endforeach
             </select>
         </div>
@@ -38,13 +38,13 @@
             <input type="text" class="input-text rp-form-row-Input w-100"
                    name="address_line1"
                    id="address"
-                   value="{{ $user->shippingAddress?->address_line1 ?? old('address_line1') ?? '' }}">
+                   value="{{ $user?->shippingAddress?->address_line1 ?? old('address_line1') ?? '' }}">
         </div>
         <div class="form-row form-row-wide validate-required w-25 @error('zip') invalid @enderror">
             <label for="zip" class="">{{trans('interface.checkout.zipCode')}}*</label>
             <input type="text" class="input-text rp-form-row-Input w-100"
                    name="zip"
-                   id="zip" value="{{ $user->shippingAddress?->zip ?? old('zip') ?? ''}}">
+                   id="zip" value="{{ $user?->shippingAddress?->zip ?? old('zip') ?? ''}}">
         </div>
     </div>
     <div class="form-row form-row-wide sameAddress d-flex">
@@ -70,7 +70,7 @@
                 <option value="">{{trans('interface.checkout.selectProvince')}}</option>
                 @foreach ($provinces as $province)
                     <option value="{{ $province->id }}"
-                            @if($user->billingAddress?->province_id === $province->id) selected @endif>{{ $province->name }}</option>
+                            @if($user?->billingAddress?->province_id === $province->id) selected @endif>{{ $province->name }}</option>
                 @endforeach
             </select>
         </div>
@@ -97,14 +97,14 @@
             <input type="text" class="input-text rp-form-row-Input w-100"
                    name="billing_address_line1"
                    id="billingAddress"
-                   value="{{ $user->billingAddress?->address_line1 ?? old('billing_address_line1') ?? ''}}">
+                   value="{{ $user?->billingAddress?->address_line1 ?? old('billing_address_line1') ?? ''}}">
         </div>
         <div class="form-row form-row-wide validate-required w-25 @error('billing_zip') invalid @enderror">
             <label for="billingZip" class="">{{trans('interface.checkout.zipCode')}}*</label>
             <input type="text" class="input-text rp-form-row-Input w-100"
                    name="billing_zip"
                    id="billingZip"
-                   value="{{ $user->billingAddress?->zip ?? old('billing_zip') ?? ''}}">
+                   value="{{ $user?->billingAddress?->zip ?? old('billing_zip') ?? ''}}">
         </div>
     </div>
 </div>
