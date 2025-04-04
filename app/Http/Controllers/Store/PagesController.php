@@ -89,19 +89,49 @@ class PagesController extends Controller
         return view('store.checkout', $this->getDataForPageService->getSpecificPageData(PagesConstants::CHECKOUT_PAGE));
     }
 
-    public function termsAndConditions(): View
+    /**
+     * @throws ProductNotFoundException
+     * @throws \ErrorException
+     */
+    public function returnPolicy(): View
     {
-        return view('store.info.terms');
+        return view('store.info.returnPolicy', $this->getDataForPageService->getSpecificPageData(PagesConstants::INFO_PAGE));
     }
 
+    /**
+     * @throws ProductNotFoundException
+     * @throws \ErrorException
+     */
     public function privacy(): View
     {
-        return view('store.info.terms');
+        return view('store.info.privacy', $this->getDataForPageService->getSpecificPageData(PagesConstants::INFO_PAGE));
     }
 
+    /**
+     * @throws ProductNotFoundException
+     * @throws \ErrorException
+     */
     public function contactUs(): View
     {
-        return view('store.info.contacts');
+        return view('store.info.contacts', $this->getDataForPageService->getSpecificPageData(PagesConstants::INFO_PAGE));
+    }
+
+    /**
+     * @throws ProductNotFoundException
+     * @throws \ErrorException
+     */
+    public function faq(): View
+    {
+        return view('store.info.faq', $this->getDataForPageService->getSpecificPageData(PagesConstants::INFO_PAGE));
+    }
+
+    /**
+     * @throws ProductNotFoundException
+     * @throws \ErrorException
+     */
+    public function aboutUs(): View
+    {
+        return view('store.info.aboutUs', $this->getDataForPageService->getSpecificPageData(PagesConstants::INFO_PAGE));
     }
 
     /**

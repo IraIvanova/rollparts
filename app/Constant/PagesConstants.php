@@ -15,4 +15,5 @@ class PagesConstants
     public const LOGIN_PAGE = 'login';
     public const REGISTER_PAGE = 'register';
     public const ACCOUNT_PAGE = 'account';
+    public const INFO_PAGE = 'info';
 }

@@ -16,9 +16,11 @@ Route::get('/catalog', [PagesController::class, 'catalog'])->name('catalog');
 Route::get('/checkout', [PagesController::class, 'checkout'])->name('checkout');
 Route::get('/order-confirmation', [PagesController::class, 'orderConfirmation'])->name('orderConfirmation');
 
-Route::get('/info/terms', [PagesController::class, 'termsAndConditions'])->name('infoTerms');
+Route::get('/info/return-policy', [PagesController::class, 'returnPolicy'])->name('infoReturnPolicy');
 Route::get('/info/privacy', [PagesController::class, 'privacy'])->name('infoPrivacy');
 Route::get('/info/contact-us', [PagesController::class, 'contactUs'])->name('infoContactUs');
+Route::get('/info/faq', [PagesController::class, 'faq'])->name('infoFaq');
+Route::get('/info/about-us', [PagesController::class, 'aboutUs'])->name('infoAboutUs');
 
 Route::get('/cart', [PagesController::class, 'cart'])->name('cart');
 Route::post('/payment/callback', [PaymentController::class, 'processPaymentCallback'])->name('processPaymentCallback');

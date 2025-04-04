@@ -54,15 +54,15 @@
                                             <div class="rp-footer-top-content rp-link-list-one">
                                                 <ul>
                                                     <li class="link_with_normal">
-                                                        <a href="">
+                                                        <a href="{{ route('client.account') }}">
                                                             {{ trans('interface.footer.myAccount') }}</a>
                                                     </li>
                                                     <li class="link_with_normal">
-                                                        <a href="">
+                                                        <a href="{{ route('infoReturnPolicy') }}">
                                                             {{ trans('interface.footer.returnPolicy') }}</a>
                                                     </li>
                                                     <li class="link_with_normal">
-                                                        <a href="">
+                                                        <a href="{{ route('infoFaq') }}">
                                                             {{ trans('interface.footer.faq') }} </a>
                                                     </li>
                                                 </ul>
@@ -82,16 +82,16 @@
                                             <div class="rp-footer-top-content rp-link-list-one">
                                                 <ul>
                                                     <li class="link_with_normal">
-                                                        <a href="">
+                                                        <a href="{{ route('infoAboutUs') }}">
                                                             {{ trans('interface.footer.about') }}</a>
                                                     </li>
                                                     <li class="link_with_normal">
-                                                        <a href="">
+                                                        <a href="{{ route('infoContactUs') }}">
                                                             {{ trans('interface.footer.contactUs') }} </a>
                                                     </li>
                                                     <li class="link_with_normal">
-                                                        <a href="{{route('infoTerms')}}">
-                                                            {{ trans('interface.footer.terms') }}</a>
+                                                        <a href="{{route('infoPrivacy')}}">
+                                                            {{ trans('interface.footer.privacy') }}</a>
                                                     </li>
                                                 </ul>
                                             </div>
