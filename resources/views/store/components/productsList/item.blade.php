@@ -11,7 +11,7 @@
     <div class="rp-product-single-item-img">
         <a href="{{route('product', $product['slug'])}}">
             <img loading="lazy" width="225" height="225"
-                 src="{{getMainImagePath($images, $product['id'])}}"> </a>
+                 src="{{getMainImagePath($images, $product['id'])}}" alt="{{$product['name']}}"> </a>
     </div>
     <div class="rp-product-single-item-mini">
             <a href="{{route('catalog', ['brand' => $product['brand_slug']])}}" class="font-size-14px">{{$product['brand_name']}}</a>

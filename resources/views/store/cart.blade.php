@@ -89,8 +89,8 @@
                                         <div class="cart-total-accpect-payment">
                                             <p>{{ trans('interface.cart.paymentMethods') }}</p>
                                             <div class="d-flex mt-4 payments-img">
-                                                <img class="mr-1" src="{{asset('images/payments/iyzico.png')}}">
-                                                <img src="{{asset('images/payments/visa.png')}}">
+                                                <img loading="lazy" alt="Iyzico" class="mr-1" src="{{asset('images/payments/iyzico.png')}}">
+                                                <img loading="lazy" alt="Visa" src="{{asset('images/payments/visa.png')}}">
                                             </div>
                                         </div>
 

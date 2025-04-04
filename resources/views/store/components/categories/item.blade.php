@@ -3,7 +3,7 @@
         <a href="{{route('category', $category['slug'])}}">
             <img width="98" height="96"
                  src="{{ asset($category['image'] ? 'storage/' . $category['image'] : 'images/default.png')}}"
-                 class="attachment-full size-full" alt="">
+                 class="attachment-full size-full" loading="lazy" alt="{{ trans('interface.' . $category['slug']) }}">
         </a>
     </div>
     <div class="rp-categories-single-title">

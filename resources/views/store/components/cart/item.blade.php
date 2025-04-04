@@ -3,8 +3,7 @@
         <div class="img-cart">
             <a href="">
                 <img decoding="async" width="85" height="85" src="{{$product['image']}}"
-                     class=""
-                     alt="" srcset=""></a>
+                     alt="{{$product['name']}}" loading="lazy"></a>
         </div>
         <div class="prodct-info">
             <h5>

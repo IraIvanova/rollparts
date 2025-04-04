@@ -9,7 +9,8 @@
                         <a href="{{route('product', $product['slug'])}}">
                             <img width="85" height="85"
                                  src="{{ $product['image'] }}"
-                                 class=" " alt=""
+                                 alt="{{$product['name']}}"
+                                 loading="lazy"
                             > </a>
                     </div>
                     <div class="rp-cart-item-list-item-title">

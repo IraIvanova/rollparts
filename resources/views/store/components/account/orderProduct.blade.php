@@ -3,7 +3,7 @@
         <div class="img-cart">
             <a href="">
 
-                <img decoding="async" width="85" height="85" src="{{ $product->product->getFirstMediaUrl() ?: asset('images/default.png') }}"
+                <img decoding="async" loading="lazy" width="85" height="85" src="{{ $product->product->getFirstMediaUrl() ?: asset('images/default.png') }}"
                      class=" "
                      alt="" srcset=""></a>
         </div>

@@ -14,7 +14,7 @@
                     <div class="rp-logo-area">
                         <div class="rp-logo">
                             <a href="/">
-                                <img src="{{asset('images/logo.png')}}" alt="Logo">
+                                <img src="{{asset('images/logo.png')}}" alt="Rollparts logo" loading="lazy">
                             </a>
                             <button class="mobile-menu-icon">
                                 <svg class="bi bi-pause" xmlns="http://www.w3.org/2000/svg" width="16" height="16"

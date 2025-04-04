@@ -65,8 +65,8 @@
                                             <button type="button" class="button button-fill-one w-100"
                                                     id="placeOrder">{{trans('interface.checkout.makeOrder')}}</button>
                                             <div class="d-flex mt-4 payments-img">
-                                                <img class="mr-1" src="{{asset('images/payments/iyzico.png')}}">
-                                                <img src="{{asset('images/payments/visa.png')}}">
+                                                <img loading="lazy" alt="Iyzico" class="mr-1" src="{{asset('images/payments/iyzico.png')}}">
+                                                <img loading="lazy" alt="Visa" src="{{asset('images/payments/visa.png')}}">
                                             </div>
                                             <div id="warningDiv"
                                                  class="div-info @if(!$errors->any())d-none @endif alertDiv mt-3 w-100 text-center">
