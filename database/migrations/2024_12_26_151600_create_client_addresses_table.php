@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Links to orders table
             $table->enum('type', ['billing', 'shipping']); // Address type
-            $table->string('address_line1');
+            $table->string('address_line1')->nullable();
             $table->string('address_line2')->nullable();
-            $table->string('country');
-            $table->foreignId('province_id');
-            $table->foreignId('district_id');
-            $table->string('zip');
+            $table->string('country')->nullable();
+            $table->foreignId('province_id')->nullable();
+            $table->foreignId('district_id')->nullable();
+            $table->string('zip')->nullable();
             $table->timestamps();
         });
     }

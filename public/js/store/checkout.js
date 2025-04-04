@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const form = document.getElementById('orderForm');
         const warningDiv = document.getElementById('warningDiv');
 
-        btn.addEventListener('click', (e) => {
+        btn && btn.addEventListener('click', (e) => {
             warningDiv.innerHTML = '';
             let isValid = true;
 

@@ -100,4 +100,12 @@
   array (
     'update' => 'Update',
   ),
+  'account' => 
+  array (
+    'title' => 'My Account',
+    'details' => ' Account Details',
+    'orders' => 'orders',
+    'noOrders' => 'You have no orders yet.',
+    'order' => 'Order',
+  ),
 );

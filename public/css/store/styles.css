@@ -358,7 +358,6 @@ select {
     border-radius:3px;
     background:var(--color-white);
     padding:10px 15px;
-    margin-bottom:10px;
     border-width:1px;
     border-color:#999;
     border-style:solid;

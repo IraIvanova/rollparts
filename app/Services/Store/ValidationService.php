@@ -15,8 +15,12 @@ class ValidationService
     public function getValidatorForCheckout(Request $request): \Illuminate\Validation\Validator
     {
         return Validator::make($request->all(), [
-            'identity' => ['required', 'string', 'min:2', 'max:50'] + $this->getCommonRulesForCheckingUserData(),
-        ], __('validation'));
+            'identity' => ['required', 'string', 'min:2', 'max:50'],
+            'district_id' => ['required'],
+            'province_id' => ['required'],
+            'address_line1' => ['required','string', 'min:2'],
+            'zip' => ['required'],
+        ] + $this->getCommonRulesForCheckingUserData(), __('validation'));
     }
 
     public function getValidatorForRegistration(Request $request): \Illuminate\Validation\Validator

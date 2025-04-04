@@ -9,7 +9,6 @@ use App\Exceptions\CustomException;
 use App\Exceptions\ProductNotFoundException;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 readonly class GetDataForPageService
 {
@@ -192,14 +191,20 @@ readonly class GetDataForPageService
             'addresses' => $client->addresses,
             'orders' => $client->orders,
             'provinces' => $this->citiesService->getAllProvinces(),
+            'shippingDistricts' => $this->citiesService->getDistrictsByProvinceId($client->shippingAddress?->province_id),
+            'billingDistricts' => $this->citiesService->getDistrictsByProvinceId($client->billingAddress?->province_id)
         ];
     }
 
     private function getCheckoutPageData(): array
     {
+        $client = Auth::user();
+
         return array_merge(
             [
                 'provinces' => $this->citiesService->getAllProvinces(),
+                'shippingDistricts' => $this->citiesService->getDistrictsByProvinceId($client?->shippingAddress?->province_id),
+                'billingDistricts' => $this->citiesService->getDistrictsByProvinceId($client?->billingAddress?->province_id)
             ],
             $this->cartService->getCart()->toArray()
         );

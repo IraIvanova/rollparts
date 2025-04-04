@@ -51,7 +51,6 @@
                             <h2 id="order_review_heading"
                                 class="order_title">{{trans('interface.checkout.yourOrder')}}</h2>
                             @include('store.components.checkout.orderReview')
-
                         </div>
 
                         <div class="payment_list_item">

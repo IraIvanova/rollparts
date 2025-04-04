@@ -7,8 +7,6 @@ use App\Models\ClientAddress;
 use App\Models\Order;
 use App\Models\OrderInfo;
 use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 use Spatie\Permission\Models\Role;
 
 class ClientService
@@ -34,7 +32,6 @@ class ClientService
     public function saveClientAddresses(User $client, array $addressData): void
     {
         if ($address = $client->shippingAddress) {
-            //TODO: make district and province optional for updating info in my account? but not in cart! make separate validation rules
             $address->update($addressData);
         } else {
             $this->saveAddress($client->id, $addressData);

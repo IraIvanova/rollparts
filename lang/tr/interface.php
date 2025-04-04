@@ -248,4 +248,12 @@
       'button' => 'Tümünü Kabul Et',
     ),
   ),
+  'account' => 
+  array (
+    'title' => 'Hesabım',
+    'details' => ' Hesap Ayrıntıları',
+    'orders' => 'Siparişler',
+    'noOrders' => 'Henüz bir emriniz yok.',
+    'order' => 'Sipariş',
+  ),
 );

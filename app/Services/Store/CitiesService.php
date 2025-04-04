@@ -7,8 +7,10 @@ use Illuminate\Database\Eloquent\Collection;
 
 class CitiesService
 {
-    public function getDistrictsByProvinceId(int $provinceId): array
+    public function getDistrictsByProvinceId(?int $provinceId): array
     {
+        if (!$provinceId) return [];
+
         return Province::find($provinceId)->districts->toArray();
     }
 

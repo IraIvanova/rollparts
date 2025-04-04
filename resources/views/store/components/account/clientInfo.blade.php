@@ -1,5 +1,5 @@
 <div>
-    <div class="row px-3">
+    <div class="row justify-content-between px-3">
         <div class="form-row form-row-wide validate-required w-50 @error('name') invalid @enderror">
             <label for="firstName" class="">{{ trans('interface.checkout.firstName') }}*</label>
             <input type="text" class="input-text rp-form-row-Input"
