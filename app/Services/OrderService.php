@@ -65,4 +65,13 @@ class OrderService
             $this->stockService->reduceQuantityInStock($product->id, $product->amount, $order->id);
         }
     }
+
+    public static function calculateTotalPriceWithManualDiscount(Order $order, ?float $manualDiscount = 0): float
+    {
+        $orderedProducts = $order->orderProducts;
+        $total = $orderedProducts->sum(fn ($orderProduct) => $orderProduct->discounted_price * $orderProduct->amount);
+        $promocodeDiscount = json_decode($order->used_promo, true)['discount'] ?? 0;
+
+        return +number_format($total - $promocodeDiscount - $manualDiscount, 2);
+    }
 }

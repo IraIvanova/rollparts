@@ -11,6 +11,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Notifications\Notification;
 use Filament\Resources\RelationManagers\RelationManager;
+use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
@@ -51,7 +52,7 @@ class ProductsRelationManager extends RelationManager
                 Tables\Columns\ImageColumn::make('image')
                     ->getStateUsing(function (Model $record) {
                         return Media::query()
-                            ->where('model_id', $record->id)
+                            ->where('model_id', $record->product_id)
                             ->where('order_column', 1)
                             ->first()?->getFullUrl() ?? 'images/default.png';
                     })
@@ -60,11 +61,16 @@ class ProductsRelationManager extends RelationManager
                     ->label('Name')
                     ->getStateUsing(function (Model $record) {
                         return $record->product->translationByLanguage()->first()?->name;
-                    }),
+                    })
+                    ->url(function (Model $record) {
+                        return route('filament.admin.resources.products.edit', ['record' => $record->product_id]);
+                    }, true),
                 Tables\Columns\TextColumn::make('amount')
                     ->label('Qnt'),
-                Tables\Columns\TextColumn::make('price')->money('trl'),
-                Tables\Columns\TextColumn::make('discounted_price')->money('trl'),
+                Tables\Columns\TextColumn::make('price')->prefix('TRL '),
+                Tables\Columns\TextColumn::make('discounted_price')
+                    ->weight(FontWeight::Bold)
+                    ->prefix('TRL '),
             ])
             ->filters([
                 //

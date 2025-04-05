@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 
 class Order extends Model
 {
-    protected $fillable = ['user_id'];
+    protected $fillable = ['user_id', 'manual_discount', 'total_price_with_discount'];
 
     public function orderProductsPivot(): BelongsToMany
     {

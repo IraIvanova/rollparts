@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('order_id')->constrained()->onDelete('cascade');
             $table->text('callback')->nullable();
             $table->string('status');
+            $table->string('transaction_timestamp')->nullable();
             $table->timestamps();
         });
     }

@@ -6,6 +6,7 @@ use App\Constant\StatusesConstants;
 use App\Filament\Admin\Resources\OrderResource\Pages;
 use App\Filament\Admin\Resources\OrderResource\RelationManagers;
 use App\Models\Order;
+use App\Services\OrderService;
 use Filament\Forms;
 use Filament\Forms\Components\Actions;
 use Filament\Forms\Components\Actions\Action;
@@ -64,6 +65,11 @@ class OrderResource extends Resource
                                     ->inlineLabel()
                                     ->default('No payment information available')
                                     ->columnSpanFull(),
+                                TextEntry::make('payment.transaction_timestamp')
+                                    ->label('Created at')
+                                    ->inlineLabel()
+                                    ->visible(fn($record) => $record->payment->transaction_timestamp)
+                                    ->columnSpanFull(),
                             ])
                             ->columnSpan(1),
                     ]),
@@ -86,7 +92,6 @@ class OrderResource extends Resource
                                 TextEntry::make('client.billingAddress.fullAddress')
                                     ->label('Billing Address')
                                     ->default('Same as shipping address')
-//                                    ->visible(fn($get) => $get('client.billingAddress'))
                                     ->inlineLabel(),
                             ])
                             ->columns(1)
@@ -98,14 +103,16 @@ class OrderResource extends Resource
                             ->schema([
                                 TextEntry::make('total_price_with_discount')
                                     ->weight(FontWeight::Bold)
-                                    ->label('Final Price')
-                                    ->money('trl'),
+                                    ->label('Final Price with discount')
+                                    ->prefix('TRL ')
+                                ->extraAttributes(['class' => 'success']),
                                 TextEntry::make('total_price')
-                                    ->label('Net price')
-                                    ->money('trl'),
+                                    ->label('Total price')
+                                    ->prefix('TRL '),
                                 TextEntry::make('manual_discount')
                                     ->hidden(fn($record) => empty($record->manual_discount))
-                                    ->label('Manual discount'),
+                                    ->label('Manual discount')
+                                    ->prefix('TRL '),
                                 TextEntry::make('used_promo')
                                     ->hidden(
                                         fn($record) => empty(array_key_first(json_decode($record->used_promo, true)))
@@ -141,9 +148,7 @@ class OrderResource extends Resource
                                             ->content(function ($get) {
                                                 $status = $get('status');
 
-                                                if ($status) {
-                                                    return $status;
-                                                }
+                                                if ($status) return $status;
 
                                                 return 'No payment information available';
                                             })
@@ -152,6 +157,12 @@ class OrderResource extends Resource
                                                     'status'
                                                 ) === 'success' ? 'text-green-600 font-bold' : 'text-red-600 font-bold',
                                             ])
+                                            ->columnSpanFull(),
+                                        Forms\Components\Placeholder::make('transaction_timestamp')
+                                            ->label('Created at')
+                                            ->inlineLabel()
+                                            ->content(fn($get) => $get('transaction_timestamp'))
+                                            ->visible(fn($get) => $get('transaction_timestamp'))
                                             ->columnSpanFull(),
                                     ])
                                     ->columnSpan(1),
@@ -164,7 +175,8 @@ class OrderResource extends Resource
                                 TextInput::make('email'),
                                 TextInput::make('phone'),
                                 TextInput::make('shipping_address'),
-                                TextInput::make('billing_address'),
+                                TextInput::make('billing_address')
+                                ->default('Same as shipping address'),
                                 Actions::make([
                                     Action::make('view_client')
                                         ->label('View Client Card')
@@ -185,12 +197,22 @@ class OrderResource extends Resource
                             ->schema([
                                 TextInput::make('total_price_with_discount')
                                     ->label('Final Price')
+                                    ->numeric()
+                                    ->reactive()
+                                    ->afterStateHydrated(function (callable $set, callable $get) {
+                                        $discount = $get('manual_discount') ?? 0;
+                                        $set('total_price_with_discount', +number_format($get('total_price_with_discount') - $discount, 2, '.', ''));
+                                    })
                                     ->disabled(),
                                 TextInput::make('total_price')
                                     ->label('Net price')
                                     ->disabled(),
                                 TextInput::make('manual_discount')
                                     ->numeric()
+                                    ->live(onBlur: true)
+                                    ->afterStateUpdated(function ($state, callable $set, callable $get, Order $record) {
+                                        $set('total_price_with_discount', OrderService::calculateTotalPriceWithManualDiscount($record, $state));
+                                    })
                                     ->label('Manual discount'),
                                 TextInput::make('used_promo')
                                     ->label('Used promo code')
