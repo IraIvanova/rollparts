@@ -55,6 +55,9 @@ class OrderResource extends Resource
                                 TextEntry::make('status.name')
                                     ->label('Order Status')
                                     ->inlineLabel(),
+                                TextEntry::make('notes')
+                                    ->label('Order notes')
+                                    ->inlineLabel(),
                             ])
                             ->columns(1)
                             ->columnSpan(1),
@@ -163,6 +166,12 @@ class OrderResource extends Resource
                                             ->inlineLabel()
                                             ->content(fn($get) => $get('transaction_timestamp'))
                                             ->visible(fn($get) => $get('transaction_timestamp'))
+                                            ->columnSpanFull(),
+                                        Forms\Components\Placeholder::make('notes')
+                                            ->label('Order notes')
+                                            ->inlineLabel()
+                                            ->content(fn($get) => $get('notes'))
+                                            ->visible(fn($get) => $get('notes'))
                                             ->columnSpanFull(),
                                     ])
                                     ->columnSpan(1),

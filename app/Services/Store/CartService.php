@@ -66,12 +66,12 @@ class CartService
         return $this->getCart()->getTotalItems() === 0;
     }
 
-    public function createOrder(User $client): ?Order
+    public function createOrder(User $client, ?string $orderNotes = ''): ?Order
     {
-       return DB::transaction(function () use ($client) {
+       return DB::transaction(function () use ($client, $orderNotes) {
             $shoppingCart = $this->getCart();
 
-            return $this->orderService->createOrder($client, $shoppingCart);
+            return $this->orderService->createOrder($client, $shoppingCart, $orderNotes);
         });
     }
 

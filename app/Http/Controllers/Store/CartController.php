@@ -77,14 +77,14 @@ class CartController extends Controller
         }
 
         $client = $this->clientService->updateAndGetClient($request->all());
-
+//dd($client);
         //TODO: save not confirmed orders to temporary table?
         if (!$order = $this->orderService->getOrderByReference($cart->getOrderReference())) {
-            $order = $this->cartService->createOrder($client);
+            $order = $this->cartService->createOrder($client, $request->get('additionalNotes'));
         } else {
             $this->orderService->updateOrderClient($client, $order);
         }
-
+        $this->clientService->saveClientToOrderInfoHistory($order, $client);
         $response = $this->paymentService->initializeCheckoutForm(
             $this->innerPaymentService->preparePaymentDTO($order, $cart)
         );

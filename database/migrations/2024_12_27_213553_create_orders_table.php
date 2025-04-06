@@ -20,6 +20,7 @@ return new class extends Migration
             $table->float('total_price_with_discount');
             $table->float('manual_discount')->nullable();
             $table->json('used_promo')->nullable();
+            $table->text('notes')->nullable();
 
             $table->timestamps();
         });

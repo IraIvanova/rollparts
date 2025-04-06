@@ -6,6 +6,7 @@ use App\DTO\CartProductDTO;
 use App\Models\Order;
 use App\Models\OrderProduct;
 use App\Models\ProductPrice;
+use App\Models\ProductStock;
 use Filament\Facades\Filament;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -28,7 +29,7 @@ class ProductsRelationManager extends RelationManager
     {
         return $form
             ->schema([
-        //todo: search input for product
+                //todo: search input for product
                 Forms\Components\Select::make('product_id')
                     ->label('Product')
                     ->searchable()
@@ -83,6 +84,9 @@ class ProductsRelationManager extends RelationManager
                         $data['discounted_price'] = $prices->discounted_price;
                         $data['order_id'] = $this->ownerRecord->id;
                         $data['amount'] = 1;
+                        $stock = ProductStock::where('product_id', $data['product_id'])->first();
+                        $stock->quantity -= 1;
+                        $stock->save();
 
                         return $model::create($data);
                     })
@@ -103,7 +107,7 @@ class ProductsRelationManager extends RelationManager
                                 $stock->save();
                             }
 
-                         $record->update(['amount' => $data['amount']]);
+                            $record->update(['amount' => $data['amount']]);
                         }
 
                         return $record;
@@ -135,8 +139,8 @@ class ProductsRelationManager extends RelationManager
                 Tables\Actions\DeleteAction::make()
                     ->before(function (Model $record) {
                         if ($stock = $record->product->stock) {
-                                $stock->quantity += $record->amount;
-                                $stock->save();
+                            $stock->quantity += $record->amount;
+                            $stock->save();
                         }
                     })
                     ->after(function ($action) {

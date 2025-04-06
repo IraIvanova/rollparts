@@ -58,7 +58,7 @@ class ClientService
         $this->updateClientContactInfo($client, $contactDetails);
         $this->saveClientAddresses($client, $contactDetails);
 
-        return $client;
+        return $client->load(['shippingAddress', 'billingAddress']);
     }
 
     public function saveClientToOrderInfoHistory(Order $order, User $user): void
