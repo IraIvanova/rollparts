@@ -6,6 +6,7 @@ use App\Constant\StatusesConstants;
 use App\Filament\Admin\Resources\OrderResource\Pages;
 use App\Filament\Admin\Resources\OrderResource\RelationManagers;
 use App\Models\Order;
+use App\Models\Status;
 use App\Services\OrderService;
 use Filament\Forms;
 use Filament\Forms\Components\Actions;
@@ -21,6 +22,8 @@ use Filament\Resources\Resource;
 use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\Filter;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -139,6 +142,9 @@ class OrderResource extends Resource
                                         Select::make('status_id')
                                             ->label('Status')
                                             ->relationship('status', 'name')
+                                            ->options(function (callable $get, ?Order $record) {
+                                                return Status::getAllowedStatuses($record->status_id);
+                                            })
                                             ->required(),
                                     ])
                                     ->columnSpan(1),
@@ -237,14 +243,19 @@ class OrderResource extends Resource
             ->defaultSort('created_at', 'desc')
             ->modifyQueryUsing(fn(Builder $query) => $query->where('status_id', '!=', StatusesConstants::PENDING))
             ->columns([
-                TextColumn::make('id'),
+                TextColumn::make('id')->searchable(),
                 TextColumn::make('status.name'),
-                TextColumn::make('orderInfo.full_name')->label('Full Name'),
-                TextColumn::make('orderInfo.email')->label('Email'),
+                TextColumn::make('orderInfo.full_name')->label('Full Name')->searchable(),
+                TextColumn::make('orderInfo.email')->label('Email') ->searchable(),
                 TextColumn::make('created_at'),
             ])
             ->filters([
-                // Add a filter to exclude orders with status-id = 3
+                SelectFilter::make('status_id')
+                ->label('Status')
+                ->relationship('status', 'name')
+                ->searchable()
+                ->preload()
+                ->multiple(),
 //                Filter::make('excludeStatus')
 //                    ->query(fn ($query) => $query->where('status_id', '!=', StatusesConstants::PENDING))
 //                    ,

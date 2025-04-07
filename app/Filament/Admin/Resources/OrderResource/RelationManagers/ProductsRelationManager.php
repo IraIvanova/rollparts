@@ -2,23 +2,16 @@
 
 namespace App\Filament\Admin\Resources\OrderResource\RelationManagers;
 
-use App\DTO\CartProductDTO;
-use App\Models\Order;
-use App\Models\OrderProduct;
 use App\Models\ProductPrice;
 use App\Models\ProductStock;
-use Filament\Facades\Filament;
+use App\Models\ProductTranslation;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Notifications\Notification;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
-use Illuminate\Validation\ValidationException;
-use Livewire\Livewire;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class ProductsRelationManager extends RelationManager
@@ -36,10 +29,10 @@ class ProductsRelationManager extends RelationManager
                     ->getSearchResultsUsing(function (string $query) {
                         $existingProductIds = $this->ownerRecord->orderProducts->pluck('product_id')->toArray();
 
-                        return \App\Models\ProductTranslation::where('name', 'like', "%{$query}%")
+                        return ProductTranslation::where('name', 'like', "%{$query}%")
                             ->whereNotIn('product_id', $existingProductIds)
-                            ->limit(20) // Limit results for performance
-                            ->pluck('name', 'product_id'); // Return id => name pairs
+                            ->limit(20)
+                            ->pluck('name', 'product_id');
                     })
                     ->required(),
             ]);

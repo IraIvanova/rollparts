@@ -2,20 +2,20 @@
 
 namespace App\Services;
 
+use App\Constant\OrderStatus;
 use App\Constant\StatusesConstants;
 use App\DTO\CartProductDTO;
-use App\Models\Client;
 use App\Models\Order;
+use App\Models\OrderProduct;
 use App\Models\User;
 use App\Services\ShoppingCart\ShoppingCart;
-use App\Services\Store\ProductService;
+use Illuminate\Database\Eloquent\Model;
 
-class OrderService
+readonly class OrderService
 {
     public function __construct(
-        private readonly StockService $stockService,
-    )
-    {
+        private StockService $stockService,
+    ) {
     }
 
     public function createOrder(User $user, ShoppingCart $shoppingCart, ?string $notes = ''): Order
@@ -53,6 +53,31 @@ class OrderService
         $order->save();
     }
 
+    public static function calculateTotalPriceWithManualDiscount(Order $order, ?float $manualDiscount = 0): float
+    {
+        $orderedProducts = $order->orderProducts;
+        $total = $orderedProducts->sum(fn ($orderProduct) => $orderProduct->discounted_price * $orderProduct->amount);
+        $promocodeDiscount = json_decode($order->used_promo, true)['discount'] ?? 0;
+
+        return +number_format($total - $promocodeDiscount - $manualDiscount, 2);
+    }
+
+    public function returnProductsToStock(Model $order): void
+    {
+        $products =  $order->orderProducts;
+        $products->map(fn(OrderProduct $op) => $this->stockService->changeQuantityInStock($op->product_id, $op->amount, $op->order_id, false));
+    }
+
+    public function canTransitionTo(int $currentStatus, int $newStatus): bool
+    {
+        return in_array($newStatus, OrderStatus::STATUSES_FLOW[$currentStatus] ?? []);
+    }
+
+    public function getAllowedStatuses(int $currentStatus): array
+    {
+        return OrderStatus::STATUSES_FLOW[$currentStatus];
+    }
+
     private function addProductsToOrder(Order $order, array $products): void
     {
         foreach ($products as $product) {
@@ -63,16 +88,7 @@ class OrderService
                     'discounted_price' => $product->discountedPrice,
                 ]);
 
-            $this->stockService->reduceQuantityInStock($product->id, $product->amount, $order->id);
+            $this->stockService->changeQuantityInStock($product->id, $product->amount, $order->id);
         }
-    }
-
-    public static function calculateTotalPriceWithManualDiscount(Order $order, ?float $manualDiscount = 0): float
-    {
-        $orderedProducts = $order->orderProducts;
-        $total = $orderedProducts->sum(fn ($orderProduct) => $orderProduct->discounted_price * $orderProduct->amount);
-        $promocodeDiscount = json_decode($order->used_promo, true)['discount'] ?? 0;
-
-        return +number_format($total - $promocodeDiscount - $manualDiscount, 2);
     }
 }
