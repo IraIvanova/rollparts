@@ -26,7 +26,7 @@ class OrderStatusesTableSeeder extends Seeder
             ['name' => 'Cancelled'],
             ['name' => 'Returned' ],
             ['name' => 'Refunded'],
-            ['name' => 'Completed'],
+            ['name' => 'Expired'],
         ]);
     }
 }

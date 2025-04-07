@@ -42,13 +42,13 @@ class PaymentController extends Controller
         $status = $payment->status === StatusesConstants::SUCCESSFUL ?
             StatusesConstants::PAID:
             StatusesConstants::PAYMENT_FAILURE;
-
         $this->orderService->changeOrderStatus($order, $status);
 
-        //TODO: if payment was unsuccessful should we cancel order and return products to stock?
         if ($payment->status === StatusesConstants::SUCCESSFUL) {
             return redirect()->route('orderConfirmation')->with(['orderId' => $order->id]);
         } else {
+            $this->orderService->returnProductsToStock($order);
+
             return redirect()->route('orderConfirmation')->with(['error' => 'Payment failure']);
         }
     }

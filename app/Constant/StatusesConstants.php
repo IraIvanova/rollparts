@@ -15,7 +15,7 @@ class StatusesConstants
     public const int CANCELLED = 9;
     public const int RETURNED = 10;
     public const int REFUNDED = 11;
-    public const int COMPLETED = 12;
+    public const int EXPIRED = 12;
 
     public const array CANCELLATION_STATUSES = [self::CANCELLED, self::RETURNED];
 

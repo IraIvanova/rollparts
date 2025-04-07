@@ -36,6 +36,7 @@ class OrderStatus
             StatusesConstants::RETURNED
         ],
         StatusesConstants::REFUNDED => [],
-        StatusesConstants::PENDING => []
+        StatusesConstants::PENDING => [],
+        StatusesConstants::EXPIRED => [],
     ];
 }
