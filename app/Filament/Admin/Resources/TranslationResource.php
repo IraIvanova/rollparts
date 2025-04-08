@@ -42,7 +42,7 @@ class TranslationResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('key')->sortable(),
+                TextColumn::make('key')->sortable()->searchable(),
                 TextColumn::make('en')->sortable()->searchable()->limit(50),
                 TextColumn::make('tr')->sortable()->searchable()->limit(50),
             ])->searchable()

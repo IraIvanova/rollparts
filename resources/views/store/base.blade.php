@@ -107,10 +107,9 @@
                                 <div>
                                     <div>
                                         <div class="rp-footer-top-element">
-                                            <h6 class="footer-top-title">Subscribe To Our Newsletter</h6>
+                                            <h6 class="footer-top-title">{{ trans('interface.footer.aboutUs.title') }}</h6>
                                             <div class="rp-footer-top-content">
-                                                <p>Register now to get latest updates on promotions &amp; coupons. Don’t
-                                                    worry, we not spam!</p>
+                                                <p>{{ trans('interface.footer.aboutUs.text') }}</p>
                                             </div>
                                         </div>
                                     </div>

@@ -58,6 +58,11 @@
     'copyright' => '© :year Rollparts Tüm Hakları Saklıdır',
     'followUs' => 'Bizi Takip Edin',
     'privacy' => 'Gizlilik Politikası',
+    'aboutUs' => 
+    array (
+      'text' => 'Bizimle çalışarak, güvenilir ve uzun ömürlü yedek parçalara sahip olmanın rahatlığını yaşayın.',
+      'title' => 'En Güvenilir Yedek Parça Tedarikçiniz',
+    ),
   ),
   'home' => 
   array (
