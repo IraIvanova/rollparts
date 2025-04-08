@@ -21,6 +21,7 @@ Route::get('/info/privacy', [PagesController::class, 'privacy'])->name('infoPriv
 Route::get('/info/contact-us', [PagesController::class, 'contactUs'])->name('infoContactUs');
 Route::get('/info/faq', [PagesController::class, 'faq'])->name('infoFaq');
 Route::get('/info/about-us', [PagesController::class, 'aboutUs'])->name('infoAboutUs');
+Route::get('/info/terms', [PagesController::class, 'terms'])->name('infoTerms');
 
 Route::get('/cart', [PagesController::class, 'cart'])->name('cart');
 Route::post('/payment/callback', [PaymentController::class, 'processPaymentCallback'])->name('processPaymentCallback');

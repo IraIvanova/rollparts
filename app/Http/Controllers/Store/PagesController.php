@@ -111,6 +111,15 @@ class PagesController extends Controller
      * @throws ProductNotFoundException
      * @throws \ErrorException
      */
+    public function terms(): View
+    {
+        return view('store.info.terms', $this->getDataForPageService->getSpecificPageData(PagesConstants::INFO_PAGE));
+    }
+
+    /**
+     * @throws ProductNotFoundException
+     * @throws \ErrorException
+     */
     public function contactUs(): View
     {
         return view('store.info.contacts', $this->getDataForPageService->getSpecificPageData(PagesConstants::INFO_PAGE));

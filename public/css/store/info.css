@@ -1,0 +1,12 @@
+.info-page p {
+    font-size: 16px;
+    color: black;
+}
+
+.info-page ul {
+    list-style: disc;
+}
+
+.info-page ul li {
+    font-size: 16px;
+}

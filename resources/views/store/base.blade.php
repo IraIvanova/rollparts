@@ -11,6 +11,7 @@
     <link rel="stylesheet" media="all" href="{{asset('css/store/styles.css')}}">
     <link type="text/css" rel="stylesheet" href="{{asset('css/store/slick.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('css/store/slick-theme.css')}}"/>
+    @yield('style')
 
     <script src="{{ asset('js/store/jquery-3.7.1.min.js') }}"></script>
     <script src="{{ asset('js/store/bootstrap.min.js') }}"></script>
@@ -54,8 +55,8 @@
                                             <div class="rp-footer-top-content rp-link-list-one">
                                                 <ul>
                                                     <li class="link_with_normal">
-                                                        <a href="{{ route('client.account') }}">
-                                                            {{ trans('interface.footer.myAccount') }}</a>
+                                                        <a href="{{ route('infoTerms') }}">
+                                                            {{ trans('interface.footer.terms') }}</a>
                                                     </li>
                                                     <li class="link_with_normal">
                                                         <a href="{{ route('infoReturnPolicy') }}">
