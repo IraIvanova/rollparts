@@ -2,35 +2,29 @@
 
 namespace App\Filament\Admin\Resources;
 
-use App\Filament\Admin\Resources\UnitTypeResource\Pages;
-use App\Filament\Admin\Resources\UnitTypeResource\RelationManagers;
-use App\Models\UnitType;
-use Filament\Forms;
+use App\Filament\Admin\Resources\CarMakeResource\Pages;
+use App\Filament\Admin\Resources\CarMakeResource\RelationManagers;
+use App\Models\CarMake;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class UnitTypeResource extends Resource
+class CarMakeResource extends Resource
 {
-    protected static ?string $model = UnitType::class;
+    protected static ?string $model = CarMake::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
     protected static ?string $navigationGroup = 'Content';
-
-    protected static ?int $navigationSort = 7;
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 TextInput::make('name')
-                    ->label('Unit type name')
                     ->required()
                     ->maxLength(255),
             ]);
@@ -40,8 +34,7 @@ class UnitTypeResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')
-                    ->label('Unit type')
+                TextColumn::make('name')->sortable()->searchable(),
             ])
             ->filters([
                 //
@@ -66,9 +59,9 @@ class UnitTypeResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListUnitTypes::route('/'),
-            'create' => Pages\CreateUnitType::route('/create'),
-            'edit' => Pages\EditUnitType::route('/{record}/edit'),
+            'index' => Pages\ListCarMakes::route('/'),
+            'create' => Pages\CreateCarMake::route('/create'),
+            'edit' => Pages\EditCarMake::route('/{record}/edit'),
         ];
     }
 }

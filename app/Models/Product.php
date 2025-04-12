@@ -19,15 +19,10 @@ class Product extends Model implements HasMedia
 {
     use InteractsWithMedia;
 
-    protected $fillable = ['name', 'slug', 'description', 'brand_id', 'mnf_code', 'images'];
+    protected $fillable = ['name', 'slug', 'description', 'mnf_code', 'images'];
     protected $casts = [
         'images' => 'array',
     ];
-
-    public function brand(): BelongsTo
-    {
-        return $this->belongsTo(Brand::class);
-    }
 
     public function categories(): BelongsToMany
     {
@@ -50,6 +45,11 @@ class Product extends Model implements HasMedia
     public function translations(): HasMany
     {
         return $this->hasMany(ProductTranslation::class);
+    }
+
+    public function carModels(): BelongsToMany
+    {
+        return $this->belongsToMany(CarModel::class);
     }
 
     public function translationByLanguage(): HasOne

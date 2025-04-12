@@ -1,4 +1,6 @@
-<?php return array (
+<?php
+
+return array (
   'trLira' => '₺',
   'shoppingCart' => 'Alışveriş sepeti',
   'header' => 

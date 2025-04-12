@@ -20,9 +20,6 @@
                             <div class="rp-product-layout-header-content">
                                 <div class="rp-product-hero-content">
                                     <div class="rp-product-hero-content-info">
-                                        <div class="rp-product-hero-content-brand">
-                                           <a href=""
-                                               rel="tag">{{$brand['name']}}</a></div>
                                         <div class="rp-product-hero-content-title">
                                             <h1>{{ $name }}</h1>
                                         </div>

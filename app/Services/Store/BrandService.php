@@ -36,6 +36,7 @@ class BrandService
 
     public function getAllAvailableBrands(): array
     {
-        return Brand::all()->toArray();
+        return [];
+//        return Brand::all()->toArray();
     }
 }

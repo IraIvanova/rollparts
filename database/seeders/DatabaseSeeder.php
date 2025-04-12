@@ -31,7 +31,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
-            BrandsTableSeeder::class,
             LanguagesTableSeeder::class,
             CategoriesTableSeeder::class,
             UnitTypesTableSeeder::class,
@@ -42,6 +41,8 @@ class DatabaseSeeder extends Seeder
             OrderStatusesTableSeeder::class,
             RolesAndPermissionsSeeder::class,
             TranslationSeeder::class,
+            CarMakeSeeder::class,
+            CarModelSeeder::class,
         ]);
     }
 }

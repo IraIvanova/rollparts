@@ -31,7 +31,7 @@ class ProductService
 
     public function getProductBySlug(string $slug): ?Product
     {
-        return Product::where('slug', $slug)->select(['id', 'brand_id', 'active', 'mnf_code', 'quantity'])->first();
+        return Product::where('slug', $slug)->select(['id', 'active', 'mnf_code', 'quantity'])->first();
     }
 
     public function getProductById(int $id): ?Product
@@ -71,7 +71,7 @@ class ProductService
             'mnfCode' => $product->mnf_code,
             'name' => $productNameAndDescription->name,
             'description' => $productNameAndDescription->description,
-            'brand' => $product->brand,
+//            'brand' => $product->brand,
             'prices' => $product->priceByCurrency,
             'images' => $product->getMedia(),
             'productOptions' => $product->productOptions()->whereNot('related_product_id', $product->id)->with(

@@ -37,7 +37,7 @@ class ProductResource extends Resource
 
     protected static ?string $navigationGroup = 'Content';
 
-    protected static ?int $navigationSort = 1;
+    protected static ?int $navigationSort = 3;
 
 
     public static function form(Form $form): Form
@@ -81,10 +81,11 @@ class ProductResource extends Resource
                                     ->unique('products', 'slug', ignoreRecord: true),
                                 TextInput::make('mnf_code')
                                     ->maxLength(255),
-                                Select::make('brand_id')
-                                    ->relationship('brand', 'name')
-                                    ->searchable(['name'])
-                                    ->required(),
+                                Select::make('car_models')
+                                    ->multiple()
+                                    ->relationship('carModels', 'model')
+                                    ->preload()
+                                    ->searchable(),
                                 SelectTree::make('categories')
                                     ->relationship('categories', 'name', 'parent_id')
                                     ->enableBranchNode()

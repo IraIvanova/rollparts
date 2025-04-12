@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -7,7 +7,8 @@
     <meta name="description" content="@yield('metaDescription')">
     <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
 
-    <link rel="stylesheet" media="all" href="{{asset('css/store/bootstrap.min.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+{{--    <link rel="stylesheet" media="all" href="{{asset('css/store/bootstrap.min.css')}}">--}}
     <link rel="stylesheet" media="all" href="{{asset('css/store/styles.css')}}">
     <link type="text/css" rel="stylesheet" href="{{asset('css/store/slick.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('css/store/slick-theme.css')}}"/>
