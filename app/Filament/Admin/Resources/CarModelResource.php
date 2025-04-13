@@ -6,6 +6,8 @@ use App\Filament\Admin\Resources\CarModelResource\Pages;
 use App\Filament\Admin\Resources\CarModelResource\RelationManagers;
 use App\Models\CarModel;
 use Filament\Forms;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -28,7 +30,7 @@ class CarModelResource extends Resource
             ->schema([
                 Select::make('make_id')
                     ->label('Make')
-                    ->relationship('make', 'name') // assumes CarModel belongsTo CarMake
+                    ->relationship('make', 'name')
                     ->searchable()
                     ->preload()
                     ->required(),
@@ -38,13 +40,22 @@ class CarModelResource extends Resource
                     ->required()
                     ->maxLength(100),
 
+                Section::make('Manufacture Years')
+                    ->schema([
+                        Repeater::make('years')
+                            ->relationship('years')
+                            ->schema([
+                                TextInput::make('year')
+                                    ->label('Year')
+                                    ->required(),
+                            ])
+                            ->grid(3)
+                    ]),
+
                 TextInput::make('engine')
                     ->label('Engine')
                     ->maxLength(50),
 
-                TextInput::make('years')
-                    ->label('Production Years')
-                    ->maxLength(50),
             ]);
     }
 

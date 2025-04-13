@@ -3,12 +3,16 @@
 namespace App\Services\Store;
 
 use App\Models\Brand;
+use App\Models\CarMake;
+use App\Models\CarModel;
+use App\Models\CarYear;
 use App\Services\FilesManagingService;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
-class BrandService
+readonly class CarMakesAndModelsService
 {
-    public function __construct(private readonly FilesManagingService $filesManagingService)
+    public function __construct(private FilesManagingService $filesManagingService)
     {
     }
 
@@ -34,9 +38,23 @@ class BrandService
             ->toArray();
     }
 
-    public function getAllAvailableBrands(): array
+    public function getAllAvailableMakes(): Collection
     {
-        return [];
-//        return Brand::all()->toArray();
+        return CarMake::all();
+    }
+
+    public function getModelsByMake(int $makeId): Collection
+    {
+        return CarModel::where('make_id', $makeId)->get();
+    }
+
+    public function getModelsYears(?int $modelId = null): ?Collection
+    {
+        return $this->getManufactureYearsForModel($modelId);
+    }
+
+    public function getManufactureYearsForModel(?int $modelId = null): Collection
+    {
+        return $modelId ? CarYear::where('car_model_id', $modelId)->orderBy('year')->get() : new Collection();
     }
 }

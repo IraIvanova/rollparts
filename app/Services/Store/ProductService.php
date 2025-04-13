@@ -24,6 +24,7 @@ class ProductService
         private readonly FilesManagingService $filesManagingService,
         private readonly BreadcrumbsService $breadcrumbsService,
         private readonly SearchProductsQueryBuilderService $productQueryBuilderService,
+        private readonly SearchService $searchService,
         private readonly StorageService $storageService,
         private readonly PaginationService $paginationService,
     ) {

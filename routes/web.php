@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\Auth\ClientAuthController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\Store\AsyncController;
 use App\Http\Controllers\Store\CartController;
 use App\Http\Controllers\Store\PagesController;
@@ -35,7 +36,11 @@ Route::post('/removeCoupon', [CartController::class, 'removeCoupon'])->name('rem
 
 Route::post('/districts', [CartController::class, 'getDistrictsList'])->name('getDistrictsList');
 
-Route::post('/dynamicSearch', [AsyncController::class, 'dynamicSearch'])->name('dynamicSearch');
+Route::post('/getModels', [SearchController::class, 'getModelsByMake'])->name('getModelsByMake');
+Route::post('/getYears', [SearchController::class, 'getManufactureYearsForModel'])->name('getManufactureYearsForModel');
+Route::post('/dynamicSearch', [SearchController::class, 'dynamicSearch'])->name('dynamicSearch');
+Route::get('/search', [SearchController::class, 'searchByMakesAndModel'])->name('searchByMakesAndModel');
+
 
 Route::get('/login', [ClientAuthController::class, 'showLoginForm'])->name('login');
 Route::get('/register', [ClientAuthController::class, 'showRegisterForm'])->name('register');

@@ -48,7 +48,7 @@ class SearchProductsQueryBuilderService
             ->addProductTranslations($parameters->language, $parameters->searchParameters?->search ?? '')
             ->addCategory($parameters->categories)
             ->addPrices($parameters->currency)
-            ->filterByBrands($parameters->searchParameters?->brands)
+//            ->filterByBrands($parameters->searchParameters?->brands)
             ->filterByProductIds($parameters->products)
             ->setLimit($parameters->limit)
             ->applyOrdering($parameters->searchParameters?->sortBy)

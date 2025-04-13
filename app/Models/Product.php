@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Facades\App;
 
+use Laravel\Scout\Searchable;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
@@ -18,11 +19,25 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 class Product extends Model implements HasMedia
 {
     use InteractsWithMedia;
+    use Searchable;
 
     protected $fillable = ['name', 'slug', 'description', 'mnf_code', 'images'];
     protected $casts = [
         'images' => 'array',
     ];
+
+    public function toSearchableArray(): array
+    {
+        $this->loadMissing('translationByLanguage');
+
+        return [
+            'id' => $this->id,
+            'mnf_code' => $this->mnf_code,
+            'translation' => $this->translationByLanguage?->name,
+            'description' => $this->translationByLanguage?->description,
+            'category_ids' => $this->categories->pluck('id'),
+        ];
+    }
 
     public function categories(): BelongsToMany
     {
@@ -55,8 +70,7 @@ class Product extends Model implements HasMedia
     public function translationByLanguage(): HasOne
     {
         return $this->hasOne(ProductTranslation::class)
-            ->where('language', App::getLocale())
-            ->select(['name', 'description']);
+            ->where('language', 'tr');
     }
 
     public function orders(): BelongsToMany

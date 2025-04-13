@@ -12,9 +12,12 @@
         "filament/filament": "^3.2",
         "filament/infolists": "^3.2",
         "filament/spatie-laravel-media-library-plugin": "^3.2",
+        "http-interop/http-factory-guzzle": "^1.2",
         "iyzico/iyzipay-php": "^2.0",
         "laravel/framework": "^11.31",
+        "laravel/scout": "^10.14",
         "laravel/tinker": "^2.9",
+        "meilisearch/meilisearch-php": "^1.13",
         "spatie/laravel-cookie-consent": "^3.3",
         "spatie/laravel-permission": "^6.10"
     },

@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('car_models', function (Blueprint $table) {
+        Schema::create('car_years', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('make_id')->constrained('car_makes')->onDelete('cascade');
-            $table->string('model');
-            $table->string('engine')->nullable();
+            $table->foreignId('car_model_id')->constrained()->onDelete('cascade');
+            $table->string('year');
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('car_model_product');
+        Schema::dropIfExists('car_year');
     }
 };

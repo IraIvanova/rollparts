@@ -15,9 +15,10 @@ readonly class GetDataForPageService
     public function __construct(
         private CategoryService $categoryService,
         private SearchProductsQueryBuilderService $productQueryBuilderService,
+        private SearchService $searchService,
         private PaginationService $paginationService,
         private ProductService $productService,
-        private BrandService $brandService,
+        private CarMakesAndModelsService $brandService,
         private OptionsService $optionsService,
         private CartService $cartService,
         private BreadcrumbsService $breadcrumbsService,
@@ -80,7 +81,7 @@ readonly class GetDataForPageService
             'bestsellers' => $this->toArray($bestsellerProducts),
             'newestProducts' => $this->toArray($newestProducts),
             'images' => $productImages,
-            'brands' => $this->brandService->getAllAvailableBrands()
+            'makes' => $this->brandService->getAllAvailableMakes()
         ];
     }
 
@@ -102,7 +103,7 @@ readonly class GetDataForPageService
         $nestedCategoriesId = $this->categoryService->getAllNestedCategoriesOfParentCategory($category->id);
         $searchParameters = new SearchParametersDTO($searchParams);
 
-        $productFiltersQuery = $this->productQueryBuilderService->getProductsByCategory(
+        $products = $this->searchService->getProductsByCategory(
             new ProductsFilterParametersDTO(
                 language: 'tr',
                 currency: 'TRL',
@@ -110,10 +111,10 @@ readonly class GetDataForPageService
                 searchParameters: $searchParameters
             ));
 
-        $products = $this->paginationService->paginate(
-            query: $productFiltersQuery,
-            page: $searchParams['page'] ?? 1
-        );
+//        $products = $this->paginationService->paginate(
+//            query: $productFiltersQuery,
+//            page: $searchParams['page'] ?? 1
+//        );
 
         $priceRange = $this->productQueryBuilderService->getMinMaxPricesForProducts(
             new ProductsFilterParametersDTO(
@@ -123,12 +124,13 @@ readonly class GetDataForPageService
                 searchParameters: $searchParameters
             ))->first();
 
-        $productImages = $this->productService->getMainImages(array_column($products->items(), 'id'));
+        $productImages = $this->productService->getMainImages($products->only('id')->toArray());
 
         return [
             'category' => $category,
             'categories' => $this->categoryService->getMainCategoriesWithChildren(),
-            'brands' => $this->brandService->getAvailableBrandsForCategory($nestedCategoriesId),
+//            'brands' => $this->brandService->getAvailableBrandsForCategory($nestedCategoriesId),
+            'brands' => [],
             'products' => $products,
             'options' => $this->optionsService->getOptionsAvailableForCategories($nestedCategoriesId),
             'selectedOptions' => $searchParameters->getValuesArray(),

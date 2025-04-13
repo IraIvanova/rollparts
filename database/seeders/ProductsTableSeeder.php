@@ -22,7 +22,6 @@ class ProductsTableSeeder extends Seeder
             $name = 'Product-' . Str::random(10);
             $product = new Product();
             $product->slug = Str::slug($name);
-            $product->brand_id = rand(1, 10);
             $product->mnf_code = "MNF PROD $i";
             $product->save();
 

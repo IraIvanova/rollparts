@@ -50,36 +50,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let handleMakeChange = () => {
         makeSelect.addEventListener('change', () => {
-            modelSelect.innerHTML = '<option value="" selected disabled>Select model</option>';//todo server request
-            yearSelect.innerHTML = '<option value="" selected disabled>Select engine</option>';
-            yearSelect.disabled = true;
-            searchButton.disabled = true;
+            axios.post(makeSelect.dataset.action, {
+                makeId: makeSelect.value,
+            })
+                .then(resp => {
+                    const models = resp.data.models;
+                    const years = resp.data.years;
+                    modelSelect.innerHTML = '';
+                    yearSelect.innerHTML = '';
+
+                    models.forEach((model, index) => {
+                        modelSelect.innerHTML += `<option value="${model['id']}" ${index === 0 ? 'selected' : ''}>${model['model']}</option>`
+                    });
+
+                    years.forEach((year, yIndex) => {
+                        yearSelect.innerHTML += `<option value="${year['id']}" ${yIndex === 0 ? 'selected' : ''}>${year['year']}</option>`
+                    });
+
+                    modelSelect.disabled = false;
+                    yearSelect.disabled = false;
+                    searchButton.disabled = false;
+                })
         })
     }
 
     let handleModelChange = () => {
-        // Reset engine select
-        yearSelect.innerHTML = '<option value="" selected disabled>Select engine</option>';
-        searchButton.disabled = true;
+        modelSelect.addEventListener('change', () => {
+            axios.post(modelSelect.dataset.action, {
+                'modelId': modelSelect.value
+            })
+                .then(resp => {
+                    const years = resp.data;
+                    yearSelect.innerHTML = '';
 
-        const selectedMake = makeSelect.value;
-        const selectedModel = modelSelect.value;
-
-        if (selectedMake && selectedModel && carDatabase[selectedMake][selectedModel]) {
-            // Enable engine select
-            yearSelect.disabled = false;
-
-            // Add engine options
-            const engines = carDatabase[selectedMake][selectedModel];
-            engines.forEach(engine => {
-                const option = document.createElement('option');
-                option.value = engine;
-                option.textContent = engine;
-                yearSelect.appendChild(option);
-            });
-        }
+                    years.forEach((year, index) => {
+                        yearSelect.innerHTML += `<option value="${year['id']}" ${index === 0 ? 'selected' : ''}>${year['year']}</option>`
+                    });
+                })
+        });
     }
-
 
     handleMakeChange();
     handleModelChange();

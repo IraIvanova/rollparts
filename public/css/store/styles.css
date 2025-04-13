@@ -72,23 +72,6 @@
     padding: 40px 32px;
     border-bottom: 4px solid var(--color-high-dark);
 }
-.search-box form {
-    /*background: #FFFFFF;*/
-    /*border-radius: 0 4px 4px 4px;*/
-    /*box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.05);*/
-    /*padding: 40px 32px;*/
-    /*border-bottom: 4px solid var(--color-high-dark);*/
-    padding: 30px;
-    border-width: 1px;
-    border-color: var(--color-high-dark);
-    border-style: solid;
-    border-radius: 8px;
-    background-color: #fff5f3;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0;
-    gap: 20px;
-}
 
 .search-title {
     font-size: 22px;

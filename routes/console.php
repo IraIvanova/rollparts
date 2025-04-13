@@ -10,3 +10,4 @@ Artisan::command('inspire', function () {
 
 Schedule::command('orders:cancel-stale')
     ->everyFiveMinutes();
+
