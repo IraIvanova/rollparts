@@ -7,7 +7,8 @@ class SearchParametersDTO
     private const OPTION_PREFIX = 'option_';
     public ?string $sortBy;
     public ?string $search = '';
-    public ?array $brands = [];
+    public ?array $carModels = [];
+    public ?array $carMakes = [];
     public ?int $min = null;
     public ?int $max = null;
     public ?array $options = [];
@@ -16,7 +17,8 @@ class SearchParametersDTO
     public function __construct(
         private readonly ?array $parameters = []
     ) {
-        $this->brands = isset($this->parameters['brands']) ? explode(',', $this->parameters['brands'] ) : [];
+        $this->carModels = isset($this->parameters['carModels']) ? explode(',', $this->parameters['carModels'] ) : [];
+        $this->carMakes = isset($this->parameters['carMakes']) ? explode(',', $this->parameters['carMakes'] ) : [];
         $this->sortBy = $this->parameters['sortby'] ?? '';
         $this->search = $this->parameters['search'] ?? '';
         $this->min = $this->parameters['min'] ?? null;
@@ -28,7 +30,8 @@ class SearchParametersDTO
     {
         return [
             'search' => $this->search,
-            'brands' => $this->brands,
+            'carModels' => $this->carModels,
+            'carMakes' => $this->carMakes,
             'sortby' => $this->sortBy,
             'optionValues' => $this->optionValues,
             'options' => $this->options,

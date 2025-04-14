@@ -28,7 +28,7 @@ class Product extends Model implements HasMedia
 
     public function toSearchableArray(): array
     {
-        $this->loadMissing('translationByLanguage');
+        $this->loadMissing('translationByLanguage', 'priceByCurrency', 'carModels');
 
         return [
             'id' => $this->id,
@@ -36,7 +36,15 @@ class Product extends Model implements HasMedia
             'translation' => $this->translationByLanguage?->name,
             'description' => $this->translationByLanguage?->description,
             'category_ids' => $this->categories->pluck('id'),
+            'discounted_price' => $this->priceByCurrency?->discounted_price,
+            'make_names' => $this->carModels->pluck('make.name')->unique()->values()->toArray(),
+            'car_model_names' => $this->carModels->pluck('name')->unique()->values()->toArray(),
         ];
+    }
+
+    public function carModels(): BelongsToMany
+    {
+        return $this->belongsToMany(CarModel::class);
     }
 
     public function categories(): BelongsToMany
@@ -54,17 +62,12 @@ class Product extends Model implements HasMedia
         //Save currency id to session
         return $this->hasOne(ProductPrice::class)
             ->where('currency_id', $currency ?? 1)
-            ->select('price', 'discounted_price', 'discount_amount');
+            ->select('product_id', 'price', 'discounted_price', 'discount_amount');
     }
 
     public function translations(): HasMany
     {
         return $this->hasMany(ProductTranslation::class);
-    }
-
-    public function carModels(): BelongsToMany
-    {
-        return $this->belongsToMany(CarModel::class);
     }
 
     public function translationByLanguage(): HasOne

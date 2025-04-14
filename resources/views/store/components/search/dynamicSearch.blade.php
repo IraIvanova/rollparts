@@ -1,5 +1,5 @@
 <div class="p-2">
-@if($products->total() === 0)
+@if(count($products) === 0)
     <p>{{ trans('interface.cart.noItems') }}</p>
 @else
     <ul class="sp-mini-cart cart_list sp_product_list ">

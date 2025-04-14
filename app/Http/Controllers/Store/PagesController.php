@@ -45,7 +45,10 @@ class PagesController extends Controller
     {
         return view(
             'store.category',
-            $this->getDataForPageService->getSpecificPageData(PagesConstants::CATEGORY_PAGE, ['slug' => $categorySlug, 'searchParams' => $request->query()])
+            $this->getDataForPageService->getSpecificPageData(
+                PagesConstants::CATEGORY_PAGE,
+                ['slug' => $categorySlug, 'searchParams' => $request->query()]
+            )
         );
     }
 
@@ -55,7 +58,10 @@ class PagesController extends Controller
      */
     public function product(Request $request, string $productSlug): View
     {
-        return view('store.product', $this->getDataForPageService->getSpecificPageData(PagesConstants::PRODUCT_PAGE, ['slug' => $productSlug]));
+        return view('store.product', $this->getDataForPageService->getSpecificPageData(
+            PagesConstants::PRODUCT_PAGE,
+            ['slug' => $productSlug]
+        ));
     }
 
     /**

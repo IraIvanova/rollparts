@@ -33,7 +33,16 @@ class UpdateSearchIndex extends Command
         $index->updateFilterableAttributes([
             'category_ids',
             'discounted_price',
+            'car_model_ids',
+            'make_names',
+            'car_model_names',
             'id',
+        ]);
+
+        $index->updateSortableAttributes([
+            'id',
+            'discounted_price',
+            'name'
         ]);
     }
 }

@@ -9,6 +9,7 @@ use App\Services\FilesManagingService;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Builder;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
 use function Laravel\Prompts\select;
@@ -159,10 +160,7 @@ class ProductService
 
     public function getFilteredProducts(ProductsFilterParametersDTO $filters): LengthAwarePaginator
     {
-         return $this->paginationService->paginate(
-            query: $this->productQueryBuilderService->getProductsList($filters),
-            page: $searchParams['page'] ?? 1
-        );
+        return $this->searchService->getProductsList($filters);
     }
 
     public static function calculateDiscountedPrice(float $price, float $discount): float

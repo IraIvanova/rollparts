@@ -4,8 +4,8 @@
         <ul>
             @foreach($brands as $brand)
                 <li class="d-flex">
-                    <input type="checkbox" class="checkbox" @if(in_array($brand['name'], $selectedOptions['brands'])) checked @endif id="brand{{$brand['id']}}" name="brands" value="{{$brand['name']}}" />
-                    <label class="filter-label" for="brand{{$brand['id']}}">{{$brand['name']}}</label>
+                    <input type="checkbox" class="checkbox" @if(in_array($brand['name'], $selectedOptions['carMakes'])) checked @endif id="carMake{{$brand['id']}}" name="carMakes" value="{{$brand['name']}}" />
+                    <label class="filter-label" for="carMake{{$brand['id']}}">{{$brand['name']}}</label>
                 </li>
             @endforeach
         </ul>

@@ -23,6 +23,7 @@ readonly class GetDataForPageService
         private CartService $cartService,
         private BreadcrumbsService $breadcrumbsService,
         private CitiesService $citiesService,
+        private CarMakesAndModelsService $carMakeAndModelsService,
     ) {
     }
 
@@ -103,19 +104,17 @@ readonly class GetDataForPageService
         $nestedCategoriesId = $this->categoryService->getAllNestedCategoriesOfParentCategory($category->id);
         $searchParameters = new SearchParametersDTO($searchParams);
 
-        $products = $this->searchService->getProductsByCategory(
+        $products = $this->searchService->getProductsList(
             new ProductsFilterParametersDTO(
                 language: 'tr',
                 currency: 'TRL',
                 categories: $nestedCategoriesId,
                 searchParameters: $searchParameters
-            ));
+            )
+        );
 
-//        $products = $this->paginationService->paginate(
-//            query: $productFiltersQuery,
-//            page: $searchParams['page'] ?? 1
-//        );
-
+        $products->load(['translationByLanguage', 'priceByCurrency']);
+//TODO change with new service
         $priceRange = $this->productQueryBuilderService->getMinMaxPricesForProducts(
             new ProductsFilterParametersDTO(
                 language: 'tr',
@@ -129,8 +128,7 @@ readonly class GetDataForPageService
         return [
             'category' => $category,
             'categories' => $this->categoryService->getMainCategoriesWithChildren(),
-//            'brands' => $this->brandService->getAvailableBrandsForCategory($nestedCategoriesId),
-            'brands' => [],
+            'brands' => $this->carMakeAndModelsService->getAllAvailableMakes(),
             'products' => $products,
             'options' => $this->optionsService->getOptionsAvailableForCategories($nestedCategoriesId),
             'selectedOptions' => $searchParameters->getValuesArray(),
@@ -171,11 +169,11 @@ readonly class GetDataForPageService
         //TODO Search by Part Name, Brand, Model, Sku
         $products = $this->productService->getFilteredProducts($searchParameters);
         $priceRange = $this->productQueryBuilderService->getMinMaxPricesForProducts($searchParameters)->first();
-        $productImages = $this->productService->getMainImages(array_column($products->items(), 'id'));
+        $productImages = $this->productService->getMainImages($products->only('id')->toArray());
 
         return [
             'categories' => $this->categoryService->getMainCategoriesWithChildren(),
-            'brands' => $this->brandService->getAvailableBrandsForSearchResult(),
+            'brands' => $this->brandService->getAllAvailableMakes(),
             'products' => $products,
             'options' => $this->optionsService->getOptionsAvailableForSearchResult(),
             'images' => $productImages,

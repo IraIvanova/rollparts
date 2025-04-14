@@ -29,7 +29,7 @@ class SearchController extends Controller
 
         $products = $this->productService->getFilteredProducts($searchParameters);
 
-        $productImages = $this->productService->getMainImages(array_column($products->items(), 'id'));
+        $productImages = $this->productService->getMainImages($products->only('id')->toArray());
 
         return view('store.components.search.dynamicSearch', [
             'products' => $products,
