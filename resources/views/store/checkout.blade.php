@@ -25,10 +25,11 @@
             <div class="row1 mt-4">
                 @include('store.components.checkout.coupon')
             </div>
+                <form method="post" action="{{route('createOrder')}}" id="orderForm">
             <div class="row">
                 <div class="col-md-8 col">
                     <h2 class="mb-4">{{ trans('interface.checkout.billingDetails') }}</h2>
-                    <form method="post" action="{{route('createOrder')}}" id="orderForm">
+
                         @csrf
                         <h5>
                             {{ trans('interface.checkout.contactDetails') }}
@@ -43,7 +44,6 @@
                                       name="additionalNotes"
                                       id="additionalNotes" placeholder="">{{ old('additionalNotes') }}</textarea>
                         </div>
-                    </form>
                 </div>
                 <div class="col-lg-4">
                     <div class="order_box_price">
@@ -58,33 +58,64 @@
                                 <div id="payment" class="payment_list_item">
                                     <div class="form-row place-order">
                                         <div class="">
-                                            <div class="">
-                                                {!! trans('interface.checkout.privacyConfirmation', ['privacyUrl' => route('infoPrivacy')]) !!}
-                                            </div>
+                                            <div class="payment_list_item">
+                                                <div class="payment_options shipping payment_methods methods">
+                                                    <div class="form-group">
+                                                        <input id="payment_method_online" type="radio"
+                                                               class="input-radio radio_group"
+                                                               name="paymentMethod" value="online"
+                                                               checked="checked">
+                                                        <label for="payment_method_online">Credit card</label>
+                                                    </div>
 
-                                            <button type="button" class="button button-fill-one w-100"
-                                                    id="placeOrder">{{trans('interface.checkout.makeOrder')}}</button>
-                                            <div class="d-flex mt-4 payments-img">
-                                                <img loading="lazy" alt="Iyzico" class="mr-1" src="{{asset('images/payments/iyzico.png')}}">
-                                                <img loading="lazy" alt="Visa" src="{{asset('images/payments/visa.png')}}">
-                                            </div>
-                                            <div id="warningDiv"
-                                                 class="div-info @if(!$errors->any())d-none @endif alertDiv mt-3 w-100 text-center">
-                                                @if($errors->any())
-                                                    @foreach ($errors->all() as $error)
-                                                        <p>{{ $error }}</p>
-                                                    @endforeach
-                                                @endif
+                                                    <div class="form-group">
+                                                        <input id="payment_method_bank" type="radio"
+                                                               class="input-radio radio_group"
+                                                               name="paymentMethod" value="bank_transfer">
+                                                        <label for="payment_method_bank">Bank transfer</label>
+                                                        <div class="payment_box">
+                                                            <p>Make your payment directly into our bank account.
+                                                                Please use your Order ID as the payment
+                                                                reference. Your order will not be shipped until
+                                                                the funds have cleared in our account.</p>
+                                                        </div>
+                                                        <div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="">
+                                                    {!! trans('interface.checkout.privacyConfirmation', ['privacyUrl' => route('infoPrivacy')]) !!}
+                                                </div>
+
+                                                <button type="button" class="button button-fill-one w-100"
+                                                        id="placeOrder">{{trans('interface.checkout.makeOrder')}}</button>
+                                                <div class="d-flex mt-4 payments-img">
+                                                    <img loading="lazy" alt="Iyzico" class="mr-1"
+                                                         src="{{asset('images/payments/iyzico.png')}}">
+                                                    <img loading="lazy" alt="Visa"
+                                                         src="{{asset('images/payments/visa.png')}}">
+                                                </div>
+                                                <div id="warningDiv"
+                                                     class="div-info @if(!$errors->any())d-none @endif alertDiv mt-3 w-100 text-center">
+                                                    @if($errors->any())
+                                                        @foreach ($errors->all() as $error)
+                                                            <p>{{ $error }}</p>
+                                                        @endforeach
+                                                    @endif
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+                </form>
+        </div>
     </section>
 @endsection
 

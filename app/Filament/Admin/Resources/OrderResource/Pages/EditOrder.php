@@ -19,6 +19,7 @@ class EditOrder extends EditRecord
     {
         parent::refreshFormData(array_keys($this->record->toArray()));
     }
+
     protected function getHeaderActions(): array
     {
         return [
@@ -33,7 +34,10 @@ class EditOrder extends EditRecord
     {
         $orderService = app(OrderService::class);
 
-        if (!$orderService->canTransitionTo($this->oldFormState['data']['status_id'], +$this->data['status_id'])) {
+        if (isset($this->oldFormState['data']) && !$orderService->canTransitionTo(
+                $this->oldFormState['data']['status_id'],
+                +$this->data['status_id']
+            )) {
             throw ValidationException::withMessages([
                 'status' => 'This record cannot be updated because it doesn’t meet the required conditions.',
             ]);
@@ -42,10 +46,18 @@ class EditOrder extends EditRecord
 
     protected function afterSave(): void
     {
+        $order = $this->record;
+        $payment = $order->payment;
+
+        if ($payment && $payment->hasMedia('payment_confirmation')) {
+            $payment->status = StatusesConstants::SUCCESSFUL;
+            $payment->save();
+        }
+
         $orderService = app(OrderService::class);
 
         if (in_array($this->data['status_id'], StatusesConstants::CANCELLATION_STATUSES)) {
-            $orderService->returnProductsToStock($this->record);
+            $orderService->returnProductsToStock($order);
         }
     }
 }

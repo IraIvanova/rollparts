@@ -13,12 +13,13 @@ class CarModel extends Model
 
     public function make(): BelongsTo
     {
-        return $this->belongsTo(CarMake::class, 'make_id');
+        return $this->belongsTo(CarMake::class);
     }
 
     public function products(): BelongsToMany
     {
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany(Product::class, 'car_model_product')
+            ->withPivot('car_year_id');
     }
 
     public function years(): HasMany

@@ -1,7 +1,7 @@
 @extends('store.base')
 
-@section('metaTitle'){{ $name }} | {{$brand['name']}} | {{ trans('interface.turkey') }} @endsection
-@section('metaDescription'){{ trans('interface.meta.description.product', ['product' => $name, 'brand' => $brand]) }}@endsection
+@section('metaTitle'){{ $name }} | {{ trans('interface.turkey') }} @endsection
+@section('metaDescription'){{ trans('interface.meta.description.product', ['product' => $name, 'brand' => $brand->first()?->name]) }}@endsection
 
 @section('bodyContent')
     <section id="main-content" >

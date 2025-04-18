@@ -9,9 +9,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="rp-makes-list">
-                        @foreach($brands as $brand)
+                        @foreach($makes as $make)
                             <div class="rp-makes-list-single">
-                                <a href="{{route('catalog',['brands' => $brand['name']])}}"><span>{{$brand['name']}}</span>
+                                <a href="{{route('catalog',['carMakes' => $make->name])}}"><span>{{$make->name}}</span>
                                 </a>
                             </div>
                         @endforeach

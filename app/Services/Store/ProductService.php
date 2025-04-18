@@ -50,9 +50,9 @@ class ProductService
                 currency: 'TRL',
                 products: $frequentlyIds
             );
-            $frequentlyBoughtTogetherProducts = $this->productQueryBuilderService->getProductsList(
+            $frequentlyBoughtTogetherProducts = $this->searchService->getProductsList(
                 $frequentlyBoughtFilterParameters
-            )->get()->toArray();
+            );
         }
 
         if ($recentlyViewedIds = array_diff(session()->get('recentlyViewedProducts', []), [$product->id])) {
@@ -61,9 +61,9 @@ class ProductService
                 currency: 'TRL',
                 products: $recentlyViewedIds
             );
-            $recentlyViewedProducts = $this->productQueryBuilderService->getProductsList(
+            $recentlyViewedProducts = $this->searchService->getProductsList(
                 $recentlyViewedFilterParameters
-            )->get()->toArray();
+            );
         }
 
         return [
@@ -73,7 +73,7 @@ class ProductService
             'mnfCode' => $product->mnf_code,
             'name' => $productNameAndDescription->name,
             'description' => $productNameAndDescription->description,
-//            'brand' => $product->brand,
+            'brand' => $product->carModels,
             'prices' => $product->priceByCurrency,
             'images' => $product->getMedia(),
             'productOptions' => $product->productOptions()->whereNot('related_product_id', $product->id)->with(

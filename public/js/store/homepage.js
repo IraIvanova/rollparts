@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let handleMakeChange = () => {
         makeSelect.addEventListener('change', () => {
             axios.post(makeSelect.dataset.action, {
-                makeId: makeSelect.value,
+                make: makeSelect.value,
             })
                 .then(resp => {
                     const models = resp.data.models;
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     yearSelect.innerHTML = '';
 
                     models.forEach((model, index) => {
-                        modelSelect.innerHTML += `<option value="${model['id']}" ${index === 0 ? 'selected' : ''}>${model['model']}</option>`
+                        modelSelect.innerHTML += `<option value="${model['model']}" ${index === 0 ? 'selected' : ''}>${model['model']}</option>`
                     });
 
                     years.forEach((year, yIndex) => {
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let handleModelChange = () => {
         modelSelect.addEventListener('change', () => {
             axios.post(modelSelect.dataset.action, {
-                'modelId': modelSelect.value
+                'model': modelSelect.value
             })
                 .then(resp => {
                     const years = resp.data;

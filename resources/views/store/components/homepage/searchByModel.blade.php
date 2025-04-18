@@ -1,7 +1,7 @@
 <div class="search-container bg-gray-gradient">
     <div class="container container-xxxl container-xxl">
         <div class="search-box position-relative w-75 m-auto">
-            <span class="position-absolute" id="icon-search">🔎</span>
+            <span class="position-absolute" id="icon-search"><img src="{{asset('images/search-icon.png')}}"></span>
             <h2 class="search-title">Find the right tuning parts for your car and get started!</h2>
 
             <div class="search-form pt-3">
@@ -11,27 +11,27 @@
                             <div class="row">
                                 <div class="search-field col-lg-4">
                                     <label>Brand</label>
-                                    <select id="make" class="select-dropdown" name="make"
+                                    <select id="make" class="select-dropdown" name="carMakes"
                                             data-action="{{ route('getModelsByMake') }}">
                                         <option value="" selected disabled>Brand</option>
                                         @foreach($makes as $make)
-                                            <option value="{{$make->id}}">{{$make->name}}</option>
+                                            <option value="{{$make->name}}">{{$make->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
 
                                 <div class="search-field col-lg-4">
                                     <label>Model</label>
-                                    <select id="model" class="select-dropdown form-select" name="model"
+                                    <select id="model" class="select-dropdown form-select" name="carModels"
                                             data-action="{{ route('getManufactureYearsForModel') }}" disabled>
-                                        <option value="" selected disabled>Select model</option>
+{{--                                        <option value="" selected disabled>Select model</option>--}}
                                     </select>
                                 </div>
 
                                 <div class="search-field col-lg-4">
                                     <label>Year of manufacture</label>
                                     <select id="yearMnf" class="select-dropdown" name="year" disabled>
-                                        <option value="" selected disabled>Year of manufacture</option>
+{{--                                        <option value="" selected disabled>Year of manufacture</option>--}}
                                     </select>
                                 </div>
                             </div>

@@ -14,6 +14,7 @@ class ProductPrice extends Model
         'currency_id',
         'discounted_price',
         'discount_amount',
+        'cargo_price',
     ];
 
     public function product(): BelongsTo

@@ -47,12 +47,12 @@ class SearchService
             }
 
             // Limit (pagination handling)
-            $options['limit'] = 30;
+            $options['limit'] = $params->limit ?? 30;
 
             return $meili->search($query, $options);
         });
 
-        return $results->paginate(30);
+        return $results->paginate($params->limit ?? 30);
     }
 
     public function getMinMaxPrices(ProductsFilterParametersDTO $params): array

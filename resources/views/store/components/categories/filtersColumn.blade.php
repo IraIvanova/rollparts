@@ -9,6 +9,7 @@
     @include('store.components.categories.filters.priceFilter')
     @include('store.components.categories.filters.brandsFilter')
     @include('store.components.categories.filters.optionsFilter')
+        <input name="carModels" id="carModelsValue" type="hidden" value="{{ implode(',', $selectedOptions['carModels']) }}">
     </form>
     </div>
 </div>

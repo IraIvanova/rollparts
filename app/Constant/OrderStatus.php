@@ -8,10 +8,12 @@ class OrderStatus
         StatusesConstants::CREATED => [
             StatusesConstants::PROCESSING,
             StatusesConstants::CANCELLED,
-            StatusesConstants::RETURNED
+            StatusesConstants::RETURNED,
+            StatusesConstants::WAITING_BANK_TRANSFER,
         ],
         StatusesConstants::PROCESSING => [
-            StatusesConstants::WAITING_PAYMENT,
+            StatusesConstants::WAITING_ONLINE_PAYMENT,
+            StatusesConstants::WAITING_BANK_TRANSFER,
             StatusesConstants::SHIPPED,
             StatusesConstants::CANCELLED,
             StatusesConstants::RETURNED
@@ -30,7 +32,12 @@ class OrderStatus
             StatusesConstants::CANCELLED,
             StatusesConstants::RETURNED
         ],
-        StatusesConstants::WAITING_PAYMENT => [
+        StatusesConstants::WAITING_ONLINE_PAYMENT => [
+            StatusesConstants::PAID,
+            StatusesConstants::CANCELLED,
+            StatusesConstants::RETURNED
+        ],
+        StatusesConstants::WAITING_BANK_TRANSFER => [
             StatusesConstants::PAID,
             StatusesConstants::CANCELLED,
             StatusesConstants::RETURNED

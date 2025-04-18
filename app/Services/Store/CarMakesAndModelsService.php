@@ -48,13 +48,14 @@ readonly class CarMakesAndModelsService
         return CarModel::where('make_id', $makeId)->get();
     }
 
-    public function getModelsYears(?int $modelId = null): ?Collection
+    public function getModelsYears(?string $model = null): ?Collection
     {
-        return $this->getManufactureYearsForModel($modelId);
+        return $this->getManufactureYearsForModel($model);
     }
 
-    public function getManufactureYearsForModel(?int $modelId = null): Collection
+    public function getManufactureYearsForModel(?string $model = null): Collection
     {
-        return $modelId ? CarYear::where('car_model_id', $modelId)->orderBy('year')->get() : new Collection();
+        $carModel = CarModel::where('model', $model)->first();
+        return $model && $carModel ? CarYear::where('car_model_id', $carModel->id)->orderBy('year')->get() : new Collection();
     }
 }

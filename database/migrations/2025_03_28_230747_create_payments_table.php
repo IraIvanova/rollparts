@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->string('token')->unique();
+            $table->string('token')->nullable();
+            $table->string('payment_type')->default('online');
             $table->foreignId('order_id')->constrained()->onDelete('cascade');
             $table->text('callback')->nullable();
-            $table->string('status');
+            $table->string('status')->default('pending');
             $table->string('transaction_timestamp')->nullable();
+            $table->string('confirmation_file')->nullable();
             $table->timestamps();
         });
     }

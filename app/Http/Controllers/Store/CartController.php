@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Store;
 
+use App\Constant\PaymentTypeConstants;
 use App\Constant\StatusesConstants;
 use App\Exceptions\AddToCartException;
 use App\Exceptions\ProductNotFoundException;
 use App\Http\Controllers\Controller;
+use App\Models\Order;
+use App\Models\User;
 use App\Services\OrderService;
 use App\Services\Payment\InnerPaymentService;
 use App\Services\Payment\IyzicoPaymentService;
@@ -62,7 +65,6 @@ class CartController extends Controller
 
     public function createOrder(Request $request): ResponseAlias
     {
-        //TODO: check when two orders are created subsequently with different users
         //TODO: check payment status by last attempt
         $validator = $this->validationService->getValidatorForCheckout($request);
 
@@ -77,23 +79,29 @@ class CartController extends Controller
         }
 
         $client = $this->clientService->updateAndGetClient($request->all());
-//dd($client);
+
         //TODO: save not confirmed orders to temporary table?
         if (!$order = $this->orderService->getOrderByReference($cart->getOrderReference())) {
-            $order = $this->cartService->createOrder($client, $request->get('additionalNotes'));
+            $order = $this->cartService->createOrder($client, $request->only('additionalNotes', 'paymentMethod'));
         } else {
             $this->orderService->updateOrderClient($client, $order);
         }
+
         $this->clientService->saveClientToOrderInfoHistory($order, $client);
+
+        if ($order->payment_method === PaymentTypeConstants::BANK_TRANSFER) {
+            $this->finishOrderCreation($order, $client, StatusesConstants::WAITING_BANK_TRANSFER);
+
+            return redirect()->route('orderConfirmation')->with(['orderId' => $order->id]);
+        }
+
         $response = $this->paymentService->initializeCheckoutForm(
             $this->innerPaymentService->preparePaymentDTO($order, $cart)
         );
 
         if ($response->getStatus() == 'success') {
             $this->innerPaymentService->createPaymentInfo($order, $response->getToken());
-            $this->orderService->changeOrderStatus($order, StatusesConstants::WAITING_PAYMENT);
-            $this->clientService->saveClientToOrderInfoHistory($order, $client);
-
+            $this->finishOrderCreation($order, $client, StatusesConstants::WAITING_ONLINE_PAYMENT);
             $this->cartService->clearCart();
 
             return redirect($response->getPaymentPageUrl());
@@ -122,5 +130,11 @@ class CartController extends Controller
         $this->cartService->removeCoupon();
 
         return redirect()->back();
+    }
+
+    private function finishOrderCreation(Order $order, User $client, string $status): void
+    {
+        $this->orderService->changeOrderStatus($order, $status);
+        $this->clientService->saveClientToOrderInfoHistory($order, $client);
     }
 }

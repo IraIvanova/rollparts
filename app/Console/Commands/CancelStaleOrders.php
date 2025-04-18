@@ -32,7 +32,7 @@ class CancelStaleOrders extends Command
         $cutoff = Carbon::now()->subMinutes(30);
 
         $orders = Order::where('created_at', '<', $cutoff)
-            ->where('status_id', StatusesConstants::PENDING)
+            ->whereIn('status_id', [StatusesConstants::PENDING, StatusesConstants::WAITING_ONLINE_PAYMENT])
             ->get();
 
         $this->info("Found {$orders->count()} stale orders to cancel.");

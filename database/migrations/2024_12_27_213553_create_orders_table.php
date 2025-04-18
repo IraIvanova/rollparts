@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('order_number')->nullable();
             $table->float('total_price');
             $table->float('total_price_with_discount');
+            $table->string('payment_method');
             $table->float('manual_discount')->nullable();
             $table->json('used_promo')->nullable();
             $table->text('notes')->nullable();

@@ -12,10 +12,12 @@ use Filament\Forms;
 use Filament\Forms\Components\Actions;
 use Filament\Forms\Components\Actions\Action;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Infolists\Components\Fieldset;
 use Filament\Infolists\Components\Section;
+use Filament\Infolists\Components\SpatieMediaLibraryImageEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
@@ -26,6 +28,7 @@ use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\HtmlString;
 
 class OrderResource extends Resource
 {
@@ -74,8 +77,12 @@ class OrderResource extends Resource
                                 TextEntry::make('payment.transaction_timestamp')
                                     ->label('Created at')
                                     ->inlineLabel()
-                                    ->visible(fn($record) => $record->payment->transaction_timestamp)
+                                    ->visible(fn($record) => $record->payment?->transaction_timestamp)
                                     ->columnSpanFull(),
+                                SpatieMediaLibraryImageEntry::make('payment_confirmation')
+                                    ->collection('payment_confirmation')
+                                    ->label('Payment Confirmation')
+                                    ->visible(fn ($record) => $record->payment?->hasMedia('payment_confirmation')),
                             ])
                             ->columnSpan(1),
                     ]),
@@ -146,11 +153,22 @@ class OrderResource extends Resource
                                                 return Status::getAllowedStatuses($record->status_id);
                                             })
                                             ->required(),
+                                        Forms\Components\Placeholder::make('notes')
+                                            ->label('Order notes')
+                                            ->inlineLabel()
+                                            ->content(fn($get) => $get('notes'))
+                                            ->visible(fn($get) => $get('notes'))
+                                            ->columnSpanFull(),
                                     ])
                                     ->columnSpan(1),
                                 Forms\Components\Fieldset::make('Payment')
                                     ->relationship('payment')
                                     ->schema([
+                                        Forms\Components\Placeholder::make('payment_method')
+                                            ->label('Payment method')
+                                            ->inlineLabel()
+                                            ->content(fn($get) => $get('../payment_method'))
+                                            ->columnSpanFull(),
                                         Forms\Components\Placeholder::make('status')
                                             ->label('Payment status')
                                             ->inlineLabel()
@@ -170,15 +188,41 @@ class OrderResource extends Resource
                                         Forms\Components\Placeholder::make('transaction_timestamp')
                                             ->label('Created at')
                                             ->inlineLabel()
-                                            ->content(fn($get) => $get('transaction_timestamp'))
-                                            ->visible(fn($get) => $get('transaction_timestamp'))
+                                            ->content(fn($get, $record) => $get('transaction_timestamp') ?? $record->created_at->format('d.m.Y H:i:s'))
+                                            ->visible(fn($get, $record) => $get('transaction_timestamp') || $record?->hasMedia('payment_confirmation'))
                                             ->columnSpanFull(),
-                                        Forms\Components\Placeholder::make('notes')
-                                            ->label('Order notes')
+                                        SpatieMediaLibraryFileUpload::make('payment_confirmation')
+                                            ->collection('payment_confirmation')
+                                            ->helperText('Upload a bank receipt or payment proof (PDF, JPG, PNG)')
+                                            ->acceptedFileTypes(['application/pdf', 'image/*'])
+                                            ->preserveFilenames()
+                                            ->visible(fn($record) => !$record?->hasMedia('payment_confirmation'))
+                                            ->columnSpan('full'),
+
+
+                                        Forms\Components\Placeholder::make('payment_confirmation_view')
+                                            ->label('Payment confirmation')
                                             ->inlineLabel()
-                                            ->content(fn($get) => $get('notes'))
-                                            ->visible(fn($get) => $get('notes'))
+                                            ->content(function ($record) {
+                                                $media = $record->getFirstMedia('payment_confirmation');
+
+                                                return new HtmlString('<a href="' . $media->getFullUrl() . '" target="_blank" class="text-primary-600 underline">View Payment Confirmation</a>');
+                                            })
+                                            ->visible(fn($record) => $record && $record->hasMedia('payment_confirmation'))
                                             ->columnSpanFull(),
+
+                                        Forms\Components\Actions::make([
+                                            Forms\Components\Actions\Action::make('remove_payment_confirmation')
+                                                ->label('Remove confirmation')
+                                                ->color('danger')
+                                                ->icon('heroicon-o-trash')
+                                                ->visible(fn($record) => $record && $record->hasMedia('payment_confirmation'))
+                                                ->requiresConfirmation()
+                                                ->action(function ($record) {
+                                                        $record->clearMediaCollection('payment_confirmation');
+                                                        $record->delete();
+                                                })
+                                        ]),
                                     ])
                                     ->columnSpan(1),
                             ])

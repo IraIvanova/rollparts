@@ -26,6 +26,12 @@ class Product extends Model implements HasMedia
         'images' => 'array',
     ];
 
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('products')
+            ->useDisk('public');
+    }
+
     public function toSearchableArray(): array
     {
         $this->loadMissing('translationByLanguage', 'priceByCurrency', 'carModels');
@@ -38,13 +44,19 @@ class Product extends Model implements HasMedia
             'category_ids' => $this->categories->pluck('id'),
             'discounted_price' => $this->priceByCurrency?->discounted_price,
             'make_names' => $this->carModels->pluck('make.name')->unique()->values()->toArray(),
-            'car_model_names' => $this->carModels->pluck('name')->unique()->values()->toArray(),
+            'car_model_names' => $this->carModels->pluck('model')->unique()->values()->toArray(),
         ];
     }
 
     public function carModels(): BelongsToMany
     {
-        return $this->belongsToMany(CarModel::class);
+        return $this->belongsToMany(CarModel::class, 'car_model_product')
+            ->withPivot('car_year_id');
+    }
+
+    public function carModelProducts(): HasMany
+    {
+        return $this->hasMany(CarModelProduct::class);
     }
 
     public function categories(): BelongsToMany

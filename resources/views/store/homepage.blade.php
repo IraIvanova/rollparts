@@ -27,7 +27,7 @@
         @include('store.components.homepage.bestsellers')
     </section>
 
-{{--    @include('store.components.homepage.featuredBrands')--}}
+    @include('store.components.homepage.featuredBrands')
     @include('store.components.homepage.aboutUs')
 @endsection
 

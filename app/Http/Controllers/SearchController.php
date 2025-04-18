@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\DTO\ProductsFilterParametersDTO;
 use App\DTO\SearchParametersDTO;
-use App\Models\Product;
+use App\Models\CarMake;
 use App\Services\Store\CarMakesAndModelsService;
 use App\Services\Store\ProductService;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 
@@ -14,7 +15,7 @@ class SearchController extends Controller
 {
     public function __construct(
         private readonly CarMakesAndModelsService $carMakesAndModelsService,
-        private readonly ProductService $productService
+        private readonly ProductService $productService,
     ) {
     }
 
@@ -38,21 +39,22 @@ class SearchController extends Controller
         ])->render();
     }
 
-    public function searchByMakesAndModel(Request $request)
+    public function searchByMakesAndModel(Request $request): RedirectResponse
     {
-        dd(Product::search('o2fbe8oxky')->get());
+        return redirect()->route('catalog', $request->query());
     }
 
     public function getModelsByMake(Request $request): array
     {
-        $models = $this->carMakesAndModelsService->getModelsByMake($request->get('makeId'));
-        $years = $this->carMakesAndModelsService->getModelsYears($models->first()?->id);
+        $make = CarMake::where('name', $request->get('make'))->first();
+        $models = $this->carMakesAndModelsService->getModelsByMake($make->id);
+        $years = $this->carMakesAndModelsService->getModelsYears($models->first()?->model);
 
         return ['models' => $models, 'years' => $years];
     }
 
     public function getManufactureYearsForModel(Request $request): Collection
     {
-        return $this->carMakesAndModelsService->getModelsYears($request->get('modelId'));
+        return $this->carMakesAndModelsService->getModelsYears($request->get('model'));
     }
 }

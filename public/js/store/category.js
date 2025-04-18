@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const prices = document.getElementsByClassName('inputs');
         const checked = Array.from(inputs).filter(i => i.checked === true)
         let searchParams = groupInputsByName(checked);
+        searchParams['carModels'] = document.getElementById('carModelsValue').value.split(',');
 
         let url = new URL(form.action + '/?');
         let params = new URLSearchParams(searchParams);

@@ -18,7 +18,7 @@ readonly class OrderService
     ) {
     }
 
-    public function createOrder(User $user, ShoppingCart $shoppingCart, ?string $notes = ''): Order
+    public function createOrder(User $user, ShoppingCart $shoppingCart, array $additionalInfo): Order
     {
         $order = new Order();
         $order->user_id = $user->id;
@@ -27,7 +27,8 @@ readonly class OrderService
         $order->used_promo = json_encode([$shoppingCart->getCouponCode() => $shoppingCart->getCouponDiscount()], true);
         $order->total_price = array_reduce($shoppingCart->getProducts(), fn ($carry, CartProductDTO $item) => $carry + $item->price);
         $order->total_price_with_discount = array_reduce($shoppingCart->getProducts(), fn ($carry, CartProductDTO $item) => $carry + $item->discountedPrice) - $shoppingCart->getCouponDiscount();
-        $order->notes = $notes;
+        $order->payment_method = $additionalInfo['paymentMethod'];
+        $order->notes = $additionalInfo['additionalNotes'] ?? '';
 
         $order->save();
 

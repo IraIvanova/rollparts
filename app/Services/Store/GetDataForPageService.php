@@ -65,22 +65,24 @@ readonly class GetDataForPageService
         $filtersParameters = new ProductsFilterParametersDTO(
             language: 'tr',
             currency: 'TRL',
-            products: $bestsellerProductsId
+            products: $bestsellerProductsId,
+            limit: 10
         );
-        $bestsellerProducts = $this->productQueryBuilderService->getProductsList($filtersParameters)->get();
+        $bestsellerProducts = $this->searchService->getProductsList($filtersParameters);
 
         $filtersParameters = new ProductsFilterParametersDTO(
             language: 'tr',
             currency: 'TRL',
-            products: $newestProductsId
+            products: $newestProductsId,
+            limit: 10
         );
-        $newestProducts = $this->productQueryBuilderService->getProductsList($filtersParameters)->get();
+        $newestProducts = $this->searchService->getProductsList($filtersParameters);
 
         $productImages = $this->productService->getMainImages($bestsellerProductsId + $newestProductsId);
 
         return [
-            'bestsellers' => $this->toArray($bestsellerProducts),
-            'newestProducts' => $this->toArray($newestProducts),
+            'bestsellers' => $bestsellerProducts,
+            'newestProducts' => $newestProducts,
             'images' => $productImages,
             'makes' => $this->brandService->getAllAvailableMakes()
         ];

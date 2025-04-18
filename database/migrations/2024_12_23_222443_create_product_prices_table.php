@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('option_value')->nullable();
             $table->float('discounted_price', 2)->nullable();
             $table->float('discount_amount', 2)->nullable();
+            $table->decimal('cargo_price', 10, 2)->default(250);
             $table->timestamps();
 
             $table->foreign('product_id')

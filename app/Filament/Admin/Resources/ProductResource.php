@@ -7,6 +7,8 @@ use App\Filament\Admin\Resources\ProductResource\Pages;
 use App\Filament\Admin\Resources\ProductResource\RelationManagers\FrequentlyBoughtTogetherRelationManager;
 use App\Filament\Admin\Resources\ProductResource\RelationManagers\ImagesRelationManager;
 use App\Filament\Admin\Resources\ProductResource\RelationManagers\ProductOptionsRelationManager;
+use App\Models\CarModel;
+use App\Models\CarYear;
 use App\Models\Currency;
 use App\Models\Language;
 use App\Models\Product;
@@ -81,11 +83,32 @@ class ProductResource extends Resource
                                     ->unique('products', 'slug', ignoreRecord: true),
                                 TextInput::make('mnf_code')
                                     ->maxLength(255),
-                                Select::make('car_models')
-                                    ->multiple()
-                                    ->relationship('carModels', 'model')
-                                    ->preload()
-                                    ->searchable(),
+                                Repeater::make('carModels')
+                                    ->label('Car Model & Year')
+                                    ->relationship('carModelProducts')
+                                    ->schema([
+                                        Select::make('car_model_id')
+                                            ->label('Car Model')
+                                            ->options(CarModel::all()->pluck('model', 'id'))
+                                            ->afterStateUpdated(function ($state, callable $set) {
+                                                $firstYear = CarYear::where('car_model_id', $state)->orderBy('year')->first();
+                                                $set('car_year_id', $firstYear?->id);
+                                            })
+                                            ->reactive()
+                                            ->searchable()
+                                            ->required(),
+                                        Select::make('car_year_id')
+                                            ->label('Year')
+                                            ->options(function (callable $get) {
+                                                $modelId = $get('car_model_id');
+                                                return $modelId
+                                                    ? CarYear::where('car_model_id', $modelId)->pluck('year', 'id')
+                                                    : [];
+                                            })
+                                            ->required(),
+                                    ])
+                                    ->grid(2),
+
                                 SelectTree::make('categories')
                                     ->relationship('categories', 'name', 'parent_id')
                                     ->enableBranchNode()
@@ -96,9 +119,9 @@ class ProductResource extends Resource
                                     ->schema([
                                         TextInput::make('price')
                                             ->label('Price')
-                                            ->numeric()
                                             ->required()
                                             ->live(onBlur: true)
+                                            ->prefix('₺')
                                             ->afterStateUpdated(
                                                 function ($state, callable $get, callable $set) {
                                                     $discount = $get('discount_amount');
@@ -112,13 +135,18 @@ class ProductResource extends Resource
                                             ->label('Currency')
                                             ->options(Currency::pluck('code', 'id'))
                                             ->default(1)
+                                            ->hidden()
                                             ->required(),
+                                        TextInput::make('cargo_price')
+                                            ->label('Cargo Price')
+                                            ->default(250)
+                                            ->required()
+                                            ->prefix('₺'),
                                         TextInput::make('discount_amount')
                                             ->label('Discount (%)')
-                                            ->numeric()
                                             ->default(0)
                                             ->live(onBlur: true)
-                                            ->suffix('%')
+                                            ->prefix('%')
                                             ->afterStateUpdated(
                                                 function ($state, callable $get, callable $set) {
                                                     $price = $get('price');
@@ -132,6 +160,7 @@ class ProductResource extends Resource
                                             ->label('Price with Discount')
                                             ->numeric()
                                             ->reactive()
+                                            ->prefix('₺')
                                             ->afterStateUpdated(
                                                 function ($state, callable $get, callable $set, ?Model $record) {
                                                     $price = $get('price');
