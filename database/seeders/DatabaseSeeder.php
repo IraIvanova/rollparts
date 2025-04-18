@@ -43,6 +43,7 @@ class DatabaseSeeder extends Seeder
             TranslationSeeder::class,
             CarMakeSeeder::class,
             CarModelSeeder::class,
+            ColorSeeder::class,
         ]);
     }
 }

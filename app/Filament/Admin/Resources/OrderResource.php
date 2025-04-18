@@ -12,6 +12,7 @@ use App\Services\OrderService;
 use Filament\Forms;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Infolists\Components\Fieldset;
@@ -144,6 +145,16 @@ class OrderResource extends Resource
                             ->schema([
                                 Forms\Components\Fieldset::make('Order stage')
                                     ->schema([
+                                        Forms\Components\Placeholder::make('id')
+                                            ->label('Order ID')
+                                            ->inlineLabel()
+                                            ->content(fn($get) => $get('id'))
+                                            ->columnSpanFull(),
+                                        Forms\Components\Placeholder::make('created_at')
+                                            ->label('Created_at')
+                                            ->inlineLabel()
+                                            ->content(fn($record) => $record->created_at->format('d.m.Y H:i:s'))
+                                            ->columnSpanFull(),
                                         Select::make('status_id')
                                             ->label('Status')
                                             ->inlineLabel()
@@ -151,12 +162,10 @@ class OrderResource extends Resource
                                             ->options(function (callable $get, ?Order $record) {
                                                 return Status::getAllowedStatuses($record->status_id);
                                             })
+                                            ->columnSpanFull()
                                             ->required(),
-                                        Forms\Components\Placeholder::make('notes')
+                                        Textarea::make('notes')
                                             ->label('Order notes')
-                                            ->inlineLabel()
-                                            ->content(fn($get) => $get('notes'))
-                                            ->visible(fn($get) => $get('notes'))
                                             ->columnSpanFull(),
                                     ])
                                     ->columnSpan(1),
@@ -232,7 +241,8 @@ class OrderResource extends Resource
                         Forms\Components\Fieldset::make('Order total & applied discounts')
                             ->schema([
                                 TextInput::make('total_price_with_discount')
-                                    ->label('Final Price')
+                                    ->label('Final Price (with all discounts applied)')
+                                    ->prefix('₺')
                                     ->numeric()
                                     ->reactive()
                                     ->afterStateHydrated(function (callable $set, callable $get) {
@@ -242,14 +252,22 @@ class OrderResource extends Resource
                                     ->disabled(),
                                 TextInput::make('total_price')
                                     ->label('Net price')
+                                    ->prefix('₺')
                                     ->disabled(),
                                 TextInput::make('manual_discount')
                                     ->numeric()
+                                    ->prefix('₺')
                                     ->live(onBlur: true)
                                     ->afterStateUpdated(function ($state, callable $set, callable $get, Order $record) {
                                         $set('total_price_with_discount', OrderService::calculateTotalPriceWithManualDiscount($record, $state));
                                     })
                                     ->label('Manual discount'),
+                                TextInput::make('cargo_price')
+                                    ->label('Cargo Price')
+                                    ->numeric()
+                                    ->prefix('₺')
+                                    ->required()
+                                    ->default(250),
                                 TextInput::make('used_promo')
                                     ->label('Used promo code')
                                     ->disabled(),

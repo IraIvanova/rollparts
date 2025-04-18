@@ -48,6 +48,22 @@ class Product extends Model implements HasMedia
         ];
     }
 
+    public function productVariants()
+    {
+        return $this->belongsToMany(Product::class, 'product_variants', 'main_product_id', 'variant_id')
+            ->withPivot('color_id');
+    }
+
+    public function variant()
+    {
+        return $this->belongsTo(Product::class, 'variant_id');
+    }
+
+    public function color()
+    {
+        return $this->belongsTo(Color::class, 'color_id');
+    }
+
     public function carModels(): BelongsToMany
     {
         return $this->belongsToMany(CarModel::class, 'car_model_product')

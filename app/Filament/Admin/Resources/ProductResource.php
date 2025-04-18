@@ -7,6 +7,7 @@ use App\Filament\Admin\Resources\ProductResource\Pages;
 use App\Filament\Admin\Resources\ProductResource\RelationManagers\FrequentlyBoughtTogetherRelationManager;
 use App\Filament\Admin\Resources\ProductResource\RelationManagers\ImagesRelationManager;
 use App\Filament\Admin\Resources\ProductResource\RelationManagers\ProductOptionsRelationManager;
+use App\Filament\Admin\Resources\ProductResource\RelationManagers\VariantsRelationManager;
 use App\Models\CarModel;
 use App\Models\CarYear;
 use App\Models\Currency;
@@ -228,7 +229,8 @@ class ProductResource extends Resource
         return [
             InventoryRelationManager::class,
             FrequentlyBoughtTogetherRelationManager::class,
-            ProductOptionsRelationManager::class
+            ProductOptionsRelationManager::class,
+            VariantsRelationManager::class
         ];
     }
 
