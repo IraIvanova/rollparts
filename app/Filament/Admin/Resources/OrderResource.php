@@ -3,14 +3,13 @@
 namespace App\Filament\Admin\Resources;
 
 use App\Constant\StatusesConstants;
+use App\Filament\Admin\Forms\OrderClientInfoForm;
 use App\Filament\Admin\Resources\OrderResource\Pages;
 use App\Filament\Admin\Resources\OrderResource\RelationManagers;
 use App\Models\Order;
 use App\Models\Status;
 use App\Services\OrderService;
 use Filament\Forms;
-use Filament\Forms\Components\Actions;
-use Filament\Forms\Components\Actions\Action;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
@@ -24,7 +23,6 @@ use Filament\Resources\Resource;
 use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -148,6 +146,7 @@ class OrderResource extends Resource
                                     ->schema([
                                         Select::make('status_id')
                                             ->label('Status')
+                                            ->inlineLabel()
                                             ->relationship('status', 'name')
                                             ->options(function (callable $get, ?Order $record) {
                                                 return Status::getAllowedStatuses($record->status_id);
@@ -196,7 +195,7 @@ class OrderResource extends Resource
                                             ->helperText('Upload a bank receipt or payment proof (PDF, JPG, PNG)')
                                             ->acceptedFileTypes(['application/pdf', 'image/*'])
                                             ->preserveFilenames()
-                                            ->visible(fn($record) => !$record?->hasMedia('payment_confirmation'))
+                                            ->visible(fn($record, $get) => $get('../payment_method')!== 'online' && !$record?->hasMedia('payment_confirmation'))
                                             ->columnSpan('full'),
 
 
@@ -225,31 +224,9 @@ class OrderResource extends Resource
                                         ]),
                                     ])
                                     ->columnSpan(1),
-                            ])
-                        ,
-                        Forms\Components\Fieldset::make('Client info')
-                            ->relationship('orderInfo')
-                            ->schema([
-                                TextInput::make('full_name'),
-                                TextInput::make('email'),
-                                TextInput::make('phone'),
-                                TextInput::make('shipping_address'),
-                                TextInput::make('billing_address')
-                                ->default('Same as shipping address'),
-                                Actions::make([
-                                    Action::make('view_client')
-                                        ->label('View Client Card')
-                                        ->icon('heroicon-o-user')
-                                        ->url(
-                                            fn($get) => route('filament.admin.resources.users.edit', $get('../user_id'))
-                                        )
-                                        ->openUrlInNewTab(),
-                                ])->alignRight()
-                                    ->verticallyAlignCenter(),
                             ]),
-
-
                     ]),
+                OrderClientInfoForm::make(),
                 Forms\Components\Section::make()
                     ->schema([
                         Forms\Components\Fieldset::make('Order total & applied discounts')

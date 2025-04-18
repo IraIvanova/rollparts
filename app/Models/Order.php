@@ -47,7 +47,7 @@ class Order extends Model
 
     public function orderInfo(): HasOne
     {
-        return $this->hasOne(OrderInfo::class);
+        return $this->hasOne(OrderInfo::class, 'order_id');
     }
 
     public function payment(): HasOne

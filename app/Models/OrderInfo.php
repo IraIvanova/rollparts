@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class OrderInfo extends Model
 {
     protected $table = 'order_info';
-    protected $guarded = ['id', 'created_at', 'updated_at'];
+    protected $fillable = ['full_name', 'email', 'phone', 'shipping_address', 'billing_address', 'order_id'];
 
     public function order(): BelongsTo
     {

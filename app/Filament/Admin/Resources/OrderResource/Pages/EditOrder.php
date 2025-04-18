@@ -34,7 +34,10 @@ class EditOrder extends EditRecord
     {
         $orderService = app(OrderService::class);
 
-        if (isset($this->oldFormState['data']) && !$orderService->canTransitionTo(
+        $oldStatus = $this->oldFormState['data']['status_id'];
+        $newStatus = +$this->data['status_id'];
+
+        if ($oldStatus !== $newStatus && !$orderService->canTransitionTo(
                 $this->oldFormState['data']['status_id'],
                 +$this->data['status_id']
             )) {
