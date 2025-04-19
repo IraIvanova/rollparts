@@ -16,7 +16,6 @@ return new class extends Migration
 
             $table->unsignedBigInteger('main_product_id');
             $table->unsignedBigInteger('variant_id');
-            $table->unsignedBigInteger('color_id');
 
             $table->timestamps();
 
@@ -30,12 +29,7 @@ return new class extends Migration
                 ->on('products')
                 ->onDelete('cascade');
 
-            $table->foreign('color_id')
-                ->references('id')
-                ->on('colors')
-                ->onDelete('cascade');
-
-            $table->unique(['main_product_id', 'variant_id', 'color_id']);
+            $table->unique(['main_product_id', 'variant_id']);
         });
     }
 

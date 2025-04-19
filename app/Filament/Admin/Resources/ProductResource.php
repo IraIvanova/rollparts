@@ -10,12 +10,14 @@ use App\Filament\Admin\Resources\ProductResource\RelationManagers\ProductOptions
 use App\Filament\Admin\Resources\ProductResource\RelationManagers\VariantsRelationManager;
 use App\Models\CarModel;
 use App\Models\CarYear;
+use App\Models\Color;
 use App\Models\Currency;
 use App\Models\Language;
 use App\Models\Product;
 use App\Services\Store\ProductService;
 use CodeWithDennis\FilamentSelectTree\SelectTree;
 use Filament\Forms\Components\Fieldset;
+use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
@@ -82,8 +84,13 @@ class ProductResource extends Resource
                                     ->rules(['alpha_dash'])
                                     ->disabledOn('edit')
                                     ->unique('products', 'slug', ignoreRecord: true),
+                                Grid::make(2)
+                                    ->schema([
                                 TextInput::make('mnf_code')
                                     ->maxLength(255),
+                                Select::make('color_id')
+                                    ->options(Color::all()->pluck('name', 'id')),
+                                ]),
                                 Repeater::make('carModels')
                                     ->label('Car Model & Year')
                                     ->relationship('carModelProducts')
@@ -192,6 +199,7 @@ class ProductResource extends Resource
                                 SpatieMediaLibraryFileUpload::make('attachments')
                                     ->multiple()
                                     ->reorderable()
+                                    ->responsiveImages()
                                     ->image()
                             ]),
                     ])

@@ -33,7 +33,7 @@ class ProductService
 
     public function getProductBySlug(string $slug): ?Product
     {
-        return Product::where('slug', $slug)->select(['id', 'active', 'mnf_code', 'quantity'])->first();
+        return Product::where('slug', $slug)->first();
     }
 
     public function getProductById(int $id): ?Product
@@ -67,6 +67,7 @@ class ProductService
         }
 
         return [
+            'product' => $product,
             'id' => $product->id,
             'active' => $product->active,
             'quantity' => $product->stock?->quantity,
@@ -81,6 +82,7 @@ class ProductService
             )->get()->mapToGroups(fn($i) => [$i->option => [$i->option_value, $i->relatedProduct->slug]]),
             'frequentlyBoughtTogetherProducts' => $frequentlyBoughtTogetherProducts ?? [],
             'recentlyViewedProducts' => $recentlyViewedProducts ?? [],
+            'colorVariants' => $product->productVariants,
             'breadcrumbs' => $this->breadcrumbsService->prepareBreadcrumbsForProduct(
                 $product,
                 $productNameAndDescription['name']

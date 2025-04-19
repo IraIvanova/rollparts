@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('quantity')->default(0);
             $table->boolean('active')->default(true);
             $table->string('mnf_code')->nullable();
+            $table->integer('color_id')->nullable();
             $table->timestamps();
         });
     }

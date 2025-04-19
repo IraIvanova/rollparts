@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\App;
 use Laravel\Scout\Searchable;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
-
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 
 class Product extends Model implements HasMedia
@@ -21,15 +21,25 @@ class Product extends Model implements HasMedia
     use InteractsWithMedia;
     use Searchable;
 
-    protected $fillable = ['name', 'slug', 'description', 'mnf_code', 'images'];
+    protected $fillable = ['name', 'slug', 'description', 'mnf_code', 'images', 'color_id'];
     protected $casts = [
         'images' => 'array',
     ];
 
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this
+            ->addMediaConversion('my-conversion')
+            ->greyscale()
+            ->quality(80)
+            ->withResponsiveImages();
+    }
+
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('products')
-            ->useDisk('public');
+            ->useDisk('public')
+            ->withResponsiveImages();
     }
 
     public function toSearchableArray(): array
@@ -51,7 +61,7 @@ class Product extends Model implements HasMedia
     public function productVariants()
     {
         return $this->belongsToMany(Product::class, 'product_variants', 'main_product_id', 'variant_id')
-            ->withPivot('color_id');
+            ->with('color');
     }
 
     public function variant()

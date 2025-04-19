@@ -43,6 +43,7 @@
                                                 @endif
                                             </h6>
                                         </div>
+                                        @include('store.components.product.colorVariants')
                                         <div>
                                             <h6 class="font-size-14px my-2 pb-2 border-bottom">
                                                 @if($active && $quantity)
