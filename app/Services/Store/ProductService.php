@@ -76,7 +76,7 @@ class ProductService
             'description' => $productNameAndDescription->description,
             'brand' => $product->carModels,
             'prices' => $product->priceByCurrency,
-            'images' => $product->getMedia(),
+            'images' => $product->getMedia('products'),
             'productOptions' => $product->productOptions()->whereNot('related_product_id', $product->id)->with(
                 'relatedProduct'
             )->get()->mapToGroups(fn($i) => [$i->option => [$i->option_value, $i->relatedProduct->slug]]),

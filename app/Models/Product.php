@@ -26,20 +26,32 @@ class Product extends Model implements HasMedia
         'images' => 'array',
     ];
 
-    public function registerMediaConversions(Media $media = null): void
+    public function registerMediaConversions(?Media $media = null): void
     {
-        $this
-            ->addMediaConversion('my-conversion')
-            ->greyscale()
-            ->quality(80)
-            ->withResponsiveImages();
+        $this->addMediaConversion('thumb')
+            ->format('webp')
+            ->width(100);
+
+        $this->addMediaConversion('image-md')
+            ->format('webp')
+            ->width(600)
+            ->optimize();
+
+        $this->addMediaConversion('image-sm')
+            ->format('webp')
+            ->width(200)
+            ->optimize();
+
+        $this->addMediaConversion('image-lg')
+            ->format('webp')
+            ->width(1200)
+            ->optimize();
     }
 
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('products')
-            ->useDisk('public')
-            ->withResponsiveImages();
+            ->useDisk('public');
     }
 
     public function toSearchableArray(): array

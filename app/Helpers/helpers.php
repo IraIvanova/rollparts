@@ -1,6 +1,7 @@
 <?php
 
 use App\Constant\FilesConstants;
+use App\Models\Product;
 use Illuminate\Support\Collection;
 
 if (!function_exists('isOptionShouldBeChecked')) {
@@ -30,16 +31,15 @@ if (!function_exists('displayPrices')) {
 }
 
 if (!function_exists('getMainImagePath')) {
-    function getMainImagePath(Collection|array|null $images, ?int $product = null): string
+    function getMainImagePath($product, ?string $size = 'image-sm'): string
     {
-        if ($product && isset($images[$product])) {
-            return $images[$product];
+        if ($product instanceof Product) {
+            return $product->getFirstMediaUrl('products', $size) ??
+                asset(FilesConstants::DEFAULT_IMAGE);
         }
 
-        if (!$product && $images && count($images) > 0) {
-           return $images->first()->getFullUrl();
-        }
+        return $product->getUrl($size) ??
+            asset(FilesConstants::DEFAULT_IMAGE);
 
-        return asset(FilesConstants::DEFAULT_IMAGE);
     }
 }

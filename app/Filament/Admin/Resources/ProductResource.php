@@ -197,9 +197,10 @@ class ProductResource extends Resource
                         Tab::make('Product Images & Files')
                             ->schema([
                                 SpatieMediaLibraryFileUpload::make('attachments')
+                                    ->collection('products')
+                                    ->conversion('thumb')
                                     ->multiple()
                                     ->reorderable()
-                                    ->responsiveImages()
                                     ->image()
                             ]),
                     ])
