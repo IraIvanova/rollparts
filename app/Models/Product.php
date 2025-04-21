@@ -21,7 +21,7 @@ class Product extends Model implements HasMedia
     use InteractsWithMedia;
     use Searchable;
 
-    protected $fillable = ['name', 'slug', 'description', 'mnf_code', 'images', 'color_id'];
+    protected $fillable = ['id', 'name', 'slug', 'description', 'mnf_code', 'images', 'color_id'];
     protected $casts = [
         'images' => 'array',
     ];

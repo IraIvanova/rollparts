@@ -12,8 +12,7 @@
         <a href="{{route('product', $product->slug)}}">
 
             <img loading="lazy" width="225" height="225"
-                 src="{{ $product->getFirstMedia()?->getUrl('thumb') }}" alt="{{$product->translationByLanguage->name}}"> </a>
-{{--                 src="{{getMainImagePath($images, $product->id)}}" alt="{{$product->translationByLanguage->name}}"> </a>--}}
+                 src="{{ getMainImagePath($product, 'image-md') }}" alt="{{$product->translationByLanguage->name}}"> </a>
     </div>
     <div class="rp-product-single-item-mini">
 {{--            <a href="{{route('catalog', ['brand' => $product['brand_slug']])}}" class="font-size-14px">{{$product['brand_name']}}</a>--}}

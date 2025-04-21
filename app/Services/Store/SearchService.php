@@ -16,6 +16,10 @@ class SearchService
             $filters[] = 'category_ids IN [' . implode(',', $params->categories) . ']';
         }
 
+        if (!empty($params->products)) {
+            $filters[] = 'id IN [' . implode(',', $params->products) . ']';
+        }
+
         if (!empty($params->searchParameters?->carMakes)) {
             $makeFilters = array_map(fn($make) => "make_names = \"$make\"", $params->searchParameters->carMakes);
             $filters[] = '(' . implode(' OR ', $makeFilters) . ')';

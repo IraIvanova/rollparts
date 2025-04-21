@@ -12,7 +12,7 @@
                 <div class="col-12">
                     <div class="product-list-items ">
                         @foreach ($recentlyViewedProducts as $rProduct)
-                            @include('store.components.productsList.item2', ['product' => $rProduct, 'images' => $images ])
+                            @include('store.components.productsList.item', ['product' => $rProduct])
                         @endforeach
                     </div>
                 </div>

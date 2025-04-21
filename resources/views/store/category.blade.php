@@ -19,11 +19,12 @@
                             <div class="products columns-4">
                                 <div class="product-list-items ">
                                     @foreach ($products as $product)
-                                        @include('store.components.productsList.item', ['product' => $product, 'images' => $images ])
+                                        @include('store.components.productsList.item', ['product' => $product])
                                     @endforeach
                                 </div>
                                 <div>
-                                    {{ $products->links() }}
+{{--                                    @dd($products->links())--}}
+                                    {{ $products->links('pagination::bootstrap-4') }}
                                 </div>
                             </div>
                         </div>

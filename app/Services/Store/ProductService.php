@@ -3,16 +3,10 @@
 namespace App\Services\Store;
 
 use App\DTO\ProductsFilterParametersDTO;
-use App\DTO\SearchParametersDTO;
 use App\Models\Product;
 use App\Services\FilesManagingService;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Query\Builder;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
-
-use function Laravel\Prompts\select;
 
 class ProductService
 {
@@ -24,10 +18,8 @@ class ProductService
     public function __construct(
         private readonly FilesManagingService $filesManagingService,
         private readonly BreadcrumbsService $breadcrumbsService,
-        private readonly SearchProductsQueryBuilderService $productQueryBuilderService,
         private readonly SearchService $searchService,
         private readonly StorageService $storageService,
-        private readonly PaginationService $paginationService,
     ) {
     }
 
@@ -48,7 +40,8 @@ class ProductService
             $frequentlyBoughtFilterParameters = new ProductsFilterParametersDTO(
                 language: 'tr',
                 currency: 'TRL',
-                products: $frequentlyIds
+                products: $frequentlyIds,
+                limit: 8
             );
             $frequentlyBoughtTogetherProducts = $this->searchService->getProductsList(
                 $frequentlyBoughtFilterParameters
@@ -56,10 +49,12 @@ class ProductService
         }
 
         if ($recentlyViewedIds = array_diff(session()->get('recentlyViewedProducts', []), [$product->id])) {
+//           dd($product->id, $recentlyViewedIds);
             $recentlyViewedFilterParameters = new ProductsFilterParametersDTO(
                 language: 'tr',
                 currency: 'TRL',
-                products: $recentlyViewedIds
+                products: $recentlyViewedIds,
+                limit: 8
             );
             $recentlyViewedProducts = $this->searchService->getProductsList(
                 $recentlyViewedFilterParameters

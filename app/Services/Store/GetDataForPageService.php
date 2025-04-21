@@ -16,7 +16,6 @@ readonly class GetDataForPageService
         private CategoryService $categoryService,
         private SearchProductsQueryBuilderService $productQueryBuilderService,
         private SearchService $searchService,
-        private PaginationService $paginationService,
         private ProductService $productService,
         private CarMakesAndModelsService $brandService,
         private OptionsService $optionsService,
@@ -111,7 +110,8 @@ readonly class GetDataForPageService
                 language: 'tr',
                 currency: 'TRL',
                 categories: $nestedCategoriesId,
-                searchParameters: $searchParameters
+                searchParameters: $searchParameters,
+                limit: 30
             )
         );
 

@@ -40,7 +40,7 @@ class CartService
             slug: $product->slug,
             name: $product->translationByLanguage['name'],
             amount: $quantity,
-            image: $product->getFirstMediaUrl() ?: asset('images/default.png'),
+            image: getMainImagePath($product, 'thumb'),
             price: $prices['price'],
             discountedPrice: $prices['discounted_price']
         );

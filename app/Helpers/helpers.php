@@ -34,7 +34,8 @@ if (!function_exists('getMainImagePath')) {
     function getMainImagePath($product, ?string $size = 'image-sm'): string
     {
         if ($product instanceof Product) {
-            return $product->getFirstMediaUrl('products', $size) ??
+            return $product->hasMedia('products') ?
+                $product->getFirstMediaUrl('products', $size) :
                 asset(FilesConstants::DEFAULT_IMAGE);
         }
 

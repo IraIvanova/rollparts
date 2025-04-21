@@ -119,8 +119,8 @@
                 </div>
             </div>
 <div class="mb-5">
-{{--        @include('store.components.productsSet.frequentlyBoughtTogetherProducts')--}}
-{{--        @include('store.components.productsSet.recentlyViewedProducts')--}}
+        @include('store.components.productsSet.frequentlyBoughtTogetherProducts')
+        @include('store.components.productsSet.recentlyViewedProducts')
 </div>
     </section>
 @endsection

@@ -4169,7 +4169,8 @@ input:not([type='radio']) {
     width: 99% !important;
 }
 
-.preview-img.selected {
+.preview-img.selected,
+.color-variant.selected {
     opacity: 1 !important;
     border: 1px solid red !important;
 }
