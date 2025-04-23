@@ -1,6 +1,4 @@
-<?php
-
-return array (
+<?php return array (
   'trLira' => '₺',
   'shoppingCart' => 'Alışveriş sepeti',
   'header' => 
@@ -250,6 +248,9 @@ return array (
       'subtotal' => 'Ara Toplam',
     ),
     'makeOrder' => 'Sipariş verin',
+    'paymentDesc' => 'Banka havalesi ile ödeme yaptığınızda %5 ek indirim kazanacaksınız. Siparişiniz, ödemenin hesabımıza geçmesinin ardından gönderilecektir.',
+    'creditCard' => 'Kredi kartı',
+    'bankTransfer' => 'Banka Transferi',
   ),
   'cookies' => 
   array (
@@ -523,4 +524,5 @@ return array (
   <p>Evet. Toptan siparişler için özel fiyatlar ve avantajlar sunmaktayız. Detaylı bilgi ve teklif almak için <a href="/iletisim">bizimle iletişime geçin</a>.</p>
 ',
   ),
+  'paymentDesc' => 'Banka havalesi ile ödeme yaptığınızda %5 ek indirim kazanacaksınız. Siparişiniz, ödemenin hesabımıza geçmesinin ardından gönderilecektir.',
 );

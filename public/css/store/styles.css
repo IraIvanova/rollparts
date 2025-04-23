@@ -56,11 +56,12 @@
 }
 #icon-search {
     top: 16px;
+    left: 16px;
     color: red;
     font-size: 28px;
 }
 #icon-search img {
-    height: 60px;
+    height: 27px;
 }
 
 .bg-gray-gradient {

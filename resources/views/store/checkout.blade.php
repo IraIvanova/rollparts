@@ -65,19 +65,16 @@
                                                                class="input-radio radio_group"
                                                                name="paymentMethod" value="online"
                                                                checked="checked">
-                                                        <label for="payment_method_online">Credit card</label>
+                                                        <label for="payment_method_online">{{ trans('interface.checkout.creditCard') }}</label>
                                                     </div>
 
                                                     <div class="form-group">
                                                         <input id="payment_method_bank" type="radio"
                                                                class="input-radio radio_group"
                                                                name="paymentMethod" value="bank_transfer">
-                                                        <label for="payment_method_bank">Bank transfer</label>
+                                                        <label for="payment_method_bank">{{ trans('interface.checkout.bankTransfer') }}</label>
                                                         <div class="payment_box">
-                                                            <p>Make your payment directly into our bank account.
-                                                                Please use your Order ID as the payment
-                                                                reference. Your order will not be shipped until
-                                                                the funds have cleared in our account.</p>
+                                                            <p>{{ trans('interface.checkout.paymentDesc') }}</p>
                                                         </div>
                                                         <div>
                                                         </div>
