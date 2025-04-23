@@ -4907,7 +4907,9 @@ input[type="range"]::-moz-range-thumb {
 .shop_table .product-subtotal {
     text-align: center;
 }
-
+.shop_table .product-quantity {
+    min-width: 35px;
+}
 .shop_table img {
     border-radius: 4px;
     max-width: 60px;
