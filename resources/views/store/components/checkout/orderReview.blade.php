@@ -8,7 +8,7 @@
 
                     <strong class="product-quantity">× {{$product['amount']}}</strong>
 
-                    @if($product['discountedPrice'])
+                    @if($product['price'] !== $product['discountedPrice'])
                         <span class="rp-checkout-order-price product-total">
                         <span class="rp-Price-amount amount px-2 color-grey line-through"><span
                                 class="rp-currencySymbol">{{ trans('interface.trLira') }}</span>{{ $product['price'] }}</span>
@@ -36,10 +36,12 @@
                             class="rp-Price-amount amount"><span
                                 class="rp-currencySymbol">{{ trans('interface.trLira') }}</span>{{$couponDiscount}}</span></span></h5>
             @endif
+            @if($totalPrice !== $totalWithDiscount)
             <h5>{{ trans('interface.checkout.total.totalDiscount') }} <span class="rp-checkout-order-price"><span
                         class="rp-Price-amount amount"><span
                             class="rp-currencySymbol">{{ trans('interface.trLira') }}</span>{{$totalPrice - $totalWithDiscount}}</span></span>
             </h5>
+                @endif
         </div>
     </div>
 
