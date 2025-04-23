@@ -4907,7 +4907,7 @@ input[type="range"]::-moz-range-thumb {
 .shop_table .product-subtotal {
     text-align: center;
 }
-.shop_table .product-quantity {
+.product-quantity {
     min-width: 35px;
 }
 .shop_table img {
