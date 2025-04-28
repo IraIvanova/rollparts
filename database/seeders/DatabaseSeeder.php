@@ -35,6 +35,7 @@ class DatabaseSeeder extends Seeder
             CategoriesTableSeeder::class,
             UnitTypesTableSeeder::class,
             OptionsTableSeeder::class,
+            ManufacturersSeeder::class,
             ProductsTableSeeder::class,
             ProvinceDistrictSeeder::class,
             CouponsTableSeeder::class,
