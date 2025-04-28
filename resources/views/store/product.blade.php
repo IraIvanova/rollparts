@@ -21,6 +21,7 @@
                                 <div class="rp-product-hero-content">
                                     <div class="rp-product-hero-content-info">
                                         <div class="rp-product-hero-content-title">
+                                            <a class="font-weight-bold text-primary">{{$product->manufacturer?->name}}</a>
                                             <h1>{{ $name }}</h1>
                                         </div>
                                         @if($prices['discount_amount'])
@@ -42,6 +43,10 @@
                                                             class="rp-currencySymbol">{{ trans('interface.trLira') }}</span>{{ $prices['price'] }}</span>
                                                 @endif
                                             </h6>
+                                            <div class="d-flex flex-column border-red width-fit-content mt-3">
+                                                <div class="px-2 py-1 batch-primary">{{ trans('interface.product.bankTransferDiscount') }}</div>
+                                                <div class="rp-Price-amount amount color-red text-center">{{ trans('interface.trLira') }} {{ number_format($prices['discounted_price'] - $prices['discounted_price'] * 0.05, 2) }}</div>
+                                            </div>
                                         </div>
                                         @include('store.components.product.colorVariants')
                                         <div>
@@ -85,6 +90,7 @@
                                                 </div>
                                             </div>
                                     </div>
+                                    @include('store.components.product.compatibleModels')
                                 </div>
 
                             </div>

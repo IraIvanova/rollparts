@@ -13,6 +13,7 @@ use App\Models\CarYear;
 use App\Models\Color;
 use App\Models\Currency;
 use App\Models\Language;
+use App\Models\Manufacturer;
 use App\Models\Product;
 use App\Services\Store\ProductService;
 use CodeWithDennis\FilamentSelectTree\SelectTree;
@@ -69,8 +70,9 @@ class ProductResource extends Resource
                                             ->label('Name')
                                             ->required()
                                             ->live(onBlur: true)
-                                            ->afterStateUpdated(fn (Set $set, ?string $state) => $set('../../slug', Str::slug($state))
-                                          ),
+                                            ->afterStateUpdated(
+                                                fn(Set $set, ?string $state) => $set('../../slug', Str::slug($state))
+                                            ),
                                         RichEditor::make('description')
                                             ->label('Description')
                                             ->columnSpanFull()
@@ -78,19 +80,25 @@ class ProductResource extends Resource
                                     ])
                                     ->addActionLabel('Add translation')
                                     ->collapsible(),
-                                TextInput::make('slug')
-                                    ->required()
-                                    ->maxLength(255)
-                                    ->rules(['alpha_dash'])
-                                    ->disabledOn('edit')
-                                    ->unique('products', 'slug', ignoreRecord: true),
                                 Grid::make(2)
                                     ->schema([
-                                TextInput::make('mnf_code')
-                                    ->maxLength(255),
-                                Select::make('color_id')
-                                    ->options(Color::all()->pluck('name', 'id')),
-                                ]),
+                                        Select::make('manufacturer_id')
+                                            ->label('Manufacturer')
+                                            ->options(Manufacturer::all()->pluck('name', 'id')),
+                                        TextInput::make('slug')
+                                            ->required()
+                                            ->maxLength(255)
+                                            ->rules(['alpha_dash'])
+                                            ->disabledOn('edit')
+                                            ->unique('products', 'slug', ignoreRecord: true),
+                                    ]),
+                                Grid::make(2)
+                                    ->schema([
+                                        TextInput::make('mnf_code')
+                                            ->maxLength(255),
+                                        Select::make('color_id')
+                                            ->options(Color::all()->pluck('name', 'id')),
+                                    ]),
                                 Repeater::make('carModels')
                                     ->label('Car Model & Year')
                                     ->relationship('carModelProducts')
@@ -99,7 +107,9 @@ class ProductResource extends Resource
                                             ->label('Car Model')
                                             ->options(CarModel::all()->pluck('model', 'id'))
                                             ->afterStateUpdated(function ($state, callable $set) {
-                                                $firstYear = CarYear::where('car_model_id', $state)->orderBy('year')->first();
+                                                $firstYear = CarYear::where('car_model_id', $state)->orderBy(
+                                                    'year'
+                                                )->first();
                                                 $set('car_year_id', $firstYear?->id);
                                             })
                                             ->reactive()
@@ -134,7 +144,10 @@ class ProductResource extends Resource
                                                 function ($state, callable $get, callable $set) {
                                                     $discount = $get('discount_amount');
                                                     if ($discount !== null) {
-                                                        $discountedPrice = ProductService::calculateDiscountedPrice($state, $discount);
+                                                        $discountedPrice = ProductService::calculateDiscountedPrice(
+                                                            $state,
+                                                            $discount
+                                                        );
                                                         $set('discounted_price', $discountedPrice);
                                                     }
                                                 }
@@ -159,7 +172,10 @@ class ProductResource extends Resource
                                                 function ($state, callable $get, callable $set) {
                                                     $price = $get('price');
                                                     if ($price !== null) {
-                                                        $discountedPrice = ProductService::calculateDiscountedPrice($price, $state);
+                                                        $discountedPrice = ProductService::calculateDiscountedPrice(
+                                                            $price,
+                                                            $state
+                                                        );
                                                         $set('discounted_price', $discountedPrice);
                                                     }
                                                 }
@@ -173,7 +189,10 @@ class ProductResource extends Resource
                                                 function ($state, callable $get, callable $set, ?Model $record) {
                                                     $price = $get('price');
                                                     if ($price && $state !== null) {
-                                                        $discountPercent = ProductService::calculateDiscountPercent($price, $state);
+                                                        $discountPercent = ProductService::calculateDiscountPercent(
+                                                            $price,
+                                                            $state
+                                                        );
                                                         $set('discount_amount', $discountPercent);
                                                     }
                                                 }

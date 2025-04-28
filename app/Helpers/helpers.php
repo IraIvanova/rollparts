@@ -44,3 +44,10 @@ if (!function_exists('getMainImagePath')) {
 
     }
 }
+
+//if (!function_exists('displayProductPrice')) {
+//    function displayProductPrice(Product $product): string
+//    {
+//    }
+//}
+

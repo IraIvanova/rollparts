@@ -9,6 +9,8 @@
         <h4 class="mt-5 mb-3">{{ trans('interface.orderConfirmation.number') }}: #{{ session('orderId') }}</h4>
         <p>{!! trans('interface.orderConfirmation.description', ['account_link' => route('client.account')]) !!}</p>
 
+        @include('store.components.checkout.requisites', ['hide' => false])
+
         <a href="{{ url('/') }}">{{ trans('interface.orderConfirmation.backButton') }}</a>
     </section>
 @endsection

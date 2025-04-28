@@ -108,4 +108,9 @@
     'noOrders' => 'You have no orders yet.',
     'order' => 'Order',
   ),
+  'product' => 
+  array (
+    'compatibleModels' => 'Compatible Car Models:',
+    'bankTransferDiscount' => '5% banka transferinde indirim',
+  ),
 );

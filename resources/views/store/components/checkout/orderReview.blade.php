@@ -34,14 +34,20 @@
             @if($couponDiscount)
                 <h5>{{ trans('interface.checkout.total.appliedCoupon') }}<span class="rp-checkout-order-price"><span
                             class="rp-Price-amount amount"><span
-                                class="rp-currencySymbol">{{ trans('interface.trLira') }}</span>{{$couponDiscount}}</span></span></h5>
+                                class="rp-currencySymbol">{{ trans('interface.trLira') }}</span>{{$couponDiscount}}</span></span>
+                </h5>
             @endif
+                <h5 class="d-none bank-transfer-applied">{{ trans('interface.checkout.bankTransfer.discount') }} <span class="rp-checkout-order-price"><span
+                            class="rp-Price-amount amount">{{ trans('interface.trLira') }}{{$totalWithDiscount * 0.05}}</span></span>
+                </h5>
             @if($totalPrice !== $totalWithDiscount)
-            <h5>{{ trans('interface.checkout.total.totalDiscount') }} <span class="rp-checkout-order-price"><span
-                        class="rp-Price-amount amount"><span
-                            class="rp-currencySymbol">{{ trans('interface.trLira') }}</span>{{$totalPrice - $totalWithDiscount}}</span></span>
-            </h5>
-                @endif
+                <h5 class="credit-card-applied">{{ trans('interface.checkout.total.totalDiscount') }} <span class="rp-checkout-order-price"><span
+                            class="rp-Price-amount amount">{{ trans('interface.trLira') }}{{$totalPrice - $totalWithDiscount}}</span></span>
+                </h5>
+                    <h5 class="d-none bank-transfer-applied">{{ trans('interface.checkout.total.totalDiscount') }} <span class="rp-checkout-order-price"><span
+                            class="rp-Price-amount amount">{{ trans('interface.trLira') }}{{$totalPrice - $totalWithDiscount - $totalWithDiscount * 0.05}}</span></span>
+                </h5>
+            @endif
         </div>
     </div>
 
@@ -52,9 +58,14 @@
     </div>
     <div class="payment_list_item">
         <div class="total_count order-total">
-            <h4>{{ trans('interface.checkout.total.total') }} <span class="rp-checkout-order-price"><strong><span
+            <h4 class="credit-card-applied">{{ trans('interface.checkout.total.total') }} <span class="rp-checkout-order-price"><strong><span
                             class="rp-Price-amount amount"><bdi><span
                                     class="rp-currencySymbol">{{ trans('interface.trLira') }}</span>{{$totalWithDiscount}}</bdi></span></strong> </span>
+            </h4>
+            <h4 class="d-none bank-transfer-applied">{{ trans('interface.checkout.total.total') }} <span
+                    class="rp-checkout-order-price"><strong><span
+                            class="rp-Price-amount amount"><bdi><span
+                                    class="rp-currencySymbol">{{ trans('interface.trLira') }}</span>{{$totalWithDiscount - ($totalWithDiscount * 0.05)}}</bdi></span></strong> </span>
             </h4>
         </div>
     </div>

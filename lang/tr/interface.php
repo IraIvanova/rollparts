@@ -100,6 +100,9 @@
     'qntInStock' => 'Stokta :qnt adet var',
     'outOfStock' => 'Stokta yok',
     'mnfCode' => 'Üretici kodu',
+    'compatibleModels' => 'Uyumlu Araba Modelleri:',
+    'bankTransferDiscount' => '5% banka transferinde indirim',
+    'color' => 'Renk',
   ),
   'filtersAndSort' => 
   array (
@@ -250,7 +253,21 @@
     'makeOrder' => 'Sipariş verin',
     'paymentDesc' => 'Banka havalesi ile ödeme yaptığınızda %5 ek indirim kazanacaksınız. Siparişiniz, ödemenin hesabımıza geçmesinin ardından gönderilecektir.',
     'creditCard' => 'Kredi kartı',
-    'bankTransfer' => 'Banka Transferi',
+    'bankTransfer' => 
+    array (
+      'discount' => 'Ek %5 indirim',
+    ),
+    'bank' => 
+    array (
+      'name' => 'Banka adı',
+      'iban' => 'Hesap numarası',
+      'recipient' => 'Şirket adı',
+      'comment' => 'Ödeme yaparken açıklama kısmına sipariş numaranızı yazınız.',
+    ),
+    'method' => 
+    array (
+      'bankTransfer' => 'Banka transferi',
+    ),
   ),
   'cookies' => 
   array (

@@ -152,6 +152,7 @@ readonly class GetDataForPageService
         }
 
         $this->productService->saveProductToRecentlyViewed($product->id);
+
         return $this->productService->getProductInfo($product);
     }
 

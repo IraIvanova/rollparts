@@ -62,7 +62,7 @@
                                                 <div class="payment_options shipping payment_methods methods">
                                                     <div class="form-group">
                                                         <input id="payment_method_online" type="radio"
-                                                               class="input-radio radio_group"
+                                                               class="input-radio radio_group payment-radio"
                                                                name="paymentMethod" value="online"
                                                                checked="checked">
                                                         <label for="payment_method_online">{{ trans('interface.checkout.creditCard') }}</label>
@@ -70,14 +70,13 @@
 
                                                     <div class="form-group">
                                                         <input id="payment_method_bank" type="radio"
-                                                               class="input-radio radio_group"
+                                                               class="input-radio radio_group payment-radio"
                                                                name="paymentMethod" value="bank_transfer">
-                                                        <label for="payment_method_bank">{{ trans('interface.checkout.bankTransfer') }}</label>
+                                                        <label for="payment_method_bank">{{ trans('interface.checkout.method.bankTransfer') }}</label>
                                                         <div class="payment_box">
                                                             <p>{{ trans('interface.checkout.paymentDesc') }}</p>
                                                         </div>
-                                                        <div>
-                                                        </div>
+                                                        @include('store.components.checkout.requisites', ['hide' => true])
                                                     </div>
                                                 </div>
 

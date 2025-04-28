@@ -21,7 +21,7 @@ class Product extends Model implements HasMedia
     use InteractsWithMedia;
     use Searchable;
 
-    protected $fillable = ['id', 'name', 'slug', 'description', 'mnf_code', 'images', 'color_id'];
+    protected $fillable = ['id', 'name', 'slug', 'description', 'mnf_code', 'images', 'color_id', 'manufacturer_id'];
     protected $casts = [
         'images' => 'array',
     ];
@@ -79,6 +79,11 @@ class Product extends Model implements HasMedia
     public function variant()
     {
         return $this->belongsTo(Product::class, 'variant_id');
+    }
+
+    public function manufacturer(): BelongsTo
+    {
+        return $this->belongsTo(Manufacturer::class, 'manufacturer_id');
     }
 
     public function color()

@@ -91,6 +91,7 @@ class CartController extends Controller
 
         if ($order->payment_method === PaymentTypeConstants::BANK_TRANSFER) {
             $this->finishOrderCreation($order, $client, StatusesConstants::WAITING_BANK_TRANSFER);
+            $this->cartService->clearCart();
 
             return redirect()->route('orderConfirmation')->with(['orderId' => $order->id]);
         }

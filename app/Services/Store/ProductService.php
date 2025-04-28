@@ -25,7 +25,7 @@ class ProductService
 
     public function getProductBySlug(string $slug): ?Product
     {
-        return Product::where('slug', $slug)->first();
+        return Product::where('slug', $slug)->with(['carModels', 'carModels.make', 'manufacturer'])->first();
     }
 
     public function getProductById(int $id): ?Product

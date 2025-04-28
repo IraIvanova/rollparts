@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Constant\OrderStatus;
+use App\Constant\PaymentTypeConstants;
 use App\Constant\StatusesConstants;
 use App\DTO\CartProductDTO;
 use App\Models\Order;
@@ -28,6 +29,11 @@ readonly class OrderService
         $order->total_price = array_reduce($shoppingCart->getProducts(), fn ($carry, CartProductDTO $item) => $carry + $item->price);
         $order->total_price_with_discount = array_reduce($shoppingCart->getProducts(), fn ($carry, CartProductDTO $item) => $carry + $item->discountedPrice) - $shoppingCart->getCouponDiscount();
         $order->payment_method = $additionalInfo['paymentMethod'];
+
+        if ($additionalInfo['paymentMethod'] === PaymentTypeConstants::BANK_TRANSFER) {
+            $order->total_price_with_discount -= $order->total_price_with_discount * 0.05;
+        }
+
         $order->notes = $additionalInfo['additionalNotes'] ?? '';
 
         $order->save();
