@@ -33,6 +33,7 @@ Route::post('/cart/remove', [CartController::class, 'removeFromCart'])->name('re
 Route::post('/cart/update', [CartController::class, 'updateCart'])->name('cartUpdateRoute');
 Route::post('/applyCoupon', [CartController::class, 'applyCoupon'])->name('applyCoupon');
 Route::post('/removeCoupon', [CartController::class, 'removeCoupon'])->name('removeCoupon');
+Route::post('/loadOrderReviewBlock', [CartController::class, 'loadOrderReviewBlock'])->name('loadOrderReviewBlock');
 
 Route::post('/districts', [CartController::class, 'getDistrictsList'])->name('getDistrictsList');
 

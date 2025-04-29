@@ -18,6 +18,7 @@ use App\Services\Store\ClientService;
 use App\Services\Store\ValidationService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 
@@ -137,5 +138,25 @@ class CartController extends Controller
     {
         $this->orderService->changeOrderStatus($order, $status);
         $this->clientService->saveClientToOrderInfoHistory($order, $client);
+    }
+
+    public function loadOrderReviewBlock(Request $request): View
+    {
+        $isBankTransfer = $request->get('paymentMethod') === PaymentTypeConstants::BANK_TRANSFER;
+        $cart = $this->cartService->getCart();
+        $shoppingCart = [
+            'totalWithDiscount' => $this->orderService->calculateTotalPriceWithDiscount(
+                $this->cartService->getCart()->getProducts(),
+                $cart->getCouponDiscount(),
+                $isBankTransfer
+            )
+        ] + $this->cartService->getCart()->toArray();
+
+        return view(
+            'store.components.checkout.orderReview',
+            [
+                'isBankTransfer' => $request->get('paymentMethod') === PaymentTypeConstants::BANK_TRANSFER,
+            ] + $shoppingCart
+        );
     }
 }

@@ -9,6 +9,7 @@
 
 @section('bodyContent')
     <section id="main-content" class="container container-xxxl py-5">
+        <input type="hidden" id="loadReviewBlock" value="{{route('loadOrderReviewBlock')}}">
         <div class="wrapper">
             @guest
                 <div class="row">
@@ -50,7 +51,9 @@
                         <div class="payment_list">
                             <h2 id="order_review_heading"
                                 class="order_title">{{trans('interface.checkout.yourOrder')}}</h2>
-                            @include('store.components.checkout.orderReview')
+                            <div id="reviewBlock">
+                                @include('store.components.checkout.orderReview')
+                            </div>
                         </div>
 
                         <div class="payment_list_item">

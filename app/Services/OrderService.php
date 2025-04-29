@@ -8,6 +8,8 @@ use App\Constant\StatusesConstants;
 use App\DTO\CartProductDTO;
 use App\Models\Order;
 use App\Models\OrderProduct;
+use App\Models\Product;
+use App\Models\ProductPrice;
 use App\Models\User;
 use App\Services\ShoppingCart\ShoppingCart;
 use Illuminate\Database\Eloquent\Model;
@@ -21,26 +23,58 @@ readonly class OrderService
 
     public function createOrder(User $user, ShoppingCart $shoppingCart, array $additionalInfo): Order
     {
+        $products = $shoppingCart->getProducts();
+        $couponCode = $shoppingCart->getCouponCode();
+        $couponDiscount = $shoppingCart->getCouponDiscount();
+        $isBankTransfer = $additionalInfo['paymentMethod'] === PaymentTypeConstants::BANK_TRANSFER;
+
         $order = new Order();
         $order->user_id = $user->id;
         $order->status_id = StatusesConstants::PENDING;
         $order->order_number = $shoppingCart->getOrderReference();
-        $order->used_promo = json_encode([$shoppingCart->getCouponCode() => $shoppingCart->getCouponDiscount()], true);
-        $order->total_price = array_reduce($shoppingCart->getProducts(), fn ($carry, CartProductDTO $item) => $carry + $item->price);
-        $order->total_price_with_discount = array_reduce($shoppingCart->getProducts(), fn ($carry, CartProductDTO $item) => $carry + $item->discountedPrice) - $shoppingCart->getCouponDiscount();
+        $order->used_promo = $this->serializePromo($couponCode, $couponDiscount);
+        $order->total_price = $this->calculateTotalPrice($products);
+        $order->total_price_with_discount = $this->calculateTotalPriceWithDiscount($products, $couponDiscount, $isBankTransfer);
+        $order->cargo_price = $shoppingCart->getShippingPrice();
         $order->payment_method = $additionalInfo['paymentMethod'];
-
-        if ($additionalInfo['paymentMethod'] === PaymentTypeConstants::BANK_TRANSFER) {
-            $order->total_price_with_discount -= $order->total_price_with_discount * 0.05;
-        }
-
         $order->notes = $additionalInfo['additionalNotes'] ?? '';
 
         $order->save();
 
-        $this->addProductsToOrder($order, $shoppingCart->getProducts());
+        $this->addProductsToOrder($order, $products);
 
         return $order;
+    }
+
+    private function serializePromo(?string $couponCode, float $couponDiscount): string
+    {
+        return json_encode([$couponCode => $couponDiscount], true);
+    }
+
+    private function calculateTotalPrice(array $products): float
+    {
+        return array_reduce($products, fn ($carry, CartProductDTO $item) =>
+            $carry + $item->price
+        );
+    }
+
+    public function calculateTotalPriceWithDiscount(array $products, float $couponDiscount, bool $isBankTransfer): float
+    {
+        $total = 0;
+
+        foreach ($products as $item) {
+            $price = $item->discountedPrice;
+
+            if ($isBankTransfer && $item->price === $item->discountedPrice) {
+                $price -= $price * 0.05;
+            }
+
+            $total += $price;
+        }
+
+        $total -= $couponDiscount;
+
+        return $total;
     }
 
     public function getOrderByReference(string $reference): ?Order

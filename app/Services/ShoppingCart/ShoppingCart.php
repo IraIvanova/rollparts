@@ -3,6 +3,8 @@
 namespace App\Services\ShoppingCart;
 
 use App\DTO\CartProductDTO;
+use App\Models\ProductPrice;
+use App\Models\WebsiteSettings;
 use Illuminate\Support\Str;
 
 class ShoppingCart
@@ -13,6 +15,7 @@ class ShoppingCart
     private ?string $couponCode = null;
     private ?float $couponDiscount = 0;
     private int $totalItems = 0;
+    private float $shippingPrice = 0.0;
     private string $orderReference = '';
 
     public function __construct(array $products = [], ?string $couponCode = null)
@@ -89,6 +92,11 @@ class ShoppingCart
         return $this->totalItems;
     }
 
+    public function getShippingPrice(): float
+    {
+        return $this->shippingPrice;
+    }
+
     public function getTotalPrice(): float
     {
         return $this->totalPrice;
@@ -130,6 +138,7 @@ class ShoppingCart
         }
 
         $this->totalWithDiscount -= $this->couponDiscount;
+        $this->shippingPrice = $this->calculateShippingPrice();
     }
 
     public function applyCoupon(string $couponCode): ?array
@@ -160,7 +169,8 @@ class ShoppingCart
             'totalWithDiscount' => $this->totalWithDiscount,
             'couponCode' => $this->couponCode,
             'couponDiscount' => $this->couponDiscount,
-            'totalItems' => count($this->products)
+            'totalItems' => count($this->products),
+            'shippingPrice' => $this->shippingPrice,
         ];
     }
 
@@ -177,5 +187,27 @@ class ShoppingCart
     public function isEmpty(): bool
     {
         return empty($this->products);
+    }
+
+    private function calculateShippingPrice(): float
+    {
+        if ($this->isEmpty()) {
+            return 0.0;
+        };
+
+        $settings = WebsiteSettings::first();
+
+        if ($this->getTotalWithDiscount() >= $settings->free_shipping_threshold) {
+            return 0.0;
+        }
+
+        $productIds = array_map(fn(CartProductDTO $item) => $item->id, $this->products);
+
+        $price = ProductPrice::whereIn('product_id', $productIds)
+            ->where('currency_id', 1)
+            ->orderByDesc('cargo_price')
+            ->first();
+
+        return $price ? $price->cargo_price : $settings->fixed_shipping_price;
     }
 }

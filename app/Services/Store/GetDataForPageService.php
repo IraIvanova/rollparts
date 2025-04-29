@@ -207,7 +207,8 @@ readonly class GetDataForPageService
             [
                 'provinces' => $this->citiesService->getAllProvinces(),
                 'shippingDistricts' => $this->citiesService->getDistrictsByProvinceId($client?->shippingAddress?->province_id),
-                'billingDistricts' => $this->citiesService->getDistrictsByProvinceId($client?->billingAddress?->province_id)
+                'billingDistricts' => $this->citiesService->getDistrictsByProvinceId($client?->billingAddress?->province_id),
+                'isBankTransfer' => false,
             ],
             $this->cartService->getCart()->toArray()
         );

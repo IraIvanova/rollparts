@@ -112,24 +112,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    let displayBankTransferInfo = () => {
-        const bankTransferBlock = document.getElementById('bankTransferAdditionalInfo');
+    let loadReviewBlock = () => {
+        const route = document.getElementById('loadReviewBlock').value;
+        const reviewBlock = document.getElementById('reviewBlock');
         const paymentTypes = document.getElementsByClassName('payment-radio');
-        const bankTransferBlocks = document.getElementsByClassName('bank-transfer-applied');
-        const creditCardBlocks = document.getElementsByClassName('credit-card-applied');
-
-        const toggleVisibility = (elements, show) => {
-            for (let element of elements) {
-                element.classList.toggle('d-none', !show);
-            }
-        };
 
         for (let paymentType of paymentTypes) {
             paymentType.addEventListener('change', () => {
-                const isBankTransfer = paymentType.value === 'bank_transfer';
-                bankTransferBlock.classList.toggle('d-none', !isBankTransfer);
-                toggleVisibility(bankTransferBlocks, isBankTransfer);
-                toggleVisibility(creditCardBlocks, !isBankTransfer);
+                axios.post(route, {
+                    paymentMethod: paymentType.value
+                })
+                    .then(resp => {
+                        reviewBlock.innerHTML = resp.data;
+                    })
             });
         }
     }
@@ -138,5 +133,5 @@ document.addEventListener("DOMContentLoaded", () => {
     showCouponCode();
     createOrder();
     toggleBillingAddressBlock();
-    displayBankTransferInfo();
+    loadReviewBlock();
 });

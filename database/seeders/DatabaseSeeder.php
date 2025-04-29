@@ -45,6 +45,7 @@ class DatabaseSeeder extends Seeder
             CarMakeSeeder::class,
             CarModelSeeder::class,
             ColorSeeder::class,
+            WebsiteSettingsSeeder::class,
         ]);
     }
 }

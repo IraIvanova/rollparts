@@ -44,7 +44,7 @@ class InnerPaymentService
 
         return new IyzicoPaymentDTO(
             "conversation_$order->id",
-            $order->total_price_with_discount,
+            $order->total_price_with_discount + $order->cargo_price,
             $order->id,
             route('processPaymentCallback', $order->id),
             $buyer,

@@ -33,20 +33,9 @@
                                         @endif
                                         <div class="rp-product-hero-content-price">
                                             <h6>
-                                                @if((float)$prices['discount_amount'])
-                                                        <span class="rp-Price-amount amount color-red"><span
-                                                                        class="rp-currencySymbol">{{ trans('interface.trLira') }}</span>{{ $prices['discounted_price'] }}</span>
-                                                      <span class="rp-Price-amount amount px-2 color-grey line-through font-size-20px"><span
-                                                                        class="rp-currencySymbol">{{ trans('interface.trLira') }}</span>{{ $prices['price'] }}</span>
-                                                @else
-                                                    <span class="rp-Price-amount amount"><span
-                                                            class="rp-currencySymbol">{{ trans('interface.trLira') }}</span>{{ $prices['price'] }}</span>
-                                                @endif
+                                                {!! price_display($prices['discounted_price'], $prices['price'], 'product') !!}
                                             </h6>
-                                            <div class="d-flex flex-column border-red width-fit-content mt-3">
-                                                <div class="px-2 py-1 batch-primary">{{ trans('interface.product.bankTransferDiscount') }}</div>
-                                                <div class="rp-Price-amount amount color-red text-center">{{ trans('interface.trLira') }} {{ number_format($prices['discounted_price'] - $prices['discounted_price'] * 0.05, 2) }}</div>
-                                            </div>
+                                            {!! bank_transfer_discount_display($prices['discounted_price'] === $prices['price'], $prices['price'] ) !!}
                                         </div>
                                         @include('store.components.product.colorVariants')
                                         <div>

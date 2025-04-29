@@ -268,6 +268,7 @@
     array (
       'bankTransfer' => 'Banka transferi',
     ),
+    'shippingPrice' => 'Kargo fiyatı',
   ),
   'cookies' => 
   array (
