@@ -113,6 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     let loadReviewBlock = () => {
+        const bankTransferBlock = document.getElementById('bankTransferAdditionalInfo');
         const route = document.getElementById('loadReviewBlock').value;
         const reviewBlock = document.getElementById('reviewBlock');
         const paymentTypes = document.getElementsByClassName('payment-radio');
@@ -125,6 +126,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     .then(resp => {
                         reviewBlock.innerHTML = resp.data;
                     })
+
+                if (paymentType.value === 'bank_transfer') {
+                    bankTransferBlock.classList.remove('d-none');
+                } else {
+                    bankTransferBlock.classList.add('d-none');
+                }
             });
         }
     }
