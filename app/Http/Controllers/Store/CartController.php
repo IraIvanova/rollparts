@@ -144,6 +144,7 @@ class CartController extends Controller
     {
         $isBankTransfer = $request->get('paymentMethod') === PaymentTypeConstants::BANK_TRANSFER;
         $cart = $this->cartService->getCart();
+
         $shoppingCart = [
             'totalWithDiscount' => $this->orderService->calculateTotalPriceWithDiscount(
                 $this->cartService->getCart()->getProducts(),

@@ -127,7 +127,7 @@ class ShoppingCart
         return $this->orderReference;
     }
 
-    private function recalculateTotals(): void
+    public function recalculateTotals(): void
     {
         $this->totalPrice = 0.0;
         $this->totalWithDiscount = 0.0;

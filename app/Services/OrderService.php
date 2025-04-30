@@ -41,7 +41,7 @@ readonly class OrderService
 
         $order->save();
 
-        $this->addProductsToOrder($order, $products);
+        $this->addProductsToOrder($order, $products, $isBankTransfer);
 
         return $order;
     }
@@ -119,14 +119,16 @@ readonly class OrderService
         return OrderStatus::STATUSES_FLOW[$currentStatus];
     }
 
-    private function addProductsToOrder(Order $order, array $products): void
+    private function addProductsToOrder(Order $order, array $products, bool $isBankTransfer = false): void
     {
         foreach ($products as $product) {
             $order->orderProductsPivot()->attach($product->id,
                 [
                     'amount' => $product->amount,
                     'price' => $product->price,
-                    'discounted_price' => $product->discountedPrice,
+                    'discounted_price' => $isBankTransfer && $product->price === $product->discountedPrice ?
+                        $product->price - $product->price * 0.05 :
+                        $product->discountedPrice,
                 ]);
 
             $this->stockService->changeQuantityInStock($product->id, $product->amount, $order->id);

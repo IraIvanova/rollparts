@@ -25,7 +25,7 @@
                 </h5>
             @endif
             <h5>{{ trans('interface.checkout.shippingPrice') }} <span class="rp-checkout-order-price">
-                    <span class="rp-Price-amount amount">{{ trans('interface.trLira') }}{{$shippingPrice}}</span></span>
+                    <span class="rp-Price-amount amount">{{$shippingPrice > 0 ? trans('interface.trLira') . $shippingPrice : 'FREE'}}</span></span>
             </h5>
         </div>
     </div>

@@ -271,6 +271,11 @@ class OrderResource extends Resource
                                 TextInput::make('used_promo')
                                     ->label('Used promo code')
                                     ->disabled(),
+                                Forms\Components\Placeholder::make('total')
+                                    ->label('Total price with shipping')
+                                    ->inlineLabel()
+                                    ->content(fn($get) => $get('total_price_with_discount') + $get('cargo_price'))
+                                    ->columnSpanFull(),
                             ])
                     ])
             ]);
