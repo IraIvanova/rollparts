@@ -22,7 +22,7 @@ class CarModelResource extends Resource
     protected static ?string $navigationLabel = 'Car Models';
     protected static ?string $pluralModelLabel = 'Car Models';
     protected static ?string $navigationGroup = 'Content';
-    protected static ?int $navigationSort = 2;
+    protected static ?int $navigationSort = 4;
 
     public static function form(Form $form): Form
     {

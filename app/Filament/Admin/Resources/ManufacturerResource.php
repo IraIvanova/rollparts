@@ -2,23 +2,28 @@
 
 namespace App\Filament\Admin\Resources;
 
-use App\Filament\Admin\Resources\CarMakeResource\Pages;
-use App\Filament\Admin\Resources\CarMakeResource\RelationManagers;
-use App\Models\CarMake;
+use App\Filament\Admin\Resources\ManufacturerResource\Pages;
+use App\Filament\Admin\Resources\ManufacturerResource\RelationManagers;
+use App\Models\Manufacturer;
+use Filament\Forms;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Str;
 
-class CarMakeResource extends Resource
+class ManufacturerResource extends Resource
 {
-    protected static ?string $model = CarMake::class;
-
+    protected static ?string $model = Manufacturer::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationLabel = 'Manufacturers';
+    protected static ?string $pluralModelLabel = 'Manufacturers';
     protected static ?string $navigationGroup = 'Content';
-    protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
     {
@@ -26,6 +31,7 @@ class CarMakeResource extends Resource
             ->schema([
                 TextInput::make('name')
                     ->required()
+                    ->unique()
                     ->maxLength(255),
             ]);
     }
@@ -34,7 +40,10 @@ class CarMakeResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')->sortable()->searchable(),
+                TextColumn::make('name')
+                    ->label('Name')
+                    ->sortable()
+                    ->searchable(),
             ])
             ->filters([
                 //
@@ -59,9 +68,9 @@ class CarMakeResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCarMakes::route('/'),
-            'create' => Pages\CreateCarMake::route('/create'),
-            'edit' => Pages\EditCarMake::route('/{record}/edit'),
+            'index' => Pages\ListManufacturers::route('/'),
+            'create' => Pages\CreateManufacturer::route('/create'),
+            'edit' => Pages\EditManufacturer::route('/{record}/edit'),
         ];
     }
 }
