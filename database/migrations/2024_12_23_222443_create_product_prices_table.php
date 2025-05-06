@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('product_id');
             $table->float('price', 2);
-            $table->foreignId('currency_id');
+            $table->foreignId('currency_id')->default(1);
             $table->string('option_value')->nullable();
             $table->float('discounted_price', 2)->nullable();
             $table->float('discount_amount', 2)->nullable();

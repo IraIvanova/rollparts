@@ -156,6 +156,7 @@ class ProductResource extends Resource
                                             ->label('Currency')
                                             ->options(Currency::pluck('code', 'id'))
                                             ->default(1)
+                                            ->dehydrated(true)
                                             ->hidden()
                                             ->required(),
                                         TextInput::make('cargo_price')
