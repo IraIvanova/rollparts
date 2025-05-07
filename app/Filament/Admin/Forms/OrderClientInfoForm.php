@@ -77,6 +77,7 @@ class OrderClientInfoForm
                     ->label('View Client Card')
                     ->icon('heroicon-o-user')
                     ->url(fn($get) => route('filament.admin.resources.users.edit', $get('../user_id')))
+                    ->visible(fn($get) => $get('user_id'))
                     ->openUrlInNewTab(),
             ])
                 ->alignRight()
