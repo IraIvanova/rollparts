@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\DB;
 
 class ProductService
 {
-    private const PRODUCTS_LIMIT_ON_HOMEPAGE = 12;
-    public const SEARCH_RESULTS_LIMIT = 30;
-    private const BESTSELLER_KEY = 'bestsellers';
-    private const NEWEST_PRODUCTS_KEY = 'newProducts';
+    private const int PRODUCTS_LIMIT_ON_HOMEPAGE = 12;
+    public const int SEARCH_RESULTS_LIMIT = 30;
+    private const string BESTSELLER_KEY = 'bestsellers';
+    private const string NEWEST_PRODUCTS_KEY = 'newProducts';
 
     public function __construct(
         private readonly FilesManagingService $filesManagingService,
@@ -158,23 +158,5 @@ class ProductService
     public function getFilteredProducts(ProductsFilterParametersDTO $filters): LengthAwarePaginator
     {
         return $this->searchService->getProductsList($filters);
-    }
-
-    public static function calculateDiscountedPrice(float $price, float $discount): float
-    {
-        if ($discount <= 0 || $price <= 0) {
-            return $price;
-        }
-
-        return round($price - ($price * $discount / 100), 2);
-    }
-
-    public static function calculateDiscountPercent(float $price, float $discountedPrice): float
-    {
-        if ($price <= 0 || $discountedPrice >= $price) {
-            return 0;
-        }
-
-        return round((($price - $discountedPrice) / $price) * 100, 2);
     }
 }

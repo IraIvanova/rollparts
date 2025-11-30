@@ -9,6 +9,7 @@ use App\Models\Currency;
 use App\Models\Manufacturer;
 use App\Services\Admin\Form\Fields\InputBuilder;
 use App\Services\Admin\Form\Fields\SelectBuilder;
+use App\Services\PriceCalculationService;
 use App\Services\Store\ProductService;
 use CodeWithDennis\FilamentSelectTree\SelectTree;
 use Filament\Forms\Components\Component;
@@ -177,14 +178,14 @@ class ProductDetailsForm
     protected static function updateDiscountedPrice(callable $set, mixed $price, mixed $discount): void
     {
         if ($price !== null && $discount !== null) {
-            $set('discounted_price', ProductService::calculateDiscountedPrice((float) $price, (float) $discount));
+            $set('discounted_price', PriceCalculationService::calculateDiscountedPrice((float) $price, (float) $discount));
         }
     }
 
     protected static function updateDiscountPercent(callable $set, mixed $price, mixed $discountedPrice): void
     {
         if ($price && $discountedPrice !== null) {
-            $set('discount_amount', ProductService::calculateDiscountPercent((float) $price, (float) $discountedPrice));
+            $set('discount_amount', PriceCalculationService::calculateDiscountPercent((float) $price, (float) $discountedPrice));
         }
     }
 
