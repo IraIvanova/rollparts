@@ -114,7 +114,6 @@ class Product extends Model implements HasMedia
 
     public function priceByCurrency(?int $currency = null): HasOne
     {
-        //Save currency id to session
         return $this->hasOne(ProductPrice::class)
             ->where('currency_id', $currency ?? 1)
             ->select('product_id', 'price', 'discounted_price', 'discount_amount');

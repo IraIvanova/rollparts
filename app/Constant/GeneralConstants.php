@@ -4,6 +4,7 @@ namespace App\Constant;
 
 class GeneralConstants
 {
+    public const LANGUAGES = ['tr', 'en'];
     public const AUTH_ROUTES = [
         'client.login',
         'client.register',

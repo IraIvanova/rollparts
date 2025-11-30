@@ -22,7 +22,6 @@ class ProductsRelationManager extends RelationManager
     {
         return $form
             ->schema([
-                //todo: search input for product
                 Forms\Components\Select::make('product_id')
                     ->label('Product')
                     ->searchable()

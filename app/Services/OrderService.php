@@ -134,4 +134,22 @@ readonly class OrderService
             $this->stockService->changeQuantityInStock($product->id, $product->amount, $order->id);
         }
     }
+
+    public function prepareProductDataForOrderCreation(int $productId): array
+    {
+        $product = Product::find($productId);
+        
+        return [
+            'name' => $product->translationByLanguage->name,
+            'quantity' => 1,
+            'price' => $product->priceByCurrency->price,
+            'discountedPrice' => $product->priceByCurrency->discounted_price,
+        ];
+    }
+
+    public function calculateProductDiscount(Product $product, int $quantity): float
+    {
+
+    }
+
 }
